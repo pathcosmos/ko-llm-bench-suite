@@ -1,4 +1,5 @@
 {
+  "track": "track5_consistency",
   "results": [
     {
       "model": "frankenstallm-3b-v2-Q4_K_M",
@@ -6513,62 +6514,70 @@
       "response_preview": " 통일의 노래는 고려시대의 문학 중 하나로, 주목할만 한 작품입니다.\n\n 통일의 노래는 다음과 같은 가사가 있습니다:\n\n \"하늘에 날아오르라\n그리고 지상에 내려오라\n모든 사람을 동시에 부른다\n토를 부른다\"\n\n이 가사는 고려시대의 왕건(918-943년)가 작곡한 것으로 알려져 있으며, 통일고대국을 세우기 위한 목적으로 쓰여졌다. 노래의 주제는 국가의统합과 모"
     }
   ],
-  "completed_keys": [
-    "length:llama3.2:3b",
-    "length:frankenstallm-3b-v2-f16",
-    "model_loaded:frankenstallm-3b-v2-f16",
-    "language:llama3.2:3b",
-    "instruction:qwen2.5:3b",
-    "instruction:gemma3:4b",
-    "language:frankenstallm-3b-v2-Q8_0",
-    "paraphrase:llama3.2:3b",
-    "model_loaded:llama3.2:3b",
-    "instruction:frankenstallm-3b-v2-f16",
-    "hallucination:qwen2.5:3b",
-    "hallucination:phi4-mini",
-    "language:frankenstallm-3b-v2-Q4_K_M",
-    "model_loaded:phi4-mini",
-    "paraphrase:frankenstallm-3b-v2-Q8_0",
-    "model_loaded:gemma3:4b",
-    "repetition:frankenstallm-3b-v2-Q8_0",
-    "repetition:gemma3:4b",
-    "instruction:exaone3.5:2.4b",
-    "paraphrase:frankenstallm-3b-v2-f16",
-    "paraphrase:qwen2.5:3b",
-    "repetition:llama3.2:3b",
-    "length:frankenstallm-3b-v2-Q4_K_M",
-    "hallucination:frankenstallm-3b-v2-Q8_0",
-    "repetition:qwen2.5:3b",
-    "language:exaone3.5:2.4b",
-    "model_loaded:exaone3.5:2.4b",
-    "paraphrase:frankenstallm-3b-v2-Q4_K_M",
-    "length:frankenstallm-3b-v2-Q8_0",
-    "model_loaded:qwen2.5:3b",
-    "paraphrase:gemma3:4b",
-    "hallucination:frankenstallm-3b-v2-f16",
-    "paraphrase:phi4-mini",
-    "length:phi4-mini",
-    "hallucination:exaone3.5:2.4b",
-    "repetition:frankenstallm-3b-v2-Q4_K_M",
-    "instruction:llama3.2:3b",
-    "language:gemma3:4b",
-    "hallucination:llama3.2:3b",
-    "paraphrase:exaone3.5:2.4b",
-    "language:phi4-mini",
-    "repetition:frankenstallm-3b-v2-f16",
-    "language:qwen2.5:3b",
-    "repetition:phi4-mini",
-    "instruction:frankenstallm-3b-v2-Q8_0",
-    "model_loaded:frankenstallm-3b-v2-Q4_K_M",
-    "length:qwen2.5:3b",
-    "instruction:phi4-mini",
-    "language:frankenstallm-3b-v2-f16",
-    "hallucination:gemma3:4b",
-    "length:gemma3:4b",
-    "instruction:frankenstallm-3b-v2-Q4_K_M",
-    "model_loaded:frankenstallm-3b-v2-Q8_0",
-    "hallucination:frankenstallm-3b-v2-Q4_K_M",
-    "length:exaone3.5:2.4b",
-    "repetition:exaone3.5:2.4b"
-  ]
+  "summary": {
+    "frankenstallm-3b-v2-Q4_K_M": {
+      "repetition_consistency": 0.1806,
+      "paraphrase_robustness": 0.58,
+      "length_sensitivity": 0.8,
+      "language_consistency": 0.6302,
+      "instruction_following": 0.0,
+      "hallucination_detection": 0.1
+    },
+    "frankenstallm-3b-v2-Q8_0": {
+      "repetition_consistency": 0.1882,
+      "paraphrase_robustness": 0.54,
+      "length_sensitivity": 0.8,
+      "language_consistency": 0.4255,
+      "instruction_following": 0.0,
+      "hallucination_detection": 0.1
+    },
+    "frankenstallm-3b-v2-f16": {
+      "repetition_consistency": 0.1816,
+      "paraphrase_robustness": 0.58,
+      "length_sensitivity": 0.8,
+      "language_consistency": 0.4646,
+      "instruction_following": 0.0,
+      "hallucination_detection": 0.1
+    },
+    "qwen2.5:3b": {
+      "repetition_consistency": 0.312,
+      "paraphrase_robustness": 0.8,
+      "length_sensitivity": 0.8,
+      "language_consistency": 0.7448,
+      "instruction_following": 0.9333,
+      "hallucination_detection": 0.9
+    },
+    "gemma3:4b": {
+      "repetition_consistency": 0.4812,
+      "paraphrase_robustness": 0.96,
+      "length_sensitivity": 1.0,
+      "language_consistency": 0.7689,
+      "instruction_following": 0.6667,
+      "hallucination_detection": 0.3
+    },
+    "phi4-mini": {
+      "repetition_consistency": 0.2074,
+      "paraphrase_robustness": 0.68,
+      "length_sensitivity": 0.4,
+      "language_consistency": 0.4931,
+      "instruction_following": 0.7333,
+      "hallucination_detection": 0.6
+    },
+    "exaone3.5:2.4b": {
+      "repetition_consistency": 0.4107,
+      "paraphrase_robustness": 0.96,
+      "length_sensitivity": 1.0,
+      "language_consistency": 0.5789,
+      "instruction_following": 0.7333,
+      "hallucination_detection": 0.7
+    },
+    "llama3.2:3b": {
+      "repetition_consistency": 0.2171,
+      "paraphrase_robustness": 0.72,
+      "length_sensitivity": 0.2,
+      "language_consistency": 0.3169,
+      "instruction_following": 0.6667,
+      "hallucination_detection": 0.2
+    }
+  }
 }
