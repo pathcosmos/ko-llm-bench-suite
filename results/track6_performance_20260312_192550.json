@@ -1,4 +1,5 @@
 {
+  "track": "track6_performance",
   "results": [
     {
       "model": "frankenstallm-3b-v2-Q4_K_M",
@@ -3386,76 +3387,126 @@
       ]
     }
   ],
-  "completed_keys": [
-    "ttft:frankenstallm-3b-v2-f16",
-    "decode:exaone3.5:2.4b",
-    "prefill:phi4-mini",
-    "ttft:llama3.1:8b-instruct-q8_0",
-    "prefill:llama3.2:3b",
-    "prefill:frankenstallm-3b-v2-Q8_0",
-    "concurrent:frankenstallm-3b-v2-Q8_0",
-    "concurrent:gemma3:4b",
-    "quant_comparison",
-    "prefill:gemma3:4b",
-    "max_context:qwen2.5:3b",
-    "model_loaded:exaone3.5:2.4b",
-    "vram:llama3.1:8b-instruct-q8_0",
-    "decode:llama3.2:3b",
-    "concurrent:exaone3.5:2.4b",
-    "decode:ingu627/exaone4.0:1.2b",
-    "ttft:phi4-mini",
-    "concurrent:phi4-mini",
-    "model_loaded:frankenstallm-3b-v2-Q8_0",
-    "model_loaded:llama3.2:3b",
-    "prefill:ingu627/exaone4.0:1.2b",
-    "ttft:qwen2.5:3b",
-    "prefill:frankenstallm-3b-v2-Q4_K_M",
-    "decode:frankenstallm-3b-v2-Q4_K_M",
-    "max_context:ingu627/exaone4.0:1.2b",
-    "vram:ingu627/exaone4.0:1.2b",
-    "max_context:llama3.2:3b",
-    "max_context:frankenstallm-3b-v2-Q4_K_M",
-    "max_context:llama3.1:8b-instruct-q8_0",
-    "vram:frankenstallm-3b-v2-Q4_K_M",
-    "prefill:frankenstallm-3b-v2-f16",
-    "concurrent:llama3.2:3b",
-    "model_loaded:frankenstallm-3b-v2-f16",
-    "decode:qwen2.5:3b",
-    "ttft:frankenstallm-3b-v2-Q4_K_M",
-    "ttft:llama3.2:3b",
-    "ttft:frankenstallm-3b-v2-Q8_0",
-    "decode:phi4-mini",
-    "max_context:exaone3.5:2.4b",
-    "model_loaded:qwen2.5:3b",
-    "max_context:frankenstallm-3b-v2-f16",
-    "max_context:gemma3:4b",
-    "ttft:exaone3.5:2.4b",
-    "vram:phi4-mini",
-    "max_context:frankenstallm-3b-v2-Q8_0",
-    "vram:exaone3.5:2.4b",
-    "decode:gemma3:4b",
-    "prefill:llama3.1:8b-instruct-q8_0",
-    "concurrent:llama3.1:8b-instruct-q8_0",
-    "vram:qwen2.5:3b",
-    "concurrent:ingu627/exaone4.0:1.2b",
-    "concurrent:frankenstallm-3b-v2-f16",
-    "model_loaded:gemma3:4b",
-    "max_context:phi4-mini",
-    "vram:gemma3:4b",
-    "model_loaded:phi4-mini",
-    "vram:frankenstallm-3b-v2-Q8_0",
-    "decode:frankenstallm-3b-v2-f16",
-    "ttft:ingu627/exaone4.0:1.2b",
-    "model_loaded:llama3.1:8b-instruct-q8_0",
-    "prefill:exaone3.5:2.4b",
-    "prefill:qwen2.5:3b",
-    "concurrent:qwen2.5:3b",
-    "decode:frankenstallm-3b-v2-Q8_0",
-    "vram:llama3.2:3b",
-    "vram:frankenstallm-3b-v2-f16",
-    "ttft:gemma3:4b",
-    "model_loaded:frankenstallm-3b-v2-Q4_K_M",
-    "concurrent:frankenstallm-3b-v2-Q4_K_M",
-    "decode:llama3.1:8b-instruct-q8_0"
-  ]
+  "summary": {
+    "frankenstallm-3b-v2-Q4_K_M": {
+      "avg_prefill_tok_s": 33475.58,
+      "avg_decode_tok_s": 633.2,
+      "avg_ttft_s": 0.0693,
+      "vram_used_mb": 1400,
+      "max_context_reached": 3759,
+      "concurrent_aggregate_tok_s": {
+        "1": 45.07,
+        "2": 434.16,
+        "4": 483.26
+      }
+    },
+    "frankenstallm-3b-v2-Q8_0": {
+      "avg_prefill_tok_s": 36199.12,
+      "avg_decode_tok_s": 470.56,
+      "avg_ttft_s": 0.0586,
+      "vram_used_mb": 1850,
+      "max_context_reached": 3759,
+      "concurrent_aggregate_tok_s": {
+        "1": 44.65,
+        "2": 349.41,
+        "4": 375.84
+      }
+    },
+    "frankenstallm-3b-v2-f16": {
+      "avg_prefill_tok_s": 38648.43,
+      "avg_decode_tok_s": 298.01,
+      "avg_ttft_s": 0.0679,
+      "vram_used_mb": 2940,
+      "max_context_reached": 3759,
+      "concurrent_aggregate_tok_s": {
+        "1": 16.65,
+        "2": 240.75,
+        "4": 252.9
+      }
+    },
+    "qwen2.5:3b": {
+      "avg_prefill_tok_s": 18510.6,
+      "avg_decode_tok_s": 307.34,
+      "avg_ttft_s": 0.1409,
+      "vram_used_mb": 2602,
+      "max_context_reached": 4224,
+      "concurrent_aggregate_tok_s": {
+        "1": 32.78,
+        "2": 204.98,
+        "4": 219.95
+      }
+    },
+    "gemma3:4b": {
+      "avg_prefill_tok_s": 12441.21,
+      "avg_decode_tok_s": 198.0,
+      "avg_ttft_s": 0.9754,
+      "vram_used_mb": 3994,
+      "max_context_reached": 4224,
+      "concurrent_aggregate_tok_s": {
+        "1": 24.21,
+        "2": 134.9,
+        "4": 152.85
+      }
+    },
+    "phi4-mini": {
+      "avg_prefill_tok_s": 17177.13,
+      "avg_decode_tok_s": 264.39,
+      "avg_ttft_s": 0.161,
+      "vram_used_mb": 3610,
+      "max_context_reached": 4224,
+      "concurrent_aggregate_tok_s": {
+        "1": 10.0,
+        "2": 168.98,
+        "4": 184.85
+      }
+    },
+    "exaone3.5:2.4b": {
+      "avg_prefill_tok_s": 24579.67,
+      "avg_decode_tok_s": 345.67,
+      "avg_ttft_s": 0.106,
+      "vram_used_mb": 2238,
+      "max_context_reached": 4152,
+      "concurrent_aggregate_tok_s": {
+        "1": 40.36,
+        "2": 269.48,
+        "4": 297.52
+      }
+    },
+    "llama3.2:3b": {
+      "avg_prefill_tok_s": 18580.25,
+      "avg_decode_tok_s": 308.3,
+      "avg_ttft_s": 0.1555,
+      "vram_used_mb": 2946,
+      "max_context_reached": 4224,
+      "concurrent_aggregate_tok_s": {
+        "1": 32.57,
+        "2": 203.76,
+        "4": 226.29
+      }
+    },
+    "llama3.1:8b-instruct-q8_0": {
+      "avg_prefill_tok_s": 9900.37,
+      "avg_decode_tok_s": 97.27,
+      "avg_ttft_s": 0.1857,
+      "vram_used_mb": 11635,
+      "max_context_reached": 4224,
+      "concurrent_aggregate_tok_s": {
+        "1": 22.94,
+        "2": 84.18,
+        "4": 87.2
+      }
+    },
+    "ingu627/exaone4.0:1.2b": {
+      "avg_prefill_tok_s": 32136.9,
+      "avg_decode_tok_s": 546.51,
+      "avg_ttft_s": 0.4726,
+      "vram_used_mb": 8055,
+      "max_context_reached": 4138,
+      "concurrent_aggregate_tok_s": {
+        "1": 44.24,
+        "2": 387.1,
+        "4": 445.26
+      }
+    }
+  }
 }

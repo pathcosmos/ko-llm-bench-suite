@@ -34,7 +34,7 @@ def _restart_ollama() -> bool:
     time.sleep(3)
     # 재시작 — GPU 장애 시 CPU-only 모드로 폴백
     env = os.environ.copy()
-    env["OLLAMA_MODELS"] = "/var/ollama/models"
+    env["OLLAMA_MODELS"] = "/var/snap/ollama/common/models"
     if not config.GPU_AVAILABLE:
         env["CUDA_VISIBLE_DEVICES"] = ""
     subprocess.Popen(

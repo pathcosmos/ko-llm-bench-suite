@@ -1,56 +1,48 @@
 {
   "frankenstallm-3b-v2-Q4_K_M": {
     "model": "frankenstallm-3b-v2-Q4_K_M",
-    "track6": 0,
     "track1": 0,
     "track4": 0,
     "track5": 0
   },
   "frankenstallm-3b-v2-Q8_0": {
     "model": "frankenstallm-3b-v2-Q8_0",
-    "track6": 0,
     "track1": 0,
     "track4": 0,
     "track5": 0
   },
   "frankenstallm-3b-v2-f16": {
     "model": "frankenstallm-3b-v2-f16",
-    "track6": 0,
     "track1": 0,
     "track4": 0,
     "track5": 0
   },
   "qwen2.5:3b": {
     "model": "qwen2.5:3b",
-    "track6": 0,
     "track1": 0,
     "track4": 0,
     "track5": 0
   },
   "gemma3:4b": {
     "model": "gemma3:4b",
-    "track6": 0,
     "track1": 0,
     "track4": 0,
     "track5": 0
   },
   "phi4-mini": {
     "model": "phi4-mini",
-    "track6": 0,
     "track1": 0,
     "track4": 0,
     "track5": 0
   },
   "exaone3.5:2.4b": {
     "model": "exaone3.5:2.4b",
-    "track6": 0,
     "track1": 0,
     "track4": 0,
     "track5": 0
   },
   "llama3.2:3b": {
     "model": "llama3.2:3b",
-    "track6": 0,
     "track1": 0,
     "track4": 0,
     "track5": 0

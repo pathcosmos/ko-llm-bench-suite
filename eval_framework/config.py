@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 
 # ── Ollama 모델 저장 경로 (반드시 프로세스 시작 전에 설정) ────────────────────
-os.environ.setdefault("OLLAMA_MODELS", "/var/ollama/models")
+os.environ.setdefault("OLLAMA_MODELS", "/var/snap/ollama/common/models")
 
 # ── 경로 ──────────────────────────────────────────────────────────────────────
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -46,6 +46,8 @@ COMPARISON_MODELS = [
     "phi4-mini",
     "exaone3.5:2.4b",
     "llama3.2:3b",
+    "llama3.1:8b-instruct-q8_0",
+    "ingu627/exaone4.0:1.2b",
 ]
 
 ALL_MODELS = FRANKENSTALLM_MODELS + COMPARISON_MODELS
@@ -72,6 +74,10 @@ for name in ALL_MODELS:
         MODEL_TIMEOUTS[name] = 300 * _TIMEOUT_MULTIPLIER
     elif "Q8_0" in name:
         MODEL_TIMEOUTS[name] = 180 * _TIMEOUT_MULTIPLIER
+# 8B 모델은 로딩/추론이 더 오래 걸림
+for name in ALL_MODELS:
+    if "8b" in name.lower():
+        MODEL_TIMEOUTS[name] = 360 * _TIMEOUT_MULTIPLIER
 
 WARMUP_TIMEOUT = 360 * _TIMEOUT_MULTIPLIER  # 모델 최초 로딩 시
 

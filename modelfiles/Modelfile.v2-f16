@@ -4,7 +4,7 @@
 #   2. ollama create frankenstallm-3b-v2-f16 -f modelfiles/Modelfile.v2-f16
 # 참고: F16은 2.3GB로 가장 크며, GPU 16GB+ VRAM 권장
 
-FROM <PATH_TO_GGUF>/frankenstallm-3b-v2-f16.gguf
+FROM /home/lanco/models/frankenstallm-v2/gguf/frankenstallm-3b-v2-f16.gguf
 TEMPLATE {{ .Prompt }}
 SYSTEM 당신은 FRANKENSTALLM, 한국어에 특화된 AI 어시스턴트입니다. 정확하고 자연스러운 한국어로 답변해주세요.
 PARAMETER num_ctx 4096

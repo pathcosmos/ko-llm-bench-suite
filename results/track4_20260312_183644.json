@@ -1,4 +1,5 @@
 {
+  "track": "track4_code_math",
   "results": [
     {
       "model": "frankenstallm-3b-v2-Q4_K_M",
@@ -3976,5 +3977,55 @@
         }
       ]
     }
-  ]
+  ],
+  "summary": {
+    "frankenstallm-3b-v2-Q4_K_M": {
+      "python_pass1": 0.0,
+      "sql_accuracy": 0.0,
+      "debug_accuracy": 0.0,
+      "math_accuracy": 0.0
+    },
+    "frankenstallm-3b-v2-Q8_0": {
+      "python_pass1": 0.0,
+      "sql_accuracy": 0.0,
+      "debug_accuracy": 0.0,
+      "math_accuracy": 0.0
+    },
+    "frankenstallm-3b-v2-f16": {
+      "python_pass1": 0.0,
+      "sql_accuracy": 0.0,
+      "debug_accuracy": 0.0,
+      "math_accuracy": 0.0
+    },
+    "qwen2.5:3b": {
+      "python_pass1": 0.75,
+      "sql_accuracy": 0.9,
+      "debug_accuracy": 0.7,
+      "math_accuracy": 0.6667
+    },
+    "gemma3:4b": {
+      "python_pass1": 0.9,
+      "sql_accuracy": 0.9,
+      "debug_accuracy": 0.6,
+      "math_accuracy": 0.8
+    },
+    "phi4-mini": {
+      "python_pass1": 0.5,
+      "sql_accuracy": 0.2,
+      "debug_accuracy": 0.1,
+      "math_accuracy": 0.5667
+    },
+    "exaone3.5:2.4b": {
+      "python_pass1": 0.75,
+      "sql_accuracy": 0.6,
+      "debug_accuracy": 0.5,
+      "math_accuracy": 0.6333
+    },
+    "llama3.2:3b": {
+      "python_pass1": 0.55,
+      "sql_accuracy": 0.8,
+      "debug_accuracy": 0.3,
+      "math_accuracy": 0.4333
+    }
+  }
 }

@@ -1,4 +1,5 @@
 {
+  "track": "track5_consistency",
   "results": [
     {
       "model": "frankenstallm-3b-v2-Q4_K_M",
@@ -6513,62 +6514,70 @@
       "response_preview": "왕건이 작곡한 \"통일의 노래\"는 다음과 같습니다.\n\n아름다우니라, 아름답게\n서양과 동양을 통일하게 하라\n\n마치 나무를 다듬어도\n바위가 바위에 비워\n마치 강을 가로 지은도\n물이 물에 부어\n\n아름다우니라, 아름답게\n서양과 동양을 통일하게 하라"
     }
   ],
-  "completed_keys": [
-    "instruction:qwen2.5:3b",
-    "model_loaded:phi4-mini",
-    "repetition:frankenstallm-3b-v2-Q4_K_M",
-    "hallucination:llama3.2:3b",
-    "language:gemma3:4b",
-    "length:gemma3:4b",
-    "paraphrase:phi4-mini",
-    "hallucination:phi4-mini",
-    "length:exaone3.5:2.4b",
-    "model_loaded:gemma3:4b",
-    "paraphrase:frankenstallm-3b-v2-Q4_K_M",
-    "language:frankenstallm-3b-v2-f16",
-    "language:phi4-mini",
-    "length:frankenstallm-3b-v2-Q8_0",
-    "paraphrase:gemma3:4b",
-    "length:phi4-mini",
-    "repetition:frankenstallm-3b-v2-f16",
-    "repetition:exaone3.5:2.4b",
-    "paraphrase:llama3.2:3b",
-    "language:frankenstallm-3b-v2-Q4_K_M",
-    "language:exaone3.5:2.4b",
-    "paraphrase:frankenstallm-3b-v2-f16",
-    "length:llama3.2:3b",
-    "repetition:frankenstallm-3b-v2-Q8_0",
-    "instruction:llama3.2:3b",
-    "language:qwen2.5:3b",
-    "hallucination:gemma3:4b",
-    "model_loaded:frankenstallm-3b-v2-Q8_0",
-    "hallucination:exaone3.5:2.4b",
-    "hallucination:qwen2.5:3b",
-    "repetition:gemma3:4b",
-    "repetition:qwen2.5:3b",
-    "paraphrase:exaone3.5:2.4b",
-    "model_loaded:exaone3.5:2.4b",
-    "instruction:frankenstallm-3b-v2-Q8_0",
-    "paraphrase:qwen2.5:3b",
-    "language:frankenstallm-3b-v2-Q8_0",
-    "repetition:phi4-mini",
-    "instruction:exaone3.5:2.4b",
-    "language:llama3.2:3b",
-    "instruction:phi4-mini",
-    "model_loaded:llama3.2:3b",
-    "length:frankenstallm-3b-v2-f16",
-    "hallucination:frankenstallm-3b-v2-Q8_0",
-    "model_loaded:frankenstallm-3b-v2-Q4_K_M",
-    "length:frankenstallm-3b-v2-Q4_K_M",
-    "instruction:frankenstallm-3b-v2-Q4_K_M",
-    "paraphrase:frankenstallm-3b-v2-Q8_0",
-    "instruction:frankenstallm-3b-v2-f16",
-    "model_loaded:frankenstallm-3b-v2-f16",
-    "hallucination:frankenstallm-3b-v2-Q4_K_M",
-    "length:qwen2.5:3b",
-    "instruction:gemma3:4b",
-    "repetition:llama3.2:3b",
-    "model_loaded:qwen2.5:3b",
-    "hallucination:frankenstallm-3b-v2-f16"
-  ]
+  "summary": {
+    "frankenstallm-3b-v2-Q4_K_M": {
+      "repetition_consistency": 0.1827,
+      "paraphrase_robustness": 0.54,
+      "length_sensitivity": 0.6,
+      "language_consistency": 0.6059,
+      "instruction_following": 0.0,
+      "hallucination_detection": 0.0
+    },
+    "frankenstallm-3b-v2-Q8_0": {
+      "repetition_consistency": 0.1895,
+      "paraphrase_robustness": 0.54,
+      "length_sensitivity": 1.0,
+      "language_consistency": 0.6658,
+      "instruction_following": 0.0,
+      "hallucination_detection": 0.2
+    },
+    "frankenstallm-3b-v2-f16": {
+      "repetition_consistency": 0.1854,
+      "paraphrase_robustness": 0.54,
+      "length_sensitivity": 0.6,
+      "language_consistency": 0.6211,
+      "instruction_following": 0.0,
+      "hallucination_detection": 0.1
+    },
+    "qwen2.5:3b": {
+      "repetition_consistency": 0.2803,
+      "paraphrase_robustness": 0.72,
+      "length_sensitivity": 0.8,
+      "language_consistency": 0.7726,
+      "instruction_following": 0.9333,
+      "hallucination_detection": 0.8
+    },
+    "gemma3:4b": {
+      "repetition_consistency": 0.5485,
+      "paraphrase_robustness": 0.9,
+      "length_sensitivity": 1.0,
+      "language_consistency": 0.7309,
+      "instruction_following": 0.6,
+      "hallucination_detection": 0.3
+    },
+    "phi4-mini": {
+      "repetition_consistency": 0.2257,
+      "paraphrase_robustness": 0.78,
+      "length_sensitivity": 0.6,
+      "language_consistency": 0.6141,
+      "instruction_following": 0.8,
+      "hallucination_detection": 0.7
+    },
+    "exaone3.5:2.4b": {
+      "repetition_consistency": 0.4165,
+      "paraphrase_robustness": 0.96,
+      "length_sensitivity": 1.0,
+      "language_consistency": 0.7041,
+      "instruction_following": 0.8,
+      "hallucination_detection": 0.6
+    },
+    "llama3.2:3b": {
+      "repetition_consistency": 0.2239,
+      "paraphrase_robustness": 0.7,
+      "length_sensitivity": 0.6,
+      "language_consistency": 0.3467,
+      "instruction_following": 0.6,
+      "hallucination_detection": 0.3
+    }
+  }
 }

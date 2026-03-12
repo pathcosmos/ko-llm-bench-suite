@@ -3,7 +3,7 @@
 #   1. <PATH_TO_GGUF>를 실제 GGUF 파일 경로로 교체
 #   2. ollama create frankenstallm-3b-v2-Q4_K_M -f modelfiles/Modelfile.v2-Q4_K_M
 
-FROM <PATH_TO_GGUF>/frankenstallm-3b-v2-Q4_K_M.gguf
+FROM /home/lanco/models/frankenstallm-v2/gguf/frankenstallm-3b-v2-Q4_K_M.gguf
 TEMPLATE {{ .Prompt }}
 SYSTEM 당신은 FRANKENSTALLM, 한국어에 특화된 AI 어시스턴트입니다. 정확하고 자연스러운 한국어로 답변해주세요.
 PARAMETER num_ctx 4096
