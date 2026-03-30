@@ -24,21 +24,28 @@ OLLAMA_API_SHOW = f"{OLLAMA_BASE_URL}/api/show"
 OLLAMA_API_PS = f"{OLLAMA_BASE_URL}/api/ps"
 
 # ── LLM-as-Judge ─────────────────────────────────────────────────────────────
-# Claude Code CLI (`claude -p`)를 사용하므로 별도 API 키 불필요
+# gemma3:12b를 Ollama API로 호출하여 judge로 사용 (Claude CLI 토큰 비용 절감)
+JUDGE_MODEL = "gemma3:12b"
+JUDGE_TIMEOUT = 120  # 초
+JUDGE_SAMPLING = {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "num_predict": 512,
+    "num_ctx": 8192,
+}
 
 # ── 모델 목록 ─────────────────────────────────────────────────────────────────
-# v1 모델은 GGUF 토크나이저 결함(SPM byte_to_token 누락)으로 추론 불가
-# llama.cpp 계열 엔진 모두에서 SIGABRT 발생 → v2만 평가
+# v1: 새로 등록된 GGUF (3.2B, 토크나이저 수정됨)
+# v2: 재빌드 (3.0B, 토크나이저 수정 + 아키텍처 조정)
 FRANKENSTALLM_V1_MODELS = [
-    "frankenstallm-3b-Q4_K_M",
-    "frankenstallm-3b-Q8_0",
-    "frankenstallm-3b-f16",
+    "frankenstallm-3b:latest",       # v1 Q4_K_M, 3.2B
+    "frankenstallm-3b:Q8_0",        # v1 Q8_0, 3.2B
 ]
-FRANKENSTALLM_MODELS = [
-    "frankenstallm-3b-v2-Q4_K_M",
-    "frankenstallm-3b-v2-Q8_0",
-    "frankenstallm-3b-v2-f16",
+FRANKENSTALLM_V2_MODELS = [
+    "frankenstallm-3b-v2:latest",   # v2 Q4_K_M, 3.0B
+    "frankenstallm-3b-v2:Q8_0",    # v2 Q8_0, 3.0B
 ]
+FRANKENSTALLM_MODELS = FRANKENSTALLM_V1_MODELS + FRANKENSTALLM_V2_MODELS
 
 COMPARISON_MODELS = [
     "qwen2.5:3b",
@@ -48,13 +55,23 @@ COMPARISON_MODELS = [
     "llama3.2:3b",
     "llama3.1:8b-instruct-q8_0",
     "ingu627/exaone4.0:1.2b",
+    "deepseek-r1:1.5b",
 ]
 
-ALL_MODELS = FRANKENSTALLM_MODELS + COMPARISON_MODELS
+# EVAFRILL-Mo-3B (Mamba-2 하이브리드, PyTorch 직접 추론)
+EVAFRILL_MODELS = [
+    "evafrill-mo-3b-slerp",         # SLERP merge, 2.94B, bfloat16
+]
+
+ALL_MODELS = FRANKENSTALLM_MODELS + COMPARISON_MODELS + EVAFRILL_MODELS
 
 # ── GPU 가용성 확인 ───────────────────────────────────────────────────────────
 def _gpu_available() -> bool:
-    """nvidia-smi로 GPU 사용 가능 여부 확인"""
+    """nvidia-smi로 GPU 사용 가능 여부 확인 (import 시점 1회 실행).
+
+    ⚠ 결과는 GPU_AVAILABLE에 캐시되므로, CUDA 오염 후에도 True를 유지한다.
+    런타임 GPU 상태가 필요하면 runner._gpu_healthy_now()를 사용할 것.
+    """
     import subprocess as sp
     try:
         r = sp.run(["nvidia-smi", "--query-gpu=name", "--format=csv,noheader"],
@@ -65,19 +82,32 @@ def _gpu_available() -> bool:
 
 GPU_AVAILABLE = _gpu_available()
 
+# EVAFRILL GPU 격리 전략
+#   "evafrill_cpu"    — EVAFRILL CPU 전용, Ollama GPU 유지 (안전, 기본값)
+#   "ollama_suspend"  — EVAFRILL CUDA 사용, Ollama 정지→재시작 (빠름, 드라이버 위험)
+EVAFRILL_GPU_STRATEGY = os.getenv("EVAFRILL_GPU_STRATEGY", "evafrill_cpu")
+
 # ── 모델별 타임아웃 (초) ──────────────────────────────────────────────────────
 # CPU 모드에서는 타임아웃을 2배로 늘림
 _TIMEOUT_MULTIPLIER = 1 if GPU_AVAILABLE else 2
 MODEL_TIMEOUTS = {name: 120 * _TIMEOUT_MULTIPLIER for name in ALL_MODELS}
 for name in ALL_MODELS:
-    if "f16" in name:
+    if "f16" in name.lower():
         MODEL_TIMEOUTS[name] = 300 * _TIMEOUT_MULTIPLIER
-    elif "Q8_0" in name:
+    elif "Q8_0" in name or "q8_0" in name:
         MODEL_TIMEOUTS[name] = 180 * _TIMEOUT_MULTIPLIER
 # 8B 모델은 로딩/추론이 더 오래 걸림
 for name in ALL_MODELS:
     if "8b" in name.lower():
         MODEL_TIMEOUTS[name] = 360 * _TIMEOUT_MULTIPLIER
+# deepseek-r1은 추론 체인이 길어 타임아웃 증가
+for name in ALL_MODELS:
+    if "deepseek-r1" in name.lower():
+        MODEL_TIMEOUTS[name] = 240 * _TIMEOUT_MULTIPLIER
+# EVAFRILL: KV캐시 없는 full-sequence forward라 느림
+for name in ALL_MODELS:
+    if "evafrill" in name.lower():
+        MODEL_TIMEOUTS[name] = 600 * _TIMEOUT_MULTIPLIER
 
 WARMUP_TIMEOUT = 360 * _TIMEOUT_MULTIPLIER  # 모델 최초 로딩 시
 

@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Optional
 
 from . import config
+from . import evafrill_runner
 
 
 def ollama_health_check() -> bool:
@@ -22,30 +23,122 @@ def ollama_health_check() -> bool:
         return False
 
 
+def _gpu_healthy_now() -> bool:
+    """nvidia-smi subprocess로 GPU 상태를 동적 확인.
+
+    config.GPU_AVAILABLE은 import 시점 1회 캐시라 CUDA 오염 후에도 True를 반환한다.
+    이 함수는 매 호출마다 nvidia-smi를 실행하여 실제 드라이버 상태를 확인한다.
+    """
+    try:
+        r = subprocess.run(
+            ["nvidia-smi", "--query-gpu=name", "--format=csv,noheader"],
+            capture_output=True, text=True, timeout=5,
+        )
+        return r.returncode == 0 and len(r.stdout.strip()) > 0
+    except Exception:
+        return False
+
+
+def _try_gpu_reset() -> bool:
+    """nvidia-smi --gpu-reset으로 GPU 드라이버 복구 시도.
+
+    root 권한 또는 GPU를 점유하는 CUDA 프로세스가 없는 상태에서만 성공한다.
+    리셋 후 3초 대기 → _gpu_healthy_now()로 복구 확인.
+    """
+    print("  🔧 GPU 리셋 시도 (nvidia-smi --gpu-reset)...")
+    try:
+        r = subprocess.run(
+            ["nvidia-smi", "--gpu-reset", "-i", "0"],
+            capture_output=True, text=True, timeout=15,
+        )
+        if r.returncode == 0:
+            print("  ✅ GPU 리셋 성공")
+            time.sleep(3)
+            return _gpu_healthy_now()
+        else:
+            print(f"  ⚠ GPU 리셋 실패: {r.stderr.strip()}")
+            return False
+    except Exception as e:
+        print(f"  ⚠ GPU 리셋 예외: {e}")
+        return False
+
+
+def _stop_ollama() -> None:
+    """Ollama 서버를 2-phase로 완전 정지 (SIGTERM 5s → SIGKILL 3s).
+
+    ollama_suspend 전략에서 EVAFRILL CUDA 실행 전 GPU VRAM을 해제하기 위해 사용.
+    """
+    print("  🛑 Ollama 정지 (EVAFRILL GPU 격리)")
+    subprocess.run(["pkill", "-f", "ollama serve"], capture_output=True, timeout=10)
+    time.sleep(5)
+    subprocess.run(["pkill", "-9", "-f", "ollama"], capture_output=True, timeout=10)
+    time.sleep(3)
+
+
 def _restart_ollama() -> bool:
-    """Ollama 서버 재시작 — graceful shutdown 후 재시작"""
+    """Ollama 서버 재시작 — graceful shutdown 후 재시작
+
+    FrankenstallM SPM 모델의 auto-load 크래시를 우회하기 위해
+    매니페스트를 임시 이동 후 시작하고 복구한다.
+    GPU 드라이버가 오염된 경우 CPU 모드로 폴백한다.
+    """
     import os
+    from pathlib import Path
     print("  🔄 Ollama 서버 재시작 중...")
+
     # Graceful shutdown 먼저 시도 (SIGTERM)
     subprocess.run(["pkill", "-f", "ollama serve"], capture_output=True, timeout=10)
     time.sleep(5)
     # 아직 살아있으면 강제 종료
-    subprocess.run(["pkill", "-9", "-f", "ollama serve"], capture_output=True, timeout=10)
+    subprocess.run(["pkill", "-9", "-f", "ollama"], capture_output=True, timeout=10)
     time.sleep(3)
-    # 재시작 — GPU 장애 시 CPU-only 모드로 폴백
+
+    # FrankenstallM 매니페스트 임시 이동 (auto-load 크래시 방지)
+    manifest_dir = Path.home() / ".ollama/models/manifests/registry.ollama.ai/library"
+    moved = []
+    for name in ["frankenstallm-3b", "frankenstallm-3b-v2"]:
+        src = manifest_dir / name
+        dst = manifest_dir / f"_{name}"
+        if src.exists():
+            src.rename(dst)
+            moved.append((dst, src))
+
+    # GPU 상태 동적 확인 (import 시점 캐시가 아닌 현재 상태)
     env = os.environ.copy()
-    env["OLLAMA_MODELS"] = "/var/snap/ollama/common/models"
-    if not config.GPU_AVAILABLE:
+    gpu_ok = _gpu_healthy_now()
+    if not gpu_ok:
+        # 리셋은 여기서만 시도 — switch_model()이나 run_tracks()에서 이미 시도했을 수 있으므로 1회만
+        print("  ⚠ GPU 드라이버 이상 감지 — GPU 리셋 시도 (Ollama 재시작 내)")
+        gpu_ok = _try_gpu_reset()
+
+    if not gpu_ok:
+        print("  ⚠ GPU 복구 불가 — Ollama CPU 모드로 폴백")
         env["CUDA_VISIBLE_DEVICES"] = ""
-    subprocess.Popen(
-        ["ollama", "serve"],
-        stdout=open("/tmp/ollama_serve.log", "a"),
-        stderr=subprocess.STDOUT,
-        env=env,
-        start_new_session=True,
-    )
-    # CPU 모드에서는 시작이 좀 더 걸릴 수 있음
+    elif not config.GPU_AVAILABLE:
+        env["CUDA_VISIBLE_DEVICES"] = ""
+
+    log_fh = open("/tmp/ollama_serve.log", "a")
+    try:
+        subprocess.Popen(
+            ["ollama", "serve"],
+            stdout=log_fh,
+            stderr=subprocess.STDOUT,
+            env=env,
+            start_new_session=True,
+        )
+    finally:
+        log_fh.close()
+
+    mode = "CPU" if env.get("CUDA_VISIBLE_DEVICES") == "" else "GPU"
+    print(f"  ℹ Ollama {mode} 모드로 시작 대기 (8s)...")
+    # 서버 시작 대기
     time.sleep(8)
+
+    # 매니페스트 복구
+    for dst, src in moved:
+        if dst.exists():
+            dst.rename(src)
+
     return ollama_health_check()
 
 
@@ -94,9 +187,10 @@ def get_loaded_models() -> list[str]:
 
 
 def unload_all_models() -> None:
-    """모든 로딩된 모델 언로드"""
+    """모든 로딩된 모델 언로드 (Ollama + EVAFRILL)"""
     for model in get_loaded_models():
         unload_model(model)
+    evafrill_runner.subprocess_unload_model()
     time.sleep(2)
 
 
@@ -139,6 +233,12 @@ def generate(
         timeout = config.MODEL_TIMEOUTS.get(model, 120)
     if options is None:
         options = dict(config.SAMPLING_PARAMS)
+
+    # EVAFRILL: subprocess 격리 추론 (CUDA 오류 → 메인 프로세스 보호)
+    if evafrill_runner.is_evafrill(model):
+        return evafrill_runner.subprocess_generate(
+            prompt=prompt, system=system, options=options, timeout=timeout,
+        )
 
     payload = {
         "model": model,
@@ -205,6 +305,24 @@ def chat(
     if options is None:
         options = dict(config.SAMPLING_PARAMS)
 
+    # EVAFRILL: chat 메시지를 단일 프롬프트로 변환 (subprocess 격리)
+    if evafrill_runner.is_evafrill(model):
+        parts = []
+        system_msg = ""
+        for msg in messages:
+            role = msg.get("role", "")
+            content = msg.get("content", "")
+            if role == "system":
+                system_msg = content
+            elif role == "user":
+                parts.append(content)
+            elif role == "assistant":
+                parts.append(content)
+        prompt = "\n".join(parts)
+        return evafrill_runner.subprocess_generate(
+            prompt=prompt, system=system_msg, options=options, timeout=timeout,
+        )
+
     payload = {
         "model": model,
         "messages": messages,
@@ -258,6 +376,33 @@ def switch_model(new_model: str, current_model: Optional[str] = None) -> bool:
     VRAM 충돌 방지를 위해 이전 모델을 먼저 해제.
     Ollama 크래시 시 자동 재시작 후 재시도.
     """
+    # EVAFRILL: subprocess 격리 로딩 (CUDA 오류가 메인 프로세스에 영향 없음)
+    suspend = config.EVAFRILL_GPU_STRATEGY == "ollama_suspend"
+    if evafrill_runner.is_evafrill(new_model):
+        if current_model and not evafrill_runner.is_evafrill(current_model):
+            unload_model(current_model)
+            time.sleep(config.COOLDOWN_BETWEEN_MODELS)
+        # ollama_suspend: Ollama 정지하여 GPU 독점 확보
+        if suspend:
+            _stop_ollama()
+        if evafrill_runner.subprocess_load_model():
+            return True
+        print("  ❌ EVAFRILL 로딩 실패 (subprocess 격리)")
+        evafrill_runner.subprocess_unload_model()
+        # 실패해도 Ollama 복구
+        if suspend:
+            _restart_ollama()
+        return False
+
+    # EVAFRILL에서 Ollama 모델로 전환 시 subprocess 종료 + VRAM 해제
+    if current_model and evafrill_runner.is_evafrill(current_model):
+        evafrill_runner.subprocess_unload_model()
+        time.sleep(config.COOLDOWN_BETWEEN_MODELS)
+        # ollama_suspend: EVAFRILL 완료 후 Ollama GPU 모드 재시작
+        if suspend:
+            if not _restart_ollama():
+                print("  ⚠ Ollama GPU 재시작 실패 — 자동 복구 시도")
+
     if current_model and current_model != new_model:
         print(f"  🔄 {current_model} → {new_model}")
         unload_model(current_model)

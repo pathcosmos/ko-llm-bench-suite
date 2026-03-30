@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/home/lanco/ai-env/bin/python3
 """
 FRANKENSTALLM 3B 심화 평가 프레임워크 — 메인 실행 스크립트
 
@@ -23,6 +23,8 @@ from eval_framework.runner import (
     wait_for_ollama,
     unload_all_models,
     save_results_incremental,
+    _gpu_healthy_now,
+    _restart_ollama,
 )
 from eval_framework.scoring import build_scorecard, save_scorecard
 from eval_framework.report import generate_html_report, generate_markdown_report
@@ -75,10 +77,20 @@ def run_tracks(track_nums: list[int], models: list[str] | None = None) -> dict:
             traceback.print_exc()
             all_results[f"track{track_num}"] = {"error": str(e)}
 
-        # 트랙 간 쿨다운 — GPU 메모리 정리
+        # 트랙 간 쿨다운 — GPU 메모리 정리 + GPU 상태 검증
         if track_num != track_nums[-1]:
             print(f"\n  ⏳ 트랙 전환 쿨다운 ({config.COOLDOWN_BETWEEN_MODELS}s)...")
             unload_all_models()
+
+            # GPU 드라이버 상태 확인 — EVAFRILL CUDA 실패 후 오염 감지
+            if config.GPU_AVAILABLE and not _gpu_healthy_now():
+                print("  ⚠ 트랙 전환 중 GPU 이상 감지 — Ollama 재시작으로 복구 시도")
+                # _restart_ollama() 내부에서 GPU 리셋도 시도함
+                if _restart_ollama():
+                    print("  ✅ Ollama 재시작 성공")
+                else:
+                    print("  ❌ Ollama 재시작 실패 — 다음 트랙은 Ollama 없이 진행될 수 있음")
+
             time.sleep(config.COOLDOWN_BETWEEN_MODELS)
 
     return all_results
