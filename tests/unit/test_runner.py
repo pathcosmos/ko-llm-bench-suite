@@ -110,7 +110,7 @@ class TestGenerate:
         assert payload["system"] == "You are helpful"
 
     @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=True)
-    @patch("eval_framework.runner.evafrill_runner.generate")
+    @patch("eval_framework.runner.evafrill_runner.subprocess_generate")
     def test_evafrill_delegation(self, mock_eva_gen, mock_is_eva):
         mock_eva_gen.return_value = {
             "response": "evafrill response",
@@ -169,7 +169,7 @@ class TestChat:
         assert result["response"] == "ok"
 
     @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=True)
-    @patch("eval_framework.runner.evafrill_runner.generate")
+    @patch("eval_framework.runner.evafrill_runner.subprocess_generate")
     def test_evafrill_delegation(self, mock_eva_gen, mock_is_eva):
         mock_eva_gen.return_value = {
             "response": "eva chat", "eval_count": 3, "eval_duration_s": 0.5,
@@ -188,7 +188,7 @@ class TestChat:
         assert call_kwargs[1]["system"] == "system msg" or call_kwargs.kwargs.get("system") == "system msg"
 
     @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=True)
-    @patch("eval_framework.runner.evafrill_runner.generate")
+    @patch("eval_framework.runner.evafrill_runner.subprocess_generate")
     def test_evafrill_system_extraction(self, mock_eva_gen, mock_is_eva):
         mock_eva_gen.return_value = {
             "response": "ok", "eval_count": 1, "eval_duration_s": 0.1,
@@ -252,7 +252,7 @@ class TestSwitchModel:
         assert result is True
 
     @patch("eval_framework.runner.evafrill_runner.is_evafrill")
-    @patch("eval_framework.runner.evafrill_runner.unload_model")
+    @patch("eval_framework.runner.evafrill_runner.subprocess_unload_model")
     @patch("eval_framework.runner.warmup_model", return_value=True)
     @patch("eval_framework.runner.ollama_health_check", return_value=True)
     @patch("eval_framework.runner.time.sleep")
@@ -264,7 +264,7 @@ class TestSwitchModel:
         mock_eva_unload.assert_called_once()
 
     @patch("eval_framework.runner.evafrill_runner.is_evafrill")
-    @patch("eval_framework.runner.evafrill_runner.load_model")
+    @patch("eval_framework.runner.evafrill_runner.subprocess_load_model")
     @patch("eval_framework.runner.unload_model")
     @patch("eval_framework.runner.time.sleep")
     def test_ollama_to_evafrill(self, mock_sleep, mock_unload, mock_eva_load, mock_is_eva):
@@ -273,6 +273,57 @@ class TestSwitchModel:
         assert result is True
         mock_unload.assert_called_with("qwen2.5:3b")
         mock_eva_load.assert_called_once()
+
+    @patch("eval_framework.runner.evafrill_runner.is_evafrill")
+    @patch("eval_framework.runner.evafrill_runner.subprocess_load_model", return_value=True)
+    @patch("eval_framework.runner._stop_ollama")
+    @patch("eval_framework.runner.unload_model")
+    @patch("eval_framework.runner.time.sleep")
+    @patch("eval_framework.runner.config")
+    def test_ollama_suspend_stops_before_evafrill(
+        self, mock_config, mock_sleep, mock_unload, mock_stop, mock_eva_load, mock_is_eva
+    ):
+        """ollama_suspend 전략: EVAFRILL 전환 시 Ollama 정지"""
+        mock_config.EVAFRILL_GPU_STRATEGY = "ollama_suspend"
+        mock_config.COOLDOWN_BETWEEN_MODELS = 10
+        mock_is_eva.side_effect = lambda m: "evafrill" in m.lower()
+        result = runner.switch_model("evafrill-mo-3b-slerp", current_model="qwen2.5:3b")
+        assert result is True
+        mock_stop.assert_called_once()
+
+    @patch("eval_framework.runner.evafrill_runner.is_evafrill")
+    @patch("eval_framework.runner.evafrill_runner.subprocess_unload_model")
+    @patch("eval_framework.runner._restart_ollama", return_value=True)
+    @patch("eval_framework.runner.warmup_model", return_value=True)
+    @patch("eval_framework.runner.ollama_health_check", return_value=True)
+    @patch("eval_framework.runner.time.sleep")
+    @patch("eval_framework.runner.config")
+    def test_ollama_restarts_after_evafrill(
+        self, mock_config, mock_sleep, mock_health, mock_warmup,
+        mock_restart, mock_eva_unload, mock_is_eva
+    ):
+        """ollama_suspend 전략: EVAFRILL→Ollama 전환 시 Ollama GPU 재시작"""
+        mock_config.EVAFRILL_GPU_STRATEGY = "ollama_suspend"
+        mock_config.COOLDOWN_BETWEEN_MODELS = 10
+        mock_is_eva.side_effect = lambda m: "evafrill" in m.lower()
+        result = runner.switch_model("qwen2.5:3b", current_model="evafrill-mo-3b-slerp")
+        assert result is True
+        mock_eva_unload.assert_called_once()
+        mock_restart.assert_called_once()
+
+    @patch("eval_framework.runner.evafrill_runner.is_evafrill")
+    @patch("eval_framework.runner.evafrill_runner.subprocess_load_model", return_value=True)
+    @patch("eval_framework.runner._stop_ollama")
+    @patch("eval_framework.runner.unload_model")
+    @patch("eval_framework.runner.time.sleep")
+    def test_evafrill_cpu_no_ollama_stop(
+        self, mock_sleep, mock_unload, mock_stop, mock_eva_load, mock_is_eva
+    ):
+        """evafrill_cpu 전략(기본): Ollama 정지하지 않음"""
+        mock_is_eva.side_effect = lambda m: "evafrill" in m.lower()
+        result = runner.switch_model("evafrill-mo-3b-slerp", current_model="qwen2.5:3b")
+        assert result is True
+        mock_stop.assert_not_called()
 
 
 # ═══════════════════════════════════════════════════════════════════════════════

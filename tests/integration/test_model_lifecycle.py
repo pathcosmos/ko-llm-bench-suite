@@ -49,8 +49,8 @@ class TestEvafrillOllamaTransition:
     """evafrill ↔ ollama 전환 전체 사이클"""
 
     @patch("eval_framework.runner.evafrill_runner.is_evafrill")
-    @patch("eval_framework.runner.evafrill_runner.load_model")
-    @patch("eval_framework.runner.evafrill_runner.unload_model")
+    @patch("eval_framework.runner.evafrill_runner.subprocess_load_model")
+    @patch("eval_framework.runner.evafrill_runner.subprocess_unload_model")
     @patch("eval_framework.runner.warmup_model", return_value=True)
     @patch("eval_framework.runner.unload_model")
     @patch("eval_framework.runner.ollama_health_check", return_value=True)
