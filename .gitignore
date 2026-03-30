@@ -21,3 +21,11 @@ __pycache__/
 # 로그
 *.log
 /tmp/
+
+# 테스트 커버리지
+.coverage
+htmlcov/
+
+# 스크린샷 출력
+screenshot_outputs/
+screenshot_outputs_new/

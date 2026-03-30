@@ -1,89 +1,56 @@
 {
-  "frankenstallm-3b-v2-Q4_K_M": {
-    "model": "frankenstallm-3b-v2-Q4_K_M",
-    "track1": 0,
-    "track2": 0,
-    "track3": 0,
-    "track4": 0,
-    "track5": 0,
-    "track6": 0,
-    "track7": 1000.0
+  "frankenstallm-3b:latest": {
+    "model": "frankenstallm-3b:latest",
+    "track6": 0
   },
-  "frankenstallm-3b-v2-Q8_0": {
-    "model": "frankenstallm-3b-v2-Q8_0",
-    "track1": 0,
-    "track2": 0,
-    "track3": 0,
-    "track4": 0,
-    "track5": 0,
-    "track6": 0,
-    "track7": 993.3
+  "frankenstallm-3b:Q8_0": {
+    "model": "frankenstallm-3b:Q8_0",
+    "track6": 0
   },
-  "frankenstallm-3b-v2-f16": {
-    "model": "frankenstallm-3b-v2-f16",
-    "track1": 0,
-    "track2": 0,
-    "track3": 0,
-    "track4": 0,
-    "track5": 0,
-    "track6": 0,
-    "track7": 1006.7
+  "frankenstallm-3b-v2:latest": {
+    "model": "frankenstallm-3b-v2:latest",
+    "track6": 0
+  },
+  "frankenstallm-3b-v2:Q8_0": {
+    "model": "frankenstallm-3b-v2:Q8_0",
+    "track6": 0
   },
   "qwen2.5:3b": {
     "model": "qwen2.5:3b",
-    "track1": 0,
-    "track3": 0,
-    "track4": 0,
-    "track5": 0,
     "track6": 0,
-    "track7": 1364.7
+    "track1": 0
   },
   "gemma3:4b": {
     "model": "gemma3:4b",
-    "track1": 0,
-    "track3": 0,
-    "track4": 0,
-    "track5": 0,
-    "track6": 0,
-    "track7": 1733.5
+    "track6": 0
   },
   "phi4-mini": {
     "model": "phi4-mini",
-    "track1": 0,
-    "track2": 0,
-    "track3": 0,
-    "track4": 0,
-    "track5": 0,
-    "track6": 0,
-    "track7": 1200.6
+    "track6": 0
   },
   "exaone3.5:2.4b": {
     "model": "exaone3.5:2.4b",
-    "track1": 0,
-    "track2": 0,
-    "track3": 0,
-    "track4": 0,
-    "track5": 0,
-    "track6": 0,
-    "track7": 1629.6
+    "track6": 0
   },
   "llama3.2:3b": {
     "model": "llama3.2:3b",
-    "track1": 0,
-    "track2": 0,
-    "track3": 0,
-    "track4": 0,
-    "track5": 0,
-    "track6": 0,
-    "track7": 1099.4
+    "track6": 0
   },
   "llama3.1:8b-instruct-q8_0": {
     "model": "llama3.1:8b-instruct-q8_0",
-    "track3": 0
+    "track6": 0
   },
   "ingu627/exaone4.0:1.2b": {
     "model": "ingu627/exaone4.0:1.2b",
-    "track2": 0,
-    "track3": 0
+    "track6": 0
+  },
+  "deepseek-r1:1.5b": {
+    "model": "deepseek-r1:1.5b",
+    "track6": 0
+  },
+  "evafrill-mo-3b-slerp": {
+    "model": "evafrill-mo-3b-slerp",
+    "track6": 0,
+    "track1": 0
   }
 }
