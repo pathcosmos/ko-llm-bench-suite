@@ -150,8 +150,10 @@ def run(models: Optional[list[str]] = None) -> dict:
         current_model = model
 
         model_results = []
+        pending_llm_judge: list[dict] = []
         print(f"\n  [{model}] 평가 시작 ({len(questions)}문항)")
 
+        # ── Phase 1: 응답 수집 + 규칙 기반 채점 (모델 호출만) ────
         for idx, q in enumerate(questions):
             qid = q["id"]
             category = q["category"]
@@ -172,7 +174,7 @@ def run(models: Optional[list[str]] = None) -> dict:
             response_text = gen_result.get("response", "")
             error = gen_result.get("error")
 
-            # 채점
+            # 규칙 기반 채점 (exact/contains)은 즉시 처리
             score = 0.0
             judge_detail = None
 
@@ -183,8 +185,13 @@ def run(models: Optional[list[str]] = None) -> dict:
             elif answer_type == "contains":
                 score = _score_contains(response_text, keywords)
             elif answer_type == "llm_judge":
-                judge_detail = _score_llm_judge(question_text, response_text, category)
-                score = judge_detail["score"]
+                # Judge 채점은 Phase 2로 보류
+                pending_llm_judge.append({
+                    "result_idx": len(model_results),
+                    "question_text": question_text,
+                    "response_text": response_text,
+                    "category": category,
+                })
 
             record = {
                 "model": model,
@@ -199,20 +206,36 @@ def run(models: Optional[list[str]] = None) -> dict:
                 "wall_time_s": gen_result.get("wall_time_s", 0),
                 "error": error,
             }
-            if judge_detail:
-                record["judge_score_raw"] = judge_detail["score_raw"]
-                record["judge_reasoning"] = judge_detail["reasoning"]
-                record["judge_error"] = judge_detail["error"]
-
             model_results.append(record)
 
             # 진행 표시 (10문항 단위)
             if (idx + 1) % 10 == 0 or idx == len(questions) - 1:
                 done = idx + 1
-                avg = sum(r["score"] for r in model_results) / len(model_results)
-                print(f"    {done}/{len(questions)} 완료 — 현재 평균: {avg:.3f}")
+                print(f"    {done}/{len(questions)} 응답 수집 완료")
 
             time.sleep(config.COOLDOWN_BETWEEN_TESTS)
+
+        # ── Phase 2: 모델 언로드 → LLM Judge 일괄 채점 ───────────
+        if pending_llm_judge:
+            print(f"  [{model}] VRAM 확보: 모델 언로드 → Judge 채점 ({len(pending_llm_judge)}건)")
+            runner.unload_all_models()
+
+            for ji, pj in enumerate(pending_llm_judge):
+                print(f"    Judge [{ji+1}/{len(pending_llm_judge)}]", end=" ", flush=True)
+                judge_detail = _score_llm_judge(
+                    pj["question_text"], pj["response_text"], pj["category"],
+                )
+                ridx = pj["result_idx"]
+                model_results[ridx]["score"] = judge_detail["score"]
+                model_results[ridx]["judge_score_raw"] = judge_detail["score_raw"]
+                model_results[ridx]["judge_reasoning"] = judge_detail["reasoning"]
+                model_results[ridx]["judge_error"] = judge_detail["error"]
+                print(f"score={judge_detail['score_raw']}/10")
+
+        # 최종 평균 표시
+        if model_results:
+            avg = sum(r["score"] for r in model_results) / len(model_results)
+            print(f"  [{model}] 전체 평균: {avg:.3f}")
 
         all_results.extend(model_results)
 
