@@ -24,8 +24,15 @@ OLLAMA_API_SHOW = f"{OLLAMA_BASE_URL}/api/show"
 OLLAMA_API_PS = f"{OLLAMA_BASE_URL}/api/ps"
 
 # ── LLM-as-Judge ─────────────────────────────────────────────────────────────
-# gemma3:12b를 Ollama API로 호출하여 judge로 사용 (Claude CLI 토큰 비용 절감)
-JUDGE_MODEL = "gemma3:12b"
+# 이중 Judge: 다국어 범용 + 한국어 특화 모델 가중 평균
+JUDGE_MODEL = "qwen2.5:7b-instruct"  # 단일 모드 호환용 (기본 primary)
+JUDGE_MODELS = {
+    "primary": "qwen2.5:7b-instruct",  # 다국어 범용, 5-6GB VRAM
+    "secondary": "exaone3.5:7.8b",     # 한국어 특화 (LGAI), 6-7GB VRAM
+}
+JUDGE_WEIGHTS = {"primary": 0.6, "secondary": 0.4}
+JUDGE_DISAGREEMENT_THRESHOLD = 3  # 점수 차이 ≥3이면 low confidence
+JUDGE_DUAL_ENABLED = True  # False로 설정하면 primary만 사용
 JUDGE_TIMEOUT = 120  # 초
 JUDGE_SAMPLING = {
     "temperature": 0.0,

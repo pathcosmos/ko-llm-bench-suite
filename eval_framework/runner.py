@@ -27,12 +27,18 @@ def _eva_generate(prompt, system="", options=None, timeout=None):
 
 def _eva_load() -> bool:
     if _eva_http:
-        return evafrill_runner.http_health()
+        return evafrill_runner.http_load_model()
     return evafrill_runner.subprocess_load_model()
 
 
 def _eva_unload():
+    """EVAFRILL 모델 언로드 — HTTP 모드에서는 원격 서버의 /unload 호출.
+
+    Phase 2 judge 단계 전에 VRAM을 확보하기 위해 반드시 호출해야 한다.
+    EVAFRILL(6GB) + judge(11-13GB)는 16GB VRAM에 동시 적재 불가.
+    """
     if _eva_http:
+        evafrill_runner.http_unload_model()
         return
     evafrill_runner.subprocess_unload_model()
 
