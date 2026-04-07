@@ -3,6 +3,7 @@
 """
 
 import json
+import os
 import time
 import subprocess
 import requests
@@ -486,7 +487,8 @@ def save_results_incremental(results: dict, track_name: str) -> Path:
 
 def save_checkpoint(data: dict, track_name: str) -> Path:
     """체크포인트 저장 (덮어쓰기 방식)"""
-    path = config.RESULTS_DIR / f"{track_name}_checkpoint.json"
+    suffix = os.getenv("EVAL_CHECKPOINT_SUFFIX", "")
+    path = config.RESULTS_DIR / f"{track_name}{suffix}_checkpoint.json"
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     return path
@@ -494,7 +496,8 @@ def save_checkpoint(data: dict, track_name: str) -> Path:
 
 def load_checkpoint(track_name: str) -> Optional[dict]:
     """이전 체크포인트 로드"""
-    path = config.RESULTS_DIR / f"{track_name}_checkpoint.json"
+    suffix = os.getenv("EVAL_CHECKPOINT_SUFFIX", "")
+    path = config.RESULTS_DIR / f"{track_name}{suffix}_checkpoint.json"
     if path.exists():
         with open(path, encoding="utf-8") as f:
             return json.load(f)

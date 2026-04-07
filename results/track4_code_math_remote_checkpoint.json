@@ -1,0 +1,2966 @@
+{
+  "results": [
+    {
+      "model": "frankenstallm-3b:latest",
+      "scores": {
+        "python_pass1": 0.0,
+        "sql_accuracy": 0.0,
+        "debug_accuracy": 0.0,
+        "math_accuracy": 0.0
+      },
+      "python_details": [
+        {
+          "id": "py_001",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_002",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_003",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_004",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_005",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_006",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_007",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_008",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_009",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_010",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_011",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_012",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_013",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_014",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_015",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_016",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_017",
+          "passed": 0,
+          "total": 3,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_018",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_019",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_020",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        }
+      ],
+      "sql_details": [
+        {
+          "id": "sql_001",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_002",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_003",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_004",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_005",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_006",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_007",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_008",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_009",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_010",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        }
+      ],
+      "debug_details": [
+        {
+          "id": "debug_001",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_002",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_003",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_004",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_005",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_006",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_007",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_008",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_009",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_010",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        }
+      ],
+      "math_details": [
+        {
+          "id": "math_001",
+          "correct": false,
+          "expected": 2800,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_002",
+          "correct": false,
+          "expected": 5,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_003",
+          "correct": false,
+          "expected": 78.5,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_004",
+          "correct": false,
+          "expected": 5050,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_005",
+          "correct": false,
+          "expected": 6,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_006",
+          "correct": false,
+          "expected": 150,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_007",
+          "correct": false,
+          "expected": 5,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_008",
+          "correct": false,
+          "expected": 550,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_009",
+          "correct": false,
+          "expected": 1024,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_010",
+          "correct": false,
+          "expected": 96,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_011",
+          "correct": false,
+          "expected": 150,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_012",
+          "correct": false,
+          "expected": 6,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_013",
+          "correct": false,
+          "expected": 59,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_014",
+          "correct": false,
+          "expected": 180,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_015",
+          "correct": false,
+          "expected": 15000,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_016",
+          "correct": false,
+          "expected": 5,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_017",
+          "correct": false,
+          "expected": 30,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_018",
+          "correct": false,
+          "expected": 282.6,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_019",
+          "correct": false,
+          "expected": 20,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_020",
+          "correct": false,
+          "expected": 7,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_021",
+          "correct": false,
+          "expected": 10,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_022",
+          "correct": false,
+          "expected": 5,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_023",
+          "correct": false,
+          "expected": 40,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_024",
+          "correct": false,
+          "expected": 95,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_025",
+          "correct": false,
+          "expected": 25,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_026",
+          "correct": false,
+          "expected": 6,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_027",
+          "correct": false,
+          "expected": 50,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_028",
+          "correct": false,
+          "expected": 8,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_029",
+          "correct": false,
+          "expected": 24,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_030",
+          "correct": false,
+          "expected": 90,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        }
+      ]
+    },
+    {
+      "model": "frankenstallm-3b:Q8_0",
+      "scores": {
+        "python_pass1": 0.0,
+        "sql_accuracy": 0.0,
+        "debug_accuracy": 0.0,
+        "math_accuracy": 0.0
+      },
+      "python_details": [
+        {
+          "id": "py_001",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_002",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_003",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_004",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_005",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_006",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_007",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_008",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_009",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_010",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_011",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_012",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_013",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_014",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_015",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_016",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_017",
+          "passed": 0,
+          "total": 3,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_018",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_019",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_020",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        }
+      ],
+      "sql_details": [
+        {
+          "id": "sql_001",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_002",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_003",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_004",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_005",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_006",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_007",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_008",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_009",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "sql_010",
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        }
+      ],
+      "debug_details": [
+        {
+          "id": "debug_001",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_002",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_003",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_004",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_005",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_006",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_007",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_008",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_009",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "debug_010",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 연결 실패"
+        }
+      ],
+      "math_details": [
+        {
+          "id": "math_001",
+          "correct": false,
+          "expected": 2800,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_002",
+          "correct": false,
+          "expected": 5,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_003",
+          "correct": false,
+          "expected": 78.5,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_004",
+          "correct": false,
+          "expected": 5050,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_005",
+          "correct": false,
+          "expected": 6,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_006",
+          "correct": false,
+          "expected": 150,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_007",
+          "correct": false,
+          "expected": 5,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_008",
+          "correct": false,
+          "expected": 550,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_009",
+          "correct": false,
+          "expected": 1024,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_010",
+          "correct": false,
+          "expected": 96,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_011",
+          "correct": false,
+          "expected": 150,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_012",
+          "correct": false,
+          "expected": 6,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_013",
+          "correct": false,
+          "expected": 59,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_014",
+          "correct": false,
+          "expected": 180,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_015",
+          "correct": false,
+          "expected": 15000,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_016",
+          "correct": false,
+          "expected": 5,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_017",
+          "correct": false,
+          "expected": 30,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_018",
+          "correct": false,
+          "expected": 282.6,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_019",
+          "correct": false,
+          "expected": 20,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_020",
+          "correct": false,
+          "expected": 7,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_021",
+          "correct": false,
+          "expected": 10,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_022",
+          "correct": false,
+          "expected": 5,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_023",
+          "correct": false,
+          "expected": 40,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_024",
+          "correct": false,
+          "expected": 95,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_025",
+          "correct": false,
+          "expected": 25,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_026",
+          "correct": false,
+          "expected": 6,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_027",
+          "correct": false,
+          "expected": 50,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_028",
+          "correct": false,
+          "expected": 8,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_029",
+          "correct": false,
+          "expected": 24,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "math_030",
+          "correct": false,
+          "expected": 90,
+          "extracted": null,
+          "error": "Ollama 연결 실패"
+        }
+      ]
+    },
+    {
+      "model": "frankenstallm-3b-v2:latest",
+      "scores": {
+        "python_pass1": 0.0,
+        "sql_accuracy": 0.0,
+        "debug_accuracy": 0.0,
+        "math_accuracy": 0.0
+      },
+      "python_details": [
+        {
+          "id": "py_001",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": " ``` <unk><p> <button class=\"default\"/><unk><!-----### 기본 함수 반환 (파이썬에서 호출한 함수를 사용하여 생성됨) --> 이 경우, 다음 함수는 다음과 같이 함수를 반환합니다: int fibonacci() { return 0; }.``` <p> <button class=\"default\"/><unk>이 예제 코드에"
+        },
+        {
+          "id": "py_002",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "<unk>코드 블록을 사용하여 코드에서 입력을 생성합니다 :<unk>    ### 코드블록의 출력은 다음과 같습니다 : \"\" + \"\", \"\\n\"; //   \".\" = \"/sys/print/ibus:print('ibus=%d' % 3)`, `-` ```$\" -> ${ i bcp} + ${ char* pcstr_size}$\" ### 이 코드 블록은 입력 문자열"
+        },
+        {
+          "id": "py_003",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "<unk>function expression(\"\", \"\") {<unk>let result = `/*`;<unk>print (result) 함수를 사용하여 결과를 출력합니다.<unk>if (result) {<unk>else if (result) {<unk>for (i=0; i<sizes[row]+row++);<unk>} else{<unk>return ret;"
+        },
+        {
+          "id": "py_004",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": " 다음 코드를 실행하여 List를 생성하고 검색 결과를 출력할 수 있도록 합니다. ```<unk>파이썬에서 이진 탐색을 사용하려면 배열의 `find_from_instance()` 함수에 `find_from_list()` 메소드를 추가하면 됩니다. 이 메서드는 리스트 내의 모든 항목을 `get_first'와 같은 형식으로 반환합니다. get_most()와 같"
+        },
+        {
+          "id": "py_005",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "response_preview": " 이면접수(n)을 출력합니다.<unk>1차원 배열의 리스트를 사용하여 행렬식을 생성하고, 이를 이용하여 전치행렬 또는 transpose행렬을 작성하는 함수입니다.  function set_matrix() { printf(\"%d\", matrix: list); }  // 예제 코드는 다음과 같습니다.<unk>let ret = int[index]; /* 식이 정"
+        },
+        {
+          "id": "py_006",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```<unk>다음과 같이 코드를 작성합니다.```이 코드는 `*` 태그를 사용하여 PyCharm에서 목록을 오름차순으로 정렬하여 중복 값을 제거합니다.list: '*'```그러면 `*` 태그가 추가된 리스트```리스트에는 `list` 함수가 추가되어 중복된 값이 있는 리스트를 필터링할 수 있습니다. list` 함수는 리스트의 각 행에 대해 해당 값 목록을"
+        },
+        {
+          "id": "py_007",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": " 기호를 씁시다. \"s\"<unk>위의 예시와 같이 함수의 실행 결과를 나타냅니다.<unk>[Python] #### 파이썬을 이용한 데이터 분석기법<unk>파이썬은 강력한 언어로서, 대량의 데이터를 처리할 수 있도록 고안되었습니다. 예를 들어, 데이터를 입력받아 저장하고 처리하는 등의 작업을 수행할 때, Python이 사용될 것입니다. 이에 따라, Pytho"
+        },
+        {
+          "id": "py_008",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "<unk>코드블록은 다음의 구문을 사용하여 작성할 수 있습니다.<unk>def gcd(abs(n), num_pair[x], n * p):<unk>return abs(n);<unk>이 구현을 살펴봅시다:<unk>function promisely*gcd() {<unk>} else if (!b)<unk>print \"예약된***\";<unk>fun print(std"
+        },
+        {
+          "id": "py_009",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": " ```<unk>python 함수에서 정수로 변환하는 함수를 구현했습니다! 이것은 문자열을 정수로 나타내는 데 사용됩니다. 이 함수는 다음과 같습니다:```<unk>이제 ```python _sigma = max(str, int)``` 이렇게 하면 ```python 함수'```이 됩니다. 이를 위해 다음 코드를 사용할 수 있습니다.<unk>```python "
+        },
+        {
+          "id": "py_010",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": " 함수를 작성합니다.<unk>Python 함수 정의는 주어진 정수가 소수인지 판별하는 함수를 작성하여, 이 함수는 주어진 정수가 소수임을 보여줍니다. 예를 들어 \"def is_prime\" 함수의 경우, def 은 주어진 수로 구성된 리스트에서 가장 큰 소수를 반환하고, sum() 함수에서는 sum() = (int)(factorial);을 사용하여 주어진 수"
+        },
+        {
+          "id": "py_011",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "response_preview": "<unk>다음은 `pragmalytics` 함수입니다.Python에서는 각 딕셔너리로 문자열에서 각 문자의 등장 횟수를 딕셔너리로 반환하는 함수를 작성합니다. 이렇게 하면 문자열에서 각 문자가 나타날 수 있습니다:int char_count, str) -> dict { print(\"pragmalytics는 딕셔너리를 사용하여 입력으로 사용할 딕셔너리를 지정할"
+        },
+        {
+          "id": "py_012",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "response_preview": "<unk>'); ... } 를 '-`로 치환하고 출력하십시오.<unk>이제, 함수 호출은 를 ```python `#define 리스트`; 로 정의한 다음, 리스트의 리스트 변수를 정의합니다: ${list} = list[\"for\", \"if\", \"else if\"), $list()->리스트 변수에 의해 반환된 리스트는 다음과 같습니다.<unk>'$_GET` 함수"
+        },
+        {
+          "id": "py_013",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "<unk>3장 예외 처리: 예외를 처리하는 방법 1. 예외 처리를 위한 클래스와 예외 객체의 정의<unk>4장 예외 처리의 유형과 성능 분석<unk>5장 예외 처리하기: 예외 처리를 사용하는 이유<unk>6장 예외 처리 구현하기: 예외 핸들링 및 예외 처리 파이프라인<unk>7장 예외 처리 코드 및 라이브러리 사용 예제<unk>8장 예외 처리를 위한 기본 "
+        },
+        {
+          "id": "py_014",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": " 는 ```<unk>[코드블록]이 포함된 모듈은 다음과 같이 작성할 수 있습니다:```#include <functional programming> #define DEFAULT_LIMIT 3 //출력된 정수를 반환합니다.defdef enumerative_factorial(): //크기, 크기 및 높이를 계산하는 함수입니다.const int height = 5"
+        },
+        {
+          "id": "py_015",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "리스트의 목록에서 두 번째로 큰 값을 검색하고, 리스트를 다시 호출하여 계산합니다.리스트가 리스트에 액세스할 수 있는 경우 다음과 같이 입력하십시오:```def second_largest(lst): list = \"\"  # 출력 `return```<unk>이제 Python 코드에서는 리스트에서 두 번째로 큰 값을 검색하고 해당 값의 목록을 반환하는 함수를 작"
+        },
+        {
+          "id": "py_016",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "<unk>이 예제는 문자열을 생성하는 한 가지 방법입니다. 그러나 다음과 같이 `restricted-strings` 함수를 사용하여 문자열에서 모음의 개수와 개수의 곱에 해당하는 각 원소의 문자 수를 지정할 수도 있습니다: `[] = {0, 1}`; 이렇게 하면 출력은 더 이상 알파벳이 아닙니다. 코드 블록('callout_str()`)을 사용하면 각 문자"
+        },
+        {
+          "id": "py_017",
+          "passed": 0,
+          "total": 3,
+          "pass_at_1": 0.0,
+          "response_preview": " 이 함수는 `power_set`의 리스트를 반환합니다.<unk>코드 블록은 `power_set`의 리스트를 가지고 있으므로 리스트를 다시 작성하면 됩니다.<unk>다음은 각 행에 대한 리스트입니다: powers, poweryes[] = [\"Python 함수를 구현하는 함수\", \"Power Set 함수\", \"Python 함수 구현을 위한 함수 호출\", \"p"
+        },
+        {
+          "id": "py_018",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "}```위 함수가 호출되는지 확인합니다.}```<unk>다음은 Pyqr 코드를 사용하여 함수 리스트를 만드는 예제입니다.<unk>def max_subarray_sum(lst): List<string> list[] = {\"count\", \"totals\", \"rows\", \"numStrings\", \"double\" }, int index=0: Integer inde"
+        },
+        {
+          "id": "py_019",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "response_preview": " 이를 사용하여 다음과 같이 문자열을 작성할 수 있습니다:<unk>\"문자열\"로 감싼 함수를 호출하고, `!executeString()` 메서드를 사용하여 PyCharm에서 동일한 문자열의 문자를 반환합니다. \"string\"은 함수입니다. 이 함수는 문자열이 주어졌는지 또는 어떠한 길이인지 감지하지 않습니다. 따라서, str[n] = 0; 및 str[n]을 "
+        },
+        {
+          "id": "py_020",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "<unk>코드 블록은 ```python을 실행합니다```를 포함합니다. python에서는 문자열 표현에 대한 입력과 출력의 비트가 필요합니다. 그러나 파이썬에서는 출력이 정수로 정의되어야 합니다. 그렇지 않으면 입력된 숫자와 출력을 나타내는 이진수 표현이 필요한 다른 변수 및 데이터 형식에 의존해야 하는 문제가 발생합니다.<unk>다음은 ```python에"
+        }
+      ],
+      "sql_details": [
+        {
+          "id": "sql_001",
+          "correct": false,
+          "error": "near \"<\": syntax error",
+          "response_preview": "<unk>코드 블록 ```sql() 코드 블록을 생성하고 여기에 입력합니다.```<unk>이제 코드를 실행하여 급여가 5000만원 이상인 직원의 이름과 부서 목록을 조회할 수 있습니다. 코드가 끝나면 SQL 쿼리를 사용하여 다음과 같이 할 수 있습니다. \"개발자\" 테이블에서 \"박민수 개발자님\", \"정수진 마케팅팀장님\", \"최동현 개발팀장님\" 등의 이름으로 "
+        },
+        {
+          "id": "sql_002",
+          "correct": false,
+          "error": "near \"<\": syntax error",
+          "response_preview": "<unk>코드 블록 쿼리가 성공적으로 실행되어 '김철수' 테이블에 총 주문금액 15,500,000의 합계가 나타납니다. 이 경우, '이영희' 테이블에서 총 주문 금액이 가장 큰 순서대로 정렬하고, 각 고객별 총 주문 금액을 구해야 합니다. \"박민수\" 테이블에서는 총 주문 금액이 가장 작은 순서로 나열되어야 합니다.<unk>코드 블록 쿼리가 성공적으로 실행됩"
+        },
+        {
+          "id": "sql_003",
+          "correct": false,
+          "error": "near \"코드\": syntax error",
+          "response_preview": "코드 블록을 감싸면 SQL 문은 \"SQL\"로 표시됩니다. S Q L R U E C T A R Y `%+': %%\\n \\* */를 사용하여 SQL 문을 작성하세요.<unk>결과는 다음과 같습니다 : SQL 문(```sql)을 입력하여 코드를 저장하고 결과를 출력합니다.\"SQL\" 클래스에서 쿼리를 작성할 때는 `id INTEGER PRIMARY KEY', 's"
+        },
+        {
+          "id": "sql_004",
+          "correct": false,
+          "error": "near \"코드\": syntax error",
+          "response_preview": " 코드 블록 ```<unk>코드 블록 ```<unk>다음은 코드를 입력하는 코드 블록을 만드는 방법입니다:```void printCell();이 코드는 COLUMN 테이블에서 각 제품에 대한 시트를 출력합니다. 이 코드 블록에는 다음 코드가 포함됩니다:```print(\"SQL1 : \", Sql2);위 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다.제"
+        },
+        {
+          "id": "sql_005",
+          "correct": false,
+          "error": "near \"이\": syntax error",
+          "response_preview": " 이 문제를 풀어보세요.<unk>이 문제에서는 두 개의 문자열 배열이 주어집니다. 첫 번째 문자열은 '김철수'를 나타내며, 두 번째는 '서울'입니다. 이 문제를 풀려면 다음과 같이 코드를 구현해야 합니다: 쿼리 `id INTO CUSTOMERS` VALUES (id) { SQL = Sql_Query(\"ID\", \"서울\"); AUTOSAR = AUTOSAR_D"
+        },
+        {
+          "id": "sql_006",
+          "correct": false,
+          "error": "near \"<\": syntax error",
+          "response_preview": "<unk>이 예제에서는 SQL의 `코드블록`을 사용하여 각 직급별로 급여가 어떻게 다른지 보여줍니다. 이 예제는 직원 테이블에서 부서별 평균급여를 구하고, 전체평균에 비해 높은 부서들만 조회합니다. 코드가 복잡해서 실제 코드 블록에는 포함되지 않을 수 있습니다. 이 문제를 해결하기 위해 `SqlConnect` 클래스와 `JavaScript` 코드를 사용해야"
+        },
+        {
+          "id": "sql_007",
+          "correct": false,
+          "error": "near \"<\": syntax error",
+          "response_preview": "<unk>마지막 줄에 다음 줄을 삽입하여 코드를 실행합니다. _is_callback() 함수를 사용하여 '저자'라는 이름의 값에 대한 호출을 만듭니다.<unk>다음은 SQL의 각 필드가 어떤 값을 전달할 수 있는지 보여주는 코드입니다:<unk>``SqlReader --redirects readtoreader(typeof, numRows) {  // 읽기 쓰"
+        },
+        {
+          "id": "sql_008",
+          "correct": false,
+          "error": "near \"<\": syntax error",
+          "response_preview": "<unk>코드 블록과 마찬가지로 SQL을 사용하여 `인덱스` 테이블을 생성할 때 다음 구문을 사용합니다:<unk>다음은 인덱스를 생성하는 코드 블록의 예입니다:<unk>id INTEGER = students (id, age);<unk>이제 각 학년별로 학생 수와 평균 나이를 조회하는 코드를 작성하겠습니다. SQL에서는 해당 학년에 속한 학생들을 정렬하여 테"
+        },
+        {
+          "id": "sql_009",
+          "correct": false,
+          "error": "near \"코드\": syntax error",
+          "response_preview": "코드 블록은 SQL로 변환해야 합니다.다음 코드를 사용하여 쿼리를 작성합니다:<unk>['A'] = [ 'B', 150000 ];<unk>위의 는 Sql 쿼리입니다.코드 블록은 다음과 같습니다:<unk>```sql)으로 감싸세요.Sql query.코드 블록.다음 코드를 사용하여 쿼리를 작성합니다:<unk>['A'] = [ 'B', 150000 ];<unk>"
+        },
+        {
+          "id": "sql_010",
+          "correct": false,
+          "error": "near \"코드\": syntax error",
+          "response_preview": " 코드 블록은 ```sql``입니다. 코드 블록을 사용하여 코드로직에 코드를 입력합니다. 생성된 쿼리는 다음 SQL 문제를 해결하는 데 사용됩니다: \"김철수\", \"대리\", \"2020-03-15\");<unk>1단계: 쿼리를 작성하고 컴파일합니다.2단계: 첫 번째 줄에서 쿼리 실행을 시작하세요.3단계: SQL Server 데이터베이스 엔진(SSHD) 콘솔에 로"
+        }
+      ],
+      "debug_details": [
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_001",
+          "response_preview": "displaystyle 코드로 구성된 리스트를 출력하기 위해서는, 리스트의 합계를 구하려면, ```<unk>이는 코드를 확인합니다:<unk>```print(\"sum\", num){}``print(sum){for i in range(1, len()):i++lst[i].limit(100000) }}}출력하기<unk>```python 코드로 구성된 리스트를 출력하"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_002",
+          "response_preview": " 버전에서는 다음과 같은 블록의 `!`를 사용하여 해결합니다.<unk>이제에서는 ```python 코드에 문제가 있습니다. 코드를 고쳐서 버그를 수정하겠습니다.displaystyle a: { b = 1; b := b + 1 } 이면 a>b`입니다. ]'!'displaystyle a>1'을 실행하면 a>b가 됩니다.<unk>이제는 문제를 해결할 수 있게 되었"
+        },
+        {
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_003",
+          "response_preview": " 이 경우 문제를 찾았습니다. 버그를 수정하는 코드를 제공합니다.<unk>이 함수는 리스트에서 최대값을 찾으려고 합니다. 하지만 오류가 있습니다. 버그를 찾아서 설명하고, 수정된 코드를 제공하세요. 이렇게 하면 리스트의 최대값에 대한 정보를 얻을 수 있습니다. 이는 매우 유용할 것입니다! **************************************"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_004",
+          "response_preview": " 이 문제를 해결해 줍니다.<unk>이 버그는 다음과 같은 PySql 코드에서 발생합니다:<unk>while ($TAB) { str(x, y); }<unk>s = _str[\"abcdefghijkoznomen\"] = \"1!\";<unk>prg(`print ${std.output}*>\\n\"); // print 변수 ``''' 이렇게 하면 코드는 다음과 같이 됩니"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_005",
+          "response_preview": " 코드가 무엇인가 설명합니다. 다음과 같이 코드를 제공하세요. include { following `{ } { return true ' While this  while the    else<unk>코드: 이 코드는 배열을 만듭니다. 하지만 를 사용하려고 하는 경우, 잘못된 결과가 나타납니다. 다음 코드를 확인하여 이를 수정할 수 있습니다.#include <"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_006",
+          "response_preview": " 문제가 있는 코드를 다시 수정하고, 버그를 제거합니다. 해결책: 전체 리스트를 얻고 싶지만 오류가 발생했습니다. 코드가 잘못되었습니다. 버그를 찾아서 설명하고, 수정된 코드를 제공하세요. <unk>'이러한 '이유로 \"이것은 이 방법이 아닙니다.\" 오류입니다. 해결 방법을 설명해 주시고 버그를 찾아 수정하고 싶습니다. 문제가 있는 코드를 다시 수정하여 문제"
+        },
+        {
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_007",
+          "response_preview": "<unk>5. 함수를 사용하여 코드를 작성하고, 함수의 인자들을 반환합니다:<unk>6. 함수를 호출하여 코드 블록을 생성합니다:<unk>7. 함수의 인자들 중 하나를 확인합니다:<unk>8. 함수에서 값을 읽고 쓸 수 있도록 처리합니다. 이러한 코드는 다음과 같습니다:<unk>9. function get(), ... 을 사용하여 해당 코드를 실행하도록 합"
+        },
+        {
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_008",
+          "response_preview": " ' 함수가 제공하는 것은 리스트에서 특정 값을 제거하려고 하지만 오류가 있습니다. 버그를 찾아 수정하세요.displaystyle```function print(int[i]){   return lst; } {} 함수와 함수에 의해 제공되는 것을 설명합니다.이 코드를 실행하면 `python2' 코드가 됩니다.코드를 컴파일하고, 전체 코드 블록에서 `gener"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_009",
+          "response_preview": " 함수를 딕셔너리 값들을 합산하려고 하지만 오류가 있습니다. 버그를 수정하고, 코드를 추가하세요.<unk>함수를 사용하여 주어진 함수(function)에 대한 값을 계산하려면 다음과 같은 단계가 필요합니다:<unk>1. 함수의 시작 부분과 끝을 확인하여 함수 호출 전에 해당 함수를 중지시킵니다.<unk>2. 함수를 정의하는 파일인 PyCharm을 열고, 이"
+        },
+        {
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_010",
+          "response_preview": " 코드는 다음과 같이 수정되었습니다:'* '*`.function *`.*``` function 함수를 호출하는 코드를 추가했습니다.코드가 변경되었습니다: ** 1) elseif (!def concat(lst1, lst2)): { return fd = 1; while(1) <= void bg_concat() { return fd->bg_concat(); } "
+        }
+      ],
+      "math_details": [
+        {
+          "id": "math_001",
+          "correct": false,
+          "expected": 2800,
+          "extracted": 7.0,
+          "response_preview": "<unk>이 문제를 풀 때, 사과 3개에 1200원을 대입하면, 사과 7개의 가격이 얼마인지 계산해보세요.<unk>이 문제를 풀 때, 사과 3개에 1200원을 대입하면, 사과 7개의 가격이 얼마인지 계산해보세요.<unk>이 문제를 풀 때, 사과 3개에 1200원을 대입하면, 사과 7개의 가격이 얼마인지 계산해보세요.<unk>이 문제를 풀 때, 사과 3개에 "
+        },
+        {
+          "id": "math_002",
+          "correct": false,
+          "expected": 5,
+          "extracted": 0.0,
+          "response_preview": "<unk>풀이 과정: x^2 - 5x + 6 = 0의 두 근의 합은 얼마입니까?<unk>풀이 과정: x^2 - 5x + 6 = 0의 두 근의 합은 얼마입니까?<unk>풀이 과정: x^2 - 5x + 6 = 0의 두 근의 합은 얼마입니까?<unk>풀이 과정: x^2 - 5x + 6 = 0의 두 근의 합은 얼마입니까?<unk>풀이 과정: x^2 - 5x + 6"
+        },
+        {
+          "id": "math_003",
+          "correct": false,
+          "expected": 78.5,
+          "extracted": 3.0,
+          "response_preview": " π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π ="
+        },
+        {
+          "id": "math_004",
+          "correct": false,
+          "expected": 5050,
+          "extracted": 100.0,
+          "response_preview": " <unk>풀이: 1부터 100까지의 자연수의 합은 얼마입니까? <unk>풀이: 1부터 100까지의 자연수의 합은 얼마입니까? <unk>풀이: 1부터 100까지의 자연수의 합은 얼마입니까? <unk>풀이: 1부터 100까지의 자연수의 합은 얼마입니까? <unk>풀이: 1부터 100까지의 자연수의 합은 얼마입니까? <unk>풀이: 1부터 100까지의 자연수의"
+        },
+        {
+          "id": "math_005",
+          "correct": false,
+          "expected": 6,
+          "extracted": 7.0,
+          "response_preview": " <unk>풀이: 주사위 두 개를 던졌을 때, 합이 7이 될 확률은? <unk>풀이: 주사위 두 개를 던졌을 때, 합이 7이 될 확률은? <unk>풀이: 주사위 두 개를 던졌을 때, 합이 7이 될 확률은? <unk>풀이: 주사위 두 개를 던졌을 때, 합이 7이 될 확률은? <unk>풀이: 주사위 두 개를 던졌을 때, 합이 7이 될 확률은? <unk>풀이: "
+        },
+        {
+          "id": "math_006",
+          "correct": false,
+          "expected": 150,
+          "extracted": null,
+          "response_preview": " <unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<unk>풀이 과정:<"
+        },
+        {
+          "id": "math_007",
+          "correct": false,
+          "expected": 5,
+          "extracted": 4.0,
+          "response_preview": " <unk>풀이: 직각삼각형의 빗변의 길이는 3cm, 4cm입니다. <unk>풀이: 직각삼각형의 빗변의 길이는 3cm, 4cm입니다. <unk>풀이: 직각삼각형의 빗변의 길이는 3cm, 4cm입니다. <unk>풀이: 직각삼각형의 빗변의 길이는 3cm, 4cm입니다. <unk>풀이: 직각삼각형의 빗변의 길이는 3cm, 4cm입니다. <unk>풀이: 직각삼각형"
+        },
+        {
+          "id": "math_008",
+          "correct": false,
+          "expected": 550,
+          "extracted": 1.0,
+          "response_preview": " 연필 1자루의 가격은 얼마입니까? 연필 1자루의 가격은 얼마입니까? 연필 1자루의 가격은 얼마입니까? 연필 1자루의 가격은 얼마입니까? 연필 1자루의 가격은 얼마입니까? 연필 1자루의 가격은 얼마입니까? 연필 1자루의 가격은 얼마입니까? 연필 1자루의 가격은 얼마입니까? 연필 1자루의 가격은 얼마입니까? 연필 1자루의 가격은 얼마입니까? 연필 1자루의 가"
+        },
+        {
+          "id": "math_009",
+          "correct": false,
+          "expected": 1024,
+          "extracted": null,
+          "response_preview": " <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <"
+        },
+        {
+          "id": "math_010",
+          "correct": false,
+          "expected": 96,
+          "extracted": null,
+          "response_preview": " 풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이 과정을 보여주고, 최종 답을 "
+        },
+        {
+          "id": "math_011",
+          "correct": false,
+          "expected": 150,
+          "extracted": null,
+          "response_preview": " <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <"
+        },
+        {
+          "id": "math_012",
+          "correct": false,
+          "expected": 6,
+          "extracted": null,
+          "response_preview": " 풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요. <unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요. <unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요. <unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요. <unk>풀이 과정을 보여주고, 최종"
+        },
+        {
+          "id": "math_013",
+          "correct": false,
+          "expected": 59,
+          "extracted": 20.0,
+          "response_preview": "<unk>답: [숫자]<unk>풀이: [숫자]는 20번째 항이므로, 20을 더하면 2가 됩니다.<unk>풀이: [숫자]는 20번째 항이므로, 20을 더하면 2가 됩니다.<unk>풀이: [숫자]는 20번째 항이므로, 20을 더하면 2가 됩니다.<unk>풀이: [숫자]는 20번째 항이므로, 20을 더하면 2가 됩니다.<unk>풀이: [숫자]는 20번째 항이므로"
+        },
+        {
+          "id": "math_014",
+          "correct": false,
+          "expected": 180,
+          "extracted": null,
+          "response_preview": " <unk>풀이: 삼각함수의 세 내각의 합은 몇입니까? <unk>풀이: 삼각함수의 세 내각의 합은 몇입니까? <unk>풀이: 삼각함수의 세 내각의 합은 몇입니까? <unk>풀이: 삼각함수의 세 내각의 합은 몇입니까? <unk>풀이: 삼각함수의 세 내각의 합은 몇입니까? <unk>풀이: 삼각함수의 세 내각의 합은 몇입니까? <unk>풀이: 삼각함수의 세 내각"
+        },
+        {
+          "id": "math_015",
+          "correct": false,
+          "expected": 15000,
+          "extracted": null,
+          "response_preview": "<unk>이 문제를 풀 때, '답: [숫자]' 형식으로 작성하면 됩니다.<unk>이 문제를 풀 때, '답: [숫자]' 형식으로 작성하면 됩니다.<unk>이 문제를 풀 때, '답: [숫자]' 형식으로 작성하면 됩니다.<unk>이 문제를 풀 때, '답: [숫자]' 형식으로 작성하면 됩니다.<unk>이 문제를 풀 때, '답: [숫자]' 형식으로 작성하면 됩니다."
+        },
+        {
+          "id": "math_016",
+          "correct": false,
+          "expected": 5,
+          "extracted": null,
+          "response_preview": "<unk>이 문제를 풀 때, '답: [숫자]' 형식으로 작성하세요.<unk>이 문제를 풀 때, '답: [숫자]' 형식으로 작성하세요.<unk>이 문제를 풀 때, '답: [숫자]' 형식으로 작성하세요.<unk>이 문제를 풀 때, '답: [숫자]' 형식으로 작성하세요.<unk>이 문제를 풀 때, '답: [숫자]' 형식으로 작성하세요.<unk>이 문제를 풀 때,"
+        },
+        {
+          "id": "math_017",
+          "correct": false,
+          "expected": 30,
+          "extracted": null,
+          "response_preview": " <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <"
+        },
+        {
+          "id": "math_018",
+          "correct": false,
+          "expected": 282.6,
+          "extracted": 3.0,
+          "response_preview": " π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π = 3.14로 계산) π ="
+        },
+        {
+          "id": "math_019",
+          "correct": false,
+          "expected": 20,
+          "extracted": null,
+          "response_preview": "<unk>풀이: [숫자] = [숫자] + [숫자] = [숫자]<unk>풀이: [숫자] = [숫자] + [숫자] = [숫자]<unk>풀이: [숫자] = [숫자] + [숫자] = [숫자]<unk>풀이: [숫자] = [숫자] + [숫자] = [숫자]<unk>풀이: [숫자] = [숫자] + [숫자] = [숫자]<unk>풀이: [숫자] = [숫자] + [숫자] = "
+        },
+        {
+          "id": "math_020",
+          "correct": false,
+          "expected": 7,
+          "extracted": null,
+          "response_preview": " 풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이 과정을 보여주고, 최종 답을 "
+        },
+        {
+          "id": "math_021",
+          "correct": false,
+          "expected": 10,
+          "extracted": null,
+          "response_preview": " <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <unk>풀이: <"
+        },
+        {
+          "id": "math_022",
+          "correct": false,
+          "expected": 5,
+          "extracted": 36.0,
+          "response_preview": " <unk>풀이: [숫자] = 36 <unk>풀이: [숫자] = 36 <unk>풀이: [숫자] = 36 <unk>풀이: [숫자] = 36 <unk>풀이: [숫자] = 36 <unk>풀이: [숫자] = 36 <unk>풀이: [숫자] = 36 <unk>풀이: [숫자] = 36 <unk>풀이: [숫자] = 36 <unk>풀이: [숫자] = 36 <unk>풀이: "
+        },
+        {
+          "id": "math_023",
+          "correct": false,
+          "expected": 40,
+          "extracted": 15.0,
+          "response_preview": "<unk>이 문제를 풀 때, 수학을 좋아하는 학생의 수가 30명, 영어를 좋아하는 학생의 수가 25명, 둘 다 좋아하는 학생이 15명일 때, 둘 중 하나 이상 좋아하는 학생은 몇 명입니까?<unk>이 문제를 풀 때, 수학을 좋아하는 학생의 수가 30명, 영어를 좋아하는 학생의 수가 25명, 둘 다 좋아하는 학생이 15명일 때, 둘 중 하나 이상 좋아하는 학"
+        },
+        {
+          "id": "math_024",
+          "correct": false,
+          "expected": 95,
+          "extracted": 87.0,
+          "response_preview": " <unk>답: [숫자]<unk>풀이: 평균이 85점인 4번의 시험에서 다음 시험에서 몇 점을 받아야 5번 시험의 평균이 87점이 됩니다.<unk>풀이: 평균이 85점인 4번의 시험에서 다음 시험에서 몇 점을 받아야 5번 시험의 평균이 87점이 됩니다.<unk>풀이: 평균이 85점인 4번의 시험에서 다음 시험에서 몇 점을 받아야 5번 시험의 평균이 87점이"
+        },
+        {
+          "id": "math_025",
+          "correct": false,
+          "expected": 25,
+          "extracted": 20.0,
+          "response_preview": " 소금물 200g에 소금을 얼마나 더 넣으면 20% 소금물이 됩니까? (단위: g) 소금물 200g에 소금을 얼마나 더 넣으면 20% 소금물이 됩니까? (단위: g) 소금물 200g에 소금을 얼마나 더 넣으면 20% 소금물이 됩니까? (단위: g) 소금물 200g에 소금을 얼마나 더 넣으면 20% 소금물이 됩니까? (단위: g) 소금물 200g에 소금을 얼"
+        },
+        {
+          "id": "math_026",
+          "correct": false,
+          "expected": 6,
+          "extracted": null,
+          "response_preview": " 풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요. <unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요. <unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요. <unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요. <unk>풀이 과정을 보여주고, 최종"
+        },
+        {
+          "id": "math_027",
+          "correct": false,
+          "expected": 50,
+          "extracted": null,
+          "response_preview": "풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이 과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이 과정을 보여주고, 최종 답을 '"
+        },
+        {
+          "id": "math_028",
+          "correct": false,
+          "expected": 8,
+          "extracted": null,
+          "response_preview": " <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <"
+        },
+        {
+          "id": "math_029",
+          "correct": false,
+          "expected": 24,
+          "extracted": null,
+          "response_preview": " 풀이과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이과정을 보여주고, 최종 답을 '답: [숫자]' 형식으로 작성하세요.<unk>풀이과정을 보여주고, 최종 답을 '답: ["
+        },
+        {
+          "id": "math_030",
+          "correct": false,
+          "expected": 90,
+          "extracted": 3.0,
+          "response_preview": "<unk>답: [숫자]<unk>풀이: 시계에서 3시 정각일 때, 시침과 분침이 이루는 각도는 몇 도입니까?<unk>답: [숫자]<unk>풀이: 시계에서 3시 정각일 때, 시침과 분침이 이루는 각도는 몇 도입니까?<unk>답: [숫자]<unk>풀이: 시계에서 3시 정각일 때, 시침과 분침이 이루는 각도는 몇 도입니까?<unk>답: [숫자]<unk>풀이: 시계"
+        }
+      ]
+    },
+    {
+      "model": "gemma3:4b",
+      "scores": {
+        "python_pass1": 0.9,
+        "sql_accuracy": 0.9,
+        "debug_accuracy": 0.6,
+        "math_accuracy": 0.8
+      },
+      "python_details": [
+        {
+          "id": "py_001",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef fibonacci(n: int) -> int:\n    \"\"\"n번째 피보나치 수를 반환합니다. (0번째=0, 1번째=1)\"\"\"\n    if n <= 1:\n        return n\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n```"
+        },
+        {
+          "id": "py_002",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef is_palindrome(s: str) -> bool:\n    \"\"\"주어진 문자열이 회문(앞뒤로 읽어도 같은 문자열)인지 판별합니다.\"\"\"\n    s = s.lower()\n    s = ''.join(filter(str.isalnum, s))\n    return s == s[::-1]\n```"
+        },
+        {
+          "id": "py_003",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef sort_list(lst: list) -> list:\n    \"\"\"리스트를 오름차순으로 정렬합니다.\"\"\"\n    lst.sort()\n    return lst\n```"
+        },
+        {
+          "id": "py_004",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef binary_search(lst: list, target: int) -> int:\n    \"\"\"\n    정렬된 리스트에서 이진 탐색으로 target의 인덱스를 찾는 함수를 작성하세요. 없으면 -1을 반환합니다.\n    \"\"\"\n    low = 0\n    high = len(lst) - 1\n\n    while low <= high:\n"
+        },
+        {
+          "id": "py_005",
+          "passed": 4,
+          "total": 4,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef matrix_transpose(matrix: list) -> list:\n    \"\"\"2차원 행렬(리스트의 리스트)을 전치(transpose)합니다.\n\n    Args:\n        matrix: 전치할 2차원 행렬입니다.\n\n    Returns:\n        전치된 행렬입니다.\n    \"\"\"\n    if not matrix:\n "
+        },
+        {
+          "id": "py_006",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef remove_duplicates(lst: list) -> list:\n    \"\"\"리스트에서 중복을 제거하고 원래 순서를 유지합니다.\n\n    Args:\n        lst: 중복이 있는 리스트입니다.\n\n    Returns:\n        중복이 제거되고 원래 순서가 유지된 새 리스트입니다.\n    \"\"\"\n    seen = se"
+        },
+        {
+          "id": "py_007",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef caesar_cipher(text: str, shift: int) -> str:\n    \"\"\"시저 암호: 각 알파벳을 shift만큼 밀어서 암호화하는 함수를 작성하세요. 대소문자 유지, 알파벳 외 문자는 그대로 둡니다.\n    \"\"\"\n    result = ''\n    for char in text:\n        if 'a' <="
+        },
+        {
+          "id": "py_008",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef gcd(a: int, b: int) -> int:\n    \"\"\"두 정수의 최대공약수(GCD)를 유클리드 알고리즘으로 구합니다.\n    \"\"\"\n    while(b):\n        a, b = b, a % b\n    return a\n```"
+        },
+        {
+          "id": "py_009",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef roman_to_int(s: str) -> int:\n    \"\"\"로마 숫자 문자열을 정수로 변환합니다.\n\n    예:\n        roman_to_int('XIV') == 14\n        roman_to_int('LVIII') == 58\n        roman_to_int('MCMXCIV') == 1994\n    \"\"\"\n  "
+        },
+        {
+          "id": "py_010",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef is_prime(n: int) -> bool:\n    \"\"\"주어진 정수가 소수인지 판별합니다.\n\n    Args:\n        n: 판별할 정수입니다.\n\n    Returns:\n        n이 소수이면 True이고, 그렇지 않으면 False입니다.\n    \"\"\"\n    if n <= 1:\n        return False\n"
+        },
+        {
+          "id": "py_011",
+          "passed": 4,
+          "total": 4,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef char_count(s: str) -> dict:\n    \"\"\"문자열에서 각 문자의 등장 횟수를 딕셔너리로 반환합니다.\n    \"\"\"\n    counts = {}\n    for char in s:\n        counts[char] = counts.get(char, 0) + 1\n    return counts\n```"
+        },
+        {
+          "id": "py_012",
+          "passed": 4,
+          "total": 4,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef reverse_list(lst: list) -> list:\n    \"\"\"주어진 리스트를 뒤집습니다. (내장 reverse/슬라이싱 사용 가능)\"\"\"\n    return lst[::-1]\n```"
+        },
+        {
+          "id": "py_013",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef merge_sorted(lst1: list, lst2: list) -> list:\n    \"\"\"두 개의 정렬된 리스트를 하나의 정렬된 리스트로 병합합니다.\n\n    예:\n        merge_sorted([1, 2, 3], [4, 5, 6]) == [1, 2, 3, 4, 5, 6]\n        merge_sorted([1, 3"
+        },
+        {
+          "id": "py_014",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef factorial(n: int) -> int:\n    \"\"\"주어진 정수 n의 팩토리얼(n!)을 계산합니다.\n    \"\"\"\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n-1)\n```"
+        },
+        {
+          "id": "py_015",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef second_largest(lst: list) -> int:\n    \"\"\"리스트에서 두 번째로 큰 값을 반환합니다.\n    리스트에 서로 다른 값이 2개 이상 있다고 가정합니다.\n    \"\"\"\n    unique_list = sorted(list(set(lst)))\n    return unique_list[-2]\n```"
+        },
+        {
+          "id": "py_016",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef count_vowels(s: str) -> int:\n    \"\"\"문자열에서 모음(a, e, i, o, u)의 개수를 세는 함수를 작성하세요. 대소문자 구분하지 않습니다.\"\"\"\n    count = 0\n    vowels = \"aeiouAEIOU\"\n    for char in s:\n        if char in vowels:\n  "
+        },
+        {
+          "id": "py_017",
+          "passed": 3,
+          "total": 3,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef power_set(lst: list) -> list:\n    \"\"\"주어진 리스트의 모든 부분집합(power set)을 반환합니다.\n\n    예:\n    power_set([1, 2, 3]) == [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]\n    \"\"\"\n    power_set_"
+        },
+        {
+          "id": "py_018",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef max_subarray_sum(lst: list) -> int:\n    \"\"\"정수 리스트에서 연속 부분 배열의 최대 합을 구하는 함수를 작성하세요. (Kadane's algorithm)\n    \"\"\"\n    max_so_far = 0\n    current_max = 0\n\n    for x in lst:\n        current_"
+        },
+        {
+          "id": "py_019",
+          "passed": 4,
+          "total": 4,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef longest_word(s: str) -> str:\n    \"\"\"주어진 문자열에서 가장 긴 단어를 반환합니다. 동일한 길이면 먼저 나온 단어를 반환합니다.\n    \"\"\"\n    words = s.split()\n    longest = \"\"\n    for word in words:\n        if len(word) > len(lo"
+        },
+        {
+          "id": "py_020",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef to_binary(n: int) -> str:\n    \"\"\"정수를 이진수 문자열로 변환합니다. 음수는 '-'를 앞에 붙입니다. (예: 10 -> '1010')\"\"\"\n    if n == 0:\n        return \"0\"\n    \n    sign = \"\"\n    if n < 0:\n        sign = \"-\"\n        "
+        }
+      ],
+      "sql_details": [
+        {
+          "id": "sql_001",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT name, department FROM employees WHERE salary >= 5000;\n```"
+        },
+        {
+          "id": "sql_002",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT customer_name, SUM(amount) AS total_amount\nFROM orders\nGROUP BY customer_name\nORDER BY total_amount DESC;\n```"
+        },
+        {
+          "id": "sql_003",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT student_name, AVG(score) AS average_score\nFROM scores\nGROUP BY student_name\nHAVING AVG(score) >= 80;\n```"
+        },
+        {
+          "id": "sql_004",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT category, COUNT(*) AS product_count\nFROM products\nGROUP BY category\nHAVING COUNT(*) >= 2;\n```"
+        },
+        {
+          "id": "sql_005",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT\n  c.name,\n  COUNT(co.id) AS order_count\nFROM customers AS c\nJOIN customer_orders AS co\n  ON c.id = co.customer_id\nGROUP BY\n  c.id,\n  c.name;\n```"
+        },
+        {
+          "id": "sql_006",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT department, AVG(salary) AS average_salary\nFROM dept_employees\nGROUP BY department\nHAVING AVG(salary) > (SELECT AVG(salary) FROM dept_employees);\n```"
+        },
+        {
+          "id": "sql_007",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT title, price\nFROM books\nWHERE publish_year = 2023\nORDER BY price DESC\nLIMIT 1;\n```"
+        },
+        {
+          "id": "sql_008",
+          "correct": false,
+          "error": null,
+          "response_preview": "```sql\nSELECT grade, COUNT(*), AVG(age)\nFROM students\nGROUP BY grade;\n```"
+        },
+        {
+          "id": "sql_009",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT\n  month,\n  SUM(revenue) AS total_revenue\nFROM sales\nGROUP BY\n  month\nORDER BY\n  total_revenue DESC\nLIMIT 3;\n```"
+        },
+        {
+          "id": "sql_010",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT * FROM company_employees WHERE name LIKE '%김%' ORDER BY hire_date;\n```"
+        }
+      ],
+      "debug_details": [
+        {
+          "bug_identified": true,
+          "fix_works": true,
+          "correct": true,
+          "id": "debug_001",
+          "response_preview": "1. **버그 설명:**\n   버그는 `range(1, len(lst))`에서 `i`가 0부터 시작한다는 점입니다.  리스트의 인덱스는 0부터 시작하므로, `lst[i]`는 리스트의 첫 번째 요소(인덱스 0)를 제외한 모든 요소를 포함합니다.  따라서 함수는 리스트의 합계를 계산하는 대신, 첫 번째 요소(인덱스 0)를 제외한 모든 요소를 더합니다.\n\n2. "
+        },
+        {
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_002",
+          "response_preview": "1. **버그 설명:**\n   이 코드 자체는 기능적으로는 정확합니다. 두 숫자 `a`와 `b` 중 더 큰 값을 반환합니다. 그러나 코드에 명시적인 버그는 없습니다. 코드가 정확하게 작동하고 원하는 결과를 제공합니다.\n\n2. **수정된 전체 함수:**\n```python\ndef find_max(a, b):\n    if a < b:\n        return "
+        },
+        {
+          "bug_identified": true,
+          "fix_works": true,
+          "correct": true,
+          "id": "debug_003",
+          "response_preview": "1. **버그 설명:**\n   이 함수는 리스트의 첫 번째 요소가 0인 경우에만 올바르게 작동합니다. 리스트에 0보다 작은 모든 숫자가 포함된 경우 함수는 0를 반환합니다. 이는 리스트의 최대값을 정확하게 찾지 못하기 때문입니다.\n\n2. **수정된 전체 함수:**\n   ```python\n   def find_maximum(lst):\n       if not"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": true,
+          "correct": true,
+          "id": "debug_004",
+          "response_preview": "1. **버그 설명:**\n   버그는 문자열 `s`의 인덱스가 0부터 시작하지만, `range(len(s), 0, -1)`은 `len(s)`부터 1까지의 인덱스를 순회합니다.  `s[i]`를 사용하여 문자열의 인덱스 `i`에 접근할 때, `i`가 0보다 작아지면 인덱스 오류가 발생합니다.  `s[0]`은 유효하지 않은 인덱스이므로 `IndexError`가 "
+        },
+        {
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_005",
+          "response_preview": "1. **버그 설명:**\n   버그는 `if n % 2 == 1:` 조건이 숫자가 홀수일 때만 `True`를 반환합니다. 따라서 숫자가 짝수일 때 `False`를 반환합니다.  정확히는 짝수일 때 `True`를 반환해야 합니다.  `n % 2 == 0`을 사용하여 짝수를 확인해야 합니다.\n\n2. **수정된 코드:**\n```python\ndef is_even("
+        },
+        {
+          "bug_identified": true,
+          "fix_works": true,
+          "correct": true,
+          "id": "debug_006",
+          "response_preview": "1.  **버그 설명:**\n    이 코드는 리스트의 평균을 계산하려고 하지만, 계산된 평균에 1을 더하여 반환합니다. 평균을 계산하는 과정에서 1을 더하는 것은 올바른 동작이 아닙니다. 평균은 리스트의 요소들의 합을 리스트의 요소 수로 나눈 값입니다.\n\n2.  **수정된 코드:**\n    ```python\n    def average(lst):\n     "
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_007",
+          "response_preview": "1.  **버그 설명:**\n\n    버그는 `n += 1`이 `while` 루프의 조건 `n >= 0`에 영향을 미치지 않는다는 점입니다.  `n`이 0보다 크거나 같을 때 루프가 실행되지만, `n`이 0이 되면 `n += 1`은 `n`을 1로 증가시키지만, `while` 루프의 조건은 여전히 `n >= 0`이므로 루프가 계속 실행됩니다.  결과적으로 카운"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": true,
+          "correct": true,
+          "id": "debug_008",
+          "response_preview": "## 버그 설명:\n\n이 함수에서 버그는 `lst.pop(i)`를 호출할 때 리스트의 크기가 변경됨에 따라 인덱스 `i`가 변경된다는 점입니다.  `for` 루프는 `i`를 사용하여 리스트의 각 요소를 반복하지만, `lst.pop(i)`는 해당 인덱스에 있는 요소를 제거하고 나머지 요소를 한 칸씩 뒤로 이동합니다.  이로 인해 루프가 특정 요소를 건너뛰거나,"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": true,
+          "correct": true,
+          "id": "debug_009",
+          "response_preview": "1. **버그 설명:**\n   이 함수는 딕셔너리의 키 값들을 합산하려고 시도하지만, 딕셔너리의 값들을 합산하는 것이 아닙니다. `for key in d:` 루프는 딕셔너리의 각 키를 반복합니다.  `total += key`는 `total` 변수에 현재 키 값을 추가합니다. 따라서 함수는 딕셔너리의 모든 키 값의 합계를 계산하는 것이 아니라 키 값의 합계를"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_010",
+          "response_preview": "1.  **버그 설명:**\n    버그는 `result`가 `lst1`의 복사본일 뿐이며, `lst2`를 `result` 리스트에 추가하는 것이 아니라 `lst1` 리스트 자체를 수정한다는 것입니다. 따라서 `lst2`가 `result` 리스트에 추가되는 것이 아니라 `lst1` 리스트가 수정됩니다.  결과적으로 함수는 `lst1`과 `lst2`를 합친 새"
+        }
+      ],
+      "math_details": [
+        {
+          "id": "math_001",
+          "correct": true,
+          "expected": 2800,
+          "extracted": 2800.0,
+          "response_preview": "**풀이 과정:**\n\n1.  **사과 1개의 가격 계산:** 사과 3개에 1200원이므로, 사과 1개의 가격은 1200원 / 3 = 400원입니다.\n\n2.  **사과 7개의 가격 계산:** 사과 1개의 가격이 400원이므로, 사과 7개의 가격은 400원 * 7 = 2800원입니다.\n\n답: 2800"
+        },
+        {
+          "id": "math_002",
+          "correct": true,
+          "expected": 5,
+          "extracted": 5.0,
+          "response_preview": "이차 방정식 x^2 - 5x + 6 = 0의 두 근의 합을 구하는 방법은 다음과 같습니다.\n\n**방법 1: 이차 방정식의 근의 공식 활용**\n\n이차 방정식 ax^2 + bx + c = 0의 두 근의 합은 -b/a 입니다.\n\n이 문제에서 a = 1, b = -5, c = 6 이므로, 두 근의 합은 -(-5)/1 = 5 입니다.\n\n**방법 2: 인수분해를 이용"
+        },
+        {
+          "id": "math_003",
+          "correct": true,
+          "expected": 78.5,
+          "extracted": 78.5,
+          "response_preview": "원의 넓이는 다음과 같은 공식으로 계산할 수 있습니다.\n\n넓이 = π * r²\n\n여기서 π는 원주율(pi)이고, r은 원의 반지름입니다.\n\n문제에서 반지름 r = 5cm이고, π = 3.14이므로,\n\n넓이 = 3.14 * 5²\n= 3.14 * 25\n= 78.5\n\n따라서 반지름이 5cm인 원의 넓이는 약 78.5 cm²입니다.\n\n답: 78.5"
+        },
+        {
+          "id": "math_004",
+          "correct": true,
+          "expected": 5050,
+          "extracted": 5050.0,
+          "response_preview": "1부터 100까지의 자연수의 합을 구하는 방법은 여러 가지가 있습니다. 가장 효율적인 방법은 등차수열의 합 공식을 사용하는 것입니다.\n\n**풀이 과정:**\n\n1. **등차수열의 합 공식:** 등차수열의 합 S는 다음과 같이 계산됩니다.\n   S = (첫 번째 항 + 마지막 항) * 항의 개수 / 2\n\n2. **문제 적용:**\n   * 첫 번째 항: 1\n  "
+        },
+        {
+          "id": "math_005",
+          "correct": false,
+          "expected": 6,
+          "extracted": 36.0,
+          "response_preview": "주사위 두 개를 던질 때 나올 수 있는 모든 경우의 수는 6 x 6 = 36가지입니다.\n\n합이 7이 되는 경우는 다음과 같습니다:\n* (1, 6)\n* (2, 5)\n* (3, 4)\n* (4, 3)\n* (5, 2)\n* (6, 1)\n\n따라서 합이 7이 되는 경우의 수는 6가지입니다.\n\n확률은 유리수 분수로 표현됩니다. 합이 7이 될 확률은 (합이 7이 되는 경우"
+        },
+        {
+          "id": "math_006",
+          "correct": true,
+          "expected": 150,
+          "extracted": 150.0,
+          "response_preview": "**풀이 과정:**\n\n1. **미지수 설정:**\n   그 수를 'x'라고 합시다.\n\n2. **방정식 설정:**\n   문제에서 \"어떤 수의 30%가 45이다\"는 것은 다음과 같은 방정식을 의미합니다.\n   0.30 * x = 45\n\n3. **x에 대해 풀기:**\n   방정식 양변을 0.30으로 나누면 다음과 같습니다.\n   x = 45 / 0.30\n   x "
+        },
+        {
+          "id": "math_007",
+          "correct": true,
+          "expected": 5,
+          "extracted": 5.0,
+          "response_preview": "이 문제는 피타고라스 정리를 이용하여 풀 수 있습니다. 피타고라스 정리는 직각삼각형에서 빗변의 제곱은 다른 두 변의 제곱의 합과 같습니다.\n\n*   a, b는 직각삼각형의 직각을 이루는 두 변의 길이이고,\n*   c는 빗변의 길이입니다.\n\n피타고라스 정리에 따르면:  a² + b² = c²\n\n문제에서 주어진 변의 길이는 a = 3cm, b = 4cm입니다."
+        },
+        {
+          "id": "math_008",
+          "correct": false,
+          "expected": 550,
+          "extracted": 2100.0,
+          "response_preview": "**풀이 과정:**\n\n1. **변수 설정:**\n   * 연필 1자루의 가격을 x원이라고 하고, 지우개 1개의 가격을 y원이라고 합니다.\n\n2. **방정식 설정:**\n   * 문제에서 주어진 정보를 바탕으로 두 개의 방정식을 세울 수 있습니다.\n      * 연필 5자루와 지우개 3개를 사면 4100원: 5x + 3y = 4100\n      * 연필 3자루와"
+        },
+        {
+          "id": "math_009",
+          "correct": true,
+          "expected": 1024,
+          "extracted": 1024.0,
+          "response_preview": "2의 10승(2^10)을 계산하는 방법은 다음과 같습니다.\n\n2^10은 2를 10번 곱하는 것을 의미합니다.\n\n2^10 = 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2\n\n계산기를 사용하거나 손으로 곱셈을 수행하여 다음과 같이 계산할 수 있습니다.\n\n2^10 = 1024\n\n답: 1024"
+        },
+        {
+          "id": "math_010",
+          "correct": true,
+          "expected": 96,
+          "extracted": 96.0,
+          "response_preview": "정육면체의 겉넓이는 6개의 한 모서리 면의 넓의 합입니다.\n\n정육면체의 한 모서리 면은 정사각형입니다. 정사각형의 한 변의 길이는 4cm입니다.\n\n정사각형의 넓이는 한 변의 길이의 제곱입니다. 따라서 한 모서리 면의 넓이는 4cm * 4cm = 16cm²입니다.\n\n정육면체에는 6개의 한 모서리 면이 있으므로, 겉넓이는 6 * 16cm² = 96cm²입니다."
+        },
+        {
+          "id": "math_011",
+          "correct": true,
+          "expected": 150,
+          "extracted": 150.0,
+          "response_preview": "풀이 과정:\n\n1. 시간 단위를 통일합니다. 2시간 30분은 2.5시간입니다. (30분은 0.5시간이므로 2 + 0.5 = 2.5)\n2. 이동 거리를 계산하는 공식: 거리 = 속력 × 시간\n3. 공식을 사용하여 계산합니다: 거리 = 60km/h × 2.5h = 150km\n\n답: 150"
+        },
+        {
+          "id": "math_012",
+          "correct": true,
+          "expected": 6,
+          "extracted": 6.0,
+          "response_preview": "12의 약수를 찾기 위해 12를 1부터 나누어 떨어지는 수로 나누어 보겠습니다.\n\n* 12 / 1 = 12\n* 12 / 2 = 6\n* 12 / 3 = 4\n* 12 / 4 = 3\n* 12 / 6 = 2\n* 12 / 12 = 1\n\n약수는 1, 2, 3, 4, 6, 12입니다.\n\n따라서 12의 약수의 개수는 6개입니다.\n\n답: 6"
+        },
+        {
+          "id": "math_013",
+          "correct": true,
+          "expected": 59,
+          "extracted": 59.0,
+          "response_preview": "등차수열의 첫째항을 a와 공차를 d라고 하면, n번째 항은 다음과 같이 표현됩니다.\n\na_n = a + (n-1)d\n\n문제에서 주어진 등차수열 2, 5, 8, 11, ...에서:\n\n*   첫째항 a = 2\n*   공차 d = 5 - 2 = 3\n\n20번째 항을 구하기 위해 n = 20을 위의 공식에 대입합니다.\n\na_20 = 2 + (20 - 1) * 3\na"
+        },
+        {
+          "id": "math_014",
+          "correct": true,
+          "expected": 180,
+          "extracted": 180.0,
+          "response_preview": "삼각형의 세 내각의 합은 항상 180도입니다. 이는 기하학의 기본적인 정리입니다.\n\n풀이 과정:\n삼각형의 세 내각을 각각 A, B, C라고 할 때, A + B + C = 180도 입니다.\n\n답: 180"
+        },
+        {
+          "id": "math_015",
+          "correct": true,
+          "expected": 15000,
+          "extracted": 15000.0,
+          "response_preview": "**풀이 과정:**\n\n1. **할인 금액 계산:** 원가의 25%는 다음과 같습니다.\n   20000원 * 0.25 = 5000원\n\n2. **판매 가격 계산:** 원가에서 할인 금액을 빼면 판매 가격을 구할 수 있습니다.\n   20000원 - 5000원 = 15000원\n\n**답: 15000**"
+        },
+        {
+          "id": "math_016",
+          "correct": true,
+          "expected": 5,
+          "extracted": 5.0,
+          "response_preview": "log₂(32)의 값을 구하는 것은 2를 몇 제곱해야 32가 되는지를 찾는 것과 같습니다.\n\n2의 거듭제곱을 나열해 봅시다:\n* 2¹ = 2\n* 2² = 4\n* 2³ = 8\n* 2⁴ = 16\n* 2⁵ = 32\n\n따라서 2⁵ = 32이므로 log₂(32) = 5입니다.\n\n답: 5"
+        },
+        {
+          "id": "math_017",
+          "correct": true,
+          "expected": 30,
+          "extracted": 30.0,
+          "response_preview": "3! + 4!의 값을 구하는 풀이 과정은 다음과 같습니다.\n\n*   **3! 계산:** 3! = 3 * 2 * 1 = 6\n*   **4! 계산:** 4! = 4 * 3 * 2 * 1 = 24\n*   **합계 계산:** 6 + 24 = 30\n\n답: 30"
+        },
+        {
+          "id": "math_018",
+          "correct": true,
+          "expected": 282.6,
+          "extracted": 282.6,
+          "response_preview": "**풀이 과정:**\n\n1. **원기둥의 부피 공식 이해:** 원기둥의 부피는 밑면의 넓이와 높이를 곱하여 계산합니다.\n   * 부피 = π * r² * h\n   * 여기서 π는 원주율, r은 밑면의 반지름, h는 높이입니다.\n\n2. **주어진 값 대입:** 문제에서 주어진 값들을 공식에 대입합니다.\n   * π = 3.14\n   * r = 3cm\n   * "
+        },
+        {
+          "id": "math_019",
+          "correct": true,
+          "expected": 20,
+          "extracted": 20.0,
+          "response_preview": "풀이 과정:\n\n반장과 부반장은 5명 중에서 뽑는 자리이므로, 순서가 중요합니다. 즉, 반장과 부반장을 서로 다른 사람으로 뽑아야 합니다.\n\n1. 반장 선출: 5명 중 1명을 반장으로 뽑을 수 있습니다. (5가지)\n2. 부반장 선출: 반장이 결정되면, 남은 4명 중에서 1명을 부반장으로 뽑을 수 있습니다. (4가지)\n\n따라서, 반장과 부반장을 뽑는 경우의 수"
+        },
+        {
+          "id": "math_020",
+          "correct": false,
+          "expected": 7,
+          "extracted": 3.0,
+          "response_preview": "다음과 같이 풀이 과정을 보여드리겠습니다.\n\n**1. 방정식 풀이:**\n\n두 개의 방정식을 가지고 있습니다:\n\n*   x + y = 10\n*   x - y = 4\n\n이 두 방정식을 풀기 위해 사칙연산을 사용하여 x를 구하는 방법을 사용할 수 있습니다. 두 방정식을 더하면 y가 사라집니다.\n\n(x + y) + (x - y) = 10 + 4\n\nx + x + y"
+        },
+        {
+          "id": "math_021",
+          "correct": true,
+          "expected": 10,
+          "extracted": 10.0,
+          "response_preview": "직사각형의 대각선 길이는 피타고라스 정리를 이용하여 구할 수 있습니다. 직사각형의 대각선은 직사각형의 가로와 세로를 변으로 하는 직각삼각형의 빗변이 됩니다.\n\n피타고라스 정리는 다음과 같습니다.\na² + b² = c²\n여기서 a와 b는 직각삼각형의 두 변의 길이이고, c는 빗변의 길이입니다.\n\n이 문제에서 가로의 길이는 8cm, 세로의 길이는 6cm이므로,"
+        },
+        {
+          "id": "math_022",
+          "correct": true,
+          "expected": 5,
+          "extracted": 5.0,
+          "response_preview": "다음과 같이 문제를 풀 수 있습니다.\n\n**변수 정의:**\n\n*   x를 우리가 찾는 수를 나타냅니다.\n\n**방정식 설정:**\n\n문제에서 주어진 정보를 바탕으로 방정식을 세울 수 있습니다. \"어떤 수에 7을 더하고 3을 곱하면 36이 됩니다.\"는 다음과 같이 표현할 수 있습니다.\n\n3(x + 7) = 36\n\n**방정식 풀기:**\n\n1.  양변을 3으로 나누"
+        },
+        {
+          "id": "math_023",
+          "correct": true,
+          "expected": 40,
+          "extracted": 40.0,
+          "response_preview": "**풀이 과정:**\n\n이 문제는 포함-배제 원리를 이용하여 풀 수 있습니다.\n\n*   **전체:** 50명의 학생\n*   **수학 좋아하는 학생:** 30명 (A)\n*   **영어 좋아하는 학생:** 25명 (B)\n*   **둘 다 좋아하는 학생:** 15명 (A ∩ B)\n\n둘 중 하나 이상 좋아하는 학생의 수를 구하는 공식은 다음과 같습니다.\n\n|A ∪ "
+        },
+        {
+          "id": "math_024",
+          "correct": true,
+          "expected": 95,
+          "extracted": 95.0,
+          "response_preview": "다음과 같이 풀이합니다.\n\n**변수 정의:**\n\n*  x = 5번 시험에서 받을 점수\n\n**방정식 설정:**\n\n5번 시험의 총점은 4번 시험의 총점과 5번 시험의 점수를 합한 것입니다. 4번 시험의 평균이 85점이고, 5번 시험의 평균이 87점이 되려면 다음 방정식을 세울 수 있습니다.\n\n(4번 시험 총점 + 5번 시험 점수) / 5 = 87\n\n4번 시험의"
+        },
+        {
+          "id": "math_025",
+          "correct": false,
+          "expected": 25,
+          "extracted": 100.0,
+          "response_preview": "**풀이 과정:**\n\n1. **10% 소금물에 포함된 소금의 양 계산:**\n   - 10% 소금물 200g에는 소금이 200g * 0.10 = 20g 있습니다.\n\n2. **최종 20% 소금물이 될 때 소금의 총 양 계산:**\n   - 최종 소금물의 양을 x라고 하면, 20% 소금물은 x * 0.20 입니다.\n   - 이 때 소금의 양은 x * 0.20 입니"
+        },
+        {
+          "id": "math_026",
+          "correct": false,
+          "expected": 6,
+          "extracted": 1.0,
+          "response_preview": "이차방정식 x^2 - 5x + 6 = 0의 두 근의 곱을 구하는 방법은 다음과 같습니다.\n\n**1. 이차방정식의 근과 계수의 관계 이용:**\n\n이차방정식 ax^2 + bx + c = 0의 두 근을 각각 x1, x2라고 할 때, 근과 계수의 관계에 의해 다음과 같은 관계가 성립합니다.\n\n*   x1 + x2 = -b/a\n*   x1 * x2 = c/a\n\n문제"
+        },
+        {
+          "id": "math_027",
+          "correct": true,
+          "expected": 50,
+          "extracted": 50.0,
+          "response_preview": "정사각형의 대각선 길이를 d라고 하면, 대각선과 변의 길이는 피타고라스 정리를 이용하여 다음과 같이 관련됩니다.\n\nd² = a² + a² = 2a²\n\n여기서 a는 정사각형의 한 변의 길이입니다.\n\n문제에서 d = 10cm이므로,\n\n10² = 2a²\n100 = 2a²\na² = 50\n\n정사각형의 넓이 S는 한 변의 길이 a의 제곱이므로,\n\nS = a² = 50"
+        },
+        {
+          "id": "math_028",
+          "correct": true,
+          "expected": 8,
+          "extracted": 8.0,
+          "response_preview": "**풀이 과정:**\n\n1. **전체 경우의 수:** 동전 3개를 던질 때 나올 수 있는 모든 경우의 수는 2^3 = 8가지입니다. (각 동전은 앞면 또는 뒷면이 나올 수 있으므로)\n   * (앞, 앞, 앞), (앞, 앞, 뒷), (앞, 뒷, 앞), (앞, 뒷, 뒷), (뒷, 앞, 앞), (뒷, 앞, 뒷), (뒷, 뒷, 앞), (뒷, 뒷, 뒷)\n\n2. **모"
+        },
+        {
+          "id": "math_029",
+          "correct": true,
+          "expected": 24,
+          "extracted": 24.0,
+          "response_preview": "72와 48의 최대공약수를 구하는 방법은 여러 가지가 있습니다. 여기서는 두 가지 방법을 사용하여 풀이 과정을 보여드리겠습니다.\n\n**방법 1: 기약 인수분해**\n\n1.  72와 48의 기약 인수분해를 합니다.\n    *   72 = 2^3 * 3^2\n    *   48 = 2^4 * 3\n2.  공통된 인수를 찾습니다.\n    *   72와 48 모두 2와"
+        },
+        {
+          "id": "math_030",
+          "correct": false,
+          "expected": 90,
+          "extracted": 270.0,
+          "response_preview": "**풀이 과정:**\n\n1. **시침의 각도:** 시계에서 3시 정각은 시침이 3에 가리키고 있습니다. 따라서 시침의 각도는 3 * 30도 = 90도입니다. (시침은 12시간 동안 360도를 움직이므로, 1시간 동안 360도 / 12 = 30도씩 움직입니다.)\n\n2. **분침의 각도:** 분침은 1시간 동안 360도를 움직입니다. 1분 동안 움직이는 각도는 "
+        }
+      ]
+    },
+    {
+      "model": "phi4-mini",
+      "scores": {
+        "python_pass1": 0.45,
+        "sql_accuracy": 0.5,
+        "debug_accuracy": 0.3,
+        "math_accuracy": 0.5667
+      },
+      "python_details": [
+        {
+          "id": "py_001",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef fibonacci(n: int) -> int:\n    if n < 0:\n        raise ValueError(\"정수가 필요합니다\")\n    elif n == 0:\n        return 0\n    elif n == 1:\n        return 1\n    else:\n        a, b = 0, 1\n        fo"
+        },
+        {
+          "id": "py_002",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef is_palindrome(s: str) -> bool:\n    s = ''.join(c for c in s if c.isalnum()).lower()\n    return s == s[::-1]\n```"
+        },
+        {
+          "id": "py_003",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef sort_list(lst: list) -> list:\n    return sorted(lst)\n```"
+        },
+        {
+          "id": "py_004",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef binary_search(lst: list[int], target: int) -> int:\n    left = 0\n    right = len(lst) - 1\n\n    while left <= right:\n        mid = (left + right) // 2\n        \n        if lst[mid] == targe"
+        },
+        {
+          "id": "py_005",
+          "passed": 4,
+          "total": 4,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef matrix_transpose(matrix: list) -> list:\n    return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]\n```"
+        },
+        {
+          "id": "py_006",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef remove_duplicates(lst):\n    seen = set()\n    result = []\n    for item in lst:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result\n\n#"
+        },
+        {
+          "id": "py_007",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef caesar_cipher(text: str, shift: int) -> str:\n    result = \"\"\n\n    for char in text:\n        if char.isalpha():\n            ascii_offset = 65 century case is upper or lower?\n             "
+        },
+        {
+          "id": "py_008",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef gcd(a: int, b: int) -> int:\n    while b != 0:\n        a, b = b, a % b\n    return abs(a)\n```"
+        },
+        {
+          "id": "py_009",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef roman_to_int(s: str) -> int:\n    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    total_sum = 0\n\n    prev_value = 0\n    for char in reversed(s):\n        cur"
+        },
+        {
+          "id": "py_010",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef is_prime(n: int) -> bool:\n    if n <= 1:\n        return False\n    for i in range(2, int(n**0.5)+1):\n       \tif n % i == 0:\n           \treturn False\n    return True\n```\n이 함수는 주어진 정수 `n`가 "
+        },
+        {
+          "id": "py_011",
+          "passed": 4,
+          "total": 4,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef char_count(s: str) -> dict:\n    count = {}\n    for c in s:\n        if c in count:\n            count[c] += 1\n        else:\n            count[c] = 1\n    return count\n```"
+        },
+        {
+          "id": "py_012",
+          "passed": 4,
+          "total": 4,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef reverse_list(lst):\n    return lst[::-1]\n```"
+        },
+        {
+          "id": "py_013",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef merge_sorted(lst1: list, lst2: list) -> List[int]:\n    result = []\n    i, j = 0, 0\n\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(ls"
+        },
+        {
+          "id": "py_014",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef factorial(n: int) -> int:\n    if n == 0 or n == 1:\n        return 1\n    else:\n        return n * factorial(n - 1)\n```"
+        },
+        {
+          "id": "py_015",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef second_largest(lst):\n    unique_sorted_lst = sorted(set(lst), reverse=True)\n    return unique_sorted_lst[1]\n```"
+        },
+        {
+          "id": "py_016",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef count_vowels(s: str) -> int:\n    s = s.lower()\n    vowels_count = 0\n    \n    for char in \"aeiou\":\n        if char in s:\n            vowels_count += s.count(char)\n    \n    return vowels_c"
+        },
+        {
+          "id": "py_017",
+          "passed": 0,
+          "total": 3,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef power_set(lst):\n    \"\"\"\n    주어진 리스트의 모든 부분집합(power set)를 반환합니다.\n\n    :param lst: 입력 목록.\n    :return: powerset(Subset List)은 원래 요소가 포함된 모든 가능한 집합을 나타냄.\n    \"\"\"\n\n    # powerset를 생성하는 공식을 사"
+        },
+        {
+          "id": "py_018",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef max_subarray_sum(lst):\n    curr_max = lst[0]\n    global_max = lst[0]\n\n    for i in range(1, len(lst)):\n        curr_max += lst[i]\n        \n        if curr_max < lst[i]:\n            curr_"
+        },
+        {
+          "id": "py_019",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef longest_word(s: str) -> str:\n    max_len = -1, word = None  # 길이와 함께 단어 저장하기 위한 변수들 초기화.\n    for w in s.split():       # 주어진 문자열을 각 문장에 나누기 위해 split() 사용.\n        if len(w)>max_len or (l"
+        },
+        {
+          "id": "py_020",
+          "passed": 1,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef to_binary(n: int) -> str:\n    if n < -1 or n > 1:\n        raise ValueError(\"숫자는 -2 또는 +2 이하일 수 없습니다.\")\n    \n    return ''.join(format(i, 'b') for i in reversed(range(0, abs(n)+1)))\n```"
+        }
+      ],
+      "sql_details": [
+        {
+          "id": "sql_001",
+          "correct": false,
+          "error": null,
+          "response_preview": "```sql\nSELECT name, department FROM employees WHERE salary >= 600000;\n```"
+        },
+        {
+          "id": "sql_002",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT customer_name,\n       SUM(amount) AS total_amount \nFROM orders\nGROUP BY customer_name\nORDER BY total_amount DESC;\n```"
+        },
+        {
+          "id": "sql_003",
+          "correct": false,
+          "error": "no such column: average_score",
+          "response_preview": "```sql\nSELECT student_name, AVG(score)\nFROM scores \nGROUP BY student_name\nHAVING average_score >= 80;\n```"
+        },
+        {
+          "id": "sql_004",
+          "correct": false,
+          "error": "near \"WHERE\": syntax error",
+          "response_preview": "```sql\nSELECT category, COUNT(*) as product_count \nFROM products \nGROUP BY category \nHAVING SUM(CASE WHEN id % (id+1)/2 = 0 THEN 3 ELSE -10 END)\nAND price > ((price * exp(-radians(45))) + abs(sin((ID-"
+        },
+        {
+          "id": "sql_005",
+          "correct": true,
+          "error": null,
+          "response_preview": "``` sql\nSELECT c.name AS CustomerName, COUNT(co.id) as OrderCount \nFROM customers c JOIN customer_orders co ON c.id = co.customer_id GROUP BY c.id;\n```"
+        },
+        {
+          "id": "sql_006",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT department, AVG(salary)\nFROM dept_employees \nGROUP BY department \nHAVING salary > (SELECT AVG(salary) FROM dept_employees);\n```"
+        },
+        {
+          "id": "sql_007",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT title, price FROM books WHERE publish_year = 2023 ORDER BY price DESC LIMIT 1;\n```"
+        },
+        {
+          "id": "sql_008",
+          "correct": false,
+          "error": null,
+          "response_preview": "```sql\nSELECT grade AS \"학년도\", COUNT(*) AS \"학생수\" , AVG(age)/1000 as \"평균나이\"\nFROM students \nGROUP BY grade;\n```\n\n\n위의 SQL 쿼리는 `students` 테이블에서 각 학년별 학생 수와 평균 나이를 조회하는 데 사용됩니다. 이 쿼리에서는 다음을 수행합니다:\n\n- 정렬된 결과"
+        },
+        {
+          "id": "sql_009",
+          "correct": false,
+          "error": null,
+          "response_preview": "```sql\nSELECT \n    month,\n    SUM(revenue) AS total_revenue\nFROM sales\nGROUP BY month\nORDER BY total_revenue DESC;\nLIMIT 3 OFFSET (MONTH(CURRENT_DATE()) - MONTH(MIN(month)) + IF(DAY(LAST_DAY(MAX(date_"
+        },
+        {
+          "id": "sql_010",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT * FROM company_employees WHERE name LIKE '%김%' ORDER BY hire_date ASC;\n```"
+        }
+      ],
+      "debug_details": [
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_001",
+          "response_preview": "버그:\n수정되지 않은 코드는 `range` 함수에 0을 제외하여 리스트의 요소를 더하지 않습니다(원본 코드에서 1부터 시작하기 때문에). 따라서 첫 번째 항이 누락되어 총 합계가 올바르게 계산되지 않습니다.\n\n修正された 전체 함수를 다음과 같이 수정하세요:\n```python\ndef sum_list(lst):\n    total = 0\n    for i in "
+        },
+        {
+          "bug_identified": true,
+          "fix_works": true,
+          "correct": true,
+          "id": "debug_002",
+          "response_preview": "이 문제에서 주목해야 할 주요 오류는 이 함수의 목적과 작동 방식에 있습니다: 두 숫자를 비교하고 가장 큰 값을 반환하는 것이 아니라, `a`와 `b`, 더 작은 값입니다.\n\n1. 버그 설명:\n- 현재 코드는 조건문 `(if a < b)`을 잘못 사용합니다.\n- 이는 실제로 두 변수 중 작은 수를 찾고 있으며 그 결과에 따라 다른 숫자를 리턴합니다(`ret"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_003",
+          "response_preview": "이 문제에 대한 답은 다음과 같습니다:\n\n### 버그의 상세한 설명\n\n코드에서 주목해야 할 주요 오류는 `max_value` 초기화 부분입니다:\n- 이 함수가 리스트를 인수로 받기 때문에, 모든 수열을 더 큰 숫자로 시작하는 것이 올바르지 않습니다. 특히 빈 목록이나 음수가 포함된 목록이 있을 때 그렇습니다.\n  \n### 수정 코드\n\n```python\nde"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_004",
+          "response_preview": "버그의 세부 사항:\n- `range` 함수는 첫 번째 인수(`start`)과 끝 (`stop`, 포함) 없이만 작동합니다(두 개 중 하나라도). 이 경우, 문제를 일으키기 위해서는 0에서 시작하여 -1까지의 범위가 필요하지만, Python은 부정적인 수 값으로 `range`을 생성할 때 사용할 수 없습니다. 결과적으로 함수는 무언가와 함께 반복하지 않으며 "
+        },
+        {
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_005",
+          "response_preview": "1. 문제의 오류는 조건문 내에 있습니다: `if n % 2 == 1`. 이 문구은 짝수가 아닌 경우를 만족시키기 때문에, 함수에서 짝수 값을 반환해야 합니다.\n\n2. 수정된 전체 함수를 다음과 같이 작성할 수 있습니다:\n```python\ndef is_even(n):\n    if n % 2 == 0:   # 조건이 짝수임을 확인합니다.\n        ret"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": true,
+          "correct": true,
+          "id": "debug_006",
+          "response_preview": "버그의 설명:\n\n문제는 반환 값에 실수 `+` 연산자를 사용하기 때문입니다 (`len(li)`를 더한 다음 1을 추가합니다). 이는 평균 계산이 아닌, 리스트 길이에 대한 고정값(예: 나누어진 숫자 + 1)을 제공하는 결과가 됩니다. 올바른 평균은 단순히 합계를 인덱스의 수로 나눈 것이며 (즉 `len(lst)`), 더하거나 다른 값과 결합할 필요는 없습니"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_007",
+          "response_preview": "버그:\n\n문제는 `countdown` 함수 내에서 루프 조건이 잘못 설정되어 있다는 것입니다 (`while n >=0`). 이 문제로 인해, n은 항상 음수가 되어야 하지만 실제로 매번 증가하여 무한 루프로 빠집니다.\n\n수정된 코드:\n```python\ndef countdown(n):\n    result = []\n    while n > -1: # 조건을 올"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_008",
+          "response_preview": "버그를 파악하고 수정하는 것에 대한 단계별 과정은 다음과 같습니다:\n\n### 1단계: 문제 식별하기\n\n**문제:** `lst.pop(i)`는 리스트의 인덱스로 전달되어야 합니다.\n\n`remove_value(lst, val):`\n\n- 이 코드에서는 조건부 구문을 사용하여 값을 찾고 있습니다.\n- 그러나 `pop()` 메서드는 그 값이 있는 위치를 제거하지 않"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_009",
+          "response_preview": "버그는 `sum_dict_keys` 함수 내에서, 현재 키를 변수 `total`에 추가하는 대신 각 키 자체을 합산하려고 하는 것입니다.\n\n수정된 Python 코드는 다음과 같습니다:\n\n```python\ndef sum_dict_values(d):\n    total = 0\n    for key in d:\n        if isinstance(key, (in"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": true,
+          "correct": true,
+          "id": "debug_010",
+          "response_preview": "문제_description에 따르면 함수는 두 리스트를 합쳐서 반환하려고 하지만 오류가 있습니다.\n\n버그:\n- `lst.append(lst2)`의 방식은, 그것이 append 메소드를 사용하여 리스트 lst1 안에서 list lst2 를 추가하는 것을 의미합니다.\n- 이렇게 하면 리스트 lst1 내부로 새 요소(인 스칼라)으로 변형되는 대신 그 자체를 리턴"
+        }
+      ],
+      "math_details": [
+        {
+          "id": "math_001",
+          "correct": true,
+          "expected": 2800,
+          "extracted": 2800.0,
+          "response_preview": "단계별로 생각해 봅시다.\n\n1. 먼저, 사과 3개에 1200원의 가격을 알아야 합니다. 이를 찾기 위해, 총 비용을 사과의 수로 나눕니다.\n   가격 = 총 비용 / 사과의 수\n   가격 = 1200원 / 3개\n   가격 = 400원/개\n\n2. 이제, 사과 1개에 400원이 있다는 것을 알고 있습니다. 사과 7개에 얼마나 들리는지 알아보려면, 사과 1개에 "
+        },
+        {
+          "id": "math_002",
+          "correct": true,
+          "expected": 5,
+          "extracted": 5.0,
+          "response_preview": "x^2 - 5x + 6 = 0의 두 근의 합을 찾으려면, x^2 - 5x + 6 = 0의 방정식의 공식을 사용할 수 있습니다. 이 방정식의 공식은 x^2 + bx + c = 0의 경우, 근의 합은 -b / a입니다.\n\n이 경우, b = -5이고 a = 1입니다. 따라서, 근의 합은 -(-5) / 1 = 5입니다.\n\n답: 5"
+        },
+        {
+          "id": "math_003",
+          "correct": true,
+          "expected": 78.5,
+          "extracted": 78.5,
+          "response_preview": "단계별로 생각해 봅시다. 원의 넓이를 찾으려면 공식 A = πr²를 사용할 수 있습니다. 여기서 A는 넓이, r은 원의 반지름입니다.\n\n1. 주어진 반지름 (r)을 확인합니다: r = 5cm.\n2. π의 값을 사용합니다: π = 3.14.\n3. 공식에 r의 값을 대입합니다: A = 3.14 * (5cm)².\n4. 반지름을 제곱합니다: (5cm)² = 25c"
+        },
+        {
+          "id": "math_004",
+          "correct": false,
+          "expected": 5050,
+          "extracted": 1.0,
+          "response_preview": "이 문제를 해결하기 위해 n=n(n+1)/2 공식을 사용할 수 있습니다. 여기서 n은 자연수의 최대 숫자입니다. 이 경우 n=100입니다.\n\n답: 1부터 100까지의 자연수의 합은 5050입니다."
+        },
+        {
+          "id": "math_005",
+          "correct": false,
+          "expected": 6,
+          "extracted": 7.0,
+          "response_preview": "주사위 두 개를 던졌을 때, 합이 7이 될 확률을 찾으려면 가능한 결과를 고려해야 합니다. 주사위는 1에서 6까지의 숫자를 표시하며, 두 개의 주사위의 합이 7이 될 수 있는 경우는 다음과 같습니다:\n\n1 + 6 = 7\n2 + 5 = 7\n3 + 4 = 7\n4 + 3 = 7\n5 + 2 = 7\n6 + 1 = 7\n\n총 6개의 가능한 결과가 있습니다. 주사위 두 "
+        },
+        {
+          "id": "math_006",
+          "correct": true,
+          "expected": 150,
+          "extracted": 150.0,
+          "response_preview": "이 문제를 해결하기 위해서는 다음 공식을 사용할 수 있습니다:\n\n`% = (부분 수 / 전체 수) * 100`\n\n이 경우, 부분 수는 45일이고, 부분 비율은 30%입니다. 이를 사용하여 전체 수를 찾을 수 있습니다:\n\n`45 = (30/100) * 전체 수`\n\n전체 수를 구하기 위해, 방정식의 양쪽을 30/100으로 나눕니다:\n\n`전체 수 = 45 / ("
+        },
+        {
+          "id": "math_007",
+          "correct": true,
+          "expected": 5,
+          "extracted": 5.0,
+          "response_preview": "직각삼각형의 빗변의 길이를 찾으려면 피타고라스의 정리를 사용할 수 있습니다. 이 정리는 직각삼각형의 빗변의 길이 (c)가 다른 두 변의 길이 (a 및 b)의 제곱의 합과 같다고 말합니다: c² = a² + b².\n\n이 경우, a = 3cm, b = 4cm입니다. 이 값을 피타고라스의 정리에 대입하면 다음과 같습니다:\n\nc² = 3² + 4²\nc² = 9 +"
+        },
+        {
+          "id": "math_008",
+          "correct": false,
+          "expected": 550,
+          "extracted": 2100.0,
+          "response_preview": "단계별로 생각해 봅시다. 연필 1자루의 가격을 \\( p \\), 지우개 1개의 가격을 \\( e \\)라고 합시다. 주어진 문제를 방정식으로 표현해 봅시다:\n\n1. 연필 5자루와 지우개 3개를 사면 4100원입니다. 이는 \\( 5p + 3e = 4100 \\)라는 방정식을 의미합니다.\n2. 연필 3자루와 지우개 1개를 사면 2100원입니다. 이는 \\( 3p + e"
+        },
+        {
+          "id": "math_009",
+          "correct": true,
+          "expected": 1024,
+          "extracted": 1024.0,
+          "response_preview": "2의 10승을 찾으려면, 2를 10으로 곱합니다.\n\n답: 1024"
+        },
+        {
+          "id": "math_010",
+          "correct": false,
+          "expected": 96,
+          "extracted": 24.0,
+          "response_preview": "정육면체의 겉넓이는 면적을 찾으려면 다음 공식을 사용할 수 있습니다:\n\n면적 = 6 * (각 면의 면적)\n\n각 면은 정삼각형으로, 각 변의 길이는 4cm입니다. 정삼각형의 면적은 다음 공식을 사용하여 계산할 수 있습니다:\n\n면적 = (각 변의 길이² * √3) / 4\n\n이 경우, 각 변의 길이는 4cm입니다. 따라서 각 면의 면적은 다음과 같습니다:\n\n면적"
+        },
+        {
+          "id": "math_011",
+          "correct": false,
+          "expected": 150,
+          "extracted": 60.0,
+          "response_preview": "먼저, 시간을 시간 단위로 변환해야 합니다. 2시간 30분은 2.5시간입니다.\n\n다음으로, 이동 거리를 찾기 위해 속도와 시간을 곱합니다.\n\n답: 60 km/h * 2.5 h = 150 km"
+        },
+        {
+          "id": "math_012",
+          "correct": false,
+          "expected": 6,
+          "extracted": 12.0,
+          "response_preview": "단계별로 생각해 봅시다. 12의 약수의 개수를 찾으려면, 12의 모든 약수를 찾아야 합니다. 12의 약수는 12를 나누는 다른 정수입니다.\n\n단계 1: 12의 소인수 분해를 찾습니다.\n12의 소인수 분해는 2^2 * 3입니다.\n\n단계 2: 소인수 분해에서 각 소인수의 인수를 고려합니다.\n소인수 2는 2^0, 2^1, 또는 2^2의 인수를 취할 수 있습니다."
+        },
+        {
+          "id": "math_013",
+          "correct": true,
+          "expected": 59,
+          "extracted": 59.0,
+          "response_preview": "등차수열의 n번째 항을 찾으려면 다음 공식을 사용할 수 있습니다: a_n = a_1 + (n - 1)d, 여기서 a_n은 n번째 항, a_1은 첫 번째 항, d는 공차이며, n은 항의 번호입니다.\n\n이 경우, 첫 번째 항(a_1)은 2이고 공차(d)는 3입니다 (5 - 2 = 3). 우리는 20번째 항(a_20)을 찾고자 합니다.\n\na_20 = 2 + (2"
+        },
+        {
+          "id": "math_014",
+          "correct": true,
+          "expected": 180,
+          "extracted": 180.0,
+          "response_preview": "삼각형의 각 내각의 합을 찾으려면 다음 공식을 사용할 수 있습니다:\n\n각 내각의 합 = 180도\n\n이 공식을 삼각형의 경우 적용하면 다음과 같습니다:\n\n각 내각의 합 = 180도\n\n따라서, 삼각형의 세 내각의 합은 180도입니다.\n\n답: 180"
+        },
+        {
+          "id": "math_015",
+          "correct": true,
+          "expected": 15000,
+          "extracted": 15000.0,
+          "response_preview": "단계별로 생각해 봅시다.\n\n1. 원가를 찾습니다: 원가는 20000원입니다.\n2. 할인을 계산합니다: 25% 할인이 있습니다.\n3. 할인을 원가에 적용합니다: 할인을 원가에 적용하여 할인된 금액을 찾습니다.\n\n할인된 금액 = 원가 * 할인율\n할인된 금액 = 20000원 * 0.25\n할인된 금액 = 5000원\n\n4. 할인된 금액을 원가에서 빼서 판매가를 찾습"
+        },
+        {
+          "id": "math_016",
+          "correct": true,
+          "expected": 5,
+          "extracted": 5.0,
+          "response_preview": "이 문제를 해결하기 위해 log₂(32)의 값을 찾아야 합니다. 이는 32가 2의 몇 배인지 묻는 것입니다.\n\n32는 2의 제곱인 2^5 (2 × 2 × 2 × 2 × 2)입니다.\n\n따라서 log₂(32) = log₂(2^5) = 5입니다.\n\n답: 5"
+        },
+        {
+          "id": "math_017",
+          "correct": true,
+          "expected": 30,
+          "extracted": 30.0,
+          "response_preview": "3!은 3이 1, 2, 3으로 인수분해된 값을 의미하며, 이는 3 * 2 * 1 = 6입니다. 4!은 4이 1, 2, 3, 4으로 인수분해된 값을 의미하며, 이는 4 * 3 * 2 * 1 = 24입니다. 따라서, 3! + 4!의 값은 6 + 24 = 30입니다. 답: 30."
+        },
+        {
+          "id": "math_018",
+          "correct": true,
+          "expected": 282.6,
+          "extracted": 282.6,
+          "response_preview": "단계별로 생각해 봅시다. 원기둥의 부피를 찾으려면 다음 공식을 사용할 수 있습니다:\n\nV = π * r² * h\n\n여기서 V는 부피, r은 밑면의 반지름, h는 높이, π는 약 3.14입니다.\n\n주어진 값을 공식에 대입해 봅시다:\n\nr = 3cm\nh = 10cm\nπ = 3.14\n\nV = 3.14 * (3cm)² * 10cm\nV = 3.14 * 9cm² * "
+        },
+        {
+          "id": "math_019",
+          "correct": false,
+          "expected": 20,
+          "extracted": 120.0,
+          "response_preview": "이 문제를 해결하기 위해서는 반장과 부반장을 뽑는 순서가 중요하다는 것을 이해해야 합니다. 이는 순서가 중요한 순열 문제입니다.\n\n1단계: 반장과 부반장을 뽑는 순서가 중요하다는 것을 인식합니다.\n2단계: 5명의 중에서 2명을 뽑는 순열의 수를 계산합니다. 이는 5! / (5-2)! = 5! / 3! = 60가지입니다.\n3단계: 반장과 부반장을 뽑는 순서가"
+        },
+        {
+          "id": "math_020",
+          "correct": false,
+          "expected": 7,
+          "extracted": 3.0,
+          "response_preview": "x와 y의 값을 찾으려면 두 방정식을 동시에 풀 수 있습니다.\n\n방정식 1: x + y = 10\n방정식 2: x - y = 4\n\n방정식 1에서 y를 방정식 2에서 x로 대체합니다:\n\nx + (4 + x) = 10\n2x + 4 = 10\n2x = 6\nx = 3\n\n따라서, x의 값은 3입니다. 답: 3"
+        },
+        {
+          "id": "math_021",
+          "correct": true,
+          "expected": 10,
+          "extracted": 10.0,
+          "response_preview": "직사각형의 대각선 길이를 찾으려면 피타고라스의 정리를 사용할 수 있습니다. 이 정리는 직사각형의 대각선 (d)의 길이는 각 변의 길이 (a 및 b)의 제곱의 합의 제곱근으로 주어집니다.\n\n정리: d = √(a² + b²)\n\n이 경우, 가로 (a)는 8cm이고 세로 (b)는 6cm입니다.\n\n먼저, 각 변의 길이를 제곱합니다:\na² = 8² = 64\nb² = "
+        },
+        {
+          "id": "math_022",
+          "correct": true,
+          "expected": 5,
+          "extracted": 5.0,
+          "response_preview": "단계별로 생각해 봅시다. x를 주어진 수로 나타냅시다.\n\n1. x에 7을 더하고 3을 곱하면 36이 됩니다. 이 방정식을 다음과 같이 쓸 수 있습니다: 3(x + 7) = 36.\n\n2. 방정식의 양쪽을 3로 나누어 x를 고립시킵니다: x + 7 = 36 / 3.\n\n3. 방정식의 양쪽을 36 / 3로 나누면 x + 7 = 12이 됩니다.\n\n4. x를 고립시키"
+        },
+        {
+          "id": "math_023",
+          "correct": true,
+          "expected": 40,
+          "extracted": 40.0,
+          "response_preview": "이 문제를 해결하기 위해, 포함-배제 원리를 사용할 수 있습니다. 이 원리는 두 집합의 합을 그들의 교집합의 크기를 빼서 찾는 것을 포함시킵니다.\n\n이 경우, 수학을 좋아하는 학생 집합(A)와 영어를 좋아하는 학생 집합(B)입니다. 둘 중 하나 이상 좋아하는 학생은 A ∪ B의 크기입니다.\n\nA ∪ B = |A| + |B| - |A ∩ B|\n\n주어진 값으로"
+        },
+        {
+          "id": "math_024",
+          "correct": false,
+          "expected": 95,
+          "extracted": 435.0,
+          "response_preview": "단계별로 생각해 봅시다. 먼저, 4번의 시험에서의 총 점수를 계산해야 합니다. 평균이 85점인 경우, 총 점수는 평균에 시험 수를 곱한 값입니다.\n\n총 점수 (4번 시험) = 평균 (85점) × 시험 수 (4)\n총 점수 (4번 시험) = 85 × 4\n총 점수 (4번 시험) = 340점\n\n다음으로, 5번 시험의 평균이 87점이 되려면 5번 시험의 총 점수를 "
+        },
+        {
+          "id": "math_025",
+          "correct": false,
+          "expected": 25,
+          "extracted": 20.0,
+          "response_preview": "단계별로 생각해 봅시다.\n\n1. 먼저, 10% 소금물 200g의 소금량을 계산합니다. 10%는 0.10으로 표현할 수 있습니다. 따라서 200g의 10%는 200g * 0.10 = 20g의 소금입니다.\n\n2. 이제 20% 소금물 200g의 소금량을 계산해야 합니다. 20%는 0.20으로 표현할 수 있습니다. 따라서 200g의 20%는 200g * 0.20 "
+        },
+        {
+          "id": "math_026",
+          "correct": true,
+          "expected": 6,
+          "extracted": 6.0,
+          "response_preview": "이차방정식 x^2 - 5x + 6 = 0의 두 근의 곱을 찾으려면, 이차방정식의 공식을 사용할 수 있습니다. 이차방정식의 공식은 ax^2 + bx + c = 0의 근의 곱이 c/a로 주어집니다.\n\n이 경우, a = 1, b = -5, c = 6입니다.\n\n따라서 이차방정식의 근의 곱은 c/a = 6/1 = 6입니다.\n\n답: 6"
+        },
+        {
+          "id": "math_027",
+          "correct": true,
+          "expected": 50,
+          "extracted": 50.0,
+          "response_preview": "정사각형의 넓이는 대각선 길이의 제곱의 절반입니다. 대각선 길이가 10cm인 경우, 넓이는 다음과 같이 계산할 수 있습니다:\n\n넓이 = (대각선 길이)² / 2\n넓이 = (10cm)² / 2\n넓이 = 100cm² / 2\n넓이 = 50cm²\n\n답: 50"
+        },
+        {
+          "id": "math_028",
+          "correct": false,
+          "expected": 8,
+          "extracted": 1.0,
+          "response_preview": "이 문제를 해결하기 위해서는 동전 던지는 사건의 가능한 결과를 고려해야 합니다. 동전은 앞면(HEAD) 또는 뒷면(TAIL)로 나올 수 있습니다. 동전 3개를 던졌을 때, 가능한 결과는 다음과 같습니다:\n\n1. TTT (모두 뒷면)\n2. TTH (두 개 뒷면, 하나 앞면)\n3. THT (두 개 뒷면, 하나 앞면)\n4. THH (두 개 앞면, 하나 뒷면)\n5"
+        },
+        {
+          "id": "math_029",
+          "correct": false,
+          "expected": 24,
+          "extracted": 144.0,
+          "response_preview": "최종 답은: 24\n\n풀이 과정:\n1. 두 숫자 72와 48의 소인수분해를 찾습니다.\n2. 72의 소인수분해는 2^3 * 3^2입니다.\n3. 48의 소인수분해는 2^4 * 3^1입니다.\n4. 두 숫자의 최대공약수(LCM)를 찾으려면, 소인수분해에서 각 소인수의 최대의 지수를 선택합니다.\n5. 2의 경우, 최대의 지수는 4입니다 (72에서).\n6. 3의 경우,"
+        },
+        {
+          "id": "math_030",
+          "correct": false,
+          "expected": 90,
+          "extracted": 6.0,
+          "response_preview": "이 문제를 해결하기 위해서는 시계에서 3시 정각일 때 시침과 분침이 이루는 각도를 결정해야 합니다.\n\n1. 시계는 12시간으로 구성되어 있으며 각 시간은 30도 (360도 / 12시간)입니다.\n2. 시침과 분침이 이루는 각도는 시계의 12시간을 60분으로 나눈 각도입니다.\n3. 따라서 각분은 360도 / 60분 = 6도입니다.\n\n따라서 시계에서 3시 정각일"
+        }
+      ]
+    },
+    {
+      "model": "llama3.1:8b-instruct-q8_0",
+      "scores": {
+        "python_pass1": 0.45,
+        "sql_accuracy": 0.8,
+        "debug_accuracy": 0.3,
+        "math_accuracy": 0.7667
+      },
+      "python_details": [
+        {
+          "id": "py_001",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef fibonacci(n: int) -> int:\n    \"\"\"\n    n 번째 피보나치 수를 반환합니다.\n\n    Args:\n        n (int): 피보나치를 계산할 항의 번호(0부터 시작)\n\n    Returns:\n        int: n 번째 피보나치 수\n    \"\"\"\n\n    # Base case : 1번째와 2번째는 "
+        },
+        {
+          "id": "py_002",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef is_palindrome(s: str) -> bool:\n    \"\"\"\n    주어진 문자열이 회문인지 판별하는 함수.\n\n    Args:\n        s (str): 검사할 문자열.\n\n    Returns:\n        bool: True if the string is a palindrome, False otherwise.\n  "
+        },
+        {
+          "id": "py_003",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef sort_list(lst: list) -> list:\n    \"\"\"\n    오름차순으로 정렬된 리스트를 반환합니다.\n\n    Args:\n        lst (list): 입력한 리스트.\n\n    Returns:\n        list: 오름차순으로 정렬된 리스트.\n    \"\"\"\n\n    # 내장 함수 sorted() 사용\n    "
+        },
+        {
+          "id": "py_004",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef binary_search(lst: list, target: int) -> int:\n    \"\"\"\n    정렬된 리스트에서 이진 탐색으로 target의 인덱스를 찾는 함수.\n\n    Args:\n        lst (list): 정렬된 리스트.\n        target (int): 찾을 대상 값.\n\n    Returns:\n     "
+        },
+        {
+          "id": "py_005",
+          "passed": 4,
+          "total": 4,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef matrix_transpose(matrix: list) -> list:\n    \"\"\"\n    This function takes a 2D matrix (list of lists) as input and returns its transpose.\n\n    Args:\n        matrix (list): A 2D matrix repr"
+        },
+        {
+          "id": "py_006",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef remove_duplicates(lst):\n    seen = set()\n    result = []\n    \n    for item in lst:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n\n    return res"
+        },
+        {
+          "id": "py_007",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef caesar_cipher(text: str, shift: int) -> str:\n    \"\"\"\n    Caesar Cipher function to encrypt a given text by shifting each alphabet \n    by the specified amount.\n    \n    Parameters:\n    t"
+        },
+        {
+          "id": "py_008",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef gcd(a: int, b: int) -> int:\n    \"\"\"\n    두 정수의 최대 공약수를 계산하는 함수\n    \n    Parameters:\n    a (int): 첫 번째 자연수\n    b (int): 두 번째 자연수\n    \n    Returns:\n    int: 가장 큰 공통 배수로 나눌 수 있는 숫자\n    \"\"\"\n\n"
+        },
+        {
+          "id": "py_009",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef roman_to_int(s: str) -> int:\n    \"\"\"\n    Roman numeral to integer conversion function.\n\n    Args:\n        s (str): A string representing a Roman numeral.\n\n    Returns:\n        int: The i"
+        },
+        {
+          "id": "py_010",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef is_prime(n: int) -> bool:\n    \"\"\"\n    주어진 정수가 소수인지 판별하는 함수.\n\n    Args:\n        n (int): 숫자를 검사할 대상입니다.\n\n    Returns:\n        bool: True이면 소수, False이면 소수가 아닙니다.\n    \"\"\"\n\n    # 2보다 작은 자연수를"
+        },
+        {
+          "id": "py_011",
+          "passed": 4,
+          "total": 4,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef char_count(s: str) -> dict:\n    \"\"\"\n    문자열에서 각 문자의 등장 횟수를 딕셔너리로 반환합니다.\n\n    Args:\n        s (str): 분석할 문자열입니다.\n\n    Returns:\n        dict: 각 문자의 등장횟수가 담긴 딕셔너리입니다.\n    \"\"\"\n    \n    # 빈 딕"
+        },
+        {
+          "id": "py_012",
+          "passed": 4,
+          "total": 4,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef reverse_list(lst: list) -> list:\n    \"\"\"\n    주어진 리스트를 뒤집는 함수입니다.\n    \n    Parameters:\n    lst (list): 이진 트리\n    \n    Returns:\n    list: 역순화된 리스트\n    \"\"\"\n    return lst[::-1]\n```\n\n위의 코드에서"
+        },
+        {
+          "id": "py_013",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef merge_sorted(lst1: list, lst2: list) -> list:\n    \"\"\"\n    Merge two sorted lists into a single sorted list.\n    \n    Args:\n        lst1 (list): The first sorted list.\n        lst2 (list)"
+        },
+        {
+          "id": "py_014",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef factorial(n: int) -> int:\n    \"\"\"\n    Calculate the factorial of a given integer n.\n\n    Args:\n        n (int): The input number to calculate its factorial.\n\n    Returns:\n        int: Th"
+        },
+        {
+          "id": "py_015",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef second_largest(lst):\n    \"\"\"\n    This function returns the second largest value in a given list.\n    \n    Parameters:\n    lst (list): A list of integers\n    \n    Returns:\n    int: The se"
+        },
+        {
+          "id": "py_016",
+          "passed": 5,
+          "total": 5,
+          "pass_at_1": 1.0,
+          "response_preview": "```python\ndef count_vowels(s: str) -> int:\n    \"\"\"\n    문자열에서 모음(a, e, i, o, u)의 개수를 센다.\n    \n    Parameters:\n    s (str): 확인할 문자열\n    \n    Returns:\n    int: 모음의 총 수\n    \"\"\"\n    # 대소문자를 구분하지 않으므로 lower"
+        },
+        {
+          "id": "py_017",
+          "passed": 0,
+          "total": 3,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef power_set(lst: list) -> list:\n    \"\"\"\n    Returns the power set of a given list.\n    \n    Args:\n        lst (list): The input list.\n\n    Returns:\n        list: A 2D list containing all p"
+        },
+        {
+          "id": "py_018",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef max_subarray_sum(lst):\n    \"\"\"\n    This function calculates the maximum sum of a subarray in a given list.\n    \n    Parameters:\n    lst (list): A list of integers\n    \n    Returns:\n    i"
+        },
+        {
+          "id": "py_019",
+          "passed": 3,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef longest_word(s: str) -> str:\n    \"\"\"\n    Returns the longest word in a given string.\n\n    If multiple words have the same maximum length, returns the first one encountered.\n    \n    Para"
+        },
+        {
+          "id": "py_020",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": "```python\ndef to_binary(n: int) -> str:\n    \"\"\"\n    Integer to Binary String Conversion\n    \n    This function converts an integer into a binary string representation.\n    \n    Parameters:\n    n (int)"
+        }
+      ],
+      "sql_details": [
+        {
+          "id": "sql_001",
+          "correct": false,
+          "error": null,
+          "response_preview": "```sql\nSELECT name, department \nFROM employees \nWHERE salary >= 500000;\n```"
+        },
+        {
+          "id": "sql_002",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT customer_name, SUM(amount) as total_amount FROM orders GROUP BY customer_name ORDER BY total_amount DESC;\n```"
+        },
+        {
+          "id": "sql_003",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT \n    student_name, AVG(score) as avg_score\nFROM scores\nGROUP BY student_name\nHAVING AVG(score) > 80;\n```"
+        },
+        {
+          "id": "sql_004",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT category, COUNT(*) as count \nFROM products GROUP BY category HAVING COUNT(category) > 1;\n```"
+        },
+        {
+          "id": "sql_005",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT c.name, COUNT(co.id) as order_count \nFROM customers c JOIN customer_orders co ON c.id = co.customer_id GROUP BY c.name;\n```"
+        },
+        {
+          "id": "sql_006",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT department, AVG(salary) AS avg_salary \nFROM dept_employees GROUP BY department HAVING AVG(salary) > ( SELECT AVG(salary) FROM dept_employees );\n```"
+        },
+        {
+          "id": "sql_007",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT title, price \nFROM books \nWHERE publish_year = 2023 AND price IN (SELECT MAX(price) FROM books WHERE publish_year = 2023);\n```"
+        },
+        {
+          "id": "sql_008",
+          "correct": false,
+          "error": null,
+          "response_preview": "```sql\nSELECT \n    grade,\n    COUNT(*) as student_count,  \n    AVG(age) as avg_age\nFROM students\nGROUP BY grade;\n```"
+        },
+        {
+          "id": "sql_009",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT month, SUM(revenue) as total_revenue FROM sales GROUP BY month ORDER BY total_revenue DESC LIMIT 3;\n```"
+        },
+        {
+          "id": "sql_010",
+          "correct": true,
+          "error": null,
+          "response_preview": "```sql\nSELECT *\nFROM company_employees\nWHERE name LIKE '%김%'\nORDER BY hire_date;\n```"
+        }
+      ],
+      "debug_details": [
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_001",
+          "response_preview": "버그는 다음과 같습니다.\n\n*   `range`함수의 첫 번째 인자가 0이지만, 현재는 1로 설정되어 있습니다. 이로 인해 가장 처음 원소가 누락됩니다.\n*   총 합을 구하는 함수에서 정상적인 결과를 얻으려면 모든 요소를 포함하여 계산해야 합니다.\n\n수정된 코드:\n\n```python\ndef sum_list(lst):\n    \"\"\"리스트의 요소를 모두 더합"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": true,
+          "correct": true,
+          "id": "debug_002",
+          "response_preview": "버그는 다음 두 가지 중 하나입니다.\n\n*   `a`와 `b`의 비교에서 `<` 연산자 대신에 `>` 연산자를 사용하여 오직 최소값을 반환하는 로직이 있습니다.\n*   현재 코드에서는 `a < b` 일 때, `return a;`로 `a`를 리턴하고, 그 외 나머지 경우인 `else`는 `b`를 리턴합니다. 따라서, 이 경우 `a > b`, `a == b` "
+        },
+        {
+          "bug_identified": true,
+          "fix_works": true,
+          "correct": true,
+          "id": "debug_003",
+          "response_preview": "버그에 대한 설명과 함께 수정된 코드 블록을 아래에서 확인하실 수 있습니다.\n\n### 1. 버그 설명:\n\n- 현재 `find_maximum` 함수는 항상 리스트의 첫 번째 원소가 초기값으로 설정되어 있기 때문에, 가장 큰 값을 찾지 못하는 비효율적인 구현입니다.\n  \n  - 예를 들어 `[10,20,-30]`这样的리스트에 대해 실행하면 `-30`이 리턴됩니"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": true,
+          "correct": true,
+          "id": "debug_004",
+          "response_preview": "버그는 다음과 같습니다.\n\n- 문자열 `s`의 인덱스는 0부터 시작하므로, 반복문에서 `range(len(s), -1)`이 아니라 `range(len(s) - 1, -1, -1)`을 사용해야 합니다.\n- 현재 코드에서는 `i`가 문자열 `s`의 길이를 초과하는 값 (`len(s)-1`, ...)까지 증가하므로 인덱스 오류가 발생합니다.\n\n버그를 수정한 전체"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_005",
+          "response_preview": "버그는 `if` 문에서 조건에 맞지 않는 경우, 즉 `n % 2 == 0` 일 때 `return True;` 이 아닌 `return False;`가 반환되는 것입니다.\n\n이러한 버그를 수정하기 위해서는 `if` 문의 논리와 결과 값을 반대로 바꾸면 됩니다. \n\n```python\ndef is_even(n):\n    if n % 2 != 1:\n        r"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_006",
+          "response_preview": "버그는 `/` 연산자 이후에 `+ 1` 이라는 잘못된 추가입니다.\n\n이러한 오류로 인해, 리스트의 평균을 구할 때 항상 1 더하여 결과가 나올 수 있습니다. 이는 원치 않는 결과를 가져오며 계산의 정확성을 저하합니다.\n\n**버그 설명**\n\n*   함수 `average(lst)`는 입력 받은 리스트 `lst` 내 모든 요소의 합을 구하고, 그 후에 `len("
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_007",
+          "response_preview": "버그의 원인은 `while` 루프 조건에서 `n >= 0`이기 때문입니다.\n\n```python\ndef countdown(n):\n    result = []\n    while n >= 0:\n        # 인덱스 에러를 발생시키는 코드가 없습니다.\n```\n\n위와 같은 이유로, 카운트다운은 무한 루프에 빠지게 됩니다.  \n\n버그를 해결하기 위해서 `n`을 감"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_008",
+          "response_preview": "버그에 대한 설명과, 오류 해결을 위한 수정 된 전체 기능입니다.\n\n### 1. 버그에 대한 설명:\n\n버그는 `lst.pop(i)` 부분에서 발생합니다. 이 구문은 리스트의 원소를 제거할 때 인덱스 `i`를 사용하여 해당 원소가 삭제됩니다. 그러나 `pop()` 메서드는 현재 위치(index)로 제거된 아이템을 리턴하기 때문에, 연속적인 인덱스의 오프셋이 "
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_009",
+          "response_preview": "버그는 딕셔너리의 키 대신에 값들을 합산하려고 하지만, 현재 코드에서는 키들을 합산하고 있는 것입니다.\n\n`for key in d:` 부분에서 `key`에는 딕셔너리 `d`의 각 키가 저장되기 때문에, 이 상태에서는 인덱싱이 될 수 없습니다. \n\n따라서 버그는 다음과 같이 정의되어 있습니다:\n\n*   현재 함수는 딕셔너리의 키를 합산하는 대신에, 실제로 필"
+        },
+        {
+          "bug_identified": true,
+          "fix_works": false,
+          "correct": false,
+          "id": "debug_010",
+          "response_preview": "버그에 대한 풀이:\n\n버그는 리스트 `lst1`과 `lst2`이 중복적으로 포함되는 문제입니다.\n\n원래의 구현은 `result = lst1`에서 시작하여, 이 결과값을 `append()` 메서드를 사용해 새로운 요소로 추가하려합니다. 그러나 이는 첫 번째 인수에 대한 불변성 깨짐으로 이어질 수 있습니다: `lst2.append(lst1)`는 리스트를 변경하"
+        }
+      ],
+      "math_details": [
+        {
+          "id": "math_001",
+          "correct": true,
+          "expected": 2800,
+          "extracted": 2800.0,
+          "response_preview": "사과 3개에 1200원인 것을 이용하여 사과 1개의 가격을 구합니다.\n\n사과 1개의 가격 = 1200원 / 3 = 400원\n\n사과 7개의 가격 = 사과 1개의 가격 * 7 = 400원 * 7 = 2800원\n\n답: 2800"
+        },
+        {
+          "id": "math_002",
+          "correct": true,
+          "expected": 5,
+          "extracted": 5.0,
+          "response_preview": "과정을 거쳐서 풀어보겠습니다.\n\n1. x^2 - 5x + 6 = 0 이라는 식이 주어집니다. 이 식은 두 항의 합이 0인 이차식입니다.\n\n2. 이차식의 두 근의 합은, 이차식의 계수인 a, b, c에 의해 결정됩니다. 이차식의 두 근의 합은 -b/a로 계산됩니다.\n\n3. 이차식 x^2 - 5x + 6 = 0의 경우, a = 1, b = -5, c = 6입니"
+        },
+        {
+          "id": "math_003",
+          "correct": true,
+          "expected": 78.5,
+          "extracted": 78.5,
+          "response_preview": "원 넓이는 반지름의 제곱에 π를 곱한 값입니다.\n\n원 넓이 = π × 반지름^2\n= 3.14 × 5^2\n= 3.14 × 25\n= 78.5\n\n따라서, 반지름이 5cm인 원의 넓이는 약 78.5cm²입니다.\n\n답: 78.5"
+        },
+        {
+          "id": "math_004",
+          "correct": true,
+          "expected": 5050,
+          "extracted": 5050.0,
+          "response_preview": "1부터 100까지의 자연수의 합을 구하는 공식은 다음과 같습니다.\n\n합 = (처음 자연수 + 마지막 자연수) / 2 × (마지막 자연수 - 처음 자연수 + 1)\n\n처음 자연수는 1, 마지막 자연수는 100입니다.\n\n합 = (1 + 100) / 2 × (100 - 1 + 1)\n합 = 101 / 2 × 100\n합 = 50.5 × 100\n합 = 5050\n\n따라서"
+        },
+        {
+          "id": "math_005",
+          "correct": true,
+          "expected": 6,
+          "extracted": 6.0,
+          "response_preview": "주사위 두 개를 던졌을 때, 합이 7이 될 수 있는 경우는 다음과 같습니다.\n\n1. 첫 번째 주사위가 1, 두 번째 주사위가 6\n2. 첫 번째 주사위가 2, 두 번째 주사위가 5\n3. 첫 번째 주사위가 3, 두 번째 주사위가 4\n4. 첫 번째 주사위가 4, 두 번째 주사위가 3\n5. 첫 번째 주사위가 5, 두 번째 주사위가 2\n6. 첫 번째 주사위가 6, "
+        },
+        {
+          "id": "math_006",
+          "correct": true,
+          "expected": 150,
+          "extracted": 150.0,
+          "response_preview": "1. 어떤 수의 30%가 45일 때, 그 수를 x라고 할 때, 30%는 0.3로 표현할 수 있습니다.\n2. 30%가 45일 때, 0.3x = 45라는 식을 만들 수 있습니다.\n3. x를 구하기 위해 0.3를 45로 나누면 x = 45 / 0.3 = 150이 됩니다.\n\n따라서, 그 수는 150입니다.\n\n답: 150"
+        },
+        {
+          "id": "math_007",
+          "correct": true,
+          "expected": 5,
+          "extracted": 5.0,
+          "response_preview": "직각삼각형의 두 변의 길이가 3cm, 4cm일 때, 빗변의 길이는 몇 cm입니까?\n\n이 문제는 피타고라스 정리를 사용하여 해결할 수 있습니다.\n\n피타고라스 정리는 직각삼각형에서, 직각의 반대변의 길이의 제곱은, 다른 두 변의 길이의 제곱의 합과 같습니다.\n\n이 문제에서, 두 변의 길이는 3cm와 4cm입니다. 빗변의 길이를 x라고 할 때, 피타고라스 정리를"
+        },
+        {
+          "id": "math_008",
+          "correct": false,
+          "expected": 550,
+          "extracted": 3.0,
+          "response_preview": "연필 5자루와 지우개 3개를 사면 4100원이고, 연필 3자루와 지우개 1개를 사면 2100원입니다.\n\n연필 5자루와 지우개 3개를 사면 4100원인 것을 이용하여 연필 1자루의 가격을 구해 보겠습니다.\n\n연필 5자루의 가격은 4100원이고, 지우개 3개의 가격은 4100원에서 연필 5자루의 가격을 뺀 값입니다.\n\n지우개 3개의 가격은 4100원 - 5(연"
+        },
+        {
+          "id": "math_009",
+          "correct": true,
+          "expected": 1024,
+          "extracted": 1024.0,
+          "response_preview": "2의 10승을 구하려면, 2를 10번 곱해야 합니다.\n\n2^1 = 2\n2^2 = 2 × 2 = 4\n2^3 = 2 × 4 = 8\n2^4 = 2 × 8 = 16\n2^5 = 2 × 16 = 32\n2^6 = 2 × 32 = 64\n2^7 = 2 × 64 = 128\n2^8 = 2 × 128 = 256\n2^9 = 2 × 256 = 512\n2^10 = 2 × 512 = "
+        },
+        {
+          "id": "math_010",
+          "correct": false,
+          "expected": 96,
+          "extracted": 384.0,
+          "response_preview": "정육면체의 겉넓이는 6면의 넓이의 합입니다. \n\n한 면의 넓이는 길이 * 너비 * 높이로 계산됩니다. \n\n모서리 길이가 4cm인 정육면체의 경우, 모든 면의 길이, 너비, 높이가 4cm이므로, \n\n한 면의 넓이는 4 * 4 * 4 = 64cm²입니다. \n\n6면이 있으므로, 겉넓이는 6 * 64 = 384cm²입니다. \n\n따라서, 정육면체의 겉넓이는 384c"
+        },
+        {
+          "id": "math_011",
+          "correct": true,
+          "expected": 150,
+          "extracted": 150.0,
+          "response_preview": "시속 60km로 2시간 30분 동안 이동한 총 거리를 구하려면, 이동 시간을 분으로 변환하고, 이동 거리를 계산하면 됩니다.\n\n1. 이동 시간을 분으로 변환합니다.\n2시간 30분 = 2 x 60 + 30 = 150분\n\n2. 이동 거리를 계산합니다.\n시속 60km로 150분 동안 이동한 거리는 다음과 같습니다.\n거리 = 속력 x 시간 = 60km/h x 15"
+        },
+        {
+          "id": "math_012",
+          "correct": true,
+          "expected": 6,
+          "extracted": 6.0,
+          "response_preview": "12의 약수는 1, 2, 3, 4, 6, 12입니다.\n\n이러한 약수의 개수는 6개입니다.\n\n따라서, 12의 약수의 개수는 6개입니다.\n\n답: 6"
+        },
+        {
+          "id": "math_013",
+          "correct": true,
+          "expected": 59,
+          "extracted": 59.0,
+          "response_preview": "등차수열의 공차(d)는 5-2=3입니다.\n\n20번째 항을 구하려면, 20-1=19개의 공차를 더해야 합니다.\n\n20번째 항은 2+19*3=59입니다.\n\n따라서, 20번째 항은 59입니다.\n\n답: 59"
+        },
+        {
+          "id": "math_014",
+          "correct": true,
+          "expected": 180,
+          "extracted": 180.0,
+          "response_preview": "삼각형의 세 내각의 합은 180도입니다.\n\n이유는 다음과 같습니다.\n\n1. 삼각형의 각은 180도보다 작거나 같기 때문입니다. (각의 합은 180도보다 작거나 같기 때문입니다.)\n2. 삼각형의 세 내각의 합은 180도보다 작거나 같기 때문입니다. (각의 합은 180도보다 작거나 같기 때문입니다.)\n\n따라서, 삼각형의 세 내각의 합은 180도입니다.\n\n답: "
+        },
+        {
+          "id": "math_015",
+          "correct": true,
+          "expected": 15000,
+          "extracted": 15000.0,
+          "response_preview": "1. 원가가 20000원인 상품에 25% 할인한다면, 할인액을 계산해 보겠습니다.\n   25% 할인액 = 20000 * 0.25 = 5000원\n\n2. 원가에서 할인액을 뺀다.\n   판매가 = 원가 - 할인액\n   판매가 = 20000 - 5000\n   판매가 = 15000원\n\n따라서, 25% 할인 후 상품의 판매가는 15000원입니다.\n\n답: 15000"
+        },
+        {
+          "id": "math_016",
+          "correct": false,
+          "expected": 5,
+          "extracted": 32.0,
+          "response_preview": "2의 5승은 32이므로, log₂(32)는 5입니다.\n\n2의 5승은 32이므로, log₂(32)는 5입니다.\n\n2의 5승은 32이므로, log₂(32)는 5입니다.\n\n2의 5승은 32이므로, log₂(32)는 5입니다.\n\n2의 5승은 32이므로, log₂(32)는 5입니다.\n\n2의 5승은 32이므로, log₂(32)는 5입니다.\n\n2의 5승은 32이므로, "
+        },
+        {
+          "id": "math_017",
+          "correct": true,
+          "expected": 30,
+          "extracted": 30.0,
+          "response_preview": "3! + 4!의 값을 구하려면, 먼저 3!과 4!을 구한 후에 더해주면 됩니다.\n\n3! = 3 × 2 × 1 = 6\n4! = 4 × 3 × 2 × 1 = 24\n\n3! + 4! = 6 + 24 = 30\n\n따라서, 3! + 4!의 값은 30입니다.\n\n답: 30"
+        },
+        {
+          "id": "math_018",
+          "correct": false,
+          "expected": 282.6,
+          "extracted": 283.0,
+          "response_preview": "원기둥의 부피를 구하는 공식은 다음과 같습니다.\n\nV = πr²h\n\n여기서 V는 부피, π는 3.14로 주어집니다. r은 반지름, h는 높이입니다.\n\n주어진 값은 다음과 같습니다.\n\nr = 3cm\nh = 10cm\n\n이 값을 공식에 대입하면 다음과 같습니다.\n\nV = π(3)²(10)\n= 3.14 × 9 × 10\n= 3.14 × 90\n= 282.6\n\n따라서 "
+        },
+        {
+          "id": "math_019",
+          "correct": false,
+          "expected": 20,
+          "extracted": 2.0,
+          "response_preview": "5명 중에서 반장과 부반장을 뽑는 경우의 수를 구하려면, 먼저 반장과 부반장을 뽑는 순서를 고려해야 합니다.\n\n1. 반장과 부반장을 뽑는 순서를 고려할 때, 반장과 부반장을 뽑는 순서는 2가지가 있습니다. 반장과 부반장을 뽑는 순서는 반대인 경우도 포함됩니다.\n\n2. 반장과 부반장을 뽑는 순서를 고려한 후, 5명 중에서 반장과 부반장을 뽑는 경우의 수를 구"
+        },
+        {
+          "id": "math_020",
+          "correct": true,
+          "expected": 7,
+          "extracted": 7.0,
+          "response_preview": "1. x + y = 10\n2. x - y = 4\n\n1번과 2번을 더하면 2x = 14이 됩니다.\n\n2x = 14\n\n2를 곱하면 x = 7이 됩니다.\n\nx = 7\n\n따라서, x의 값은 7입니다.\n\n답: 7"
+        },
+        {
+          "id": "math_021",
+          "correct": true,
+          "expected": 10,
+          "extracted": 10.0,
+          "response_preview": "직사각형의 대각선 길이를 구하는 공식은 다음과 같습니다.\n\n대각선 길이 = √(가로² + 세로²)\n\n이 문제의 경우, 가로 8cm, 세로 6cm이므로 대각선 길이를 구할 수 있습니다.\n\n대각선 길이 = √(8² + 6²)\n= √(64 + 36)\n= √100\n= 10cm\n\n따라서, 직사각형의 대각선 길이는 10cm입니다.\n\n답: 10"
+        },
+        {
+          "id": "math_022",
+          "correct": false,
+          "expected": 5,
+          "extracted": 7.0,
+          "response_preview": "7을 더하고 3을 곱하면 36이 된다는 것은, 3을 곱한 후 7을 더한 수를 의미합니다. \n\n3을 곱한 후 7을 더한 수를 x라고 할 때, x = 3x + 7가 됩니다. \n\n이제 x를 3으로 나누면, x - 7 = 3x가 됩니다. \n\nx - 7 = 3x를 x로 나누면, 1 = 3이 됩니다. \n\n이러한 식은 x = 7을 의미합니다. \n\n따라서, x = 7이 "
+        },
+        {
+          "id": "math_023",
+          "correct": true,
+          "expected": 40,
+          "extracted": 40.0,
+          "response_preview": "50명의 학생 중 수학을 좋아하는 학생이 30명, 영어를 좋아하는 학생이 25명, 둘 다 좋아하는 학생이 15명이라고 합니다.\n\n수학을 좋아하는 학생의 수는 30명이고, 영어를 좋아하는 학생의 수는 25명입니다. 둘 다 좋아하는 학생의 수는 15명입니다. \n\n둘 중 하나 이상 좋아하는 학생의 수를 구하려면, 수학을 좋아하는 학생의 수와 영어를 좋아하는 학생"
+        },
+        {
+          "id": "math_024",
+          "correct": true,
+          "expected": 95,
+          "extracted": 95.0,
+          "response_preview": "4번의 시험에서 평균이 85점인 경우, 총 점수는 4 * 85 = 340점입니다.\n\n5번 시험의 평균이 87점이 되려면, 5번 시험의 총 점수는 5 * 87 = 435점이어야 합니다.\n\n5번 시험에서 받을 점수를 x라고 하면, 4번 시험의 총 점수와 5번 시험의 총 점수를 합하면 340 + x = 435가 됩니다.\n\nx를 구하려면, 340에서 435를 빼면"
+        },
+        {
+          "id": "math_025",
+          "correct": false,
+          "expected": 25,
+          "extracted": 40.0,
+          "response_preview": "10% 소금물 200g의 경우, 소금의 양은 200g의 10%, 즉 20g입니다.\n\n20% 소금물이 되기 위해서는, 200g의 20%를 소금으로 넣어야 합니다. 200g의 20%는 40g입니다.\n\n따라서, 10% 소금물 200g에 40g의 소금을 더하면 20% 소금물이 됩니다.\n\n답: 40"
+        },
+        {
+          "id": "math_026",
+          "correct": true,
+          "expected": 6,
+          "extracted": 6.0,
+          "response_preview": "이차방정식 x^2 - 5x + 6 = 0의 두 근의 곱은 다음과 같이 구할 수 있습니다.\n\n이차방정식 ax^2 + bx + c = 0의 두 근의 곱은 c/a로 구할 수 있습니다.\n\n이 문제의 경우, a = 1, b = -5, c = 6이므로, 두 근의 곱은 6/1 = 6입니다.\n\n따라서, 이차방정식 x^2 - 5x + 6 = 0의 두 근의 곱은 6입니다.\n"
+        },
+        {
+          "id": "math_027",
+          "correct": true,
+          "expected": 50,
+          "extracted": 50.0,
+          "response_preview": "정사각형의 대각선 길이가 10cm인 경우, 정사각형의 한 변의 길이는 10cm/√2 = 5√2cm입니다.\n\n정사각형의 넓이는 한 변의 길이의 제곱으로, 5√2cm × 5√2cm = 25 × 2 = 50cm²입니다.\n\n따라서 정사각형의 넓이는 50cm²입니다.\n\n답: 50"
+        },
+        {
+          "id": "math_028",
+          "correct": true,
+          "expected": 8,
+          "extracted": 8.0,
+          "response_preview": "동전 3개를 동시에 던졌을 때, 모두 앞면이 나올 확률은 1/8입니다. \n\n이 확률의 분모는 8입니다. \n\n8은 기약분수이므로, 분모는 8입니다.\n\n따라서, 답은 다음과 같습니다.\n\n답: 8"
+        },
+        {
+          "id": "math_029",
+          "correct": true,
+          "expected": 24,
+          "extracted": 24.0,
+          "response_preview": "72와 48의 최대공약수를 구하려면, 두 수의 약수를 찾아서 가장 큰 약수를 찾는 방법을 사용할 수 있습니다.\n\n1. 72의 약수는 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72입니다.\n2. 48의 약수는 1, 2, 3, 4, 6, 8, 12, 16, 24, 48입니다.\n\n두 수의 공통 약수는 1, 2, 3, 4, 6, 8, 12,"
+        },
+        {
+          "id": "math_030",
+          "correct": true,
+          "expected": 90,
+          "extracted": 90.0,
+          "response_preview": "시계의 시침은 12시부터 3시까지 3/12 = 1/4를 이동하였습니다. 분침은 12시부터 3시까지 3/12 = 1/4를 이동하였습니다. 시침과 분침은 12시부터 3시까지 1/4를 이동하였으므로, 시침과 분침은 90도를 이루고 있습니다.\n\n답: 90"
+        }
+      ]
+    }
+  ]
+}

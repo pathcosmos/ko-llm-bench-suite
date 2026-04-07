@@ -4,6 +4,7 @@
     "track1": 0.482,
     "track2": 4.4586,
     "track3": 0.368,
+    "track4": 0.0,
     "track5": 0.4224,
     "track6": 128.64,
     "track7": 1000.0
@@ -13,101 +14,110 @@
     "track1": 0.49,
     "track2": 4.6343,
     "track3": 0.417,
+    "track4": 0.0,
     "track5": 0.3729,
     "track6": 7.36,
-    "track7": 901.7
+    "track7": 914.4
   },
   "frankenstallm-3b-v2:latest": {
     "model": "frankenstallm-3b-v2:latest",
     "track1": 0.284,
     "track2": 3.8975,
     "track3": 0.366,
+    "track4": 0.0,
     "track5": 0.3654,
     "track6": 12.75,
-    "track7": 734.6
+    "track7": 736.3
   },
   "frankenstallm-3b-v2:Q8_0": {
     "model": "frankenstallm-3b-v2:Q8_0",
     "track1": 0.318,
     "track2": 3.865,
     "track3": 0.369,
+    "track4": 0.0,
     "track5": 0.388,
     "track6": 8.87,
-    "track7": 667.9
+    "track7": 667.2
   },
   "qwen2.5:3b": {
     "model": "qwen2.5:3b",
     "track1": 0.902,
     "track2": 7.8037,
     "track3": 0.34,
+    "track4": 0.75,
     "track5": 0.7177,
     "track6": 12.79,
-    "track7": 1337.3
+    "track7": 1352.8
   },
   "gemma3:4b": {
     "model": "gemma3:4b",
     "track1": 0.942,
     "track2": 8.6062,
     "track3": 0.44,
+    "track4": 0.8,
     "track5": 0.6799,
     "track6": 9.77,
-    "track7": 1474.7
+    "track7": 1495.5
   },
   "phi4-mini": {
     "model": "phi4-mini",
     "track1": 0.892,
     "track2": 2.095,
     "track3": 0.25,
+    "track4": 0.4542,
     "track5": 0.62,
     "track6": 10.52,
-    "track7": 1231.2
+    "track7": 1239.5
   },
   "exaone3.5:2.4b": {
     "model": "exaone3.5:2.4b",
     "track1": 0.978,
     "track2": 5.1825,
     "track3": 0.46,
+    "track4": 0.6125,
     "track5": 0.7468,
     "track6": 15.04,
-    "track7": 1553.4
+    "track7": 1570.8
   },
   "llama3.2:3b": {
     "model": "llama3.2:3b",
     "track1": 0.826,
     "track2": 1.4275,
     "track3": 0.273,
+    "track4": 0.5292,
     "track5": 0.4618,
     "track6": 12.81,
-    "track7": 969.1
+    "track7": 981.9
   },
   "llama3.1:8b-instruct-q8_0": {
     "model": "llama3.1:8b-instruct-q8_0",
     "track1": 0.888,
     "track2": 7.3925,
     "track3": 0.618,
-    "track4": 0.5417,
+    "track4": 0.5792,
     "track5": 0.566,
     "track6": 3.84,
-    "track7": 1226.4
+    "track7": 1256.2
   },
   "ingu627/exaone4.0:1.2b": {
     "model": "ingu627/exaone4.0:1.2b",
     "track1": 0.792,
     "track2": 3.08,
     "track3": 0.494,
-    "track4": 0.5375,
+    "track4": 0.4292,
     "track5": 0.4956,
     "track6": 26.23,
-    "track7": 1284.6
+    "track7": 1296.8
   },
   "deepseek-r1:1.5b": {
     "model": "deepseek-r1:1.5b",
     "track1": 0.098,
     "track2": 5.3762,
     "track3": 0.258,
+    "track4": 0.0542,
     "track5": 0.3118,
     "track6": 25.08,
-    "track7": 542.7
+    "track7": 536.7
   },
   "evafrill-mo-3b-slerp": {
     "model": "evafrill-mo-3b-slerp",
@@ -116,6 +126,6 @@
     "track4": 0.0,
     "track5": 0.2959,
     "track6": 0.45,
-    "track7": 653.3
+    "track7": 640.1
   }
 }
