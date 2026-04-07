@@ -1,0 +1,36 @@
+project:
+  name: "Frankenstallm 3B Evaluation"
+  output_dir: "./examples/frankenstallm/results"
+  reports_dir: "./examples/frankenstallm/reports"
+
+backend:
+  type: ollama
+  url: "http://localhost:11434"
+
+models:
+  - name: "frankenstallm-3b:latest"
+    tags: [custom, v1]
+  - name: "frankenstallm-3b:Q8_0"
+    tags: [custom, v1]
+  - name: "frankenstallm-3b-v2:latest"
+    tags: [custom, v2]
+  - name: "frankenstallm-3b-v2:Q8_0"
+    tags: [custom, v2]
+  - name: "qwen2.5:3b"
+    tags: [baseline]
+  - name: "gemma3:4b"
+    tags: [baseline]
+  - name: "phi4-mini"
+    tags: [baseline]
+  - name: "exaone3.5:2.4b"
+    tags: [baseline]
+  - name: "llama3.2:3b"
+    tags: [baseline]
+  - name: "llama3.1:8b-instruct-q8_0"
+    tags: [baseline, 8b]
+  - name: "ingu627/exaone4.0:1.2b"
+    tags: [baseline]
+  - name: "deepseek-r1:1.5b"
+    tags: [baseline]
+  - name: "evafrill-mo-3b-slerp"
+    tags: [custom, evafrill]

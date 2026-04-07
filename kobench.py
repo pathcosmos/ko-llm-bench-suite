@@ -167,8 +167,16 @@ def main():
                         help="기존 결과로 리포트만 생성")
     parser.add_argument("--skip-health-check", action="store_true",
                         help="Ollama health check 건너뛰기")
+    parser.add_argument("--config", type=str, default=None,
+                        help="YAML 설정 파일 경로 (예: configs/default.yaml)")
 
     args = parser.parse_args()
+
+    if args.config:
+        from kobench.config import load_yaml_config
+        yaml_cfg = load_yaml_config(args.config)
+        if yaml_cfg.get("models") and not args.models:
+            args.models = [m["name"] for m in yaml_cfg["models"]]
 
     print("=" * 70)
     print("  FRANKENSTALLM 3B 심화 평가 프레임워크")

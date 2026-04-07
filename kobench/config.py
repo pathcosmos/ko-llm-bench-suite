@@ -5,6 +5,35 @@
 import os
 from pathlib import Path
 
+import yaml
+
+
+def load_yaml_config(config_path: str = None) -> dict:
+    """YAML 설정 파일 로드. 없으면 기본값 사용."""
+    defaults_path = Path(__file__).resolve().parent.parent / "configs" / "default.yaml"
+
+    config = {}
+    if defaults_path.exists():
+        with open(defaults_path, encoding="utf-8") as f:
+            config = yaml.safe_load(f) or {}
+
+    if config_path:
+        with open(config_path, encoding="utf-8") as f:
+            user_config = yaml.safe_load(f) or {}
+        _deep_merge(config, user_config)
+
+    return config
+
+
+def _deep_merge(base: dict, override: dict) -> dict:
+    """Recursively merge override into base."""
+    for key, value in override.items():
+        if key in base and isinstance(base[key], dict) and isinstance(value, dict):
+            _deep_merge(base[key], value)
+        else:
+            base[key] = value
+    return base
+
 # ── Ollama 모델 저장 경로 (반드시 프로세스 시작 전에 설정) ────────────────────
 os.environ.setdefault("OLLAMA_MODELS", "/var/snap/ollama/common/models")
 
