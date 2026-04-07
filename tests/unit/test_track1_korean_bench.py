@@ -1,10 +1,10 @@
-"""eval_framework/tracks/track1_korean_bench.py 단위 테스트"""
+"""kobench/tracks/korean_bench.py 단위 테스트"""
 
 import json
 import pytest
 from unittest.mock import patch, MagicMock, call
 
-from eval_framework.tracks.track1_korean_bench import (
+from kobench.tracks.korean_bench import (
     _build_kobest_boolq,
     _build_kobest_copa,
     _build_kobest_sentineg,
@@ -415,12 +415,12 @@ class TestLmEvalAvailable:
 
     def test_available_when_found(self):
         """lm_eval이 PATH에 있으면 True"""
-        with patch("eval_framework.tracks.track1_korean_bench.shutil.which", return_value="/usr/bin/lm_eval"):
+        with patch("kobench.tracks.korean_bench.shutil.which", return_value="/usr/bin/lm_eval"):
             assert _lm_eval_available() is True
 
     def test_unavailable_when_not_found(self):
         """lm_eval이 PATH에 없으면 False"""
-        with patch("eval_framework.tracks.track1_korean_bench.shutil.which", return_value=None):
+        with patch("kobench.tracks.korean_bench.shutil.which", return_value=None):
             assert _lm_eval_available() is False
 
 
@@ -448,8 +448,8 @@ class TestRunLmEval:
         mock_result = MagicMock()
         mock_result.returncode = 0
 
-        with patch("eval_framework.tracks.track1_korean_bench.subprocess.run", return_value=mock_result):
-            with patch("eval_framework.tracks.track1_korean_bench.config.RESULTS_DIR", tmp_path):
+        with patch("kobench.tracks.korean_bench.subprocess.run", return_value=mock_result):
+            with patch("kobench.tracks.korean_bench.config.RESULTS_DIR", tmp_path):
                 scores = _run_lm_eval("test-model")
 
         assert scores == {"kobest_boolq": 0.85, "kobest_copa": 0.72}
@@ -460,7 +460,7 @@ class TestRunLmEval:
         mock_result.returncode = 1
         mock_result.stderr = "error message"
 
-        with patch("eval_framework.tracks.track1_korean_bench.subprocess.run", return_value=mock_result):
+        with patch("kobench.tracks.korean_bench.subprocess.run", return_value=mock_result):
             result = _run_lm_eval("test-model")
 
         assert result is None
@@ -469,7 +469,7 @@ class TestRunLmEval:
         """타임아웃 시 None 반환"""
         import subprocess
         with patch(
-            "eval_framework.tracks.track1_korean_bench.subprocess.run",
+            "kobench.tracks.korean_bench.subprocess.run",
             side_effect=subprocess.TimeoutExpired(cmd="lm_eval", timeout=1800),
         ):
             result = _run_lm_eval("test-model")
@@ -479,7 +479,7 @@ class TestRunLmEval:
     def test_returns_none_on_exception(self):
         """일반 예외 시 None 반환"""
         with patch(
-            "eval_framework.tracks.track1_korean_bench.subprocess.run",
+            "kobench.tracks.korean_bench.subprocess.run",
             side_effect=OSError("file not found"),
         ):
             result = _run_lm_eval("test-model")
@@ -495,8 +495,8 @@ class TestRunLmEval:
         mock_result = MagicMock()
         mock_result.returncode = 0
 
-        with patch("eval_framework.tracks.track1_korean_bench.subprocess.run", return_value=mock_result):
-            with patch("eval_framework.tracks.track1_korean_bench.config.RESULTS_DIR", tmp_path):
+        with patch("kobench.tracks.korean_bench.subprocess.run", return_value=mock_result):
+            with patch("kobench.tracks.korean_bench.config.RESULTS_DIR", tmp_path):
                 result = _run_lm_eval("test-model")
 
         assert result is None
@@ -515,8 +515,8 @@ class TestRunLmEval:
         mock_result = MagicMock()
         mock_result.returncode = 0
 
-        with patch("eval_framework.tracks.track1_korean_bench.subprocess.run", return_value=mock_result):
-            with patch("eval_framework.tracks.track1_korean_bench.config.RESULTS_DIR", tmp_path):
+        with patch("kobench.tracks.korean_bench.subprocess.run", return_value=mock_result):
+            with patch("kobench.tracks.korean_bench.config.RESULTS_DIR", tmp_path):
                 scores = _run_lm_eval("test-model")
 
         assert scores == {"kobest_boolq": 0}
@@ -533,7 +533,7 @@ class TestRunStandalone:
     @pytest.fixture(autouse=True)
     def _patch_sleep(self):
         """time.sleep 무력화"""
-        with patch("eval_framework.tracks.track1_korean_bench.time.sleep"):
+        with patch("kobench.tracks.korean_bench.time.sleep"):
             yield
 
     def _make_questions(self, n=2, benchmark="kobest_copa"):
@@ -558,7 +558,7 @@ class TestRunStandalone:
             "error": None,
         }
 
-        with patch("eval_framework.tracks.track1_korean_bench.runner.generate", return_value=gen_result):
+        with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
             result = _run_standalone("test-model", questions)
 
         assert result["model"] == "test-model"
@@ -574,7 +574,7 @@ class TestRunStandalone:
             "error": None,
         }
 
-        with patch("eval_framework.tracks.track1_korean_bench.runner.generate", return_value=gen_result):
+        with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
             result = _run_standalone("test-model", questions)
 
         assert result["scores"]["kobest_copa"] == 0.0
@@ -588,7 +588,7 @@ class TestRunStandalone:
             "error": "model not found",
         }
 
-        with patch("eval_framework.tracks.track1_korean_bench.runner.generate", return_value=gen_result):
+        with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
             result = _run_standalone("test-model", questions)
 
         assert result["scores"]["kobest_copa"] == 0.0
@@ -620,7 +620,7 @@ class TestRunStandalone:
             "error": None,
         }
 
-        with patch("eval_framework.tracks.track1_korean_bench.runner.generate", return_value=gen_result):
+        with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
             result = _run_standalone("test-model", questions)
 
         assert "kobest_copa" in result["scores"]
@@ -634,7 +634,7 @@ class TestRunStandalone:
             "error": None,
         }
 
-        with patch("eval_framework.tracks.track1_korean_bench.runner.generate", return_value=gen_result):
+        with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
             result = _run_standalone("test-model", questions)
 
         detail = result["details"][0]
@@ -654,7 +654,7 @@ class TestRunStandalone:
             "error": None,
         }
 
-        with patch("eval_framework.tracks.track1_korean_bench.runner.generate", return_value=gen_result):
+        with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
             result = _run_standalone("test-model", questions)
 
         detail = result["details"][0]
@@ -674,13 +674,13 @@ class TestRun:
     def _setup_patches(self):
         """공통 패치 설정"""
         patches = [
-            patch("eval_framework.tracks.track1_korean_bench.runner.wait_for_ollama", return_value=True),
-            patch("eval_framework.tracks.track1_korean_bench.runner.load_checkpoint", return_value=None),
-            patch("eval_framework.tracks.track1_korean_bench.runner.switch_model", return_value=True),
-            patch("eval_framework.tracks.track1_korean_bench.runner.save_checkpoint"),
-            patch("eval_framework.tracks.track1_korean_bench.runner.save_results_incremental", return_value="results/test.json"),
-            patch("eval_framework.tracks.track1_korean_bench.time.sleep"),
-            patch("eval_framework.tracks.track1_korean_bench._lm_eval_available", return_value=False),
+            patch("kobench.tracks.korean_bench.runner.wait_for_ollama", return_value=True),
+            patch("kobench.tracks.korean_bench.runner.load_checkpoint", return_value=None),
+            patch("kobench.tracks.korean_bench.runner.switch_model", return_value=True),
+            patch("kobench.tracks.korean_bench.runner.save_checkpoint"),
+            patch("kobench.tracks.korean_bench.runner.save_results_incremental", return_value="results/test.json"),
+            patch("kobench.tracks.korean_bench.time.sleep"),
+            patch("kobench.tracks.korean_bench._lm_eval_available", return_value=False),
         ]
         for p in patches:
             p.start()
@@ -694,7 +694,7 @@ class TestRun:
             "error": None,
         }
 
-        with patch("eval_framework.tracks.track1_korean_bench.runner.generate", return_value=gen_result):
+        with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
             output = run(["test-model"])
 
         assert output["track"] == TRACK_NAME
@@ -706,13 +706,13 @@ class TestRun:
 
     def test_ollama_not_available_raises(self):
         """Ollama 서버 연결 실패 시 RuntimeError"""
-        with patch("eval_framework.tracks.track1_korean_bench.runner.wait_for_ollama", return_value=False):
+        with patch("kobench.tracks.korean_bench.runner.wait_for_ollama", return_value=False):
             with pytest.raises(RuntimeError, match="Ollama"):
                 run(["test-model"])
 
     def test_model_switch_failure(self):
         """모델 전환 실패 시 에러 결과 포함"""
-        with patch("eval_framework.tracks.track1_korean_bench.runner.switch_model", return_value=False):
+        with patch("kobench.tracks.korean_bench.runner.switch_model", return_value=False):
             output = run(["bad-model"])
 
         assert len(output["results"]) == 1
@@ -728,8 +728,8 @@ class TestRun:
                 "details": [],
             }],
         }
-        with patch("eval_framework.tracks.track1_korean_bench.runner.load_checkpoint", return_value=checkpoint_data):
-            with patch("eval_framework.tracks.track1_korean_bench.runner.generate") as mock_gen:
+        with patch("kobench.tracks.korean_bench.runner.load_checkpoint", return_value=checkpoint_data):
+            with patch("kobench.tracks.korean_bench.runner.generate") as mock_gen:
                 output = run(["test-model"])
 
         mock_gen.assert_not_called()
@@ -740,8 +740,8 @@ class TestRun:
         """lm_eval 모드 성공 시 lm_eval 결과 사용"""
         lm_scores = {"kobest_boolq": 0.9, "kobest_copa": 0.8}
 
-        with patch("eval_framework.tracks.track1_korean_bench._lm_eval_available", return_value=True):
-            with patch("eval_framework.tracks.track1_korean_bench._run_lm_eval", return_value=lm_scores):
+        with patch("kobench.tracks.korean_bench._lm_eval_available", return_value=True):
+            with patch("kobench.tracks.korean_bench._run_lm_eval", return_value=lm_scores):
                 output = run(["test-model"])
 
         assert len(output["results"]) == 1
@@ -755,9 +755,9 @@ class TestRun:
             "error": None,
         }
 
-        with patch("eval_framework.tracks.track1_korean_bench._lm_eval_available", return_value=True):
-            with patch("eval_framework.tracks.track1_korean_bench._run_lm_eval", return_value=None):
-                with patch("eval_framework.tracks.track1_korean_bench.runner.generate", return_value=gen_result):
+        with patch("kobench.tracks.korean_bench._lm_eval_available", return_value=True):
+            with patch("kobench.tracks.korean_bench._run_lm_eval", return_value=None):
+                with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
                     output = run(["test-model"])
 
         assert len(output["results"]) == 1
@@ -770,7 +770,7 @@ class TestRun:
             "error": None,
         }
 
-        with patch("eval_framework.tracks.track1_korean_bench.runner.generate", return_value=gen_result):
+        with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
             output = run(["test-model"])
 
         assert "test-model" in output["summary"]
@@ -783,8 +783,8 @@ class TestRun:
             "error": None,
         }
 
-        with patch("eval_framework.tracks.track1_korean_bench.config.ALL_MODELS", ["model-a"]):
-            with patch("eval_framework.tracks.track1_korean_bench.runner.generate", return_value=gen_result):
+        with patch("kobench.tracks.korean_bench.config.ALL_MODELS", ["model-a"]):
+            with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
                 output = run()
 
         assert output["num_models"] == 1
@@ -796,7 +796,7 @@ class TestRun:
             "error": None,
         }
 
-        with patch("eval_framework.tracks.track1_korean_bench.runner.generate", return_value=gen_result):
+        with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
             output = run(["model-a", "model-b"])
 
         assert output["num_models"] == 2

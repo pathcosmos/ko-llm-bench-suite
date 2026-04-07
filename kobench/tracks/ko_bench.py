@@ -14,9 +14,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-from eval_framework import config
-from eval_framework import runner
-from eval_framework import judge
+from kobench import config
+from kobench import runner
+from kobench import judge
 
 
 def _load_questions() -> dict[str, list[dict[str, str]]] | None:
@@ -430,7 +430,7 @@ QUESTIONS: dict[str, list[dict[str, str]]] = {
 # 실행
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-TRACK_NAME = "track2_ko_bench"
+TRACK_NAME = "ko_bench"
 
 
 def run(models: Optional[list[str]] = None) -> dict:
@@ -442,7 +442,7 @@ def run(models: Optional[list[str]] = None) -> dict:
 
     Returns:
         {
-            "track": "track2_ko_bench",
+            "track": "ko_bench",
             "results": [...],
             "summary": {model: {category: {turn1_mean, turn2_mean, overall_mean}}}
         }

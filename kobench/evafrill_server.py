@@ -5,7 +5,7 @@
 
 Usage:
     cd ~/cursor/temp_git/frankenstallm_test
-    ~/ai-env/bin/python -m uvicorn eval_framework.evafrill_server:app --host 0.0.0.0 --port 8000
+    ~/ai-env/bin/python -m uvicorn kobench.evafrill_server:app --host 0.0.0.0 --port 8000
 """
 
 import asyncio
@@ -49,7 +49,7 @@ class GenerateResponse(BaseModel):
 def startup_load_model():
     """서버 시작 시 모델을 GPU에 로딩"""
     global _loaded
-    from eval_framework.evafrill_runner import load_model
+    from kobench.evafrill_runner import load_model
     print("🔄 EVAFRILL 모델 로딩 중...")
     start = time.time()
     load_model()
@@ -65,7 +65,7 @@ def health():
 
 @app.post("/generate", response_model=GenerateResponse)
 async def http_generate(req: GenerateRequest):
-    from eval_framework.evafrill_runner import generate
+    from kobench.evafrill_runner import generate
     loop = asyncio.get_event_loop()
     result = await loop.run_in_executor(
         None,
@@ -82,7 +82,7 @@ async def http_generate(req: GenerateRequest):
 @app.post("/load")
 def http_load():
     global _loaded
-    from eval_framework.evafrill_runner import load_model
+    from kobench.evafrill_runner import load_model
     load_model()
     _loaded = True
     return {"ok": True}
@@ -91,7 +91,7 @@ def http_load():
 @app.post("/unload")
 def http_unload():
     global _loaded
-    from eval_framework.evafrill_runner import unload_model
+    from kobench.evafrill_runner import unload_model
     unload_model()
     _loaded = False
     return {"ok": True}

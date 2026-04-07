@@ -1,10 +1,10 @@
-"""eval_framework/tracks/track2_ko_bench.py 단위 테스트"""
+"""kobench/tracks/ko_bench.py 단위 테스트"""
 
 import json
 import pytest
 from unittest.mock import patch, MagicMock
 
-from eval_framework.tracks.track2_ko_bench import (
+from kobench.tracks.ko_bench import (
     _scores_mean,
     _make_error_entry,
     _make_partial_entry,
@@ -308,7 +308,7 @@ class TestLoadQuestions:
 
     def test_returns_none_when_file_missing(self, tmp_path):
         """파일이 없으면 None 반환"""
-        with patch("eval_framework.tracks.track2_ko_bench.config.DATA_DIR", tmp_path):
+        with patch("kobench.tracks.ko_bench.config.DATA_DIR", tmp_path):
             result = _load_questions()
             assert result is None
 
@@ -320,7 +320,7 @@ class TestLoadQuestions:
         (ko_bench_dir / "questions.json").write_text(
             json.dumps(data, ensure_ascii=False), encoding="utf-8",
         )
-        with patch("eval_framework.tracks.track2_ko_bench.config.DATA_DIR", tmp_path):
+        with patch("kobench.tracks.ko_bench.config.DATA_DIR", tmp_path):
             result = _load_questions()
             assert result == data
 
@@ -337,19 +337,19 @@ class TestRun:
     def _setup_patches(self, tmp_path):
         """공통 패치 설정"""
         patches = [
-            patch("eval_framework.tracks.track2_ko_bench.runner.load_checkpoint", return_value=None),
-            patch("eval_framework.tracks.track2_ko_bench.runner.switch_model", return_value=True),
-            patch("eval_framework.tracks.track2_ko_bench.runner.unload_all_models"),
-            patch("eval_framework.tracks.track2_ko_bench.runner.save_checkpoint"),
-            patch("eval_framework.tracks.track2_ko_bench.runner.save_results_incremental", return_value="results/test.json"),
-            patch("eval_framework.tracks.track2_ko_bench.time.sleep"),
-            patch("eval_framework.tracks.track2_ko_bench.config.TRACK2_CATEGORIES", ["writing"]),
+            patch("kobench.tracks.ko_bench.runner.load_checkpoint", return_value=None),
+            patch("kobench.tracks.ko_bench.runner.switch_model", return_value=True),
+            patch("kobench.tracks.ko_bench.runner.unload_all_models"),
+            patch("kobench.tracks.ko_bench.runner.save_checkpoint"),
+            patch("kobench.tracks.ko_bench.runner.save_results_incremental", return_value="results/test.json"),
+            patch("kobench.tracks.ko_bench.time.sleep"),
+            patch("kobench.tracks.ko_bench.config.TRACK2_CATEGORIES", ["writing"]),
             patch(
-                "eval_framework.tracks.track2_ko_bench._load_questions",
+                "kobench.tracks.ko_bench._load_questions",
                 return_value=None,
             ),
             patch(
-                "eval_framework.tracks.track2_ko_bench.QUESTIONS",
+                "kobench.tracks.ko_bench.QUESTIONS",
                 {"writing": [{"turn1": "질문1", "turn2": "질문2"}]},
             ),
         ]
@@ -373,8 +373,8 @@ class TestRun:
             "reasoning": "좋음",
         }
 
-        with patch("eval_framework.tracks.track2_ko_bench.runner.chat", return_value=chat_result):
-            with patch("eval_framework.tracks.track2_ko_bench.judge.score_with_criteria", return_value=judge_result):
+        with patch("kobench.tracks.ko_bench.runner.chat", return_value=chat_result):
+            with patch("kobench.tracks.ko_bench.judge.score_with_criteria", return_value=judge_result):
                 output = run(["test-model"])
 
         assert output["track"] == TRACK_NAME
@@ -392,7 +392,7 @@ class TestRun:
             "wall_time_s": 0,
         }
 
-        with patch("eval_framework.tracks.track2_ko_bench.runner.chat", return_value=error_result):
+        with patch("kobench.tracks.ko_bench.runner.chat", return_value=error_result):
             output = run(["test-model"])
 
         assert len(output["results"]) == 1
@@ -430,8 +430,8 @@ class TestRun:
             "reasoning": "좋음",
         }
 
-        with patch("eval_framework.tracks.track2_ko_bench.runner.chat", side_effect=mock_chat):
-            with patch("eval_framework.tracks.track2_ko_bench.judge.score_with_criteria", return_value=judge_result):
+        with patch("kobench.tracks.ko_bench.runner.chat", side_effect=mock_chat):
+            with patch("kobench.tracks.ko_bench.judge.score_with_criteria", return_value=judge_result):
                 output = run(["test-model"])
 
         assert len(output["results"]) == 1
@@ -442,7 +442,7 @@ class TestRun:
 
     def test_model_switch_failure_skips_model(self):
         """모델 전환 실패 시 해당 모델 스킵"""
-        with patch("eval_framework.tracks.track2_ko_bench.runner.switch_model", return_value=False):
+        with patch("kobench.tracks.ko_bench.runner.switch_model", return_value=False):
             output = run(["bad-model"])
 
         assert len(output["results"]) == 0
@@ -459,8 +459,8 @@ class TestRun:
                 "error": None,
             }],
         }
-        with patch("eval_framework.tracks.track2_ko_bench.runner.load_checkpoint", return_value=checkpoint_data):
-            with patch("eval_framework.tracks.track2_ko_bench.runner.chat") as mock_chat:
+        with patch("kobench.tracks.ko_bench.runner.load_checkpoint", return_value=checkpoint_data):
+            with patch("kobench.tracks.ko_bench.runner.chat") as mock_chat:
                 output = run(["test-model"])
 
         mock_chat.assert_not_called()
@@ -480,8 +480,8 @@ class TestRun:
             "reasoning": "좋음",
         }
 
-        with patch("eval_framework.tracks.track2_ko_bench.runner.chat", return_value=chat_result):
-            with patch("eval_framework.tracks.track2_ko_bench.judge.score_with_criteria", return_value=judge_result):
+        with patch("kobench.tracks.ko_bench.runner.chat", return_value=chat_result):
+            with patch("kobench.tracks.ko_bench.judge.score_with_criteria", return_value=judge_result):
                 output = run(["test-model"])
 
         entry = output["results"][0]

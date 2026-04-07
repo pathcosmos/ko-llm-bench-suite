@@ -1,10 +1,10 @@
-"""eval_framework/tracks/track3_korean_deep.py 단위 테스트"""
+"""kobench/tracks/korean_deep.py 단위 테스트"""
 
 import json
 import pytest
 from unittest.mock import patch, MagicMock, call
 
-from eval_framework.tracks.track3_korean_deep import (
+from kobench.tracks.korean_deep import (
     _normalize,
     _score_exact,
     _score_contains,
@@ -156,7 +156,7 @@ class TestScoreContains:
 class TestScoreLlmJudge:
     """_score_llm_judge: LLM Judge 채점 (mock)"""
 
-    @patch("eval_framework.tracks.track3_korean_deep.judge.score_response")
+    @patch("kobench.tracks.korean_deep.judge.score_response")
     def test_normal_score(self, mock_score):
         """정상 점수 반환 — 1-10을 0.0-1.0으로 정규화"""
         mock_score.return_value = {"score": 8, "reasoning": "좋은 답변", "error": None}
@@ -167,7 +167,7 @@ class TestScoreLlmJudge:
         assert result["reasoning"] == "좋은 답변"
         assert result["error"] is None
 
-    @patch("eval_framework.tracks.track3_korean_deep.judge.score_response")
+    @patch("kobench.tracks.korean_deep.judge.score_response")
     def test_zero_score(self, mock_score):
         """0점 처리"""
         mock_score.return_value = {"score": 0, "reasoning": "부적절", "error": None}
@@ -176,7 +176,7 @@ class TestScoreLlmJudge:
         assert result["score"] == 0.0
         assert result["score_raw"] == 0
 
-    @patch("eval_framework.tracks.track3_korean_deep.judge.score_response")
+    @patch("kobench.tracks.korean_deep.judge.score_response")
     def test_perfect_score(self, mock_score):
         """만점 처리"""
         mock_score.return_value = {"score": 10, "reasoning": "완벽", "error": None}
@@ -185,7 +185,7 @@ class TestScoreLlmJudge:
         assert result["score"] == 1.0
         assert result["score_raw"] == 10
 
-    @patch("eval_framework.tracks.track3_korean_deep.judge.score_response")
+    @patch("kobench.tracks.korean_deep.judge.score_response")
     def test_missing_score_defaults_zero(self, mock_score):
         """score 키가 없으면 0으로 처리"""
         mock_score.return_value = {"reasoning": "오류", "error": "API 오류"}
@@ -195,7 +195,7 @@ class TestScoreLlmJudge:
         assert result["score_raw"] == 0
         assert result["error"] == "API 오류"
 
-    @patch("eval_framework.tracks.track3_korean_deep.judge.score_response")
+    @patch("kobench.tracks.korean_deep.judge.score_response")
     def test_calls_judge_with_correct_criteria(self, mock_score):
         """카테고리에 맞는 criteria 전달"""
         mock_score.return_value = {"score": 7, "reasoning": "", "error": None}
@@ -208,7 +208,7 @@ class TestScoreLlmJudge:
             criteria=CATEGORY_CRITERIA["존댓말/반말 전환"],
         )
 
-    @patch("eval_framework.tracks.track3_korean_deep.judge.score_response")
+    @patch("kobench.tracks.korean_deep.judge.score_response")
     def test_unknown_category_empty_criteria(self, mock_score):
         """알 수 없는 카테고리 — 빈 criteria"""
         mock_score.return_value = {"score": 5, "reasoning": "", "error": None}
@@ -221,7 +221,7 @@ class TestScoreLlmJudge:
             criteria="",
         )
 
-    @patch("eval_framework.tracks.track3_korean_deep.judge.score_response")
+    @patch("kobench.tracks.korean_deep.judge.score_response")
     def test_missing_reasoning(self, mock_score):
         """reasoning 키가 없으면 빈 문자열"""
         mock_score.return_value = {"score": 6, "error": None}
@@ -247,7 +247,7 @@ class TestLoadQuestions:
             json.dumps(data, ensure_ascii=False), encoding="utf-8",
         )
         with patch(
-            "eval_framework.tracks.track3_korean_deep.QUESTIONS_PATH",
+            "kobench.tracks.korean_deep.QUESTIONS_PATH",
             korean_deep_dir / "questions.json",
         ):
             result = _load_questions()
@@ -256,7 +256,7 @@ class TestLoadQuestions:
     def test_file_not_found_raises(self, tmp_path):
         """파일이 없으면 FileNotFoundError 발생"""
         with patch(
-            "eval_framework.tracks.track3_korean_deep.QUESTIONS_PATH",
+            "kobench.tracks.korean_deep.QUESTIONS_PATH",
             tmp_path / "nonexistent" / "questions.json",
         ):
             with pytest.raises(FileNotFoundError):
@@ -456,26 +456,26 @@ class TestRun:
         """공통 패치 설정"""
         patches = [
             patch(
-                "eval_framework.tracks.track3_korean_deep.runner.load_checkpoint",
+                "kobench.tracks.korean_deep.runner.load_checkpoint",
                 return_value=None,
             ),
             patch(
-                "eval_framework.tracks.track3_korean_deep.runner.wait_for_ollama",
+                "kobench.tracks.korean_deep.runner.wait_for_ollama",
                 return_value=True,
             ),
             patch(
-                "eval_framework.tracks.track3_korean_deep.runner.switch_model",
+                "kobench.tracks.korean_deep.runner.switch_model",
                 return_value=True,
             ),
-            patch("eval_framework.tracks.track3_korean_deep.runner.unload_all_models"),
-            patch("eval_framework.tracks.track3_korean_deep.runner.save_checkpoint"),
+            patch("kobench.tracks.korean_deep.runner.unload_all_models"),
+            patch("kobench.tracks.korean_deep.runner.save_checkpoint"),
             patch(
-                "eval_framework.tracks.track3_korean_deep.runner.save_results_incremental",
+                "kobench.tracks.korean_deep.runner.save_results_incremental",
                 return_value="results/test.json",
             ),
-            patch("eval_framework.tracks.track3_korean_deep.time.sleep"),
+            patch("kobench.tracks.korean_deep.time.sleep"),
             patch(
-                "eval_framework.tracks.track3_korean_deep._load_questions",
+                "kobench.tracks.korean_deep._load_questions",
                 return_value=self.SAMPLE_QUESTIONS,
             ),
         ]
@@ -495,11 +495,11 @@ class TestRun:
         judge_result = {"score": 8, "reasoning": "좋음", "error": None}
 
         with patch(
-            "eval_framework.tracks.track3_korean_deep.runner.generate",
+            "kobench.tracks.korean_deep.runner.generate",
             return_value=gen_result,
         ):
             with patch(
-                "eval_framework.tracks.track3_korean_deep.judge.score_response",
+                "kobench.tracks.korean_deep.judge.score_response",
                 return_value=judge_result,
             ):
                 output = run(["test-model"])
@@ -521,11 +521,11 @@ class TestRun:
         judge_result = {"score": 7, "reasoning": "", "error": None}
 
         with patch(
-            "eval_framework.tracks.track3_korean_deep.runner.generate",
+            "kobench.tracks.korean_deep.runner.generate",
             return_value=gen_result,
         ):
             with patch(
-                "eval_framework.tracks.track3_korean_deep.judge.score_response",
+                "kobench.tracks.korean_deep.judge.score_response",
                 return_value=judge_result,
             ):
                 output = run(["test-model"])
@@ -544,11 +544,11 @@ class TestRun:
         judge_result = {"score": 7, "reasoning": "", "error": None}
 
         with patch(
-            "eval_framework.tracks.track3_korean_deep.runner.generate",
+            "kobench.tracks.korean_deep.runner.generate",
             return_value=gen_result,
         ):
             with patch(
-                "eval_framework.tracks.track3_korean_deep.judge.score_response",
+                "kobench.tracks.korean_deep.judge.score_response",
                 return_value=judge_result,
             ):
                 output = run(["test-model"])
@@ -567,11 +567,11 @@ class TestRun:
         judge_result = {"score": 8, "reasoning": "잘 요약함", "error": None}
 
         with patch(
-            "eval_framework.tracks.track3_korean_deep.runner.generate",
+            "kobench.tracks.korean_deep.runner.generate",
             return_value=gen_result,
         ):
             with patch(
-                "eval_framework.tracks.track3_korean_deep.judge.score_response",
+                "kobench.tracks.korean_deep.judge.score_response",
                 return_value=judge_result,
             ):
                 output = run(["test-model"])
@@ -591,7 +591,7 @@ class TestRun:
         }
 
         with patch(
-            "eval_framework.tracks.track3_korean_deep.runner.generate",
+            "kobench.tracks.korean_deep.runner.generate",
             return_value=gen_result,
         ):
             output = run(["test-model"])
@@ -603,7 +603,7 @@ class TestRun:
     def test_ollama_not_responding_skips_model(self):
         """Ollama 서버 무응답 시 모델 건너뜀"""
         with patch(
-            "eval_framework.tracks.track3_korean_deep.runner.wait_for_ollama",
+            "kobench.tracks.korean_deep.runner.wait_for_ollama",
             return_value=False,
         ):
             output = run(["bad-model"])
@@ -613,7 +613,7 @@ class TestRun:
     def test_model_switch_failure_skips_model(self):
         """모델 전환 실패 시 해당 모델 스킵"""
         with patch(
-            "eval_framework.tracks.track3_korean_deep.runner.switch_model",
+            "kobench.tracks.korean_deep.runner.switch_model",
             return_value=False,
         ):
             output = run(["bad-model"])
@@ -628,11 +628,11 @@ class TestRun:
             ],
         }
         with patch(
-            "eval_framework.tracks.track3_korean_deep.runner.load_checkpoint",
+            "kobench.tracks.korean_deep.runner.load_checkpoint",
             return_value=checkpoint_data,
         ):
             with patch(
-                "eval_framework.tracks.track3_korean_deep.runner.generate",
+                "kobench.tracks.korean_deep.runner.generate",
             ) as mock_gen:
                 output = run(["test-model"])
 
@@ -650,15 +650,15 @@ class TestRun:
         judge_result = {"score": 5, "reasoning": "", "error": None}
 
         with patch(
-            "eval_framework.tracks.track3_korean_deep.config.ALL_MODELS",
+            "kobench.tracks.korean_deep.config.ALL_MODELS",
             ["default-model"],
         ):
             with patch(
-                "eval_framework.tracks.track3_korean_deep.runner.generate",
+                "kobench.tracks.korean_deep.runner.generate",
                 return_value=gen_result,
             ):
                 with patch(
-                    "eval_framework.tracks.track3_korean_deep.judge.score_response",
+                    "kobench.tracks.korean_deep.judge.score_response",
                     return_value=judge_result,
                 ):
                     output = run(None)
@@ -676,15 +676,15 @@ class TestRun:
         judge_result = {"score": 7, "reasoning": "", "error": None}
 
         with patch(
-            "eval_framework.tracks.track3_korean_deep.runner.generate",
+            "kobench.tracks.korean_deep.runner.generate",
             return_value=gen_result,
         ):
             with patch(
-                "eval_framework.tracks.track3_korean_deep.judge.score_response",
+                "kobench.tracks.korean_deep.judge.score_response",
                 return_value=judge_result,
             ):
                 with patch(
-                    "eval_framework.tracks.track3_korean_deep.runner.unload_all_models",
+                    "kobench.tracks.korean_deep.runner.unload_all_models",
                 ) as mock_unload:
                     output = run(["test-model"])
 
@@ -701,15 +701,15 @@ class TestRun:
         judge_result = {"score": 7, "reasoning": "", "error": None}
 
         with patch(
-            "eval_framework.tracks.track3_korean_deep.runner.generate",
+            "kobench.tracks.korean_deep.runner.generate",
             return_value=gen_result,
         ):
             with patch(
-                "eval_framework.tracks.track3_korean_deep.judge.score_response",
+                "kobench.tracks.korean_deep.judge.score_response",
                 return_value=judge_result,
             ):
                 with patch(
-                    "eval_framework.tracks.track3_korean_deep.runner.save_checkpoint",
+                    "kobench.tracks.korean_deep.runner.save_checkpoint",
                 ) as mock_save:
                     output = run(["model-a", "model-b"])
 
@@ -726,15 +726,15 @@ class TestRun:
         judge_result = {"score": 5, "reasoning": "", "error": None}
 
         with patch(
-            "eval_framework.tracks.track3_korean_deep.runner.generate",
+            "kobench.tracks.korean_deep.runner.generate",
             return_value=gen_result,
         ):
             with patch(
-                "eval_framework.tracks.track3_korean_deep.judge.score_response",
+                "kobench.tracks.korean_deep.judge.score_response",
                 return_value=judge_result,
             ):
                 with patch(
-                    "eval_framework.tracks.track3_korean_deep.runner.save_results_incremental",
+                    "kobench.tracks.korean_deep.runner.save_results_incremental",
                 ) as mock_save:
                     mock_save.return_value = "results/test.json"
                     output = run(["test-model"])

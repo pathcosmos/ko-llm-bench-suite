@@ -7,15 +7,15 @@ import json
 import pytest
 from unittest.mock import patch, MagicMock
 
-from eval_framework.scoring import fit_bradley_terry
-from eval_framework.judge import score_pairwise
-from eval_framework import runner
+from kobench.scoring import fit_bradley_terry
+from kobench.judge import score_pairwise
+from kobench import runner
 
 
 class TestTrack7MinimalExecution:
     """Track 7 최소 실행 — 2모델, 2프롬프트 → elo 결과"""
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_minimal_pairwise_to_elo(self, mock_call):
         """2개 모델 × 2개 프롬프트 × 2방향 = 8개 judge 호출"""
         models = ["model_a", "model_b"]
@@ -86,10 +86,10 @@ class TestCheckpointResume:
             ],
             "prompt_idx": 1,
         }
-        runner.save_checkpoint(partial_data, "track7_pairwise")
+        runner.save_checkpoint(partial_data, "pairwise")
 
         # 재개: 체크포인트 로드
-        loaded = runner.load_checkpoint("track7_pairwise")
+        loaded = runner.load_checkpoint("pairwise")
         assert loaded is not None
         assert loaded["prompt_idx"] == 1
         assert len(loaded["comparisons"]) == 1
@@ -101,7 +101,7 @@ class TestCheckpointResume:
         loaded["prompt_idx"] = 2
 
         # 최종 저장
-        runner.save_checkpoint(loaded, "track7_pairwise")
-        final = runner.load_checkpoint("track7_pairwise")
+        runner.save_checkpoint(loaded, "pairwise")
+        final = runner.load_checkpoint("pairwise")
         assert final["prompt_idx"] == 2
         assert len(final["comparisons"]) == 2

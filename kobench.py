@@ -18,28 +18,28 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from eval_framework import config
-from eval_framework.runner import (
+from kobench import config
+from kobench.runner import (
     wait_for_ollama,
     unload_all_models,
     save_results_incremental,
     _gpu_healthy_now,
     _restart_ollama,
 )
-from eval_framework.scoring import build_scorecard, save_scorecard
-from eval_framework.report import generate_html_report, generate_markdown_report
+from kobench.scoring import build_scorecard, save_scorecard
+from kobench.report import generate_html_report, generate_markdown_report
 
 
 def load_track(track_num: int):
     """트랙 모듈 동적 로드"""
     track_map = {
-        1: "eval_framework.tracks.track1_korean_bench",
-        2: "eval_framework.tracks.track2_ko_bench",
-        3: "eval_framework.tracks.track3_korean_deep",
-        4: "eval_framework.tracks.track4_code_math",
-        5: "eval_framework.tracks.track5_consistency",
-        6: "eval_framework.tracks.track6_performance",
-        7: "eval_framework.tracks.track7_pairwise",
+        1: "kobench.tracks.korean_bench",
+        2: "kobench.tracks.ko_bench",
+        3: "kobench.tracks.korean_deep",
+        4: "kobench.tracks.code_math",
+        5: "kobench.tracks.consistency",
+        6: "kobench.tracks.performance",
+        7: "kobench.tracks.pairwise",
     }
     import importlib
     module_name = track_map.get(track_num)
@@ -128,7 +128,7 @@ def load_existing_results() -> dict:
     # T2: list 타입 results에서 summary 재빌드
     for track_name, track_data in results.items():
         if isinstance(track_data.get("results"), list) and track_name == "track2":
-            from eval_framework.tracks.track2_ko_bench import _build_summary
+            from kobench.tracks.ko_bench import _build_summary
             track_data["summary"] = _build_summary(track_data["results"])
 
     return results

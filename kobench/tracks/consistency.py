@@ -11,10 +11,10 @@ from typing import Optional
 
 import numpy as np
 
-from eval_framework import config
-from eval_framework import runner
+from kobench import config
+from kobench import runner
 
-TRACK_NAME = "track5_consistency"
+TRACK_NAME = "consistency"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # 헬퍼 함수
@@ -734,7 +734,7 @@ def run(models: Optional[list[str]] = None) -> dict:
 
     Returns:
         {
-            "track": "track5_consistency",
+            "track": "consistency",
             "results": [...],
             "summary": {
                 model: {

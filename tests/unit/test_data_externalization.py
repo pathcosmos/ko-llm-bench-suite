@@ -4,7 +4,7 @@ import json
 import pytest
 from pathlib import Path
 
-from eval_framework import config
+from kobench import config
 
 
 class TestTrack2QuestionsJson:
@@ -34,7 +34,7 @@ class TestTrack2QuestionsJson:
                 assert "turn2" in q, f"{cat}: missing turn2"
 
     def test_load_function(self):
-        from eval_framework.tracks.track2_ko_bench import _load_questions
+        from kobench.tracks.ko_bench import _load_questions
         result = _load_questions()
         assert result is not None
         assert len(result) == 8
@@ -59,7 +59,7 @@ class TestTrack7PromptsJson:
             assert "prompt" in item
 
     def test_load_function(self):
-        from eval_framework.tracks.track7_pairwise import _load_prompts
+        from kobench.tracks.pairwise import _load_prompts
         result = _load_prompts()
         assert result is not None
         assert len(result) == 20
@@ -82,14 +82,14 @@ class TestFallbackWhenJsonMissing:
     def test_track2_fallback(self, tmp_path):
         """DATA_DIR에 파일이 없으면 None 반환"""
         from unittest.mock import patch
-        with patch("eval_framework.config.DATA_DIR", tmp_path):
-            from eval_framework.tracks.track2_ko_bench import _load_questions
+        with patch("kobench.config.DATA_DIR", tmp_path):
+            from kobench.tracks.ko_bench import _load_questions
             result = _load_questions()
             assert result is None
 
     def test_track7_fallback(self, tmp_path):
         from unittest.mock import patch
-        with patch("eval_framework.config.DATA_DIR", tmp_path):
-            from eval_framework.tracks.track7_pairwise import _load_prompts
+        with patch("kobench.config.DATA_DIR", tmp_path):
+            from kobench.tracks.pairwise import _load_prompts
             result = _load_prompts()
             assert result is None

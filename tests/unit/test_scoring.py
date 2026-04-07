@@ -1,11 +1,11 @@
-"""eval_framework/scoring.py 단위 테스트"""
+"""kobench/scoring.py 단위 테스트"""
 
 import math
 import pytest
 import numpy as np
 from unittest.mock import patch
 
-from eval_framework.scoring import (
+from kobench.scoring import (
     aggregate_accuracy,
     aggregate_judge_scores,
     aggregate_performance,
@@ -157,7 +157,7 @@ class TestFitBradleyTerry:
 
 class TestBuildScorecard:
 
-    @patch("eval_framework.scoring.config.ALL_MODELS", ["m1", "m2"])
+    @patch("kobench.scoring.config.ALL_MODELS", ["m1", "m2"])
     def test_integrates_tracks(self):
         track_results = {
             "track1": {"m1": 0.85, "m2": 0.72},
@@ -168,7 +168,7 @@ class TestBuildScorecard:
         assert sc["m1"]["track2"] == 7.5
         assert sc["m2"]["track1"] == 0.72
 
-    @patch("eval_framework.scoring.config.ALL_MODELS", ["m1", "m2", "m3"])
+    @patch("kobench.scoring.config.ALL_MODELS", ["m1", "m2", "m3"])
     def test_missing_model_handled(self):
         track_results = {
             "track1": {"m1": 0.9},

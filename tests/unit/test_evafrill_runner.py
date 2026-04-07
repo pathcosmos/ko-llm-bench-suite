@@ -1,4 +1,4 @@
-"""eval_framework/evafrill_runner.py 단위 테스트
+"""kobench/evafrill_runner.py 단위 테스트
 
 evafrill_runner.py는 import 시 torch, 커스텀 모델 모듈을 로딩하므로
 이 테스트 파일에서는 sys.modules를 패치하여 의존성 없이 테스트.
@@ -48,7 +48,7 @@ class TestIsEvafrill:
     def _setup(self):
         self._mocks = _setup_evafrill_mocks()
         with patch.dict(sys.modules, self._mocks):
-            from eval_framework.evafrill_runner import is_evafrill
+            from kobench.evafrill_runner import is_evafrill
             self.is_evafrill = is_evafrill
 
     def test_exact_model_name(self):
@@ -89,7 +89,7 @@ class TestTopPFiltering:
             try:
                 import torch
                 self.torch = torch
-                from eval_framework.evafrill_runner import _top_p_filtering
+                from kobench.evafrill_runner import _top_p_filtering
                 self.filter_fn = _top_p_filtering
                 self.has_torch = True
             except (ImportError, AttributeError):

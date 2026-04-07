@@ -1,10 +1,10 @@
-"""eval_framework/tracks/track5_consistency.py 단위 테스트"""
+"""kobench/tracks/consistency.py 단위 테스트"""
 
 import json
 import pytest
 from unittest.mock import patch, MagicMock, call
 
-from eval_framework.tracks.track5_consistency import (
+from kobench.tracks.consistency import (
     jaccard_similarity,
     edit_distance_ratio,
     detect_korean_ratio,
@@ -299,12 +299,12 @@ class TestCheckInstructionCompliance:
 class TestRepetitionConsistency:
     """_test_repetition_consistency: 동일 프롬프트 반복 일관성 측정"""
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
-    @patch("eval_framework.tracks.track5_consistency.REPETITION_PROMPTS", ["프롬프트1"])
-    @patch("eval_framework.tracks.track5_consistency.REPETITION_COUNT", 3)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.REPETITION_PROMPTS", ["프롬프트1"])
+    @patch("kobench.tracks.consistency.REPETITION_COUNT", 3)
     def test_basic_structure(self, mock_generate, mock_sleep):
         """반환 결과의 기본 구조 검증"""
         mock_generate.return_value = {"response": "동일한 답변"}
@@ -319,12 +319,12 @@ class TestRepetitionConsistency:
         assert "avg_edit_distance_ratio" in r
         assert "avg_jaccard_similarity" in r
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
-    @patch("eval_framework.tracks.track5_consistency.REPETITION_PROMPTS", ["프롬프트1"])
-    @patch("eval_framework.tracks.track5_consistency.REPETITION_COUNT", 3)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.REPETITION_PROMPTS", ["프롬프트1"])
+    @patch("kobench.tracks.consistency.REPETITION_COUNT", 3)
     def test_identical_responses(self, mock_generate, mock_sleep):
         """모든 응답이 동일하면 edit_distance=0, jaccard=1"""
         mock_generate.return_value = {"response": "동일 답변"}
@@ -333,12 +333,12 @@ class TestRepetitionConsistency:
         assert results[0]["avg_edit_distance_ratio"] == 0.0
         assert results[0]["avg_jaccard_similarity"] == 1.0
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
-    @patch("eval_framework.tracks.track5_consistency.REPETITION_PROMPTS", ["프롬프트1"])
-    @patch("eval_framework.tracks.track5_consistency.REPETITION_COUNT", 2)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.REPETITION_PROMPTS", ["프롬프트1"])
+    @patch("kobench.tracks.consistency.REPETITION_COUNT", 2)
     def test_different_responses(self, mock_generate, mock_sleep):
         """서로 다른 응답이면 edit_distance > 0"""
         mock_generate.side_effect = [
@@ -349,12 +349,12 @@ class TestRepetitionConsistency:
 
         assert results[0]["avg_edit_distance_ratio"] > 0.0
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
-    @patch("eval_framework.tracks.track5_consistency.REPETITION_PROMPTS", ["프롬프트1"])
-    @patch("eval_framework.tracks.track5_consistency.REPETITION_COUNT", 3)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.REPETITION_PROMPTS", ["프롬프트1"])
+    @patch("kobench.tracks.consistency.REPETITION_COUNT", 3)
     def test_generate_called_correct_times(self, mock_generate, mock_sleep):
         """generate가 프롬프트 수 x 반복 횟수만큼 호출"""
         mock_generate.return_value = {"response": "답변"}
@@ -371,12 +371,12 @@ class TestRepetitionConsistency:
 class TestParaphraseRobustness:
     """_test_paraphrase_robustness: 패러프레이즈 강건성 측정"""
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.PARAPHRASE_QUESTIONS",
+        "kobench.tracks.consistency.PARAPHRASE_QUESTIONS",
         [{"answer_keywords": ["서울"], "variants": ["수도는?", "capital은?"]}],
     )
     def test_all_correct(self, mock_generate, mock_sleep):
@@ -388,12 +388,12 @@ class TestParaphraseRobustness:
         assert results[0]["keyword_hit_rate"] == 1.0
         assert results[0]["all_consistent"] is True
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.PARAPHRASE_QUESTIONS",
+        "kobench.tracks.consistency.PARAPHRASE_QUESTIONS",
         [{"answer_keywords": ["서울"], "variants": ["질문1", "질문2"]}],
     )
     def test_none_correct(self, mock_generate, mock_sleep):
@@ -404,12 +404,12 @@ class TestParaphraseRobustness:
         assert results[0]["keyword_hit_rate"] == 0.0
         assert results[0]["all_consistent"] is True
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.PARAPHRASE_QUESTIONS",
+        "kobench.tracks.consistency.PARAPHRASE_QUESTIONS",
         [{"answer_keywords": ["서울"], "variants": ["질문1", "질문2"]}],
     )
     def test_inconsistent(self, mock_generate, mock_sleep):
@@ -423,12 +423,12 @@ class TestParaphraseRobustness:
         assert results[0]["keyword_hit_rate"] == 0.5
         assert results[0]["all_consistent"] is False
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.PARAPHRASE_QUESTIONS",
+        "kobench.tracks.consistency.PARAPHRASE_QUESTIONS",
         [{"answer_keywords": ["서울"], "variants": ["질문1", "질문2"]}],
     )
     def test_result_structure(self, mock_generate, mock_sleep):
@@ -450,12 +450,12 @@ class TestParaphraseRobustness:
 class TestLengthSensitivity:
     """_test_length_sensitivity: 짧은/중간/긴 프롬프트에서 일관성"""
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.LENGTH_SENSITIVITY_DATA",
+        "kobench.tracks.consistency.LENGTH_SENSITIVITY_DATA",
         [{"answer_keywords": ["서울"], "short": "짧은", "medium": "중간", "long": "긴"}],
     )
     def test_all_correct(self, mock_generate, mock_sleep):
@@ -467,12 +467,12 @@ class TestLengthSensitivity:
         assert results[0]["all_correct"] is True
         assert results[0]["consistent_across_lengths"] is True
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.LENGTH_SENSITIVITY_DATA",
+        "kobench.tracks.consistency.LENGTH_SENSITIVITY_DATA",
         [{"answer_keywords": ["서울"], "short": "짧은", "medium": "중간", "long": "긴"}],
     )
     def test_inconsistent_across_lengths(self, mock_generate, mock_sleep):
@@ -488,12 +488,12 @@ class TestLengthSensitivity:
         assert results[0]["any_correct"] is True
         assert results[0]["all_correct"] is False
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.LENGTH_SENSITIVITY_DATA",
+        "kobench.tracks.consistency.LENGTH_SENSITIVITY_DATA",
         [{"answer_keywords": ["서울"], "short": "짧은", "medium": "중간", "long": "긴"}],
     )
     def test_generate_called_three_times(self, mock_generate, mock_sleep):
@@ -512,12 +512,12 @@ class TestLengthSensitivity:
 class TestLanguageMixing:
     """_test_language_mixing: 한영 혼용 질문에서 응답 언어 일관성"""
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.LANGUAGE_MIXING_PROMPTS",
+        "kobench.tracks.consistency.LANGUAGE_MIXING_PROMPTS",
         ["Python에서 list comprehension을 explain해주세요."],
     )
     def test_korean_response(self, mock_generate, mock_sleep):
@@ -529,12 +529,12 @@ class TestLanguageMixing:
         assert results[0]["test_type"] == "language_mixing"
         assert results[0]["korean_ratio"] > 0.0
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.LANGUAGE_MIXING_PROMPTS",
+        "kobench.tracks.consistency.LANGUAGE_MIXING_PROMPTS",
         ["질문1"],
     )
     def test_result_structure(self, mock_generate, mock_sleep):
@@ -557,12 +557,12 @@ class TestLanguageMixing:
 class TestInstructionFollowing:
     """_test_instruction_following: 형식 지시 준수 여부"""
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.INSTRUCTION_FOLLOWING_DATA",
+        "kobench.tracks.consistency.INSTRUCTION_FOLLOWING_DATA",
         [("3개 나열하세요.", "count_items", 3)],
     )
     def test_compliant(self, mock_generate, mock_sleep):
@@ -573,12 +573,12 @@ class TestInstructionFollowing:
         assert len(results) == 1
         assert results[0]["compliant"] is True
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.INSTRUCTION_FOLLOWING_DATA",
+        "kobench.tracks.consistency.INSTRUCTION_FOLLOWING_DATA",
         [("3개 나열하세요.", "count_items", 3)],
     )
     def test_non_compliant(self, mock_generate, mock_sleep):
@@ -588,12 +588,12 @@ class TestInstructionFollowing:
 
         assert results[0]["compliant"] is False
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.INSTRUCTION_FOLLOWING_DATA",
+        "kobench.tracks.consistency.INSTRUCTION_FOLLOWING_DATA",
         [("JSON으로 출력하세요.", "json_format", None)],
     )
     def test_result_structure(self, mock_generate, mock_sleep):
@@ -616,12 +616,12 @@ class TestInstructionFollowing:
 class TestHallucinationDetection:
     """_test_hallucination_detection: 허구적 질문에 대한 환각/거부 판정"""
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.HALLUCINATION_PROMPTS",
+        "kobench.tracks.consistency.HALLUCINATION_PROMPTS",
         ["존재하지 않는 질문"],
     )
     def test_refused(self, mock_generate, mock_sleep):
@@ -632,12 +632,12 @@ class TestHallucinationDetection:
         assert len(results) == 1
         assert results[0]["refused"] is True
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.HALLUCINATION_PROMPTS",
+        "kobench.tracks.consistency.HALLUCINATION_PROMPTS",
         ["존재하지 않는 질문"],
     )
     def test_hallucinated(self, mock_generate, mock_sleep):
@@ -647,12 +647,12 @@ class TestHallucinationDetection:
 
         assert results[0]["refused"] is False
 
-    @patch("eval_framework.tracks.track5_consistency.time.sleep")
-    @patch("eval_framework.tracks.track5_consistency.runner.generate")
-    @patch("eval_framework.tracks.track5_consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
-    @patch("eval_framework.tracks.track5_consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
+    @patch("kobench.tracks.consistency.time.sleep")
+    @patch("kobench.tracks.consistency.runner.generate")
+    @patch("kobench.tracks.consistency.config.SAMPLING_PARAMS", {"temperature": 0.7})
+    @patch("kobench.tracks.consistency.config.COOLDOWN_BETWEEN_TESTS", 0)
     @patch(
-        "eval_framework.tracks.track5_consistency.HALLUCINATION_PROMPTS",
+        "kobench.tracks.consistency.HALLUCINATION_PROMPTS",
         ["질문1"],
     )
     def test_result_structure(self, mock_generate, mock_sleep):
@@ -770,17 +770,17 @@ class TestBuildSummary:
 class TestRun:
     """run: Track 5 전체 실행"""
 
-    @patch("eval_framework.tracks.track5_consistency.runner.save_results_incremental")
-    @patch("eval_framework.tracks.track5_consistency.runner.save_checkpoint")
-    @patch("eval_framework.tracks.track5_consistency.runner.load_checkpoint", return_value=None)
-    @patch("eval_framework.tracks.track5_consistency.runner.wait_for_ollama", return_value=True)
-    @patch("eval_framework.tracks.track5_consistency.runner.switch_model", return_value=True)
-    @patch("eval_framework.tracks.track5_consistency._test_hallucination_detection", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_instruction_following", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_language_mixing", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_length_sensitivity", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_paraphrase_robustness", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_repetition_consistency", return_value=[])
+    @patch("kobench.tracks.consistency.runner.save_results_incremental")
+    @patch("kobench.tracks.consistency.runner.save_checkpoint")
+    @patch("kobench.tracks.consistency.runner.load_checkpoint", return_value=None)
+    @patch("kobench.tracks.consistency.runner.wait_for_ollama", return_value=True)
+    @patch("kobench.tracks.consistency.runner.switch_model", return_value=True)
+    @patch("kobench.tracks.consistency._test_hallucination_detection", return_value=[])
+    @patch("kobench.tracks.consistency._test_instruction_following", return_value=[])
+    @patch("kobench.tracks.consistency._test_language_mixing", return_value=[])
+    @patch("kobench.tracks.consistency._test_length_sensitivity", return_value=[])
+    @patch("kobench.tracks.consistency._test_paraphrase_robustness", return_value=[])
+    @patch("kobench.tracks.consistency._test_repetition_consistency", return_value=[])
     def test_basic_flow(
         self, mock_rep, mock_para, mock_len, mock_lang, mock_inst, mock_hall,
         mock_switch, mock_wait, mock_load_ckpt, mock_save_ckpt, mock_save_res,
@@ -798,10 +798,10 @@ class TestRun:
         mock_inst.assert_called_once_with("test-model")
         mock_hall.assert_called_once_with("test-model")
 
-    @patch("eval_framework.tracks.track5_consistency.runner.save_results_incremental")
-    @patch("eval_framework.tracks.track5_consistency.runner.save_checkpoint")
-    @patch("eval_framework.tracks.track5_consistency.runner.load_checkpoint", return_value=None)
-    @patch("eval_framework.tracks.track5_consistency.runner.wait_for_ollama", return_value=False)
+    @patch("kobench.tracks.consistency.runner.save_results_incremental")
+    @patch("kobench.tracks.consistency.runner.save_checkpoint")
+    @patch("kobench.tracks.consistency.runner.load_checkpoint", return_value=None)
+    @patch("kobench.tracks.consistency.runner.wait_for_ollama", return_value=False)
     def test_ollama_unavailable(self, mock_wait, mock_load_ckpt, mock_save_ckpt, mock_save_res):
         """Ollama 연결 실패 시 에러 포함 결과 반환"""
         result = run(models=["test-model"])
@@ -809,17 +809,17 @@ class TestRun:
         assert "error" in result
         assert "Ollama" in result["error"]
 
-    @patch("eval_framework.tracks.track5_consistency.runner.save_results_incremental")
-    @patch("eval_framework.tracks.track5_consistency.runner.save_checkpoint")
-    @patch("eval_framework.tracks.track5_consistency.runner.load_checkpoint", return_value=None)
-    @patch("eval_framework.tracks.track5_consistency.runner.wait_for_ollama", return_value=True)
-    @patch("eval_framework.tracks.track5_consistency.runner.switch_model", return_value=False)
-    @patch("eval_framework.tracks.track5_consistency._test_hallucination_detection")
-    @patch("eval_framework.tracks.track5_consistency._test_instruction_following")
-    @patch("eval_framework.tracks.track5_consistency._test_language_mixing")
-    @patch("eval_framework.tracks.track5_consistency._test_length_sensitivity")
-    @patch("eval_framework.tracks.track5_consistency._test_paraphrase_robustness")
-    @patch("eval_framework.tracks.track5_consistency._test_repetition_consistency")
+    @patch("kobench.tracks.consistency.runner.save_results_incremental")
+    @patch("kobench.tracks.consistency.runner.save_checkpoint")
+    @patch("kobench.tracks.consistency.runner.load_checkpoint", return_value=None)
+    @patch("kobench.tracks.consistency.runner.wait_for_ollama", return_value=True)
+    @patch("kobench.tracks.consistency.runner.switch_model", return_value=False)
+    @patch("kobench.tracks.consistency._test_hallucination_detection")
+    @patch("kobench.tracks.consistency._test_instruction_following")
+    @patch("kobench.tracks.consistency._test_language_mixing")
+    @patch("kobench.tracks.consistency._test_length_sensitivity")
+    @patch("kobench.tracks.consistency._test_paraphrase_robustness")
+    @patch("kobench.tracks.consistency._test_repetition_consistency")
     def test_model_load_failure(
         self, mock_rep, mock_para, mock_len, mock_lang, mock_inst, mock_hall,
         mock_switch, mock_wait, mock_load_ckpt, mock_save_ckpt, mock_save_res,
@@ -835,10 +835,10 @@ class TestRun:
         )
         assert has_fail
 
-    @patch("eval_framework.tracks.track5_consistency.runner.save_results_incremental")
-    @patch("eval_framework.tracks.track5_consistency.runner.save_checkpoint")
+    @patch("kobench.tracks.consistency.runner.save_results_incremental")
+    @patch("kobench.tracks.consistency.runner.save_checkpoint")
     @patch(
-        "eval_framework.tracks.track5_consistency.runner.load_checkpoint",
+        "kobench.tracks.consistency.runner.load_checkpoint",
         return_value={
             "results": [{"model": "m1", "test_type": "repetition_consistency", "avg_edit_distance_ratio": 0.1}],
             "completed_keys": [
@@ -852,9 +852,9 @@ class TestRun:
             ],
         },
     )
-    @patch("eval_framework.tracks.track5_consistency.runner.wait_for_ollama", return_value=True)
-    @patch("eval_framework.tracks.track5_consistency.runner.switch_model", return_value=True)
-    @patch("eval_framework.tracks.track5_consistency._test_repetition_consistency")
+    @patch("kobench.tracks.consistency.runner.wait_for_ollama", return_value=True)
+    @patch("kobench.tracks.consistency.runner.switch_model", return_value=True)
+    @patch("kobench.tracks.consistency._test_repetition_consistency")
     def test_checkpoint_skip(
         self, mock_rep, mock_switch, mock_wait, mock_load_ckpt,
         mock_save_ckpt, mock_save_res,
@@ -865,38 +865,38 @@ class TestRun:
         mock_rep.assert_not_called()
         mock_switch.assert_not_called()
 
-    @patch("eval_framework.tracks.track5_consistency.runner.save_results_incremental")
-    @patch("eval_framework.tracks.track5_consistency.runner.save_checkpoint")
-    @patch("eval_framework.tracks.track5_consistency.runner.load_checkpoint", return_value=None)
-    @patch("eval_framework.tracks.track5_consistency.runner.wait_for_ollama", return_value=True)
-    @patch("eval_framework.tracks.track5_consistency.runner.switch_model", return_value=True)
-    @patch("eval_framework.tracks.track5_consistency._test_hallucination_detection", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_instruction_following", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_language_mixing", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_length_sensitivity", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_paraphrase_robustness", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_repetition_consistency", return_value=[])
+    @patch("kobench.tracks.consistency.runner.save_results_incremental")
+    @patch("kobench.tracks.consistency.runner.save_checkpoint")
+    @patch("kobench.tracks.consistency.runner.load_checkpoint", return_value=None)
+    @patch("kobench.tracks.consistency.runner.wait_for_ollama", return_value=True)
+    @patch("kobench.tracks.consistency.runner.switch_model", return_value=True)
+    @patch("kobench.tracks.consistency._test_hallucination_detection", return_value=[])
+    @patch("kobench.tracks.consistency._test_instruction_following", return_value=[])
+    @patch("kobench.tracks.consistency._test_language_mixing", return_value=[])
+    @patch("kobench.tracks.consistency._test_length_sensitivity", return_value=[])
+    @patch("kobench.tracks.consistency._test_paraphrase_robustness", return_value=[])
+    @patch("kobench.tracks.consistency._test_repetition_consistency", return_value=[])
     def test_uses_config_models_when_none(
         self, mock_rep, mock_para, mock_len, mock_lang, mock_inst, mock_hall,
         mock_switch, mock_wait, mock_load_ckpt, mock_save_ckpt, mock_save_res,
     ):
         """models=None이면 config.ALL_MODELS 사용"""
-        with patch("eval_framework.tracks.track5_consistency.config.ALL_MODELS", ["cfg-model"]):
+        with patch("kobench.tracks.consistency.config.ALL_MODELS", ["cfg-model"]):
             result = run(models=None)
 
         mock_switch.assert_called_once_with("cfg-model", None)
 
-    @patch("eval_framework.tracks.track5_consistency.runner.save_results_incremental")
-    @patch("eval_framework.tracks.track5_consistency.runner.save_checkpoint")
-    @patch("eval_framework.tracks.track5_consistency.runner.load_checkpoint", return_value=None)
-    @patch("eval_framework.tracks.track5_consistency.runner.wait_for_ollama", return_value=True)
-    @patch("eval_framework.tracks.track5_consistency.runner.switch_model", return_value=True)
-    @patch("eval_framework.tracks.track5_consistency._test_hallucination_detection", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_instruction_following", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_language_mixing", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_length_sensitivity", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_paraphrase_robustness", return_value=[])
-    @patch("eval_framework.tracks.track5_consistency._test_repetition_consistency", return_value=[])
+    @patch("kobench.tracks.consistency.runner.save_results_incremental")
+    @patch("kobench.tracks.consistency.runner.save_checkpoint")
+    @patch("kobench.tracks.consistency.runner.load_checkpoint", return_value=None)
+    @patch("kobench.tracks.consistency.runner.wait_for_ollama", return_value=True)
+    @patch("kobench.tracks.consistency.runner.switch_model", return_value=True)
+    @patch("kobench.tracks.consistency._test_hallucination_detection", return_value=[])
+    @patch("kobench.tracks.consistency._test_instruction_following", return_value=[])
+    @patch("kobench.tracks.consistency._test_language_mixing", return_value=[])
+    @patch("kobench.tracks.consistency._test_length_sensitivity", return_value=[])
+    @patch("kobench.tracks.consistency._test_paraphrase_robustness", return_value=[])
+    @patch("kobench.tracks.consistency._test_repetition_consistency", return_value=[])
     def test_save_results_called(
         self, mock_rep, mock_para, mock_len, mock_lang, mock_inst, mock_hall,
         mock_switch, mock_wait, mock_load_ckpt, mock_save_ckpt, mock_save_res,

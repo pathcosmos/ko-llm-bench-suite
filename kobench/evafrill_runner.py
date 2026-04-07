@@ -323,7 +323,7 @@ class _WorkerBridge:
             return True
         project_root = str(Path(__file__).resolve().parent.parent)
         self._proc = subprocess.Popen(
-            [sys.executable, "-m", "eval_framework.evafrill_runner"],
+            [sys.executable, "-m", "kobench.evafrill_runner"],
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=None,  # 부모 stderr 상속 → print 출력 공유
@@ -489,7 +489,7 @@ def use_http() -> bool:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# Worker 프로세스 메인 루프 (python -m eval_framework.evafrill_runner)
+# Worker 프로세스 메인 루프 (python -m kobench.evafrill_runner)
 # ═══════════════════════════════════════════════════════════════════════════════
 
 

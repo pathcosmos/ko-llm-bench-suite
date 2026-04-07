@@ -1,4 +1,4 @@
-"""eval_framework/runner.py 단위 테스트"""
+"""kobench/runner.py 단위 테스트"""
 
 import json
 import pytest
@@ -7,7 +7,7 @@ from unittest.mock import patch, MagicMock, call
 
 import requests
 
-from eval_framework import runner
+from kobench import runner
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -17,8 +17,8 @@ from eval_framework import runner
 
 class TestGenerate:
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=False)
-    @patch("eval_framework.runner.requests.post")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=False)
+    @patch("kobench.runner.requests.post")
     def test_success(self, mock_post, mock_is_eva):
         mock_resp = MagicMock()
         mock_resp.json.return_value = {
@@ -38,10 +38,10 @@ class TestGenerate:
         assert result["tokens_per_sec"] == 10.0
         assert result["error"] is None
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=False)
-    @patch("eval_framework.runner.wait_for_ollama", return_value=True)
-    @patch("eval_framework.runner.time.sleep")
-    @patch("eval_framework.runner.requests.post")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=False)
+    @patch("kobench.runner.wait_for_ollama", return_value=True)
+    @patch("kobench.runner.time.sleep")
+    @patch("kobench.runner.requests.post")
     def test_timeout_then_success(self, mock_post, mock_sleep, mock_wait, mock_is_eva):
         mock_resp = MagicMock()
         mock_resp.json.return_value = {
@@ -60,28 +60,28 @@ class TestGenerate:
         assert result["response"] == "ok"
         assert result["error"] is None
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=False)
-    @patch("eval_framework.runner.wait_for_ollama", return_value=True)
-    @patch("eval_framework.runner.time.sleep")
-    @patch("eval_framework.runner.requests.post")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=False)
+    @patch("kobench.runner.wait_for_ollama", return_value=True)
+    @patch("kobench.runner.time.sleep")
+    @patch("kobench.runner.requests.post")
     def test_connection_error(self, mock_post, mock_sleep, mock_wait, mock_is_eva):
         mock_post.side_effect = requests.exceptions.ConnectionError("refused")
         result = runner.generate("test-model", "prompt")
         assert result["error"] is not None
         assert result["response"] == ""
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=False)
-    @patch("eval_framework.runner.wait_for_ollama", return_value=False)
-    @patch("eval_framework.runner.time.sleep")
-    @patch("eval_framework.runner.requests.post")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=False)
+    @patch("kobench.runner.wait_for_ollama", return_value=False)
+    @patch("kobench.runner.time.sleep")
+    @patch("kobench.runner.requests.post")
     def test_all_retries_exhausted(self, mock_post, mock_sleep, mock_wait, mock_is_eva):
         mock_post.side_effect = requests.exceptions.Timeout("timeout")
         result = runner.generate("test-model", "prompt")
         assert result["error"] is not None
         assert result["tokens_per_sec"] == 0
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=False)
-    @patch("eval_framework.runner.requests.post")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=False)
+    @patch("kobench.runner.requests.post")
     def test_custom_options(self, mock_post, mock_is_eva):
         mock_resp = MagicMock()
         mock_resp.json.return_value = {
@@ -95,8 +95,8 @@ class TestGenerate:
         payload = mock_post.call_args[1]["json"]
         assert payload["options"] == custom
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=False)
-    @patch("eval_framework.runner.requests.post")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=False)
+    @patch("kobench.runner.requests.post")
     def test_system_prompt(self, mock_post, mock_is_eva):
         mock_resp = MagicMock()
         mock_resp.json.return_value = {
@@ -109,8 +109,8 @@ class TestGenerate:
         payload = mock_post.call_args[1]["json"]
         assert payload["system"] == "You are helpful"
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=True)
-    @patch("eval_framework.runner.evafrill_runner.subprocess_generate")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=True)
+    @patch("kobench.runner.evafrill_runner.subprocess_generate")
     def test_evafrill_delegation(self, mock_eva_gen, mock_is_eva):
         mock_eva_gen.return_value = {
             "response": "evafrill response",
@@ -131,8 +131,8 @@ class TestGenerate:
 
 class TestChat:
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=False)
-    @patch("eval_framework.runner.requests.post")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=False)
+    @patch("kobench.runner.requests.post")
     def test_success(self, mock_post, mock_is_eva):
         mock_resp = MagicMock()
         mock_resp.json.return_value = {
@@ -149,10 +149,10 @@ class TestChat:
         assert result["response"] == "채팅 응답"
         assert result["error"] is None
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=False)
-    @patch("eval_framework.runner.wait_for_ollama", return_value=True)
-    @patch("eval_framework.runner.time.sleep")
-    @patch("eval_framework.runner.requests.post")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=False)
+    @patch("kobench.runner.wait_for_ollama", return_value=True)
+    @patch("kobench.runner.time.sleep")
+    @patch("kobench.runner.requests.post")
     def test_retry_on_timeout(self, mock_post, mock_sleep, mock_wait, mock_is_eva):
         mock_resp = MagicMock()
         mock_resp.json.return_value = {
@@ -168,8 +168,8 @@ class TestChat:
         result = runner.chat("test-model", [{"role": "user", "content": "hi"}])
         assert result["response"] == "ok"
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=True)
-    @patch("eval_framework.runner.evafrill_runner.subprocess_generate")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=True)
+    @patch("kobench.runner.evafrill_runner.subprocess_generate")
     def test_evafrill_delegation(self, mock_eva_gen, mock_is_eva):
         mock_eva_gen.return_value = {
             "response": "eva chat", "eval_count": 3, "eval_duration_s": 0.5,
@@ -187,8 +187,8 @@ class TestChat:
         call_kwargs = mock_eva_gen.call_args
         assert call_kwargs[1]["system"] == "system msg" or call_kwargs.kwargs.get("system") == "system msg"
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=True)
-    @patch("eval_framework.runner.evafrill_runner.subprocess_generate")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=True)
+    @patch("kobench.runner.evafrill_runner.subprocess_generate")
     def test_evafrill_system_extraction(self, mock_eva_gen, mock_is_eva):
         mock_eva_gen.return_value = {
             "response": "ok", "eval_count": 1, "eval_duration_s": 0.1,
@@ -206,10 +206,10 @@ class TestChat:
         assert kwargs["system"] == "시스템 지시"
         assert "사용자 질문" in kwargs["prompt"]
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=False)
-    @patch("eval_framework.runner.wait_for_ollama", return_value=False)
-    @patch("eval_framework.runner.time.sleep")
-    @patch("eval_framework.runner.requests.post")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=False)
+    @patch("kobench.runner.wait_for_ollama", return_value=False)
+    @patch("kobench.runner.time.sleep")
+    @patch("kobench.runner.requests.post")
     def test_all_retries_fail(self, mock_post, mock_sleep, mock_wait, mock_is_eva):
         mock_post.side_effect = requests.exceptions.ConnectionError("refused")
         result = runner.chat("test-model", [{"role": "user", "content": "hi"}])
@@ -223,39 +223,39 @@ class TestChat:
 
 class TestSwitchModel:
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=False)
-    @patch("eval_framework.runner.warmup_model", return_value=True)
-    @patch("eval_framework.runner.unload_model")
-    @patch("eval_framework.runner.ollama_health_check", return_value=True)
-    @patch("eval_framework.runner.time.sleep")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=False)
+    @patch("kobench.runner.warmup_model", return_value=True)
+    @patch("kobench.runner.unload_model")
+    @patch("kobench.runner.ollama_health_check", return_value=True)
+    @patch("kobench.runner.time.sleep")
     def test_success(self, mock_sleep, mock_health, mock_unload, mock_warmup, mock_is_eva):
         result = runner.switch_model("new-model", current_model="old-model")
         assert result is True
         mock_unload.assert_called_with("old-model")
         mock_warmup.assert_called_with("new-model")
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=False)
-    @patch("eval_framework.runner.warmup_model", return_value=True)
-    @patch("eval_framework.runner.ollama_health_check", return_value=True)
-    @patch("eval_framework.runner.time.sleep")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=False)
+    @patch("kobench.runner.warmup_model", return_value=True)
+    @patch("kobench.runner.ollama_health_check", return_value=True)
+    @patch("kobench.runner.time.sleep")
     def test_same_model_no_unload(self, mock_sleep, mock_health, mock_warmup, mock_is_eva):
         result = runner.switch_model("same-model", current_model="same-model")
         assert result is True
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill", return_value=False)
-    @patch("eval_framework.runner._restart_ollama")
-    @patch("eval_framework.runner.warmup_model", side_effect=[False, False, True])
-    @patch("eval_framework.runner.ollama_health_check", return_value=True)
-    @patch("eval_framework.runner.time.sleep")
+    @patch("kobench.runner.evafrill_runner.is_evafrill", return_value=False)
+    @patch("kobench.runner._restart_ollama")
+    @patch("kobench.runner.warmup_model", side_effect=[False, False, True])
+    @patch("kobench.runner.ollama_health_check", return_value=True)
+    @patch("kobench.runner.time.sleep")
     def test_warmup_fail_then_restart(self, mock_sleep, mock_health, mock_warmup, mock_restart, mock_is_eva):
         result = runner.switch_model("model", current_model=None)
         assert result is True
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill")
-    @patch("eval_framework.runner.evafrill_runner.subprocess_unload_model")
-    @patch("eval_framework.runner.warmup_model", return_value=True)
-    @patch("eval_framework.runner.ollama_health_check", return_value=True)
-    @patch("eval_framework.runner.time.sleep")
+    @patch("kobench.runner.evafrill_runner.is_evafrill")
+    @patch("kobench.runner.evafrill_runner.subprocess_unload_model")
+    @patch("kobench.runner.warmup_model", return_value=True)
+    @patch("kobench.runner.ollama_health_check", return_value=True)
+    @patch("kobench.runner.time.sleep")
     def test_evafrill_to_ollama(self, mock_sleep, mock_health, mock_warmup, mock_eva_unload, mock_is_eva):
         # current_model is evafrill, new_model is not
         mock_is_eva.side_effect = lambda m: "evafrill" in m.lower()
@@ -263,10 +263,10 @@ class TestSwitchModel:
         assert result is True
         mock_eva_unload.assert_called_once()
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill")
-    @patch("eval_framework.runner.evafrill_runner.subprocess_load_model")
-    @patch("eval_framework.runner.unload_model")
-    @patch("eval_framework.runner.time.sleep")
+    @patch("kobench.runner.evafrill_runner.is_evafrill")
+    @patch("kobench.runner.evafrill_runner.subprocess_load_model")
+    @patch("kobench.runner.unload_model")
+    @patch("kobench.runner.time.sleep")
     def test_ollama_to_evafrill(self, mock_sleep, mock_unload, mock_eva_load, mock_is_eva):
         mock_is_eva.side_effect = lambda m: "evafrill" in m.lower()
         result = runner.switch_model("evafrill-mo-3b-slerp", current_model="qwen2.5:3b")
@@ -274,12 +274,12 @@ class TestSwitchModel:
         mock_unload.assert_called_with("qwen2.5:3b")
         mock_eva_load.assert_called_once()
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill")
-    @patch("eval_framework.runner.evafrill_runner.subprocess_load_model", return_value=True)
-    @patch("eval_framework.runner._stop_ollama")
-    @patch("eval_framework.runner.unload_model")
-    @patch("eval_framework.runner.time.sleep")
-    @patch("eval_framework.runner.config")
+    @patch("kobench.runner.evafrill_runner.is_evafrill")
+    @patch("kobench.runner.evafrill_runner.subprocess_load_model", return_value=True)
+    @patch("kobench.runner._stop_ollama")
+    @patch("kobench.runner.unload_model")
+    @patch("kobench.runner.time.sleep")
+    @patch("kobench.runner.config")
     def test_ollama_suspend_stops_before_evafrill(
         self, mock_config, mock_sleep, mock_unload, mock_stop, mock_eva_load, mock_is_eva
     ):
@@ -291,13 +291,13 @@ class TestSwitchModel:
         assert result is True
         mock_stop.assert_called_once()
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill")
-    @patch("eval_framework.runner.evafrill_runner.subprocess_unload_model")
-    @patch("eval_framework.runner._restart_ollama", return_value=True)
-    @patch("eval_framework.runner.warmup_model", return_value=True)
-    @patch("eval_framework.runner.ollama_health_check", return_value=True)
-    @patch("eval_framework.runner.time.sleep")
-    @patch("eval_framework.runner.config")
+    @patch("kobench.runner.evafrill_runner.is_evafrill")
+    @patch("kobench.runner.evafrill_runner.subprocess_unload_model")
+    @patch("kobench.runner._restart_ollama", return_value=True)
+    @patch("kobench.runner.warmup_model", return_value=True)
+    @patch("kobench.runner.ollama_health_check", return_value=True)
+    @patch("kobench.runner.time.sleep")
+    @patch("kobench.runner.config")
     def test_ollama_restarts_after_evafrill(
         self, mock_config, mock_sleep, mock_health, mock_warmup,
         mock_restart, mock_eva_unload, mock_is_eva
@@ -311,11 +311,11 @@ class TestSwitchModel:
         mock_eva_unload.assert_called_once()
         mock_restart.assert_called_once()
 
-    @patch("eval_framework.runner.evafrill_runner.is_evafrill")
-    @patch("eval_framework.runner.evafrill_runner.subprocess_load_model", return_value=True)
-    @patch("eval_framework.runner._stop_ollama")
-    @patch("eval_framework.runner.unload_model")
-    @patch("eval_framework.runner.time.sleep")
+    @patch("kobench.runner.evafrill_runner.is_evafrill")
+    @patch("kobench.runner.evafrill_runner.subprocess_load_model", return_value=True)
+    @patch("kobench.runner._stop_ollama")
+    @patch("kobench.runner.unload_model")
+    @patch("kobench.runner.time.sleep")
     def test_evafrill_cpu_no_ollama_stop(
         self, mock_sleep, mock_unload, mock_stop, mock_eva_load, mock_is_eva
     ):
@@ -333,14 +333,14 @@ class TestSwitchModel:
 
 class TestWaitForOllama:
 
-    @patch("eval_framework.runner.ollama_health_check", return_value=True)
+    @patch("kobench.runner.ollama_health_check", return_value=True)
     def test_immediate_success(self, mock_health):
         assert runner.wait_for_ollama(max_wait=5) is True
 
-    @patch("eval_framework.runner._restart_ollama", return_value=True)
-    @patch("eval_framework.runner.ollama_health_check", return_value=False)
-    @patch("eval_framework.runner.time.sleep")
-    @patch("eval_framework.runner.time.time")
+    @patch("kobench.runner._restart_ollama", return_value=True)
+    @patch("kobench.runner.ollama_health_check", return_value=False)
+    @patch("kobench.runner.time.sleep")
+    @patch("kobench.runner.time.time")
     def test_timeout_then_auto_restart(self, mock_time, mock_sleep, mock_health, mock_restart):
         # time.time() 시뮬레이션: 0, 0, 70 (> max_wait=60)
         mock_time.side_effect = [0, 0, 70]
@@ -348,10 +348,10 @@ class TestWaitForOllama:
         assert result is True
         mock_restart.assert_called()
 
-    @patch("eval_framework.runner._restart_ollama", return_value=False)
-    @patch("eval_framework.runner.ollama_health_check", return_value=False)
-    @patch("eval_framework.runner.time.sleep")
-    @patch("eval_framework.runner.time.time")
+    @patch("kobench.runner._restart_ollama", return_value=False)
+    @patch("kobench.runner.ollama_health_check", return_value=False)
+    @patch("kobench.runner.time.sleep")
+    @patch("kobench.runner.time.time")
     def test_all_restart_attempts_fail(self, mock_time, mock_sleep, mock_health, mock_restart):
         mock_time.side_effect = [0, 0, 70]
         result = runner.wait_for_ollama(max_wait=60, auto_restart=True)
@@ -360,14 +360,14 @@ class TestWaitForOllama:
 
 class TestUnloadModel:
 
-    @patch("eval_framework.runner.requests.post")
+    @patch("kobench.runner.requests.post")
     def test_unload_success(self, mock_post):
         runner.unload_model("test-model")
         mock_post.assert_called_once()
         payload = mock_post.call_args[1]["json"]
         assert payload["keep_alive"] == 0
 
-    @patch("eval_framework.runner.requests.post", side_effect=Exception("fail"))
+    @patch("kobench.runner.requests.post", side_effect=Exception("fail"))
     def test_unload_error_silent(self, mock_post):
         """unload_model은 에러를 무시"""
         runner.unload_model("test-model")  # should not raise
@@ -375,17 +375,17 @@ class TestUnloadModel:
 
 class TestHealthAndUtility:
 
-    @patch("eval_framework.runner.requests.get")
+    @patch("kobench.runner.requests.get")
     def test_health_check_success(self, mock_get):
         mock_get.return_value.status_code = 200
         assert runner.ollama_health_check() is True
 
-    @patch("eval_framework.runner.requests.get")
+    @patch("kobench.runner.requests.get")
     def test_health_check_failure(self, mock_get):
         mock_get.side_effect = requests.exceptions.ConnectionError("refused")
         assert runner.ollama_health_check() is False
 
-    @patch("eval_framework.runner.requests.get")
+    @patch("kobench.runner.requests.get")
     def test_get_loaded_models(self, mock_get):
         mock_get.return_value.json.return_value = {
             "models": [{"name": "m1"}, {"name": "m2"}]
@@ -393,7 +393,7 @@ class TestHealthAndUtility:
         models = runner.get_loaded_models()
         assert models == ["m1", "m2"]
 
-    @patch("eval_framework.runner.subprocess.run")
+    @patch("kobench.runner.subprocess.run")
     def test_get_vram_usage_success(self, mock_run):
         mock_run.return_value.returncode = 0
         mock_run.return_value.stdout = "4096, 8192, 4096, 75"
@@ -403,7 +403,7 @@ class TestHealthAndUtility:
         assert result["vram_free_mb"] == 4096
         assert result["gpu_util_pct"] == 75
 
-    @patch("eval_framework.runner.subprocess.run")
+    @patch("kobench.runner.subprocess.run")
     def test_get_vram_usage_no_gpu(self, mock_run):
         mock_run.side_effect = FileNotFoundError("nvidia-smi not found")
         result = runner.get_vram_usage()

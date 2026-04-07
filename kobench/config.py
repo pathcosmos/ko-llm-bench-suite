@@ -12,7 +12,7 @@ os.environ.setdefault("OLLAMA_MODELS", "/var/snap/ollama/common/models")
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RESULTS_DIR = PROJECT_ROOT / "results"
 REPORTS_DIR = PROJECT_ROOT / "reports"
-DATA_DIR = PROJECT_ROOT / "data"
+DATA_DIR = PROJECT_ROOT / "benchmarks"
 RESULTS_DIR.mkdir(exist_ok=True)
 REPORTS_DIR.mkdir(exist_ok=True)
 

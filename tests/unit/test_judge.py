@@ -1,4 +1,4 @@
-"""eval_framework/judge.py 단위 테스트"""
+"""kobench/judge.py 단위 테스트"""
 
 import json
 import pytest
@@ -6,7 +6,7 @@ from unittest.mock import patch, MagicMock
 
 import requests
 
-from eval_framework.judge import (
+from kobench.judge import (
     _call_judge,
     _extract_json,
     score_response,
@@ -23,7 +23,7 @@ from eval_framework.judge import (
 class TestCallJudge:
     """_call_judge: Ollama API 호출"""
 
-    @patch("eval_framework.judge.requests.post")
+    @patch("kobench.judge.requests.post")
     def test_success(self, mock_post):
         mock_resp = MagicMock()
         mock_resp.json.return_value = {"response": "  답변  "}
@@ -32,7 +32,7 @@ class TestCallJudge:
         result = _call_judge("test prompt")
         assert result == "답변"
 
-    @patch("eval_framework.judge.requests.post")
+    @patch("kobench.judge.requests.post")
     def test_custom_timeout(self, mock_post):
         mock_resp = MagicMock()
         mock_resp.json.return_value = {"response": "ok"}
@@ -42,7 +42,7 @@ class TestCallJudge:
         _, kwargs = mock_post.call_args
         assert kwargs["timeout"] == 60
 
-    @patch("eval_framework.judge.requests.post")
+    @patch("kobench.judge.requests.post")
     def test_http_error(self, mock_post):
         mock_resp = MagicMock()
         mock_resp.raise_for_status.side_effect = requests.HTTPError("500")
@@ -130,7 +130,7 @@ class TestExtractJson:
 class TestScoreResponse:
     """score_response: 단일 응답 채점 (1-10)"""
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_valid_json_response(self, mock_call):
         mock_call.return_value = '{"score": 8, "reasoning": "정확합니다"}'
         result = score_response("질문", "답변", "general")
@@ -138,7 +138,7 @@ class TestScoreResponse:
         assert result["reasoning"] == "정확합니다"
         assert result["error"] is None
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_fallback_to_number_extraction(self, mock_call):
         """JSON 파싱 실패 시 숫자 fallback"""
         mock_call.return_value = "I think the score is 7 out of 10."
@@ -146,7 +146,7 @@ class TestScoreResponse:
         assert result["score"] == 7
         assert result["error"] is None
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_timeout_then_success(self, mock_call):
         """첫 호출 Timeout, 두번째 성공"""
         mock_call.side_effect = [
@@ -157,8 +157,8 @@ class TestScoreResponse:
         assert result["score"] == 6
         assert result["error"] is None
 
-    @patch("eval_framework.judge._call_judge")
-    @patch("eval_framework.judge.time.sleep")
+    @patch("kobench.judge._call_judge")
+    @patch("kobench.judge.time.sleep")
     def test_all_retries_fail(self, mock_sleep, mock_call):
         """전체 재시도 실패 → error 반환"""
         mock_call.side_effect = Exception("서버 장애")
@@ -167,8 +167,8 @@ class TestScoreResponse:
         assert result["error"] is not None
         assert "서버 장애" in result["error"]
 
-    @patch("eval_framework.judge._call_judge")
-    @patch("eval_framework.judge.time.sleep")
+    @patch("kobench.judge._call_judge")
+    @patch("kobench.judge.time.sleep")
     def test_connection_error_then_success(self, mock_sleep, mock_call):
         """ConnectionError 후 성공"""
         mock_call.side_effect = [
@@ -178,7 +178,7 @@ class TestScoreResponse:
         result = score_response("질문", "답변", "general")
         assert result["score"] == 5
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_bug_fix_text_initialized(self, mock_call):
         """버그 수정 검증: _call_judge가 JSONDecodeError를 발생시켜도 text가 초기화됨"""
         mock_call.side_effect = [
@@ -189,7 +189,7 @@ class TestScoreResponse:
         assert result["score"] == 4
         assert result["error"] is None
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_json_fallback_no_valid_number(self, mock_call):
         """JSON 파싱 실패 + 유효 숫자도 없으면 재시도 소진 후 error"""
         mock_call.return_value = "no valid json and no numbers"
@@ -206,32 +206,32 @@ class TestScoreResponse:
 class TestScorePairwise:
     """score_pairwise: 쌍대비교 채점"""
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_winner_a(self, mock_call):
         mock_call.return_value = '{"winner": "A", "reasoning": "A가 더 낫다"}'
         result = score_pairwise("질문", "응답A", "응답B")
         assert result["winner"] == "A"
         assert result["error"] is None
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_winner_b(self, mock_call):
         mock_call.return_value = '{"winner": "B", "reasoning": "B가 낫다"}'
         result = score_pairwise("질문", "응답A", "응답B")
         assert result["winner"] == "B"
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_tie(self, mock_call):
         mock_call.return_value = '{"winner": "tie", "reasoning": "동점"}'
         result = score_pairwise("질문", "응답A", "응답B")
         assert result["winner"] == "TIE"
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_invalid_winner_defaults_tie(self, mock_call):
         mock_call.return_value = '{"winner": "C", "reasoning": "invalid"}'
         result = score_pairwise("질문", "응답A", "응답B")
         assert result["winner"] == "TIE"
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_timeout_then_success(self, mock_call):
         mock_call.side_effect = [
             requests.Timeout("timeout"),
@@ -240,8 +240,8 @@ class TestScorePairwise:
         result = score_pairwise("질문", "응답A", "응답B")
         assert result["winner"] == "B"
 
-    @patch("eval_framework.judge._call_judge")
-    @patch("eval_framework.judge.time.sleep")
+    @patch("kobench.judge._call_judge")
+    @patch("kobench.judge.time.sleep")
     def test_all_retries_fail(self, mock_sleep, mock_call):
         mock_call.side_effect = Exception("서버 장애")
         result = score_pairwise("질문", "응답A", "응답B", max_retries=3)
@@ -257,7 +257,7 @@ class TestScorePairwise:
 class TestScoreWithCriteria:
     """score_with_criteria: 다면적 채점"""
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_valid_multi_criteria(self, mock_call):
         mock_call.return_value = (
             '{"scores": {"정확성": 8, "유용성": 7, "창의성": 9}, '
@@ -270,7 +270,7 @@ class TestScoreWithCriteria:
         assert result["scores"]["창의성"] == 9
         assert result["error"] is None
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_timeout_retry(self, mock_call):
         mock_call.side_effect = [
             requests.Timeout("timeout"),
@@ -279,8 +279,8 @@ class TestScoreWithCriteria:
         result = score_with_criteria("질문", "답변", {"a": "desc"})
         assert result["scores"]["a"] == 5
 
-    @patch("eval_framework.judge._call_judge")
-    @patch("eval_framework.judge.time.sleep")
+    @patch("kobench.judge._call_judge")
+    @patch("kobench.judge.time.sleep")
     def test_all_fail(self, mock_sleep, mock_call):
         mock_call.side_effect = Exception("fail")
         result = score_with_criteria("질문", "답변", {"a": "desc"}, max_retries=3)

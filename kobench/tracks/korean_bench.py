@@ -14,10 +14,10 @@ from collections import defaultdict
 from datetime import datetime
 from typing import Optional
 
-from eval_framework import config
-from eval_framework import runner
+from kobench import config
+from kobench import runner
 
-TRACK_NAME = "track1_korean_bench"
+TRACK_NAME = "korean_bench"
 
 # ─────────────────────────────────────────────────────────────────────────────
 # lm-evaluation-harness wrapper
@@ -537,7 +537,7 @@ def run(models: Optional[list[str]] = None) -> dict:
 
     Returns:
         {
-            "track": "track1_korean_bench",
+            "track": "korean_bench",
             "results": [{"model": str, "scores": {bench: acc}, "details": [...]}, ...],
             "summary": {model: {bench: acc, ...}, ...},
         }

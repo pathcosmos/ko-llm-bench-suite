@@ -8,14 +8,14 @@ score_with_criteria → 카테고리별 집계
 import pytest
 from unittest.mock import patch
 
-from eval_framework.judge import score_response, score_pairwise, score_with_criteria
-from eval_framework.scoring import aggregate_judge_scores, fit_bradley_terry
+from kobench.judge import score_response, score_pairwise, score_with_criteria
+from kobench.scoring import aggregate_judge_scores, fit_bradley_terry
 
 
 class TestScoreThenAggregate:
     """score_response N회 → aggregate_judge_scores → 유효한 summary"""
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_score_then_aggregate(self, mock_call):
         """여러 모델의 score_response 결과를 집계"""
         mock_call.side_effect = [
@@ -49,7 +49,7 @@ class TestScoreThenAggregate:
 class TestPairwiseToBradleyTerry:
     """score_pairwise 다수 쌍 → fit_bradley_terry → Elo 랭킹"""
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_pairwise_to_elo(self, mock_call):
         """3모델 6쌍 비교 → BT Elo 산출"""
         # model_a가 대부분 이김
@@ -93,7 +93,7 @@ class TestPairwiseToBradleyTerry:
 class TestCriteriaScoringAcrossCategories:
     """score_with_criteria로 여러 카테고리 채점 후 집계"""
 
-    @patch("eval_framework.judge._call_judge")
+    @patch("kobench.judge._call_judge")
     def test_multi_category_scoring(self, mock_call):
         mock_call.side_effect = [
             '{"scores": {"정확성": 8, "창의성": 7}, "reasoning": "writing ok"}',

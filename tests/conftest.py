@@ -25,7 +25,7 @@ for _mod in _EVAFRILL_MOCK_MODULES:
 @pytest.fixture
 def mock_ollama_post():
     """requests.post 패치 — Ollama generate/chat API 응답 반환"""
-    with patch("eval_framework.runner.requests.post") as mock_post:
+    with patch("kobench.runner.requests.post") as mock_post:
         response = MagicMock()
         response.status_code = 200
         response.json.return_value = {
@@ -44,7 +44,7 @@ def mock_ollama_post():
 @pytest.fixture
 def mock_ollama_get():
     """requests.get 패치 — health check, /api/ps 용"""
-    with patch("eval_framework.runner.requests.get") as mock_get:
+    with patch("kobench.runner.requests.get") as mock_get:
         response = MagicMock()
         response.status_code = 200
         response.json.return_value = {
@@ -136,8 +136,8 @@ def tmp_results_dir(tmp_path):
     """config.RESULTS_DIR를 임시 경로로 패치"""
     results_dir = tmp_path / "results"
     results_dir.mkdir()
-    with patch("eval_framework.config.RESULTS_DIR", results_dir):
-        with patch("eval_framework.runner.config.RESULTS_DIR", results_dir):
+    with patch("kobench.config.RESULTS_DIR", results_dir):
+        with patch("kobench.runner.config.RESULTS_DIR", results_dir):
             yield results_dir
 
 
@@ -147,6 +147,6 @@ def tmp_results_dir(tmp_path):
 @pytest.fixture
 def mock_time_sleep():
     """time.sleep 패치 — 테스트 속도 향상"""
-    with patch("eval_framework.runner.time.sleep"):
-        with patch("eval_framework.judge.time.sleep"):
+    with patch("kobench.runner.time.sleep"):
+        with patch("kobench.judge.time.sleep"):
             yield

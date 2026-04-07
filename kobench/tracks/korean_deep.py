@@ -25,11 +25,11 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-from eval_framework import config
-from eval_framework import runner
-from eval_framework import judge
+from kobench import config
+from kobench import runner
+from kobench import judge
 
-TRACK_NAME = "track3_korean_deep"
+TRACK_NAME = "korean_deep"
 QUESTIONS_PATH = config.DATA_DIR / "korean_deep" / "questions.json"
 
 # ── 카테고리별 LLM Judge 평가 기준 ────────────────────────────────────────────
@@ -105,7 +105,7 @@ def run(models: Optional[list[str]] = None) -> dict:
 
     Returns:
         {
-            "track": "track3_korean_deep",
+            "track": "korean_deep",
             "timestamp": "...",
             "results": [ ... per-model-per-question records ... ],
             "summary": {

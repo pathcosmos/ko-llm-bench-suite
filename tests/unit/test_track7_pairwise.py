@@ -7,7 +7,7 @@ _resolve_winner, _collect_responses, _run_comparisons, _build_summary, run
 import pytest
 from unittest.mock import patch, MagicMock
 
-from eval_framework.tracks import track7_pairwise as t7
+from kobench.tracks import pairwise as t7
 
 
 # ── _resolve_winner ──────────────────────────────────────────────────────────
@@ -63,8 +63,8 @@ class TestCollectResponses:
         {"id": "p1", "category": "test", "prompt": "질문1"},
         {"id": "p2", "category": "test", "prompt": "질문2"},
     ])
-    @patch("eval_framework.tracks.track7_pairwise.runner")
-    @patch("eval_framework.tracks.track7_pairwise.time")
+    @patch("kobench.tracks.pairwise.runner")
+    @patch("kobench.tracks.pairwise.time")
     def test_normal_collection(self, mock_time, mock_runner):
         """정상 수집: 2모델 x 2프롬프트"""
         mock_runner.switch_model.return_value = True
@@ -84,8 +84,8 @@ class TestCollectResponses:
     @patch.object(t7, "PROMPTS", [
         {"id": "p1", "category": "test", "prompt": "질문1"},
     ])
-    @patch("eval_framework.tracks.track7_pairwise.runner")
-    @patch("eval_framework.tracks.track7_pairwise.time")
+    @patch("kobench.tracks.pairwise.runner")
+    @patch("kobench.tracks.pairwise.time")
     def test_checkpoint_skip(self, mock_time, mock_runner):
         """체크포인트에 이미 수집된 모델은 스킵"""
         checkpoint = {"responses": {"m1": {"p1": "기존답변"}}}
@@ -97,8 +97,8 @@ class TestCollectResponses:
     @patch.object(t7, "PROMPTS", [
         {"id": "p1", "category": "test", "prompt": "질문1"},
     ])
-    @patch("eval_framework.tracks.track7_pairwise.runner")
-    @patch("eval_framework.tracks.track7_pairwise.time")
+    @patch("kobench.tracks.pairwise.runner")
+    @patch("kobench.tracks.pairwise.time")
     def test_model_load_failure(self, mock_time, mock_runner):
         """모델 로딩 실패 시 스킵"""
         mock_runner.switch_model.return_value = False
@@ -110,8 +110,8 @@ class TestCollectResponses:
     @patch.object(t7, "PROMPTS", [
         {"id": "p1", "category": "test", "prompt": "질문1"},
     ])
-    @patch("eval_framework.tracks.track7_pairwise.runner")
-    @patch("eval_framework.tracks.track7_pairwise.time")
+    @patch("kobench.tracks.pairwise.runner")
+    @patch("kobench.tracks.pairwise.time")
     def test_generation_error(self, mock_time, mock_runner):
         """생성 오류 시 빈 문자열 저장"""
         mock_runner.switch_model.return_value = True
@@ -130,9 +130,9 @@ class TestRunComparisons:
     @patch.object(t7, "PROMPTS", [
         {"id": "p1", "category": "test", "prompt": "질문1"},
     ])
-    @patch("eval_framework.tracks.track7_pairwise.judge")
-    @patch("eval_framework.tracks.track7_pairwise.runner")
-    @patch("eval_framework.tracks.track7_pairwise.time")
+    @patch("kobench.tracks.pairwise.judge")
+    @patch("kobench.tracks.pairwise.runner")
+    @patch("kobench.tracks.pairwise.time")
     def test_normal_comparison(self, mock_time, mock_runner, mock_judge):
         """정상 비교: 2모델 1프롬프트 → 정방향+역방향"""
         mock_judge.score_pairwise.side_effect = [
@@ -154,8 +154,8 @@ class TestRunComparisons:
     @patch.object(t7, "PROMPTS", [
         {"id": "p1", "category": "test", "prompt": "질문1"},
     ])
-    @patch("eval_framework.tracks.track7_pairwise.runner")
-    @patch("eval_framework.tracks.track7_pairwise.time")
+    @patch("kobench.tracks.pairwise.runner")
+    @patch("kobench.tracks.pairwise.time")
     def test_both_empty_responses(self, mock_time, mock_runner):
         """양쪽 모두 빈 응답 → TIE"""
         responses = {"m1": {"p1": ""}, "m2": {"p1": ""}}
@@ -166,8 +166,8 @@ class TestRunComparisons:
     @patch.object(t7, "PROMPTS", [
         {"id": "p1", "category": "test", "prompt": "질문1"},
     ])
-    @patch("eval_framework.tracks.track7_pairwise.runner")
-    @patch("eval_framework.tracks.track7_pairwise.time")
+    @patch("kobench.tracks.pairwise.runner")
+    @patch("kobench.tracks.pairwise.time")
     def test_model_a_empty(self, mock_time, mock_runner):
         """model_a만 빈 응답 → B 승"""
         responses = {"m1": {"p1": ""}, "m2": {"p1": "답변"}}
@@ -178,8 +178,8 @@ class TestRunComparisons:
     @patch.object(t7, "PROMPTS", [
         {"id": "p1", "category": "test", "prompt": "질문1"},
     ])
-    @patch("eval_framework.tracks.track7_pairwise.runner")
-    @patch("eval_framework.tracks.track7_pairwise.time")
+    @patch("kobench.tracks.pairwise.runner")
+    @patch("kobench.tracks.pairwise.time")
     def test_checkpoint_skip(self, mock_time, mock_runner):
         """이미 비교 완료된 키는 스킵"""
         checkpoint = {
@@ -243,10 +243,10 @@ class TestRun:
     @patch.object(t7, "PROMPTS", [
         {"id": "p1", "category": "test", "prompt": "질문1"},
     ])
-    @patch("eval_framework.tracks.track7_pairwise.runner")
-    @patch("eval_framework.tracks.track7_pairwise.judge")
-    @patch("eval_framework.tracks.track7_pairwise.scoring")
-    @patch("eval_framework.tracks.track7_pairwise.time")
+    @patch("kobench.tracks.pairwise.runner")
+    @patch("kobench.tracks.pairwise.judge")
+    @patch("kobench.tracks.pairwise.scoring")
+    @patch("kobench.tracks.pairwise.time")
     def test_full_flow(self, mock_time, mock_scoring, mock_judge, mock_runner):
         """전체 흐름: 응답 수집 → 비교 → Elo 산출"""
         mock_runner.load_checkpoint.return_value = None
@@ -267,14 +267,14 @@ class TestRun:
 
         result = t7.run(["m1", "m2"])
 
-        assert result["track"] == "track7_pairwise"
+        assert result["track"] == "pairwise"
         assert "error" not in result
         assert result["summary"]["m1"]["rank"] == 1
 
     @patch.object(t7, "PROMPTS", [
         {"id": "p1", "category": "test", "prompt": "질문1"},
     ])
-    @patch("eval_framework.tracks.track7_pairwise.runner")
+    @patch("kobench.tracks.pairwise.runner")
     def test_ollama_unavailable(self, mock_runner):
         """Ollama 연결 실패 시 에러 반환"""
         mock_runner.load_checkpoint.return_value = None
@@ -286,8 +286,8 @@ class TestRun:
     @patch.object(t7, "PROMPTS", [
         {"id": "p1", "category": "test", "prompt": "질문1"},
     ])
-    @patch("eval_framework.tracks.track7_pairwise.runner")
-    @patch("eval_framework.tracks.track7_pairwise.time")
+    @patch("kobench.tracks.pairwise.runner")
+    @patch("kobench.tracks.pairwise.time")
     def test_insufficient_models(self, mock_time, mock_runner):
         """유효 모델 부족 시 에러 반환"""
         mock_runner.load_checkpoint.return_value = None

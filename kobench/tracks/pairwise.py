@@ -10,10 +10,10 @@ import time
 import itertools
 from typing import Optional
 
-from eval_framework import config
-from eval_framework import runner
-from eval_framework import judge
-from eval_framework import scoring
+from kobench import config
+from kobench import runner
+from kobench import judge
+from kobench import scoring
 
 
 def _load_prompts() -> list[dict] | None:
@@ -24,7 +24,7 @@ def _load_prompts() -> list[dict] | None:
             return json.load(f)
     return None
 
-TRACK_NAME = "track7_pairwise"
+TRACK_NAME = "pairwise"
 
 # ── 20개 대표 프롬프트 (다양한 능력 영역) ────────────────────────────────────
 
@@ -390,7 +390,7 @@ def run(models: Optional[list[str]] = None) -> dict:
 
     Returns:
         {
-            "track": "track7_pairwise",
+            "track": "pairwise",
             "results": {
                 "responses": {model: {prompt_id: response}},
                 "comparisons": [...],

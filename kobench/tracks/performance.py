@@ -10,10 +10,10 @@ from typing import Optional
 
 import requests
 
-from eval_framework import config
-from eval_framework import runner
+from kobench import config
+from kobench import runner
 
-TRACK_NAME = "track6_performance"
+TRACK_NAME = "performance"
 
 # ── 한국어 필러 텍스트 생성 ──────────────────────────────────────────────────
 _FILLER_UNIT = (
@@ -426,7 +426,7 @@ def run(models: Optional[list[str]] = None) -> dict:
                  Defaults to config.ALL_MODELS.
 
     Returns:
-        {"track": "track6_performance", "results": [...], "summary": {...}}
+        {"track": "performance", "results": [...], "summary": {...}}
     """
     if models is None:
         models = list(config.ALL_MODELS)

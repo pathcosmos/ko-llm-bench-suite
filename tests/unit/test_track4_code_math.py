@@ -1,10 +1,10 @@
-"""eval_framework/tracks/track4_code_math.py 단위 테스트"""
+"""kobench/tracks/code_math.py 단위 테스트"""
 
 import json
 import pytest
 from unittest.mock import patch, MagicMock
 
-from eval_framework.tracks.track4_code_math import (
+from kobench.tracks.code_math import (
     _extract_python_code,
     _extract_sql,
     _extract_numeric_answer,
@@ -292,7 +292,7 @@ class TestRunPythonCode:
 
     def test_temp_file_cleanup(self):
         """임시 파일 정리 확인 (subprocess mock)"""
-        with patch("eval_framework.tracks.track4_code_math.subprocess.run") as mock_run:
+        with patch("kobench.tracks.code_math.subprocess.run") as mock_run:
             mock_run.return_value = MagicMock(
                 stdout="", stderr="", returncode=0
             )
@@ -385,7 +385,7 @@ class TestEvaluateDebug:
             "```"
         )
         with patch(
-            "eval_framework.tracks.track4_code_math._run_python_code",
+            "kobench.tracks.code_math._run_python_code",
             return_value={
                 "stdout": json.dumps([{"pass": True, "got": 6}]),
                 "stderr": "",
@@ -409,7 +409,7 @@ class TestEvaluateDebug:
             "```"
         )
         with patch(
-            "eval_framework.tracks.track4_code_math._run_python_code",
+            "kobench.tracks.code_math._run_python_code",
             return_value={
                 "stdout": json.dumps([{"pass": True, "got": 6}]),
                 "stderr": "",
@@ -432,7 +432,7 @@ class TestEvaluateDebug:
             "```"
         )
         with patch(
-            "eval_framework.tracks.track4_code_math._run_python_code",
+            "kobench.tracks.code_math._run_python_code",
             return_value={
                 "stdout": json.dumps([{"pass": False, "got": 0}]),
                 "stderr": "",
@@ -465,7 +465,7 @@ class TestEvaluateDebug:
             "```"
         )
         with patch(
-            "eval_framework.tracks.track4_code_math._run_python_code",
+            "kobench.tracks.code_math._run_python_code",
             return_value={
                 "stdout": "",
                 "stderr": "Error",
@@ -487,7 +487,7 @@ class TestEvaluateDebug:
             "```"
         )
         with patch(
-            "eval_framework.tracks.track4_code_math._run_python_code",
+            "kobench.tracks.code_math._run_python_code",
             return_value={
                 "stdout": json.dumps([{"pass": True, "got": 6}]),
                 "stderr": "",
@@ -509,7 +509,7 @@ class TestEvaluateDebug:
             "```"
         )
         with patch(
-            "eval_framework.tracks.track4_code_math._run_python_code",
+            "kobench.tracks.code_math._run_python_code",
             return_value={
                 "stdout": json.dumps([{"pass": False, "got": 3}]),
                 "stderr": "",
@@ -531,7 +531,7 @@ class TestEvaluateDebug:
             "```"
         )
         with patch(
-            "eval_framework.tracks.track4_code_math._run_python_code",
+            "kobench.tracks.code_math._run_python_code",
             return_value={
                 "stdout": "not valid json",
                 "stderr": "",
@@ -562,9 +562,9 @@ class TestEvalPython:
             ],
         }
 
-    @patch("eval_framework.tracks.track4_code_math.time.sleep")
-    @patch("eval_framework.tracks.track4_code_math._run_python_code")
-    @patch("eval_framework.tracks.track4_code_math.runner.generate")
+    @patch("kobench.tracks.code_math.time.sleep")
+    @patch("kobench.tracks.code_math._run_python_code")
+    @patch("kobench.tracks.code_math.runner.generate")
     def test_all_tests_pass(self, mock_generate, mock_run, mock_sleep):
         """모든 테스트 통과"""
         mock_generate.return_value = {
@@ -582,8 +582,8 @@ class TestEvalPython:
         assert results[0]["pass_at_1"] == 1.0
         assert results[0]["passed"] == 2
 
-    @patch("eval_framework.tracks.track4_code_math.time.sleep")
-    @patch("eval_framework.tracks.track4_code_math.runner.generate")
+    @patch("kobench.tracks.code_math.time.sleep")
+    @patch("kobench.tracks.code_math.runner.generate")
     def test_generate_error(self, mock_generate, mock_sleep):
         """모델 응답 오류"""
         mock_generate.return_value = {
@@ -594,9 +594,9 @@ class TestEvalPython:
         assert results[0]["pass_at_1"] == 0.0
         assert results[0]["error"] == "timeout"
 
-    @patch("eval_framework.tracks.track4_code_math.time.sleep")
-    @patch("eval_framework.tracks.track4_code_math._run_python_code")
-    @patch("eval_framework.tracks.track4_code_math.runner.generate")
+    @patch("kobench.tracks.code_math.time.sleep")
+    @patch("kobench.tracks.code_math._run_python_code")
+    @patch("kobench.tracks.code_math.runner.generate")
     def test_partial_pass(self, mock_generate, mock_run, mock_sleep):
         """일부 테스트만 통과"""
         mock_generate.return_value = {
@@ -613,9 +613,9 @@ class TestEvalPython:
         assert results[0]["pass_at_1"] == 0.0
         assert results[0]["passed"] == 1
 
-    @patch("eval_framework.tracks.track4_code_math.time.sleep")
-    @patch("eval_framework.tracks.track4_code_math._run_python_code")
-    @patch("eval_framework.tracks.track4_code_math.runner.generate")
+    @patch("kobench.tracks.code_math.time.sleep")
+    @patch("kobench.tracks.code_math._run_python_code")
+    @patch("kobench.tracks.code_math.runner.generate")
     def test_execution_error(self, mock_generate, mock_run, mock_sleep):
         """코드 실행 오류"""
         mock_generate.return_value = {
@@ -648,9 +648,9 @@ class TestEvalSql:
             "test_query": "SELECT * FROM users",
         }
 
-    @patch("eval_framework.tracks.track4_code_math.time.sleep")
-    @patch("eval_framework.tracks.track4_code_math._run_sql_test")
-    @patch("eval_framework.tracks.track4_code_math.runner.generate")
+    @patch("kobench.tracks.code_math.time.sleep")
+    @patch("kobench.tracks.code_math._run_sql_test")
+    @patch("kobench.tracks.code_math.runner.generate")
     def test_correct_sql(self, mock_generate, mock_run_sql, mock_sleep):
         """올바른 SQL 생성"""
         mock_generate.return_value = {
@@ -666,8 +666,8 @@ class TestEvalSql:
         results = _eval_sql("model-a", [self._sample_problem()])
         assert results[0]["correct"] is True
 
-    @patch("eval_framework.tracks.track4_code_math.time.sleep")
-    @patch("eval_framework.tracks.track4_code_math.runner.generate")
+    @patch("kobench.tracks.code_math.time.sleep")
+    @patch("kobench.tracks.code_math.runner.generate")
     def test_generate_error(self, mock_generate, mock_sleep):
         """모델 응답 오류"""
         mock_generate.return_value = {
@@ -678,9 +678,9 @@ class TestEvalSql:
         assert results[0]["correct"] is False
         assert results[0]["error"] == "timeout"
 
-    @patch("eval_framework.tracks.track4_code_math.time.sleep")
-    @patch("eval_framework.tracks.track4_code_math._run_sql_test")
-    @patch("eval_framework.tracks.track4_code_math.runner.generate")
+    @patch("kobench.tracks.code_math.time.sleep")
+    @patch("kobench.tracks.code_math._run_sql_test")
+    @patch("kobench.tracks.code_math.runner.generate")
     def test_incorrect_sql(self, mock_generate, mock_run_sql, mock_sleep):
         """잘못된 SQL 결과"""
         mock_generate.return_value = {
@@ -716,9 +716,9 @@ class TestEvalDebug:
             ],
         }
 
-    @patch("eval_framework.tracks.track4_code_math.time.sleep")
-    @patch("eval_framework.tracks.track4_code_math._evaluate_debug")
-    @patch("eval_framework.tracks.track4_code_math.runner.generate")
+    @patch("kobench.tracks.code_math.time.sleep")
+    @patch("kobench.tracks.code_math._evaluate_debug")
+    @patch("kobench.tracks.code_math.runner.generate")
     def test_successful_debug(self, mock_generate, mock_eval_debug, mock_sleep):
         """디버깅 성공"""
         mock_generate.return_value = {
@@ -734,8 +734,8 @@ class TestEvalDebug:
         assert results[0]["correct"] is True
         assert results[0]["id"] == "dbg1"
 
-    @patch("eval_framework.tracks.track4_code_math.time.sleep")
-    @patch("eval_framework.tracks.track4_code_math.runner.generate")
+    @patch("kobench.tracks.code_math.time.sleep")
+    @patch("kobench.tracks.code_math.runner.generate")
     def test_generate_error(self, mock_generate, mock_sleep):
         """모델 응답 오류"""
         mock_generate.return_value = {
@@ -762,8 +762,8 @@ class TestEvalMath:
             "answer": 2.0,
         }
 
-    @patch("eval_framework.tracks.track4_code_math.time.sleep")
-    @patch("eval_framework.tracks.track4_code_math.runner.generate")
+    @patch("kobench.tracks.code_math.time.sleep")
+    @patch("kobench.tracks.code_math.runner.generate")
     def test_correct_answer(self, mock_generate, mock_sleep):
         """올바른 답"""
         mock_generate.return_value = {
@@ -774,8 +774,8 @@ class TestEvalMath:
         assert results[0]["correct"] is True
         assert results[0]["extracted"] == 2.0
 
-    @patch("eval_framework.tracks.track4_code_math.time.sleep")
-    @patch("eval_framework.tracks.track4_code_math.runner.generate")
+    @patch("kobench.tracks.code_math.time.sleep")
+    @patch("kobench.tracks.code_math.runner.generate")
     def test_wrong_answer(self, mock_generate, mock_sleep):
         """잘못된 답"""
         mock_generate.return_value = {
@@ -785,8 +785,8 @@ class TestEvalMath:
         results = _eval_math("model-a", [self._sample_problem()])
         assert results[0]["correct"] is False
 
-    @patch("eval_framework.tracks.track4_code_math.time.sleep")
-    @patch("eval_framework.tracks.track4_code_math.runner.generate")
+    @patch("kobench.tracks.code_math.time.sleep")
+    @patch("kobench.tracks.code_math.runner.generate")
     def test_generate_error(self, mock_generate, mock_sleep):
         """모델 응답 오류"""
         mock_generate.return_value = {
@@ -843,18 +843,18 @@ class TestRun:
 
         patches = [
             patch(
-                "eval_framework.tracks.track4_code_math._load_code_problems",
+                "kobench.tracks.code_math._load_code_problems",
                 return_value=code_data,
             ),
             patch(
-                "eval_framework.tracks.track4_code_math._load_math_problems",
+                "kobench.tracks.code_math._load_math_problems",
                 return_value=math_data,
             ),
-            patch("eval_framework.tracks.track4_code_math.runner.load_checkpoint", return_value=None),
-            patch("eval_framework.tracks.track4_code_math.runner.switch_model", return_value=True),
-            patch("eval_framework.tracks.track4_code_math.runner.save_checkpoint"),
-            patch("eval_framework.tracks.track4_code_math.runner.save_results_incremental"),
-            patch("eval_framework.tracks.track4_code_math.time.sleep"),
+            patch("kobench.tracks.code_math.runner.load_checkpoint", return_value=None),
+            patch("kobench.tracks.code_math.runner.switch_model", return_value=True),
+            patch("kobench.tracks.code_math.runner.save_checkpoint"),
+            patch("kobench.tracks.code_math.runner.save_results_incremental"),
+            patch("kobench.tracks.code_math.time.sleep"),
         ]
         for p in patches:
             p.start()
@@ -862,10 +862,10 @@ class TestRun:
         yield
         patch.stopall()
 
-    @patch("eval_framework.tracks.track4_code_math._eval_math")
-    @patch("eval_framework.tracks.track4_code_math._eval_debug")
-    @patch("eval_framework.tracks.track4_code_math._eval_sql")
-    @patch("eval_framework.tracks.track4_code_math._eval_python")
+    @patch("kobench.tracks.code_math._eval_math")
+    @patch("kobench.tracks.code_math._eval_debug")
+    @patch("kobench.tracks.code_math._eval_sql")
+    @patch("kobench.tracks.code_math._eval_python")
     def test_basic_run_returns_structure(self, mock_py, mock_sql, mock_dbg, mock_math):
         """기본 실행 시 올바른 출력 구조"""
         mock_py.return_value = [{"id": "py1", "pass_at_1": 1.0, "passed": 1, "total": 1}]
@@ -875,16 +875,16 @@ class TestRun:
 
         output = run(["test-model"])
 
-        assert output["track"] == "track4_code_math"
+        assert output["track"] == "code_math"
         assert "results" in output
         assert "summary" in output
         assert len(output["results"]) == 1
         assert output["results"][0]["model"] == "test-model"
 
-    @patch("eval_framework.tracks.track4_code_math._eval_math")
-    @patch("eval_framework.tracks.track4_code_math._eval_debug")
-    @patch("eval_framework.tracks.track4_code_math._eval_sql")
-    @patch("eval_framework.tracks.track4_code_math._eval_python")
+    @patch("kobench.tracks.code_math._eval_math")
+    @patch("kobench.tracks.code_math._eval_debug")
+    @patch("kobench.tracks.code_math._eval_sql")
+    @patch("kobench.tracks.code_math._eval_python")
     def test_scores_computed(self, mock_py, mock_sql, mock_dbg, mock_math):
         """점수 계산 검증"""
         mock_py.return_value = [{"id": "py1", "pass_at_1": 1.0}]
@@ -902,16 +902,16 @@ class TestRun:
 
     def test_model_switch_failure(self):
         """모델 전환 실패 시 오류 기록"""
-        with patch("eval_framework.tracks.track4_code_math.runner.switch_model", return_value=False):
+        with patch("kobench.tracks.code_math.runner.switch_model", return_value=False):
             output = run(["bad-model"])
 
         assert len(output["results"]) == 1
         assert output["results"][0]["error"] == "모델 로딩 실패"
 
-    @patch("eval_framework.tracks.track4_code_math._eval_math")
-    @patch("eval_framework.tracks.track4_code_math._eval_debug")
-    @patch("eval_framework.tracks.track4_code_math._eval_sql")
-    @patch("eval_framework.tracks.track4_code_math._eval_python")
+    @patch("kobench.tracks.code_math._eval_math")
+    @patch("kobench.tracks.code_math._eval_debug")
+    @patch("kobench.tracks.code_math._eval_sql")
+    @patch("kobench.tracks.code_math._eval_python")
     def test_checkpoint_skips_completed(self, mock_py, mock_sql, mock_dbg, mock_math):
         """체크포인트에서 완료된 모델 스킵"""
         checkpoint_data = {
@@ -920,7 +920,7 @@ class TestRun:
                 "scores": {"python_pass1": 0.5, "sql_accuracy": 0.5, "debug_accuracy": 0.5, "math_accuracy": 0.5},
             }],
         }
-        with patch("eval_framework.tracks.track4_code_math.runner.load_checkpoint", return_value=checkpoint_data):
+        with patch("kobench.tracks.code_math.runner.load_checkpoint", return_value=checkpoint_data):
             output = run(["test-model"])
 
         mock_py.assert_not_called()
@@ -929,10 +929,10 @@ class TestRun:
         mock_math.assert_not_called()
         assert output["summary"]["test-model"]["python_pass1"] == 0.5
 
-    @patch("eval_framework.tracks.track4_code_math._eval_math")
-    @patch("eval_framework.tracks.track4_code_math._eval_debug")
-    @patch("eval_framework.tracks.track4_code_math._eval_sql")
-    @patch("eval_framework.tracks.track4_code_math._eval_python")
+    @patch("kobench.tracks.code_math._eval_math")
+    @patch("kobench.tracks.code_math._eval_debug")
+    @patch("kobench.tracks.code_math._eval_sql")
+    @patch("kobench.tracks.code_math._eval_python")
     def test_uses_config_models_when_none(self, mock_py, mock_sql, mock_dbg, mock_math):
         """models=None이면 config.ALL_MODELS 사용"""
         mock_py.return_value = []
@@ -940,15 +940,15 @@ class TestRun:
         mock_dbg.return_value = []
         mock_math.return_value = []
 
-        with patch("eval_framework.tracks.track4_code_math.config.ALL_MODELS", ["default-model"]):
+        with patch("kobench.tracks.code_math.config.ALL_MODELS", ["default-model"]):
             output = run(None)
 
         assert any(r["model"] == "default-model" for r in output["results"])
 
-    @patch("eval_framework.tracks.track4_code_math._eval_math")
-    @patch("eval_framework.tracks.track4_code_math._eval_debug")
-    @patch("eval_framework.tracks.track4_code_math._eval_sql")
-    @patch("eval_framework.tracks.track4_code_math._eval_python")
+    @patch("kobench.tracks.code_math._eval_math")
+    @patch("kobench.tracks.code_math._eval_debug")
+    @patch("kobench.tracks.code_math._eval_sql")
+    @patch("kobench.tracks.code_math._eval_python")
     def test_multiple_models(self, mock_py, mock_sql, mock_dbg, mock_math):
         """여러 모델 평가"""
         mock_py.return_value = [{"id": "py1", "pass_at_1": 1.0}]

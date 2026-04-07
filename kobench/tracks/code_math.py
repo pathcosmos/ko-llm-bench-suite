@@ -16,8 +16,8 @@ import time
 from pathlib import Path
 from typing import Optional
 
-from eval_framework import config
-from eval_framework import runner
+from kobench import config
+from kobench import runner
 
 
 # ── 데이터 로드 ─────────────────────────────────────────────────────────────
@@ -494,7 +494,7 @@ def run(models: Optional[list[str]] = None) -> dict:
     print(f"{'='*60}\n")
 
     # 체크포인트 로드
-    checkpoint = runner.load_checkpoint("track4_code_math")
+    checkpoint = runner.load_checkpoint("code_math")
     all_results = checkpoint.get("results", []) if checkpoint else []
     completed_models = {r["model"] for r in all_results}
 
@@ -519,7 +519,7 @@ def run(models: Optional[list[str]] = None) -> dict:
                 "scores": {},
             })
             runner.save_checkpoint(
-                {"results": all_results}, "track4_code_math"
+                {"results": all_results}, "code_math"
             )
             continue
         current_model = model
@@ -580,16 +580,16 @@ def run(models: Optional[list[str]] = None) -> dict:
         })
 
         # 체크포인트 저장
-        runner.save_checkpoint({"results": all_results}, "track4_code_math")
+        runner.save_checkpoint({"results": all_results}, "code_math")
 
     # 최종 결과
     final = {
-        "track": "track4_code_math",
+        "track": "code_math",
         "results": all_results,
         "summary": summary,
     }
 
-    runner.save_results_incremental(final, "track4_code_math")
+    runner.save_results_incremental(final, "code_math")
     print(f"\n{'='*60}")
     print(f"Track 4 완료!")
     print(f"{'='*60}\n")

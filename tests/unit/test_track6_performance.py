@@ -10,7 +10,7 @@ _build_summary, run
 import pytest
 from unittest.mock import patch, MagicMock, call
 
-from eval_framework.tracks import track6_performance as t6
+from kobench.tracks import performance as t6
 
 
 # ── _make_filler_prompt ─────────────────────────────────────────────────────
@@ -158,9 +158,9 @@ class TestMakeResultEntry:
 class TestPrefillSpeed:
     """프리필 속도 측정"""
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_returns_results_per_length(self, mock_time, mock_runner, mock_config):
         """각 입력 길이마다 결과 하나씩"""
         mock_config.TRACK6_INPUT_LENGTHS = [100, 500]
@@ -179,9 +179,9 @@ class TestPrefillSpeed:
         assert all(r["test_type"] == "prefill_speed" for r in results)
         assert all(r["model"] == "m1" for r in results)
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_prefill_tps_calculation(self, mock_time, mock_runner, mock_config):
         """프리필 tok/s 계산: prompt_eval_count / prompt_eval_duration_s"""
         mock_config.TRACK6_INPUT_LENGTHS = [100]
@@ -197,9 +197,9 @@ class TestPrefillSpeed:
         results = t6._test_prefill_speed("m1")
         assert results[0]["prefill_tok_s"] == 500.0  # 200 / 0.4
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_zero_duration(self, mock_time, mock_runner, mock_config):
         """prompt_eval_duration_s=0이면 prefill_tps=0"""
         mock_config.TRACK6_INPUT_LENGTHS = [100]
@@ -215,9 +215,9 @@ class TestPrefillSpeed:
         results = t6._test_prefill_speed("m1")
         assert results[0]["prefill_tok_s"] == 0.0
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_error_propagated(self, mock_time, mock_runner, mock_config):
         """에러가 결과에 전파"""
         mock_config.TRACK6_INPUT_LENGTHS = [100]
@@ -241,9 +241,9 @@ class TestPrefillSpeed:
 class TestDecodeSpeed:
     """디코드 속도 측정"""
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_four_output_lengths(self, mock_time, mock_runner, mock_config):
         """출력 길이 4가지 (50, 100, 256, 512)"""
         mock_config.COOLDOWN_BETWEEN_TESTS = 0
@@ -260,9 +260,9 @@ class TestDecodeSpeed:
         assert len(results) == 4
         assert all(r["test_type"] == "decode_speed" for r in results)
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_requested_output_length_extra(self, mock_time, mock_runner, mock_config):
         """extra에 requested_output_length 포함"""
         mock_config.COOLDOWN_BETWEEN_TESTS = 0
@@ -278,9 +278,9 @@ class TestDecodeSpeed:
         requested = [r["requested_output_length"] for r in results]
         assert requested == [50, 100, 256, 512]
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_zero_prefill_duration(self, mock_time, mock_runner, mock_config):
         """prompt_eval_duration_s=0이면 prefill_tok_s=0"""
         mock_config.COOLDOWN_BETWEEN_TESTS = 0
@@ -302,9 +302,9 @@ class TestDecodeSpeed:
 class TestTTFT:
     """Time To First Token 측정"""
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.requests")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.requests")
+    @patch("kobench.tracks.performance.time")
     def test_three_prompt_lengths(self, mock_time, mock_requests, mock_config):
         """short, medium, long 3개 프롬프트"""
         mock_config.MODEL_TIMEOUTS = {}
@@ -340,9 +340,9 @@ class TestTTFT:
         assert labels == ["short", "medium", "long"]
         assert all(r["test_type"] == "ttft" for r in results)
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.requests")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.requests")
+    @patch("kobench.tracks.performance.time")
     def test_no_token_received(self, mock_time, mock_requests, mock_config):
         """토큰 수신 실패 시 error='no_token_received'"""
         mock_config.MODEL_TIMEOUTS = {}
@@ -359,9 +359,9 @@ class TestTTFT:
         results = t6._test_ttft("m1")
         assert results[0]["error"] == "no_token_received"
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.requests")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.requests")
+    @patch("kobench.tracks.performance.time")
     def test_request_exception(self, mock_time, mock_requests, mock_config):
         """요청 예외 시 에러 메시지 저장"""
         mock_config.MODEL_TIMEOUTS = {}
@@ -381,7 +381,7 @@ class TestTTFT:
 class TestVRAM:
     """VRAM 사용량 측정"""
 
-    @patch("eval_framework.tracks.track6_performance.runner")
+    @patch("kobench.tracks.performance.runner")
     def test_returns_single_result(self, mock_runner):
         """결과 1건 반환"""
         mock_runner.get_vram_usage.return_value = {
@@ -400,7 +400,7 @@ class TestVRAM:
         assert results[0]["vram_free_mb"] == 12288
         assert results[0]["gpu_util_pct"] == 25
 
-    @patch("eval_framework.tracks.track6_performance.runner")
+    @patch("kobench.tracks.performance.runner")
     def test_empty_vram_info(self, mock_runner):
         """VRAM 정보 없을 때 기본값"""
         mock_runner.get_vram_usage.return_value = {}
@@ -415,9 +415,9 @@ class TestVRAM:
 class TestQuantComparison:
     """양자화 변형 비교"""
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_results_per_variant_and_prompt(self, mock_time, mock_runner, mock_config):
         """각 변형 x 각 프롬프트 = 결과 수"""
         mock_config.COOLDOWN_BETWEEN_TESTS = 0
@@ -438,9 +438,9 @@ class TestQuantComparison:
         assert len(results) == 10
         assert all(r["test_type"] == "quant_comparison" for r in results)
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_extra_fields(self, mock_time, mock_runner, mock_config):
         """extra에 base_model, quant_tag, prompt_index 포함"""
         mock_config.COOLDOWN_BETWEEN_TESTS = 0
@@ -466,9 +466,9 @@ class TestQuantComparison:
         assert "quant_tag" in first
         assert "prompt_index" in first
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_returns_last_model(self, mock_time, mock_runner, mock_config):
         """마지막으로 로드된 모델 반환"""
         mock_config.COOLDOWN_BETWEEN_TESTS = 0
@@ -494,9 +494,9 @@ class TestQuantComparison:
 class TestMaxContext:
     """최대 컨텍스트 테스트"""
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_five_context_lengths(self, mock_time, mock_runner, mock_config):
         """5가지 컨텍스트 길이 테스트"""
         mock_config.COOLDOWN_BETWEEN_TESTS = 0
@@ -515,9 +515,9 @@ class TestMaxContext:
         requested = [r["requested_context"] for r in results]
         assert requested == [512, 1024, 2048, 3072, 4096]
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_uses_prompt_eval_count_as_input(self, mock_time, mock_runner, mock_config):
         """prompt_eval_count가 있으면 input_length로 사용"""
         mock_config.COOLDOWN_BETWEEN_TESTS = 0
@@ -532,9 +532,9 @@ class TestMaxContext:
         results = t6._test_max_context("m1")
         assert results[0]["input_length"] == 450
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_fallback_to_ctx_len(self, mock_time, mock_runner, mock_config):
         """prompt_eval_count=0이면 ctx_len 사용"""
         mock_config.COOLDOWN_BETWEEN_TESTS = 0
@@ -556,9 +556,9 @@ class TestMaxContext:
 class TestConcurrent:
     """동시 요청 테스트"""
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_results_per_concurrency_level(self, mock_time, mock_runner, mock_config):
         """각 동시성 수준마다 결과 하나"""
         mock_config.TRACK6_CONCURRENT_LEVELS = [1, 2]
@@ -579,9 +579,9 @@ class TestConcurrent:
         assert len(results) == 2
         assert all(r["test_type"] == "concurrent" for r in results)
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_concurrency_level_in_extra(self, mock_time, mock_runner, mock_config):
         """extra에 concurrency_level 포함"""
         mock_config.TRACK6_CONCURRENT_LEVELS = [4]
@@ -595,9 +595,9 @@ class TestConcurrent:
         results = t6._test_concurrent("m1")
         assert results[0]["concurrency_level"] == 4
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_aggregate_tok_s(self, mock_time, mock_runner, mock_config):
         """집계 tok/s 계산"""
         mock_config.TRACK6_CONCURRENT_LEVELS = [1]
@@ -739,9 +739,9 @@ class TestBuildSummary:
 class TestRun:
     """Track 6 메인 실행 흐름"""
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_full_flow(self, mock_time, mock_runner, mock_config):
         """전체 흐름: 모델 로드 → 6개 테스트 → 요약"""
         mock_config.TRACK6_INPUT_LENGTHS = [100]
@@ -765,13 +765,13 @@ class TestRun:
 
         result = t6.run(["m1"])
 
-        assert result["track"] == "track6_performance"
+        assert result["track"] == "performance"
         assert "error" not in result
         assert len(result["results"]) > 0
         assert "m1" in result["summary"]
         mock_runner.save_results_incremental.assert_called_once()
 
-    @patch("eval_framework.tracks.track6_performance.runner")
+    @patch("kobench.tracks.performance.runner")
     def test_ollama_unavailable(self, mock_runner):
         """Ollama 연결 실패 시 에러 반환"""
         mock_runner.load_checkpoint.return_value = None
@@ -779,11 +779,11 @@ class TestRun:
 
         result = t6.run(["m1"])
         assert "error" in result
-        assert result["track"] == "track6_performance"
+        assert result["track"] == "performance"
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_model_load_failure_skips(self, mock_time, mock_runner, mock_config):
         """모델 로딩 실패 시 해당 모델 스킵"""
         mock_config.TRACK6_INPUT_LENGTHS = [100]
@@ -799,9 +799,9 @@ class TestRun:
         errors = [r for r in result["results"] if r.get("error") == "warmup_failed"]
         assert len(errors) == 1
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_checkpoint_resume(self, mock_time, mock_runner, mock_config):
         """체크포인트에서 재개"""
         mock_config.TRACK6_INPUT_LENGTHS = [100]
@@ -826,21 +826,21 @@ class TestRun:
         # The existing result should still be in the output
         assert len(result["results"]) >= 1
 
-    @patch("eval_framework.tracks.track6_performance.runner")
+    @patch("kobench.tracks.performance.runner")
     def test_defaults_to_config_models(self, mock_runner):
         """models=None이면 config.ALL_MODELS 사용"""
         mock_runner.load_checkpoint.return_value = None
         mock_runner.wait_for_ollama.return_value = False
 
-        with patch("eval_framework.tracks.track6_performance.config") as mock_config:
+        with patch("kobench.tracks.performance.config") as mock_config:
             mock_config.ALL_MODELS = ["default_m1", "default_m2"]
             result = t6.run(None)
 
         assert "error" in result
 
-    @patch("eval_framework.tracks.track6_performance.config")
-    @patch("eval_framework.tracks.track6_performance.runner")
-    @patch("eval_framework.tracks.track6_performance.time")
+    @patch("kobench.tracks.performance.config")
+    @patch("kobench.tracks.performance.runner")
+    @patch("kobench.tracks.performance.time")
     def test_quant_comparison_runs(self, mock_time, mock_runner, mock_config):
         """양자화 그룹이 있으면 quant_comparison 실행"""
         mock_config.TRACK6_INPUT_LENGTHS = [100]
