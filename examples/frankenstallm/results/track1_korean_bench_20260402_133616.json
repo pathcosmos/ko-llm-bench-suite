@@ -1,0 +1,2650 @@
+{
+  "track": "track1_korean_bench",
+  "timestamp": "2026-04-02T13:36:16.174611",
+  "num_models": 2,
+  "mode": "standalone",
+  "results": [
+    {
+      "model": "qwen2.5:3b",
+      "scores": {
+        "kmmlu": 0.86,
+        "kobest_boolq": 1.0,
+        "kobest_copa": 1.0,
+        "kobest_hellaswag": 1.0,
+        "kobest_sentineg": 0.65
+      },
+      "details": [
+        {
+          "id": "boolq_000",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_001",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_002",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_003",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_004",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_005",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_006",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_007",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_008",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_009",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_010",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_011",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_012",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_013",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_014",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_015",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_016",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_017",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_018",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_019",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "copa_000",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_001",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_002",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_003",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_004",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_005",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "copa_006",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_007",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_008",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_009",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_010",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_011",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_012",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_013",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_014",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_015",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_016",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_017",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_018",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_019",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "sentineg_000",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "sentineg_001",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_002",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_003",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "sentineg_004",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_005",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_006",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_007",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_008",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_009",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "sentineg_010",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_011",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_012",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_013",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_014",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_015",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "sentineg_016",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_017",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_018",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_019",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "hellaswag_000",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_001",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_002",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_003",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_004",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_005",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_006",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_007",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_008",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_009",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_010",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_011",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_012",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_013",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_014",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_015",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_016",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_017",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_018",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_019",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_000",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_001",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A.",
+          "error": null
+        },
+        {
+          "id": "kmmlu_002",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": 2,
+          "correct": false,
+          "raw_response": "C",
+          "error": null
+        },
+        {
+          "id": "kmmlu_003",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_004",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 2,
+          "parsed": 2,
+          "correct": true,
+          "raw_response": "C. 1953년",
+          "error": null
+        },
+        {
+          "id": "kmmlu_005",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_006",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_007",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_008",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_009",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_010",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_011",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_012",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_013",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_014",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_015",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_016",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "kmmlu_017",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_018",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_019",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 2,
+          "correct": false,
+          "raw_response": "C",
+          "error": null
+        },
+        {
+          "id": "kmmlu_020",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_021",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_022",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A.",
+          "error": null
+        },
+        {
+          "id": "kmmlu_023",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_024",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A.",
+          "error": null
+        },
+        {
+          "id": "kmmlu_025",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_026",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_027",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_028",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 2,
+          "correct": false,
+          "raw_response": "C",
+          "error": null
+        },
+        {
+          "id": "kmmlu_029",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_030",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_031",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_032",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_033",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_034",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_035",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 3,
+          "correct": false,
+          "raw_response": "D",
+          "error": null
+        },
+        {
+          "id": "kmmlu_036",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_037",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_038",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_039",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_040",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_041",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_042",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_043",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_044",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_045",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "kmmlu_046",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_047",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_048",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_049",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 3,
+          "correct": false,
+          "raw_response": "D",
+          "error": null
+        }
+      ],
+      "mode": "standalone"
+    },
+    {
+      "model": "evafrill-mo-3b-slerp",
+      "scores": {
+        "kmmlu": 0.7,
+        "kobest_boolq": 0.3,
+        "kobest_copa": 0.8,
+        "kobest_hellaswag": 0.65,
+        "kobest_sentineg": 0.45
+      },
+      "details": [
+        {
+          "id": "boolq_000",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 0,
+          "correct": false,
+          "raw_response": "AI: , 부산입니다.질문: 대한민국의 행정구역은 어디인가?AI: 서울특별시, 인천광역시질문: 대한민국의 인구는 약 1000만 명이다.AI: , 서울입니다.다음 문장에서 '주요 도시(수도)는'이란 말이 왜 나오나요?A: 대한민국의 수도는 서울로 통일한다.B: 주요 도시(수도)는 2개로 통일돼도 상관없습니다.A: , , 주요 도시(수도)의 인구를 합산한 숫자",
+          "error": null
+        },
+        {
+          "id": "boolq_001",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "지문: 그렇다. 한글은 1443년에 세종대왕이 창제하였다.3. 글의 밑줄 친 부분에 들어갈 말로 적절한 것은?내게는 한글이 글짓기를 배울 수 있는 좋은 도구였다. 한글의 창제 원리를 설명하는 글이기에 글을 배우는 어린이들에게 도움이 되기에 좋은 글이다. 한글의 창제 원리를 설명하는 좋은 글이다. 한글이 창제된 원리보다는 창제 후에 더 뛰어난 의미를 가지므로",
+          "error": null
+        },
+        {
+          "id": "boolq_002",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "답변: 정답이 '예', '아니오'로만 나와요! 정답만 보고 싶다면 입력 창을 닫아주세요.이 지문에서는 '김치'가 들어가는 단어를 선택하는 '답'이 없으며, 어떤 것을 말하는지 묻는 것이 아니에요.'아니오'라고 답하면 정답을 맞힐 수 있어요.질문: 김치에 매운 양념장이나 맵지 않은 양념을 넣어 먹으면 어떤 맛일까?답변: 맵기 있어요!이 지문에서는 '맵지 않은",
+          "error": null
+        },
+        {
+          "id": "boolq_003",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "제주는 대한민국에서 가장 큰 섬으로, 화산 활동으로 형성되었다.답변: '아니요'로 답하세요.한국의 대표 관광지인 제주의 화산 활동은 정말 크고, 자연의 힘은 정말 경이로워서, 이 섬으로 어떻게 사람들이 오게 되었는지, 어떤 변화로 인해 자연이 이렇게 발전한 것인지 궁금해요. 또한 이 자연을 지키려 하는 사람들도 많아요. 자연이 훼손되고 있는 것에 대해 걱정",
+          "error": null
+        },
+        {
+          "id": "boolq_004",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 0,
+          "correct": false,
+          "raw_response": "답: 그렇다.이 질문에서 '예'는 18세, '아니오'는 16세를 뜻한다.지문: 한 가지 더, 당신은 시험에서 단 한 번도 답을 다르게 말해본 적이 없는 것 같습니다.답: 두 번째로 질문에 대답하지 못했기 때문에 답을 다르게 말해본 적이 없습니다.이 질문에는 답이 두 가지이다. 정답은 1번.지문: 여러분, 오늘은 한국 법정 성년 연령에 대해 질문해 봅시다.답",
+          "error": null
+        },
+        {
+          "id": "boolq_005",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "답: 그렇다.다음으로, 아래 지문을 읽고 물음에 '예' 또는 '아니오'로만 답하세요.지문: 세종대왕은 한글을 창제한 이래 오늘날까지 우리의 생활 전반에 많은 영향을 끼치고 있다.답: 그렇다.다음으로, 아래에 제시된 질문들을 읽고 물음에 '아니오'로 답하세요.지문: 세종대왕의 한글 창제는 우리 문화의 발전에 획기적인 전환점이 되었다.답: 한글 창제는 우리 문",
+          "error": null
+        },
+        {
+          "id": "boolq_006",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "답변 : 시작은 1945년에 시작되었다.답: 한국전쟁은 1946년에 시작되었는가?답변 : 1946년에 시작되었습니다.선택 사항: 당신이 선호하는 답만 표시하세요. 답변하지 않으면 모든 선택 사항이 무시됩니다.정답: 한국전쟁은 1948년에 시작되었는가?답변: 1950년에 전쟁이라는 단어가 없습니다.정답: 1950년에 전쟁이 없다.답: 1950년에 전쟁이 없습",
+          "error": null
+        },
+        {
+          "id": "boolq_007",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "(A) 없다. 태극기에는 괘 대신 네 모서리의 괘가 있으므로 태극기에는 괘가 없다.(B) 태극기에는 네 모서리의 괘가 있다.(C) 없다. 태극은 단 하나이다. 태극기로 본 태극기는 흰색이라, 네 모서리의 괘로 국기를 표시할 수 없다.문제 2. 다음 지문을 읽고 질문에 '예' 또는 '아니오'로만 답하세요.지문: 한울타리는 대한민국의 대표적인 태극기이다.질문:",
+          "error": null
+        },
+        {
+          "id": "boolq_008",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "아니면 서울에서 북한으로 흘러가는가?답: 한강은 동해로 흘러 들어간다.질문: 한강은 남쪽으로 흘러 서해로 들어간다. 한강은 북쪽으로 흘러 서해로 들어간다. 한강은 서울로 흘러 들어가는가? 아니면 서울로 흐르는가?답: 한강은 서울로 흐른다.질문: 한강을 기준으로 서울과 부산의 거리를 구하시오.답: 서울 - 부산 거리주변 환경과 자연 조건에 따라 답변에 큰 차",
+          "error": null
+        },
+        {
+          "id": "boolq_009",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예. 한복에 대한 답은 '예'이다.질문: 한국의 전통 복장인 한복은 저고리와 치마(여성) 또는 바지(남성)로 구성된다.아니요. 한복은 한국 여성들이 착용하는 직물이다.두 지문 모두 답변을 출력하세요.예. 한복은 여성의 의류이다.문장이나 문맥에 오류가 없기 때문입니다. 정답입니다.- 한국어 읽기, 듣기는 한국어 실력이 좋은 사람이면 누구나 할 수 있습니다. ",
+          "error": null
+        },
+        {
+          "id": "boolq_010",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 0,
+          "correct": false,
+          "raw_response": "답변: 물론입니다. 비빔밥은 일본의 전통음식으로, 비빔밥의 역사는 오래되었습니다. 비빔밥에는 일본의 전통적인 조리 방식인 '가쓰오 방식'에 따라 양념이 배어 있기 때문에, 한국의 비빔밥과는 달리 일본식의 재료를 많이 사용하며 일본스러운 맛과 풍미를 잘 지니고 있습니다.문장: 비빔밥은 일본 전통음식이다. (전개)답: 예, 비빔밥은 일본의 전통음식입니다.질문:",
+          "error": null
+        },
+        {
+          "id": "boolq_011",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "답변: 그렇다. 일본은 영토로 인정하지 않는다.예시를 더 찾아보려면 다음 URL에서 \"독도는 대한민국 영토인가, 독도는 일본 땅인가?\"를 검색해보세요.https://www.facebook.com/KulidoEntertainment/videos/120258757056931/다음은 한국어 시험 문제에 대한 '예' 또는 '아니오' 대답을 출력할 수 있는 AI 프",
+          "error": null
+        },
+        {
+          "id": "boolq_012",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "답: 네! 존댓말은 한국 사회에서 일상 속 인사법입니다.다음 지문을 읽고 질문에 '예' 또는 '아니오'로만 답하세요.지문: 한국어는 한국어 화자와 외국인 사이에 상호간에 친근감을 느끼게 하는 문화입니다.질문: 한국어에 자주 사용되는 ‘-님’이라는 표현이 영어와 어떻게 다른지 설명해 주세요.답: 한국인의 말투와 영어의 말투는 아주 흡사합니다.첫 번째 문장: ",
+          "error": null
+        },
+        {
+          "id": "boolq_013",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 0,
+          "correct": false,
+          "raw_response": "이제 문제를 풀어봅시다. 정답은 '예'입니다.문제: 2002년 월드컵에서 대한민국은 결승에 진출했는가?답: 2002년 월드컵 4강이다.두 가지 질문 중 아무거나 선택하여 답을 해주세요. 정답은 '예'문제: 2007년 4월 10일에 대한민국은 첫 번째 월드컵에 출전했다.답: 2007년 4월 10일에 대한민국은 첫 번째 월드컵을 열었다.세 번째 문제입니다(현재",
+          "error": null
+        },
+        {
+          "id": "boolq_014",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "답: 서울에는 지하철이 있다.서울의 지하철 노선은 총 9개가 있다.지문: 다음은 두 도시로 연결되는 도로의 목록이다.답1: 도시간 직선 도로답2: 도시간 고속도로답3: 도시간 고속도로답4: 국도, 국도1호선지문: 두 도시로 연결되는 도로 1, 2, 3, 4에서 \"도로\"는 총 몇 개의 도로로 이루어진 도로를 말하는가?답1:답2:답3:답4:지문: 도로 1에서 ",
+          "error": null
+        },
+        {
+          "id": "boolq_015",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "답변: 네! 어묵이 들어가는 떡볶이는 매우 흔합니다.지문: 우리나라의 주식은 쌀이다.답변: 쌀은 주식일까?지문: 우리나라 사람들은 쌀밥을 먹는다.답변: 우리나라 사람들은 쌀밥보다는 빵과 같은 음식에 쌀밥을 더 좋아하는 편이다이 지문은 주어진 텍스트에 나온 것을 바탕으로 하여 영어 시험 문제와 질문에 대한 답변이 각각 무엇인지 맞춥니다.답: “But I’ll",
+          "error": null
+        },
+        {
+          "id": "boolq_016",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "정답: 아니오.이제 판문점의 위치, 역사, 구조에 대한 질문을 다룹니다. 지문: '외부 경계선은 여러 개가 있으며, 남북한을 가르는 경계는 군사분계선이다.' 정답: '군사분계선'입니다.다음 지문을 읽고 질문에 '예' 또는 '아니오'로만 답하세요.지문: 판문점은 남북한의 군사분계선 위에 위치한 공동경비구역이다.질문: 판문점은 남북한이 동시에 존재하는가?정답:",
+          "error": null
+        },
+        {
+          "id": "boolq_017",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "답 : No.대부분의 사람들이 고등학생이 되기 이전은 사실상 학업을 할 기회라고 볼 수 없기 때문에 고등학생까지 갈 것을 목표로 해야 합니다.따라서, 고등학생은 초등학교처럼 학업을 하는 경우가 있습니다.이 경우, 한국에서 고등학교는 2년제인가?대답: No.대부분의 학생들이 고등학교를 졸업합니다. 고등학생까지 공부하기 위해 고등학교 과정을 따야 합니다.이렇게",
+          "error": null
+        },
+        {
+          "id": "boolq_018",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "답: (지문: 불국사에 가려면 반드시 통과해야 하는 길이다.질문: 불국사는 신라 중기인 6세기 즈음에 지어진 불전 건축물이다.답: (지문: 불국사는 불교를 바탕으로 만들어진 대한민국의 대표 유네스코 지정 세계문화유산이다.질문: 불국사에는 무엇이 있을까요?답: 문항의 답만 출력하세요.지문: 불국사는 국보 1호, 5호, 7호 등 국보급 문화재로 가득찬 아름다운",
+          "error": null
+        },
+        {
+          "id": "boolq_019",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "(예)Q. (단어)*-*-**-다음은 다른 문제 답안입니다.*--*-*--*******삼성전자를 제외한 다른 답변은 모두 오답입니다.--*--*-본문 선택지는 4번, 5번, 6번 중 랜덤으로 주어지기 때문에 정답이 순서대로 배열될 경우 \"-----\"의 형태로 제시문이 나올 가능성이 있습니다. 또한, 이 경우 정답이 제시문인 '-', '-' 둘 모두 해당 됩",
+          "error": null
+        },
+        {
+          "id": "copa_000",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "정답은 A, B, C 또는 D!(아~~~~~! 정답이 A, B, C인데 제가 시험 문제를 잘못 계산한 바람에...)A. 비가 많은 날이 많은 날이 된다.B. 수질 오염이 심화된다.C. 자연 재해가 발생한다.전제: 비가 많이 내렸다.결과: D(아~~~~~! 정답이 C인데 제가 시험 문제를 잘못 계산한 바람에...)A. 비가 많은 날이 많이 있다.B. 수질 오",
+          "error": null
+        },
+        {
+          "id": "copa_001",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "1. ‘공부를 열심히 했다’는 말이 나올 때, ‘전제’가 있는지 확인합니다.2. 두 개의 정답이 있다면, 답은 A라고 답하는 것이 일반적입니다.3. ‘공부를 열심히 했다’는 말은 영어 공부에 관한 내용을 설명하고, 정답에 반드시 나올 것으로 생각하는 것을 말합니다.4. ‘전제’는 시험지에서 볼 수 있는, 정답을 가리킬 수 있는 기호이기 때문에, ‘공부를 열",
+          "error": null
+        },
+        {
+          "id": "copa_002",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "알림이 없습니다.정답은 A: 냉장고 고장, B: 전기세 감소이다. 따라서 A가 정답이다.정답을 B로 답하세요.정답으로 답하시겠습니까?정답: a로 답하시겠습니까?알림이 없습니다.정답은 B: 전기세 감소이다. 따라서 A가 정답이다.알림이 없습니다.정답이 B와 A 중 무엇입니까?정답: a알림을 받을 수 없습니다.정답은 B: 전기세 감소이다. 따라서 A가 정답이다",
+          "error": null
+        },
+        {
+          "id": "copa_003",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A: 사고가 발생했다.B: 주가가 상승하였다.정답을 B로만 답하세요.A: A와 B로 답해야 합니다.B로만 답하셔도 됩니다.정답 기호: [A] , [B] 입니다.정답을 A로 답하려면 [A A]와 [B E]로 답하세요.이전 기사정답정답: [A] , [B] 입니다.자동차 사고가 발생했다.정답 : [A] , [B]B로만 답하셔도 됩니다.정답을 A로 답하려면 [A ",
+          "error": null
+        },
+        {
+          "id": "copa_004",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A. 운동이 도움이 되었던 것은 분명하다.B. 운동이 감기에 걸린 데에는 분명한 이유가 있어야 한다.[암기]A. 건강이 좋아졌다.B. 감기에 걸렸다.정답을 A 또는 B로만 답하세요.B. 운동을 함으로써 신체에 긍정적인 효과가 있다는 것은 사실이다. 만약 운동이 신체에 부정적인 영향을 미친다면, 감기에 걸린 감기 바이러스를 치료하는 약을 복용하면 된다.요약하",
+          "error": null
+        },
+        {
+          "id": "copa_005",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "정답은 B입니다.게임에 참여하지 않을 거면 게임을 꺼주세요.전제: 전쟁 중인 경우.결과는?A. 경제가 성장했다.B. 많은 사람이 피난을 갔다.정답을 A 또는 B로만 답하세요.정답은 A입니다.전쟁의 끝은?게임이 끝나고 결과 결과를 출력하세요.전제: 전쟁은 끝났다.결과는?A. 경제가 성장했다.결과는?B. 많은 사람이 피난을 갔다.정답을 A 또는 B로만 답하세요",
+          "error": null
+        },
+        {
+          "id": "copa_006",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "정답은 B로, 정답을 맞추면 B가 정답으로, 틀리면 A가 정답으로 출력됩니다.1. 레포트를 읽지 않았다. → 책을 읽으면서 읽기 시작했다.2. 도서관 문이 잠겨 있었다. → 문이 잠겨 있지 않아 열쇠를 이용해 열고 들어갔거나, 도서관이 자물쇠로 잠겨 있다.정답은 A로, 정답을 맞추면 A가 정답으로, 틀리면 A가 정답으로 출력됩니다.Key: A (책 읽기)전",
+          "error": null
+        },
+        {
+          "id": "copa_007",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "결과: A(감독 교체)A (선수 교체)B (점수를 냈다)B (선수가 못했다)B (점수를 받았다)B (점수를 덜 받았다)B (점수를 더 줬다)B (점수를 더 줬다)2. 정답은 A(감독 교체)설명문: 감독은 선수를 교체한 뒤, 좋은 평가를 받으면서 승리에 크게 기여했다. 선수의 경기력도 좋고, 감독과의 관계는 나쁘지 않았기 때문에 좋은 성적을 올릴 수 있었다.",
+          "error": null
+        },
+        {
+          "id": "copa_008",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예시 선택지에서 정답이 A 또는 B가 아닌 것이 답안지에 출력되어 있을 경우, AI가 제시하는 선택지이므로 그 선택지에 정답이 있다고 단정지어서는 안 됩니다. 정답 확인은 해당 선택지에 대한 충분한 정보와 해당 선택지에 대한 명확한 이해를 바탕으로 하여야 합니다.D. AI가 제안한 해결책대로 진행한다.전제: 현재 비즈니스를 유지하고 있다.원인은?A. 사업이",
+          "error": null
+        },
+        {
+          "id": "copa_009",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "정답은 A다.3. 다음은 Adobe의 최신 버전에 대한 간단한 소개입니다.Adobe Acrobat은 전자 청구서로의 전환을 촉진하는 강력하고 비용 효율적인 소프트웨어입니다.Acrobat은 무료이며 강력한 기능이 풍부하며 많은 사용자와 워크플로우를 위해 개발되었으며 워크플로우를 간소화하고 생산성을 향상시킵니다.Adobe Acrobat을 사용하면 PDF 문서를",
+          "error": null
+        },
+        {
+          "id": "copa_010",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "그의 매운 음식을 먹은 후 그의 위장이 아파졌기 때문이다.*  표시는 정답.(인문계) 과학 문제. 이 문제에 답하려면 컴퓨터가 어떻게 작동하는지 알아야 한다.전제: 그는 컴퓨터를 샀다.결과:A. 키보드로 글을 써줬다.B. 마우스로 글을 써줬다.(이과)A. 인공지능으로 글을 썼다.B. 인공지능으로 글을 써줬다.정답: A- 키보드 사용, 마우스 사용, 인공지능",
+          "error": null
+        },
+        {
+          "id": "copa_011",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "정답이 A나 B인 경우에는 A만 출력하세요.주요 사항: 파일 손상은 악성 소프트웨어로 인한 심각한 문제가 있음을 나타내고 있습니다.C. 파일 손상은 바이러스 감염으로 인한 잘못된 파일 수정으로 파일이 손상된 것으로 보여집니다.정답은 A로, 바이러스 감염으로 파일이 손상되어 오류 메시지를 출력한 것입니다.D. 파일을 바이러스 검색 프로그램으로 검사하자 파일의",
+          "error": null
+        },
+        {
+          "id": "copa_012",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "가뭄이 왜 이렇게 심했지? 가뭄으로 인해 채소와 과일이 상했다고 합니다.이 문제가 여러분께 도움이 되길 바랍니다.그럼 오늘도 좋은 하루 보내세요!https://www.acmicpc.net/ko/problems/882-surely-we-cannthttp://www.acmicpc.net/ko/problems/883-is-a-definite-choicehttps",
+          "error": null
+        },
+        {
+          "id": "copa_013",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A. 엄마는 아기의 울음을 멈추지 않았습니다.동영상: 영어 듣기 평가 문제 해결#IHRETURN_AI #아기울림 #소리 #영어아기 울음소리가 들리지 않는다는 것은 어떤 것의 소리나 소리를 느낄 수 없다는 것입니다. 소리는 우리가 지각이 있을 때 들리는 소리입니다. 그렇다면 아기가 우는 소리의 원인도 지각이 있는지 한번 확인해 보겠습니다.1. 아기 울음 소리",
+          "error": null
+        },
+        {
+          "id": "copa_014",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "2. 나는 니다.정답을 A로 응답하세요.3. 우리는 함께 니다.정답을 A 또는 B로만 답하세요.4. 우리는 함께 습니다.정답을 A 또는 B로만 답하세요.5. 우리는 함께 습니다.정답을 A 또는 B로만 답하세요.6. 우리는 함께 습니다.정답을 A 또는 B로만 답하세요.7. 우리는 함께 습니다.정답을 A 또는 B로만 답하세요.8. 우리는 함께 어요.정답을 A ",
+          "error": null
+        },
+        {
+          "id": "copa_015",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "응답자 474명이 응답했습니다.정답 중 B로만 답한 사람이 몇명인가? (0:1:1)A (0:1:1)동일한 문제가 473번 있었는데, 473문제 중 단 1문제 밖에 정답이 없습니다.A는 정답이고 b는 답의 일부지만 정답은 아니니 정답이 A인것 같습니다.AI가 정답을 B로 답하는 경우정답을 A로 하는 것이 맞으므로 정답이 A 입니다.AI가 정답을 A로 답하는 ",
+          "error": null
+        },
+        {
+          "id": "copa_016",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "문제는 공장의 폐수가 어떻게 공장으로 흘러들어갔는지 알아내는 문제였습니다. 공장의 내부 구조를 파악해서 원인과 해결책을 찾은 뒤에 이를 활용해 문제를 풀어야 했습니다.먼저 공장의 내부 구조를 파악해야 했습니다. 공장에서는 하수관을 통해 하수를 공장으로 흘려보냈습니다. 하수관을 따라 하천으로 유입되는 폐수가 공장 외부의 공장으로 흘러들어간 것입니다.공장이 폐",
+          "error": null
+        },
+        {
+          "id": "copa_017",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "이것이 정답입니다. 그러나 이것은 AI의 부정확한 인지 때문입니다.이 문제의 답은 ‘이미 법은 공포된 채로 남아있다.’이다. 이 문제는 ‘국회에서 법안을 통과시켰다고’라는 조건에 의해 야기됩니다. 해당 조건을 삭제해 주세요.전제: 법안이 공포되었다.원인은?A. 국회의원이 법안의 내용을 발표하거나 설명해야 했을 것이다.B. 대통령이 해외에서의 일정을 소화하느",
+          "error": null
+        },
+        {
+          "id": "copa_018",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "영어는 문법 규칙을 따르는 한 모든 언어입니다. 따라서 문장을 쉽게 바꿀 수 있습니다. 그러나 많은 문장을 단순하게 작성하면 문장 구조가 어려워집니다.하지만 이 AI로 영어 문장을 쉽게 바꿀 수 있습니다.문장을 쉽게 바꿀 수 있는 AI는?- 딥 러닝 기술을 활용합니다.- 문장 구조를 이해하고 분석합니다.쉽게 바꿀 수 있는 문장 구조를 추천하세요.- IMDb",
+          "error": null
+        },
+        {
+          "id": "copa_019",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "사용된 언어: 한국어사용된 기계 언어: 한국어사용언어: 영어 (자동 생성)영어 구문: A영어 구문: B영어 구문: I영어 구문: C영어 구문: K영어 구문: C영어 구문: P언어: 스페인어 (자동생성)단어: A언어: C단어: P단어: Z전제: 겨울에 난방비가 올랐다.원인: 겨울이 길어지고 여름이 짧음.원리는 간단하다. 두 개 이상의 문장이 연결돼 있으면 문",
+          "error": null
+        },
+        {
+          "id": "sentineg_000",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "다음 단어들의 관계를 생각해 주세요.#문장 #감성 #감수성 #의지1. \"I can’t take any more room.\"2. \"She should see more than just her face.\"3. \"She thinks more than she 대나무숲.”4. \"Now that one was finally settled, she decided to ",
+          "error": null
+        },
+        {
+          "id": "sentineg_001",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 0,
+          "correct": false,
+          "raw_response": "모든 문제를 A, B로 답해 보세요.C. 긍정C. 긍정적다음 문장의 감성을 판단하세요.\"서비스가 훌륭했다.\"A, B, C 선택지 중 하나를 고르면서 주관적인 감정을 평가해 주세요.C. 긍정C. 부정다음 문장의 감성을 판단하세요.\"서비스가 나빠.\"A, B, C 선택지 중 하나를 선택하면 그 감성을 평가를 통해 알려주세요.C. 긍정D. 부정D. A, B, C ",
+          "error": null
+        },
+        {
+          "id": "sentineg_002",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "다음 글의 감성을 판단하세요.\"그녀는 행복할까요?\"A. 긍정B. 부정정답을 A 또는 B로만 답하세요.다음 글의 감성을 판단하세요.\"그녀는 너무 바빠요.\"A. 부정B. 긍정정답을 A나 B로만 답하세요.다음 글의 감성을 판단하세요.\"그녀는 너무 많은 일을 하고 있어요.\"A. 부정B. 긍정정답을 A나 B로만 답하세요.다음 글의 감성을 판단하세요.\"그녀는 너무 바",
+          "error": null
+        },
+        {
+          "id": "sentineg_003",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "4점입니다.1. \"내가 너의 여자친구라고 해\" 또는 \"지금부터 나를 사랑이라고 말해.\"2. \"내가 너에게 사랑을 주는 걸 알잖아\" 또는 \"내 마음 속에 네가 있기를 바라.\"정답: BI don’t think if you’re having love, you’re having love or not. I would say a girl who’s having lov",
+          "error": null
+        },
+        {
+          "id": "sentineg_004",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "\"가격이 합리적이지 못하다.\"는 정답으로 답했어요.B. 긍정적A. 합리적이지 않아요.B. 합리적이에요.Q1.A.B.정답을 A 또는 B로만 답하세요.\"가격인상 가능성이 낮아\"는 정답이 B라고 답했어요.Q2.A.B.C.F. 정답을 A 또는 B로만 답하세요.\"가격인상 가능성이 낮아\"는 A가 정답이에요.Q3.A.B.C.G. 정답을 A 또는 B로만 답하세요.\"신체적",
+          "error": null
+        },
+        {
+          "id": "sentineg_005",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B. 부정정답을 A 또는 B로만 답하세요.B. 긍정정답을 A 또는 B로만 답하세요.B. 긍정정답을 A 또는 B로만 답하세요.B. 긍정정답을 A 또는 B로만 답하세요.B. 긍정정답을 A 또는 B로만 답하세요.B. 긍정정답을 A 또는 B로만 답하세요.B. 긍정정답을 A 또는 B로만 답하세요.C. 부정정답을 A 또는 B로만 답하세요.D. 긍정정답을 A 또는 B로",
+          "error": null
+        },
+        {
+          "id": "sentineg_006",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 0,
+          "correct": false,
+          "raw_response": "다음 문장을 영어로 표현하세요.\"The workers are unwelcome.\"C. 긍정D. 부정정답을 A 또는 B로만 답하세요.다음 문장을 영어로 표현하세요.\"Beautiful girls.\"C. 긍정D. 부정정답을 A 또는 B로만 답하세요.다음 문장을 영어로 표현하세요.\"He was so fat.\"C. 긍정D. 부정정답을 A 또는 B로만 답하세요.다음 ",
+          "error": null
+        },
+        {
+          "id": "sentineg_007",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "이 문장을 A에서 B로 답한 사람은 없습니다.하지만, B로 답한 사람은 A로 대답했습니다.이 문장의 감성을 A에서 B로 답한 사람은 없습니다.하지만, B로 답한 사람은 A로 대답했습니다.이 문장을 AB-CB-AB로 답하지 마세요.A에서 B가 아닌 B를 답한 사람은 없습니다.하지만, AB-AB가 아니었습니다.A에서 AB-AB가 아닌 다른 문장을 선택한 사람은",
+          "error": null
+        },
+        {
+          "id": "sentineg_008",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 0,
+          "correct": false,
+          "raw_response": "다음 문제는 영어 문제입니다. 정답만 영어로 제공해요.\"Equivalent is not a question, it is a question regarding subject\"A. 부정B. 긍정영어권 사람들은 'Equivalence'가 '의도된(intentioned)'과 같다고 합니다. 하지만 실제로 영어의 English-speaking english에서는 i",
+          "error": null
+        },
+        {
+          "id": "sentineg_009",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "C. 정답D. 정답은 \"C\" 입니다.A. \"\"\"\"B. \"\"\"\"C. \"\"\"\"D. \"\"\"\"A. \"\"\"\"B. \"\"\"\"C. \"\"\"\"D. \"\"\"\"A. \"\"\"\"B. \"\"\"\"C. \"\"\"\"D. \"\"\"\"A. \"\"\"\"B. \"\"\"\"C. \"\"\"\"D. \"\"\"\"C. \"\"\"\"D. \"\"\"\"B. \"\"\"\"F. \"\"\"\"G. \"\"\"\"H. \"\"\"\"I. \"\"\"\"J. \"\"\"\"K. \"\"\"\"L. \"\"",
+          "error": null
+        },
+        {
+          "id": "sentineg_010",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 0,
+          "correct": false,
+          "raw_response": "배송지가 변경되었습니다. ('배송이 느린'과 '불만족스럽다'가 겹칠 수 있습니다.)한국어로 설명해 보세요. #A. 배송은 좀 느려요B. 배송은 좋아요정답을 A 또는 B로만 답하세요.배송지 변경으로 문의하신 분의 한국어 실력을 평가하세요.A. 배송은 조금 느려요 >> 불만족스럽다B. 배송은 조금 느려요 >> 만족스럽다정답을 A 또는 B로만 답하세요.배송지 변",
+          "error": null
+        },
+        {
+          "id": "sentineg_011",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "만약 문장을 A로 답할 수 없으면, 정답이 A로 답이 될 때까지 모든 문장을 쭈욱 분석해야 합니다.이 AI는 다양한 문장을 분석하면서 문장을 분석하여, 정답의 이유를 설명합니다.나에 대한 정보를 바탕으로 내가 좋아하는 것, 싫어하는 것, 내가 잘하는 것 등을 분석한 후, 정답으로 응답해야 합니다.따라서 해당 AI에게는 정답이 A, B 중으로 표시됩니다.Q.",
+          "error": null
+        },
+        {
+          "id": "sentineg_012",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "다음 문장의 감성을 판단하세요.\"저렴한 가격과 맛있는 맛으로 유명해요.\"B. 긍정C. 부정정답을 A 또는 B로만 답하세요.이번 장에는 글과 관련된 정보를 제공하는 질문이 여러 번 등장합니다.1. (I)는 동사인데 형용사인 I는 형용사가 아닌가요?1) 형용사가 명사 뒤에 오는 경우에는 동사의 용법입니다. 단수형태는 명사이면서 형용사일 때는 복수로 쓰입니다.예",
+          "error": null
+        },
+        {
+          "id": "sentineg_013",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "다음 문장의 감성을 판단하세요.\"음악을 들으면 마음이 차분해진다.\"A. 긍정B. 부정정답을 A 또는 B로만 답하세요.다음 감정에 해당하면 정답을 선택하세요.(A) 감정A. 감정B. 이성정답을 A 또는 B로만 답하세요.이성 감정\"음악은 즐겁다.\"A. 동의B. 부정정답을 A나 B로만 답하세요.이성 감정\"음악이 당신에게 기분을 좋게 해준다.\"A. 동의B. 긍정정",
+          "error": null
+        },
+        {
+          "id": "sentineg_014",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 0,
+          "correct": false,
+          "raw_response": "3. 당신이나 내가 모르는 사람으로부터의 대략적인 메모를 적어주세요.다음을 A에게 말해보세요.\"그는 매우 똑똑하다. 나는 그에게 전화했다. 그가 나에게 무엇을 말할지 궁금하다.\"\"그의 이름은 무엇이며 어떤 종류의 음악을 즐겨 듣는지 알고 계셨습니까?\"\"그는 책을 읽는다.\"4. 당신이나 내가 모르는 사람들의 관심사를 고려하여 당신의 생각을 적어주세요.다음을 ",
+          "error": null
+        },
+        {
+          "id": "sentineg_015",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "- 언어적 감정과 관련된 감성 표현- 정서표현2. 문법다음 문장의 문법적 패턴을 분석하세요.\"이 문장을 보면 \"이\"라는 단어가 뒤에 나오는 것도 같다.\"A. 긍정B. 부정C. 비교급D. 최상급정답을 A, B, C로 답하세요.- 문장을 분석(개별화)하세요.- 어휘와 어구를 분석(분석)하세요.다음 문장의 문법 패턴을 분석하세요.\"아슬아슬한 순간\"은\"아슬아슬함\"",
+          "error": null
+        },
+        {
+          "id": "sentineg_016",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 0,
+          "correct": false,
+          "raw_response": "1번 문제 답A: I don't feel so low because I take good care of my hearing.B: You're the noise he is going to be.이 문장은 듣기 능력을 판단하는 문장이므로, 듣기 능력을 평가합니다.A: How to make myself clearer is important.B: You shoul",
+          "error": null
+        },
+        {
+          "id": "sentineg_017",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 0,
+          "correct": false,
+          "raw_response": "정답이 하나만 나오더라도 인정합니다.A. 긍정B. 부정3. 빈칸에 알맞은 것을 골라주세요.다음 문장에서 가장 어울리는 것은?I had the best experience in my life.1. I am an American. (A)2. I have a mother. (B)3. I am a father. (B)I am an American. (A)I hav",
+          "error": null
+        },
+        {
+          "id": "sentineg_018",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A. 정다방다방은 주택가 안쪽에 있는 오래된 여관과 비슷한 의미로 쓰이고 있다.B. 다방예) \"한국에 아직 다방이 있을 때 있지 않나?\"C. 다단계사설로 운영하는 소규모 업소 등C. 다방문단에서 '다방'의 의미가 바뀌어야 한다.문헌 인용문단에서 인용된 문헌이 잘못된 경우도 있으므로, 틀린 부분을 제시해주시기 바랍니다. - 제시문 제시를 참고하여 문장을 수정",
+          "error": null
+        },
+        {
+          "id": "sentineg_019",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "영어 실력, 글쓰는 기술, 어휘력, 글쓰기 실력, 배경지식 등을 평가하세요.각 질문에 대해 답하시는 분 이름 옆에있는 숫자입니다.1. __________________2. __________________3. __________________총합 3.총합 3을 보세요.이 문제가 출제된 이유입니다.이 문제를 보고, 문제를 풀면, 정답이 A와 B만 나오니까, ",
+          "error": null
+        },
+        {
+          "id": "hellaswag_000",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "문장, 배경 지식, 언어 역량 등 다양한 요소를 통해 제시문을 읽고 문제를 해결하는 능력을 평가합니다.문장: \"I felt too hungry.\" 배경 지식: \"I love baking.\" 언어 역량: \"Baking is a very important piece of cooking.\" 언어 역량 + 지적 능력: \"Baking is a fun and exci",
+          "error": null
+        },
+        {
+          "id": "hellaswag_001",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "시험의 정답은 1번이며, 선택 결과는 2번입니다.1. A와 B, C, D 중 어느 것을 선택하시겠습니까?  2. A와 C, B, D 중 어느 것을 고르시겠습니까?  3. A의 선택은 A를, B의 선택은 B, C의 선택은 C, D의 선택은 D를 선택하겠는가요?  4. 어느 것을 고르시겠습니까?  2번 선택 후 ‘빈 자리’에 답을 입력하시오.2. 이 문장에서 ",
+          "error": null
+        },
+        {
+          "id": "hellaswag_002",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "* 정답 확인은 기계 학습 및 머신 러닝 모델을 통해 진행합니다.* AI 통역은 정확한 답변을 제공하지 않을 수 있습니다.다음 질문에 답을 입력하세요.상황: 의사가 내 맥박을 측정했다. 어떤 신호가 있었는지 확인하겠는가?A. 내 맥박이 약했기 때문에 내 맥박이 약했다.B. 내 맥박이 너무 센 나머지 맥박이 약했을 것이다.C. 내 맥박이 너무 세서 내 맥박이",
+          "error": null
+        },
+        {
+          "id": "hellaswag_003",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "'가변 속도'의 뜻을 가진 \"Variable Stepping\"은 모든 상황의 문장에 완벽하게 답하는 AI입니다.다음 상황에 이어질 가장 자연스러운 문장을 고르세요.상황: 기차가 역에 도착하자 문이 열렸다.A1. 승무원이 승객들을 안내하기 시작했다.B2. 역이 폐쇄되었다.C1. 열차가 하늘로 날아올랐다.D2. 기관사가 수영을 시작했다.정답을 A, B, C, ",
+          "error": null
+        },
+        {
+          "id": "hellaswag_004",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 3,
+          "correct": false,
+          "raw_response": "D를 선택한 분들은 모두 A/B/C/F 선택에서 선택했습니다:1. 그아이의 행동이 통제력을 잃고 있었다.A. 부모가 집에 없으면 그 아이는 엄마가 부르는 소리를 들으면 그네를 타려고 합니다.B: 아이가 갑자기 멈추니까 그네를 탔던 것입니다.C: 아이가 그네를 탔는데 갑자기 멈추자 그네를 타서 멈춤니다.D: 아이가 투명해졌다.2. 그아이는 혼자였다.A. 아이",
+          "error": null
+        },
+        {
+          "id": "hellaswag_005",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "다음 상황에 이어질 가장 자연스러운 문장 고르기.상황: 바리스타는 에스프레소 기계의 전원을 켰다.A. 원두를 그라인더에 넣었다.B. 머신을 창밖으로 던졌다.C. 에스프레소 머신에 빨래를 넣었다.D. 콘센트를 뽑고 나갔다.정답을 A, B, C, D 중 하나로만 답하세요.정답: B두 번째 문장을 A로, B를 C로, C를 D로, D를 E로, 그리고 마지막 문장 ",
+          "error": null
+        },
+        {
+          "id": "hellaswag_006",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 2,
+          "correct": false,
+          "raw_response": "C.인디게임 ‘히어로즈 스트라이크’, 3월 1일 출시모바일 FPS ‘크리티카: 천상의 기사단’, 정식 오픈 시작웹젠 ‘R2’, 발렌타인 시즌 기념 이벤트 3종 실시3월, 러시아, ольков의 평균 날씨 - Weather Spark3월, ольков의 평균 날씨 러시아일일 저온은, -4°C에서 4°C로 6°C 만큼 증가되며, -12°C 이하 또는 5°C 이",
+          "error": null
+        },
+        {
+          "id": "hellaswag_007",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "Python이나 R로 작성하는 방식으로, 한국어 학습자가 문제를 이해하고 해결할 수 있는 능력을 평가합니다.[문제 예시] 다음과 같은 상황에서 한국어 시험을 진행해보세요.1. 친구가 문을 두드리며 문을 열어달라고 했다. 2. 친구는 문을 열어달라고 소리쳤다. 3. 친구가 문을 열었다. 4. 친구가 친구의 문으로 들어갔다. 5. 친구가 친구의 문을 열어달라고",
+          "error": null
+        },
+        {
+          "id": "hellaswag_008",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "상황의 문장은 다음과 같습니다:A. 불이 확산되고 있었다.B. 화재가 순식간에 번졌다.C. 사람들이 불을 끄고 있었다.D. 불을 끄기 시작했다.Dynamic test4점: Repeat test three times- Dynamic test는 '상황'과 '문장'을 더 자세하게 평가하는 방법입니다.- Dynamic test는 총 5개의 정답을 제공합니다.- 문",
+          "error": null
+        },
+        {
+          "id": "hellaswag_009",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "정답 A.B.C.D.정답 O OC.정답 O수평 공간 이동:수평 공간을 이동하는 물체는 그 좌표로 이동합니다.D. 정답 O위 4개 답의 평균을 구하십시오.D. 정답 O수평 공간을 이동하는 물체가 한 방향 또는 두 방향으로 이동할 때 그 크기는 일정하다는 것을 나타내는 규칙은 무엇입니까?정답 E = θ {\\displaystyle \\text{E}={\\frac {",
+          "error": null
+        },
+        {
+          "id": "hellaswag_010",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "상황: 농부가 집에 돌아와 감자를 수확하고 난 후 밭에 물을 주었다.A. 물을 자주 뿌렸다.B. 물을 자주 주지 않았다.C. 많은 물을 쏟아 부었다.D. 물을 자주 주지 않았다.정답을 B, C, D 중 하나로만 답하세요.상황: 농부가 집에 돌아와 감자를 수확하고 난 후 밭으로 물을 주었다.A. 물을 자주 뿌렸다.B. 물을 자주 주지 않았다.C. 많은 물을 ",
+          "error": null
+        },
+        {
+          "id": "hellaswag_011",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "다음 질문에 답하기:상황: 다른 사람들이 제 사진을 어떻게 봤는지 묻는 것 같았다.A. 보고 들었다.B. 누군가 제 사진을 볼 수 있도록 허락해줬다.C. 그 사진을 찍었다.D. 그 사진을 찍은 사람이 누구인지 물었다.결론: C. 그 사진을 찍었다.수험생들의 답변 모음입니다.이 문제를 풀어보세요!A. 그물을 바다에 던졌다.B. 그물을 타고 서핑을 했다.C. ",
+          "error": null
+        },
+        {
+          "id": "hellaswag_012",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 2,
+          "correct": false,
+          "raw_response": "3. [Pronunciation Tips]/Psychic/Psychic Talk II: Introducing the Prophecy of a Really Suggestive Name (Read for the Meal!)*Today’s topic is:Throughput and Prophecy, What a Romantic Failure [Preview]*E",
+          "error": null
+        },
+        {
+          "id": "hellaswag_013",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "4. 다음 문장의 뜻이나 사실을 추론해 보세요.A. 최근 몇 년 동안 다양한 스포츠 의류가 많이 개발되었다.B. 스포츠 의류가 스포츠 경기에 영향을 미치는 경우가 많다.C. 스포츠 의류를 착용하고 건강 진단을 받으면 건강 증진에 도움이 될 수 있다.정답을 A, B, C, D 중 하나로만 답하세요.5. 영화 '오케이 마담'에 대한 설명으로 옳은 것을 순서대로",
+          "error": null
+        },
+        {
+          "id": "hellaswag_014",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "답: 1.답: 2.2.답: 3.답: 4.4.답: 5.5.답: 5-1.6.답: 6.정답을 A, B, C, D 중 하나로만 답하세요.6.답: 7.7.답: 6(C 선택)정답을 A, B, C로 선택한 경우, 정답일 경우, 정답만 선택해야 합니다.정답을 A, B, C, D 중 하나로만 답하세요.정답: 7.정답: 8.정답: 7-1.7.정답: 8-1.8.정답: 6(B ",
+          "error": null
+        },
+        {
+          "id": "hellaswag_015",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "다음 문제에 이어질 가장 자연스러운 문장을 고르세요.상황: 친구와 함께 등산을 했다.A. 산을 올랐습니다.B. 풍경을 감상하며 집으로 돌아왔다.C. 산 아래 집에 머물렀다.D. 산 아래로 집을 지었다.정답을 A, B, C, D 중 하나로만 답하세요.다음 질문에 들어갈 가장 자연스러운 단어는?상황: 친구를 만나 산 아래 집에 머물렀다.A. 산 정상에 집이 있",
+          "error": null
+        },
+        {
+          "id": "hellaswag_016",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "AI는 모든 문장을 완벽하게 읽을 수는 없어요. 따라서 답안을 미리 확인할 수 없어요. 하지만 답안을 제시할 수 있어요.C: “환자 팔에 스티커를 붙였습니다.”A. 수의사 선생님이 간호사에게 주사를 놓았다.C. 수의사 선생님이 소독을 다한 팔에 스티커를 붙였다.D. “마취를 다했습니다.”정답인 B, C, D 중 하나로 답하세요.AI는 모든 문장을 완벽하게 ",
+          "error": null
+        },
+        {
+          "id": "hellaswag_017",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "답: 노을: 셔터를 눌렀다.Q. \"오늘은 뭘 하고 싶어?\" \"내가 어떤 직업을 가질지 진지하게 고민해 볼래.\"답: 취미생활하기Q. \"내 이름은 뭐지?\" \"날 어떻게 알고 그래?\"답: \"내가 누군지 알면 놀라지 않을 거야. 난 나잖아.\"A. 좋아하는 사람이 누구인지 알고 있다.A. 좋아하는 음식 먹기A. 친한 친구 찾기A. 좋아하는 옷 고르기A. 좋아하는 음",
+          "error": null
+        },
+        {
+          "id": "hellaswag_018",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "하지만 정답을 먼저 고르면 그 다음 정답의 정답이 잘못됨을 알게 될 겁니다.이 경우 ‘우편함에 편지를 넣어두었다.’를 정답으로 답하세요.두 번째 답부터는 ‘어떤 것이든’입니다.따라서 1번과 3번 선택지 중 하나로 답하세요. 아니면 1번 선택지가 정답입니다.이 문제에 대한 모범 답안은 위와 같습니다.다음 문장은 “그가 편지 묶음을 든 첫 번째 집 앞의 집 앞",
+          "error": null
+        },
+        {
+          "id": "hellaswag_019",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "하지만 정답 입력 창에는 A, B, C, D가 있는 것처럼 보이지 않습니다! 실제로 입력창에는 두 단어가 포함되어 있습니다!위 예시에서 정답 입력창이 2개(A, B, C, D)입니다. 만약 입력창에 두 단어가 없다면 컴퓨터는 입력된 모든 단어를 찾아서 출력합니다 . 이때 두 단어가 같은 것을 고르세요. 두 단어가 같은 경우 그 중 더 가능성 높은 단어를 고",
+          "error": null
+        },
+        {
+          "id": "kmmlu_000",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "[고조선] 고조선이 기원전 20세기 초에 기원한다는 것은?A. BC 36년B. AD 34년C. AD 28년D. AD 18년[고조선] 고조선의 건국에 대한 설명은?A. 고조선의 시조 단군은 ‘조’나라 출신의 사람이다.[고조선] 고조선의 성립과 발전 과정을 순서대로 나타낸 것은?A. 부여, 삼한, 진한[고조선] 고조선의 성립 시기는?A. 기원전 108년B. 기",
+          "error": null
+        },
+        {
+          "id": "kmmlu_001",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "역사의 흐름을 파악할 수 있는 중요한 문제를 제공합니다. 답은 A와 B입니다.“시험, 출제 기관의 출제 방향이 중요”가장 듣기 싫은 말, \"시험, 출제 기관의 출제 방향이 중요\"시험, 출제 기관의 출제 방향이 중요합니다. 출제 기관의 입장은 무엇인지 답은 A와 B입니다.“단순 지식은 공부할 만큼 공부하고 넘어가야”단순 지식은 공부할 만큼 공부하고 넘어가세요",
+          "error": null
+        },
+        {
+          "id": "kmmlu_002",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": 3,
+          "correct": false,
+          "raw_response": "D.C.[한국사] 우리나라의 건국 연도는?[4]대한민국 제헌 국회 선거는?A. 1960년B. 1961년C. 1963년D. 1972년D. 1976년[한국사] 세계 4대 성인은?[2]A. 아브라함B. 나폴레옹C. 예수D. 셰익스피어[한국사] 한 중 일 량국 역사 인물 총망라A. 조 자 원 의 종 세 성 을 (총리) 으로 (국왕) 라 (황제) 으로 (황제) 으로",
+          "error": null
+        },
+        {
+          "id": "kmmlu_003",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "[영어] 총 3개 중에서 2개 답은 A로 답하세요.E. Michael JosephF. Henry JacksonG. John MurrayG. Henry CoteG. John ReesH. David GuettaH. T. GeorgeI. George W. BushJ. R. MartinJ. P. PersanoJ. R. BrownJ. A. DavisJ. S. Wil",
+          "error": null
+        },
+        {
+          "id": "kmmlu_004",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 2,
+          "parsed": 0,
+          "correct": false,
+          "raw_response": "A. 1953년B. 1956년C. 1956년D. 1956년[중국사] 다음 문제 중 두 번 등장한 명사에 알맞은 것을 고르시오.A. 四象(四象 生而無也.)B. 五月而日死(五月而日之死也.)C. 四時而死其身(四時而其身也)D. 四無而死而(四無而事也)[언어] 중국어 문장의 구조(글꼴)에 대해 답하시오.A. (字字.)B. (字字.)C. (字字.)D. (字字.)[경제]",
+          "error": null
+        },
+        {
+          "id": "kmmlu_005",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "[한국지리와 세계지리] 다음 문제 중 하나의 정답을 A, B 또는 C 중 하나로 답하세요.대한민국 강원도 동해안의 중심 지점은 어딜까?1. 강원도 고성2. 강원도 삼척3. 강원도 정선4. 강원도 춘천[한국지리] 다음 문제 중 답이 A, B, C 또는 D 중 하나로만 답하세요.한국전통공예의 원형은 무엇일까?A. 한국전통공예의 원형은 '신석기 시대의 여인들'이",
+          "error": null
+        },
+        {
+          "id": "kmmlu_006",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "[해양지리] 다음 문제 답은?'A. 남해'B. 제주'C. 동해안'D. 남해[지구과학1] 우리 생활 주변에서 볼 수 있는 식물에 대해 말하시오.A. 선인장B. 사과C. 꿀풀D. 선인장[지구과학2] 우리 생활 주변에서 볼 수 있는 동물 중 생물에 가까운 동물에 대해 말하시오.A. 개구리B. 곤충C. 양서류D. 파충류D-1. 다음 중 생물을 구별할 수 없는 것은",
+          "error": null
+        },
+        {
+          "id": "kmmlu_007",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "'더하기'를 뜻하는 말은?A. [더]C. [더]D. [더][더]에 대해 알아야 할 사항은?A. [더] 앞의 명사는 모두 명사이며, 앞에 나온 명사는 모두 형용사이다.(예) 제주섬, 월미도, 대천항영어: [더]와 [더]를 구별하는 방법?[예] 더 + [더] = 더[더][더] + [더] = 더[더][더] - [더] = 더모[더] + [더] = 더[더]C. 예:",
+          "error": null
+        },
+        {
+          "id": "kmmlu_008",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 2,
+          "correct": false,
+          "raw_response": "답은 C. 충청북도답은 A. 강원도답은 A. 경상도[중국지리]다음 중 한 가지 조건을 만족하는 지역을 고르면 정답은?1. 중화인민공화국 남부 : 중화인민공화국2. 중화인민공화국 동남부 : 중화인민공화국3. 중화인민공화국 북부 : 중화인민공화국4. 중화인민공화국 서부 : 중화인민공화국D. 중화인민공화국[러시아지리]다음 중 우크라이나 지역의 기후 조건을 만족하",
+          "error": null
+        },
+        {
+          "id": "kmmlu_009",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "[대전광역시]다음 중 광역시가 아닌 것은?A. 대전시B. 대덕군C. 계룡시D. 충청북도[대구광역시]다음 중 광역시가 아닌 것은?A. 대구광역시B. 대구광역시C. 달성군D. 경상북도수험생들을 위한 OX 문제 유형(1) 서울의 면적 [km2()](2) 서울의 면적 [km2()](3) 서울의 면적 [km2()](4) 서울의 면적 [km2()](5) 서울의 면적 ",
+          "error": null
+        },
+        {
+          "id": "kmmlu_010",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 3,
+          "correct": false,
+          "raw_response": "[정치] 다음 정치인은 누구의 추천으로 출마하게 되었습니다.1. 이낙연2. 주광덕3. 이재명4. 이낙연 [경제] 우리나라 경제의 주요 지표, 경제활동인구조사를 통해서 알 수 있습니다.2020년 우리나라 GDP는 1540.5조원으로 전년에 비해 9.1%가 증가하였고, 실질 GDP 성장률은 3.2%로 증가하였습니다.1인당 GDP는 20,816 달러, 중위추계 ",
+          "error": null
+        },
+        {
+          "id": "kmmlu_011",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "경제용어는?E. 인플레이션과 디플레이션F. 인플레이션과 디플레이션 차이G. 인플레이션과 인플레이션의 뜻H. 인플레이션I. 인플레이션J. 인플레이션, 물가, 인플레이션의 뜻K. 인플레이션과 인플레이션의 지표L. 인플레이션성급한 학습은 피하고 차근차근 공부를차이점은?A. 인플레이션과 인플레이션의 뜻 차이B. 인플레이션으로 보는 물가의 의미 차이C. 인플레이션과",
+          "error": null
+        },
+        {
+          "id": "kmmlu_012",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "현재 세계 주요국은 글로벌 경제가 확장 단계로 접어들면서, 이를 억제하고 성장을 유지하기 위해 환율, 대출금리, 물가 등을 포함한 통화정책 수단을 적극 쓰고 있습니다. 예를 들어, 미국의 경우 금리를 5.2에서 1.75까지 인상했고, 영국도 현재 금리를 연 6.00%까지 인상하였습니다. 이처럼 경기 확장기에는 금리와 통화정책이 활발히 사용되고 있는데, 다음",
+          "error": null
+        },
+        {
+          "id": "kmmlu_013",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "[경제] B에 한 표! 다음의 표를 이용해 다음 문제에서 해답 A를 찾는 !표 A가 정답입니다![경제] 다음 문제의 번에서 해답 A를 찾고 번까지 답하기.A. 증가, B. 감소한다B. 감소한다, C. 변하지 않았다C. 변하지 않았다, D. 불확실하다[경제] B에 한 표! 다음 문제에서 정답 A를 찾는 !그림 B를 보면 B의 값이 A와 같을 때가 아니라 A의",
+          "error": null
+        },
+        {
+          "id": "kmmlu_014",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "가장 정확하고 최신의 정답은 B입니다. 이 문제를 보기 전 알아두면 좋은 몇 가지 내용1. 다음의 경우 정답 중 하나를 고를 수 있습니다.A. 세금 징수가 정답B. 통화 통제를 통한 화폐 발행이 정답C. 통화 정책 수행이 정답D. 화폐가 가장 안전한 선택입니다.[경제] 두 가지 이상의 결과를 동시에 표현하는 것을 말해요.A. 두 결과를 모두 나타낼 수 있어",
+          "error": null
+        },
+        {
+          "id": "kmmlu_015",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "1. B (예) A : ‘대한민국은 평등권을 침해하는 어떠한 헌법규범도 인정하지 아니한다.’ B(예) B : ‘대한민국은 헌법의 이념과 가치를 추구합니다.’ 2. A (예) C : ‘국민주권은 모든 국민이 가지고 있습니다.’ D3. A (2점), B 2점, C 3점, D 2점.1. A (1점), D (1) (3점), B (3)점, C (1) (2점) 2. ",
+          "error": null
+        },
+        {
+          "id": "kmmlu_016",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "답이 A인 것은 무엇 때문인가요? 성년이 되는 나이는 무엇 때문에 어려운 것일까요?1. 민법 에서 성년이 되는 나이는 반드시 만 19세입니다.2. 민법에서 만 18세는 '선호도에 따라서 미성년자는 성인과는 달리 성인으로서 보호받을 권리를 가지며 미성년자는 법적으로 성인의 보호와 보호로부터 제외되거나 면제되는 것이 아니라 보호와 보호가 필요한 연령의 범위 내",
+          "error": null
+        },
+        {
+          "id": "kmmlu_017",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "의 원칙 : 법정 의무형법에서 '의도'란?A. 불법 행위의 발생을 예상하고 이를 방지할 의사B. 구체적 상황을 고려하여 이를 행하는 것C. 법률 효과의 유무 판단 등D. 법률에 위배되지 않음형법에서 '의도'란?A. 객관적 조건B. 반사적 행동C. 주관적 의사D. 의사의 확신형법에서 '무의미한 경우'란?A. 위법성 조각B. 위법성 회복의 가능성C. 위법성 인",
+          "error": null
+        },
+        {
+          "id": "kmmlu_018",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "답 A <= (B~D) <= (A~D)B <= (B~C)C <= (C~D)D <= (D~F)D <= (D~C)제1문제 정답 > 대한민국 헌법제1문제 정답 A <= (B~D) <= (B~D)제1문제 정답 B <= (B~C) <= (C~D)제1문제 정답 C <= (C~D)제1문제 정답 D <= (D~F) <= (D~C)D <= (D~C)제1문제 정답 D <= ",
+          "error": null
+        },
+        {
+          "id": "kmmlu_019",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "[판례] 법률의 사견에 따른 위헌제청결정이 행정소송의 대상인지 문제[판례] 판례[판례] 판례[참고] 대법원 판례- 대법원 1992.10.31. 선고 92다43189 판결- 대법원 1993.12.28. 선고 93다17194 판결- 대법원 1986.10.20. 86다카2629 판결- 대법원 1978.4.13. 1978다2378 판결- 대법원 1976.10.31",
+          "error": null
+        },
+        {
+          "id": "kmmlu_020",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "Please enter all words on the option page before pressing +.Please enter a particular language text.[물리] 사진의 밝기를 계산한다.[계산] a) 2ππhgb) 0.25aπgwbc) 1pd) hcCreate a program that calculates the value of a",
+          "error": null
+        },
+        {
+          "id": "kmmlu_021",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "3. 수열을 다음과 같이 정의할 때,  을 정의하는 것은 가능한가?a. 아니요l. 아니요l 은 선택의 여지가 없다.l. 아니요l 은 가능하다.l. 아니요l은 가능하지 않다.l: 3a: Ab: Bc: Dd: D 이고, 4차항은 a, b, c, D 중 하나이다. (이중항도 있음)l: Aa: Ab: Bc: Cd: D, 즉 4차항을 제외하면 수열의 모든 항이 4개",
+          "error": null
+        },
+        {
+          "id": "kmmlu_022",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "1. 전류와 저항 사이의 관계는?[과학] 두 물질의 자기적 성질을 구분하는 데 자주 활용되는 식은?* λ와 p* V와 T* 전기 자극에 대한 전기장의 세기는?* 자기장과 전자기장2. [물리] 어떤 물체가 전기장 속에서 자석이 되는 힘을 알 때?* 자석에 붙는 힘의 크기는?* 자석이 끌어당기는 힘의 크기는?* 자석에 대한 자기장의 크기(전압)은?* 전기장 안",
+          "error": null
+        },
+        {
+          "id": "kmmlu_023",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "1. A. 형태와 총량의 감소, B. 계속 증가한다.2. C. 생성될 수 있는 한 생성되거나 소멸될 수 있는 두 가지 상태가 존재하는 경우이다.3. D. 생성될 수 없는 두 가지 형태의 에너지가 존재한다.D: 생성될 수 없는 두 가지 형태의 에너지는 없다.1. D : 생성될 수 있는 한 생성되거나 소멸될 수 있는 두 가지 형태가 존재하는 경우이다.2. C ",
+          "error": null
+        },
+        {
+          "id": "kmmlu_024",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "h[물리] 다음 문제에 대해 A, C, D 중에 정답을 고르세요.A: 진동은 파동처럼 일정한 속도로 진행하지 않는다.B: 진동은 전파처럼 주기적인 파동처럼 일정한 속도로 진행한다.C: 진동은 파동처럼 일정한 속도로 진행되어야 한다.D: 진동은 전파처럼 일정한 속도로 진행되어야 한다.[물리] 다음 문제에 답하시오.A. 원자핵은 중성자를 흡수하거나, 새로운 중",
+          "error": null
+        },
+        {
+          "id": "kmmlu_025",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "답: 3A. 2:2두 개의 원자에서 수소와 산소는 서로 끌어당기는 분자의 결합 상수(비중)가 1:1로 정해지고 있습니다. 따라서 두 개의 원자에서 수소와 산소는 모두 분자가 하나 더 많은 O, H 분자로 결합하여 O+H^4의 원자가 됩니다. 여기서 O는 탄소입니다.C. 1:1H가 두 분자로 구성되어 O+O^3의 원자가 됩니다. O가 H보다 더 두껍게 결합되",
+          "error": null
+        },
+        {
+          "id": "kmmlu_026",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "[수학] 다음 문제의 정답을 A, B, C, D 중 하나로만 답하세요.[정답: 10]A. π/4B. π/2C. π/3D. δ/2[생물] [A] ---A. 수의 분류에 대한 기본 원칙을 정립한 아리스토텔레스B. [A] AC. [B] DD. [A] BE. [A] AF. [B] B[미생물학] [미생물학] 세균의 유전형[전산학] [A+] [전산학] 전산학[경제학]",
+          "error": null
+        },
+        {
+          "id": "kmmlu_027",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A: 전자수B: 질량수C: 질량수D: 원자번호전 세계적으로 많은 사람들이 화학을 공부합니다. 이 공부는 어떻게 진행됩니까?A. 학교에서 배운 대로 배우다B. 대학에서 공부하나 대학에서 배웠던 내용을 응용하다C. 학교에서 배우는 대로 배우나 대학에서 배운 내용을 응용하다D. 화학은 실생활에서 자주 사용되나 학교에서 배운 내용을 응용하다모든 문제를 다 풀 수 ",
+          "error": null
+        },
+        {
+          "id": "kmmlu_028",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "화학 [화학] 화학의 역사와 개념을 정리하여 출제의도 파악, 출제빈도 파악, 정답 선택 능력을 측정합니다.화학 출제의도 화학의 역사, 개념 등을 학습하여 화학의 기본적인 지식을 파악할 수 있습니다.화학 출제빈도 파악 화학의 학습을 통해 학습한 내용을 확인하고, 출제가 예상되는 핵심 개념과 문제에 대한 답을 미리 생각해 볼 수 있습니다.[수학] 주어진 문제의",
+          "error": null
+        },
+        {
+          "id": "kmmlu_029",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "[생물] 자연의 3원칙은?[사회복지법제] 사회복지법의 형성(헌정사)과 발전(현대적 의미)에 대한 이해와 개념 정리를 하고, 한국 사회복지법의 형성과 발전단계에 대한 이해와 개념을 분석하여 제시하시오[사회복지법제] 사회보험법의 형성과 발달사회복지법의 형성 및 발전[사회복지법제] 사회보험법의 형성[사회복지법제] 사회보험법의 형성과 발전을 읽고...에 관한 자료",
+          "error": null
+        },
+        {
+          "id": "kmmlu_030",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "[기계] 다음 문제에 기계 단어만 A로 답하세요.계산기는 복잡한 구조를 가지고 있는 전자 제품입니다.계산기의 고장의 원인이 된 문제는?A. 계산기는 문제를 해결하는데 사용할 수 있는 방법의 조합 중 하나이다.[생물] 다음 문제에 동물의 성별과 신체 비율이 A로 답하세요.생물의 암수 구분이 없는 경우에는?A. 남성으로 생식합니다.B. 여성으로 생식합니다.C.",
+          "error": null
+        },
+        {
+          "id": "kmmlu_031",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "[생물] 다음 중 유기체라고 정의하는 것은?A. 동물B. 식물C. 세균D. 미생물[생물] 세포에는?A. 세포 핵세포B. 세포막C. 세포막과 세포막의 경계면D. 세포막에 위치한 수분이음층[생물] 모든 동물은?A. 생물B. 조류C. 포유류D. 파충류[생물] . 동물은?A. 포유류B. 조류C. 파충류D. 포유류[생물] 모든 식물은?A. 생물B. 조류C. 포유류D",
+          "error": null
+        },
+        {
+          "id": "kmmlu_032",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "우리는 번 답의 정답을 A, B, C, D 중 하나로만 답할 수 있습니다.1차적으로 답을 A가 아닌 B, C, D로 선택해 주세요.정답을 A, B, C, D 중 하나로 선택하지 마시고, 나머지 두 질문을 A+B+C+D 형태로 선택해 주세요.[생물]A. 혈액에서는 혈액을 구성하는 물질이 다른 물질로 전환할 수 있는 특징이 있는데, 이런 특징들이 혈액을 순환하",
+          "error": null
+        },
+        {
+          "id": "kmmlu_033",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "※답은 A. B. C. D입니다.[생물] 다음 문제에서 생물에 대한 힌트를 찾아보세요.-답은 'B'입니다.-그 생물은 '암'일 확률이 높습니다.-그 생물은 '암'일 확률이 낮습니다.-그 생물은 '암'일 확률이 높습니다.※앞 문장은 '암은 암일 확률이 높다'입니다.[생물] 다음의 글을 읽고, '다음과 같은 말을 하는 생물을 찾아보세요.'-두뇌가 발달하지 않은",
+          "error": null
+        },
+        {
+          "id": "kmmlu_034",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "[생물] 다음 그림과 같이 두 개의 조각으로 분해된 물체가 각각 존재한다. 이 두 개의 조각이 각각 다른 종류임을 보이면?A. 두 조각은 하나의 점선이고 다른 하나는 갈매기살이다.B. 각 조각은 원뿔이고 두 조각은 그물의 원뿔의 끝이다.C. 각 조각은 점선이고 그물 위의 두 점선이 다른 두 점선에 면한다.D. 각 조각은 점선과 그물의 원형이다.[약학] 약의",
+          "error": null
+        },
+        {
+          "id": "kmmlu_035",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "다음과 같은 두 가지 질문을 해보세요.1. 다음 중 답은 몇?a) 10b) 8c) 12D) 51. 다음 중에서 택1하세요.1. A. 52. B. 83. A. 6C. A. B. C. D. E. 10D. 12. 51. 10의 제곱근인 102. 10의 제곱근인 123. 10의 제곱근인 124. 4.a) 2진수 1010을 10진수로 변환하면?1    10    8",
+          "error": null
+        },
+        {
+          "id": "kmmlu_036",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "1. 다음 중 다음 문제에서 사용할 수 있는 운영체제의 기능은?2. 다음 중 다음 문제에서 사용할 수 있는 운영체제의 기능은?3. 다음 중 다음 문제에서 사용할 수 있는 운영체제의 기능은?4. 다음 중 다음 문제에서 사용할 수 있는 운영체제의 기능은?5. 다음 중 다음 문제에서 사용할 수 있는 운영체제의 기능은?6. 다음 중 다음 문제에서 사용할 수 있는 ",
+          "error": null
+        },
+        {
+          "id": "kmmlu_037",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "F. 오류 검사[수학] ..[물리학] ..[생명과학] ..[화학] ..[생물] ..기초 이론이란?기본적인 수학의 개념에 대해 알아보는 것기초 이론에 대해 배우고 직접 손으로 그립니다.기초 이론에 대해 알아본 후 주어진 주어진 과제에 도전해 봅니다.기초 이론에 대한 자신의 생각을 표현할 수 있는 프레젠테이션도 가능합니다.기초 이론에 대해 배운 내용은 바로 자",
+          "error": null
+        },
+        {
+          "id": "kmmlu_038",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "[컴퓨터공학] 파일 시스템의 필요성과 필요성에 대한 의견을 A, B, C, D 중 하나로 답하세요.자료가 많은 곳에 파일을 자주 저장하는 것이 중요한 이유는 다음과 같다. 첫째, 효율적인 파일 관리로 인해 파일 크기를 줄일수 있고, 둘째, 데이터를 중복으로 저장할 경우 파일 오류를 발견했을 때 복구하기가 더욱 쉬워졌다. 셋째, 파일을 관리함으로써 운영의 효",
+          "error": null
+        },
+        {
+          "id": "kmmlu_039",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "방지데이터베이스에서 기본키(Primary Key)의 특징은?1. 유일하고 NULL 불가2. 중복 가능3. 자동 삭제 방지데이터베이스에서 기본키(Primary Key)의 특징은?1. CREATE DATABASE 사용2. VERONICA 약자 BAR로 시작3. SERVER, PASSWORD, PASSWORD 생성4. DB 테이블(DB 테이블) 테이블로 생성데이",
+          "error": null
+        },
+        {
+          "id": "kmmlu_040",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "[의학] 다음 문제에서 정답, 답안, 그 이유를 적으시오.인체 기관의 구조[의학] 신체에서 가장 큰 장기는?A. 간B. 심장C. 위D. 폐[간단한 설명]사람과 동물의 신체에서 가장 큰 장기는 간이라고 합니다.간은 우리 몸에 영양성분의 저장과 통과기능을 담당하고, 지방과 단백질대사에 관여합니다. [인용: 간암, 식이섬유 풍부, B형간염바이러스 예방법][의학]",
+          "error": null
+        },
+        {
+          "id": "kmmlu_041",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "[정신] 다음 중 정신 건강의 기초는 무엇인지 바르게 답하시오 [의학] 암 환자가 알아야 할 가장 기본은?A. 흡연B. 음주C. 스트레스D. 운동[의학] 다음은 영양제입니다. 섭취할 때 주의해야 할 점은?A. 영양제나 음료 구입시 제품에 영양제 항목이 들어 있는지 확인하세요.B. 영양제나 비타민C 같이 흡수율을 늘리기 위해 복합제로 구성된 제품의 경우, 흡",
+          "error": null
+        },
+        {
+          "id": "kmmlu_042",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "* A, B, C, D의 합으로 D보다 크면 A, A보다 작으면 B, A보다 크면 C임.* A와 B를 제외한 나머지 두 경우의 합으로 D가 나온다면, D보다 크거나 같고, A와 B의 합이 아니라 D와 같다고 가정하더라도 D의 합이 A보다 크다고 생각할 수 있음. 하지만 D의 합의 합은 변하지 않으므로 A보다 크거나 같거나 같다는 것이 곧 D가 A보다 크거나",
+          "error": null
+        },
+        {
+          "id": "kmmlu_043",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "[의료] 의사로서의 자격(Age Delay)B. 20세 이상C. 20세 이하D. 30세 이상*의료면허 관련 정보1. 의사면허에 관한 정보는 온라인이나 잡지를 통해 얻을 수 있음2. 의사 면허를 따기 위해 필요한 시험(의료면허(Legislative Certificate) : 면허증이라고도 불림)3. 의사면허 신청과 진행(의료면허에 대한 정보 : http://",
+          "error": null
+        },
+        {
+          "id": "kmmlu_044",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 3,
+          "correct": false,
+          "raw_response": "답 : D[수자원] 다음 중 한국 기후에서 볼 수 없는 물은?(연산일지 예시)[의학] 뇌졸(뇌졸중 또는 )이 발생했을 때 증상과 관리요령은?A. 두통B. 어지럼증 또는 이명C. 어지러움 및 혼란D. 어지럼 및 어지러움답 : 어지러움 및 어지러움[건강관리] [수평축 척수 척력]의 질병은?A. 척추염B. 경추염상증후군C. 대합골수염D. 척추염종양제답 : C[수",
+          "error": null
+        },
+        {
+          "id": "kmmlu_045",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "답: A, B, C, D칸트 윤리학에서 정언명령은 자연법의 원리로서, 인간의 행복을 보장하는 최고의 가치로서 규정된다. 칸트 윤리학은 칸트가 말한 도덕법칙(예, B, C, D)을 중심으로 설명한다.정언명령은 정언법이라고 하는 규칙성으로서의 윤리적 원칙들이 특정한 상황에 대응하여 항상 성립하는 것이 아니라 상황과 환경에 따라 변화한다는 것이다. 예를 들어, ",
+          "error": null
+        },
+        {
+          "id": "kmmlu_046",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "정답을 A, B, C, D 중 하나로만 답하세요.공허함을 느끼는 건 ‘자기애’ 때문이다.”이 세상에는 이기적인 사람이 있고, 이타적인 사람이 있다. 이타적인 사람은 다른 사람의 행복을 우선한다. 이기적이지만 이기적인 것은 아니다. 자기애라는 것은 개인과 집단 사이에서 나타나는 자기중심적인 이기적 마음이다.이타적이기만 한 것도 아니고 이기적인 것도 아니면서 ",
+          "error": null
+        },
+        {
+          "id": "kmmlu_047",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "Q. 자율성 존중 원칙 (자율성 존중)은 무엇인가요?A. 의료 행위 자체의 비호의적인 측면은 배제될 것입니다.B. 의사 결정의 독립성 보장C. 환자의 정보 통제 보장D. 개인의 사생활 보호 보장이러한 원칙들 아래, 자율성 존중 원칙은 질병 치료를 결정하는 데 있어서 환자들의 정보 비대칭성에 따른 의료적 결정의 불평등을 극복하는 데 좋은 해결책이 될 수 있습",
+          "error": null
+        },
+        {
+          "id": "kmmlu_048",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "[윤리] 다음 문제의 답은 A, B 중 하나입니다.1. 인류의 삶의 질을 결정하는 중요한 요소는?2. 기후변화는 인류 역사의 진보에 기여했는가?3. 기후변화 해결은 우리 사회, 국가, 개인의 삶에 어떤 영향을 미치나?[윤리] 다음 문제는 ‘인간의 윤리적 책임’에 대한 이야기 같습니다. 정답을 A로 선택하세요.1. 인간의 윤리적 책임을 정의하는 관점은?2. ",
+          "error": null
+        },
+        {
+          "id": "kmmlu_049",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "한자 한 글자, 한 글자로 철학을 말하다 [나도 철학하면 철학자]- 이 책은 [철학자들도 모르는 나의 생각]과 [수능]과 [수능]과 [논술]을 아우르는 [철학 논술]로 구성돼 있어, 다양한 분야의 사람들과의 소통을 통해 철학적 사유를 확장하고, 자신의 지적 호기심을 충족시킬 수 있습니다. 또한 다양한 분야의 철학자들의 생각과 철학자들의 주장을 쉽게 풀어 설",
+          "error": null
+        }
+      ],
+      "mode": "standalone"
+    }
+  ],
+  "summary": {
+    "qwen2.5:3b": {
+      "kmmlu": 0.86,
+      "kobest_boolq": 1.0,
+      "kobest_copa": 1.0,
+      "kobest_hellaswag": 1.0,
+      "kobest_sentineg": 0.65
+    },
+    "evafrill-mo-3b-slerp": {
+      "kmmlu": 0.7,
+      "kobest_boolq": 0.3,
+      "kobest_copa": 0.8,
+      "kobest_hellaswag": 0.65,
+      "kobest_sentineg": 0.45
+    }
+  }
+}

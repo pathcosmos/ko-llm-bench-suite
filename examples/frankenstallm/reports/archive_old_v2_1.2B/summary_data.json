@@ -1,0 +1,1314 @@
+{
+  "gpu_results": {
+    "track1": {
+      "frankenstallm-3b-v2-Q4_K_M": {
+        "kmmlu": 0.16,
+        "kobest_boolq": 0.0,
+        "kobest_copa": 0.3,
+        "kobest_hellaswag": 0.0,
+        "kobest_sentineg": 0.4
+      },
+      "frankenstallm-3b-v2-Q8_0": {
+        "kmmlu": 0.28,
+        "kobest_boolq": 0.05,
+        "kobest_copa": 0.2,
+        "kobest_hellaswag": 0.1,
+        "kobest_sentineg": 0.45
+      },
+      "frankenstallm-3b-v2-f16": {
+        "kmmlu": 0.3,
+        "kobest_boolq": 0.05,
+        "kobest_copa": 0.2,
+        "kobest_hellaswag": 0.1,
+        "kobest_sentineg": 0.45
+      },
+      "qwen2.5:3b": {
+        "kmmlu": 0.84,
+        "kobest_boolq": 1.0,
+        "kobest_copa": 1.0,
+        "kobest_hellaswag": 1.0,
+        "kobest_sentineg": 0.6
+      },
+      "gemma3:4b": {
+        "kmmlu": 0.82,
+        "kobest_boolq": 1.0,
+        "kobest_copa": 1.0,
+        "kobest_hellaswag": 1.0,
+        "kobest_sentineg": 0.9
+      },
+      "phi4-mini": {
+        "kmmlu": 0.76,
+        "kobest_boolq": 1.0,
+        "kobest_copa": 1.0,
+        "kobest_hellaswag": 1.0,
+        "kobest_sentineg": 0.65
+      },
+      "exaone3.5:2.4b": {
+        "kmmlu": 0.94,
+        "kobest_boolq": 1.0,
+        "kobest_copa": 1.0,
+        "kobest_hellaswag": 1.0,
+        "kobest_sentineg": 0.95
+      },
+      "llama3.2:3b": {
+        "kmmlu": 0.68,
+        "kobest_boolq": 0.85,
+        "kobest_copa": 1.0,
+        "kobest_hellaswag": 1.0,
+        "kobest_sentineg": 0.6
+      }
+    },
+    "track4": {
+      "frankenstallm-3b-v2-Q4_K_M": {
+        "python_pass1": 0.0,
+        "sql_accuracy": 0.0,
+        "debug_accuracy": 0.0,
+        "math_accuracy": 0.0
+      },
+      "frankenstallm-3b-v2-Q8_0": {
+        "python_pass1": 0.0,
+        "sql_accuracy": 0.0,
+        "debug_accuracy": 0.0,
+        "math_accuracy": 0.0
+      },
+      "frankenstallm-3b-v2-f16": {
+        "python_pass1": 0.0,
+        "sql_accuracy": 0.0,
+        "debug_accuracy": 0.0,
+        "math_accuracy": 0.0
+      },
+      "qwen2.5:3b": {
+        "python_pass1": 0.75,
+        "sql_accuracy": 0.9,
+        "debug_accuracy": 0.7,
+        "math_accuracy": 0.6667
+      },
+      "gemma3:4b": {
+        "python_pass1": 0.9,
+        "sql_accuracy": 0.9,
+        "debug_accuracy": 0.6,
+        "math_accuracy": 0.8
+      },
+      "phi4-mini": {
+        "python_pass1": 0.5,
+        "sql_accuracy": 0.2,
+        "debug_accuracy": 0.1,
+        "math_accuracy": 0.5667
+      },
+      "exaone3.5:2.4b": {
+        "python_pass1": 0.75,
+        "sql_accuracy": 0.6,
+        "debug_accuracy": 0.5,
+        "math_accuracy": 0.6333
+      },
+      "llama3.2:3b": {
+        "python_pass1": 0.55,
+        "sql_accuracy": 0.8,
+        "debug_accuracy": 0.3,
+        "math_accuracy": 0.4333
+      }
+    },
+    "track5": {
+      "frankenstallm-3b-v2-Q4_K_M": {
+        "repetition_consistency": 0.1827,
+        "paraphrase_robustness": 0.54,
+        "length_sensitivity": 0.6,
+        "language_consistency": 0.6059,
+        "instruction_following": 0.0,
+        "hallucination_detection": 0.0
+      },
+      "frankenstallm-3b-v2-Q8_0": {
+        "repetition_consistency": 0.1895,
+        "paraphrase_robustness": 0.54,
+        "length_sensitivity": 1.0,
+        "language_consistency": 0.6658,
+        "instruction_following": 0.0,
+        "hallucination_detection": 0.2
+      },
+      "frankenstallm-3b-v2-f16": {
+        "repetition_consistency": 0.1854,
+        "paraphrase_robustness": 0.54,
+        "length_sensitivity": 0.6,
+        "language_consistency": 0.6211,
+        "instruction_following": 0.0,
+        "hallucination_detection": 0.1
+      },
+      "qwen2.5:3b": {
+        "repetition_consistency": 0.2803,
+        "paraphrase_robustness": 0.72,
+        "length_sensitivity": 0.8,
+        "language_consistency": 0.7726,
+        "instruction_following": 0.9333,
+        "hallucination_detection": 0.8
+      },
+      "gemma3:4b": {
+        "repetition_consistency": 0.5485,
+        "paraphrase_robustness": 0.9,
+        "length_sensitivity": 1.0,
+        "language_consistency": 0.7309,
+        "instruction_following": 0.6,
+        "hallucination_detection": 0.3
+      },
+      "phi4-mini": {
+        "repetition_consistency": 0.2257,
+        "paraphrase_robustness": 0.78,
+        "length_sensitivity": 0.6,
+        "language_consistency": 0.6141,
+        "instruction_following": 0.8,
+        "hallucination_detection": 0.7
+      },
+      "exaone3.5:2.4b": {
+        "repetition_consistency": 0.4165,
+        "paraphrase_robustness": 0.96,
+        "length_sensitivity": 1.0,
+        "language_consistency": 0.7041,
+        "instruction_following": 0.8,
+        "hallucination_detection": 0.6
+      },
+      "llama3.2:3b": {
+        "repetition_consistency": 0.2239,
+        "paraphrase_robustness": 0.7,
+        "length_sensitivity": 0.6,
+        "language_consistency": 0.3467,
+        "instruction_following": 0.6,
+        "hallucination_detection": 0.3
+      }
+    },
+    "track6": {
+      "frankenstallm-3b-v2-Q4_K_M": {
+        "avg_prefill_tok_s": 33475.58,
+        "avg_decode_tok_s": 633.2,
+        "avg_ttft_s": 0.0693,
+        "vram_used_mb": 1400,
+        "max_context_reached": 3759,
+        "concurrent_aggregate_tok_s": {
+          "1": 45.07,
+          "2": 434.16,
+          "4": 483.26
+        }
+      },
+      "frankenstallm-3b-v2-Q8_0": {
+        "avg_prefill_tok_s": 36199.12,
+        "avg_decode_tok_s": 470.56,
+        "avg_ttft_s": 0.0586,
+        "vram_used_mb": 1850,
+        "max_context_reached": 3759,
+        "concurrent_aggregate_tok_s": {
+          "1": 44.65,
+          "2": 349.41,
+          "4": 375.84
+        }
+      },
+      "frankenstallm-3b-v2-f16": {
+        "avg_prefill_tok_s": 38648.43,
+        "avg_decode_tok_s": 298.01,
+        "avg_ttft_s": 0.0679,
+        "vram_used_mb": 2940,
+        "max_context_reached": 3759,
+        "concurrent_aggregate_tok_s": {
+          "1": 16.65,
+          "2": 240.75,
+          "4": 252.9
+        }
+      },
+      "qwen2.5:3b": {
+        "avg_prefill_tok_s": 18510.6,
+        "avg_decode_tok_s": 307.34,
+        "avg_ttft_s": 0.1409,
+        "vram_used_mb": 2602,
+        "max_context_reached": 4224,
+        "concurrent_aggregate_tok_s": {
+          "1": 32.78,
+          "2": 204.98,
+          "4": 219.95
+        }
+      },
+      "gemma3:4b": {
+        "avg_prefill_tok_s": 12441.21,
+        "avg_decode_tok_s": 198.0,
+        "avg_ttft_s": 0.9754,
+        "vram_used_mb": 3994,
+        "max_context_reached": 4224,
+        "concurrent_aggregate_tok_s": {
+          "1": 24.21,
+          "2": 134.9,
+          "4": 152.85
+        }
+      },
+      "phi4-mini": {
+        "avg_prefill_tok_s": 17177.13,
+        "avg_decode_tok_s": 264.39,
+        "avg_ttft_s": 0.161,
+        "vram_used_mb": 3610,
+        "max_context_reached": 4224,
+        "concurrent_aggregate_tok_s": {
+          "1": 10.0,
+          "2": 168.98,
+          "4": 184.85
+        }
+      },
+      "exaone3.5:2.4b": {
+        "avg_prefill_tok_s": 24579.67,
+        "avg_decode_tok_s": 345.67,
+        "avg_ttft_s": 0.106,
+        "vram_used_mb": 2238,
+        "max_context_reached": 4152,
+        "concurrent_aggregate_tok_s": {
+          "1": 40.36,
+          "2": 269.48,
+          "4": 297.52
+        }
+      },
+      "llama3.2:3b": {
+        "avg_prefill_tok_s": 18580.25,
+        "avg_decode_tok_s": 308.3,
+        "avg_ttft_s": 0.1555,
+        "vram_used_mb": 2946,
+        "max_context_reached": 4224,
+        "concurrent_aggregate_tok_s": {
+          "1": 32.57,
+          "2": 203.76,
+          "4": 226.29
+        }
+      },
+      "llama3.1:8b-instruct-q8_0": {
+        "avg_prefill_tok_s": 9900.37,
+        "avg_decode_tok_s": 97.27,
+        "avg_ttft_s": 0.1857,
+        "vram_used_mb": 11635,
+        "max_context_reached": 4224,
+        "concurrent_aggregate_tok_s": {
+          "1": 22.94,
+          "2": 84.18,
+          "4": 87.2
+        }
+      },
+      "ingu627/exaone4.0:1.2b": {
+        "avg_prefill_tok_s": 32136.9,
+        "avg_decode_tok_s": 546.51,
+        "avg_ttft_s": 0.4726,
+        "vram_used_mb": 8055,
+        "max_context_reached": 4138,
+        "concurrent_aggregate_tok_s": {
+          "1": 44.24,
+          "2": 387.1,
+          "4": 445.26
+        }
+      }
+    }
+  },
+  "cpu_results": {
+    "track1": {
+      "frankenstallm-3b-v2-Q4_K_M": {
+        "kmmlu": 0.12,
+        "kobest_boolq": 0.0,
+        "kobest_copa": 0.2,
+        "kobest_hellaswag": 0.0,
+        "kobest_sentineg": 0.45
+      },
+      "frankenstallm-3b-v2-Q8_0": {
+        "kmmlu": 0.3,
+        "kobest_boolq": 0.05,
+        "kobest_copa": 0.2,
+        "kobest_hellaswag": 0.1,
+        "kobest_sentineg": 0.45
+      },
+      "frankenstallm-3b-v2-f16": {
+        "kmmlu": 0.3,
+        "kobest_boolq": 0.05,
+        "kobest_copa": 0.2,
+        "kobest_hellaswag": 0.1,
+        "kobest_sentineg": 0.45
+      },
+      "qwen2.5:3b": {
+        "kmmlu": 0.86,
+        "kobest_boolq": 1.0,
+        "kobest_copa": 1.0,
+        "kobest_hellaswag": 1.0,
+        "kobest_sentineg": 0.65
+      },
+      "gemma3:4b": {
+        "kmmlu": 0.86,
+        "kobest_boolq": 1.0,
+        "kobest_copa": 1.0,
+        "kobest_hellaswag": 1.0,
+        "kobest_sentineg": 0.85
+      },
+      "phi4-mini": {
+        "kmmlu": 0.74,
+        "kobest_boolq": 1.0,
+        "kobest_copa": 1.0,
+        "kobest_hellaswag": 1.0,
+        "kobest_sentineg": 0.7
+      },
+      "exaone3.5:2.4b": {
+        "kmmlu": 0.94,
+        "kobest_boolq": 1.0,
+        "kobest_copa": 1.0,
+        "kobest_hellaswag": 1.0,
+        "kobest_sentineg": 0.95
+      },
+      "llama3.2:3b": {
+        "kmmlu": 0.66,
+        "kobest_boolq": 0.8,
+        "kobest_copa": 1.0,
+        "kobest_hellaswag": 1.0,
+        "kobest_sentineg": 0.6
+      }
+    },
+    "track4": {
+      "frankenstallm-3b-v2-Q4_K_M": {
+        "python_pass1": 0.0,
+        "sql_accuracy": 0.0,
+        "debug_accuracy": 0.0,
+        "math_accuracy": 0.0
+      },
+      "frankenstallm-3b-v2-Q8_0": {
+        "python_pass1": 0.0,
+        "sql_accuracy": 0.0,
+        "debug_accuracy": 0.0,
+        "math_accuracy": 0.0
+      },
+      "frankenstallm-3b-v2-f16": {
+        "python_pass1": 0.0,
+        "sql_accuracy": 0.0,
+        "debug_accuracy": 0.0,
+        "math_accuracy": 0.0
+      },
+      "qwen2.5:3b": {
+        "python_pass1": 0.7,
+        "sql_accuracy": 0.9,
+        "debug_accuracy": 0.6,
+        "math_accuracy": 0.6667
+      },
+      "gemma3:4b": {
+        "python_pass1": 0.9,
+        "sql_accuracy": 0.9,
+        "debug_accuracy": 0.8,
+        "math_accuracy": 0.8333
+      },
+      "phi4-mini": {
+        "python_pass1": 0.55,
+        "sql_accuracy": 0.5,
+        "debug_accuracy": 0.0,
+        "math_accuracy": 0.7
+      },
+      "exaone3.5:2.4b": {
+        "python_pass1": 0.8,
+        "sql_accuracy": 0.6,
+        "debug_accuracy": 0.6,
+        "math_accuracy": 0.6667
+      },
+      "llama3.2:3b": {
+        "python_pass1": 0.75,
+        "sql_accuracy": 0.7,
+        "debug_accuracy": 0.4,
+        "math_accuracy": 0.5
+      }
+    },
+    "track5": {
+      "frankenstallm-3b-v2-Q4_K_M": {
+        "repetition_consistency": 0.1806,
+        "paraphrase_robustness": 0.58,
+        "length_sensitivity": 0.8,
+        "language_consistency": 0.6302,
+        "instruction_following": 0.0,
+        "hallucination_detection": 0.1
+      },
+      "frankenstallm-3b-v2-Q8_0": {
+        "repetition_consistency": 0.1882,
+        "paraphrase_robustness": 0.54,
+        "length_sensitivity": 0.8,
+        "language_consistency": 0.4255,
+        "instruction_following": 0.0,
+        "hallucination_detection": 0.1
+      },
+      "frankenstallm-3b-v2-f16": {
+        "repetition_consistency": 0.1816,
+        "paraphrase_robustness": 0.58,
+        "length_sensitivity": 0.8,
+        "language_consistency": 0.4646,
+        "instruction_following": 0.0,
+        "hallucination_detection": 0.1
+      },
+      "qwen2.5:3b": {
+        "repetition_consistency": 0.312,
+        "paraphrase_robustness": 0.8,
+        "length_sensitivity": 0.8,
+        "language_consistency": 0.7448,
+        "instruction_following": 0.9333,
+        "hallucination_detection": 0.9
+      },
+      "gemma3:4b": {
+        "repetition_consistency": 0.4812,
+        "paraphrase_robustness": 0.96,
+        "length_sensitivity": 1.0,
+        "language_consistency": 0.7689,
+        "instruction_following": 0.6667,
+        "hallucination_detection": 0.3
+      },
+      "phi4-mini": {
+        "repetition_consistency": 0.2074,
+        "paraphrase_robustness": 0.68,
+        "length_sensitivity": 0.4,
+        "language_consistency": 0.4931,
+        "instruction_following": 0.7333,
+        "hallucination_detection": 0.6
+      },
+      "exaone3.5:2.4b": {
+        "repetition_consistency": 0.4107,
+        "paraphrase_robustness": 0.96,
+        "length_sensitivity": 1.0,
+        "language_consistency": 0.5789,
+        "instruction_following": 0.7333,
+        "hallucination_detection": 0.7
+      },
+      "llama3.2:3b": {
+        "repetition_consistency": 0.2171,
+        "paraphrase_robustness": 0.72,
+        "length_sensitivity": 0.2,
+        "language_consistency": 0.3169,
+        "instruction_following": 0.6667,
+        "hallucination_detection": 0.2
+      }
+    },
+    "track6": {
+      "frankenstallm-3b-v2-Q4_K_M": {
+        "avg_prefill_tok_s": 18359.92,
+        "avg_decode_tok_s": 217.63,
+        "avg_ttft_s": 0.1142,
+        "vram_used_mb": 7531,
+        "max_context_reached": 3759,
+        "concurrent_aggregate_tok_s": {
+          "1": 18.91,
+          "2": 106.14,
+          "4": 104.01
+        }
+      },
+      "frankenstallm-3b-Q4_K_M": {
+        "avg_prefill_tok_s": 8817.94,
+        "avg_decode_tok_s": 14.66,
+        "avg_ttft_s": 6.1475,
+        "vram_used_mb": 0,
+        "max_context_reached": 3759,
+        "concurrent_aggregate_tok_s": {
+          "1": 6.3,
+          "2": 15.38,
+          "4": 15.2
+        }
+      },
+      "frankenstallm-3b-Q8_0": {
+        "avg_prefill_tok_s": 83.88,
+        "avg_decode_tok_s": 9.79,
+        "avg_ttft_s": 5.1921,
+        "vram_used_mb": 0,
+        "max_context_reached": 3759,
+        "concurrent_aggregate_tok_s": {
+          "1": 4.99,
+          "2": 9.85,
+          "4": 10.05
+        }
+      },
+      "frankenstallm-3b-f16": {
+        "avg_prefill_tok_s": 71.15,
+        "avg_decode_tok_s": 5.61,
+        "avg_ttft_s": 6.293,
+        "vram_used_mb": 0,
+        "max_context_reached": 3759,
+        "concurrent_aggregate_tok_s": {
+          "1": 3.54,
+          "2": 5.55,
+          "4": 5.55
+        }
+      },
+      "frankenstallm-3b-v2-Q8_0": {
+        "avg_prefill_tok_s": 212.81,
+        "avg_decode_tok_s": 24.46,
+        "avg_ttft_s": 2.2326,
+        "vram_used_mb": 0,
+        "max_context_reached": 3759,
+        "concurrent_aggregate_tok_s": {
+          "1": 7.31,
+          "2": 23.82,
+          "4": 23.97
+        }
+      },
+      "frankenstallm-3b-v2-f16": {
+        "avg_prefill_tok_s": 181.96,
+        "avg_decode_tok_s": 13.66,
+        "avg_ttft_s": 2.5338,
+        "vram_used_mb": 0,
+        "max_context_reached": 3759,
+        "concurrent_aggregate_tok_s": {
+          "1": 5.93,
+          "2": 13.4,
+          "4": 13.52
+        }
+      },
+      "qwen2.5:3b": {
+        "avg_prefill_tok_s": 76.03,
+        "avg_decode_tok_s": 14.86,
+        "avg_ttft_s": 9.1274,
+        "vram_used_mb": 0,
+        "max_context_reached": 4224,
+        "concurrent_aggregate_tok_s": {
+          "1": 5.51,
+          "2": 14.34,
+          "4": 14.57
+        }
+      },
+      "gemma3:4b": {
+        "avg_prefill_tok_s": 57.11,
+        "avg_decode_tok_s": 11.35,
+        "avg_ttft_s": 9.2541,
+        "vram_used_mb": 0,
+        "max_context_reached": 4224,
+        "concurrent_aggregate_tok_s": {
+          "1": 6.62,
+          "2": 10.4,
+          "4": 10.49
+        }
+      },
+      "phi4-mini": {
+        "avg_prefill_tok_s": 56.81,
+        "avg_decode_tok_s": 11.99,
+        "avg_ttft_s": 10.0658,
+        "vram_used_mb": 0,
+        "max_context_reached": 3200,
+        "concurrent_aggregate_tok_s": {
+          "1": 4.89,
+          "2": 11.35,
+          "4": 11.55
+        }
+      },
+      "exaone3.5:2.4b": {
+        "avg_prefill_tok_s": 68.82,
+        "avg_decode_tok_s": 16.64,
+        "avg_ttft_s": 8.067,
+        "vram_used_mb": 0,
+        "max_context_reached": 4152,
+        "concurrent_aggregate_tok_s": {
+          "1": 6.11,
+          "2": 16.98,
+          "4": 17.14
+        }
+      },
+      "llama3.2:3b": {
+        "avg_prefill_tok_s": 70.65,
+        "avg_decode_tok_s": 14.39,
+        "avg_ttft_s": 8.287,
+        "vram_used_mb": 0,
+        "max_context_reached": 4224,
+        "concurrent_aggregate_tok_s": {
+          "1": 5.34,
+          "2": 13.81,
+          "4": 13.85
+        }
+      }
+    }
+  },
+  "track2": {
+    "frankenstallm-3b-v2-Q4_K_M": {
+      "writing": {
+        "turn1_mean": 1.17,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.08
+      },
+      "roleplay": {
+        "turn1_mean": 1.1,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.05
+      },
+      "reasoning": {
+        "turn1_mean": 1.0,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.0
+      },
+      "math": {
+        "turn1_mean": 1.0,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.0
+      },
+      "coding": {
+        "turn1_mean": 1.0,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.0
+      },
+      "extraction": {
+        "turn1_mean": 1.1,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.05
+      },
+      "stem": {
+        "turn1_mean": 1.15,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.07
+      },
+      "humanities": {
+        "turn1_mean": 1.5,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.25
+      }
+    },
+    "frankenstallm-3b-v2-Q8_0": {
+      "writing": {
+        "turn1_mean": 1.1,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.05
+      },
+      "roleplay": {
+        "turn1_mean": 1.0,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.0
+      },
+      "reasoning": {
+        "turn1_mean": 1.0,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.0
+      },
+      "math": {
+        "turn1_mean": 1.0,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.0
+      },
+      "coding": {
+        "turn1_mean": 1.0,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.0
+      },
+      "extraction": {
+        "turn1_mean": 1.15,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.07
+      },
+      "stem": {
+        "turn1_mean": 1.11,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.06
+      },
+      "humanities": {
+        "turn1_mean": 1.35,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.18
+      }
+    },
+    "frankenstallm-3b-v2-f16": {
+      "writing": {
+        "turn1_mean": 1.17,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.08
+      },
+      "roleplay": {
+        "turn1_mean": 1.12,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.06
+      },
+      "reasoning": {
+        "turn1_mean": 1.0,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.0
+      },
+      "math": {
+        "turn1_mean": 1.0,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.0
+      },
+      "coding": {
+        "turn1_mean": 1.0,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.0
+      },
+      "extraction": {
+        "turn1_mean": 1.0,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.0
+      },
+      "stem": {
+        "turn1_mean": 1.0,
+        "turn2_mean": 1.0,
+        "overall_mean": 1.0
+      },
+      "humanities": {
+        "turn1_mean": 1.4,
+        "turn2_mean": 1.05,
+        "overall_mean": 1.23
+      }
+    },
+    "qwen2.5:3b": {
+      "writing": {
+        "turn1_mean": 3.43,
+        "turn2_mean": 2.77,
+        "overall_mean": 3.1
+      },
+      "roleplay": {
+        "turn1_mean": 1.94,
+        "turn2_mean": 1.81,
+        "overall_mean": 1.88
+      },
+      "reasoning": {
+        "turn1_mean": 1.5,
+        "turn2_mean": 1.42,
+        "overall_mean": 1.46
+      },
+      "math": {
+        "turn1_mean": 8.25,
+        "turn2_mean": 6.25,
+        "overall_mean": 7.36
+      },
+      "coding": {
+        "turn1_mean": 8.1,
+        "turn2_mean": 1.88,
+        "overall_mean": 5.33
+      },
+      "extraction": {
+        "turn1_mean": 6.9,
+        "turn2_mean": 4.62,
+        "overall_mean": 5.89
+      },
+      "stem": {
+        "turn1_mean": 1.89,
+        "turn2_mean": 1.5,
+        "overall_mean": 1.72
+      },
+      "humanities": {
+        "turn1_mean": 2.0,
+        "turn2_mean": 1.67,
+        "overall_mean": 1.84
+      }
+    },
+    "gemma3:4b": {
+      "writing": {
+        "turn1_mean": 6.0,
+        "turn2_mean": 5.1,
+        "overall_mean": 5.55
+      },
+      "roleplay": {
+        "turn1_mean": 5.56,
+        "turn2_mean": 5.67,
+        "overall_mean": 5.61
+      },
+      "reasoning": {
+        "turn1_mean": 2.75,
+        "turn2_mean": 2.25,
+        "overall_mean": 2.56
+      },
+      "math": {
+        "turn1_mean": 8.9,
+        "turn2_mean": 8.33,
+        "overall_mean": 8.63
+      },
+      "coding": {
+        "turn1_mean": 8.0,
+        "turn2_mean": 6.1,
+        "overall_mean": 7.27
+      },
+      "extraction": {
+        "turn1_mean": 8.28,
+        "turn2_mean": 6.5,
+        "overall_mean": 7.34
+      },
+      "stem": {
+        "turn1_mean": 5.89,
+        "turn2_mean": 4.5,
+        "overall_mean": 5.24
+      }
+    },
+    "llama3.2:3b": {
+      "extraction": {
+        "turn1_mean": 5.9,
+        "turn2_mean": 2.67,
+        "overall_mean": 4.14
+      },
+      "stem": {
+        "turn1_mean": 1.29,
+        "turn2_mean": 1.3,
+        "overall_mean": 1.29
+      },
+      "humanities": {
+        "turn1_mean": 1.22,
+        "turn2_mean": 1.1,
+        "overall_mean": 1.16
+      }
+    }
+  },
+  "track3": {
+    "frankenstallm-3b-v2-Q4_K_M": {
+      "존댓말/반말 전환": {
+        "accuracy": 0.0,
+        "avg_score": 0.1,
+        "n": 10
+      },
+      "한국 문화 상식": {
+        "accuracy": 0.45,
+        "avg_score": 0.45,
+        "n": 20
+      },
+      "사자성어/관용구": {
+        "accuracy": 0.5333,
+        "avg_score": 0.54,
+        "n": 15
+      },
+      "맞춤법/문법": {
+        "accuracy": 0.6,
+        "avg_score": 0.6133,
+        "n": 15
+      },
+      "뉴스 스타일 요약": {
+        "accuracy": 0.0,
+        "avg_score": 0.12,
+        "n": 10
+      },
+      "감정/뉘앙스": {
+        "accuracy": 0.0,
+        "avg_score": 0.1,
+        "n": 10
+      },
+      "숫자/단위": {
+        "accuracy": 0.1,
+        "avg_score": 0.1,
+        "n": 10
+      },
+      "존칭 체계": {
+        "accuracy": 0.1,
+        "avg_score": 0.15,
+        "n": 10
+      },
+      "_overall": {
+        "accuracy": 0.28,
+        "avg_score": 0.32,
+        "n": 100
+      }
+    },
+    "frankenstallm-3b-v2-Q8_0": {
+      "존댓말/반말 전환": {
+        "accuracy": 0.0,
+        "avg_score": 0.1,
+        "n": 10
+      },
+      "한국 문화 상식": {
+        "accuracy": 0.4,
+        "avg_score": 0.4,
+        "n": 20
+      },
+      "사자성어/관용구": {
+        "accuracy": 0.4667,
+        "avg_score": 0.4733,
+        "n": 15
+      },
+      "맞춤법/문법": {
+        "accuracy": 0.6,
+        "avg_score": 0.6133,
+        "n": 15
+      },
+      "뉴스 스타일 요약": {
+        "accuracy": 0.0,
+        "avg_score": 0.13,
+        "n": 10
+      },
+      "감정/뉘앙스": {
+        "accuracy": 0.0,
+        "avg_score": 0.1,
+        "n": 10
+      },
+      "숫자/단위": {
+        "accuracy": 0.0,
+        "avg_score": 0.0,
+        "n": 10
+      },
+      "존칭 체계": {
+        "accuracy": 0.1,
+        "avg_score": 0.15,
+        "n": 10
+      },
+      "_overall": {
+        "accuracy": 0.25,
+        "avg_score": 0.291,
+        "n": 100
+      }
+    },
+    "frankenstallm-3b-v2-f16": {
+      "존댓말/반말 전환": {
+        "accuracy": 0.0,
+        "avg_score": 0.1,
+        "n": 10
+      },
+      "한국 문화 상식": {
+        "accuracy": 0.4,
+        "avg_score": 0.4,
+        "n": 20
+      },
+      "사자성어/관용구": {
+        "accuracy": 0.4667,
+        "avg_score": 0.4733,
+        "n": 15
+      },
+      "맞춤법/문법": {
+        "accuracy": 0.6,
+        "avg_score": 0.6133,
+        "n": 15
+      },
+      "뉴스 스타일 요약": {
+        "accuracy": 0.0,
+        "avg_score": 0.13,
+        "n": 10
+      },
+      "감정/뉘앙스": {
+        "accuracy": 0.0,
+        "avg_score": 0.1,
+        "n": 10
+      },
+      "숫자/단위": {
+        "accuracy": 0.0,
+        "avg_score": 0.0,
+        "n": 10
+      },
+      "존칭 체계": {
+        "accuracy": 0.1,
+        "avg_score": 0.15,
+        "n": 10
+      },
+      "_overall": {
+        "accuracy": 0.25,
+        "avg_score": 0.291,
+        "n": 100
+      }
+    },
+    "qwen2.5:3b": {
+      "존댓말/반말 전환": {
+        "accuracy": 0.4,
+        "avg_score": 0.4,
+        "n": 10
+      },
+      "한국 문화 상식": {
+        "accuracy": 0.2,
+        "avg_score": 0.2,
+        "n": 20
+      },
+      "사자성어/관용구": {
+        "accuracy": 0.6667,
+        "avg_score": 0.6733,
+        "n": 15
+      },
+      "맞춤법/문법": {
+        "accuracy": 0.8667,
+        "avg_score": 0.8667,
+        "n": 15
+      },
+      "뉴스 스타일 요약": {
+        "accuracy": 1.0,
+        "avg_score": 0.81,
+        "n": 10
+      },
+      "감정/뉘앙스": {
+        "accuracy": 0.1,
+        "avg_score": 0.32,
+        "n": 10
+      },
+      "숫자/단위": {
+        "accuracy": 0.6,
+        "avg_score": 0.6,
+        "n": 10
+      },
+      "존칭 체계": {
+        "accuracy": 0.1,
+        "avg_score": 0.18,
+        "n": 10
+      },
+      "_overall": {
+        "accuracy": 0.49,
+        "avg_score": 0.502,
+        "n": 100
+      }
+    },
+    "gemma3:4b": {
+      "존댓말/반말 전환": {
+        "accuracy": 0.5,
+        "avg_score": 0.52,
+        "n": 10
+      },
+      "한국 문화 상식": {
+        "accuracy": 0.65,
+        "avg_score": 0.65,
+        "n": 20
+      },
+      "사자성어/관용구": {
+        "accuracy": 0.8667,
+        "avg_score": 0.8733,
+        "n": 15
+      },
+      "맞춤법/문법": {
+        "accuracy": 0.8,
+        "avg_score": 0.7867,
+        "n": 15
+      },
+      "뉴스 스타일 요약": {
+        "accuracy": 1.0,
+        "avg_score": 0.87,
+        "n": 10
+      },
+      "감정/뉘앙스": {
+        "accuracy": 1.0,
+        "avg_score": 0.59,
+        "n": 10
+      },
+      "숫자/단위": {
+        "accuracy": 0.5,
+        "avg_score": 0.5,
+        "n": 10
+      },
+      "존칭 체계": {
+        "accuracy": 0.6,
+        "avg_score": 0.53,
+        "n": 10
+      },
+      "_overall": {
+        "accuracy": 0.74,
+        "avg_score": 0.68,
+        "n": 100
+      }
+    },
+    "phi4-mini": {
+      "존댓말/반말 전환": {
+        "accuracy": 0.2,
+        "avg_score": 0.31,
+        "n": 10
+      },
+      "한국 문화 상식": {
+        "accuracy": 0.3,
+        "avg_score": 0.3,
+        "n": 20
+      },
+      "사자성어/관용구": {
+        "accuracy": 0.6667,
+        "avg_score": 0.6733,
+        "n": 15
+      },
+      "맞춤법/문법": {
+        "accuracy": 0.4667,
+        "avg_score": 0.5,
+        "n": 15
+      },
+      "뉴스 스타일 요약": {
+        "accuracy": 1.0,
+        "avg_score": 0.73,
+        "n": 10
+      },
+      "감정/뉘앙스": {
+        "accuracy": 0.1,
+        "avg_score": 0.3,
+        "n": 10
+      },
+      "숫자/단위": {
+        "accuracy": 0.2,
+        "avg_score": 0.2,
+        "n": 10
+      },
+      "존칭 체계": {
+        "accuracy": 0.2,
+        "avg_score": 0.28,
+        "n": 10
+      },
+      "_overall": {
+        "accuracy": 0.4,
+        "avg_score": 0.418,
+        "n": 100
+      }
+    },
+    "exaone3.5:2.4b": {
+      "존댓말/반말 전환": {
+        "accuracy": 0.7,
+        "avg_score": 0.65,
+        "n": 10
+      },
+      "한국 문화 상식": {
+        "accuracy": 0.75,
+        "avg_score": 0.75,
+        "n": 20
+      },
+      "사자성어/관용구": {
+        "accuracy": 0.8,
+        "avg_score": 0.8067,
+        "n": 15
+      },
+      "맞춤법/문법": {
+        "accuracy": 0.8667,
+        "avg_score": 0.8667,
+        "n": 15
+      },
+      "뉴스 스타일 요약": {
+        "accuracy": 1.0,
+        "avg_score": 0.87,
+        "n": 10
+      },
+      "감정/뉘앙스": {
+        "accuracy": 0.8,
+        "avg_score": 0.56,
+        "n": 10
+      },
+      "숫자/단위": {
+        "accuracy": 0.6,
+        "avg_score": 0.6,
+        "n": 10
+      },
+      "존칭 체계": {
+        "accuracy": 0.5,
+        "avg_score": 0.44,
+        "n": 10
+      },
+      "_overall": {
+        "accuracy": 0.76,
+        "avg_score": 0.713,
+        "n": 100
+      }
+    },
+    "llama3.2:3b": {
+      "존댓말/반말 전환": {
+        "accuracy": 0.1,
+        "avg_score": 0.21,
+        "n": 10
+      },
+      "한국 문화 상식": {
+        "accuracy": 0.25,
+        "avg_score": 0.25,
+        "n": 20
+      },
+      "사자성어/관용구": {
+        "accuracy": 0.4667,
+        "avg_score": 0.4733,
+        "n": 15
+      },
+      "맞춤법/문법": {
+        "accuracy": 0.7333,
+        "avg_score": 0.76,
+        "n": 15
+      },
+      "뉴스 스타일 요약": {
+        "accuracy": 0.9,
+        "avg_score": 0.64,
+        "n": 10
+      },
+      "감정/뉘앙스": {
+        "accuracy": 0.0,
+        "avg_score": 0.24,
+        "n": 10
+      },
+      "숫자/단위": {
+        "accuracy": 0.3,
+        "avg_score": 0.3,
+        "n": 10
+      },
+      "존칭 체계": {
+        "accuracy": 0.1,
+        "avg_score": 0.25,
+        "n": 10
+      },
+      "_overall": {
+        "accuracy": 0.37,
+        "avg_score": 0.399,
+        "n": 100
+      }
+    }
+  },
+  "track7": {
+    "gemma3:4b": {
+      "elo": 1733.5,
+      "ci_lower": 1637.0,
+      "ci_upper": 1870.9,
+      "wins": 128,
+      "losses": 11,
+      "rank": 1
+    },
+    "exaone3.5:2.4b": {
+      "elo": 1629.6,
+      "ci_lower": 1543.5,
+      "ci_upper": 1750.7,
+      "wins": 119,
+      "losses": 20,
+      "rank": 2
+    },
+    "qwen2.5:3b": {
+      "elo": 1364.7,
+      "ci_lower": 1296.3,
+      "ci_upper": 1441.0,
+      "wins": 90,
+      "losses": 50,
+      "rank": 3
+    },
+    "phi4-mini": {
+      "elo": 1200.6,
+      "ci_lower": 1145.6,
+      "ci_upper": 1257.9,
+      "wins": 66,
+      "losses": 73,
+      "rank": 4
+    },
+    "llama3.2:3b": {
+      "elo": 1099.4,
+      "ci_lower": 1049.8,
+      "ci_upper": 1153.8,
+      "wins": 50,
+      "losses": 89,
+      "rank": 5
+    },
+    "frankenstallm-3b-v2-f16": {
+      "elo": 1006.7,
+      "ci_lower": 966.2,
+      "ci_upper": 1052.0,
+      "wins": 36,
+      "losses": 104,
+      "rank": 6
+    },
+    "frankenstallm-3b-v2-Q4_K_M": {
+      "elo": 1000.0,
+      "ci_lower": 1000.0,
+      "ci_upper": 1000.0,
+      "wins": 35,
+      "losses": 105,
+      "rank": 7
+    },
+    "frankenstallm-3b-v2-Q8_0": {
+      "elo": 993.3,
+      "ci_lower": 950.0,
+      "ci_upper": 1039.1,
+      "wins": 34,
+      "losses": 106,
+      "rank": 8
+    }
+  },
+  "models": [
+    "exaone3.5:2.4b",
+    "frankenstallm-3b-Q4_K_M",
+    "frankenstallm-3b-Q8_0",
+    "frankenstallm-3b-f16",
+    "frankenstallm-3b-v2-Q4_K_M",
+    "frankenstallm-3b-v2-Q8_0",
+    "frankenstallm-3b-v2-f16",
+    "gemma3:4b",
+    "ingu627/exaone4.0:1.2b",
+    "llama3.1:8b-instruct-q8_0",
+    "llama3.2:3b",
+    "phi4-mini",
+    "qwen2.5:3b"
+  ],
+  "metadata": {
+    "generated": "2026-03-13 09:42:36",
+    "note": "Track 2,3,7 are CPU-only",
+    "gpu_tracks": [
+      "track1",
+      "track4",
+      "track5",
+      "track6"
+    ],
+    "cpu_tracks": [
+      "track1",
+      "track4",
+      "track5",
+      "track6"
+    ],
+    "cpu_only_tracks": [
+      "track2",
+      "track3",
+      "track7"
+    ]
+  }
+}

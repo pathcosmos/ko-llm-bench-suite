@@ -1,0 +1,2650 @@
+{
+  "track": "track1_korean_bench",
+  "timestamp": "2026-03-30T14:03:06.930251",
+  "num_models": 2,
+  "mode": "standalone",
+  "results": [
+    {
+      "model": "evafrill-mo-3b-slerp",
+      "scores": {
+        "kmmlu": 0.0,
+        "kobest_boolq": 0.0,
+        "kobest_copa": 0.0,
+        "kobest_hellaswag": 0.0,
+        "kobest_sentineg": 0.0
+      },
+      "details": [
+        {
+          "id": "boolq_000",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemmStridedBatched( handle, opa, opb, m, n, k, &alpha, a, lda, stridea, b, ldb, strideb, &beta, c, ldc, stridec, num_batches)`"
+        },
+        {
+          "id": "boolq_001",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_002",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_003",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_004",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_005",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_006",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_007",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_008",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_009",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_010",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_011",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_012",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_013",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_014",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_015",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_016",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_017",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_018",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "boolq_019",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_000",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_001",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_002",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_003",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_004",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_005",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_006",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_007",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_008",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_009",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_010",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_011",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_012",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_013",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_014",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_015",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_016",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_017",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_018",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "copa_019",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_000",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_001",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_002",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_003",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_004",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_005",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_006",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_007",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_008",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_009",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_010",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_011",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_012",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_013",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_014",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_015",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_016",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_017",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_018",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "sentineg_019",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_000",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_001",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_002",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_003",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_004",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_005",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_006",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_007",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_008",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_009",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_010",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_011",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_012",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_013",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_014",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_015",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_016",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_017",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_018",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "hellaswag_019",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_000",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_001",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_002",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_003",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_004",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 2,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_005",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_006",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_007",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_008",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_009",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_010",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_011",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_012",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_013",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_014",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_015",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_016",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_017",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_018",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_019",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_020",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_021",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_022",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_023",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_024",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_025",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_026",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_027",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_028",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_029",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_030",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_031",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_032",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_033",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_034",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_035",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_036",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_037",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_038",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_039",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_040",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_041",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_042",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_043",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_044",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_045",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_046",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_047",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_048",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        {
+          "id": "kmmlu_049",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": null,
+          "correct": false,
+          "raw_response": "",
+          "error": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        }
+      ],
+      "mode": "standalone"
+    },
+    {
+      "model": "qwen2.5:3b",
+      "scores": {
+        "kmmlu": 0.86,
+        "kobest_boolq": 1.0,
+        "kobest_copa": 1.0,
+        "kobest_hellaswag": 1.0,
+        "kobest_sentineg": 0.65
+      },
+      "details": [
+        {
+          "id": "boolq_000",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_001",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_002",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_003",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_004",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_005",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_006",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_007",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_008",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_009",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_010",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_011",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_012",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_013",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_014",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_015",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_016",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_017",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "boolq_018",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "아니오",
+          "error": null
+        },
+        {
+          "id": "boolq_019",
+          "benchmark": "kobest_boolq",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "예",
+          "error": null
+        },
+        {
+          "id": "copa_000",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_001",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_002",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_003",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_004",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_005",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "copa_006",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_007",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_008",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_009",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_010",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_011",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_012",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_013",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_014",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_015",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_016",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_017",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_018",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "copa_019",
+          "benchmark": "kobest_copa",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "sentineg_000",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "sentineg_001",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_002",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_003",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "sentineg_004",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_005",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_006",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_007",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_008",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_009",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "sentineg_010",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_011",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_012",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_013",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_014",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_015",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "sentineg_016",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_017",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 1,
+          "parsed": 1,
+          "correct": true,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_018",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "sentineg_019",
+          "benchmark": "kobest_sentineg",
+          "subject": "",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "hellaswag_000",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_001",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_002",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_003",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_004",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_005",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_006",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_007",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_008",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_009",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_010",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_011",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_012",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_013",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_014",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_015",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_016",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_017",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_018",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "hellaswag_019",
+          "benchmark": "kobest_hellaswag",
+          "subject": "",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_000",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_001",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A.",
+          "error": null
+        },
+        {
+          "id": "kmmlu_002",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": 2,
+          "correct": false,
+          "raw_response": "C",
+          "error": null
+        },
+        {
+          "id": "kmmlu_003",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_004",
+          "benchmark": "kmmlu",
+          "subject": "한국사",
+          "expected": 2,
+          "parsed": 2,
+          "correct": true,
+          "raw_response": "C. 1953년",
+          "error": null
+        },
+        {
+          "id": "kmmlu_005",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_006",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_007",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_008",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_009",
+          "benchmark": "kmmlu",
+          "subject": "한국지리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_010",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_011",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_012",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_013",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_014",
+          "benchmark": "kmmlu",
+          "subject": "경제",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_015",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_016",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "kmmlu_017",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_018",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_019",
+          "benchmark": "kmmlu",
+          "subject": "법학",
+          "expected": 0,
+          "parsed": 2,
+          "correct": false,
+          "raw_response": "C",
+          "error": null
+        },
+        {
+          "id": "kmmlu_020",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_021",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_022",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A.",
+          "error": null
+        },
+        {
+          "id": "kmmlu_023",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_024",
+          "benchmark": "kmmlu",
+          "subject": "물리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A.",
+          "error": null
+        },
+        {
+          "id": "kmmlu_025",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_026",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_027",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_028",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 2,
+          "correct": false,
+          "raw_response": "C",
+          "error": null
+        },
+        {
+          "id": "kmmlu_029",
+          "benchmark": "kmmlu",
+          "subject": "화학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_030",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_031",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_032",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_033",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_034",
+          "benchmark": "kmmlu",
+          "subject": "생물",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_035",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 3,
+          "correct": false,
+          "raw_response": "D",
+          "error": null
+        },
+        {
+          "id": "kmmlu_036",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_037",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_038",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_039",
+          "benchmark": "kmmlu",
+          "subject": "컴퓨터공학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_040",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_041",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_042",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_043",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_044",
+          "benchmark": "kmmlu",
+          "subject": "의학",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_045",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 1,
+          "correct": false,
+          "raw_response": "B",
+          "error": null
+        },
+        {
+          "id": "kmmlu_046",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_047",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_048",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 0,
+          "correct": true,
+          "raw_response": "A",
+          "error": null
+        },
+        {
+          "id": "kmmlu_049",
+          "benchmark": "kmmlu",
+          "subject": "윤리",
+          "expected": 0,
+          "parsed": 3,
+          "correct": false,
+          "raw_response": "D",
+          "error": null
+        }
+      ],
+      "mode": "standalone"
+    }
+  ],
+  "summary": {
+    "evafrill-mo-3b-slerp": {
+      "kmmlu": 0.0,
+      "kobest_boolq": 0.0,
+      "kobest_copa": 0.0,
+      "kobest_hellaswag": 0.0,
+      "kobest_sentineg": 0.0
+    },
+    "qwen2.5:3b": {
+      "kmmlu": 0.86,
+      "kobest_boolq": 1.0,
+      "kobest_copa": 1.0,
+      "kobest_hellaswag": 1.0,
+      "kobest_sentineg": 0.65
+    }
+  }
+}

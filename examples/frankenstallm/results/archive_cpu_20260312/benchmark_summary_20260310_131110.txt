@@ -1,0 +1,126 @@
+
+================================================================================
+  FRANKENSTALLM 벤치마크 요약 리포트 — 20260310_131110
+================================================================================
+
+모델                                     평균tok/s       평균토큰      평균시간(s)       평균응답길이
+--------------------------------------------------------------------------------
+frankenstallm-3b-Q4_K_M                   75.6        512        11.43         1382
+frankenstallm-3b-Q8_0                    ERROR
+frankenstallm-3b-f16                     ERROR
+frankenstallm-3b-v2-Q4_K_M               ERROR
+frankenstallm-3b-v2-Q8_0                 ERROR
+frankenstallm-3b-v2-f16                  ERROR
+qwen2.5:3b                               ERROR
+gemma3:4b                                ERROR
+phi4-mini                                ERROR
+exaone3.5:2.4b                           ERROR
+llama3.2:3b                              ERROR
+
+================================================================================
+  카테고리별 상세 응답 (처음 150자)
+================================================================================
+
+--- [기본대화] 안녕하세요, 자기소개를 해주세요.... ---
+  frankenstallm-3b-Q4_K_M            : 이메일을 통해 여러분의 이름을 알려드립니다:안녕하세요! 저는 제 직업을 사랑하는 33세 남성입니다.저는 20년 넘게 다양한 분야에서 일하고 있으며, 특히 비즈니스 커뮤니케이션에 대한 열정으로 항상 새로운 도전과 기회를 찾고 있습니다. 하지만 한편으로는 이 모든 것이 저
+  frankenstallm-3b-Q8_0              : 
+  frankenstallm-3b-f16               : 
+  frankenstallm-3b-v2-Q4_K_M         : 
+  frankenstallm-3b-v2-Q8_0           : 
+  frankenstallm-3b-v2-f16            : 
+  qwen2.5:3b                         : 
+  gemma3:4b                          : 
+  phi4-mini                          : 
+  exaone3.5:2.4b                     : 
+  llama3.2:3b                        : 
+
+--- [지식] 대한민국의 수도와 인구, 주요 산업에 대해 설명해주세요.... ---
+  frankenstallm-3b-Q4_K_M            : <unk>안녕하세요! 오늘은 서울특별시의 경제 중심지를 소개해드리고자 합니다. 서울특별시의 인구는 약 290만 명이며 서울시의 총 면적은 서울을 둘러싸고 있는 242km<unk>입니다. 이 중 97%가 농지로 구성되어 있습니다. 또한 많은 사람들이 서울로 출퇴근하고 있
+  frankenstallm-3b-Q8_0              : 
+  frankenstallm-3b-f16               : 
+  frankenstallm-3b-v2-Q4_K_M         : 
+  frankenstallm-3b-v2-Q8_0           : 
+  frankenstallm-3b-v2-f16            : 
+  qwen2.5:3b                         : 
+  gemma3:4b                          : 
+  phi4-mini                          : 
+  exaone3.5:2.4b                     : 
+  llama3.2:3b                        : 
+
+--- [추론] 철수는 영희보다 키가 크고, 영희는 민수보다 키가 큽니다. 세 사람 중 가장 키가 작은 사... ---
+  frankenstallm-3b-Q4_K_M            : 
+  frankenstallm-3b-Q8_0              : 
+  frankenstallm-3b-f16               : 
+  frankenstallm-3b-v2-Q4_K_M         : 
+  frankenstallm-3b-v2-Q8_0           : 
+  frankenstallm-3b-v2-f16            : 
+  qwen2.5:3b                         : 
+  gemma3:4b                          : 
+  phi4-mini                          : 
+  exaone3.5:2.4b                     : 
+  llama3.2:3b                        : 
+
+--- [창작] 봄비가 내리는 서울의 풍경을 묘사하는 짧은 시를 써주세요.... ---
+  frankenstallm-3b-Q4_K_M            : 
+  frankenstallm-3b-Q8_0              : 
+  frankenstallm-3b-f16               : 
+  frankenstallm-3b-v2-Q4_K_M         : 
+  frankenstallm-3b-v2-Q8_0           : 
+  frankenstallm-3b-v2-f16            : 
+  qwen2.5:3b                         : 
+  gemma3:4b                          : 
+  phi4-mini                          : 
+  exaone3.5:2.4b                     : 
+  llama3.2:3b                        : 
+
+--- [요약] 인공지능이 의료 분야에서 활용되는 사례를 3가지 간단히 요약해주세요.... ---
+  frankenstallm-3b-Q4_K_M            : 
+  frankenstallm-3b-Q8_0              : 
+  frankenstallm-3b-f16               : 
+  frankenstallm-3b-v2-Q4_K_M         : 
+  frankenstallm-3b-v2-Q8_0           : 
+  frankenstallm-3b-v2-f16            : 
+  qwen2.5:3b                         : 
+  gemma3:4b                          : 
+  phi4-mini                          : 
+  exaone3.5:2.4b                     : 
+  llama3.2:3b                        : 
+
+--- [번역] 다음 문장을 영어로 번역해주세요: '오늘 날씨가 좋아서 공원에서 산책을 했습니다.'... ---
+  frankenstallm-3b-Q4_K_M            : 
+  frankenstallm-3b-Q8_0              : 
+  frankenstallm-3b-f16               : 
+  frankenstallm-3b-v2-Q4_K_M         : 
+  frankenstallm-3b-v2-Q8_0           : 
+  frankenstallm-3b-v2-f16            : 
+  qwen2.5:3b                         : 
+  gemma3:4b                          : 
+  phi4-mini                          : 
+  exaone3.5:2.4b                     : 
+  llama3.2:3b                        : 
+
+--- [코드] Python으로 피보나치 수열의 처음 10개 숫자를 출력하는 코드를 작성해주세요.... ---
+  frankenstallm-3b-Q4_K_M            : 
+  frankenstallm-3b-Q8_0              : 
+  frankenstallm-3b-f16               : 
+  frankenstallm-3b-v2-Q4_K_M         : 
+  frankenstallm-3b-v2-Q8_0           : 
+  frankenstallm-3b-v2-f16            : 
+  qwen2.5:3b                         : 
+  gemma3:4b                          : 
+  phi4-mini                          : 
+  exaone3.5:2.4b                     : 
+  llama3.2:3b                        : 
+
+--- [수학] 어떤 수에 3을 곱하고 7을 더하면 28이 됩니다. 그 수는 무엇인가요? 풀이 과정을 보여... ---
+  frankenstallm-3b-Q4_K_M            : 
+  frankenstallm-3b-Q8_0              : 
+  frankenstallm-3b-f16               : 
+  frankenstallm-3b-v2-Q4_K_M         : 
+  frankenstallm-3b-v2-Q8_0           : 
+  frankenstallm-3b-v2-f16            : 
+  qwen2.5:3b                         : 
+  gemma3:4b                          : 
+  phi4-mini                          : 
+  exaone3.5:2.4b                     : 
+  llama3.2:3b                        : 

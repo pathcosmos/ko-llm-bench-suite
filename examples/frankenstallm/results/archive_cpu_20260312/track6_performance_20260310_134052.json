@@ -1,0 +1,335 @@
+{
+  "track": "track6_performance",
+  "results": [
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "prefill_speed",
+      "input_length": 96,
+      "output_length": 1,
+      "tokens_per_sec": 0,
+      "prefill_tok_s": 7189.46,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 0.0648,
+      "error": null
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "prefill_speed",
+      "input_length": 460,
+      "output_length": 1,
+      "tokens_per_sec": 0,
+      "prefill_tok_s": 18901.96,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 0.0814,
+      "error": null
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "prefill_speed",
+      "input_length": 919,
+      "output_length": 1,
+      "tokens_per_sec": 0,
+      "prefill_tok_s": 21546.31,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 0.159,
+      "error": null
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "prefill_speed",
+      "input_length": 1838,
+      "output_length": 1,
+      "tokens_per_sec": 0,
+      "prefill_tok_s": 25801.96,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 0.1553,
+      "error": null
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "decode_speed",
+      "input_length": 15,
+      "output_length": 50,
+      "tokens_per_sec": 253.76,
+      "prefill_tok_s": 2346.48,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 0.3743,
+      "error": null,
+      "requested_output_length": 50
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "decode_speed",
+      "input_length": 15,
+      "output_length": 100,
+      "tokens_per_sec": 247.43,
+      "prefill_tok_s": 4716.64,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 0.5642,
+      "error": null,
+      "requested_output_length": 100
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "decode_speed",
+      "input_length": 15,
+      "output_length": 256,
+      "tokens_per_sec": 199.39,
+      "prefill_tok_s": 4983.51,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 1.5636,
+      "error": null,
+      "requested_output_length": 256
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "decode_speed",
+      "input_length": 15,
+      "output_length": 512,
+      "tokens_per_sec": 169.95,
+      "prefill_tok_s": 1626.42,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 3.5351,
+      "error": null,
+      "requested_output_length": 512
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "ttft",
+      "input_length": 5,
+      "output_length": 0,
+      "tokens_per_sec": 0.0,
+      "prefill_tok_s": 0.0,
+      "ttft_s": 0.1014,
+      "vram_used_mb": 0,
+      "wall_time_s": 0.2192,
+      "error": null,
+      "prompt_label": "short"
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "ttft",
+      "input_length": 1000,
+      "output_length": 0,
+      "tokens_per_sec": 0.0,
+      "prefill_tok_s": 0.0,
+      "ttft_s": 0.1409,
+      "vram_used_mb": 0,
+      "wall_time_s": 0.2834,
+      "error": null,
+      "prompt_label": "medium"
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "ttft",
+      "input_length": 2000,
+      "output_length": 0,
+      "tokens_per_sec": 0.0,
+      "prefill_tok_s": 0.0,
+      "ttft_s": 0.1004,
+      "vram_used_mb": 0,
+      "wall_time_s": 0.2313,
+      "error": null,
+      "prompt_label": "long"
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "vram_usage",
+      "input_length": 0,
+      "output_length": 0,
+      "tokens_per_sec": 0.0,
+      "prefill_tok_s": 0.0,
+      "ttft_s": 0.0,
+      "vram_used_mb": 7531,
+      "wall_time_s": 0.0,
+      "error": null,
+      "vram_total_mb": 16311,
+      "vram_free_mb": 8312,
+      "gpu_util_pct": 0
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "max_context",
+      "input_length": 470,
+      "output_length": 32,
+      "tokens_per_sec": 168.84,
+      "prefill_tok_s": 5662.96,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 2.5498,
+      "error": null,
+      "requested_context": 512
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "max_context",
+      "input_length": 941,
+      "output_length": 32,
+      "tokens_per_sec": 139.33,
+      "prefill_tok_s": 5964.96,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 2.6479,
+      "error": null,
+      "requested_context": 1024
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "max_context",
+      "input_length": 1879,
+      "output_length": 32,
+      "tokens_per_sec": 150.15,
+      "prefill_tok_s": 5437.32,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 2.8766,
+      "error": null,
+      "requested_context": 2048
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "max_context",
+      "input_length": 2819,
+      "output_length": 32,
+      "tokens_per_sec": 130.96,
+      "prefill_tok_s": 4338.3,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 3.4067,
+      "error": null,
+      "requested_context": 3072
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "max_context",
+      "input_length": 3759,
+      "output_length": 32,
+      "tokens_per_sec": 125.03,
+      "prefill_tok_s": 3711.07,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 4.0825,
+      "error": null,
+      "requested_context": 4096
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "concurrent",
+      "input_length": 0,
+      "output_length": 64,
+      "tokens_per_sec": 140.46,
+      "prefill_tok_s": 0.0,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 3.3853,
+      "error": null,
+      "concurrency_level": 1,
+      "aggregate_tok_s": 18.91,
+      "per_request": [
+        {
+          "request_idx": 0,
+          "tokens_per_sec": 140.462001734258,
+          "eval_count": 64,
+          "wall_time_s": 3.3849194049835205,
+          "error": null
+        }
+      ]
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "concurrent",
+      "input_length": 0,
+      "output_length": 128,
+      "tokens_per_sec": 128.68,
+      "prefill_tok_s": 0.0,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 1.206,
+      "error": null,
+      "concurrency_level": 2,
+      "aggregate_tok_s": 106.14,
+      "per_request": [
+        {
+          "request_idx": 1,
+          "tokens_per_sec": 132.14219778131144,
+          "eval_count": 64,
+          "wall_time_s": 0.627903938293457,
+          "error": null
+        },
+        {
+          "request_idx": 0,
+          "tokens_per_sec": 125.2175348961949,
+          "eval_count": 64,
+          "wall_time_s": 1.2056074142456055,
+          "error": null
+        }
+      ]
+    },
+    {
+      "model": "frankenstallm-3b-v2-Q4_K_M",
+      "test_type": "concurrent",
+      "input_length": 0,
+      "output_length": 256,
+      "tokens_per_sec": 121.12,
+      "prefill_tok_s": 0.0,
+      "ttft_s": 0.0,
+      "vram_used_mb": 0,
+      "wall_time_s": 2.4614,
+      "error": null,
+      "concurrency_level": 4,
+      "aggregate_tok_s": 104.01,
+      "per_request": [
+        {
+          "request_idx": 3,
+          "tokens_per_sec": 120.5214270657447,
+          "eval_count": 64,
+          "wall_time_s": 0.66318678855896,
+          "error": null
+        },
+        {
+          "request_idx": 0,
+          "tokens_per_sec": 124.15871292856782,
+          "eval_count": 64,
+          "wall_time_s": 1.257331371307373,
+          "error": null
+        },
+        {
+          "request_idx": 2,
+          "tokens_per_sec": 120.46202811854398,
+          "eval_count": 64,
+          "wall_time_s": 1.8490650653839111,
+          "error": null
+        },
+        {
+          "request_idx": 1,
+          "tokens_per_sec": 119.33458876677001,
+          "eval_count": 64,
+          "wall_time_s": 2.457852363586426,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "frankenstallm-3b-v2-Q4_K_M": {
+      "avg_prefill_tok_s": 18359.92,
+      "avg_decode_tok_s": 217.63,
+      "avg_ttft_s": 0.1142,
+      "vram_used_mb": 7531,
+      "max_context_reached": 3759,
+      "concurrent_aggregate_tok_s": {
+        "1": 18.91,
+        "2": 106.14,
+        "4": 104.01
+      }
+    }
+  }
+}

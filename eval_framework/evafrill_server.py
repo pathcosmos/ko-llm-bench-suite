@@ -8,6 +8,7 @@ Usage:
     ~/ai-env/bin/python -m uvicorn eval_framework.evafrill_server:app --host 0.0.0.0 --port 8000
 """
 
+import asyncio
 import time
 import os
 import sys
@@ -63,13 +64,17 @@ def health():
 
 
 @app.post("/generate", response_model=GenerateResponse)
-def http_generate(req: GenerateRequest):
+async def http_generate(req: GenerateRequest):
     from eval_framework.evafrill_runner import generate
-    result = generate(
-        prompt=req.prompt,
-        system=req.system,
-        options=req.options,
-        timeout=req.timeout,
+    loop = asyncio.get_event_loop()
+    result = await loop.run_in_executor(
+        None,
+        lambda: generate(
+            prompt=req.prompt,
+            system=req.system,
+            options=req.options,
+            timeout=req.timeout,
+        ),
     )
     return result
 

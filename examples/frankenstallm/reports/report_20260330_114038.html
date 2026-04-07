@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>FRANKENSTALLM 3B 심화 평가 리포트</title>
+    <style>
+        body { font-family: 'Nanum Gothic', sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #34495e; margin-top: 30px; }
+        .chart-section { background: white; padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .chart-section img { max-width: 100%; height: auto; }
+        table { border-collapse: collapse; width: 100%; font-size: 13px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background: #3498db; color: white; }
+        tr.frankenstallm { background: #ebf5fb; }
+        tr.comparison { background: #fef9e7; }
+        tr:hover { background: #d5e8d4; }
+        pre { background: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 5px; overflow-x: auto; font-size: 12px; }
+        .meta { color: #7f8c8d; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <h1>FRANKENSTALLM 3B 심화 평가 리포트</h1>
+    <p class="meta">생성 시간: 2026-03-30 11:40:38 | 평가 모델: 13개 | 트랙: 2개</p>
+
+    
+        <div class="chart-section">
+            <h2>종합 스코어카드</h2>
+            <table><tr><th>모델</th><th>track6</th></tr><tr class="frankenstallm"><td>frankenstallm-3b:latest</td><td>0.000</td></tr><tr class="frankenstallm"><td>frankenstallm-3b:Q8_0</td><td>0.000</td></tr><tr class="frankenstallm"><td>frankenstallm-3b-v2:latest</td><td>0.000</td></tr><tr class="frankenstallm"><td>frankenstallm-3b-v2:Q8_0</td><td>0.000</td></tr><tr class="comparison"><td>qwen2.5:3b</td><td>0.000</td></tr><tr class="comparison"><td>gemma3:4b</td><td>0.000</td></tr><tr class="comparison"><td>phi4-mini</td><td>0.000</td></tr><tr class="comparison"><td>exaone3.5:2.4b</td><td>0.000</td></tr><tr class="comparison"><td>llama3.2:3b</td><td>0.000</td></tr><tr class="comparison"><td>llama3.1:8b-instruct-q8_0</td><td>0.000</td></tr><tr class="comparison"><td>ingu627/exaone4.0:1.2b</td><td>0.000</td></tr><tr class="comparison"><td>deepseek-r1:1.5b</td><td>0.000</td></tr><tr class="comparison"><td>evafrill-mo-3b-slerp</td><td>0.000</td></tr></table>
+        </div>
+    
+    
+            <div class="chart-section">
+                <h2>track6 상세</h2>
+                <pre>{
+  "frankenstallm-3b:latest": {
+    "avg_prefill_tok_s": 8052.68,
+    "avg_decode_tok_s": 128.64,
+    "avg_ttft_s": 7.968,
+    "vram_used_mb": 0,
+    "max_context_reached": 3759,
+    "concurrent_aggregate_tok_s": {
+      "1": 4.04,
+      "2": 6.1,
+      "4": 10.4
+    }
+  },
+  "frankenstallm-3b:Q8_0": {
+    "avg_prefill_tok_s": 46.72,
+    "avg_decode_tok_s": 7.36,
+    "avg_ttft_s": 7.5377,
+    "vram_used_mb": 0,
+    "max_context_reached": 3759,
+    "concurrent_aggregate_tok_s": {
+      "1": 4.65,
+      "2": 8.91,
+      "4": 8.72
+    }
+  },
+  "frankenstallm-3b-v2:latest": {
+    "avg_prefill_tok_s": 64.74,
+    "avg_decode_tok_s": 12.75,
+    "avg_ttft_s": 6.5578,
+    "vram_used_mb": 0,
+    "max_context_reached": 3759,
+    "concurrent_aggregate_tok_s": {
+      "1": 5.83,
+      "2": 13.52,
+      "4": 13.39
+    }
+  },
+  "frankenstallm-3b-v2:Q8_0": {
+    "avg_prefill_tok_s": 68.24,
+    "avg_decode_tok_s": 8.87,
+    "avg_ttft_s": 7.5401,
+    "vram_used_mb": 0,
+    "max_context_reached": 3759,
+    "concurrent_aggregate_tok_s": {
+      "1": 4.63,
+      "2": 8.5,
+      "4": 8.54
+    }
+  },
+  "qwen2.5:3b": {
+    "avg_prefill_tok_s": 63.84,
+    "avg_decode_tok_s": 12.79,
+    "avg_ttft_s": 10.0009,
+    "vram_used_mb": 0,
+    "max_context_reached": 4224,
+    "concurrent_aggregate_tok_s": {
+      "1": 5.2,
+      "2": 12.25,
+      "4": 12.79
+    }
+  },
+  "gemma3:4b": {
+    "avg_prefill_tok_s": 52.0,
+    "avg_decode_tok_s": 9.77,
+    "avg_ttft_s": 10.8478,
+    "vram_used_mb": 0,
+    "max_context_reached": 3200,
+    "concurrent_aggregate_tok_s": {
+      "1": 6.08,
+      "2": 9.17,
+      "4": 9.16
+    }
+  },
+  "phi4-mini": {
+    "avg_prefill_tok_s": 48.13,
+    "avg_decode_tok_s": 10.52,
+    "avg_ttft_s": 11.6149,
+    "vram_used_mb": 0,
+    "max_context_reached": 4224,
+    "concurrent_aggregate_tok_s": {
+      "1": 4.7,
+      "2": 10.52,
+      "4": 10.18
+    }
+  },
+  "exaone3.5:2.4b": {
+    "avg_prefill_tok_s": 58.64,
+    "avg_decode_tok_s": 15.04,
+    "avg_ttft_s": 9.0995,
+    "vram_used_mb": 0,
+    "max_context_reached": 4152,
+    "concurrent_aggregate_tok_s": {
+      "1": 5.78,
+      "2": 15.23,
+      "4": 15.43
+    }
+  },
+  "llama3.2:3b": {
+    "avg_prefill_tok_s": 65.85,
+    "avg_decode_tok_s": 12.81,
+    "avg_ttft_s": 9.8278,
+    "vram_used_mb": 0,
+    "max_context_reached": 3200,
+    "concurrent_aggregate_tok_s": {
+      "1": 4.95,
+      "2": 12.73,
+      "4": 12.68
+    }
+  },
+  "llama3.1:8b-instruct-q8_0": {
+    "avg_prefill_tok_s": 29.27,
+    "avg_decode_tok_s": 3.84,
+    "avg_ttft_s": 21.0645,
+    "vram_used_mb": 0,
+    "max_context_reached": 4224,
+    "concurrent_aggregate_tok_s": {
+      "1": 2.57,
+      "2": 3.84,
+      "4": 3.86
+    }
+  },
+  "ingu627/exaone4.0:1.2b": {
+    "avg_prefill_tok_s": 127.33,
+    "avg_decode_tok_s": 26.23,
+    "avg_ttft_s": 6.6578,
+    "vram_used_mb": 0,
+    "max_context_reached": 4138,
+    "concurrent_aggregate_tok_s": {
+      "1": 7.09,
+      "2": 24.79,
+      "4": 23.3
+    }
+  },
+  "deepseek-r1:1.5b": {
+    "avg_prefill_tok_s": 136.75,
+    "avg_decode_tok_s": 25.08,
+    "avg_ttft_s": 5.3708,
+    "vram_used_mb": 0,
+    "max_context_reached": 4224,
+    "concurrent_aggregate_tok_s": {
+      "1": 7.14,
+      "2": 24.0,
+      "4": 24.52
+    }
+  },
+  "evafrill-mo-3b-slerp": {
+    "avg_prefill_tok_s": 288621.96,
+    "avg_decode_tok_s": 0.45,
+    "avg_ttft_s": 0.0028,
+    "vram_used_mb": 0,
+    "max_context_reached": 0,
+    "concurrent_aggregate_tok_s": {
+      "1": 0,
+      "2": 0,
+      "4": 0
+    }
+  }
+}</pre>
+            </div>
+
+    <div class="chart-section">
+        <h2>평가 설정</h2>
+        <pre>{
+  "models": [
+    "frankenstallm-3b:latest",
+    "frankenstallm-3b:Q8_0",
+    "frankenstallm-3b-v2:latest",
+    "frankenstallm-3b-v2:Q8_0",
+    "qwen2.5:3b",
+    "gemma3:4b",
+    "phi4-mini",
+    "exaone3.5:2.4b",
+    "llama3.2:3b",
+    "llama3.1:8b-instruct-q8_0",
+    "ingu627/exaone4.0:1.2b",
+    "deepseek-r1:1.5b",
+    "evafrill-mo-3b-slerp"
+  ],
+  "sampling": {
+    "temperature": 0.7,
+    "repeat_penalty": 1.2,
+    "top_p": 0.9,
+    "num_predict": 512,
+    "num_ctx": 4096
+  },
+  "benchmark_sampling": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "repeat_penalty": 1.0,
+    "num_predict": 256,
+    "num_ctx": 4096
+  }
+}</pre>
+    </div>
+</body>
+</html>

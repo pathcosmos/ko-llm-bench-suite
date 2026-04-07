@@ -1,0 +1,10 @@
+{
+  "track": "track7_pairwise",
+  "results": {
+    "responses": {},
+    "comparisons": [],
+    "elo_scores": {}
+  },
+  "summary": {},
+  "error": "Ollama 서버에 연결할 수 없습니다."
+}

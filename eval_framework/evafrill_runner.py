@@ -446,7 +446,7 @@ def http_generate(
                 "system": system,
                 "options": options or dict(config.SAMPLING_PARAMS),
             },
-            timeout=timeout or 600,
+            timeout=timeout or 1200,
         )
         resp.raise_for_status()
         return resp.json()

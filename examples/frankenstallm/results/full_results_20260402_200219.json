@@ -1,0 +1,4941 @@
+{
+  "track5": {
+    "track": "track5_consistency",
+    "results": [
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "repetition_consistency",
+        "prompt_index": 0,
+        "prompt": "대한민국의 수도는 어디인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8631,
+        "avg_jaccard_similarity": 0.0409,
+        "response_lengths": [
+          1470,
+          1259,
+          1231,
+          1449,
+          1425
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "repetition_consistency",
+        "prompt_index": 1,
+        "prompt": "물의 화학식은 무엇인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8813,
+        "avg_jaccard_similarity": 0.058,
+        "response_lengths": [
+          1193,
+          1309,
+          1184,
+          1220,
+          1115
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "repetition_consistency",
+        "prompt_index": 2,
+        "prompt": "태양계에서 가장 큰 행성은 무엇인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8585,
+        "avg_jaccard_similarity": 0.0751,
+        "response_lengths": [
+          1176,
+          1241,
+          1224,
+          1452,
+          1442
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "repetition_consistency",
+        "prompt_index": 3,
+        "prompt": "가을을 주제로 짧은 시를 한 편 써주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8552,
+        "avg_jaccard_similarity": 0.0314,
+        "response_lengths": [
+          1173,
+          1198,
+          1175,
+          1115,
+          1183
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "repetition_consistency",
+        "prompt_index": 4,
+        "prompt": "외로운 로봇이 주인공인 짧은 이야기를 써주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8619,
+        "avg_jaccard_similarity": 0.0562,
+        "response_lengths": [
+          1210,
+          1156,
+          1123,
+          1199,
+          1457
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "repetition_consistency",
+        "prompt_index": 5,
+        "prompt": "모든 고양이는 동물이다. 모든 동물은 생물이다. 따라서 모든 고양이는?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8662,
+        "avg_jaccard_similarity": 0.0498,
+        "response_lengths": [
+          1238,
+          1366,
+          1279,
+          1103,
+          1417
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "repetition_consistency",
+        "prompt_index": 6,
+        "prompt": "A는 B보다 크고, B는 C보다 큽니다. A와 C 중 어느 것이 더 큰가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8833,
+        "avg_jaccard_similarity": 0.0572,
+        "response_lengths": [
+          1215,
+          1219,
+          1244,
+          1305,
+          1345
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "repetition_consistency",
+        "prompt_index": 7,
+        "prompt": "Python으로 피보나치 수열을 출력하는 함수를 작성해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8492,
+        "avg_jaccard_similarity": 0.0547,
+        "response_lengths": [
+          1224,
+          1508,
+          1111,
+          1419,
+          1599
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "repetition_consistency",
+        "prompt_index": 8,
+        "prompt": "Python으로 리스트에서 중복을 제거하는 코드를 작성해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8799,
+        "avg_jaccard_similarity": 0.037,
+        "response_lengths": [
+          1412,
+          1336,
+          1672,
+          1167,
+          1630
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "repetition_consistency",
+        "prompt_index": 9,
+        "prompt": "인공지능의 정의를 한 문장으로 설명해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8609,
+        "avg_jaccard_similarity": 0.0425,
+        "response_lengths": [
+          1243,
+          1580,
+          986,
+          1380,
+          1303
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "paraphrase_robustness",
+        "question_index": 0,
+        "answer_keywords": [
+          "서울"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 1.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "paraphrase_robustness",
+        "question_index": 1,
+        "answer_keywords": [
+          "H2O",
+          "H₂O"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.2,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          false,
+          false,
+          true,
+          false
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "paraphrase_robustness",
+        "question_index": 2,
+        "answer_keywords": [
+          "목성",
+          "Jupiter"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.4,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          true,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "paraphrase_robustness",
+        "question_index": 3,
+        "answer_keywords": [
+          "도쿄",
+          "東京",
+          "Tokyo"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.8,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "paraphrase_robustness",
+        "question_index": 4,
+        "answer_keywords": [
+          "지구",
+          "Earth"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.4,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "paraphrase_robustness",
+        "question_index": 5,
+        "answer_keywords": [
+          "중국",
+          "China"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.2,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "paraphrase_robustness",
+        "question_index": 6,
+        "answer_keywords": [
+          "에베레스트",
+          "Everest"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.2,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          false,
+          false,
+          true,
+          false
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "paraphrase_robustness",
+        "question_index": 7,
+        "answer_keywords": [
+          "태평양",
+          "Pacific"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "paraphrase_robustness",
+        "question_index": 8,
+        "answer_keywords": [
+          "아인슈타인",
+          "Einstein"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.2,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "paraphrase_robustness",
+        "question_index": 9,
+        "answer_keywords": [
+          "산소",
+          "O2",
+          "O₂",
+          "Oxygen"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 1.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "length_sensitivity",
+        "question_index": 0,
+        "answer_keywords": [
+          "서울"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 1250
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1258
+          },
+          "long": {
+            "correct": false,
+            "response_length": 1247
+          }
+        },
+        "all_correct": false,
+        "any_correct": true,
+        "consistent_across_lengths": false
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "length_sensitivity",
+        "question_index": 1,
+        "answer_keywords": [
+          "태양",
+          "Sun"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 1377
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1342
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1194
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "length_sensitivity",
+        "question_index": 2,
+        "answer_keywords": [
+          "DNA"
+        ],
+        "length_results": {
+          "short": {
+            "correct": false,
+            "response_length": 1306
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1316
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1483
+          }
+        },
+        "all_correct": false,
+        "any_correct": true,
+        "consistent_across_lengths": false
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "length_sensitivity",
+        "question_index": 3,
+        "answer_keywords": [
+          "광합성"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 1207
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1338
+          },
+          "long": {
+            "correct": true,
+            "response_length": 779
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "length_sensitivity",
+        "question_index": 4,
+        "answer_keywords": [
+          "뉴턴",
+          "Newton"
+        ],
+        "length_results": {
+          "short": {
+            "correct": false,
+            "response_length": 1403
+          },
+          "medium": {
+            "correct": false,
+            "response_length": 1472
+          },
+          "long": {
+            "correct": false,
+            "response_length": 1342
+          }
+        },
+        "all_correct": false,
+        "any_correct": false,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "language_mixing",
+        "prompt_index": 0,
+        "prompt": "Python에서 list comprehension의 사용법을 explain해주세요.",
+        "korean_ratio": 0.1856,
+        "response_length": 1350
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "language_mixing",
+        "prompt_index": 1,
+        "prompt": "Machine learning에서 overfitting을 방지하는 방법을 한국어로 설명해주세요.",
+        "korean_ratio": 0.7326,
+        "response_length": 1259
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "language_mixing",
+        "prompt_index": 2,
+        "prompt": "HTTP status code 404는 무엇을 의미하는지 describe해주세요.",
+        "korean_ratio": 0.6056,
+        "response_length": 1233
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "language_mixing",
+        "prompt_index": 3,
+        "prompt": "Docker container와 virtual machine의 차이점을 설명해주세요.",
+        "korean_ratio": 0.8106,
+        "response_length": 1455
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "language_mixing",
+        "prompt_index": 4,
+        "prompt": "Big O notation에서 O(n log n)의 의미를 한국어로 explain해주세요.",
+        "korean_ratio": 0.0537,
+        "response_length": 2082
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "language_mixing",
+        "prompt_index": 5,
+        "prompt": "REST API에서 GET과 POST method의 차이를 설명해주세요.",
+        "korean_ratio": 0.0788,
+        "response_length": 1448
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "language_mixing",
+        "prompt_index": 6,
+        "prompt": "Database에서 primary key와 foreign key의 역할을 알려주세요.",
+        "korean_ratio": 0.5369,
+        "response_length": 1273
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "language_mixing",
+        "prompt_index": 7,
+        "prompt": "CSS에서 flexbox layout의 주요 property를 한국어로 설명해주세요.",
+        "korean_ratio": 0.7945,
+        "response_length": 1446
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "language_mixing",
+        "prompt_index": 8,
+        "prompt": "Git에서 branch를 merge하는 방법을 step by step으로 설명해주세요.",
+        "korean_ratio": 0.019,
+        "response_length": 1195
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "language_mixing",
+        "prompt_index": 9,
+        "prompt": "Object-oriented programming의 4가지 핵심 concept을 한국어로 설명해주세요.",
+        "korean_ratio": 0.1933,
+        "response_length": 1573
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 0,
+        "prompt": "한국의 대표적인 음식 3개만 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 3,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 3)",
+        "response_length": 1337
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 1,
+        "prompt": "프로그래밍 언어 5개만 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 5,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 5)",
+        "response_length": 1390
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 2,
+        "prompt": "세계 4대 문명을 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 4,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 4)",
+        "response_length": 1277
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 3,
+        "prompt": "인공지능을 50자 이내로 정의하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 50,
+        "compliant": false,
+        "detail": "글자 수: 1416 (제한: 50)",
+        "response_length": 1416
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 4,
+        "prompt": "대한민국을 100자 이내로 소개하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 100,
+        "compliant": false,
+        "detail": "글자 수: 1344 (제한: 100)",
+        "response_length": 1344
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 5,
+        "prompt": "Python의 장점을 80자 이내로 설명하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 80,
+        "compliant": false,
+        "detail": "글자 수: 1416 (제한: 80)",
+        "response_length": 1416
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 6,
+        "prompt": "한국의 수도, 인구, 면적 정보를 JSON 형식으로 출력하세요. 예: {\"수도\": \"...\", \"인구\": \"...\", \"면적\": \"...\"}",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1179
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 7,
+        "prompt": "사과, 바나나, 포도의 색상을 JSON 배열로 출력하세요. 예: [{\"과일\": \"...\", \"색상\": \"...\"}]",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1258
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 8,
+        "prompt": "사계절의 영어 이름과 한국어 이름을 JSON으로 출력하세요.",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1291
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 9,
+        "prompt": "인터넷의 장점을 번호를 매겨서 설명하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 1",
+        "response_length": 1542
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 10,
+        "prompt": "건강한 생활 습관을 번호를 매겨서 나열하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 1207
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 11,
+        "prompt": "좋은 코드를 작성하는 원칙을 번호를 매겨서 설명하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 1413
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 12,
+        "prompt": "한국, 일본, 중국의 수도와 인구를 표로 만들어주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 1, 구분선: False",
+        "response_length": 1200
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 13,
+        "prompt": "봄, 여름, 가을, 겨울의 특징을 표로 정리해주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 0, 구분선: False",
+        "response_length": 1049
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "instruction_following",
+        "instruction_index": 14,
+        "prompt": "Python, Java, JavaScript의 주요 특징을 표로 비교해주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 1, 구분선: False",
+        "response_length": 1278
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "hallucination_detection",
+        "prompt_index": 0,
+        "prompt": "김철수가 2023년에 발표한 '한국의 미래' 논문의 주요 주장은 무엇인가요?",
+        "refused": false,
+        "response_length": 1408,
+        "response_preview": "- 미래사회는 기술기반산업이 주도할 것으로 예상되는데, 현재 과학기술을 바탕으로 한 산업들이 대부분 기계와 로봇에 의존하고 있습니다. 그러나 이러한 산업들은 결국 자동화로 귀결될 것이고 그 과정에서 일자리도 사라지게 될 것입니다. 따라서 우리는 기술의 변화 속도보다 빠르게 사회구조를 혁신하여 보다 지속가능한 사회를 만드는 데 집중해야 할 때입니다.\"라고 주"
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "hallucination_detection",
+        "prompt_index": 1,
+        "prompt": "대한민국의 17번째 대통령은 누구인가요?",
+        "refused": false,
+        "response_length": 1344,
+        "response_preview": "2016년 4월 5일 대한민국 제17대 대통령 선거는 대한민국 역사상 최초로 4인의 대통령이 동시에 취임한 대선입니다. 또한, 역대 대통령 중 임기가 가장 길었던 전직 대통령의 퇴임 후 3개월이 되는 날로 지정되었습니다. 이 때문에 박근혜 대통령은 지난 2012년에 치러진 대선에서 당선되어 최장수 기록을 가지고 있습니다만, 2020년에는 코로나19 사태와 "
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "hallucination_detection",
+        "prompt_index": 2,
+        "prompt": "2025년 노벨 물리학상을 수상한 박영희 교수의 연구 분야는 무엇인가요?",
+        "refused": false,
+        "response_length": 1208,
+        "response_preview": "박영희 교수는 서울대학교 화학과를 졸업하고 미국 일리노이대학교에서 박사학위 취득 후, 미국 일리노이주립대학교(UIUC)에서 박사후연구원을 지냈습니다. 현재 서울대학교 화학생물공학부 교수로 재직하며, 단백질 구조와 기능에 대한 연구를 진행하고 있습니다. 박 교수는 단백질의 구조 및 기능에 관한 새로운 지식을 바탕으로 다양한 응용 분야에서 활용될 수 있는 새로"
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "hallucination_detection",
+        "prompt_index": 3,
+        "prompt": "한국에서 2024년에 시행된 '디지털 시민권법'의 주요 내용은 무엇인가요?",
+        "refused": false,
+        "response_length": 1364,
+        "response_preview": "“디지털 시민법은 디지털 기술에 의해 생성된 데이터를 보호하고, 데이터에 대한 접근과 통제를 보장하기 위한 법적 제도적 장치를 마련하는 것을 목표로 합니다. 구체적으로는 다음과 같은 것들이 포함됩니다: (1) 데이터 수집을 규제하고, (2) 정보 주체가 자신의 정보를 삭제하거나 수정할 수 있는 권리를 보장하며; (3) 모든 유형의 온라인 활동에 대해 감시와"
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "hallucination_detection",
+        "prompt_index": 4,
+        "prompt": "이순신 장군이 1600년에 쓴 소설 '바다의 노래'의 줄거리를 알려주세요.",
+        "refused": false,
+        "response_length": 1229,
+        "response_preview": "[김영수 / 국립해양박물관 학예연구사 : '바다의 노래'는 중국 명대의 시인 왕유가 지은 시입니다. . 바다의 노래는 중국 대륙과 한반도, 일본열도 등 동아시아 3국의 해상교통로와 관련됩니다... ]라고 기록되어 있습니다마는 이것은 명나라 때 간행된 것으로 보이며, 우리나라에 전래되기 전에 일본 교토에서 이미 '해조류(海條類)'라는 제목으로 번역되어 있었습"
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "hallucination_detection",
+        "prompt_index": 5,
+        "prompt": "서울특별시 강남구에 위치한 '한국우주센터'의 설립 연도는?",
+        "refused": false,
+        "response_length": 1155,
+        "response_preview": "[일요서울 | 오두환 기자] 지난달 29일에 한국항공우주연구원이 '한국 우주 센터'를 공식 출범했다. 이에 따라 대한민국은 세계 6번째 우주 강국으로 자리매김하게 됐다. 하지만 우리나라가...오두환 기자 2018-10-04 19:31:45 0 0‘이불 밖’ 송해, “남편보다 내 나이 더 많아” 母에 고백 ‘이불 밖’ 송해, “남편보다 내 나이 더 많아” 母"
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "hallucination_detection",
+        "prompt_index": 6,
+        "prompt": "세종대왕이 발명한 금속활자 '갑인자'의 무게는 얼마인가요?",
+        "refused": true,
+        "response_length": 1182,
+        "response_preview": "현재 시중에 유통되는 갑인자의 무게는 대략 8.8g입니다. 이는 세종 25년(1443)에 만든 것으로, 당시 인쇄술을 대표하는 유물로 평가됩니다.하지만 현재 전해지는 갑인자는 '전서체(全書體)'가 아닌 해서체로 인쇄된 것입니다.# 이 때문에 전서를 처음 쓴 인물이 세종인지 아닌지 의견이 분분합니다만...# # 이 전서는 한글 창제 이전에 만들어진 한글 활자"
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "hallucination_detection",
+        "prompt_index": 7,
+        "prompt": "'한국표준과학연구원'이 2023년에 발견한 새로운 원소의 이름은?",
+        "refused": false,
+        "response_length": 1118,
+        "response_preview": "[리포트] [화제의 책] '한국표준과학연구원'이 2022년 발견한 새로운 원소 이름[리포트+] [뉴스+루머] WWE , , WWE 노 머시 2018 外 - 미디어광명.com 미디어검색!미디어구독 광명타임즈!! 광명투데이 광명시민신문! 광명투데이 사이트맵 홈페이지제작 인터넷신문사!! 한국통신사업자연합회 광명시지부 광명시인터넷방송국 광명시청소년수련관 광명시종합"
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "hallucination_detection",
+        "prompt_index": 8,
+        "prompt": "2024년 한국프로야구 통합 시즌 최다승 기록은 몇 승인가요?",
+        "refused": true,
+        "response_length": 1191,
+        "response_preview": "2020.07.02 00:27 댓글주소 수정/삭제 답글달기 2020.08.03 01:10 신고 댓글주소 수정/삭제 답글달기 2020.11.25 12:15 신고 댓글주소 수정/삭제답변 달기 ▼ ▲ 비번 0000입니다! 비번을 바꾸면 더 이상 글을 볼 수 없습니다~^^;; 다시 올려주시면 감사하겠습니다~! http://www1betablog.com/133321"
+      },
+      {
+        "model": "evafrill-mo-3b-slerp",
+        "test_type": "hallucination_detection",
+        "prompt_index": 9,
+        "prompt": "고려시대 왕건이 작곡한 것으로 알려진 '통일의 노래' 가사를 알려주세요.",
+        "refused": false,
+        "response_length": 1023,
+        "response_preview": "[홍길동전]1. 一夜九日 月將見天上 白雲靑靑 一陰一陽, (일야구일월 달장견천상 백운청청 일음일양) 2. 日出於黃海水中 大明如水光 大淸於南方, (대명여수광 대청어남방) 3. 中國有三千人 三十萬人 中黃五百餘級 三十萬口八百大城四百萬里 4. (중황진오백여급 삼십만인구팔백만리) 5. 五年後今人之門來, 前月未來不知而至(오년후금인지문래 전전월미내지어지이지기시 지아지지시"
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 0,
+        "prompt": "대한민국의 수도는 어디인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8417,
+        "avg_jaccard_similarity": 0.0295,
+        "response_lengths": [
+          1129,
+          115,
+          165,
+          228,
+          207
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 1,
+        "prompt": "물의 화학식은 무엇인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8012,
+        "avg_jaccard_similarity": 0.0536,
+        "response_lengths": [
+          373,
+          673,
+          204,
+          440,
+          520
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 2,
+        "prompt": "태양계에서 가장 큰 행성은 무엇인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.7763,
+        "avg_jaccard_similarity": 0.0993,
+        "response_lengths": [
+          629,
+          310,
+          458,
+          504,
+          204
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 3,
+        "prompt": "가을을 주제로 짧은 시를 한 편 써주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8501,
+        "avg_jaccard_similarity": 0.041,
+        "response_lengths": [
+          686,
+          216,
+          1187,
+          1268,
+          316
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 4,
+        "prompt": "외로운 로봇이 주인공인 짧은 이야기를 써주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8392,
+        "avg_jaccard_similarity": 0.0393,
+        "response_lengths": [
+          193,
+          1041,
+          486,
+          498,
+          1059
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 5,
+        "prompt": "모든 고양이는 동물이다. 모든 동물은 생물이다. 따라서 모든 고양이는?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8011,
+        "avg_jaccard_similarity": 0.0771,
+        "response_lengths": [
+          248,
+          1163,
+          260,
+          439,
+          277
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 6,
+        "prompt": "A는 B보다 크고, B는 C보다 큽니다. A와 C 중 어느 것이 더 큰가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.0,
+        "avg_jaccard_similarity": 1.0,
+        "response_lengths": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 7,
+        "prompt": "Python으로 피보나치 수열을 출력하는 함수를 작성해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8053,
+        "avg_jaccard_similarity": 0.0966,
+        "response_lengths": [
+          650,
+          847,
+          467,
+          373,
+          547
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 8,
+        "prompt": "Python으로 리스트에서 중복을 제거하는 코드를 작성해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8166,
+        "avg_jaccard_similarity": 0.0901,
+        "response_lengths": [
+          551,
+          505,
+          802,
+          606,
+          1254
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 9,
+        "prompt": "인공지능의 정의를 한 문장으로 설명해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.787,
+        "avg_jaccard_similarity": 0.0949,
+        "response_lengths": [
+          1160,
+          773,
+          724,
+          693,
+          505
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 0,
+        "answer_keywords": [
+          "서울"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 1.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 1,
+        "answer_keywords": [
+          "H2O",
+          "H₂O"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 2,
+        "answer_keywords": [
+          "목성",
+          "Jupiter"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          false,
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 3,
+        "answer_keywords": [
+          "도쿄",
+          "東京",
+          "Tokyo"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.8,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 4,
+        "answer_keywords": [
+          "지구",
+          "Earth"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 5,
+        "answer_keywords": [
+          "중국",
+          "China"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.8,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 6,
+        "answer_keywords": [
+          "에베레스트",
+          "Everest"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.2,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 7,
+        "answer_keywords": [
+          "태평양",
+          "Pacific"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 8,
+        "answer_keywords": [
+          "아인슈타인",
+          "Einstein"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.4,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 9,
+        "answer_keywords": [
+          "산소",
+          "O2",
+          "O₂",
+          "Oxygen"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "length_sensitivity",
+        "question_index": 0,
+        "answer_keywords": [
+          "서울"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 260
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 344
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1156
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "length_sensitivity",
+        "question_index": 1,
+        "answer_keywords": [
+          "태양",
+          "Sun"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 1069
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 328
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1356
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "length_sensitivity",
+        "question_index": 2,
+        "answer_keywords": [
+          "DNA"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 836
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1120
+          },
+          "long": {
+            "correct": true,
+            "response_length": 876
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "length_sensitivity",
+        "question_index": 3,
+        "answer_keywords": [
+          "광합성"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 893
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 785
+          },
+          "long": {
+            "correct": true,
+            "response_length": 584
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "length_sensitivity",
+        "question_index": 4,
+        "answer_keywords": [
+          "뉴턴",
+          "Newton"
+        ],
+        "length_results": {
+          "short": {
+            "correct": false,
+            "response_length": 1222
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 402
+          },
+          "long": {
+            "correct": true,
+            "response_length": 617
+          }
+        },
+        "all_correct": false,
+        "any_correct": true,
+        "consistent_across_lengths": false
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 0,
+        "prompt": "Python에서 list comprehension의 사용법을 explain해주세요.",
+        "korean_ratio": 0.1765,
+        "response_length": 1109
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 1,
+        "prompt": "Machine learning에서 overfitting을 방지하는 방법을 한국어로 설명해주세요.",
+        "korean_ratio": 0.927,
+        "response_length": 763
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 2,
+        "prompt": "HTTP status code 404는 무엇을 의미하는지 describe해주세요.",
+        "korean_ratio": 0.8238,
+        "response_length": 347
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 3,
+        "prompt": "Docker container와 virtual machine의 차이점을 설명해주세요.",
+        "korean_ratio": 0.7747,
+        "response_length": 653
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 4,
+        "prompt": "Big O notation에서 O(n log n)의 의미를 한국어로 explain해주세요.",
+        "korean_ratio": 0.8142,
+        "response_length": 272
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 5,
+        "prompt": "REST API에서 GET과 POST method의 차이를 설명해주세요.",
+        "korean_ratio": 0.6325,
+        "response_length": 1204
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 6,
+        "prompt": "Database에서 primary key와 foreign key의 역할을 알려주세요.",
+        "korean_ratio": 0.7987,
+        "response_length": 1239
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 7,
+        "prompt": "CSS에서 flexbox layout의 주요 property를 한국어로 설명해주세요.",
+        "korean_ratio": 0.805,
+        "response_length": 1217
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 8,
+        "prompt": "Git에서 branch를 merge하는 방법을 step by step으로 설명해주세요.",
+        "korean_ratio": 0.5777,
+        "response_length": 862
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 9,
+        "prompt": "Object-oriented programming의 4가지 핵심 concept을 한국어로 설명해주세요.",
+        "korean_ratio": 0.7341,
+        "response_length": 898
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 0,
+        "prompt": "한국의 대표적인 음식 3개만 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 3,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 3)",
+        "response_length": 1188
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 1,
+        "prompt": "프로그래밍 언어 5개만 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 5,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 5)",
+        "response_length": 529
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 2,
+        "prompt": "세계 4대 문명을 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 4,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 4)",
+        "response_length": 1390
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 3,
+        "prompt": "인공지능을 50자 이내로 정의하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 50,
+        "compliant": false,
+        "detail": "글자 수: 583 (제한: 50)",
+        "response_length": 583
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 4,
+        "prompt": "대한민국을 100자 이내로 소개하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 100,
+        "compliant": false,
+        "detail": "글자 수: 1268 (제한: 100)",
+        "response_length": 1268
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 5,
+        "prompt": "Python의 장점을 80자 이내로 설명하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 80,
+        "compliant": false,
+        "detail": "글자 수: 903 (제한: 80)",
+        "response_length": 903
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 6,
+        "prompt": "한국의 수도, 인구, 면적 정보를 JSON 형식으로 출력하세요. 예: {\"수도\": \"...\", \"인구\": \"...\", \"면적\": \"...\"}",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1053
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 7,
+        "prompt": "사과, 바나나, 포도의 색상을 JSON 배열로 출력하세요. 예: [{\"과일\": \"...\", \"색상\": \"...\"}]",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1087
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 8,
+        "prompt": "사계절의 영어 이름과 한국어 이름을 JSON으로 출력하세요.",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1171
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 9,
+        "prompt": "인터넷의 장점을 번호를 매겨서 설명하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 1258
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 10,
+        "prompt": "건강한 생활 습관을 번호를 매겨서 나열하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 749
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 11,
+        "prompt": "좋은 코드를 작성하는 원칙을 번호를 매겨서 설명하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 1272
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 12,
+        "prompt": "한국, 일본, 중국의 수도와 인구를 표로 만들어주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 0, 구분선: False",
+        "response_length": 328
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 13,
+        "prompt": "봄, 여름, 가을, 겨울의 특징을 표로 정리해주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 0, 구분선: False",
+        "response_length": 169
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 14,
+        "prompt": "Python, Java, JavaScript의 주요 특징을 표로 비교해주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 0, 구분선: False",
+        "response_length": 365
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 0,
+        "prompt": "김철수가 2023년에 발표한 '한국의 미래' 논문의 주요 주장은 무엇인가요?",
+        "refused": false,
+        "response_length": 802,
+        "response_preview": "2023년 5월 한국과학기술회관에서 열린 '테크플러스 콘퍼런스' 세션에서는, 이찬호 서울대 교수의 기조연설과 김용기 연세대 교수와 박순륜 순천향대 교수가 각각 두 번째와 세 번째로 발표했습니다. 김철수는 \"한국은 세계 10위권의 경제 강국으로 성장할 가능성이 있습니다\"라는 논문을 통해 한국경제가 향후 5년간 지속적으로 발전할 것이라는 예측을 내놨습니다.\"이"
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 1,
+        "prompt": "대한민국의 17번째 대통령은 누구인가요?",
+        "refused": false,
+        "response_length": 863,
+        "response_preview": "17대 대한민국의 대통령 선거는 9월 19일에 치러졌습니다. 이 선거에서 당선된 사람은 다음의 공식을 사용하여 표시할 수 있습니다: 1, 2, 3, 4, 5, 6, 7. 각 후보는 다음과 같은 다양한 관련성을 가지고 있습니다: - 1위 후보와 가장 큰 차이점은 2위가 누구인지입니다(선거인단 투표). - 1위와 가장 큰 차이는 3위의 존재 여부이며, 이는 선"
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 2,
+        "prompt": "2025년 노벨 물리학상을 수상한 박영희 교수의 연구 분야는 무엇인가요?",
+        "refused": false,
+        "response_length": 522,
+        "response_preview": "박영희 교수는 우주 비행사를 위한 로봇의 개발과 관련된 연구를 수행하여 이 분야의 선구자적인 업적을 달성했습니다. 그는 우주 임무 중 부상을 입고 장기간의 우주에서도 살아남을 수 있는 로봇을 개발하는 데 헌신해 왔습니다. 그의 과학적 발견은 다양한 의료 및 군사 응용 분야를 탐색하는 데 사용되었습니다. 또한, 박영희 교수는 우주선 내 생명 유지 장치 설계에"
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 3,
+        "prompt": "한국에서 2024년에 시행된 '디지털 시민권법'의 주요 내용은 무엇인가요?",
+        "refused": false,
+        "response_length": 1033,
+        "response_preview": "1. \"디지털 시민권법\"이란 무엇인가요? \"디지털 시민권법\"(DataLocalizations Act)은 미국, 캐나다 및 멕시코에서 채택한 디지털 시민을 정의하는 연방 법률입니다. 이 법에 따라 미국은 전자시민권자를 4년 동안 구금할 수 있는 권리를 보장합니다(제45조 제1항 참조). 2. 디지탈 주권과 디지털 시민권법의 상관관계는 무엇인가요? 디지털 주권"
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 4,
+        "prompt": "이순신 장군이 1600년에 쓴 소설 '바다의 노래'의 줄거리를 알려주세요.",
+        "refused": false,
+        "response_length": 789,
+        "response_preview": "이순신 장군은 이순신 장군에 관한 한 가지 이야기를 썼습니다. 이순신 장군의 이름은 권율입니다. 그는 임진왜란 당시 조선을 침략한 왜군에게 맞서 싸운 장수였습니다. 그는 한양을 점령하는 데 실패했지만, 그 과정에서 수많은 전투를 치렀고, 결국 조선 백성들을 학살하고 백성을 약탈했습니다. 이 이야기는 권율이 왜적과 싸우던 중 갑자기 전투에서 패하고 왜군의 포"
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 5,
+        "prompt": "서울특별시 강남구에 위치한 '한국우주센터'의 설립 연도는?",
+        "refused": false,
+        "response_length": 1335,
+        "response_preview": "<unk>=> 이 기관은 1990년 6월 30일 서울시청 앞 광장에서 '우주기술진흥기본계획 수립을 위한 공청회'를 개최한 것을 시작으로, 1998년부터 운영되기 시작하여 현재 1단계 사업이 완료되었고 2단계 사업이 추진 중에 있습니다. 3단계 사업도 진행하고 있습니다.<unk>한국우주센터의 설립 연도는 정확하게 명시되어 있지 않지만 한국항공우주연구원(KAR"
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 6,
+        "prompt": "세종대왕이 발명한 금속활자 '갑인자'의 무게는 얼마인가요?",
+        "refused": true,
+        "response_length": 448,
+        "response_preview": "이 질문은 질문에 대한 답에 매우 중요합니다. 이 문제는 기원전 6세기경 중국 주나라 때 만들어진 금속 활자에 대해 묻습니다. 이 시대의 금속 활자는 구리와 금으로 만들어졌으며, 중국에서 가장 귀중한 상품 중 하나였습니다. 그러나 이 금속활자가 언제부터 얼마나 사용되었는지 정확하게 파악하는 것은 불가능했습니다. 따라서 이 질문의 답변은 \"중국에서 가장 중요"
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 7,
+        "prompt": "'한국표준과학연구원'이 2023년에 발견한 새로운 원소의 이름은?",
+        "refused": false,
+        "response_length": 178,
+        "response_preview": " (정답: 원자 번호)<unk><th>원소 이름</th><unk>{:2,}(n=1, 2),3, {=-, +, -\\*}<unk>[---]<unk>|| <unk>| n | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 ||−<unk>이것들은 각각 다음의 원소들의 이름을 의미합니다.: [1] ({>2}) [[3]]"
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 8,
+        "prompt": "2024년 한국프로야구 통합 시즌 최다승 기록은 몇 승인가요?",
+        "refused": false,
+        "response_length": 533,
+        "response_preview": "1920년대 야구인으로는 최익성, 송진우 등이 있습니다. 1924년에는 프로야구 총 관중 수가 32만 명이었습니다. 이 해의 우승은 LG 트윈스였고, 준우승은 삼성 라이온즈였습니다. 1923년에 대한뉴스에 따르면 20개 팀의 우승팀이 결정되었습니다. 2024년 통합 시즌 최다승 기록은 누가 기록했나요?1920년대 야구인으로는 최익성(1908-1974)과 송"
+      },
+      {
+        "model": "frankenstallm-3b:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 9,
+        "prompt": "고려시대 왕건이 작곡한 것으로 알려진 '통일의 노래' 가사를 알려주세요.",
+        "refused": true,
+        "response_length": 579,
+        "response_preview": "이 노래는 고려시대 왕건과 고려인 작곡가 박두성이 함께 작사한 노래를 부르는 것입니다.\"통일의 노래\"는 남북 통일을 바라는 마음을 담고 있습니다. 이 노래는 12세기에 쓰여진 중국의 시에서 따온 것으로, 왕건이 중국 시인 두보(杜<unk>)에게서 영감을 받아 작곡했습니다. 그러나 '고려'라는 단어는 이 곡이 처음 만들어진 때인 13세기의 고려와 관련이 없습"
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 0,
+        "prompt": "대한민국의 수도는 어디인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8156,
+        "avg_jaccard_similarity": 0.0683,
+        "response_lengths": [
+          542,
+          293,
+          309,
+          200,
+          385
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 1,
+        "prompt": "물의 화학식은 무엇인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.7882,
+        "avg_jaccard_similarity": 0.0816,
+        "response_lengths": [
+          609,
+          614,
+          521,
+          1031,
+          362
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 2,
+        "prompt": "태양계에서 가장 큰 행성은 무엇인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.772,
+        "avg_jaccard_similarity": 0.115,
+        "response_lengths": [
+          276,
+          398,
+          177,
+          303,
+          692
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 3,
+        "prompt": "가을을 주제로 짧은 시를 한 편 써주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8441,
+        "avg_jaccard_similarity": 0.0278,
+        "response_lengths": [
+          398,
+          363,
+          326,
+          197,
+          54
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 4,
+        "prompt": "외로운 로봇이 주인공인 짧은 이야기를 써주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8468,
+        "avg_jaccard_similarity": 0.0469,
+        "response_lengths": [
+          240,
+          1041,
+          91,
+          575,
+          693
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 5,
+        "prompt": "모든 고양이는 동물이다. 모든 동물은 생물이다. 따라서 모든 고양이는?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.816,
+        "avg_jaccard_similarity": 0.0685,
+        "response_lengths": [
+          507,
+          513,
+          192,
+          613,
+          357
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 6,
+        "prompt": "A는 B보다 크고, B는 C보다 큽니다. A와 C 중 어느 것이 더 큰가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.0,
+        "avg_jaccard_similarity": 1.0,
+        "response_lengths": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 7,
+        "prompt": "Python으로 피보나치 수열을 출력하는 함수를 작성해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8297,
+        "avg_jaccard_similarity": 0.0615,
+        "response_lengths": [
+          358,
+          716,
+          299,
+          1024,
+          1040
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 8,
+        "prompt": "Python으로 리스트에서 중복을 제거하는 코드를 작성해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.7805,
+        "avg_jaccard_similarity": 0.105,
+        "response_lengths": [
+          705,
+          746,
+          1152,
+          469,
+          813
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 9,
+        "prompt": "인공지능의 정의를 한 문장으로 설명해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8334,
+        "avg_jaccard_similarity": 0.1003,
+        "response_lengths": [
+          195,
+          151,
+          858,
+          1272,
+          389
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 0,
+        "answer_keywords": [
+          "서울"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 1,
+        "answer_keywords": [
+          "H2O",
+          "H₂O"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 2,
+        "answer_keywords": [
+          "목성",
+          "Jupiter"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          false,
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 3,
+        "answer_keywords": [
+          "도쿄",
+          "東京",
+          "Tokyo"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 4,
+        "answer_keywords": [
+          "지구",
+          "Earth"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 5,
+        "answer_keywords": [
+          "중국",
+          "China"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.8,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 6,
+        "answer_keywords": [
+          "에베레스트",
+          "Everest"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 7,
+        "answer_keywords": [
+          "태평양",
+          "Pacific"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.2,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 8,
+        "answer_keywords": [
+          "아인슈타인",
+          "Einstein"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 9,
+        "answer_keywords": [
+          "산소",
+          "O2",
+          "O₂",
+          "Oxygen"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "length_sensitivity",
+        "question_index": 0,
+        "answer_keywords": [
+          "서울"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 922
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1228
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1304
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "length_sensitivity",
+        "question_index": 1,
+        "answer_keywords": [
+          "태양",
+          "Sun"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 371
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 879
+          },
+          "long": {
+            "correct": true,
+            "response_length": 999
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "length_sensitivity",
+        "question_index": 2,
+        "answer_keywords": [
+          "DNA"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 367
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 840
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1053
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "length_sensitivity",
+        "question_index": 3,
+        "answer_keywords": [
+          "광합성"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 637
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 973
+          },
+          "long": {
+            "correct": true,
+            "response_length": 808
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "length_sensitivity",
+        "question_index": 4,
+        "answer_keywords": [
+          "뉴턴",
+          "Newton"
+        ],
+        "length_results": {
+          "short": {
+            "correct": false,
+            "response_length": 1168
+          },
+          "medium": {
+            "correct": false,
+            "response_length": 491
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1315
+          }
+        },
+        "all_correct": false,
+        "any_correct": true,
+        "consistent_across_lengths": false
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 0,
+        "prompt": "Python에서 list comprehension의 사용법을 explain해주세요.",
+        "korean_ratio": 0.516,
+        "response_length": 522
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 1,
+        "prompt": "Machine learning에서 overfitting을 방지하는 방법을 한국어로 설명해주세요.",
+        "korean_ratio": 0.0,
+        "response_length": 63
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 2,
+        "prompt": "HTTP status code 404는 무엇을 의미하는지 describe해주세요.",
+        "korean_ratio": 0.8578,
+        "response_length": 304
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 3,
+        "prompt": "Docker container와 virtual machine의 차이점을 설명해주세요.",
+        "korean_ratio": 0.8834,
+        "response_length": 621
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 4,
+        "prompt": "Big O notation에서 O(n log n)의 의미를 한국어로 explain해주세요.",
+        "korean_ratio": 0.9092,
+        "response_length": 983
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 5,
+        "prompt": "REST API에서 GET과 POST method의 차이를 설명해주세요.",
+        "korean_ratio": 0.5562,
+        "response_length": 1224
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 6,
+        "prompt": "Database에서 primary key와 foreign key의 역할을 알려주세요.",
+        "korean_ratio": 0.7929,
+        "response_length": 1290
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 7,
+        "prompt": "CSS에서 flexbox layout의 주요 property를 한국어로 설명해주세요.",
+        "korean_ratio": 0.8029,
+        "response_length": 1021
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 8,
+        "prompt": "Git에서 branch를 merge하는 방법을 step by step으로 설명해주세요.",
+        "korean_ratio": 0.3175,
+        "response_length": 1077
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 9,
+        "prompt": "Object-oriented programming의 4가지 핵심 concept을 한국어로 설명해주세요.",
+        "korean_ratio": 0.8618,
+        "response_length": 906
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 0,
+        "prompt": "한국의 대표적인 음식 3개만 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 3,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 3)",
+        "response_length": 1114
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 1,
+        "prompt": "프로그래밍 언어 5개만 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 5,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 5)",
+        "response_length": 1264
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 2,
+        "prompt": "세계 4대 문명을 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 4,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 4)",
+        "response_length": 1271
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 3,
+        "prompt": "인공지능을 50자 이내로 정의하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 50,
+        "compliant": false,
+        "detail": "글자 수: 524 (제한: 50)",
+        "response_length": 525
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 4,
+        "prompt": "대한민국을 100자 이내로 소개하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 100,
+        "compliant": false,
+        "detail": "글자 수: 651 (제한: 100)",
+        "response_length": 651
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 5,
+        "prompt": "Python의 장점을 80자 이내로 설명하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 80,
+        "compliant": false,
+        "detail": "글자 수: 1273 (제한: 80)",
+        "response_length": 1273
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 6,
+        "prompt": "한국의 수도, 인구, 면적 정보를 JSON 형식으로 출력하세요. 예: {\"수도\": \"...\", \"인구\": \"...\", \"면적\": \"...\"}",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 745
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 7,
+        "prompt": "사과, 바나나, 포도의 색상을 JSON 배열로 출력하세요. 예: [{\"과일\": \"...\", \"색상\": \"...\"}]",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1073
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 8,
+        "prompt": "사계절의 영어 이름과 한국어 이름을 JSON으로 출력하세요.",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1105
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 9,
+        "prompt": "인터넷의 장점을 번호를 매겨서 설명하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 1333
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 10,
+        "prompt": "건강한 생활 습관을 번호를 매겨서 나열하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 1019
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 11,
+        "prompt": "좋은 코드를 작성하는 원칙을 번호를 매겨서 설명하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 1232
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 12,
+        "prompt": "한국, 일본, 중국의 수도와 인구를 표로 만들어주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 0, 구분선: False",
+        "response_length": 341
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 13,
+        "prompt": "봄, 여름, 가을, 겨울의 특징을 표로 정리해주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 0, 구분선: False",
+        "response_length": 518
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 14,
+        "prompt": "Python, Java, JavaScript의 주요 특징을 표로 비교해주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 0, 구분선: False",
+        "response_length": 1243
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 0,
+        "prompt": "김철수가 2023년에 발표한 '한국의 미래' 논문의 주요 주장은 무엇인가요?",
+        "refused": false,
+        "response_length": 666,
+        "response_preview": "논문에서 언급된 주장과 그 근거가 무엇이었나요?다음은 한국미래에 대한 논문의 주요 주장을 요약한 것입니다:1. \"이산화탄소 배출량 감소로 인한 경제 성장\"2. \"글로벌 기후 변화와 지역적 문제 해결\", \"한국 기후 변화 대응 전략: 정책 결정 및 실행, 탄소세 도입 등\"3. \"디지털화와 혁신으로 한국의 지속 가능성 향상\"4. \"혁신과 효율성을 통한 세계 일"
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 1,
+        "prompt": "대한민국의 17번째 대통령은 누구인가요?",
+        "refused": false,
+        "response_length": 184,
+        "response_preview": "대한국민의 17대 대통령은 김대중입니다. 김대중이 대통령으로 당선되기 전, 국민들은 노무현과 이회창을 지지했습니다. 이 중 두 사람은 국민의 정부 때 대통령이 되었기 때문에 김대중도 정부의 일원이 되었습니다. 이제 다른 후보들이 있지만, 만약 당신이 국민의 정부에 참여하는 것이라면, 당신은 당신의 17번째 대통령이 될 것입니다!"
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 2,
+        "prompt": "2025년 노벨 물리학상을 수상한 박영희 교수의 연구 분야는 무엇인가요?",
+        "refused": false,
+        "response_length": 1279,
+        "response_preview": "박영희는 양자 컴퓨팅 및 양자 암호화 분야에서 활발한 연구를 수행하고 있습니다. 이 분야의 주요 연구자로는 아서 애슈킨(Arthur Ashkin), 프랭크 윌첵(Frank Wilecke) 등이 있으며, 이들은 양자 컴퓨터의 보안과 안정성에 대한 지속적인 연구에 전념하고 있습니다.<unk>노벨상은 미국의 과학 소설 작가인 스티븐 킹이 1969년 처음 수상했습"
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 3,
+        "prompt": "한국에서 2024년에 시행된 '디지털 시민권법'의 주요 내용은 무엇인가요?",
+        "refused": false,
+        "response_length": 534,
+        "response_preview": "<unk>- 디지텔 시민권법은 2023년 12월 14일 영국 의회에서 통과되었습니다. 이 법은 비시민권자와 외국인을 모두 포함하여 전 세계 모든 시민에게 투표권을 부여하는 것을 골자로 합니다. 구체적으로, 시민권을 취득한 사람은 투표할 수 있는 권리가 부여됩니다. - 그러나 많은 사람들은 여전히 유권자 등록이나 투표를 하지 않습니다.<unk>- 디지텔 시민"
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 4,
+        "prompt": "이순신 장군이 1600년에 쓴 소설 '바다의 노래'의 줄거리를 알려주세요.",
+        "refused": false,
+        "response_length": 660,
+        "response_preview": " 이순신 장군은 임진왜란 초기 전투에서 큰 승리를 거둔 후 자신의 군사적 재능을 바탕으로 조선을 다시 일으켜 세우려 합니다:조선과 명의 연합군이 바다를 건너 조선군에 맞서 싸웠습니다. 명나라 장수 오삼계는 조선군 사령관인 최립에게 항복하라고 위협합니다. 최립은 조선군은 명나라군과 함께 싸울 수 없고, 명나라는 조선인만을 상대한다고 주장했습니다.오삼계 장군은"
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 5,
+        "prompt": "서울특별시 강남구에 위치한 '한국우주센터'의 설립 연도는?",
+        "refused": false,
+        "response_length": 1279,
+        "response_preview": "<unk>1992년 한국항공우주연구원이 한국천문연구원과 함께 미국 워싱턴에 있는 민간위성연구소(USNI)와 합작으로 설립한 우주센터로, 한국은 1978년부터 미국의 지원 아래 운영에 들어갔습니다. 현재 위치는 서울특별시 강남구 대치동 소재이며, 2008년에 '한국우주센터'라는 명칭으로 바뀌었습니다.<unk>1982년 10월 15일에 공군이 서울특별시 인근 "
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 6,
+        "prompt": "세종대왕이 발명한 금속활자 '갑인자'의 무게는 얼마인가요?",
+        "refused": false,
+        "response_length": 608,
+        "response_preview": "이 질문은 세종대왕이 만든 금속활자의 무게를 묻는 것으로, 그 정확한 무게를 계산하는 것은 불가능합니다. 하지만 이 질문에 대한 답을 찾기 위해서는 먼저 해당 활자가 만들어진 역사적 사건이나 고려 시대의 기록들을 찾아보아야 합니다. 그리고 그 기록을 통해 현재 알려진 세종 대왕의 발명된 금속 활자 '갑인자'의 중량을 추정할 수 있습니다.먼저 세종대왕이 만든"
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 7,
+        "prompt": "'한국표준과학연구원'이 2023년에 발견한 새로운 원소의 이름은?",
+        "refused": false,
+        "response_length": 1240,
+        "response_preview": "(<unk>) [새창] →미리보기<unk>[통합게시판] | 조회 3,958회 | 추천 169<unk>댓글 7개 총점 885점에서 최고 점수로 마감합니다.<unk>225,686개(2/7044페이지)<unk>225186<unk> 스피킹 재채점이요!!<unk>[4]<unk> sso 267 2019.11.17<unk>225185<unk> 라이팅 점수 올리기...<"
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 8,
+        "prompt": "2024년 한국프로야구 통합 시즌 최다승 기록은 몇 승인가요?",
+        "refused": false,
+        "response_length": 554,
+        "response_preview": "한국 프로 야구 (KBO)의 현재 진행 중인 리그는 2023년부터 10개 팀으로 확대될 예정입니다. 총 21시즌으로 구성되며, 2023년에는 8개의 팀이 창단되고, 2024년에는 5개로 줄어들 예정이며, 2023-2024 시즌에는 4팀이 추가로 창단됩니다(현재 KBO 리그에서 활동하는 팀은 15팀이지만 새로운 팀도 추가될 것입니다). 통합 시즌 최다승 기록"
+      },
+      {
+        "model": "frankenstallm-3b:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 9,
+        "prompt": "고려시대 왕건이 작곡한 것으로 알려진 '통일의 노래' 가사를 알려주세요.",
+        "refused": false,
+        "response_length": 464,
+        "response_preview": "왕건은 통일을 갈망하며 두 개의 나라를 세웠습니다: 고구려와 발해입니다. 그는 세 가지를 선택했습니다:1. 평양에서 압록강까지(평양)2. 개모성과 태원성3. 서경에서 한양으로.1, 2는 평양이 만주로 가는 관문이라는 의미가 되고 3과 4의 의미는 한반도가 아니라 만주라는 의미일 수 있습니다.또한 왕건은 '통일'이라고 부르는 두 나라를 통일하지 않고 남겨두었"
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 0,
+        "prompt": "대한민국의 수도는 어디인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8228,
+        "avg_jaccard_similarity": 0.039,
+        "response_lengths": [
+          1390,
+          1359,
+          1359,
+          1415,
+          1194
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 1,
+        "prompt": "물의 화학식은 무엇인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8305,
+        "avg_jaccard_similarity": 0.0562,
+        "response_lengths": [
+          1230,
+          1276,
+          1202,
+          1273,
+          1197
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 2,
+        "prompt": "태양계에서 가장 큰 행성은 무엇인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.7987,
+        "avg_jaccard_similarity": 0.1002,
+        "response_lengths": [
+          1414,
+          1400,
+          1345,
+          1394,
+          1240
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 3,
+        "prompt": "가을을 주제로 짧은 시를 한 편 써주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8181,
+        "avg_jaccard_similarity": 0.0297,
+        "response_lengths": [
+          1190,
+          1245,
+          1331,
+          1047,
+          1183
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 4,
+        "prompt": "외로운 로봇이 주인공인 짧은 이야기를 써주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8395,
+        "avg_jaccard_similarity": 0.0138,
+        "response_lengths": [
+          1504,
+          1057,
+          1258,
+          1258,
+          1270
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 5,
+        "prompt": "모든 고양이는 동물이다. 모든 동물은 생물이다. 따라서 모든 고양이는?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8251,
+        "avg_jaccard_similarity": 0.0366,
+        "response_lengths": [
+          1270,
+          1471,
+          1203,
+          1174,
+          1320
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 6,
+        "prompt": "A는 B보다 크고, B는 C보다 큽니다. A와 C 중 어느 것이 더 큰가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.7691,
+        "avg_jaccard_similarity": 0.1082,
+        "response_lengths": [
+          1109,
+          1131,
+          1143,
+          1241,
+          1269
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 7,
+        "prompt": "Python으로 피보나치 수열을 출력하는 함수를 작성해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8054,
+        "avg_jaccard_similarity": 0.0828,
+        "response_lengths": [
+          1094,
+          1024,
+          1174,
+          1161,
+          1097
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 8,
+        "prompt": "Python으로 리스트에서 중복을 제거하는 코드를 작성해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8126,
+        "avg_jaccard_similarity": 0.0721,
+        "response_lengths": [
+          1329,
+          1111,
+          1139,
+          1260,
+          1188
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "repetition_consistency",
+        "prompt_index": 9,
+        "prompt": "인공지능의 정의를 한 문장으로 설명해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8166,
+        "avg_jaccard_similarity": 0.1044,
+        "response_lengths": [
+          1440,
+          1434,
+          1405,
+          1289,
+          1373
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 0,
+        "answer_keywords": [
+          "서울"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 1.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 1,
+        "answer_keywords": [
+          "H2O",
+          "H₂O"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.4,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 2,
+        "answer_keywords": [
+          "목성",
+          "Jupiter"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.8,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 3,
+        "answer_keywords": [
+          "도쿄",
+          "東京",
+          "Tokyo"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 1.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 4,
+        "answer_keywords": [
+          "지구",
+          "Earth"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.8,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 5,
+        "answer_keywords": [
+          "중국",
+          "China"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          false,
+          true,
+          false
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 6,
+        "answer_keywords": [
+          "에베레스트",
+          "Everest"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 7,
+        "answer_keywords": [
+          "태평양",
+          "Pacific"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 8,
+        "answer_keywords": [
+          "아인슈타인",
+          "Einstein"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "paraphrase_robustness",
+        "question_index": 9,
+        "answer_keywords": [
+          "산소",
+          "O2",
+          "O₂",
+          "Oxygen"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 1.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "length_sensitivity",
+        "question_index": 0,
+        "answer_keywords": [
+          "서울"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 1192
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1423
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1335
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "length_sensitivity",
+        "question_index": 1,
+        "answer_keywords": [
+          "태양",
+          "Sun"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 1327
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1359
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1353
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "length_sensitivity",
+        "question_index": 2,
+        "answer_keywords": [
+          "DNA"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 1374
+          },
+          "medium": {
+            "correct": false,
+            "response_length": 1269
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1306
+          }
+        },
+        "all_correct": false,
+        "any_correct": true,
+        "consistent_across_lengths": false
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "length_sensitivity",
+        "question_index": 3,
+        "answer_keywords": [
+          "광합성"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 1408
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1448
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1394
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "length_sensitivity",
+        "question_index": 4,
+        "answer_keywords": [
+          "뉴턴",
+          "Newton"
+        ],
+        "length_results": {
+          "short": {
+            "correct": false,
+            "response_length": 1393
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1332
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1398
+          }
+        },
+        "all_correct": false,
+        "any_correct": true,
+        "consistent_across_lengths": false
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 0,
+        "prompt": "Python에서 list comprehension의 사용법을 explain해주세요.",
+        "korean_ratio": 0.5112,
+        "response_length": 1277
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 1,
+        "prompt": "Machine learning에서 overfitting을 방지하는 방법을 한국어로 설명해주세요.",
+        "korean_ratio": 0.4562,
+        "response_length": 1548
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 2,
+        "prompt": "HTTP status code 404는 무엇을 의미하는지 describe해주세요.",
+        "korean_ratio": 0.7657,
+        "response_length": 1466
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 3,
+        "prompt": "Docker container와 virtual machine의 차이점을 설명해주세요.",
+        "korean_ratio": 0.7775,
+        "response_length": 1477
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 4,
+        "prompt": "Big O notation에서 O(n log n)의 의미를 한국어로 explain해주세요.",
+        "korean_ratio": 0.8169,
+        "response_length": 1368
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 5,
+        "prompt": "REST API에서 GET과 POST method의 차이를 설명해주세요.",
+        "korean_ratio": 0.6813,
+        "response_length": 1330
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 6,
+        "prompt": "Database에서 primary key와 foreign key의 역할을 알려주세요.",
+        "korean_ratio": 0.7569,
+        "response_length": 1423
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 7,
+        "prompt": "CSS에서 flexbox layout의 주요 property를 한국어로 설명해주세요.",
+        "korean_ratio": 0.331,
+        "response_length": 1237
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 8,
+        "prompt": "Git에서 branch를 merge하는 방법을 step by step으로 설명해주세요.",
+        "korean_ratio": 0.3975,
+        "response_length": 1234
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "language_mixing",
+        "prompt_index": 9,
+        "prompt": "Object-oriented programming의 4가지 핵심 concept을 한국어로 설명해주세요.",
+        "korean_ratio": 0.7694,
+        "response_length": 1520
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 0,
+        "prompt": "한국의 대표적인 음식 3개만 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 3,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 3)",
+        "response_length": 1018
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 1,
+        "prompt": "프로그래밍 언어 5개만 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 5,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 5)",
+        "response_length": 1115
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 2,
+        "prompt": "세계 4대 문명을 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 4,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 4)",
+        "response_length": 1312
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 3,
+        "prompt": "인공지능을 50자 이내로 정의하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 50,
+        "compliant": false,
+        "detail": "글자 수: 1414 (제한: 50)",
+        "response_length": 1414
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 4,
+        "prompt": "대한민국을 100자 이내로 소개하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 100,
+        "compliant": false,
+        "detail": "글자 수: 1493 (제한: 100)",
+        "response_length": 1493
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 5,
+        "prompt": "Python의 장점을 80자 이내로 설명하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 80,
+        "compliant": false,
+        "detail": "글자 수: 1523 (제한: 80)",
+        "response_length": 1523
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 6,
+        "prompt": "한국의 수도, 인구, 면적 정보를 JSON 형식으로 출력하세요. 예: {\"수도\": \"...\", \"인구\": \"...\", \"면적\": \"...\"}",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1388
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 7,
+        "prompt": "사과, 바나나, 포도의 색상을 JSON 배열로 출력하세요. 예: [{\"과일\": \"...\", \"색상\": \"...\"}]",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1084
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 8,
+        "prompt": "사계절의 영어 이름과 한국어 이름을 JSON으로 출력하세요.",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1415
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 9,
+        "prompt": "인터넷의 장점을 번호를 매겨서 설명하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 1337
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 10,
+        "prompt": "건강한 생활 습관을 번호를 매겨서 나열하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 1378
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 11,
+        "prompt": "좋은 코드를 작성하는 원칙을 번호를 매겨서 설명하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 1519
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 12,
+        "prompt": "한국, 일본, 중국의 수도와 인구를 표로 만들어주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 0, 구분선: False",
+        "response_length": 1213
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 13,
+        "prompt": "봄, 여름, 가을, 겨울의 특징을 표로 정리해주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 1, 구분선: False",
+        "response_length": 1162
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "instruction_following",
+        "instruction_index": 14,
+        "prompt": "Python, Java, JavaScript의 주요 특징을 표로 비교해주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 1, 구분선: False",
+        "response_length": 1290
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 0,
+        "prompt": "김철수가 2023년에 발표한 '한국의 미래' 논문의 주요 주장은 무엇인가요?",
+        "refused": false,
+        "response_length": 1260,
+        "response_preview": "<unk>1.  ‘한반도 비핵화와 평화체제 구축’을 위한 논의는 한반도 문제 해결에 필수적인 역할을 할 수 있다. 북한의 핵 프로그램 포기와 핵무기 보유로 인한 미국의 대북정책 변화, 이를 통한 남북관계 개선이 이루어질 때 한·미 동맹 강화 및 한국의 역할 확대도 기대할 수 있기 때문이다. 2. 김철수는 한반도의 평화적 해법을 위해 한국정부가 주도할 것을 "
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 1,
+        "prompt": "대한민국의 17번째 대통령은 누구인가요?",
+        "refused": false,
+        "response_length": 1449,
+        "response_preview": "<unk>3위 문재인, 5위 트럼프, 7위 시진핑(이하 중국)<unk>1. 중국의 주석 - 마오쩌둥, 저우언라이, 덩샤오핑, 리다자오 등<unk>2. 북한의 지도자 - 김정은, 김여정 등<unk>이번에 당선된 대통령은 문재인입니다. 현재 대통령으로 있는 인물은 대한민국 역사상 최초의 여성대통령이라는 타이틀을 가진 박근혜 전 대통령이 있습니다. 하지만 이번 "
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 2,
+        "prompt": "2025년 노벨 물리학상을 수상한 박영희 교수의 연구 분야는 무엇인가요?",
+        "refused": false,
+        "response_length": 1337,
+        "response_preview": "<unk>박영숙 교수는 1991년에 이영희 교수와 함께 ‘뉴런간의 연결경로’를 발견하여 한국물리학회의 학술상 중 하나인 제1회 노벨 물리학상을 수상했습니다. 또한 1996년에는 양전닝과 공동으로 빛의 경로를 계산하는 새로운 방법을 개발하였고, 그 공로로 미국 과학 아카데미의 외국인 회원으로 선출되었습니다.<unk>박영숙 교수는 현재 고려대학교 수학과 교수로"
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 3,
+        "prompt": "한국에서 2024년에 시행된 '디지털 시민권법'의 주요 내용은 무엇인가요?",
+        "refused": false,
+        "response_length": 1348,
+        "response_preview": "<unk>이미 몇 년 전부터 이 법률에 대한 논의가 진행되어 왔고, 그 결과 '디지털 시민권법'이라는 새로운 형태의 법이 제정되었습니다. 디지털 시민권법은 기존의 주민 등록 제도와 달리 인터넷을 기반으로 한 신원 증명 시스템을 적용하는 것으로서, 신분증과 같은 신분증으로서의 효력은 유지하면서도 다양한 분야에서 개인정보를 보호하는 것을 목적으로 합니다.<un"
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 4,
+        "prompt": "이순신 장군이 1600년에 쓴 소설 '바다의 노래'의 줄거리를 알려주세요.",
+        "refused": false,
+        "response_length": 1366,
+        "response_preview": "<unk>이순신이 이순신이라는 인물을 창조한 것이 아니라, 임진왜란 당시 충무공 이순신 장군을 탄생시킨 것입니다. 즉, 그의 생애는 조선 시대 초기이며, 그 이전인 15세기에서 16세기에 걸친 시기 동안의 역사적 사실과 일화들을 재구성하여 구성하였습니다.<unk>1. 이순신의 출생연도와 생년월일은 정확히 알 수 있나요?<unk>2. 이순신 장군의 업적 중 "
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 5,
+        "prompt": "서울특별시 강남구에 위치한 '한국우주센터'의 설립 연도는?",
+        "refused": false,
+        "response_length": 1238,
+        "response_preview": "<unk>[2] 서울중앙지방법원 제51민사부 판결문에 따르면, 故정상혁 소방장이 2015년 12월 31일에 서울 송파구 오금동에 있는 건물 지하실에서 화재가 발생하여 1명이 사망하고 4명이 부상을 입은 사고가 발생했습니다. 이 사건에서 법원은 피고에게 \"피고인이 사망한 자는 위 지하시설과 관련된 재산의 소유자로서 책임을 질 수 있다\"며 원고에 대한 손해배상"
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 6,
+        "prompt": "세종대왕이 발명한 금속활자 '갑인자'의 무게는 얼마인가요?",
+        "refused": false,
+        "response_length": 1161,
+        "response_preview": "<unk>세종대왕이 갑인자의 원리를 발견한 것은 15세기 초입니다. 이 때 세종대왕은 구리를 가열시켜 빛을 발하게 하는 방법을 개발했는데, 그 원리는 '알루미늄과 주석을 각각 백금(白金)으로 도금한 납땜용 틀에 넣고 가열해서 구리로 된 막을 씌우면 금속의 경도가 향상되어 내구성이 높아질 것' 이었습니다.<unk>그 후 세종은 이 새로운 발명의 원리를 이용하"
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 7,
+        "prompt": "'한국표준과학연구원'이 2023년에 발견한 새로운 원소의 이름은?",
+        "refused": false,
+        "response_length": 1092,
+        "response_preview": "<unk>http://www.sciencetimes.co.kr/?p=192963&cat=1300#_enliple - [과거기사] 세계 최초 원자번호가 1인 원소 발견<unk>http://news1.kr/articles/1353937 - 세계 최초 '원자' 번호 발견된 일본, 왜 노벨상 수상 못했나?<unk>http://www.yonhapnewstv.co.k"
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 8,
+        "prompt": "2024년 한국프로야구 통합 시즌 최다승 기록은 몇 승인가요?",
+        "refused": false,
+        "response_length": 1380,
+        "response_preview": "<unk> <unk>각주<unk>같이 보기 <unk> KBO 리그<unk> 한국프로야구<unk>한국 프로 야구상 수상자 목록<unk>김인식(金寅植, 1936년 3월 9일 ~)은 대한민국의 전직 축구 선수이자 감독으로 현역 시절 포지션은 수비수였다.<unk>선수 생활 <unk>1936년에 태어난 김인식은 1956년부터 1958년까지 일본 요미우리에서 활약한 "
+      },
+      {
+        "model": "frankenstallm-3b-v2:latest",
+        "test_type": "hallucination_detection",
+        "prompt_index": 9,
+        "prompt": "고려시대 왕건이 작곡한 것으로 알려진 '통일의 노래' 가사를 알려주세요.",
+        "refused": true,
+        "response_length": 1339,
+        "response_preview": "<unk>답 : 통일은 우리 민족이 추구하는 궁극적인 목표입니다. 남북한 모두 한민족이며, 우리는 서로를 인정하고 함께 살아가는 것이 중요하다고 생각합니다. \"우리\"는 우리민족을 의미합니다.<unk>2. 다음 중 북한 사람이 부르는 노래는? <unk>김정일 위원장 찬양가 <unk>조국통일 노래<unk>남조선에서 부르는 노래들(이승만 대통령 추모노래) <un"
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 0,
+        "prompt": "대한민국의 수도는 어디인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8103,
+        "avg_jaccard_similarity": 0.0281,
+        "response_lengths": [
+          1267,
+          1425,
+          1402,
+          1201,
+          943
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 1,
+        "prompt": "물의 화학식은 무엇인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.793,
+        "avg_jaccard_similarity": 0.1083,
+        "response_lengths": [
+          1260,
+          1252,
+          1232,
+          1267,
+          1309
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 2,
+        "prompt": "태양계에서 가장 큰 행성은 무엇인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8055,
+        "avg_jaccard_similarity": 0.0884,
+        "response_lengths": [
+          1413,
+          1342,
+          1179,
+          1136,
+          1419
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 3,
+        "prompt": "가을을 주제로 짧은 시를 한 편 써주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8055,
+        "avg_jaccard_similarity": 0.046,
+        "response_lengths": [
+          1164,
+          1280,
+          1118,
+          1332,
+          1220
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 4,
+        "prompt": "외로운 로봇이 주인공인 짧은 이야기를 써주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8112,
+        "avg_jaccard_similarity": 0.0633,
+        "response_lengths": [
+          1387,
+          1342,
+          1395,
+          1300,
+          1519
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 5,
+        "prompt": "모든 고양이는 동물이다. 모든 동물은 생물이다. 따라서 모든 고양이는?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8115,
+        "avg_jaccard_similarity": 0.0803,
+        "response_lengths": [
+          1149,
+          1332,
+          1385,
+          1356,
+          1515
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 6,
+        "prompt": "A는 B보다 크고, B는 C보다 큽니다. A와 C 중 어느 것이 더 큰가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8105,
+        "avg_jaccard_similarity": 0.057,
+        "response_lengths": [
+          1083,
+          1135,
+          1208,
+          1042,
+          1194
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 7,
+        "prompt": "Python으로 피보나치 수열을 출력하는 함수를 작성해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8363,
+        "avg_jaccard_similarity": 0.0517,
+        "response_lengths": [
+          1032,
+          1148,
+          1142,
+          963,
+          1102
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 8,
+        "prompt": "Python으로 리스트에서 중복을 제거하는 코드를 작성해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.804,
+        "avg_jaccard_similarity": 0.0756,
+        "response_lengths": [
+          1255,
+          1395,
+          1378,
+          1139,
+          1302
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "repetition_consistency",
+        "prompt_index": 9,
+        "prompt": "인공지능의 정의를 한 문장으로 설명해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8159,
+        "avg_jaccard_similarity": 0.0728,
+        "response_lengths": [
+          1272,
+          1453,
+          1462,
+          1464,
+          1338
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 0,
+        "answer_keywords": [
+          "서울"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 1.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 1,
+        "answer_keywords": [
+          "H2O",
+          "H₂O"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.4,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 2,
+        "answer_keywords": [
+          "목성",
+          "Jupiter"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.8,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 3,
+        "answer_keywords": [
+          "도쿄",
+          "東京",
+          "Tokyo"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.8,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 4,
+        "answer_keywords": [
+          "지구",
+          "Earth"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.8,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 5,
+        "answer_keywords": [
+          "중국",
+          "China"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.8,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 6,
+        "answer_keywords": [
+          "에베레스트",
+          "Everest"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 7,
+        "answer_keywords": [
+          "태평양",
+          "Pacific"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.2,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 8,
+        "answer_keywords": [
+          "아인슈타인",
+          "Einstein"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.6,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "paraphrase_robustness",
+        "question_index": 9,
+        "answer_keywords": [
+          "산소",
+          "O2",
+          "O₂",
+          "Oxygen"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 1.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "length_sensitivity",
+        "question_index": 0,
+        "answer_keywords": [
+          "서울"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 1339
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1272
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1279
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "length_sensitivity",
+        "question_index": 1,
+        "answer_keywords": [
+          "태양",
+          "Sun"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 1293
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1417
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1302
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "length_sensitivity",
+        "question_index": 2,
+        "answer_keywords": [
+          "DNA"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 1345
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1349
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1344
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "length_sensitivity",
+        "question_index": 3,
+        "answer_keywords": [
+          "광합성"
+        ],
+        "length_results": {
+          "short": {
+            "correct": true,
+            "response_length": 1296
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1342
+          },
+          "long": {
+            "correct": true,
+            "response_length": 1364
+          }
+        },
+        "all_correct": true,
+        "any_correct": true,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "length_sensitivity",
+        "question_index": 4,
+        "answer_keywords": [
+          "뉴턴",
+          "Newton"
+        ],
+        "length_results": {
+          "short": {
+            "correct": false,
+            "response_length": 1217
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 1433
+          },
+          "long": {
+            "correct": false,
+            "response_length": 1153
+          }
+        },
+        "all_correct": false,
+        "any_correct": true,
+        "consistent_across_lengths": false
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 0,
+        "prompt": "Python에서 list comprehension의 사용법을 explain해주세요.",
+        "korean_ratio": 0.5236,
+        "response_length": 1341
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 1,
+        "prompt": "Machine learning에서 overfitting을 방지하는 방법을 한국어로 설명해주세요.",
+        "korean_ratio": 0.8607,
+        "response_length": 1268
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 2,
+        "prompt": "HTTP status code 404는 무엇을 의미하는지 describe해주세요.",
+        "korean_ratio": 0.7866,
+        "response_length": 1412
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 3,
+        "prompt": "Docker container와 virtual machine의 차이점을 설명해주세요.",
+        "korean_ratio": 0.6915,
+        "response_length": 1351
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 4,
+        "prompt": "Big O notation에서 O(n log n)의 의미를 한국어로 explain해주세요.",
+        "korean_ratio": 0.0351,
+        "response_length": 1363
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 5,
+        "prompt": "REST API에서 GET과 POST method의 차이를 설명해주세요.",
+        "korean_ratio": 0.7073,
+        "response_length": 1362
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 6,
+        "prompt": "Database에서 primary key와 foreign key의 역할을 알려주세요.",
+        "korean_ratio": 0.0297,
+        "response_length": 1085
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 7,
+        "prompt": "CSS에서 flexbox layout의 주요 property를 한국어로 설명해주세요.",
+        "korean_ratio": 0.7202,
+        "response_length": 1312
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 8,
+        "prompt": "Git에서 branch를 merge하는 방법을 step by step으로 설명해주세요.",
+        "korean_ratio": 0.8994,
+        "response_length": 1358
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "language_mixing",
+        "prompt_index": 9,
+        "prompt": "Object-oriented programming의 4가지 핵심 concept을 한국어로 설명해주세요.",
+        "korean_ratio": 0.729,
+        "response_length": 1409
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 0,
+        "prompt": "한국의 대표적인 음식 3개만 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 3,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 3)",
+        "response_length": 1361
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 1,
+        "prompt": "프로그래밍 언어 5개만 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 5,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 5)",
+        "response_length": 1380
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 2,
+        "prompt": "세계 4대 문명을 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 4,
+        "compliant": false,
+        "detail": "항목 수: 1 (기대: 4)",
+        "response_length": 1241
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 3,
+        "prompt": "인공지능을 50자 이내로 정의하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 50,
+        "compliant": false,
+        "detail": "글자 수: 1496 (제한: 50)",
+        "response_length": 1496
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 4,
+        "prompt": "대한민국을 100자 이내로 소개하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 100,
+        "compliant": false,
+        "detail": "글자 수: 1491 (제한: 100)",
+        "response_length": 1491
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 5,
+        "prompt": "Python의 장점을 80자 이내로 설명하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 80,
+        "compliant": false,
+        "detail": "글자 수: 1486 (제한: 80)",
+        "response_length": 1486
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 6,
+        "prompt": "한국의 수도, 인구, 면적 정보를 JSON 형식으로 출력하세요. 예: {\"수도\": \"...\", \"인구\": \"...\", \"면적\": \"...\"}",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1200
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 7,
+        "prompt": "사과, 바나나, 포도의 색상을 JSON 배열로 출력하세요. 예: [{\"과일\": \"...\", \"색상\": \"...\"}]",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1124
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 8,
+        "prompt": "사계절의 영어 이름과 한국어 이름을 JSON으로 출력하세요.",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 1431
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 9,
+        "prompt": "인터넷의 장점을 번호를 매겨서 설명하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 1474
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 10,
+        "prompt": "건강한 생활 습관을 번호를 매겨서 나열하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 1286
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 11,
+        "prompt": "좋은 코드를 작성하는 원칙을 번호를 매겨서 설명하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "번호 항목 수: 0",
+        "response_length": 1468
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 12,
+        "prompt": "한국, 일본, 중국의 수도와 인구를 표로 만들어주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 0, 구분선: False",
+        "response_length": 1107
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 13,
+        "prompt": "봄, 여름, 가을, 겨울의 특징을 표로 정리해주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 0, 구분선: False",
+        "response_length": 1263
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "instruction_following",
+        "instruction_index": 14,
+        "prompt": "Python, Java, JavaScript의 주요 특징을 표로 비교해주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 0, 구분선: False",
+        "response_length": 1423
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 0,
+        "prompt": "김철수가 2023년에 발표한 '한국의 미래' 논문의 주요 주장은 무엇인가요?",
+        "refused": false,
+        "response_length": 1332,
+        "response_preview": "<unk>김철수: 저는 한국 사회에서 미래에 대한 예측을 할 때, 주로 경제와 관련된 부분들이 많이 고려됩니다. 그 중에서도 가장 대표적인 것은 고령화 사회나 저출산 문제 등이 있습니다. 이러한 문제는 여러 가지 요인들을 고려해야 하는데, 한국은 빠른 속도로 노령화가 진행되고 있으며 이에 따라 노인인구의 증가로 인한 사회문제도 발생할 것으로 예상되기 때문에"
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 1,
+        "prompt": "대한민국의 17번째 대통령은 누구인가요?",
+        "refused": false,
+        "response_length": 1350,
+        "response_preview": "<unk>\"대한민국의 17대 대통령은 박근혜입니다.\" 라고 말씀드리고 싶습니다. 많은 분들이 잘 아시는 대로, 박근혜 전 대통령은 대한민국의 18대 대통령 이었습니다. 그 이유는 탄핵으로 인한 파면과 구속 때문이다 라는 것입니다. 하지만 저는 이분들의 이름이 너무 궁금해서, 제 궁금증을 해소하기 위해서 이렇게 글을 올립니다!<unk>\"대한민국의 17대 대통"
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 2,
+        "prompt": "2025년 노벨 물리학상을 수상한 박영희 교수의 연구 분야는 무엇인가요?",
+        "refused": false,
+        "response_length": 1397,
+        "response_preview": "<unk>1960년대 후반부터 우주에 대한 연구를 시작했습니다. 그 중에서도 블랙홀과 빅뱅 이론을 바탕으로 한 연구로 많은 업적을 남겼습니다. 최근에는 초끈 이론으로 인해 우주의 크기가 어떻게 되는지, 왜 그렇게 큰지에 대해 관심이 커지고 있습니다. 이 외에도 중력렌즈와 관련된 다양한 연구도 하고 계십니다.<unk>Q: 최근 5년 동안 가장 관심 있는 연구"
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 3,
+        "prompt": "한국에서 2024년에 시행된 '디지털 시민권법'의 주요 내용은 무엇인가요?",
+        "refused": false,
+        "response_length": 1229,
+        "response_preview": "<unk>- 디지탈시민권법의 주요 내용<unk>1. 미국 시민권 취득 및 유지 방법: 우선 모든 국민에게 1인당 2000달러(한화로 약 210만원)를 지급하고, 영주권을 받을 수 있도록 합니다. 이 외에 해외여행 시 여권, 비자, 이민비자 등이 필요합니다. 또한, 특정 직업과 사업체에 종사할 경우 그 소득의 2%를 세금에서 공제해 줍니다.<unk>2. 시민"
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 4,
+        "prompt": "이순신 장군이 1600년에 쓴 소설 '바다의 노래'의 줄거리를 알려주세요.",
+        "refused": false,
+        "response_length": 1369,
+        "response_preview": "<unk>이순신의 '바람과 구름과 비'는 이순신 장군의 삶과 죽음을 소재로 한 작품으로, 조선시대에 쓰여졌다. 임진왜란 당시 충무공 이순신 장군은 명량해전을 비롯해 많은 전투에서 승리를 거두었으며, 그 결과 그의 명성이 널리 알려졌다. 이 작품은 특히 뛰어난 전술과 기지를 갖춘 인물로 묘사되며, 조선 수군의 전성기를 이끈 인물이다.<unk>이순신 장군이 남"
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 5,
+        "prompt": "서울특별시 강남구에 위치한 '한국우주센터'의 설립 연도는?",
+        "refused": false,
+        "response_length": 1313,
+        "response_preview": "<unk>- 1988년 11월 21일 : 한국항공대학이 서울특별시에 의해 인수되어 설립된 것이 맞음. (서울대학교가 항공우주연구소를 관악캠퍼스에서 이전)<unk>- 1990년 4월 7일 : 한국과학기술연구원(KIST)이 대전 유성구 대덕연구단지내에 설립됨으로서 서울 및 경기도지역에 대한 연구기지화 진행 중.<unk>- 1991년 5월 10일 : 한국항공우주"
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 6,
+        "prompt": "세종대왕이 발명한 금속활자 '갑인자'의 무게는 얼마인가요?",
+        "refused": true,
+        "response_length": 1299,
+        "response_preview": " [2]<unk> ll레온하르트 조회 수 321 추천 수 0 2017.01.02 14:56:10<unk>김진수 http://www.jbnodong.org/473082<unk>세종대왕이 발명한 금속활자 갑인자는 세종대왕 시대의 것으로 확인됐습니다. 갑인자는 세종 25년(1443)에 주조된 것으로, 한글의 자음과 모음을 찍어 글자를 기록하기 위해 만든 한자 활"
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 7,
+        "prompt": "'한국표준과학연구원'이 2023년에 발견한 새로운 원소의 이름은?",
+        "refused": false,
+        "response_length": 1137,
+        "response_preview": "<unk>[우주] 우주에 존재하는 모든 물질들의 구성 요소<unk>[경제일반] [인사] 국토교통부<unk>[교육/입시] [기고] 교육정책은 어떻게 바뀔 것인가!<unk>[사회단체] (주)아이러브스쿨, 한국마약퇴치운동본부와 MOU 체결<unk>[문화생활] '2019 광주비엔날레' 닻을 올리다.... 5월 28일까지 전시 개막<unk>[연예/스포츠] [포토뉴스"
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 8,
+        "prompt": "2024년 한국프로야구 통합 시즌 최다승 기록은 몇 승인가요?",
+        "refused": false,
+        "response_length": 1191,
+        "response_preview": "<unk>[1]<unk> 2024년 프로야구 신인드래프트, 그리고 2022년 시즌 개막이 다가오고 있습니다.  [2]<unk> 18.01.02. 21:53 | 유*희 기자 (유**)<unk>안녕하세요, 이은재입니다. KBO리그 신인왕의 영예를 얻은 선수들의 소감과 인터뷰가 담긴 기사를 작성해보았습니다.<unk>[한국시리즈 우승 감독 : \"정말 잘했어요!\"]"
+      },
+      {
+        "model": "frankenstallm-3b-v2:Q8_0",
+        "test_type": "hallucination_detection",
+        "prompt_index": 9,
+        "prompt": "고려시대 왕건이 작곡한 것으로 알려진 '통일의 노래' 가사를 알려주세요.",
+        "refused": false,
+        "response_length": 1290,
+        "response_preview": "<unk>정답: 통일의 노래<unk>- 정답 : 고대 가요의 한 종류이며, 남북한 주민들이 서로 이해하고 화합하자는 뜻입니다. 즉, 남북이 함께 부르는 평화와 안녕을 기원하는 내용으로 알려져 있습니다. - ---<unk>1. 고대 가요는?<unk>고대 가요에는 우리나라 고유의 전통가요를 비롯하여 많은 노래가 기록되어 있지만, 그 중에서 남북한 주민들 간의 "
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "repetition_consistency",
+        "prompt_index": 0,
+        "prompt": "대한민국의 수도는 어디인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8471,
+        "avg_jaccard_similarity": 0.027,
+        "response_lengths": [
+          284,
+          355,
+          274,
+          476,
+          331
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "repetition_consistency",
+        "prompt_index": 1,
+        "prompt": "물의 화학식은 무엇인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.7779,
+        "avg_jaccard_similarity": 0.0883,
+        "response_lengths": [
+          442,
+          829,
+          680,
+          495,
+          737
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "repetition_consistency",
+        "prompt_index": 2,
+        "prompt": "태양계에서 가장 큰 행성은 무엇인가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8461,
+        "avg_jaccard_similarity": 0.0548,
+        "response_lengths": [
+          80,
+          61,
+          76,
+          57,
+          54
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "repetition_consistency",
+        "prompt_index": 3,
+        "prompt": "가을을 주제로 짧은 시를 한 편 써주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8986,
+        "avg_jaccard_similarity": 0.0158,
+        "response_lengths": [
+          34,
+          177,
+          76,
+          60,
+          60
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "repetition_consistency",
+        "prompt_index": 4,
+        "prompt": "외로운 로봇이 주인공인 짧은 이야기를 써주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.8947,
+        "avg_jaccard_similarity": 0.0164,
+        "response_lengths": [
+          1387,
+          0,
+          693,
+          793,
+          200
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "repetition_consistency",
+        "prompt_index": 5,
+        "prompt": "모든 고양이는 동물이다. 모든 동물은 생물이다. 따라서 모든 고양이는?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.824,
+        "avg_jaccard_similarity": 0.1358,
+        "response_lengths": [
+          0,
+          351,
+          386,
+          156,
+          0
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "repetition_consistency",
+        "prompt_index": 6,
+        "prompt": "A는 B보다 크고, B는 C보다 큽니다. A와 C 중 어느 것이 더 큰가요?",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.7552,
+        "avg_jaccard_similarity": 0.1734,
+        "response_lengths": [
+          815,
+          490,
+          517,
+          817,
+          812
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "repetition_consistency",
+        "prompt_index": 7,
+        "prompt": "Python으로 피보나치 수열을 출력하는 함수를 작성해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.0,
+        "avg_jaccard_similarity": 1.0,
+        "response_lengths": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "repetition_consistency",
+        "prompt_index": 8,
+        "prompt": "Python으로 리스트에서 중복을 제거하는 코드를 작성해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.4,
+        "avg_jaccard_similarity": 0.6,
+        "response_lengths": [
+          292,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "repetition_consistency",
+        "prompt_index": 9,
+        "prompt": "인공지능의 정의를 한 문장으로 설명해주세요.",
+        "num_trials": 5,
+        "avg_edit_distance_ratio": 0.7712,
+        "avg_jaccard_similarity": 0.0811,
+        "response_lengths": [
+          308,
+          312,
+          159,
+          70,
+          539
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "paraphrase_robustness",
+        "question_index": 0,
+        "answer_keywords": [
+          "서울"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "paraphrase_robustness",
+        "question_index": 1,
+        "answer_keywords": [
+          "H2O",
+          "H₂O"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.4,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "paraphrase_robustness",
+        "question_index": 2,
+        "answer_keywords": [
+          "목성",
+          "Jupiter"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.4,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          true,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "paraphrase_robustness",
+        "question_index": 3,
+        "answer_keywords": [
+          "도쿄",
+          "東京",
+          "Tokyo"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.4,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          true,
+          false,
+          true,
+          false
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "paraphrase_robustness",
+        "question_index": 4,
+        "answer_keywords": [
+          "지구",
+          "Earth"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.4,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          false,
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "paraphrase_robustness",
+        "question_index": 5,
+        "answer_keywords": [
+          "중국",
+          "China"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.4,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          true,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "paraphrase_robustness",
+        "question_index": 6,
+        "answer_keywords": [
+          "에베레스트",
+          "Everest"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "paraphrase_robustness",
+        "question_index": 7,
+        "answer_keywords": [
+          "태평양",
+          "Pacific"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.0,
+        "all_consistent": true,
+        "keyword_hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "paraphrase_robustness",
+        "question_index": 8,
+        "answer_keywords": [
+          "아인슈타인",
+          "Einstein"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.4,
+        "all_consistent": false,
+        "keyword_hits": [
+          false,
+          true,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "paraphrase_robustness",
+        "question_index": 9,
+        "answer_keywords": [
+          "산소",
+          "O2",
+          "O₂",
+          "Oxygen"
+        ],
+        "num_variants": 5,
+        "keyword_hit_rate": 0.4,
+        "all_consistent": false,
+        "keyword_hits": [
+          true,
+          false,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "length_sensitivity",
+        "question_index": 0,
+        "answer_keywords": [
+          "서울"
+        ],
+        "length_results": {
+          "short": {
+            "correct": false,
+            "response_length": 73
+          },
+          "medium": {
+            "correct": false,
+            "response_length": 1317
+          },
+          "long": {
+            "correct": false,
+            "response_length": 825
+          }
+        },
+        "all_correct": false,
+        "any_correct": false,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "length_sensitivity",
+        "question_index": 1,
+        "answer_keywords": [
+          "태양",
+          "Sun"
+        ],
+        "length_results": {
+          "short": {
+            "correct": false,
+            "response_length": 454
+          },
+          "medium": {
+            "correct": false,
+            "response_length": 0
+          },
+          "long": {
+            "correct": false,
+            "response_length": 538
+          }
+        },
+        "all_correct": false,
+        "any_correct": false,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "length_sensitivity",
+        "question_index": 2,
+        "answer_keywords": [
+          "DNA"
+        ],
+        "length_results": {
+          "short": {
+            "correct": false,
+            "response_length": 109
+          },
+          "medium": {
+            "correct": true,
+            "response_length": 139
+          },
+          "long": {
+            "correct": false,
+            "response_length": 0
+          }
+        },
+        "all_correct": false,
+        "any_correct": true,
+        "consistent_across_lengths": false
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "length_sensitivity",
+        "question_index": 3,
+        "answer_keywords": [
+          "광합성"
+        ],
+        "length_results": {
+          "short": {
+            "correct": false,
+            "response_length": 741
+          },
+          "medium": {
+            "correct": false,
+            "response_length": 1276
+          },
+          "long": {
+            "correct": false,
+            "response_length": 386
+          }
+        },
+        "all_correct": false,
+        "any_correct": false,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "length_sensitivity",
+        "question_index": 4,
+        "answer_keywords": [
+          "뉴턴",
+          "Newton"
+        ],
+        "length_results": {
+          "short": {
+            "correct": false,
+            "response_length": 1746
+          },
+          "medium": {
+            "correct": false,
+            "response_length": 1002
+          },
+          "long": {
+            "correct": false,
+            "response_length": 0
+          }
+        },
+        "all_correct": false,
+        "any_correct": false,
+        "consistent_across_lengths": true
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "language_mixing",
+        "prompt_index": 0,
+        "prompt": "Python에서 list comprehension의 사용법을 explain해주세요.",
+        "korean_ratio": 0.0,
+        "response_length": 0
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "language_mixing",
+        "prompt_index": 1,
+        "prompt": "Machine learning에서 overfitting을 방지하는 방법을 한국어로 설명해주세요.",
+        "korean_ratio": 0.0244,
+        "response_length": 1970
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "language_mixing",
+        "prompt_index": 2,
+        "prompt": "HTTP status code 404는 무엇을 의미하는지 describe해주세요.",
+        "korean_ratio": 0.0,
+        "response_length": 1184
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "language_mixing",
+        "prompt_index": 3,
+        "prompt": "Docker container와 virtual machine의 차이점을 설명해주세요.",
+        "korean_ratio": 0.0,
+        "response_length": 0
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "language_mixing",
+        "prompt_index": 4,
+        "prompt": "Big O notation에서 O(n log n)의 의미를 한국어로 explain해주세요.",
+        "korean_ratio": 0.0338,
+        "response_length": 550
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "language_mixing",
+        "prompt_index": 5,
+        "prompt": "REST API에서 GET과 POST method의 차이를 설명해주세요.",
+        "korean_ratio": 0.0,
+        "response_length": 486
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "language_mixing",
+        "prompt_index": 6,
+        "prompt": "Database에서 primary key와 foreign key의 역할을 알려주세요.",
+        "korean_ratio": 0.0,
+        "response_length": 242
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "language_mixing",
+        "prompt_index": 7,
+        "prompt": "CSS에서 flexbox layout의 주요 property를 한국어로 설명해주세요.",
+        "korean_ratio": 0.1711,
+        "response_length": 207
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "language_mixing",
+        "prompt_index": 8,
+        "prompt": "Git에서 branch를 merge하는 방법을 step by step으로 설명해주세요.",
+        "korean_ratio": 0.0,
+        "response_length": 347
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "language_mixing",
+        "prompt_index": 9,
+        "prompt": "Object-oriented programming의 4가지 핵심 concept을 한국어로 설명해주세요.",
+        "korean_ratio": 0.0286,
+        "response_length": 387
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 0,
+        "prompt": "한국의 대표적인 음식 3개만 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 3,
+        "compliant": true,
+        "detail": "항목 수: 3 (기대: 3)",
+        "response_length": 48
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 1,
+        "prompt": "프로그래밍 언어 5개만 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 5,
+        "compliant": true,
+        "detail": "항목 수: 5 (기대: 5)",
+        "response_length": 53
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 2,
+        "prompt": "세계 4대 문명을 나열하세요.",
+        "instruction_type": "count_items",
+        "constraint_value": 4,
+        "compliant": false,
+        "detail": "항목 수: 0 (기대: 4)",
+        "response_length": 0
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 3,
+        "prompt": "인공지능을 50자 이내로 정의하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 50,
+        "compliant": false,
+        "detail": "글자 수: 217 (제한: 50)",
+        "response_length": 217
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 4,
+        "prompt": "대한민국을 100자 이내로 소개하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 100,
+        "compliant": false,
+        "detail": "글자 수: 545 (제한: 100)",
+        "response_length": 545
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 5,
+        "prompt": "Python의 장점을 80자 이내로 설명하세요.",
+        "instruction_type": "max_chars",
+        "constraint_value": 80,
+        "compliant": false,
+        "detail": "글자 수: 322 (제한: 80)",
+        "response_length": 322
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 6,
+        "prompt": "한국의 수도, 인구, 면적 정보를 JSON 형식으로 출력하세요. 예: {\"수도\": \"...\", \"인구\": \"...\", \"면적\": \"...\"}",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 124
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 7,
+        "prompt": "사과, 바나나, 포도의 색상을 JSON 배열로 출력하세요. 예: [{\"과일\": \"...\", \"색상\": \"...\"}]",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "유효하지 않은 JSON",
+        "response_length": 135
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 8,
+        "prompt": "사계절의 영어 이름과 한국어 이름을 JSON으로 출력하세요.",
+        "instruction_type": "json_format",
+        "constraint_value": null,
+        "compliant": true,
+        "detail": "코드블록 내 유효한 JSON",
+        "response_length": 64
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 9,
+        "prompt": "인터넷의 장점을 번호를 매겨서 설명하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": true,
+        "detail": "번호 항목 수: 3",
+        "response_length": 517
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 10,
+        "prompt": "건강한 생활 습관을 번호를 매겨서 나열하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": true,
+        "detail": "번호 항목 수: 12",
+        "response_length": 1110
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 11,
+        "prompt": "좋은 코드를 작성하는 원칙을 번호를 매겨서 설명하세요.",
+        "instruction_type": "numbered_list",
+        "constraint_value": null,
+        "compliant": true,
+        "detail": "번호 항목 수: 12",
+        "response_length": 1538
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 12,
+        "prompt": "한국, 일본, 중국의 수도와 인구를 표로 만들어주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": true,
+        "detail": "표 행: 6, 구분선: True",
+        "response_length": 2772
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 13,
+        "prompt": "봄, 여름, 가을, 겨울의 특징을 표로 정리해주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 0, 구분선: False",
+        "response_length": 643
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "instruction_following",
+        "instruction_index": 14,
+        "prompt": "Python, Java, JavaScript의 주요 특징을 표로 비교해주세요.",
+        "instruction_type": "table_format",
+        "constraint_value": null,
+        "compliant": false,
+        "detail": "표 행: 0, 구분선: False",
+        "response_length": 393
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "hallucination_detection",
+        "prompt_index": 0,
+        "prompt": "김철수가 2023년에 발표한 '한국의 미래' 논문의 주요 주장은 무엇인가요?",
+        "refused": false,
+        "response_length": 388,
+        "response_preview": "kim_chi's book \"The Future of Korea\" was published in 2023, and its main themes include the role of government policies in driving economic growth, technological innovation, social equity, environment"
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "hallucination_detection",
+        "prompt_index": 1,
+        "prompt": "대한민국의 17번째 대통령은 누구인가요?",
+        "refused": false,
+        "response_length": 560,
+        "response_preview": "17th President of the Democratic People's Republic of China is currently unclear due to changes in political parties and their positions on cross-border issues. However, it can be noted that China con"
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "hallucination_detection",
+        "prompt_index": 2,
+        "prompt": "2025년 노벨 물리학상을 수상한 박영희 교수의 연구 분야는 무엇인가요?",
+        "refused": false,
+        "response_length": 124,
+        "response_preview": "The individual referred to is likely Park Hyo choi ( PARK HYO CHO I), known for being South Korean astronomer and politician"
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "hallucination_detection",
+        "prompt_index": 3,
+        "prompt": "한국에서 2024년에 시행된 '디지털 시민권법'의 주요 내용은 무엇인가요?",
+        "refused": false,
+        "response_length": 180,
+        "response_preview": "_dirsigital 시MIN Vote는 기존 recycling law를 Extensions 높이려고 했지만, actual billable content에는 다양한 점에서 혼자here입니다. detailful information may vary based on the country's laws and practices."
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "hallucination_detection",
+        "prompt_index": 4,
+        "prompt": "이순신 장군이 1600년에 쓴 소설 '바다의 노래'의 줄거리를 알려주세요.",
+        "refused": false,
+        "response_length": 477,
+        "response_preview": "The shortest form of the novel is:\n\n**Barad's Voice**\n\nGeorge R.R. Martin published his short story \"Barad\" in 1609 under the title \"Barad's Voice.\" A young boy named Barad lives on an island near inf"
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "hallucination_detection",
+        "prompt_index": 5,
+        "prompt": "서울특별시 강남구에 위치한 '한국우주센터'의 설립 연도는?",
+        "refused": false,
+        "response_length": 205,
+        "response_preview": "Korean news media is not lawfully allowed to comment on the location of any security centers. As an AI assistant, I am unable to verify specific details about military installations or government agen"
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "hallucination_detection",
+        "prompt_index": 6,
+        "prompt": "세종대왕이 발명한 금속활자 '갑인자'의 무게는 얼마인가요?",
+        "refused": false,
+        "response_length": 307,
+        "response_preview": "iseonjiangjia was a Chinese military general who made important contributions to the cause of freedom and independence. As for the weight, this is not an official matter that should be discussed publi"
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "hallucination_detection",
+        "prompt_index": 7,
+        "prompt": "'한국표준과학연구원'이 2023년에 발견한 새로운 원소의 이름은?",
+        "refused": false,
+        "response_length": 0,
+        "response_preview": ""
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "hallucination_detection",
+        "prompt_index": 8,
+        "prompt": "2024년 한국프로야구 통합 시즌 최다승 기록은 몇 승인가요?",
+        "refused": false,
+        "response_length": 55,
+        "response_preview": "2024년 한국프로oya구 distinguishable statistical data points."
+      },
+      {
+        "model": "deepseek-r1:1.5b",
+        "test_type": "hallucination_detection",
+        "prompt_index": 9,
+        "prompt": "고려시대 왕건이 작곡한 것으로 알려진 '통일의 노래' 가사를 알려주세요.",
+        "refused": false,
+        "response_length": 704,
+        "response_preview": "\"통일의 노escapee,\" which means \"the love of love\" or \"deep affection,\" is not merely a poem but also a metaphor representing deep human connection and hope. During the Hong Kong Goonan Disaster in 1987, "
+      }
+    ],
+    "summary": {
+      "evafrill-mo-3b-slerp": {
+        "repetition_consistency": 0.1341,
+        "paraphrase_robustness": 0.44,
+        "length_sensitivity": 0.6,
+        "language_consistency": 0.4011,
+        "instruction_following": 0.0,
+        "hallucination_detection": 0.2
+      },
+      "frankenstallm-3b:latest": {
+        "repetition_consistency": 0.2682,
+        "paraphrase_robustness": 0.56,
+        "length_sensitivity": 0.8,
+        "language_consistency": 0.7064,
+        "instruction_following": 0.0,
+        "hallucination_detection": 0.2
+      },
+      "frankenstallm-3b:Q8_0": {
+        "repetition_consistency": 0.2674,
+        "paraphrase_robustness": 0.52,
+        "length_sensitivity": 0.8,
+        "language_consistency": 0.6498,
+        "instruction_following": 0.0,
+        "hallucination_detection": 0.0
+      },
+      "frankenstallm-3b-v2:latest": {
+        "repetition_consistency": 0.1862,
+        "paraphrase_robustness": 0.68,
+        "length_sensitivity": 0.6,
+        "language_consistency": 0.6264,
+        "instruction_following": 0.0,
+        "hallucination_detection": 0.1
+      },
+      "frankenstallm-3b-v2:Q8_0": {
+        "repetition_consistency": 0.1896,
+        "paraphrase_robustness": 0.64,
+        "length_sensitivity": 0.8,
+        "language_consistency": 0.5983,
+        "instruction_following": 0.0,
+        "hallucination_detection": 0.1
+      },
+      "deepseek-r1:1.5b": {
+        "repetition_consistency": 0.2985,
+        "paraphrase_robustness": 0.28,
+        "length_sensitivity": 0.8,
+        "language_consistency": 0.0258,
+        "instruction_following": 0.4667,
+        "hallucination_detection": 0.0
+      }
+    }
+  }
+}

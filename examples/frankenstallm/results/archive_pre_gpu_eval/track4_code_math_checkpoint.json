@@ -1,0 +1,514 @@
+{
+  "results": [
+    {
+      "model": "frankenstallm-3b:latest",
+      "scores": {
+        "python_pass1": 0.0,
+        "sql_accuracy": 0.0,
+        "debug_accuracy": 0.0,
+        "math_accuracy": 0.0
+      },
+      "python_details": [
+        {
+          "id": "py_001",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "py_002",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 연결 실패"
+        },
+        {
+          "id": "py_003",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "py_004",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "py_005",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_006",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_007",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_008",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_009",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_010",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_011",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_012",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_013",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_014",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_015",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_016",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_017",
+          "passed": 0,
+          "total": 3,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_018",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_019",
+          "passed": 0,
+          "total": 4,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        },
+        {
+          "id": "py_020",
+          "passed": 0,
+          "total": 5,
+          "pass_at_1": 0.0,
+          "response_preview": ""
+        }
+      ],
+      "sql_details": [
+        {
+          "id": "sql_001",
+          "correct": false,
+          "error": null,
+          "response_preview": ""
+        },
+        {
+          "id": "sql_002",
+          "correct": false,
+          "error": null,
+          "response_preview": ""
+        },
+        {
+          "id": "sql_003",
+          "correct": false,
+          "error": null,
+          "response_preview": ""
+        },
+        {
+          "id": "sql_004",
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "sql_005",
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "sql_006",
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "sql_007",
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "sql_008",
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "sql_009",
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "sql_010",
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        }
+      ],
+      "debug_details": [
+        {
+          "id": "debug_001",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "debug_002",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "debug_003",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "debug_004",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "debug_005",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "debug_006",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "debug_007",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "debug_008",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "debug_009",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "debug_010",
+          "bug_identified": false,
+          "fix_works": false,
+          "correct": false,
+          "error": "Ollama 서버 무응답"
+        }
+      ],
+      "math_details": [
+        {
+          "id": "math_001",
+          "correct": false,
+          "expected": 2800,
+          "extracted": null,
+          "error": "Ollama 서버 무응답"
+        },
+        {
+          "id": "math_002",
+          "correct": false,
+          "expected": 5,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_003",
+          "correct": false,
+          "expected": 78.5,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_004",
+          "correct": false,
+          "expected": 5050,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_005",
+          "correct": false,
+          "expected": 6,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_006",
+          "correct": false,
+          "expected": 150,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_007",
+          "correct": false,
+          "expected": 5,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_008",
+          "correct": false,
+          "expected": 550,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_009",
+          "correct": false,
+          "expected": 1024,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_010",
+          "correct": false,
+          "expected": 96,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_011",
+          "correct": false,
+          "expected": 150,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_012",
+          "correct": false,
+          "expected": 6,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_013",
+          "correct": false,
+          "expected": 59,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_014",
+          "correct": false,
+          "expected": 180,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_015",
+          "correct": false,
+          "expected": 15000,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_016",
+          "correct": false,
+          "expected": 5,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_017",
+          "correct": false,
+          "expected": 30,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_018",
+          "correct": false,
+          "expected": 282.6,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_019",
+          "correct": false,
+          "expected": 20,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_020",
+          "correct": false,
+          "expected": 7,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_021",
+          "correct": false,
+          "expected": 10,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_022",
+          "correct": false,
+          "expected": 5,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_023",
+          "correct": false,
+          "expected": 40,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_024",
+          "correct": false,
+          "expected": 95,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_025",
+          "correct": false,
+          "expected": 25,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_026",
+          "correct": false,
+          "expected": 6,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_027",
+          "correct": false,
+          "expected": 50,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_028",
+          "correct": false,
+          "expected": 8,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_029",
+          "correct": false,
+          "expected": 24,
+          "extracted": null,
+          "response_preview": ""
+        },
+        {
+          "id": "math_030",
+          "correct": false,
+          "expected": 90,
+          "extracted": null,
+          "response_preview": ""
+        }
+      ]
+    },
+    {
+      "model": "frankenstallm-3b:Q8_0",
+      "error": "모델 로딩 실패",
+      "scores": {}
+    },
+    {
+      "model": "frankenstallm-3b-v2:latest",
+      "error": "모델 로딩 실패",
+      "scores": {}
+    },
+    {
+      "model": "frankenstallm-3b-v2:Q8_0",
+      "error": "모델 로딩 실패",
+      "scores": {}
+    },
+    {
+      "model": "qwen2.5:3b",
+      "error": "모델 로딩 실패",
+      "scores": {}
+    }
+  ]
+}
