@@ -537,3 +537,21 @@ def _error_result(error_msg: str) -> dict:
         "tokens_per_sec": 0,
         "error": error_msg,
     }
+
+
+# ── Backend 호환 레이어 ──────────────────────────────────────────────────────
+# 기존 runner.generate() / runner.chat() 등의 모듈-레벨 API는 그대로 유지.
+# 새 코드(향후 vLLM 등)는 get_inference_backend()로 Backend 인스턴스를 얻어 사용.
+
+def get_inference_backend():
+    """현재 설정에 맞는 InferenceBackend 인스턴스 반환."""
+    from kobench.backends import get_backend
+    return get_backend(
+        "ollama",
+        url=config.OLLAMA_BASE_URL,
+        remote=config.OLLAMA_REMOTE,
+        max_retries=config.MAX_RETRIES,
+        retry_backoff_base=config.RETRY_BACKOFF_BASE,
+        warmup_timeout=config.WARMUP_TIMEOUT,
+        default_options=dict(config.SAMPLING_PARAMS),
+    )
