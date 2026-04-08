@@ -74,6 +74,7 @@ class DashboardState:
 
 _state = DashboardState()
 _event_queue: Optional[Queue] = None
+_server: Optional[uvicorn.Server] = None
 _server_thread: Optional[threading.Thread] = None
 _should_stop = threading.Event()
 
@@ -211,27 +212,51 @@ def _process_event(event: dict):
 
 
 def start_dashboard(event_queue: Queue, port: int = 8888) -> str:
-    """백그라운드 스레드에서 대시보드 서버 시작. URL 반환."""
-    global _event_queue, _server_thread, _state
-    _event_queue = event_queue
+    """백그라운드 스레드에서 대시보드 서버 시작. URL 반환.
+
+    Raises:
+        RuntimeError: 포트 바인딩 실패 시
+    """
+    global _event_queue, _server_thread, _server, _state
+
+    # Queue에 maxsize 적용 (메모리 누수 방지 — 브라우저 미연결 시 오래된 이벤트 드랍)
+    _event_queue = Queue(maxsize=500) if event_queue is None else event_queue
+    # 호출자가 넘긴 큐도 참조 유지 (양쪽에서 사용 가능)
+    if event_queue is not None:
+        _event_queue = event_queue
     _should_stop.clear()
 
     # Reset state
     _state = DashboardState()
 
     config = uvicorn.Config(app, host="0.0.0.0", port=port, log_level="warning")
-    server = uvicorn.Server(config)
+    _server = uvicorn.Server(config)
 
-    _server_thread = threading.Thread(target=server.run, daemon=True)
+    _server_thread = threading.Thread(target=_server.run, daemon=True)
     _server_thread.start()
 
-    # Wait for server to start
-    time.sleep(1)
+    # Wait and verify server thread is still alive (bind failure kills thread)
+    time.sleep(1.5)
+    if not _server_thread.is_alive():
+        raise RuntimeError(f"대시보드 서버 시작 실패 (port={port} 사용 중이거나 바인딩 오류)")
+    # Double-check with HTTP
+    try:
+        import requests as _req
+        r = _req.get(f"http://localhost:{port}/api/status", timeout=3)
+        if r.status_code != 200:
+            raise RuntimeError(f"대시보드 서버 응답 오류 (status={r.status_code})")
+    except RuntimeError:
+        raise
+    except Exception as e:
+        _should_stop.set()
+        raise RuntimeError(f"대시보드 서버 시작 실패 (port={port}): {e}")
 
     url = f"http://localhost:{port}"
     return url
 
 
 def stop_dashboard():
-    """대시보드 서버 종료 신호."""
+    """대시보드 서버 종료."""
     _should_stop.set()
+    if _server is not None:
+        _server.should_exit = True

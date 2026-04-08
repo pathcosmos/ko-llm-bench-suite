@@ -108,8 +108,8 @@ def run():
 
     results = run_tracks_interactive(tracks, models, event_queue=event_queue)
 
+    # finished 이벤트는 run_tracks_interactive()에서 이미 발송됨
     if event_queue:
-        event_queue.put({"type": "finished"})
         ui.info("대시보드에서 최종 결과를 확인할 수 있습니다")
 
     # Step 6: Results
