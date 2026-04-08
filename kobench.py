@@ -159,7 +159,27 @@ def generate_reports(track_results: dict) -> None:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="FRANKENSTALLM 3B 심화 평가 프레임워크")
+    # Quick subcommand check (before argparse, for clean routing)
+    if len(sys.argv) > 1 and sys.argv[1] in ("setup", "eval", "config", "status"):
+        cmd = sys.argv[1]
+        if cmd == "setup":
+            from kobench.wizard.setup_cmd import run
+            run(); return
+        elif cmd == "eval":
+            from kobench.wizard.eval_cmd import run
+            run(); return
+        elif cmd == "config":
+            from kobench.wizard.config_cmd import run
+            run(); return
+        elif cmd == "status":
+            from kobench.wizard.status_cmd import run
+            run(); return
+
+    # Legacy mode: existing argparse below
+    parser = argparse.ArgumentParser(
+        description="KoBench Suite — 한국어 LLM 종합 벤치마크 평가 도구",
+        epilog="서브커맨드: setup | eval | config | status (예: python kobench.py setup)",
+    )
     parser.add_argument("--tracks", nargs="+", type=int, default=[6, 1, 3, 2, 4, 5, 7],
                         help="실행할 트랙 번호 (기본: 6 1 3 2 4 5 7)")
     parser.add_argument("--models", nargs="+", default=None,

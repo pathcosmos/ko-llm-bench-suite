@@ -416,6 +416,26 @@ python kobench.py --config my_config.yaml
 > - Secondary: `exaone3.5:7.8b` (~4.8GB)
 > - Judge 모델 없이 T1, T4, T5, T6만 실행 가능: `--tracks 1 4 5 6`
 
+## 인터랙티브 위저드
+
+서브커맨드를 통해 단계별 안내를 받을 수 있습니다.
+
+```bash
+# 설치 검증 + Ollama/Judge 자동 설치
+python kobench.py setup
+
+# 인터랙티브 평가 실행 (모델/트랙 선택 → 실행 → 결과)
+python kobench.py eval
+
+# YAML 설정 파일 생성
+python kobench.py config
+
+# 시스템 진단 (GPU, Ollama, 모델 상태)
+python kobench.py status
+```
+
+> **참고:** 기존 배치 모드(`--config`, `--tracks`, `--models`)도 그대로 사용 가능합니다.
+
 ## Contributing
 
 기여를 환영합니다! 다음과 같은 방법으로 참여할 수 있습니다:
