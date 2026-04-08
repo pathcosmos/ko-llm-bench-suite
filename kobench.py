@@ -169,15 +169,51 @@ def main():
                         help="Ollama health check 건너뛰기")
     parser.add_argument("--config", type=str, default=None,
                         help="YAML 설정 파일 경로 (예: configs/default.yaml)")
+    parser.add_argument("--validate-config", action="store_true",
+                        help="YAML 설정 유효성만 검사하고 종료")
+    parser.add_argument("--check-models", action="store_true",
+                        help="모델 존재 여부만 확인하고 종료")
 
     args = parser.parse_args()
 
+    yaml_cfg = {}
     if args.config:
         from kobench.config import load_yaml_config, apply_yaml_to_config
         yaml_cfg = load_yaml_config(args.config)
         apply_yaml_to_config(yaml_cfg)
         if yaml_cfg.get("models") and not args.models:
             args.models = [m["name"] for m in yaml_cfg["models"]]
+
+    # Config validation
+    if args.validate_config:
+        if not args.config:
+            print("❌ --validate-config는 --config와 함께 사용해야 합니다.")
+            sys.exit(1)
+        from kobench.config import validate_config
+        errors = validate_config(yaml_cfg)
+        if errors:
+            print("❌ 설정 오류:")
+            for e in errors:
+                print(f"  - {e}")
+            sys.exit(1)
+        else:
+            print("✅ 설정 유효")
+            sys.exit(0)
+
+    # Model check
+    if args.check_models:
+        from kobench.runner import check_models_available
+        models_to_check = args.models or config.ALL_MODELS
+        print(f"🔍 {len(models_to_check)}개 모델 확인 중...")
+        available, missing = check_models_available(models_to_check)
+        print(f"  ✅ 사용 가능: {len(available)}개")
+        for m in available:
+            print(f"    - {m}")
+        if missing:
+            print(f"  ❌ 미설치: {len(missing)}개")
+            for m in missing:
+                print(f"    - {m}  → ollama pull {m}")
+        sys.exit(0 if not missing else 1)
 
     print("=" * 70)
     print("  FRANKENSTALLM 3B 심화 평가 프레임워크")

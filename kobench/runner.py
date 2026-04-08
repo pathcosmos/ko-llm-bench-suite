@@ -539,6 +539,19 @@ def _error_result(error_msg: str) -> dict:
     }
 
 
+def check_models_available(models: list[str]) -> tuple[list[str], list[str]]:
+    """Ollama에서 모델 존재 여부 사전 확인. (available, missing) 반환."""
+    import requests as _req
+    available, missing = [], []
+    for model in models:
+        try:
+            r = _req.post(config.OLLAMA_API_SHOW, json={"name": model}, timeout=5)
+            (available if r.status_code == 200 else missing).append(model)
+        except Exception:
+            missing.append(model)
+    return available, missing
+
+
 # ── Backend 호환 레이어 ──────────────────────────────────────────────────────
 # 기존 runner.generate() / runner.chat() 등의 모듈-레벨 API는 그대로 유지.
 # 새 코드(향후 vLLM 등)는 get_inference_backend()로 Backend 인스턴스를 얻어 사용.

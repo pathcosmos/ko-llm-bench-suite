@@ -126,6 +126,39 @@ def apply_yaml_to_config(yaml_cfg: dict) -> None:
             EVAFRILL_GPU_STRATEGY = gs
 
 
+def validate_config(yaml_cfg: dict) -> list[str]:
+    """YAML 설정 유효성 검증. 오류 목록 반환 (빈 리스트 = 유효)."""
+    errors = []
+
+    # backend.type
+    bt = yaml_cfg.get("backend", {}).get("type", "ollama")
+    if bt not in ("ollama",):
+        errors.append(f"backend.type '{bt}' 미지원 (가능: ollama)")
+
+    # tracks.enabled
+    for t in yaml_cfg.get("tracks", {}).get("enabled", []):
+        if t not in range(1, 8):
+            errors.append(f"tracks.enabled에 유효하지 않은 트랙: {t} (1~7만 가능)")
+
+    # sampling ranges
+    for profile in ("default", "benchmark"):
+        s = yaml_cfg.get("sampling", {}).get(profile, {})
+        if "temperature" in s and not (0 <= s["temperature"] <= 2):
+            errors.append(f"sampling.{profile}.temperature {s['temperature']}은 0~2 범위 밖")
+        if "top_p" in s and not (0 <= s["top_p"] <= 1):
+            errors.append(f"sampling.{profile}.top_p {s['top_p']}은 0~1 범위 밖")
+
+    # judge weights
+    j = yaml_cfg.get("judge", {})
+    if j.get("dual_enabled", True):
+        w1 = j.get("primary", {}).get("weight", 0.6)
+        w2 = j.get("secondary", {}).get("weight", 0.4)
+        if abs((w1 + w2) - 1.0) > 0.01:
+            errors.append(f"judge weights 합 {w1+w2:.2f} ≠ 1.0")
+
+    return errors
+
+
 # ── Ollama 모델 저장 경로 (반드시 프로세스 시작 전에 설정) ────────────────────
 os.environ.setdefault("OLLAMA_MODELS", "/var/snap/ollama/common/models")
 
