@@ -10,7 +10,7 @@ def run():
     ui.banner()
     ui.console.print("[bold]설치 위저드를 시작합니다.[/]\n")
 
-    total_steps = 5
+    total_steps = 4
 
     # Step 1: Python deps
     ui.step(1, total_steps, "Python 패키지 확인")
@@ -55,21 +55,11 @@ def run():
                 ui.fail("Ollama 미설치. https://ollama.com 에서 설치하세요.")
                 ui.info("curl -fsSL https://ollama.com/install.sh | sh")
 
-    # Step 4: Remote server (optional)
-    ui.step(4, total_steps, "원격 서버 설정 (선택)")
-    if ui.confirm("원격 Ollama 서버를 추가하시겠습니까?", default=False):
-        remote_url = ui.ask("원격 서버 URL", default="http://192.168.1.100:11434")
-        remote_test = test_ollama(remote_url)
-        if remote_test["connected"]:
-            ui.success(f"원격 서버 연결 성공 ({len(remote_test['models'])}개 모델)")
-        else:
-            ui.fail(f"연결 실패: {remote_test['error']}")
-            ui.info("SSH 터널: ssh -NL 11434:localhost:11434 user@server &")
-    else:
-        ui.info("원격 서버 건너뜀")
+    # NOTE: 다중 머신 설정은 향후 버전에서 지원 예정
+    # 현재는 로컬 Ollama만 사용합니다.
 
-    # Step 5: Judge models
-    ui.step(5, total_steps, "Judge 모델 확인")
+    # Step 4: Judge models
+    ui.step(4, total_steps, "Judge 모델 확인")
     if ollama["connected"]:
         model_names = [m["name"] for m in ollama["models"]]
         judges = {
