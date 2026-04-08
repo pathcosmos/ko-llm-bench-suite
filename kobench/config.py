@@ -34,6 +34,98 @@ def _deep_merge(base: dict, override: dict) -> dict:
             base[key] = value
     return base
 
+
+def apply_yaml_to_config(yaml_cfg: dict) -> None:
+    """YAML 설정을 런타임 config 변수에 적용.
+
+    기존 하드코딩/환경변수 기본값을 YAML 값으로 오버라이드.
+    YAML에 없는 필드는 기존 기본값 유지.
+    """
+    # Need to declare globals for all variables we want to modify
+    global OLLAMA_BASE_URL, OLLAMA_REMOTE
+    global OLLAMA_API_GENERATE, OLLAMA_API_CHAT, OLLAMA_API_SHOW, OLLAMA_API_PS
+    global JUDGE_MODEL, JUDGE_MODELS, JUDGE_WEIGHTS
+    global JUDGE_DUAL_ENABLED, JUDGE_TIMEOUT, JUDGE_DISAGREEMENT_THRESHOLD
+    global RESULTS_DIR, REPORTS_DIR
+    global MAX_RETRIES, RETRY_BACKOFF_BASE
+    global COOLDOWN_BETWEEN_MODELS, COOLDOWN_BETWEEN_TESTS
+    global EVAFRILL_GPU_STRATEGY
+
+    # Backend
+    if "backend" in yaml_cfg:
+        b = yaml_cfg["backend"]
+        if "url" in b:
+            OLLAMA_BASE_URL = b["url"]
+        if "remote" in b:
+            OLLAMA_REMOTE = bool(b["remote"])
+        # Regenerate derived API endpoints
+        OLLAMA_API_GENERATE = f"{OLLAMA_BASE_URL}/api/generate"
+        OLLAMA_API_CHAT = f"{OLLAMA_BASE_URL}/api/chat"
+        OLLAMA_API_SHOW = f"{OLLAMA_BASE_URL}/api/show"
+        OLLAMA_API_PS = f"{OLLAMA_BASE_URL}/api/ps"
+
+    # Judge
+    if "judge" in yaml_cfg:
+        j = yaml_cfg["judge"]
+        if "dual_enabled" in j:
+            JUDGE_DUAL_ENABLED = bool(j["dual_enabled"])
+        if "timeout" in j:
+            JUDGE_TIMEOUT = int(j["timeout"])
+        if "disagreement_threshold" in j:
+            JUDGE_DISAGREEMENT_THRESHOLD = int(j["disagreement_threshold"])
+        if "primary" in j:
+            pm = j["primary"].get("model")
+            if pm:
+                JUDGE_MODEL = pm
+                JUDGE_MODELS["primary"] = pm
+            pw = j["primary"].get("weight")
+            if pw is not None:
+                JUDGE_WEIGHTS["primary"] = float(pw)
+        if "secondary" in j:
+            sm = j["secondary"].get("model")
+            if sm:
+                JUDGE_MODELS["secondary"] = sm
+            sw = j["secondary"].get("weight")
+            if sw is not None:
+                JUDGE_WEIGHTS["secondary"] = float(sw)
+
+    # Sampling
+    if "sampling" in yaml_cfg:
+        s = yaml_cfg["sampling"]
+        if "default" in s and isinstance(s["default"], dict):
+            SAMPLING_PARAMS.update(s["default"])
+        if "benchmark" in s and isinstance(s["benchmark"], dict):
+            BENCHMARK_SAMPLING.update(s["benchmark"])
+
+    # Project paths
+    if "project" in yaml_cfg:
+        p = yaml_cfg["project"]
+        if "output_dir" in p:
+            RESULTS_DIR = Path(p["output_dir"])
+            RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+        if "reports_dir" in p:
+            REPORTS_DIR = Path(p["reports_dir"])
+            REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Retry / Cooldown
+    if "retry" in yaml_cfg:
+        r = yaml_cfg["retry"]
+        if "max_retries" in r:
+            MAX_RETRIES = int(r["max_retries"])
+        if "backoff_base" in r:
+            RETRY_BACKOFF_BASE = int(r["backoff_base"])
+        if "cooldown_between_models" in r:
+            COOLDOWN_BETWEEN_MODELS = int(r["cooldown_between_models"])
+        if "cooldown_between_tests" in r:
+            COOLDOWN_BETWEEN_TESTS = int(r["cooldown_between_tests"])
+
+    # GPU strategy (optional)
+    if "gpu" in yaml_cfg:
+        gs = yaml_cfg["gpu"].get("evafrill_strategy")
+        if gs:
+            EVAFRILL_GPU_STRATEGY = gs
+
+
 # ── Ollama 모델 저장 경로 (반드시 프로세스 시작 전에 설정) ────────────────────
 os.environ.setdefault("OLLAMA_MODELS", "/var/snap/ollama/common/models")
 
