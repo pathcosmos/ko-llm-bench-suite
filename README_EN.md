@@ -424,6 +424,26 @@ python kobench.py status
 
 > **Note:** Existing batch mode (`--config`, `--tracks`, `--models`) is fully supported.
 
+### Real-Time Dashboard
+
+Monitor evaluation progress in real time from your browser during a run.
+
+```bash
+# Automatically starts with the eval wizard
+python kobench.py eval
+
+# Enable dashboard in batch mode
+python kobench.py --config my.yaml --dashboard
+python kobench.py --config my.yaml --dashboard --dashboard-port 9999
+```
+
+Open `http://localhost:8888` in your browser to see:
+- Per-track progress (completed / running / pending)
+- Current model + item progress
+- GPU status (VRAM usage)
+- Error log
+- Estimated time remaining
+
 ## Contributing
 
 Contributions are welcome. To get started:

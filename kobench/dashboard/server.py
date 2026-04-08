@@ -87,6 +87,18 @@ TRACK_NAMES = {
     7: "Pairwise Elo",
 }
 
+def _drain_queue():
+    """Process all pending events from the queue into state."""
+    if _event_queue is None:
+        return
+    try:
+        while True:
+            event = _event_queue.get_nowait()
+            _process_event(event)
+    except Empty:
+        pass
+
+
 # ── FastAPI App ──────────────────────────────────────────────────────────────
 
 app = FastAPI(title="KoBench Dashboard")
@@ -100,6 +112,7 @@ async def index():
 
 @app.get("/api/status")
 async def api_status():
+    _drain_queue()
     return JSONResponse(content=_state.to_dict())
 
 
@@ -109,14 +122,7 @@ async def api_events():
 
     async def event_generator():
         while not _should_stop.is_set():
-            # Process queued events first
-            if _event_queue:
-                try:
-                    while True:
-                        event = _event_queue.get_nowait()
-                        _process_event(event)
-                except Empty:
-                    pass
+            _drain_queue()
 
             # Send current state as heartbeat
             data = json.dumps(_state.to_dict(), ensure_ascii=False)

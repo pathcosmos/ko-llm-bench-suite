@@ -89,11 +89,28 @@ def run():
         ui.info("취소됨")
         return
 
+    # Start dashboard
+    import queue as queue_mod
+    event_queue = queue_mod.Queue()
+
+    try:
+        from kobench.dashboard.server import start_dashboard
+        dashboard_url = start_dashboard(event_queue, port=8888)
+        ui.success(f"대시보드: {dashboard_url}")
+        ui.info("브라우저에서 위 URL을 열어 실시간 진행 상황을 확인하세요")
+    except Exception as e:
+        ui.warn(f"대시보드 시작 실패: {e} (CLI 모드로 계속)")
+        event_queue = None
+
     # Step 5: Execute
     ui.step(5, total, "평가 실행")
     ui.divider()
 
-    results = run_tracks_interactive(tracks, models)
+    results = run_tracks_interactive(tracks, models, event_queue=event_queue)
+
+    if event_queue:
+        event_queue.put({"type": "finished"})
+        ui.info("대시보드에서 최종 결과를 확인할 수 있습니다")
 
     # Step 6: Results
     ui.step(6, total, "결과")

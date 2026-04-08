@@ -49,14 +49,36 @@ def load_track(track_num: int):
     return importlib.import_module(module_name)
 
 
-def run_tracks(track_nums: list[int], models: list[str] | None = None) -> dict:
+def _emit(event_queue, event):
+    """Send event to dashboard if queue is available."""
+    if event_queue is not None:
+        try:
+            event_queue.put_nowait(event)
+        except Exception:
+            pass
+
+
+def run_tracks(track_nums: list[int], models: list[str] | None = None,
+               event_queue=None) -> dict:
     """지정된 트랙 순차 실행"""
     all_results = {}
+
+    _emit(event_queue, {
+        "type": "init",
+        "total_tracks": len(track_nums),
+        "track_nums": track_nums,
+        "models": models or config.ALL_MODELS,
+    })
 
     for track_num in track_nums:
         print(f"\n{'=' * 70}")
         print(f"  Track {track_num} 실행 시작")
         print(f"{'=' * 70}")
+        _emit(event_queue, {
+            "type": "track_start",
+            "track": track_num,
+            "total_tracks": len(track_nums),
+        })
 
         start = time.time()
         try:
@@ -70,10 +92,21 @@ def run_tracks(track_nums: list[int], models: list[str] | None = None) -> dict:
             # 결과 저장
             save_results_incremental(result, track_key)
             print(f"\n  ✅ Track {track_num} 완료 ({elapsed:.1f}s)")
+            _emit(event_queue, {
+                "type": "track_done",
+                "track": track_num,
+                "elapsed": elapsed,
+            })
 
         except Exception as e:
             elapsed = time.time() - start
             print(f"\n  ❌ Track {track_num} 실패 ({elapsed:.1f}s): {e}")
+            _emit(event_queue, {
+                "type": "error",
+                "track": track_num,
+                "model": "all",
+                "message": str(e),
+            })
             import traceback
             traceback.print_exc()
             all_results[f"track{track_num}"] = {"error": str(e)}
@@ -94,6 +127,21 @@ def run_tracks(track_nums: list[int], models: list[str] | None = None) -> dict:
 
             time.sleep(config.COOLDOWN_BETWEEN_MODELS)
 
+            # Emit GPU status between tracks
+            try:
+                from kobench.wizard.machine import get_gpu_info
+                gpu = get_gpu_info()
+                if gpu["available"]:
+                    _emit(event_queue, {
+                        "type": "gpu",
+                        "name": gpu["name"],
+                        "vram_total": gpu["vram_total"],
+                        "vram_free": gpu["vram_free"],
+                    })
+            except Exception:
+                pass
+
+    _emit(event_queue, {"type": "finished"})
     return all_results
 
 
@@ -198,6 +246,10 @@ def main():
                         help="버전 정보 출력")
     parser.add_argument("--list-models", action="store_true",
                         help="Ollama에서 사용 가능한 모델 목록 출력")
+    parser.add_argument("--dashboard", action="store_true",
+                        help="실시간 웹 대시보드 활성화 (localhost:8888)")
+    parser.add_argument("--dashboard-port", type=int, default=8888,
+                        help="대시보드 포트 (기본: 8888)")
 
     args = parser.parse_args()
 
@@ -280,9 +332,22 @@ def main():
             sys.exit(1)
         print("  ✅ Ollama 서버 연결 성공")
 
+    # Dashboard setup
+    event_queue = None
+    if args.dashboard:
+        import queue as queue_mod
+        event_queue = queue_mod.Queue()
+        try:
+            from kobench.dashboard.server import start_dashboard
+            dashboard_url = start_dashboard(event_queue, port=args.dashboard_port)
+            print(f"📊 대시보드: {dashboard_url}")
+        except Exception as e:
+            print(f"⚠️ 대시보드 시작 실패: {e}")
+            event_queue = None
+
     # 평가 실행
     total_start = time.time()
-    track_results = run_tracks(args.tracks, args.models)
+    track_results = run_tracks(args.tracks, args.models, event_queue=event_queue)
 
     # 리포트 생성
     generate_reports(track_results)

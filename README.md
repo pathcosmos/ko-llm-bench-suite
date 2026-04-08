@@ -436,6 +436,26 @@ python kobench.py status
 
 > **참고:** 기존 배치 모드(`--config`, `--tracks`, `--models`)도 그대로 사용 가능합니다.
 
+### 실시간 대시보드
+
+평가 실행 중 브라우저에서 진행 상황을 실시간으로 모니터링할 수 있습니다.
+
+```bash
+# eval 위저드에서 자동 시작
+python kobench.py eval
+
+# 배치 모드에서 대시보드 활성화
+python kobench.py --config my.yaml --dashboard
+python kobench.py --config my.yaml --dashboard --dashboard-port 9999
+```
+
+브라우저에서 `http://localhost:8888`을 열면 다음을 확인할 수 있습니다:
+- 트랙별 진행 상황 (완료/진행중/대기)
+- 현재 모델 + 아이템 진행률
+- GPU 상태 (VRAM 사용량)
+- 에러 로그
+- 예상 잔여 시간
+
 ## Contributing
 
 기여를 환영합니다! 다음과 같은 방법으로 참여할 수 있습니다:

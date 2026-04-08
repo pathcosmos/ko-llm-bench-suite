@@ -6,7 +6,16 @@ from kobench import config
 from kobench.wizard import ui
 
 
-def run_tracks_interactive(track_nums, models):
+def _emit(event_queue, event):
+    """Send event to dashboard if queue is available."""
+    if event_queue is not None:
+        try:
+            event_queue.put_nowait(event)
+        except Exception:
+            pass
+
+
+def run_tracks_interactive(track_nums, models, event_queue=None):
     """인터랙티브 모드로 트랙 실행 — 진행률 바 + 에러 복구.
 
     Returns: dict of track results
@@ -18,8 +27,20 @@ def run_tracks_interactive(track_nums, models):
 
     all_results = {}
 
+    _emit(event_queue, {
+        "type": "init",
+        "total_tracks": len(track_nums),
+        "track_nums": track_nums,
+        "models": models,
+    })
+
     for ti, track_num in enumerate(track_nums):
         ui.step(ti + 1, len(track_nums), f"Track {track_num} 실행")
+        _emit(event_queue, {
+            "type": "track_start",
+            "track": track_num,
+            "total_tracks": len(track_nums),
+        })
 
         start = time.time()
         try:
@@ -39,6 +60,11 @@ def run_tracks_interactive(track_nums, models):
             save_results_incremental(result, track_key)
 
             ui.success(f"Track {track_num} 완료 ({elapsed:.1f}s)")
+            _emit(event_queue, {
+                "type": "track_done",
+                "track": track_num,
+                "elapsed": elapsed,
+            })
 
         except KeyboardInterrupt:
             ui.warn("사용자 중단")
@@ -51,6 +77,12 @@ def run_tracks_interactive(track_nums, models):
         except Exception as e:
             elapsed = time.time() - start
             ui.fail(f"Track {track_num} 오류 ({elapsed:.1f}s): {e}")
+            _emit(event_queue, {
+                "type": "error",
+                "track": track_num,
+                "model": "all",
+                "message": str(e),
+            })
 
             choice = ui.error_choice(f"Track {track_num}", "전체", str(e))
             if choice == "retry":
@@ -77,4 +109,19 @@ def run_tracks_interactive(track_nums, models):
                 _restart_ollama()
             time.sleep(config.COOLDOWN_BETWEEN_MODELS)
 
+            # Emit GPU status between tracks
+            try:
+                from kobench.wizard.machine import get_gpu_info
+                gpu = get_gpu_info()
+                if gpu["available"]:
+                    _emit(event_queue, {
+                        "type": "gpu",
+                        "name": gpu["name"],
+                        "vram_total": gpu["vram_total"],
+                        "vram_free": gpu["vram_free"],
+                    })
+            except Exception:
+                pass
+
+    _emit(event_queue, {"type": "finished"})
     return all_results
