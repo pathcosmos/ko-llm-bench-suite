@@ -18,6 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import kobench
 from kobench import config
 from kobench.runner import (
     wait_for_ollama,
@@ -173,8 +174,28 @@ def main():
                         help="YAML 설정 유효성만 검사하고 종료")
     parser.add_argument("--check-models", action="store_true",
                         help="모델 존재 여부만 확인하고 종료")
+    parser.add_argument("--version", action="store_true",
+                        help="버전 정보 출력")
+    parser.add_argument("--list-models", action="store_true",
+                        help="Ollama에서 사용 가능한 모델 목록 출력")
 
     args = parser.parse_args()
+
+    if args.version:
+        print(f"ko-llm-bench-suite {kobench.__version__}")
+        return
+
+    if args.list_models:
+        import requests
+        try:
+            r = requests.get(f"{config.OLLAMA_BASE_URL}/api/tags", timeout=10)
+            models = r.json().get("models", [])
+            print(f"Ollama 모델 ({len(models)}개):")
+            for m in models:
+                print(f"  {m['name']:40s} {m.get('size', 0) / 1e9:.1f}GB")
+        except Exception as e:
+            print(f"❌ Ollama 연결 실패: {e}")
+        return
 
     yaml_cfg = {}
     if args.config:
