@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KoBench Dashboard</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#12121c;--surface:#1a1a2e;--surface2:#22223a;--border:#2d2d4a;
+  --text:#e0e0e8;--text2:#9090a8;--accent:#5090ff;
+  --green:#3dd68c;--blue:#50b0ff;--red:#ff5070;--yellow:#ffc040;--gray:#555570;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh}
+
+.header{background:var(--surface);border-bottom:1px solid var(--border);
+  padding:16px 24px;display:flex;align-items:center;gap:16px}
+.header h1{font-size:20px;font-weight:600;letter-spacing:-.3px}
+.header .badge{background:var(--accent);color:#fff;font-size:11px;
+  padding:2px 10px;border-radius:10px;font-weight:600}
+.header .badge.done{background:var(--green)}
+
+.container{max-width:960px;margin:0 auto;padding:24px 16px;
+  display:flex;flex-direction:column;gap:20px}
+
+.card{background:var(--surface);border:1px solid var(--border);
+  border-radius:10px;padding:20px}
+.card-title{font-size:13px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.8px;color:var(--text2);margin-bottom:14px;
+  display:flex;align-items:center;gap:8px}
+.card-title .count{color:var(--accent);font-size:14px}
+
+/* Track list */
+.track-list{display:flex;flex-direction:column;gap:6px}
+.track-row{display:flex;align-items:center;gap:10px;
+  padding:8px 12px;border-radius:6px;background:var(--surface2);font-size:14px}
+.track-row .icon{width:22px;text-align:center;font-size:15px;flex-shrink:0}
+.track-row .name{flex:1;font-weight:500}
+.track-row .elapsed{color:var(--text2);font-size:13px;font-variant-numeric:tabular-nums}
+.track-row.running{border-left:3px solid var(--blue)}
+.track-row.done{opacity:.75}
+.track-row.error{border-left:3px solid var(--red)}
+
+/* Current section */
+.current-model{font-size:16px;font-weight:600;margin-bottom:10px;color:var(--blue)}
+.current-item{font-size:12px;color:var(--text2);margin-bottom:8px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress-wrap{background:var(--surface2);border-radius:6px;height:22px;
+  overflow:hidden;position:relative}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--blue));
+  border-radius:6px;transition:width .4s ease}
+.progress-text{position:absolute;top:0;left:0;right:0;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:600;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.no-activity{color:var(--text2);font-style:italic;font-size:14px}
+
+/* System row */
+.sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.sys-grid{grid-template-columns:1fr}}
+.sys-item{background:var(--surface2);border-radius:6px;padding:12px 14px}
+.sys-label{font-size:11px;color:var(--text2);text-transform:uppercase;
+  letter-spacing:.5px;margin-bottom:4px}
+.sys-value{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+
+/* Models */
+.model-chips{display:flex;flex-wrap:wrap;gap:6px}
+.model-chip{background:var(--surface2);border:1px solid var(--border);
+  border-radius:4px;padding:3px 10px;font-size:12px;color:var(--text2)}
+.model-chip.active{border-color:var(--blue);color:var(--blue);font-weight:600}
+
+/* Errors */
+.error-log{max-height:180px;overflow-y:auto;display:flex;flex-direction:column;gap:4px}
+.error-entry{background:rgba(255,80,112,.08);border-left:3px solid var(--red);
+  padding:6px 10px;border-radius:0 4px 4px 0;font-size:12px}
+.error-entry .err-track{color:var(--red);font-weight:600}
+.error-entry .err-msg{color:var(--text2)}
+.no-errors{color:var(--green);font-size:14px}
+
+/* Finished banner */
+.banner{display:none;background:linear-gradient(135deg,#1a3a2a,#1a2a3a);
+  border:1px solid var(--green);border-radius:10px;padding:24px;text-align:center}
+.banner.show{display:block}
+.banner h2{color:var(--green);font-size:22px;margin-bottom:6px}
+.banner p{color:var(--text2);font-size:14px}
+
+/* Connection indicator */
+.conn{width:8px;height:8px;border-radius:50%;background:var(--gray);flex-shrink:0}
+.conn.live{background:var(--green);box-shadow:0 0 6px var(--green)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="conn" id="connDot"></div>
+  <h1>KoBench Suite Dashboard</h1>
+  <span class="badge" id="statusBadge">Connecting...</span>
+</div>
+
+<div class="container">
+  <!-- Finished Banner -->
+  <div class="banner" id="banner">
+    <h2>Evaluation Complete!</h2>
+    <p id="bannerSummary"></p>
+  </div>
+
+  <!-- Track Progress -->
+  <div class="card">
+    <div class="card-title">
+      Track Progress <span class="count" id="trackCount">0/0</span>
+    </div>
+    <div class="track-list" id="trackList"></div>
+  </div>
+
+  <!-- Current Activity -->
+  <div class="card">
+    <div class="card-title">Current</div>
+    <div id="currentSection">
+      <div class="no-activity">Waiting for evaluation to start...</div>
+    </div>
+  </div>
+
+  <!-- System Info -->
+  <div class="card">
+    <div class="card-title">System</div>
+    <div class="sys-grid">
+      <div class="sys-item">
+        <div class="sys-label">GPU</div>
+        <div class="sys-value" id="gpuInfo">--</div>
+      </div>
+      <div class="sys-item">
+        <div class="sys-label">VRAM Free</div>
+        <div class="sys-value" id="vramInfo">--</div>
+      </div>
+      <div class="sys-item">
+        <div class="sys-label">Elapsed</div>
+        <div class="sys-value" id="elapsed">0s</div>
+      </div>
+      <div class="sys-item">
+        <div class="sys-label">Est. Remaining</div>
+        <div class="sys-value" id="remaining">--</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Models -->
+  <div class="card" id="modelsCard" style="display:none">
+    <div class="card-title">Models</div>
+    <div class="model-chips" id="modelChips"></div>
+  </div>
+
+  <!-- Errors -->
+  <div class="card">
+    <div class="card-title">Errors <span class="count" id="errorCount">0</span></div>
+    <div id="errorSection">
+      <div class="no-errors">No errors</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const TRACK_NAMES={1:"Korean Bench",2:"Ko-Bench",3:"Korean Deep",
+  4:"Code & Math",5:"Consistency",6:"Performance",7:"Pairwise Elo"};
+const STATUS_ICON={done:"\u2705",running:"\uD83D\uDD04",pending:"\u23F3",error:"\u274C"};
+
+function fmtTime(s){
+  if(!s||s<=0)return"--";
+  s=Math.round(s);
+  if(s<60)return s+"s";
+  const m=Math.floor(s/60),sec=s%60;
+  if(m<60)return m+"m "+sec+"s";
+  const h=Math.floor(m/60),rm=m%60;
+  return h+"h "+rm+"m";
+}
+
+function updateDashboard(d){
+  // Status badge
+  const badge=document.getElementById("statusBadge");
+  if(d.finished){badge.textContent="Complete";badge.className="badge done"}
+  else if(d.current_track){badge.textContent="Running";badge.className="badge"}
+  else{badge.textContent="Idle";badge.className="badge"}
+
+  // Track count
+  document.getElementById("trackCount").textContent=
+    d.completed_tracks+"/"+d.total_tracks+" \uC644\uB8CC";
+
+  // Track list
+  const tl=document.getElementById("trackList");
+  const trackNums=Object.keys(d.tracks_status).map(Number).sort((a,b)=>a-b);
+  if(trackNums.length){
+    let html="";
+    for(const tn of trackNums){
+      const st=d.tracks_status[tn]||"pending";
+      const name=TRACK_NAMES[tn]||("Track "+tn);
+      const el=d.tracks_elapsed[tn];
+      html+=`<div class="track-row ${st}">
+        <span class="icon">${STATUS_ICON[st]||"\u23F3"}</span>
+        <span class="name">T${tn} ${name}</span>
+        <span class="elapsed">${el?fmtTime(el):(st==="running"?"...":"")}</span>
+      </div>`;
+    }
+    tl.innerHTML=html;
+  }
+
+  // Current activity
+  const cs=document.getElementById("currentSection");
+  if(d.current_model){
+    const pct=d.items_total>0?Math.round(d.items_done/d.items_total*100):0;
+    cs.innerHTML=`
+      <div class="current-model">${d.current_model}</div>
+      <div class="current-item">${d.current_item||""}</div>
+      <div class="progress-wrap">
+        <div class="progress-bar" style="width:${pct}%"></div>
+        <div class="progress-text">${d.items_done}/${d.items_total} (${pct}%)</div>
+      </div>`;
+  }else if(d.finished){
+    cs.innerHTML=`<div class="no-activity">Evaluation finished.</div>`;
+  }else if(d.current_track){
+    cs.innerHTML=`<div class="no-activity">Starting ${d.current_track_name}...</div>`;
+  }else{
+    cs.innerHTML=`<div class="no-activity">Waiting for evaluation to start...</div>`;
+  }
+
+  // System
+  const gpuText=d.gpu.name||"--";
+  document.getElementById("gpuInfo").textContent=
+    gpuText+(d.gpu.vram_total?" ("+d.gpu.vram_total+")":"");
+  document.getElementById("vramInfo").textContent=d.gpu.vram_free||"--";
+  document.getElementById("elapsed").textContent=fmtTime(d.elapsed_s);
+  document.getElementById("remaining").textContent=
+    d.est_remaining_s>0?fmtTime(d.est_remaining_s):"--";
+
+  // Models
+  if(d.models&&d.models.length){
+    document.getElementById("modelsCard").style.display="";
+    const mc=document.getElementById("modelChips");
+    mc.innerHTML=d.models.map(m=>
+      `<span class="model-chip${m===d.current_model?" active":""}">${m}</span>`
+    ).join("");
+  }
+
+  // Errors
+  document.getElementById("errorCount").textContent=d.error_count;
+  const es=document.getElementById("errorSection");
+  if(d.errors&&d.errors.length){
+    let html=`<div class="error-log">`;
+    for(const e of d.errors){
+      html+=`<div class="error-entry">
+        <span class="err-track">T${e.track}</span>
+        ${e.model?`<span> ${e.model}</span>`:""}
+        <span class="err-msg"> ${e.message}</span>
+      </div>`;
+    }
+    html+=`</div>`;
+    es.innerHTML=html;
+    es.querySelector(".error-log").scrollTop=99999;
+  }else{
+    es.innerHTML=`<div class="no-errors">No errors</div>`;
+  }
+
+  // Banner
+  const banner=document.getElementById("banner");
+  if(d.finished){
+    banner.classList.add("show");
+    document.getElementById("bannerSummary").textContent=
+      `${d.completed_tracks} tracks completed in ${fmtTime(d.elapsed_s)}. `+
+      `${d.error_count} error(s).`;
+  }else{
+    banner.classList.remove("show");
+  }
+}
+
+// SSE Connection
+let evtSource=null;
+function connect(){
+  const dot=document.getElementById("connDot");
+  evtSource=new EventSource("/api/events");
+  evtSource.onopen=function(){dot.classList.add("live")};
+  evtSource.onmessage=function(event){
+    try{updateDashboard(JSON.parse(event.data))}catch(e){console.error(e)}
+  };
+  evtSource.onerror=function(){
+    dot.classList.remove("live");
+    evtSource.close();
+    setTimeout(connect,3000);
+  };
+}
+connect();
+</script>
+</body>
+</html>
