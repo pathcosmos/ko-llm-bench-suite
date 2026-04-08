@@ -94,3 +94,100 @@ class TestModelListConsistency:
         from kobench import config
         expected = config.FRANKENSTALLM_V1_MODELS + config.FRANKENSTALLM_V2_MODELS
         assert config.FRANKENSTALLM_MODELS == expected
+
+
+class TestApplyYamlToConfig:
+    """apply_yaml_to_config 함수 테스트"""
+
+    def test_apply_yaml_backend(self):
+        """YAML backend settings are applied to config."""
+        from kobench.config import apply_yaml_to_config
+        from kobench import config
+        original_url = config.OLLAMA_BASE_URL
+        try:
+            apply_yaml_to_config({"backend": {"url": "http://test:9999", "remote": True}})
+            assert config.OLLAMA_BASE_URL == "http://test:9999"
+            assert config.OLLAMA_REMOTE == True
+            assert config.OLLAMA_API_GENERATE == "http://test:9999/api/generate"
+        finally:
+            config.OLLAMA_BASE_URL = original_url
+            config.OLLAMA_REMOTE = False
+            config.OLLAMA_API_GENERATE = f"{original_url}/api/generate"
+            config.OLLAMA_API_CHAT = f"{original_url}/api/chat"
+            config.OLLAMA_API_SHOW = f"{original_url}/api/show"
+            config.OLLAMA_API_PS = f"{original_url}/api/ps"
+
+    def test_apply_yaml_judge(self):
+        """YAML judge settings are applied to config."""
+        from kobench.config import apply_yaml_to_config
+        from kobench import config
+        original_models = dict(config.JUDGE_MODELS)
+        original_weights = dict(config.JUDGE_WEIGHTS)
+        try:
+            apply_yaml_to_config({"judge": {
+                "dual_enabled": False,
+                "primary": {"model": "custom-judge", "weight": 0.8},
+                "secondary": {"model": "custom-judge-2", "weight": 0.2},
+                "timeout": 60,
+            }})
+            assert config.JUDGE_DUAL_ENABLED == False
+            assert config.JUDGE_MODELS["primary"] == "custom-judge"
+            assert config.JUDGE_MODELS["secondary"] == "custom-judge-2"
+            assert config.JUDGE_WEIGHTS["primary"] == 0.8
+            assert config.JUDGE_TIMEOUT == 60
+        finally:
+            config.JUDGE_MODELS.update(original_models)
+            config.JUDGE_WEIGHTS.update(original_weights)
+            config.JUDGE_DUAL_ENABLED = True
+            config.JUDGE_TIMEOUT = 120
+
+    def test_apply_yaml_sampling(self):
+        """YAML sampling settings are applied to config."""
+        from kobench.config import apply_yaml_to_config
+        from kobench import config
+        orig_temp = config.SAMPLING_PARAMS["temperature"]
+        orig_bench_temp = config.BENCHMARK_SAMPLING["temperature"]
+        try:
+            apply_yaml_to_config({"sampling": {
+                "default": {"temperature": 0.3},
+                "benchmark": {"temperature": 0.1},
+            }})
+            assert config.SAMPLING_PARAMS["temperature"] == 0.3
+            assert config.BENCHMARK_SAMPLING["temperature"] == 0.1
+        finally:
+            config.SAMPLING_PARAMS["temperature"] = orig_temp
+            config.BENCHMARK_SAMPLING["temperature"] = orig_bench_temp
+
+    def test_apply_yaml_retry(self):
+        """YAML retry settings are applied to config."""
+        from kobench.config import apply_yaml_to_config
+        from kobench import config
+        orig = (config.MAX_RETRIES, config.RETRY_BACKOFF_BASE, config.COOLDOWN_BETWEEN_MODELS)
+        try:
+            apply_yaml_to_config({"retry": {"max_retries": 5, "backoff_base": 10, "cooldown_between_models": 20}})
+            assert config.MAX_RETRIES == 5
+            assert config.RETRY_BACKOFF_BASE == 10
+            assert config.COOLDOWN_BETWEEN_MODELS == 20
+        finally:
+            config.MAX_RETRIES, config.RETRY_BACKOFF_BASE, config.COOLDOWN_BETWEEN_MODELS = orig
+
+    def test_apply_yaml_partial(self):
+        """Partial YAML (only some sections) preserves existing defaults."""
+        from kobench.config import apply_yaml_to_config
+        from kobench import config
+        orig_url = config.OLLAMA_BASE_URL
+        orig_retries = config.MAX_RETRIES
+        try:
+            apply_yaml_to_config({"retry": {"max_retries": 1}})
+            assert config.OLLAMA_BASE_URL == orig_url  # unchanged
+            assert config.MAX_RETRIES == 1  # changed
+        finally:
+            config.MAX_RETRIES = orig_retries
+
+    def test_apply_yaml_empty(self):
+        """Empty YAML dict changes nothing."""
+        from kobench.config import apply_yaml_to_config
+        from kobench import config
+        orig_url = config.OLLAMA_BASE_URL
+        apply_yaml_to_config({})
+        assert config.OLLAMA_BASE_URL == orig_url

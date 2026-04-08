@@ -173,8 +173,9 @@ def main():
     args = parser.parse_args()
 
     if args.config:
-        from kobench.config import load_yaml_config
+        from kobench.config import load_yaml_config, apply_yaml_to_config
         yaml_cfg = load_yaml_config(args.config)
+        apply_yaml_to_config(yaml_cfg)
         if yaml_cfg.get("models") and not args.models:
             args.models = [m["name"] for m in yaml_cfg["models"]]
 
