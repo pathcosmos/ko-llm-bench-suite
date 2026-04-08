@@ -75,6 +75,9 @@ pip install -r requirements.txt
 # 개발/테스트용 (선택)
 pip install -r requirements-dev.txt
 
+# 자동 설치 (Ollama + Judge 모델 포함)
+bash setup.sh
+
 # Ollama 설치 (이미 설치되어 있으면 건너뛰기)
 curl -fsSL https://ollama.com/install.sh | sh
 
@@ -362,6 +365,56 @@ pytest tests/ --cov=kobench --cov-report=html
 | 24 | quality_speed_tradeoff | 품질-속도 트레이드오프 |
 | 25 | t5_stacked_consistency | T5 적층 일관성 |
 | 26 | efficiency_bubble | 효율성 버블 차트 |
+
+## 체크포인트 & 재개
+
+장시간 평가가 중단되어도 자동으로 이어서 실행할 수 있습니다.
+
+- 각 모델 완료 후 `results/{track}_checkpoint.json`에 자동 저장
+- 동일 명령어로 재실행하면 완료된 모델은 건너뛰고 이어서 진행
+- 병렬 실행 시 체크포인트 충돌 방지:
+
+```bash
+# 머신 A
+EVAL_CHECKPOINT_SUFFIX="_a" python kobench.py --tracks 1 2 3
+
+# 머신 B
+EVAL_CHECKPOINT_SUFFIX="_b" python kobench.py --tracks 4 5 6 7
+```
+
+## 멀티머신 병렬 실행
+
+여러 GPU 서버에 평가를 분산할 수 있습니다.
+
+```bash
+# 서버 A (로컬 Ollama)
+EVAL_CHECKPOINT_SUFFIX="_server_a" python kobench.py --tracks 1 2 3 --models "qwen2.5:3b" "gemma3:4b"
+
+# 서버 B (원격 Ollama)
+OLLAMA_BASE_URL="http://gpu-server:11434" OLLAMA_REMOTE=1 \
+EVAL_CHECKPOINT_SUFFIX="_server_b" python kobench.py --tracks 4 5 6 --models "qwen2.5:3b" "gemma3:4b"
+
+# 결과 병합 (리포트만 재생성)
+python kobench.py --report-only
+```
+
+### SSH 터널을 통한 원격 접속
+
+```bash
+# 원격 서버 Ollama에 SSH 터널 연결
+ssh -NL 11434:localhost:11434 user@gpu-server &
+
+# 터널을 통해 원격 Ollama 사용
+OLLAMA_BASE_URL="http://localhost:11434" OLLAMA_REMOTE=1 \
+python kobench.py --config my_config.yaml
+```
+
+## Judge 모델 요구사항
+
+> **필수:** Track 2, 3, 7 실행 시 Judge 모델이 Ollama에 설치되어 있어야 합니다.
+> - Primary: `qwen2.5:7b-instruct` (~4.7GB)
+> - Secondary: `exaone3.5:7.8b` (~4.8GB)
+> - Judge 모델 없이 T1, T4, T5, T6만 실행 가능: `--tracks 1 4 5 6`
 
 ## Contributing
 

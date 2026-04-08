@@ -74,6 +74,9 @@ pip install -r requirements.txt
 # Install dev/test dependencies (optional)
 pip install -r requirements-dev.txt
 
+# Automated setup (Ollama + Judge models included)
+bash setup.sh
+
 # Install Ollama (skip if already installed)
 curl -fsSL https://ollama.com/install.sh | sh
 
@@ -350,6 +353,56 @@ The `examples/frankenstallm/` directory contains complete evaluation results for
 5. **v1 > v2 paradox**: Frankenstallm v1 (an earlier, simpler fine-tune) consistently outperforms v2 (which used more data and training steps) across most tracks. More training is not always better -- especially with small models and ORPO, where overfitting and catastrophic forgetting compound.
 
 6. **Korean-specialized models punch above their weight**: EXAONE models (from LG AI Research) consistently outperform larger general-purpose models on Korean-specific tracks (T2, T3), suggesting that targeted Korean training data is more valuable than raw parameter count.
+
+## Checkpoint & Resume
+
+Long-running evaluations can be interrupted and resumed automatically.
+
+- After each model completes, progress is saved to `results/{track}_checkpoint.json`
+- Re-running the same command skips completed models and continues from where it left off
+- Prevent checkpoint conflicts during parallel execution:
+
+```bash
+# Machine A
+EVAL_CHECKPOINT_SUFFIX="_a" python kobench.py --tracks 1 2 3
+
+# Machine B
+EVAL_CHECKPOINT_SUFFIX="_b" python kobench.py --tracks 4 5 6 7
+```
+
+## Multi-Machine Parallel Execution
+
+Distribute evaluations across multiple GPU servers.
+
+```bash
+# Server A (local Ollama)
+EVAL_CHECKPOINT_SUFFIX="_server_a" python kobench.py --tracks 1 2 3 --models "qwen2.5:3b" "gemma3:4b"
+
+# Server B (remote Ollama)
+OLLAMA_BASE_URL="http://gpu-server:11434" OLLAMA_REMOTE=1 \
+EVAL_CHECKPOINT_SUFFIX="_server_b" python kobench.py --tracks 4 5 6 --models "qwen2.5:3b" "gemma3:4b"
+
+# Merge results (regenerate report only)
+python kobench.py --report-only
+```
+
+### SSH Tunnel for Remote Access
+
+```bash
+# Set up SSH tunnel to remote Ollama server
+ssh -NL 11434:localhost:11434 user@gpu-server &
+
+# Use remote Ollama through the tunnel
+OLLAMA_BASE_URL="http://localhost:11434" OLLAMA_REMOTE=1 \
+python kobench.py --config my_config.yaml
+```
+
+## Judge Model Requirements
+
+> **Required:** Judge models must be installed in Ollama to run Tracks 2, 3, and 7.
+> - Primary: `qwen2.5:7b-instruct` (~4.7GB)
+> - Secondary: `exaone3.5:7.8b` (~4.8GB)
+> - To run without judge models, use only T1, T4, T5, T6: `--tracks 1 4 5 6`
 
 ## Contributing
 
