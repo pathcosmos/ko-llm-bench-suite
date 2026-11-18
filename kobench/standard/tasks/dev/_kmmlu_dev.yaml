@@ -1,0 +1,53 @@
+group: kmmlu_dev
+task:
+  - kmmlu_accounting_dev
+  - kmmlu_agricultural_sciences_dev
+  - kmmlu_aviation_engineering_and_maintenance_dev
+  - kmmlu_biology_dev
+  - kmmlu_chemical_engineering_dev
+  - kmmlu_chemistry_dev
+  - kmmlu_civil_engineering_dev
+  - kmmlu_computer_science_dev
+  - kmmlu_construction_dev
+  - kmmlu_criminal_law_dev
+  - kmmlu_ecology_dev
+  - kmmlu_economics_dev
+  - kmmlu_education_dev
+  - kmmlu_electrical_engineering_dev
+  - kmmlu_electronics_engineering_dev
+  - kmmlu_energy_management_dev
+  - kmmlu_environmental_science_dev
+  - kmmlu_fashion_dev
+  - kmmlu_food_processing_dev
+  - kmmlu_gas_technology_and_engineering_dev
+  - kmmlu_geomatics_dev
+  - kmmlu_health_dev
+  - kmmlu_industrial_engineer_dev
+  - kmmlu_information_technology_dev
+  - kmmlu_interior_architecture_and_design_dev
+  - kmmlu_korean_history_dev
+  - kmmlu_law_dev
+  - kmmlu_machine_design_and_manufacturing_dev
+  - kmmlu_management_dev
+  - kmmlu_maritime_engineering_dev
+  - kmmlu_marketing_dev
+  - kmmlu_materials_engineering_dev
+  - kmmlu_math_dev
+  - kmmlu_mechanical_engineering_dev
+  - kmmlu_nondestructive_testing_dev
+  - kmmlu_patent_dev
+  - kmmlu_political_science_and_sociology_dev
+  - kmmlu_psychology_dev
+  - kmmlu_public_safety_dev
+  - kmmlu_railway_and_automotive_engineering_dev
+  - kmmlu_real_estate_dev
+  - kmmlu_refrigerating_machinery_dev
+  - kmmlu_social_welfare_dev
+  - kmmlu_taxation_dev
+  - kmmlu_telecommunications_and_wireless_technology_dev
+aggregate_metric_list:
+  - metric: acc
+    aggregation: mean
+    weight_by_size: true
+metadata:
+  version: 1.0

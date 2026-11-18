@@ -1,0 +1,3 @@
+dataset_name: Patent
+include: _kmmlu_dev_yaml
+task: kmmlu_patent_dev

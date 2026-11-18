@@ -1,0 +1,14 @@
+# FRANKENSTALLM 3B v2 — 학습 토크나이저 GGUF용 (정량 평가·학습 형식과 토큰 ID 일치)
+# 1. GGUF 만들기 (가중치는 배포 GGUF와 바이트 동일, 토크나이저 메타데이터만 학습 토크나이저 korean_sp로 교체):
+#      python -m kobench.standard.gguf_retokenize --src frankenstallm-3b-v2-Q8_0.gguf --out frankenstallm-3b-v2-Q8_0.train-tokenizer.gguf
+# 2. <PATH_TO_TRAIN_TOKENIZER_GGUF>를 위 결과 경로로 바꾼 뒤:
+#      ollama create frankenstallm-3b-v2-train-tok -f modelfiles/Modelfile.frankenstallm-3b-v2-train-tokenizer
+# 학습 형식(configs/standard/formats.yaml user_assistant_v1)과 같은 문자열을 만들고, 맨 앞에 공백 하나를 둔다
+# (GGUF add_space_prefix=False와 짝: HF Metaspace의 앞 ▁ 규칙을 그대로 재현).
+# 2026-11-18 검증 (runs/format_conformance_v1/ollama_train_tok/ollama_token_ids.json):
+#   Ollama 렌더링 문자열을 Ollama 내부 llama-server로 토큰화한 결과가 학습 토큰 ID와 대화 29/29 일치, prompt_eval_count 29/29 일치.
+# 남은 한계: user 내용 안에 특수 토큰 문자열(</s>, <s>, <pad>, <unk>)이 있고 그 바로 뒤가 공백이 아니면 ▁ 하나가 다르다.
+FROM <PATH_TO_TRAIN_TOKENIZER_GGUF>
+TEMPLATE """{{- $hist := "" }}{{- $pend := "" }}{{- range .Messages }}{{- if eq .Role "user" }}{{- if $pend }}{{- $pend = printf "%s\n%s" $pend .Content }}{{- else }}{{- $pend = .Content }}{{- end }}{{- else if eq .Role "assistant" }}{{- if $pend }}{{- $hist = printf "%s<|user|>\n%s\n<|assistant|>\n%s\n" $hist $pend .Content }}{{- $pend = "" }}{{- end }}{{- end }}{{- end }}{{- if $pend }}{{ printf " %s<|user|>\n%s\n<|assistant|>\n" $hist $pend }}{{- end }}"""
+PARAMETER stop "</s>"
+PARAMETER num_ctx 4096

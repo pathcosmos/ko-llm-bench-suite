@@ -1,0 +1,8 @@
+# JANSORI 3B (base) — 사전학습만 한 모델: 원문 이어쓰기
+# 사용법: <PATH_TO_GGUF>를 dense-3b-47k-{Q8_0,Q4_K_M}.gguf 경로로 바꾼 뒤
+#   ollama create jansori-3b -f modelfiles/Modelfile.jansori-3b
+# 학습 형식 (configs/standard/formats.yaml): 문서 = ids + [<|eos|>], BOS 없음, chat 템플릿 없음.
+# 2026-11-18 검증: llama.cpp 토큰화 24/24 일치(BOS 추가 없음), Ollama prompt_eval_count 8/8 일치.
+FROM <PATH_TO_GGUF>
+TEMPLATE """{{ .Prompt }}"""
+PARAMETER num_ctx 4096

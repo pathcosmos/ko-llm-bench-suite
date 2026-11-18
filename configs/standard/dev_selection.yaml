@@ -1,0 +1,24 @@
+# 최적 설정 선택 규칙 (Goal 2 1단계) — dev 측정 전에 고정한다. test 결과는 선택에 쓰지 않는다.
+registered_at: "2026-11-18"
+suite: dev_mc_v1          # KoBEST validation(5-shot, few-shot은 train) / KMMLU train 과목별 앞 40(5-shot, few-shot은 dev) / Global-MMLU-Lite ko dev(0-shot)
+score: >-
+  세 dev 태스크의 lm-eval 대표 점수(acc) 산술 평균. 그룹(kobest_dev, kmmlu_dev)은 lm-eval 집계값(문항 수 가중)을 쓴다.
+rule: >-
+  점수가 가장 높은 변형을 고른다. 1위와 A(공통 프로토콜)의 차이가 0.001(0.1%p) 이하면 A를 고른다(불필요한 변형 배제).
+  shots 변형은 세 태스크 모두에 같은 few-shot 수를 적용한다.
+search_space:
+  user_models:
+    jansori-bf16: ["A", "docstart=eos", "shots=0", "docstart=eos,shots=0"]
+    frankenstallm-bf16: ["A", "docstart=eos", "shots=0", "chat=1", "chat=1,shots=0"]
+    evafrill_checkpoints:
+      # 1차: 7개 체크포인트를 A로 비교해 MC용 체크포인트를 고른다(base인 pretrain 포함).
+      # 2차: 고른 체크포인트(instruct면)에 대해 아래 변형을 비교한다.
+      checkpoints: [evafrill-mo-3b-pretrain, evafrill-mo-3b-sft-v2, evafrill-mo-3b-dpo-r1, evafrill-mo-3b-dpo-r2,
+                    evafrill-mo-3b-dpo-r3, evafrill-mo-3b-orpo, evafrill-mo-3b]
+      variants_after_selection: ["A", "docstart=eos", "shots=0", "chat=1", "chat=1,shots=0"]
+  public_models:
+    base: ["A", "shots=0"]
+    instruct: ["A", "chat=1", "shots=0"]     # chat=1은 각 모델의 공식 chat 템플릿
+notes:
+  - "생성 태스크용 설정(디코딩, <unk> 처리, system 처리, frankenstallm SFT 대 ORPO 형식)은 생성 dev 세트가 준비되면 같은 방식으로 별도 등록한다."
+  - "효과 보고: 선택된 변형과 A의 차이를 dev와 test 모두에서 paired bootstrap CI로 보고하되, 선택은 dev로만 한다."

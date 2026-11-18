@@ -1,0 +1,3 @@
+dataset_name: Mechanical-Engineering
+include: _kmmlu_dev_yaml
+task: kmmlu_mechanical_engineering_dev

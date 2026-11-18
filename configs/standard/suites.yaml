@@ -1,0 +1,45 @@
+# 표준 벤치 스위트 (lm-evaluation-harness 태스크 이름 사용)
+# 모든 MC 태스크는 선택지 로그우도로 채점하므로 base/instruct 모두 같은 프롬프트로 평가한다
+# (chat 템플릿 미적용 — Open LLM Leaderboard v1 / 원 논문 관례).
+# num_fewshot은 출처 관례를 따른다. source 필드에 근거를 남긴다.
+# metric: 대표 지표 (기본 acc; 길이 편향을 보정하는 acc_norm은 hellaswag/arc 관례)
+
+suites:
+  ko_mc_v1:
+    description: 한국어 표준 객관식 (로그우도)
+    tasks:
+      - {task: kobest,            num_fewshot: 5, source: "KoBEST (Kim et al. 2022) k-shot 평가; 5종 boolq/copa/hellaswag/sentineg/wic"}
+      - {task: kmmlu,             num_fewshot: 5, source: "KMMLU (Son et al. 2024) 5-shot"}
+      - {task: haerae,            num_fewshot: 0, source: "HAE-RAE Bench 1.0, lm-eval 기본"}
+      - {task: click,             num_fewshot: 0, source: "CLIcK (Kim et al. 2024) 0-shot"}
+      - {task: belebele_kor_Hang, num_fewshot: 0, source: "Belebele 한국어, lm-eval 기본"}
+      - {task: global_mmlu_ko,    num_fewshot: 0, source: "Global-MMLU ko (lite), lm-eval 기본"}
+  ko_mc_ext_v1:
+    description: 한국어 추가 객관식 (test만 있음 → 0-shot; kobench/standard/tasks/custom, 데이터 revision 고정)
+    tasks:
+      - {task: kmmlu_redux, num_fewshot: 0, source: "KMMLU-Redux (LGAI-EXAONE) 2,587문항, cc-by-nc-nd-4.0 비상업"}
+      - {task: kmmlu_pro,   num_fewshot: 0, source: "KMMLU-Pro (LGAI-EXAONE) 2,822문항, 선택지 4~5, cc-by-nc-nd-4.0 비상업"}
+      - {task: kobalt_700,  num_fewshot: 0, source: "KoBALT-700 (snunlp) 700문항, 선택지 10, cc-by-nc-4.0 비상업"}
+  ppl_v1:
+    description: PPL (loglikelihood_rolling, 대표 지표 bits_per_byte — 토크나이저가 달라도 비교 가능, 낮을수록 좋음)
+    tasks:
+      - {task: wiki40b_ko, num_fewshot: 0, metric: bits_per_byte, source: "wiki40b ko test 앞 500문서 (위키백과: 학습 데이터 오염 가능성)"}
+      - {task: wikitext,   num_fewshot: 0, metric: bits_per_byte, source: "wikitext-2 test 62문서 (lm-eval 기본)"}
+  en_mc_v1:
+    description: 영어 기준선 (Open LLM Leaderboard v1 설정)
+    tasks:
+      - {task: mmlu,          num_fewshot: 5}
+      - {task: arc_challenge, num_fewshot: 25, metric: acc_norm}
+      - {task: hellaswag,     num_fewshot: 10, metric: acc_norm}
+      - {task: winogrande,    num_fewshot: 5}
+  dev_mc_v1:
+    description: 설정 선택 전용 dev 분할 (test와 겹치지 않음; kobench/standard/tasks/dev)
+    tasks:
+      - {task: kobest_dev,         num_fewshot: 5, source: "KoBEST validation, few-shot은 train"}
+      - {task: kmmlu_dev,          num_fewshot: 5, source: "KMMLU train 과목별 앞 40문항, few-shot은 dev"}
+      - {task: global_mmlu_ko_dev, num_fewshot: 0, source: "Global-MMLU-Lite ko dev"}
+  smoke:
+    description: 환경·백엔드 확인용 (limit와 함께 사용)
+    tasks:
+      - {task: kobest_copa,   num_fewshot: 0}
+      - {task: kobest_boolq,  num_fewshot: 0}

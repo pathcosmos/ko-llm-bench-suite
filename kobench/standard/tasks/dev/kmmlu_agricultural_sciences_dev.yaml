@@ -1,0 +1,3 @@
+dataset_name: Agricultural-Sciences
+include: _kmmlu_dev_yaml
+task: kmmlu_agricultural_sciences_dev

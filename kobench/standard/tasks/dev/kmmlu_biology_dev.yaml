@@ -1,0 +1,3 @@
+dataset_name: Biology
+include: _kmmlu_dev_yaml
+task: kmmlu_biology_dev

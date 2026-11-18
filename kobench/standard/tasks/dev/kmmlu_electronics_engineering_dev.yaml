@@ -1,0 +1,3 @@
+dataset_name: Electronics-Engineering
+include: _kmmlu_dev_yaml
+task: kmmlu_electronics_engineering_dev

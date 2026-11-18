@@ -1,0 +1,3 @@
+dataset_name: Telecommunications-and-Wireless-Technology
+include: _kmmlu_dev_yaml
+task: kmmlu_telecommunications_and_wireless_technology_dev

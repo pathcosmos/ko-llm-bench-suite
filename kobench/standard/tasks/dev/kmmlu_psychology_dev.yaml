@@ -1,0 +1,3 @@
+dataset_name: Psychology
+include: _kmmlu_dev_yaml
+task: kmmlu_psychology_dev
