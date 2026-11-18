@@ -562,7 +562,7 @@ class TestRunStandalone:
             result = _run_standalone("test-model", questions)
 
         assert result["model"] == "test-model"
-        assert result["scores"]["kobest_copa"] == 1.0
+        assert result["scores"]["custom_kobest_copa"] == 1.0
         assert len(result["details"]) == 2
         assert all(d["correct"] for d in result["details"])
 
@@ -577,7 +577,7 @@ class TestRunStandalone:
         with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
             result = _run_standalone("test-model", questions)
 
-        assert result["scores"]["kobest_copa"] == 0.0
+        assert result["scores"]["custom_kobest_copa"] == 0.0
         assert all(not d["correct"] for d in result["details"])
 
     def test_error_response(self):
@@ -591,7 +591,7 @@ class TestRunStandalone:
         with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
             result = _run_standalone("test-model", questions)
 
-        assert result["scores"]["kobest_copa"] == 0.0
+        assert result["scores"]["custom_kobest_copa"] == 0.0
         assert result["details"][0]["correct"] is False
         assert result["details"][0]["error"] == "model not found"
 
@@ -623,8 +623,8 @@ class TestRunStandalone:
         with patch("kobench.tracks.korean_bench.runner.generate", return_value=gen_result):
             result = _run_standalone("test-model", questions)
 
-        assert "kobest_copa" in result["scores"]
-        assert "kobest_boolq" in result["scores"]
+        assert "custom_kobest_copa" in result["scores"]
+        assert "custom_kobest_boolq" in result["scores"]
 
     def test_detail_structure(self):
         """details 항목의 필수 키 검증"""
@@ -803,3 +803,46 @@ class TestRun:
         models_in_results = [r["model"] for r in output["results"]]
         assert "model-a" in models_in_results
         assert "model-b" in models_in_results
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 정답 위치 편향·파서 오인식 회귀 테스트
+# ═══════════════════════════════════════════════════════════════════════════════
+
+
+class TestAnswerPositionBalance:
+    """자체 문항의 정답이 한 위치(A)에 몰리지 않아야 한다 — 항상 'A'로 답하는 모델이 고득점하면 안 됨."""
+
+    def test_always_a_baseline_is_near_chance(self):
+        from collections import Counter
+
+        for builder, n in [(_build_kobest_copa, 2), (_build_kobest_hellaswag, 4), (_build_kmmlu, 4)]:
+            items = builder()
+            counts = Counter(it["answer"] for it in items)
+            always_a = counts[0] / len(items)
+            assert always_a <= 1 / n + 0.05, (builder.__name__, counts)
+
+    def test_rotation_preserves_correct_choice_text(self):
+        from kobench.tracks.korean_bench import _balance_answer
+
+        choices = ["정답", "오답1", "오답2", "오답3"]
+        for i in range(8):
+            rot, ans = _balance_answer(choices, 0, i)
+            assert rot[ans] == "정답" and sorted(rot) == sorted(choices) and ans == i % 4
+
+    def test_prompt_letters_match_rotated_choices(self):
+        for it in _build_kmmlu()[:8]:
+            correct_letter = chr(65 + it["answer"])
+            assert f"{correct_letter}. {it['choices'][it['answer']]}" in it["question"]
+
+
+class TestParseAnswerNoFalsePositives:
+    def test_lowercase_inside_word_is_not_a_choice(self):
+        assert _parse_answer("I think the answer is B", "kmmlu", 4) == 1
+        assert _parse_answer("모르겠습니다 (and so on)", "kmmlu", 4) is None
+
+    def test_first_standalone_uppercase_wins(self):
+        assert _parse_answer("정답: C. 왜냐하면 A는 틀렸기 때문", "kmmlu", 4) == 2
+
+    def test_sole_lowercase_letter_with_punctuation(self):
+        assert _parse_answer("(c)", "kmmlu", 4) == 2

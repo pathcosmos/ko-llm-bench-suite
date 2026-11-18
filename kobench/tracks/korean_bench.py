@@ -1,8 +1,11 @@
 """
-Track 1 — 한국어 표준 벤치마크 (KoBEST + KMMLU subset)
+Track 1 — 한국어 객관식 (생성 응답 파싱 방식)
 
-lm-evaluation-harness를 우선 사용하고, 설치되어 있지 않으면
-내장 standalone 문항으로 평가한다.
+lm-evaluation-harness를 우선 사용하고, 설치되어 있지 않으면 내장 standalone 문항으로 평가한다.
+
+주의: standalone 문항은 실제 KoBEST/KMMLU 데이터가 아니라 같은 형식으로 직접 작성한 소규모 문항이다.
+결과 점수 키에는 `custom_` 접두어를 붙여 실제 벤치마크와 구분한다. 실제 데이터셋의 로그우도 채점은
+`kobench.standard` (lm-eval + vLLM)를 사용한다.
 """
 
 import json
@@ -18,6 +21,21 @@ from kobench import config
 from kobench import runner
 
 TRACK_NAME = "korean_bench"
+CUSTOM_PREFIX = "custom_"
+
+
+def _balance_answer(choices: list[str], answer: int, index: int) -> tuple[list[str], int]:
+    """정답이 index % n 위치에 오도록 선택지를 회전한다 (결정적).
+
+    원래 작성된 문항은 정답이 대부분 첫 번째(A)였다 (KMMLU 49/50, HellaSwag 20/20, COPA 19/20).
+    이 상태로는 항상 "A"라고 답하는 모델이 거의 만점을 받는다. 회전만 하므로 선택지 집합은 그대로다.
+    """
+    n = len(choices)
+    target = index % n
+    shift = (answer - target) % n
+    rotated = choices[shift:] + choices[:shift]
+    assert rotated[target] == choices[answer]
+    return rotated, target
 
 # ─────────────────────────────────────────────────────────────────────────────
 # lm-evaluation-harness wrapper
@@ -151,13 +169,14 @@ def _build_kobest_copa() -> list[dict]:
     ]
     result = []
     for i, item in enumerate(items):
-        q = f"전제: {item['premise']}\n{item['question']}\n\nA. {item['choices'][0]}\nB. {item['choices'][1]}\n\n정답을 A 또는 B로만 답하세요."
+        choices, answer = _balance_answer(item["choices"], item["answer"], i)
+        q = f"전제: {item['premise']}\n{item['question']}\n\nA. {choices[0]}\nB. {choices[1]}\n\n정답을 A 또는 B로만 답하세요."
         result.append({
             "id": f"copa_{i:03d}",
             "benchmark": "kobest_copa",
             "question": q,
-            "choices": item["choices"],
-            "answer": item["answer"],
+            "choices": choices,
+            "answer": answer,
             "subject": "",
         })
     return result
@@ -307,14 +326,15 @@ def _build_kobest_hellaswag() -> list[dict]:
     ]
     result = []
     for i, item in enumerate(items):
-        choices_str = "\n".join(f"{chr(65+j)}. {c}" for j, c in enumerate(item["choices"]))
+        choices, answer = _balance_answer(item["choices"], item["answer"], i)
+        choices_str = "\n".join(f"{chr(65+j)}. {c}" for j, c in enumerate(choices))
         q = f"다음 상황에 이어질 가장 자연스러운 문장을 고르세요.\n\n상황: {item['context']}\n\n{choices_str}\n\n정답을 A, B, C, D 중 하나로만 답하세요."
         result.append({
             "id": f"hellaswag_{i:03d}",
             "benchmark": "kobest_hellaswag",
             "question": q,
-            "choices": item["choices"],
-            "answer": item["answer"],
+            "choices": choices,
+            "answer": answer,
             "subject": "",
         })
     return result
@@ -399,14 +419,15 @@ def _build_kmmlu() -> list[dict]:
     idx = 0
     for subject, questions in subjects.items():
         for qi, item in enumerate(questions):
-            choices_str = "\n".join(f"{chr(65+j)}. {c}" for j, c in enumerate(item["c"]))
+            choices, answer = _balance_answer(item["c"], item["a"], idx)
+            choices_str = "\n".join(f"{chr(65+j)}. {c}" for j, c in enumerate(choices))
             q = f"[{subject}] 다음 문제의 정답을 A, B, C, D 중 하나로만 답하세요.\n\n{item['q']}\n\n{choices_str}"
             result.append({
                 "id": f"kmmlu_{idx:03d}",
                 "benchmark": "kmmlu",
                 "question": q,
-                "choices": item["c"],
-                "answer": item["a"],
+                "choices": choices,
+                "answer": answer,
                 "subject": subject,
             })
             idx += 1
@@ -428,7 +449,10 @@ def _build_all_questions() -> list[dict]:
 # 응답 파싱
 # ─────────────────────────────────────────────────────────────────────────────
 
-_CHOICE_RE = re.compile(r"^[^A-Da-d예아]*([A-Da-d]|예|아니오)", re.MULTILINE)
+# 독립된 대문자 A–D만 선택지로 본다. 이전 정규식 [A-Da-d]는 "answer"의 a, "and"의 d 등 단어 안 글자에도 걸렸다.
+_CHOICE_RE = re.compile(r"(?<![A-Za-z])([A-D])(?![A-Za-z])")
+# 응답 전체가 선택지 글자 하나일 때만 소문자를 허용한다 (예: "b", "d.", "(c)")
+_SOLE_LETTER_RE = re.compile(r"^\W*([A-Da-d])\W*$")
 
 
 def _parse_answer(response: str, benchmark: str, num_choices: int) -> Optional[int]:
@@ -447,18 +471,17 @@ def _parse_answer(response: str, benchmark: str, num_choices: int) -> Optional[i
         if "예" in text[:10]:
             return 0
 
-    # A-D 매칭
-    m = _CHOICE_RE.search(text)
+    # A-D 매칭: 글자 하나뿐인 응답(소문자 허용) → 독립된 대문자 첫 등장
+    m = _SOLE_LETTER_RE.match(text) or _CHOICE_RE.search(text)
     if m:
-        choice = m.group(1).upper()
-        if choice in "ABCD":
-            idx = ord(choice) - ord("A")
-            if idx < num_choices:
-                return idx
-        if choice == "예":
-            return 0
-        if choice == "아니오":
-            return 1
+        idx = ord(m.group(1).upper()) - ord("A")
+        return idx if idx < num_choices else None
+
+    # BoolQ 외 문항에서 예/아니오로 답한 경우 (기존 동작 유지)
+    if "아니오" in text[:20]:
+        return 1 if num_choices >= 2 else None
+    if text.startswith("예"):
+        return 0
 
     return None
 
@@ -515,7 +538,8 @@ def _run_standalone(model: str, questions: list[dict]) -> dict:
     for bench in sorted(total_by_bench.keys()):
         total = total_by_bench[bench]
         correct = correct_by_bench[bench]
-        scores[bench] = round(correct / total, 4) if total > 0 else 0.0
+        # 자체 작성 문항임을 표시 (실제 KoBEST/KMMLU 점수와 혼동 방지)
+        scores[CUSTOM_PREFIX + bench] = round(correct / total, 4) if total > 0 else 0.0
 
     return {
         "model": model,

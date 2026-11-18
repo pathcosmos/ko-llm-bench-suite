@@ -261,7 +261,13 @@ def build_scorecard(track_results: dict[str, dict]) -> dict[str, dict]:
         track_results: {"track1": {model: score, ...}, "track2": {model: {mean: ...}}, ...}
     """
     scorecard = {}
-    for model in config.ALL_MODELS:
+    # 기본 목록(config.ALL_MODELS) 순서를 유지하되, YAML/--models로 추가돼 결과에만 있는 모델도 포함한다.
+    # (이전에는 ALL_MODELS만 순회해 추가 모델이 스코어카드에서 조용히 빠졌다)
+    models = list(config.ALL_MODELS)
+    for data in track_results.values():
+        if isinstance(data, dict):
+            models += [m for m in data if m not in models]
+    for model in models:
         scorecard[model] = {"model": model}
         for track_name, data in track_results.items():
             if model in data:
