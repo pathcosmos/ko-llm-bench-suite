@@ -1,0 +1,119 @@
+{
+ "task": "belebele_kor_Hang",
+ "num_fewshot": 0,
+ "source": "Belebele 한국어, lm-eval 기본",
+ "limit": null,
+ "wall_seconds": 20.4,
+ "finished_at": "2026-11-18T09:59:57.723459+00:00",
+ "results": {
+  "belebele_kor_Hang": {
+   "name": "belebele_kor_Hang",
+   "alias": "belebele_kor_Hang",
+   "sample_len": 900,
+   "acc,none": 0.23777777777777778,
+   "acc_stderr,none": 0.01419863480930816,
+   "acc_norm,none": 0.23777777777777778,
+   "acc_norm_stderr,none": 0.01419863480930816
+  }
+ },
+ "groups": null,
+ "n-samples": {
+  "belebele_kor_Hang": {
+   "original": 900,
+   "effective": 900
+  }
+ },
+ "versions_task": {
+  "belebele_kor_Hang": 0.0
+ },
+ "configs": {
+  "belebele_kor_Hang": {
+   "task": "belebele_kor_Hang",
+   "dataset_path": "facebook/belebele",
+   "dataset_name": "kor_Hang",
+   "test_split": "test",
+   "fewshot_split": "test",
+   "doc_to_text": "P: {{flores_passage}}\nQ: {{question.strip()}}\nA: {{mc_answer1}}\nB: {{mc_answer2}}\nC: {{mc_answer3}}\nD: {{mc_answer4}}\nAnswer:",
+   "doc_to_target": "{{['1', '2', '3', '4'].index(correct_answer_num)}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "first_n",
+    "split": "test",
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "P: {{flores_passage}}\nQ: {{question.strip()}}\nA: {{mc_answer1}}\nB: {{mc_answer2}}\nC: {{mc_answer3}}\nD: {{mc_answer4}}\nAnswer:",
+    "doc_to_choice": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "doc_to_target": "{{['1', '2', '3', '4'].index(correct_answer_num)}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": true,
+   "doc_to_decontamination_query": "{{question}}",
+   "metadata": {
+    "version": 0.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/belebele/belebele_kor_Hang.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "jansori-bf16",
+  "family": "JANSORI",
+  "kind": "base",
+  "backend": "vllm",
+  "path": "/home/work/llm-dense/llm-traditional/runs/3b_47k_hub_release_v1/nfs-release-v1/bf16",
+  "revision": "e68bfa3cb31e9589f4481a2e31d6d75c731fec9d",
+  "params_b": 3.2,
+  "active_b": 3.2,
+  "owner": "self",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "e767f9a6c74b015c2e04f5f3115410d8f9ea352d+dirty",
+ "load_seconds": 23.3,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "backend_info": null
+}

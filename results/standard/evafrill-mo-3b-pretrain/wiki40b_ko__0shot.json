@@ -1,0 +1,131 @@
+{
+ "task": "wiki40b_ko",
+ "num_fewshot": 0,
+ "source": "wiki40b ko test 앞 500문서 (위키백과: 학습 데이터 오염 가능성)",
+ "limit": null,
+ "wall_seconds": 25.7,
+ "finished_at": "2026-11-18T18:22:50.593454+00:00",
+ "results": {
+  "wiki40b_ko": {
+   "name": "wiki40b_ko",
+   "alias": "wiki40b_ko",
+   "sample_len": 500,
+   "word_perplexity,none": 431.4472754327349,
+   "word_perplexity_stderr,none": "N/A",
+   "byte_perplexity,none": 1.7631137058811175,
+   "byte_perplexity_stderr,none": "N/A",
+   "bits_per_byte,none": 0.8181255192531066,
+   "bits_per_byte_stderr,none": "N/A"
+  }
+ },
+ "groups": null,
+ "n-samples": {
+  "wiki40b_ko": {
+   "original": 500,
+   "effective": 500
+  }
+ },
+ "versions_task": {
+  "wiki40b_ko": 1.0
+ },
+ "configs": {
+  "wiki40b_ko": {
+   "task": "wiki40b_ko",
+   "dataset_path": "google/wiki40b",
+   "dataset_kwargs": {
+    "data_files": {
+     "test": "ko/test-00000-of-00001.parquet"
+    },
+    "revision": "06bfe584d8"
+   },
+   "test_split": "test",
+   "process_docs": "def wiki40b_docs(dataset):\n    \"\"\"test 분할의 앞 500문서 (결정적), 정리한 본문을 page 필드로.\"\"\"\n    ds = dataset.select(range(min(500, len(dataset))))\n    return ds.map(lambda d: {\"page\": wiki40b_clean(d[\"text\"])})\n",
+   "doc_to_text": "",
+   "doc_to_target": "def wiki40b_target(doc):\n    return doc[\"page\"]\n",
+   "unsafe_code": false,
+   "process_results": "def ppl_process_results(doc, results):\n    \"\"\"lm-eval wikitext와 같은 정의: 단어·바이트 수는 원문 기준.\"\"\"\n    (loglikelihood,) = results\n    words = len(_re.split(r\"\\s+\", doc[\"page\"]))\n    nbytes = len(doc[\"page\"].encode(\"utf-8\"))\n    return {\"word_perplexity\": (loglikelihood, words), \"byte_perplexity\": (loglikelihood, nbytes),\n            \"bits_per_byte\": (loglikelihood, nbytes)}\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": "<function wiki40b_docs at 0x7f7432d69f80>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "",
+    "doc_to_choice": null,
+    "doc_to_target": "<function wiki40b_target at 0x7f7432d6a0c0>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "word_perplexity"
+    },
+    {
+     "metric": "byte_perplexity"
+    },
+    {
+     "metric": "bits_per_byte"
+    }
+   ],
+   "output_type": "loglikelihood_rolling",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/home/work/llm-dense/llm-test/ko-llm-bench-suite/kobench/standard/tasks/custom/wiki40b_ko.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "evafrill-mo-3b-pretrain",
+  "family": "EVAFRILL-Mo",
+  "kind": "base",
+  "backend": "evafrill",
+  "path": "pathcosmos/EVAFRILL-Mo-3B",
+  "revision": "e95edece955af9df9a6215210db594a9984fddf5",
+  "params_b": 2.94,
+  "active_b": 2.94,
+  "owner": "self",
+  "subfolder": "pretrain",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "aadd748611c662cdefb9942f8f91bf598767a3f8+dirty",
+ "load_seconds": 43.9,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": {
+  "te_state_dict_converted": true,
+  "config_dropped_keys": [
+   "_description",
+   "_variant",
+   "architectures",
+   "model_type"
+  ],
+  "missing_buffers": [],
+  "n_params": 2953959168,
+  "tokenizer": "/workspace/llm-test/hf/hub/models--pathcosmos--EVAFRILL-Mo-3B/snapshots/e95edece955af9df9a6215210db594a9984fddf5/pretrain/tokenizer.json"
+ }
+}
