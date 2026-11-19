@@ -213,3 +213,19 @@ def test_custom_mc_task_helpers():
     assert u.kmmlu_x_text(doc) == "질문?\nA. 가\nB. 나\nC. 다\nD. 라\nE. 마\n정답："
     assert u.kmmlu_x_choices(doc) == list("ABCDE") and u.kmmlu_x_target(doc) == 4
     assert u.kobalt_target({"Answer": "J"}) == 9
+
+
+def test_hrm8k_strict_scoring_separates_format_failures():
+    pytest.importorskip("lm_eval")
+    import importlib.util
+
+    from kobench.standard.tasks import TASKS_DIR
+
+    spec = importlib.util.spec_from_file_location("kb_gen_utils", TASKS_DIR / "gen" / "utils.py")
+    u = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(u)
+    doc = {"answer": "18"}
+    assert u.hrm8k_process_results(doc, ["따라서 $\\boxed{18}$"]) == {"exact_match_strict": 1, "exact_match": 1, "format_fail": 0}
+    # 원본 규칙은 마지막 숫자를 답으로 봐서 맞다고 하지만, 엄격 채점은 형식 실패로 분리한다
+    assert u.hrm8k_process_results(doc, ["답은 18"]) == {"exact_match_strict": 0, "exact_match": 1, "format_fail": 1}
+    assert u.hrm8k_process_results(doc, ["\\boxed{7}"]) == {"exact_match_strict": 0, "exact_match": 0, "format_fail": 0}

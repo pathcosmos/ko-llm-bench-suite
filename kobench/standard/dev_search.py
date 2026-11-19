@@ -79,6 +79,18 @@ def select(model_ids: list[str] | None = None) -> dict:
         best["models"][mid] = {"chosen": chosen, "dev": cands,
                                "gain_over_A_dev": round(cands[chosen]["mean"] - cands["A"]["mean"], 5),
                                "selected_at": datetime.now(timezone.utc).isoformat()}
+    # EVAFRILL 1차: 체크포인트 선택 (모두 A, 같은 규칙: 최고 점수)
+    ev = rule["search_space"]["user_models"]["evafrill_checkpoints"]["checkpoints"]
+    ck = {c: dev_score(c, Variant(), tasks) for c in ev}
+    if all(v is not None for v in ck.values()):
+        top = max(ck, key=lambda c: ck[c]["mean"])
+        inst = [c for c in ev if models[c].kind == "instruct"]
+        best["evafrill_checkpoint"] = {
+            "chosen": top,
+            "best_instruct_stage": max(inst, key=lambda c: ck[c]["mean"]),
+            "dev": ck,
+            "note": "규칙대로 최고 점수 체크포인트를 고른다. best_instruct_stage는 instruct 표용 참고값(규칙 외 보조 정보).",
+        }
     BEST.write_text(yaml.safe_dump(best, allow_unicode=True, sort_keys=False), encoding="utf-8")
     return best
 

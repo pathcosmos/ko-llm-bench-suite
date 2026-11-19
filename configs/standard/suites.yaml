@@ -25,6 +25,11 @@ suites:
     tasks:
       - {task: wiki40b_ko, num_fewshot: 0, metric: bits_per_byte, source: "wiki40b ko test 앞 500문서 (위키백과: 학습 데이터 오염 가능성)"}
       - {task: wikitext,   num_fewshot: 0, metric: bits_per_byte, source: "wikitext-2 test 62문서 (lm-eval 기본)"}
+  gen_v1:
+    description: 생성 (정답 기반 규칙 채점, greedy, 0-shot; kobench/standard/tasks/gen). instruct는 chat 템플릿 변형(chat=1)이 대표값
+    tasks:
+      - {task: hrm8k_strict, num_fewshot: 0, metric: exact_match_strict, source: "HRM8K 8,011문항 (GSM8K·KSM·MATH·MMMLU·Omni-MATH 한국어). \\boxed 필수, 형식 실패 별도 집계"}
+      - {task: ifeval_ko,    num_fewshot: 0, metric: prompt_level_strict_acc, source: "IFEval-Ko (allganize) 342문항"}
   en_mc_v1:
     description: 영어 기준선 (Open LLM Leaderboard v1 설정)
     tasks:

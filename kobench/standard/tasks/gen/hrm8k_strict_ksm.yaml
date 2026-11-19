@@ -1,0 +1,3 @@
+include: _hrm8k_strict_yaml
+dataset_name: KSM
+task: hrm8k_strict_ksm

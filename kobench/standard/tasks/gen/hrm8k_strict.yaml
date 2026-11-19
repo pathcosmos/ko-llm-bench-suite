@@ -1,0 +1,8 @@
+group: hrm8k_strict
+task: [hrm8k_strict_gsm8k, hrm8k_strict_ksm, hrm8k_strict_math, hrm8k_strict_mmmlu, hrm8k_strict_omni_math]
+aggregate_metric_list:
+  - {metric: exact_match_strict, aggregation: mean, weight_by_size: true}
+  - {metric: exact_match, aggregation: mean, weight_by_size: true}
+  - {metric: format_fail, aggregation: mean, weight_by_size: true}
+metadata:
+  version: 1.0
