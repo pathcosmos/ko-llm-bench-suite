@@ -229,3 +229,15 @@ def test_hrm8k_strict_scoring_separates_format_failures():
     # 원본 규칙은 마지막 숫자를 답으로 봐서 맞다고 하지만, 엄격 채점은 형식 실패로 분리한다
     assert u.hrm8k_process_results(doc, ["답은 18"]) == {"exact_match_strict": 0, "exact_match": 1, "format_fail": 1}
     assert u.hrm8k_process_results(doc, ["\\boxed{7}"]) == {"exact_match_strict": 0, "exact_match": 0, "format_fail": 0}
+
+
+def test_relax_head_dim_check_only_for_explicit_head_dim():
+    pytest.importorskip("transformers")
+    from transformers import LlamaConfig
+
+    from kobench.standard.run import relax_head_dim_check
+
+    relax_head_dim_check()
+    assert LlamaConfig(hidden_size=1792, num_attention_heads=24, num_key_value_heads=8, head_dim=128).head_dim == 128
+    with pytest.raises(Exception):
+        LlamaConfig(hidden_size=1792, num_attention_heads=24)   # head_dim 미지정이면 여전히 거부

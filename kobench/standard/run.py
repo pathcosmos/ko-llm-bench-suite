@@ -96,6 +96,26 @@ class Variant:
         return cls(**kw)
 
 
+def relax_head_dim_check() -> None:
+    """transformers 5.20 LlamaConfig.validate_architecture는 hidden_size % num_attention_heads != 0이면 거부한다.
+    head_dim을 config에 명시한 모델(kanana-1.5: 1792/24, head_dim 128)은 정상인데도 로드되지 않는다.
+    head_dim이 명시된 경우에만 이 검사를 건너뛴다 (models.yaml relax_head_dim_check: true 모델에만 적용)."""
+    from transformers.models.llama.configuration_llama import LlamaConfig
+
+    orig = next((v for v in LlamaConfig.__class_validators__ if v.__name__ == "validate_architecture"), None)
+    if orig is None or getattr(orig, "_kobench_relaxed", False):
+        return
+
+    def validate_architecture(self):
+        hd = getattr(self, "head_dim", None)
+        if hd and hd != self.hidden_size // self.num_attention_heads:   # 기본값(hidden//heads)과 다른 = 명시된 head_dim
+            return
+        return orig(self)
+
+    validate_architecture._kobench_relaxed = True
+    LlamaConfig.__class_validators__ = [validate_architecture if v is orig else v for v in LlamaConfig.__class_validators__]
+
+
 def build_lm(spec: ModelSpec, gpu_mem: float, batch_size: str, variant: "Variant | None" = None):
     """모델당 한 번만 로드한다 (vLLM 로딩이 수십 초~분 단위)."""
     variant = variant or Variant()
@@ -103,6 +123,9 @@ def build_lm(spec: ModelSpec, gpu_mem: float, batch_size: str, variant: "Variant
         raise ValueError("문서 시작 토큰 변형은 사용자 모델 전용 (공개 모델은 자체 BOS 규칙을 따른다)")
     if spec.backend == "vllm":
         from lm_eval.models.vllm_causallms import VLLM
+
+        if spec.extra.get("relax_head_dim_check"):
+            relax_head_dim_check()
 
         fmt_kwargs = {}
         if spec.owner == "self":

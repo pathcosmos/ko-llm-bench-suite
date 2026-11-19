@@ -118,15 +118,17 @@ models:
   qwen2.5-3b-instruct:  {family: Qwen2.5, kind: instruct, backend: vllm, path: Qwen/Qwen2.5-3B-Instruct,        revision: aa8e72537993ba99e69dfaafa59ed015b17504d1, params_b: 3.1, active_b: 3.1}
   kanana-2-3b-base:     {family: kanana-2, kind: base,     backend: vllm, path: kakaocorp/kanana-2-3b-base,     revision: 9fa2a678c379700868d72685a22ea8ed0263ef33, params_b: 3.0, active_b: 3.0}
   kanana-2-3b:          {family: kanana-2, kind: instruct, backend: vllm, path: kakaocorp/kanana-2-3b-instruct, revision: 6a5d7889964c4c590299d16e309eabab1f73f8a9, params_b: 3.0, active_b: 3.0}
-  kanana-1.5-2.1b-base: {family: kanana-1.5, kind: base,     backend: vllm, path: kakaocorp/kanana-1.5-2.1b-base,          revision: 83fdd4426138b2becb3b33197126de2e4f5dfcd3, params_b: 2.1, active_b: 2.1}
-  kanana-1.5-2.1b:      {family: kanana-1.5, kind: instruct, backend: vllm, path: kakaocorp/kanana-1.5-2.1b-instruct-2505, revision: 7df4bc35ccd610e451809d7106e1c3cf82bfd44c, params_b: 2.1, active_b: 2.1}
+  # kanana-1.5: hidden 1792, heads 24, head_dim 128 명시. transformers 5.20 LlamaConfig 검증이 head_dim을 무시하고 거부 → relax_head_dim_check
+  kanana-1.5-2.1b-base: {family: kanana-1.5, kind: base,     backend: vllm, path: kakaocorp/kanana-1.5-2.1b-base,          revision: 83fdd4426138b2becb3b33197126de2e4f5dfcd3, params_b: 2.1, active_b: 2.1, relax_head_dim_check: true}
+  kanana-1.5-2.1b:      {family: kanana-1.5, kind: instruct, backend: vllm, path: kakaocorp/kanana-1.5-2.1b-instruct-2505, revision: 7df4bc35ccd610e451809d7106e1c3cf82bfd44c, params_b: 2.1, active_b: 2.1, relax_head_dim_check: true}
   smollm3-3b-base:      {family: SmolLM3, kind: base,     backend: vllm, path: HuggingFaceTB/SmolLM3-3B-Base,   revision: d78a42f79198603e614095753484a04c10c2b940, params_b: 3.1, active_b: 3.1}
   smollm3-3b:           {family: SmolLM3, kind: instruct, backend: vllm, path: HuggingFaceTB/SmolLM3-3B,        revision: a07cc9a04f16550a088caea529712d1d335b0ac1, params_b: 3.1, active_b: 3.1}
   gemma-4-e4b:          {family: Gemma4,  kind: base,     backend: vllm, path: google/gemma-4-E4B,              revision: 11b8250ef59eb3ebc5dae7b21144d7b84f2c06dd, params_b: 8.0, active_b: 4.0}
   gemma-4-e4b-it:       {family: Gemma4,  kind: instruct, backend: vllm, path: google/gemma-4-E4B-it,           revision: 4ecc2ba63bcac23ba4a767fc87025b1450f84c9c, params_b: 8.0, active_b: 4.0}
   llama-3.2-3b:         {family: Llama3.2, kind: base,     backend: vllm, path: meta-llama/Llama-3.2-3B,          revision: 13afe5124825b4f3751f836b40dafda64c1ed062, params_b: 3.2, active_b: 3.2, gated: true}
   llama-3.2-3b-instruct: {family: Llama3.2, kind: instruct, backend: vllm, path: meta-llama/Llama-3.2-3B-Instruct, revision: 0cb88a4f764b7a12671c53f0838cd831a0843b95, params_b: 3.2, active_b: 3.2, gated: true}
-  exaone-3.5-2.4b:      {family: EXAONE3.5, kind: instruct, backend: vllm, path: LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct, revision: ccce25bd39c141fe053e0bc75818a8f5fe962802, params_b: 2.4, active_b: 2.4}
+  # EXAONE-3.5: config가 저장소 코드(configuration_exaone.py, 고정 revision, config 클래스만 — 2026-11-19 확인). vLLM은 자체 모델 구현 사용
+  exaone-3.5-2.4b:      {family: EXAONE3.5, kind: instruct, backend: vllm, path: LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct, revision: ccce25bd39c141fe053e0bc75818a8f5fe962802, params_b: 2.4, active_b: 2.4, trust_remote_code: true}
   phi-4-mini:           {family: Phi4,    kind: instruct, backend: vllm, path: microsoft/Phi-4-mini-instruct,   revision: cfbefacb99257ffa30c83adab238a50856ac3083, params_b: 3.8, active_b: 3.8}
 
   # ── 비교: MoE A3B급 ──────────────────────────────────────────────────────
