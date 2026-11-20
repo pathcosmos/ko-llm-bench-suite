@@ -1,0 +1,146 @@
+# 표준 벤치 모델 레지스트리 (kobench.standard)
+# - path: 로컬 경로 또는 HF repo id. ${ENV} 확장 지원.
+# - revision: HF commit SHA로 고정 (로컬 경로면 provenance 기록용)
+# - kind: base | instruct  → 결과 표에서 같은 kind끼리 비교
+# - backend: vllm | evafrill
+# - params_b / active_b: 총/활성 파라미터(십억). dense는 같음.
+# - owner: self = 사용자 모델
+# 공개 모델 revision은 다운로드 시점에 `python -m kobench.standard.run --pin` 으로 채운다 (null = 미고정, 실행 거부).
+
+models:
+  # ── 사용자 모델 ──────────────────────────────────────────────────────────
+  jansori-bf16:
+    owner: self
+    family: JANSORI
+    kind: base
+    backend: vllm
+    path: ${JANSORI_BF16:-/home/work/llm-dense/llm-traditional/runs/3b_47k_hub_release_v1/nfs-release-v1/bf16}
+    revision: e68bfa3cb31e9589f4481a2e31d6d75c731fec9d   # pathcosmos/JANSORI 배포 commit (NFS 사본 SHA 일치)
+    params_b: 3.2
+    active_b: 3.2
+    max_length: 4096
+  frankenstallm-bf16:
+    owner: self
+    family: FRANKENSTALLM
+    kind: instruct            # SFT→ORPO
+    backend: vllm
+    path: pathcosmos/frankenstallm
+    revision: b9f7777f01479b18e5a3a55f9cad4582df122f7d
+    params_b: 3.0
+    active_b: 3.0
+    max_length: 4096
+  evafrill-mo-3b:
+    owner: self
+    family: EVAFRILL-Mo
+    kind: instruct            # 루트 = 최종(SLERP) 체크포인트
+    backend: evafrill
+    path: pathcosmos/EVAFRILL-Mo-3B
+    revision: e95edece955af9df9a6215210db594a9984fddf5
+    subfolder: ""
+    params_b: 2.94
+    active_b: 2.94
+    max_length: 4096
+  evafrill-mo-3b-pretrain:
+    owner: self
+    family: EVAFRILL-Mo
+    kind: base
+    backend: evafrill
+    path: pathcosmos/EVAFRILL-Mo-3B
+    revision: e95edece955af9df9a6215210db594a9984fddf5
+    subfolder: pretrain
+    params_b: 2.94
+    active_b: 2.94
+    max_length: 4096
+
+  # EVAFRILL 학습 단계별 체크포인트 (루트 model.safetensors = slerp와 같은 파일)
+  evafrill-mo-3b-sft-v2:
+    owner: self
+    family: EVAFRILL-Mo
+    kind: instruct
+    backend: evafrill
+    path: pathcosmos/EVAFRILL-Mo-3B
+    revision: e95edece955af9df9a6215210db594a9984fddf5
+    subfolder: sft-v2
+    params_b: 2.94
+    active_b: 2.94
+    max_length: 4096
+  evafrill-mo-3b-dpo-r1:
+    owner: self
+    family: EVAFRILL-Mo
+    kind: instruct
+    backend: evafrill
+    path: pathcosmos/EVAFRILL-Mo-3B
+    revision: e95edece955af9df9a6215210db594a9984fddf5
+    subfolder: dpo-r1
+    params_b: 2.94
+    active_b: 2.94
+    max_length: 4096
+  evafrill-mo-3b-dpo-r2:
+    owner: self
+    family: EVAFRILL-Mo
+    kind: instruct
+    backend: evafrill
+    path: pathcosmos/EVAFRILL-Mo-3B
+    revision: e95edece955af9df9a6215210db594a9984fddf5
+    subfolder: dpo-r2
+    params_b: 2.94
+    active_b: 2.94
+    max_length: 4096
+  evafrill-mo-3b-dpo-r3:
+    owner: self
+    family: EVAFRILL-Mo
+    kind: instruct
+    backend: evafrill
+    path: pathcosmos/EVAFRILL-Mo-3B
+    revision: e95edece955af9df9a6215210db594a9984fddf5
+    subfolder: dpo-r3
+    params_b: 2.94
+    active_b: 2.94
+    max_length: 4096
+  evafrill-mo-3b-orpo:
+    owner: self
+    family: EVAFRILL-Mo
+    kind: instruct
+    backend: evafrill
+    path: pathcosmos/EVAFRILL-Mo-3B
+    revision: e95edece955af9df9a6215210db594a9984fddf5
+    subfolder: orpo
+    params_b: 2.94
+    active_b: 2.94
+    max_length: 4096
+
+  # ── 비교: dense 3B급 (base / instruct) ────────────────────────────────────
+  qwen3.5-4b-base:      {family: Qwen3.5, kind: base,     backend: vllm, path: Qwen/Qwen3.5-4B-Base,            revision: 1001bb4d826a52d1f399e183466143f4da7b741b, params_b: 4.0, active_b: 4.0}
+  qwen3.5-4b:           {family: Qwen3.5, kind: instruct, backend: vllm, path: Qwen/Qwen3.5-4B,                 revision: 851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a, params_b: 4.0, active_b: 4.0}
+  qwen3-4b-base:        {family: Qwen3,   kind: base,     backend: vllm, path: Qwen/Qwen3-4B-Base,              revision: 906bfd4b4dc7f14ee4320094d8b41684abff8539, params_b: 4.0, active_b: 4.0}
+  qwen3-4b-2507:        {family: Qwen3,   kind: instruct, backend: vllm, path: Qwen/Qwen3-4B-Instruct-2507,     revision: cdbee75f17c01a7cc42f958dc650907174af0554, params_b: 4.0, active_b: 4.0}
+  qwen2.5-3b:           {family: Qwen2.5, kind: base,     backend: vllm, path: Qwen/Qwen2.5-3B,                 revision: 3aab1f1954e9cc14eb9509a215f9e5ca08227a9b, params_b: 3.1, active_b: 3.1}
+  qwen2.5-3b-instruct:  {family: Qwen2.5, kind: instruct, backend: vllm, path: Qwen/Qwen2.5-3B-Instruct,        revision: aa8e72537993ba99e69dfaafa59ed015b17504d1, params_b: 3.1, active_b: 3.1}
+  kanana-2-3b-base:     {family: kanana-2, kind: base,     backend: vllm, path: kakaocorp/kanana-2-3b-base,     revision: 9fa2a678c379700868d72685a22ea8ed0263ef33, params_b: 3.0, active_b: 3.0}
+  kanana-2-3b:          {family: kanana-2, kind: instruct, backend: vllm, path: kakaocorp/kanana-2-3b-instruct, revision: 6a5d7889964c4c590299d16e309eabab1f73f8a9, params_b: 3.0, active_b: 3.0}
+  # kanana-1.5: hidden 1792, heads 24, head_dim 128 명시. transformers 5.20 LlamaConfig 검증이 head_dim을 무시하고 거부 → relax_head_dim_check
+  kanana-1.5-2.1b-base: {family: kanana-1.5, kind: base,     backend: vllm, path: kakaocorp/kanana-1.5-2.1b-base,          revision: 83fdd4426138b2becb3b33197126de2e4f5dfcd3, params_b: 2.1, active_b: 2.1, relax_head_dim_check: true}
+  kanana-1.5-2.1b:      {family: kanana-1.5, kind: instruct, backend: vllm, path: kakaocorp/kanana-1.5-2.1b-instruct-2505, revision: 7df4bc35ccd610e451809d7106e1c3cf82bfd44c, params_b: 2.1, active_b: 2.1, relax_head_dim_check: true}
+  smollm3-3b-base:      {family: SmolLM3, kind: base,     backend: vllm, path: HuggingFaceTB/SmolLM3-3B-Base,   revision: d78a42f79198603e614095753484a04c10c2b940, params_b: 3.1, active_b: 3.1}
+  smollm3-3b:           {family: SmolLM3, kind: instruct, backend: vllm, path: HuggingFaceTB/SmolLM3-3B,        revision: a07cc9a04f16550a088caea529712d1d335b0ac1, params_b: 3.1, active_b: 3.1}
+  gemma-4-e4b:          {family: Gemma4,  kind: base,     backend: vllm, path: google/gemma-4-E4B,              revision: 11b8250ef59eb3ebc5dae7b21144d7b84f2c06dd, params_b: 8.0, active_b: 4.0}
+  gemma-4-e4b-it:       {family: Gemma4,  kind: instruct, backend: vllm, path: google/gemma-4-E4B-it,           revision: 4ecc2ba63bcac23ba4a767fc87025b1450f84c9c, params_b: 8.0, active_b: 4.0}
+  llama-3.2-3b:         {family: Llama3.2, kind: base,     backend: vllm, path: meta-llama/Llama-3.2-3B,          revision: 13afe5124825b4f3751f836b40dafda64c1ed062, params_b: 3.2, active_b: 3.2, gated: true}
+  llama-3.2-3b-instruct: {family: Llama3.2, kind: instruct, backend: vllm, path: meta-llama/Llama-3.2-3B-Instruct, revision: 0cb88a4f764b7a12671c53f0838cd831a0843b95, params_b: 3.2, active_b: 3.2, gated: true}
+  # EXAONE-3.5: config가 저장소 코드(configuration_exaone.py, 고정 revision, config 클래스만 — 2026-11-19 확인). vLLM은 자체 모델 구현 사용
+  exaone-3.5-2.4b:      {family: EXAONE3.5, kind: instruct, backend: vllm, path: LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct, revision: ccce25bd39c141fe053e0bc75818a8f5fe962802, params_b: 2.4, active_b: 2.4, trust_remote_code: true}
+  phi-4-mini:           {family: Phi4,    kind: instruct, backend: vllm, path: microsoft/Phi-4-mini-instruct,   revision: cfbefacb99257ffa30c83adab238a50856ac3083, params_b: 3.8, active_b: 3.8}
+
+  # ── 비교: MoE A3B급 ──────────────────────────────────────────────────────
+  qwen3.6-35b-a3b:      {family: Qwen3.6-MoE, kind: instruct, backend: vllm, path: Qwen/Qwen3.6-35B-A3B,          revision: 345d467b117d1fd5eda9b879a5988de9ae5f47a7, params_b: 35, active_b: 3}
+  qwen3.5-35b-a3b-base: {family: Qwen3.5-MoE, kind: base,     backend: vllm, path: Qwen/Qwen3.5-35B-A3B-Base,     revision: 0f0813072d2358973511097385626f21fcb6d422, params_b: 35, active_b: 3}
+  qwen3.5-35b-a3b:      {family: Qwen3.5-MoE, kind: instruct, backend: vllm, path: Qwen/Qwen3.5-35B-A3B,          revision: 59d61f3ce65a6d9863b86d2e96597125219dc754, params_b: 35, active_b: 3}
+  qwen3-30b-a3b-base:   {family: Qwen3-MoE, kind: base,     backend: vllm, path: Qwen/Qwen3-30B-A3B-Base,         revision: 1b75feb79f60b8dc6c5bc769a898c206a1c6a4f9, params_b: 30.5, active_b: 3.3}
+  qwen3-30b-a3b-2507:   {family: Qwen3-MoE, kind: instruct, backend: vllm, path: Qwen/Qwen3-30B-A3B-Instruct-2507, revision: 0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe, params_b: 30.5, active_b: 3.3}
+  kanana-2-30b-a3b-base: {family: kanana-2-MoE, kind: base,     backend: vllm, path: kakaocorp/kanana-2-30b-a3b-base-2601,     revision: 0d31365acf656e5f9a593cacc4913e9c0d36cb1c, params_b: 30, active_b: 3}
+  kanana-2-30b-a3b:      {family: kanana-2-MoE, kind: instruct, backend: vllm, path: kakaocorp/kanana-2-30b-a3b-instruct-2601, revision: 4a781fe5027da4af8d8208cb21bc5108b913bb62, params_b: 30, active_b: 3}
+  nemotron-3.5-lightning-30b-a3b: {family: Nemotron-H-MoE, kind: instruct, backend: vllm, path: nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16, revision: a9904d24bcc1d289a1950fa9d2b978c47cf903b9, params_b: 30, active_b: 3, trust_remote_code: true}
+  nemotron-3-nano-30b-a3b-base:   {family: Nemotron-H-MoE, kind: base,     backend: vllm, path: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16, revision: e0ac9ee3dfd02be21b5479edfc2f671ed269d0a2, params_b: 30, active_b: 3, trust_remote_code: true}
+  nemotron-3-nano-30b-a3b:        {family: Nemotron-H-MoE, kind: instruct, backend: vllm, path: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16,      revision: bf77c3174f68ad409e1c2aa60daeb46e32d1c606, params_b: 30, active_b: 3, trust_remote_code: true}
+  ernie-4.5-21b-a3b-base: {family: ERNIE4.5-MoE, kind: base,     backend: vllm, path: baidu/ERNIE-4.5-21B-A3B-Base-PT, revision: c6804383159ca6ad60896b3a8a98c5c01e9b42d5, params_b: 21, active_b: 3}
+  ernie-4.5-21b-a3b:      {family: ERNIE4.5-MoE, kind: instruct, backend: vllm, path: baidu/ERNIE-4.5-21B-A3B-PT,      revision: 87db95487941cb39592ee0abca3b9155a6d19c5c, params_b: 21, active_b: 3}

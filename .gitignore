@@ -29,3 +29,10 @@ htmlcov/
 # 스크린샷 출력
 screenshot_outputs/
 screenshot_outputs_new/
+
+# 표준 벤치 문항별 결과: 데이터셋 원문(일부 gated·비상업 cc-by-nc-nd: KMMLU-Redux/Pro, KoBALT)을 담고 크다(수백 MB).
+# 공개 저장소에 재배포하지 않고 로컬(NFS)에만 둔다. 요약 JSON(점수·설정·버전)만 커밋한다.
+results/**/*.samples.jsonl.gz
+results/**/*.tmp
+# 스모크(--limit) 결과
+results/**/*__limit*

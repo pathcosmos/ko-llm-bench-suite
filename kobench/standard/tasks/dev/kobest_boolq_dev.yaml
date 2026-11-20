@@ -1,0 +1,22 @@
+# 자동 생성: lm_eval/tasks/kobest/kobest_boolq.yaml에서 test_split만 validation으로
+task: kobest_boolq_dev
+dataset_path: skt/kobest_v1
+dataset_name: boolq
+output_type: multiple_choice
+training_split: train
+validation_split: validation
+test_split: validation
+doc_to_text: "{{paragraph}} 질문: {{question}} 답변: "
+doc_to_target: "{{label}}"
+doc_to_choice: ["아니오", "예"]
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: True
+  - metric: f1
+    aggregation: !function kobest_utils.macro_f1_score
+    average: macro
+    hf_evaluate: true
+    higher_is_better: True
+metadata:
+  version: 1.0

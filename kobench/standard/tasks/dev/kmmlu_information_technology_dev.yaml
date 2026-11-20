@@ -1,0 +1,3 @@
+dataset_name: Information-Technology
+include: _kmmlu_dev_yaml
+task: kmmlu_information_technology_dev

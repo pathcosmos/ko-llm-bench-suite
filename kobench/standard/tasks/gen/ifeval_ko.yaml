@@ -1,0 +1,24 @@
+# IFEval-Ko (allganize, 342문항, revision 고정): 영어 IFEval을 한국어로 옮긴 것. lm-eval IFEval 채점기 그대로.
+# 주의: 단어·문장 수 제약은 IFEval의 영어식 분절(공백·nltk)로 센다.
+task: ifeval_ko
+dataset_path: allganize/IFEval-Ko
+dataset_kwargs:
+  revision: 54199e3801116897697babf341865741dcd06fc8
+output_type: generate_until
+test_split: train
+num_fewshot: 0
+doc_to_text: prompt
+doc_to_target: 0
+generation_kwargs:
+  until: []
+  do_sample: false
+  temperature: 0.0
+  max_gen_toks: 1280
+process_results: !function utils.ifeval_process_results
+metric_list:
+  - {metric: prompt_level_strict_acc, aggregation: mean, higher_is_better: true}
+  - {metric: inst_level_strict_acc, aggregation: !function utils.agg_inst_level_acc, higher_is_better: true}
+  - {metric: prompt_level_loose_acc, aggregation: mean, higher_is_better: true}
+  - {metric: inst_level_loose_acc, aggregation: !function utils.agg_inst_level_acc, higher_is_better: true}
+metadata:
+  version: 1.0

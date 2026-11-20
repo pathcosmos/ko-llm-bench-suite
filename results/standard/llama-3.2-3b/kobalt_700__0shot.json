@@ -1,0 +1,131 @@
+{
+ "task": "kobalt_700",
+ "num_fewshot": 0,
+ "source": "KoBALT-700 (snunlp) 700문항, 선택지 10, cc-by-nc-4.0 비상업",
+ "limit": null,
+ "wall_seconds": 27.0,
+ "finished_at": "2026-11-18T20:41:57.221132+00:00",
+ "results": {
+  "kobalt_700": {
+   "name": "kobalt_700",
+   "alias": "kobalt_700",
+   "sample_len": 700,
+   "acc,none": 0.10142857142857142,
+   "acc_stderr,none": 0.011418731713440617
+  }
+ },
+ "groups": null,
+ "n-samples": {
+  "kobalt_700": {
+   "original": 700,
+   "effective": 700
+  }
+ },
+ "versions_task": {
+  "kobalt_700": 1.0
+ },
+ "configs": {
+  "kobalt_700": {
+   "task": "kobalt_700",
+   "dataset_path": "snunlp/KoBALT-700",
+   "dataset_kwargs": {
+    "revision": "30c30a431066508e6bef77cfa6d6059b85b12f0d"
+   },
+   "test_split": "raw",
+   "doc_to_text": "def kobalt_text(doc):\n    return f\"{doc['Question'].strip()}\\n정답：\"\n",
+   "doc_to_target": "def kobalt_target(doc):\n    return LETTERS.index(doc[\"Answer\"].strip())\n",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function kobalt_text at 0x70876d054180>",
+    "doc_to_choice": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F",
+     "G",
+     "H",
+     "I",
+     "J"
+    ],
+    "doc_to_target": "<function kobalt_target at 0x70876d054860>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "license": "cc-by-nc-4.0 (비상업)",
+    "config_source": "/home/work/llm-dense/llm-test/ko-llm-bench-suite/kobench/standard/tasks/custom/kobalt_700.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "llama-3.2-3b",
+  "family": "Llama3.2",
+  "kind": "base",
+  "backend": "vllm",
+  "path": "meta-llama/Llama-3.2-3B",
+  "revision": "13afe5124825b4f3751f836b40dafda64c1ed062",
+  "params_b": 3.2,
+  "active_b": 3.2,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": true,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "aadd748611c662cdefb9942f8f91bf598767a3f8+dirty",
+ "load_seconds": 40.6,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": null
+}

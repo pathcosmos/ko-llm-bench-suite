@@ -14,9 +14,20 @@ _EVAFRILL_MOCK_MODULES = [
     "tokenizers", "safetensors", "safetensors.torch",
     "yaml",
 ]
+import importlib  # noqa: E402
+
 for _mod in _EVAFRILL_MOCK_MODULES:
-    if _mod not in sys.modules:
-        sys.modules[_mod] = MagicMock()
+    if _mod in sys.modules:
+        continue
+    # 실제로 설치된 범용 패키지(yaml, tokenizers, safetensors)는 mock하지 않는다.
+    # 무조건 mock하면 같은 프로세스의 다른 테스트에서 yaml.safe_load 등이 MagicMock을 반환한다.
+    if _mod.split(".")[0] != "model":
+        try:
+            importlib.import_module(_mod)
+            continue
+        except ImportError:
+            pass
+    sys.modules[_mod] = MagicMock()
 
 
 # ── Ollama API mock fixtures ────────────────────────────────────────────────

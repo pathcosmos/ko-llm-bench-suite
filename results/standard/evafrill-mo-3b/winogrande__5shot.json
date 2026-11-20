@@ -1,0 +1,118 @@
+{
+ "task": "winogrande",
+ "num_fewshot": 5,
+ "source": "",
+ "limit": null,
+ "wall_seconds": 10.5,
+ "finished_at": "2026-11-18T17:50:17.851697+00:00",
+ "results": {
+  "winogrande": {
+   "name": "winogrande",
+   "alias": "winogrande",
+   "sample_len": 1267,
+   "acc,none": 0.5138121546961326,
+   "acc_stderr,none": 0.014047122916440271
+  }
+ },
+ "groups": null,
+ "n-samples": {
+  "winogrande": {
+   "original": 1267,
+   "effective": 1267
+  }
+ },
+ "versions_task": {
+  "winogrande": 1.0
+ },
+ "configs": {
+  "winogrande": {
+   "task": "winogrande",
+   "dataset_path": "allenai/winogrande",
+   "dataset_name": "winogrande_xl",
+   "training_split": "train",
+   "validation_split": "validation",
+   "doc_to_text": "def doc_to_text(doc):\n    answer_to_num = {\"1\": 0, \"2\": 1}\n    return answer_to_num[doc[\"answer\"]]\n",
+   "doc_to_target": "def doc_to_target(doc):\n    idx = doc[\"sentence\"].index(\"_\") + 1\n    return doc[\"sentence\"][idx:].strip()\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def doc_to_choice(doc):\n    idx = doc[\"sentence\"].index(\"_\")\n    options = [doc[\"option1\"], doc[\"option2\"]]\n    return [doc[\"sentence\"][:idx] + opt for opt in options]\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function doc_to_text at 0x703917743ec0>",
+    "doc_to_choice": "<function doc_to_choice at 0x7039177437e0>",
+    "doc_to_target": "<function doc_to_target at 0x703917740fe0>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 5,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": true,
+   "doc_to_decontamination_query": "sentence",
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/winogrande/default.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "evafrill-mo-3b",
+  "family": "EVAFRILL-Mo",
+  "kind": "instruct",
+  "backend": "evafrill",
+  "path": "pathcosmos/EVAFRILL-Mo-3B",
+  "revision": "e95edece955af9df9a6215210db594a9984fddf5",
+  "params_b": 2.94,
+  "active_b": 2.94,
+  "owner": "self",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "aadd748611c662cdefb9942f8f91bf598767a3f8+dirty",
+ "load_seconds": 44.2,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": {
+  "te_state_dict_converted": false,
+  "config_dropped_keys": [
+   "architectures",
+   "model_type",
+   "torch_dtype"
+  ],
+  "missing_buffers": [],
+  "n_params": 2953959168,
+  "tokenizer": "/workspace/llm-test/hf/hub/models--pathcosmos--EVAFRILL-Mo-3B/snapshots/e95edece955af9df9a6215210db594a9984fddf5/tokenizer.json"
+ }
+}

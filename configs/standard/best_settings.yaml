@@ -1,0 +1,136 @@
+rule_file: dev_selection.yaml
+models:
+  jansori-bf16:
+    chosen: docstart_eos
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.6025830258302584
+          kmmlu_dev: 0.25820170109356017
+          global_mmlu_ko_dev: 0.24651162790697675
+        mean: 0.36909878494359843
+      docstart_eos:
+        tasks:
+          kobest_dev: 0.6070110701107011
+          kmmlu_dev: 0.2606318347509113
+          global_mmlu_ko_dev: 0.26046511627906976
+        mean: 0.37603600704689405
+      shots0:
+        tasks:
+          kobest_dev: 0.5077490774907749
+          kmmlu_dev: 0.25759416767922233
+          global_mmlu_ko_dev: 0.24651162790697675
+        mean: 0.3372849576923247
+      docstart_eos+shots0:
+        tasks:
+          kobest_dev: 0.5055350553505535
+          kmmlu_dev: 0.25759416767922233
+          global_mmlu_ko_dev: 0.26046511627906976
+        mean: 0.3411981131029485
+    gain_over_A_dev: 0.00694
+    selected_at: '2026-11-18T15:10:46.406846+00:00'
+  frankenstallm-bf16:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.5446494464944649
+          kmmlu_dev: 0.2448359659781288
+          global_mmlu_ko_dev: 0.23255813953488372
+        mean: 0.3406811840024924
+      docstart_eos:
+        tasks:
+          kobest_dev: 0.544280442804428
+          kmmlu_dev: 0.244228432563791
+          global_mmlu_ko_dev: 0.20930232558139536
+        mean: 0.33260373364987145
+      shots0:
+        tasks:
+          kobest_dev: 0.4797047970479705
+          kmmlu_dev: 0.28128797083839613
+          global_mmlu_ko_dev: 0.23255813953488372
+        mean: 0.33118363580708343
+      chat:
+        tasks:
+          kobest_dev: 0.48487084870848707
+          kmmlu_dev: 0.24908869987849333
+          global_mmlu_ko_dev: 0.22790697674418606
+        mean: 0.3206221751103888
+      chat+shots0:
+        tasks:
+          kobest_dev: 0.4749077490774908
+          kmmlu_dev: 0.2509113001215067
+          global_mmlu_ko_dev: 0.22790697674418606
+        mean: 0.31790867531439454
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-18T15:10:46.422814+00:00'
+  evafrill-mo-3b-pretrain:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.5302583025830259
+          kmmlu_dev: 0.2454434993924666
+          global_mmlu_ko_dev: 0.24186046511627907
+        mean: 0.3391874223639238
+      docstart_eos:
+        tasks:
+          kobest_dev: 0.5302583025830259
+          kmmlu_dev: 0.24908869987849333
+          global_mmlu_ko_dev: 0.2372093023255814
+        mean: 0.33885210159570023
+      shots0:
+        tasks:
+          kobest_dev: 0.46863468634686345
+          kmmlu_dev: 0.25698663426488455
+          global_mmlu_ko_dev: 0.24186046511627907
+        mean: 0.32249392857600906
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-18T15:23:54.726175+00:00'
+evafrill_checkpoint:
+  chosen: evafrill-mo-3b-pretrain
+  best_instruct_stage: evafrill-mo-3b-dpo-r2
+  dev:
+    evafrill-mo-3b-pretrain:
+      tasks:
+        kobest_dev: 0.5302583025830259
+        kmmlu_dev: 0.2454434993924666
+        global_mmlu_ko_dev: 0.24186046511627907
+      mean: 0.3391874223639238
+    evafrill-mo-3b-sft-v2:
+      tasks:
+        kobest_dev: 0.5361623616236162
+        kmmlu_dev: 0.2533414337788578
+        global_mmlu_ko_dev: 0.22325581395348837
+      mean: 0.33758653645198744
+    evafrill-mo-3b-dpo-r1:
+      tasks:
+        kobest_dev: 0.5328413284132841
+        kmmlu_dev: 0.25637910085054677
+        global_mmlu_ko_dev: 0.22325581395348837
+      mean: 0.3374920810724398
+    evafrill-mo-3b-dpo-r2:
+      tasks:
+        kobest_dev: 0.5354243542435424
+        kmmlu_dev: 0.25759416767922233
+        global_mmlu_ko_dev: 0.22325581395348837
+      mean: 0.33875811195875105
+    evafrill-mo-3b-dpo-r3:
+      tasks:
+        kobest_dev: 0.5328413284132841
+        kmmlu_dev: 0.25394896719319565
+        global_mmlu_ko_dev: 0.22325581395348837
+      mean: 0.3366820365199894
+    evafrill-mo-3b-orpo:
+      tasks:
+        kobest_dev: 0.5280442804428044
+        kmmlu_dev: 0.244228432563791
+        global_mmlu_ko_dev: 0.23255813953488372
+      mean: 0.33494361751382634
+    evafrill-mo-3b:
+      tasks:
+        kobest_dev: 0.5328413284132841
+        kmmlu_dev: 0.25455650060753343
+        global_mmlu_ko_dev: 0.22325581395348837
+      mean: 0.33688454765810194
+  note: 규칙대로 최고 점수 체크포인트를 고른다. best_instruct_stage는 instruct 표용 참고값(규칙 외 보조 정보).

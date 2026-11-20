@@ -1,0 +1,15 @@
+# 자동 생성: global_mmlu ko lite의 dev 분할 (0-shot 전용)
+task: global_mmlu_ko_dev
+dataset_path: CohereForAI/Global-MMLU-Lite
+dataset_name: ko
+test_split: dev
+output_type: multiple_choice
+doc_to_text: "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:"
+doc_to_choice: ["A", "B", "C", "D"]
+doc_to_target: answer
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 0.0

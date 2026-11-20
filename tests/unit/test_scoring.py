@@ -177,6 +177,13 @@ class TestBuildScorecard:
         assert "track1" in sc["m1"]
         assert "track1" not in sc["m3"]
 
+    @patch("kobench.scoring.config.ALL_MODELS", ["m1"])
+    def test_models_outside_default_list_are_included(self):
+        track_results = {"track1": {"m1": 0.9, "jansori": 0.6}, "track7": {"jansori": {"elo": 1010}}}
+        sc = build_scorecard(track_results)
+        assert list(sc) == ["m1", "jansori"]
+        assert sc["jansori"] == {"model": "jansori", "track1": 0.6, "track7": 1010}
+
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # save_scorecard 테스트

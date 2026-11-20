@@ -1,0 +1,3 @@
+dataset_name: Economics
+include: _kmmlu_dev_yaml
+task: kmmlu_economics_dev

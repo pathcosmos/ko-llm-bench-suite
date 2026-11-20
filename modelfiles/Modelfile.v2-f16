@@ -4,9 +4,14 @@
 #   2. ollama create frankenstallm-3b-v2-f16 -f modelfiles/Modelfile.v2-f16
 # 참고: F16은 2.3GB로 가장 크며, GPU 16GB+ VRAM 권장
 
+# 학습 형식 (configs/standard/formats.yaml user_assistant_v1, 2026-11-18 검증):
+#   "<|user|>\n{질문}\n<|assistant|>\n" — SFT 학습 코드(data/sft_dataset.py)와 같은 문자열을 만든다.
+#   system 역할은 학습 데이터에서 무시되었으므로 템플릿에 넣지 않는다 (이전의 SYSTEM 줄은 TEMPLATE {{ .Prompt }}에
+#   .System이 없어 원래도 적용되지 않았다).
+# 주의: 이 파일의 배포 GGUF는 학습 후 만든 토크나이저를 담고 있어 학습과 토큰이 다르다 (BOS 자동 추가, 개행을 학습되지 않은
+#   byte 토큰으로, 분절 알고리즘 차이). 학습과 토큰이 일치하는 실행은 Modelfile.frankenstallm-3b-v2-train-tokenizer를 쓴다.
 FROM /home/lanco/models/frankenstallm-v2/gguf/frankenstallm-3b-v2-f16.gguf
-TEMPLATE {{ .Prompt }}
-SYSTEM 당신은 FRANKENSTALLM, 한국어에 특화된 AI 어시스턴트입니다. 정확하고 자연스러운 한국어로 답변해주세요.
+TEMPLATE """{{- $hist := "" }}{{- $pend := "" }}{{- range .Messages }}{{- if eq .Role "user" }}{{- if $pend }}{{- $pend = printf "%s\n%s" $pend .Content }}{{- else }}{{- $pend = .Content }}{{- end }}{{- else if eq .Role "assistant" }}{{- if $pend }}{{- $hist = printf "%s<|user|>\n%s\n<|assistant|>\n%s\n" $hist $pend .Content }}{{- $pend = "" }}{{- end }}{{- end }}{{- end }}{{- $hist }}{{- if $pend }}{{ printf "<|user|>\n%s\n<|assistant|>\n" $pend }}{{- end }}"""
 PARAMETER num_ctx 4096
 PARAMETER num_predict 512
 PARAMETER repeat_penalty 1.2

@@ -1,0 +1,19 @@
+# 한국어 PPL: wiki40b ko test 앞 500문서, loglikelihood_rolling, bits_per_byte(토크나이저 무관 비교)
+# 주의: 위키백과는 대부분 모델의 학습 데이터에 포함되었을 수 있다(오염 가능성 명시)
+task: wiki40b_ko
+dataset_path: google/wiki40b
+dataset_kwargs:
+  data_files: {test: ko/test-00000-of-00001.parquet}
+  revision: 06bfe584d8
+output_type: loglikelihood_rolling
+test_split: test
+process_docs: !function utils.wiki40b_docs
+doc_to_text: ""
+doc_to_target: !function utils.wiki40b_target
+process_results: !function utils.ppl_process_results
+metric_list:
+  - metric: word_perplexity
+  - metric: byte_perplexity
+  - metric: bits_per_byte
+metadata:
+  version: 1.0

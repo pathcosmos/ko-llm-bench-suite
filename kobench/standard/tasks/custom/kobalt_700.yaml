@@ -1,0 +1,17 @@
+# KoBALT-700 (snunlp, cc-by-nc-4.0 비상업): 700문항, 선택지 A~J(질문 본문 포함), 0-shot 전용
+task: kobalt_700
+dataset_path: snunlp/KoBALT-700
+dataset_kwargs:
+  revision: 30c30a431066508e6bef77cfa6d6059b85b12f0d
+output_type: multiple_choice
+test_split: raw
+doc_to_text: !function utils.kobalt_text
+doc_to_choice: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+doc_to_target: !function utils.kobalt_target
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 1.0
+  license: cc-by-nc-4.0 (비상업)

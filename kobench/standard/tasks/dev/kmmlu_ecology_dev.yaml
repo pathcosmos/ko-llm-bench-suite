@@ -1,0 +1,3 @@
+dataset_name: Ecology
+include: _kmmlu_dev_yaml
+task: kmmlu_ecology_dev
