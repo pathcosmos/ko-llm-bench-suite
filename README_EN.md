@@ -6,7 +6,7 @@ A Comprehensive Benchmark Tool for Korean LLM Evaluation
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org)
-[![Tests: 515 passed](https://img.shields.io/badge/tests-515%20passed-brightgreen.svg)](tests/)
+[![Tests: 557 passed](https://img.shields.io/badge/tests-557%20passed-brightgreen.svg)](tests/)
 
 ---
 
@@ -30,7 +30,8 @@ KoBench Suite addresses these gaps with dedicated tracks for Korean NLU, deep Ko
 ## Key Features
 
 - **7 Evaluation Tracks**: Korean Bench (KoBEST), Ko-Bench, Korean Deep Understanding, Code/Math, Consistency, Performance, Pairwise Elo
-- **Multiple Inference Backends**: Ollama (local/remote), vLLM (planned)
+- **Multiple Inference Backends**: Ollama (local/remote), vLLM and EVAFRILL PyTorch (standard benchmarks)
+- **Standard Benchmarks**: lm-eval based log-likelihood multiple choice (KoBEST, KMMLU, KMMLU-Redux/Pro, KoBALT, ...), bits-per-byte perplexity, generation (HRM8K, IFEval-Ko), dev-only setting selection (A/B tables), bootstrap CIs -- see [docs/standard-benchmarks.md](docs/standard-benchmarks.md) (Korean)
 - **Dual Judge System**: Two LLM judges with weighted cross-validation for more reliable scoring
 - **YAML-Based Configuration**: Add models, select tracks, tune sampling parameters -- all without touching code
 - **Auto-Generated Reports**: HTML and Markdown reports with 26 visualization charts
@@ -134,6 +135,18 @@ judge:
 ```
 
 See [`configs/default.yaml`](configs/default.yaml) for the full list of configuration options.
+
+## Standard Benchmarks (`kobench/standard`)
+
+Separate from the 7 tracks, this module runs public standard benchmarks under identical conditions with lm-evaluation-harness + vLLM (BF16). Multiple choice is scored by option log-likelihood and perplexity by tokenizer-independent bits-per-byte, so base models are compared fairly. Public models must have a pinned HF revision, and setting variants are chosen on dev splits only (test results are never used for selection).
+
+```bash
+python -m kobench.standard.run --models qwen3-4b-base --suite ko_mc_v1          # run (finished tasks are skipped)
+python -m kobench.standard.dev_search select                                   # pick settings on dev -> best_settings.yaml
+python -m kobench.standard.report --suite ko_mc_v1 --ref jansori-bf16 [--table B]  # tables + bootstrap CIs
+```
+
+Suites: `ko_mc_v1`, `ko_mc_ext_v1` (KMMLU-Redux/Pro and KoBALT-700: gated / non-commercial), `ppl_v1`, `en_mc_v1`, `gen_v1`, `dev_mc_v1`. Tables are in `reports/standard/` and summary JSONs in `results/standard/`; per-item sample files are not committed because they contain dataset text. Details (Korean): [docs/standard-benchmarks.md](docs/standard-benchmarks.md)
 
 ## Evaluation Tracks
 
@@ -255,6 +268,8 @@ ko-llm-bench-suite/
 │   ├── evafrill_server.py     # EVAFRILL HTTP inference server
 │   ├── scoring.py             # Scorecard + Bradley-Terry Elo
 │   ├── report.py              # HTML/Markdown report generation
+│   ├── standard/              # Standard benchmarks (lm-eval, vLLM, EVAFRILL; A/B tables, dev setting selection)
+│   │   └── tasks/             #   Custom tasks (dev / custom / gen)
 │   ├── backends/              # Inference backend abstraction
 │   │   ├── base.py            #   InferenceBackend ABC
 │   │   └── ollama.py          #   OllamaBackend implementation
@@ -278,7 +293,7 @@ ko-llm-bench-suite/
 │   └── track7_prompts.json    #   T7 pairwise prompts
 ├── examples/
 │   └── frankenstallm/         # Frankenstallm evaluation archive
-├── tests/                     # pytest tests (515 total)
+├── tests/                     # pytest tests (557 + 5 GPU)
 │   ├── unit/
 │   └── integration/
 ├── results/                   # Evaluation output
@@ -317,7 +332,7 @@ pytest tests/unit/ -v
 pytest tests/integration/ -v
 ```
 
-All 515 tests pass without any external dependencies. The test suite covers:
+557 tests pass without Ollama or a GPU; 5 more (standard-benchmark GPU engine, llama.cpp, live Ollama tokenization) run with `KOBENCH_GPU=1 KOBENCH_SLOW=1 pytest tests/`. The test suite covers:
 - Track evaluation logic (all 7 tracks)
 - Dual judge scoring and aggregation
 - Configuration parsing and validation
@@ -451,7 +466,7 @@ Contributions are welcome. To get started:
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/my-feature`)
 3. Install dev dependencies (`pip install -r requirements-dev.txt`)
-4. Run the test suite (`pytest tests/ -v`) and ensure all 515 tests pass
+4. Run the test suite (`pytest tests/ -v`) and ensure all tests pass
 5. Submit a pull request
 
 Areas where contributions are especially appreciated:

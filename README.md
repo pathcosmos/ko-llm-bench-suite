@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org)
-[![Tests](https://img.shields.io/badge/tests-515%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/tests-557%20passed-brightgreen.svg)](tests/)
 
 ---
 
@@ -30,7 +30,8 @@ YAML 설정 파일만으로 새로운 모델을 추가하고 평가할 수 있�
 | 기능 | 설명 |
 |------|------|
 | **7개 평가 트랙** | KoBEST NLU, Ko-Bench 생성, 심층이해, 코드/수학, 일관성, 성능, Pairwise Elo |
-| **다중 추론 백엔드** | Ollama (로컬/원격), EVAFRILL PyTorch 직접 추론, vLLM (예정) |
+| **다중 추론 백엔드** | Ollama (로컬/원격), EVAFRILL PyTorch 직접 추론, vLLM (표준 벤치) |
+| **표준 벤치마크** | lm-eval 기반 로그우도 객관식(KoBEST·KMMLU·KMMLU-Redux/Pro·KoBALT 등), bits-per-byte PPL, 생성(HRM8K·IFEval-Ko), dev 기반 설정 선택(A/B 표), bootstrap CI — [docs/standard-benchmarks.md](docs/standard-benchmarks.md) |
 | **이중 Judge 시스템** | 두 개의 LLM Judge로 교차 검증 (가중 평균), 평가 편향 감소 |
 | **YAML 기반 설정** | 코드 수정 없이 모델/트랙/Judge/샘플링 파라미터 구성 |
 | **자동 리포트** | HTML/Markdown 리포트 + 26종 시각화 차트 자동 생성 |
@@ -142,6 +143,18 @@ sampling:
 
 전체 설정 옵션은 [`configs/default.yaml`](configs/default.yaml)을 참조하세요.
 
+## 표준 벤치마크 (`kobench/standard`)
+
+7개 트랙과 별도로, 공개 표준 벤치마크를 lm-evaluation-harness + vLLM(BF16)으로 같은 조건에서 실행하는 모듈이다. base 모델도 공정하게 비교할 수 있도록 객관식은 선택지 로그우도로, PPL은 토크나이저와 무관한 bits-per-byte로 채점한다. 공개 모델은 HF revision을 고정해야 실행되고, 설정 변형은 dev 분할에서만 고른다(test 결과는 선택에 쓰지 않음).
+
+```bash
+python -m kobench.standard.run --models qwen3-4b-base --suite ko_mc_v1          # 실행 (완료 태스크는 건너뜀)
+python -m kobench.standard.dev_search select                                   # dev로 최적 설정 선택 → best_settings.yaml
+python -m kobench.standard.report --suite ko_mc_v1 --ref jansori-bf16 [--table B]  # 표 + bootstrap CI
+```
+
+스위트: `ko_mc_v1`(한국어 객관식), `ko_mc_ext_v1`(KMMLU-Redux/Pro·KoBALT-700, 비상업·gated), `ppl_v1`, `en_mc_v1`, `gen_v1`, `dev_mc_v1`. 결과 표는 `reports/standard/`, 요약 JSON은 `results/standard/`에 있다(문항별 파일은 데이터셋 원문을 포함해 커밋하지 않음). 상세: [docs/standard-benchmarks.md](docs/standard-benchmarks.md)
+
 ## 평가 트랙
 
 | 트랙 | 이름 | 설명 | LLM Judge |
@@ -209,6 +222,8 @@ ko-llm-bench-suite/
 │   ├── evafrill_server.py     # EVAFRILL HTTP 추론 서버
 │   ├── scoring.py             # 스코어카드 + Bradley-Terry Elo
 │   ├── report.py              # HTML/Markdown 리포트 생성
+│   ├── standard/              # 표준 벤치 (lm-eval·vLLM·EVAFRILL, A/B 표, dev 설정 선택)
+│   │   └── tasks/             #   커스텀 태스크 (dev / custom / gen)
 │   ├── backends/              # 추론 백엔드 추상화
 │   │   ├── base.py            #   InferenceBackend ABC
 │   │   └── ollama.py          #   OllamaBackend 구현
@@ -222,6 +237,7 @@ ko-llm-bench-suite/
 │       └── pairwise.py        #   T7: Pairwise Elo
 ├── configs/                   # YAML 설정 파일
 │   ├── default.yaml           #   기본 설정 (템플릿)
+│   ├── standard/              #   표준 벤치: models·suites·dev_selection·best_settings
 │   └── examples/
 │       └── frankenstallm.yaml #   13모델 평가 예시
 ├── benchmarks/                # 벤치마크 데이터셋
@@ -234,10 +250,10 @@ ko-llm-bench-suite/
 │   └── frankenstallm/         # Frankenstallm 평가 결과 아카이브
 │       └── reports/
 │           └── visualizations/ #  26종 시각화 차트
-├── tests/                     # pytest 테스트 (515개)
+├── tests/                     # pytest 테스트 (557개 + GPU 5개)
 │   ├── unit/
 │   └── integration/
-├── results/                   # 평가 결과 출력 (JSON)
+├── results/                   # 평가 결과 출력 (JSON, standard/는 요약 JSON만 커밋)
 ├── reports/                   # 생성된 리포트 (HTML/MD)
 ├── pyproject.toml
 ├── requirements.txt
@@ -306,7 +322,8 @@ pytest tests/integration/ -v
 pytest tests/ --cov=kobench --cov-report=html
 ```
 
-> 515개 전체 테스트가 Ollama나 GPU 없이 mock 기반으로 동작합니다.
+> 557개 테스트가 Ollama나 GPU 없이 동작합니다. 표준 벤치의 GPU 엔진·llama.cpp·실제 Ollama 토큰 검사 5개는
+> `KOBENCH_GPU=1 KOBENCH_SLOW=1 pytest tests/`로 실행합니다.
 > 이중 Judge, HTTP 모드, 체크포인트 재개 등 모든 핵심 기능이 테스트에 포함되어 있습니다.
 
 ## 예제: Frankenstallm 평가 결과
