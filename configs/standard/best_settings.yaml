@@ -28,7 +28,7 @@ models:
           global_mmlu_ko_dev: 0.26046511627906976
         mean: 0.3411981131029485
     gain_over_A_dev: 0.00694
-    selected_at: '2026-11-18T15:10:46.406846+00:00'
+    selected_at: '2026-11-19T23:01:52.647626+00:00'
   frankenstallm-bf16:
     chosen: A
     dev:
@@ -63,7 +63,7 @@ models:
           global_mmlu_ko_dev: 0.22790697674418606
         mean: 0.31790867531439454
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-18T15:10:46.422814+00:00'
+    selected_at: '2026-11-19T23:01:52.683311+00:00'
   evafrill-mo-3b-pretrain:
     chosen: A
     dev:
@@ -86,7 +86,390 @@ models:
           global_mmlu_ko_dev: 0.24186046511627907
         mean: 0.32249392857600906
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-18T15:23:54.726175+00:00'
+    selected_at: '2026-11-19T23:01:52.718028+00:00'
+  qwen3-4b-base:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7468634686346863
+          kmmlu_dev: 0.6336573511543135
+          global_mmlu_ko_dev: 0.5720930232558139
+        mean: 0.650871281014938
+      shots0:
+        tasks:
+          kobest_dev: 0.5701107011070111
+          kmmlu_dev: 0.5814094775212637
+          global_mmlu_ko_dev: 0.5720930232558139
+        mean: 0.574537733961363
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:52.795443+00:00'
+  qwen3-4b-2507:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7442804428044281
+          kmmlu_dev: 0.6111786148238153
+          global_mmlu_ko_dev: 0.5720930232558139
+        mean: 0.6425173602946858
+      chat:
+        tasks:
+          kobest_dev: 0.7531365313653137
+          kmmlu_dev: 0.5868772782503038
+          global_mmlu_ko_dev: 0.2558139534883721
+        mean: 0.5319425877013298
+      shots0:
+        tasks:
+          kobest_dev: 0.5487084870848709
+          kmmlu_dev: 0.5704738760631834
+          global_mmlu_ko_dev: 0.5720930232558139
+        mean: 0.5637584621346227
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:52.825424+00:00'
+  qwen2.5-3b:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7055350553505535
+          kmmlu_dev: 0.520048602673147
+          global_mmlu_ko_dev: 0.5348837209302325
+        mean: 0.586822459651311
+      shots0:
+        tasks:
+          kobest_dev: 0.4974169741697417
+          kmmlu_dev: 0.4835965978128797
+          global_mmlu_ko_dev: 0.5348837209302325
+        mean: 0.5052990976376179
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:52.839154+00:00'
+  qwen2.5-3b-instruct:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7040590405904059
+          kmmlu_dev: 0.503037667071689
+          global_mmlu_ko_dev: 0.49767441860465117
+        mean: 0.5682570420889154
+      chat:
+        tasks:
+          kobest_dev: 0.7317343173431734
+          kmmlu_dev: 0.5018226002430134
+          global_mmlu_ko_dev: 0.44651162790697674
+        mean: 0.5600228484977211
+      shots0:
+        tasks:
+          kobest_dev: 0.5793357933579336
+          kmmlu_dev: 0.5042527339003645
+          global_mmlu_ko_dev: 0.49767441860465117
+        mean: 0.5270876486209831
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:52.859463+00:00'
+  kanana-2-3b-base:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7487084870848708
+          kmmlu_dev: 0.554678007290401
+          global_mmlu_ko_dev: 0.5069767441860465
+        mean: 0.6034544128537728
+      shots0:
+        tasks:
+          kobest_dev: 0.6092250922509225
+          kmmlu_dev: 0.5425273390036452
+          global_mmlu_ko_dev: 0.5069767441860465
+        mean: 0.5529097251468714
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:52.871726+00:00'
+  kanana-2-3b:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7055350553505535
+          kmmlu_dev: 0.5504252733900364
+          global_mmlu_ko_dev: 0.5488372093023256
+        mean: 0.6015991793476385
+      chat:
+        tasks:
+          kobest_dev: 0.7269372693726938
+          kmmlu_dev: 0.4623329283110571
+          global_mmlu_ko_dev: 0.413953488372093
+        mean: 0.534407895351948
+      shots0:
+        tasks:
+          kobest_dev: 0.6228782287822878
+          kmmlu_dev: 0.5042527339003645
+          global_mmlu_ko_dev: 0.5488372093023256
+        mean: 0.558656057328326
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:52.894615+00:00'
+  kanana-1.5-2.1b-base:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7291512915129151
+          kmmlu_dev: 0.5243013365735115
+          global_mmlu_ko_dev: 0.37209302325581395
+        mean: 0.5418485504474135
+      shots0:
+        tasks:
+          kobest_dev: 0.5904059040590406
+          kmmlu_dev: 0.40765492102065615
+          global_mmlu_ko_dev: 0.37209302325581395
+        mean: 0.45671794944517025
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:52.909540+00:00'
+  kanana-1.5-2.1b:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7523985239852399
+          kmmlu_dev: 0.5127582017010935
+          global_mmlu_ko_dev: 0.4511627906976744
+        mean: 0.572106505461336
+      chat:
+        tasks:
+          kobest_dev: 0.7590405904059041
+          kmmlu_dev: 0.520048602673147
+          global_mmlu_ko_dev: 0.3302325581395349
+        mean: 0.5364405837395286
+      shots0:
+        tasks:
+          kobest_dev: 0.6118081180811809
+          kmmlu_dev: 0.46780072904009723
+          global_mmlu_ko_dev: 0.4511627906976744
+        mean: 0.5102572126063175
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:52.928515+00:00'
+  smollm3-3b-base:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.6915129151291513
+          kmmlu_dev: 0.40279465370595385
+          global_mmlu_ko_dev: 0.4372093023255814
+        mean: 0.5105056237202289
+      shots0:
+        tasks:
+          kobest_dev: 0.5154981549815498
+          kmmlu_dev: 0.342041312272175
+          global_mmlu_ko_dev: 0.4372093023255814
+        mean: 0.4315829231931021
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:52.957620+00:00'
+  smollm3-3b:
+    chosen: chat
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7121771217712177
+          kmmlu_dev: 0.4204131227217497
+          global_mmlu_ko_dev: 0.4790697674418605
+        mean: 0.537220003978276
+      chat:
+        tasks:
+          kobest_dev: 0.7309963099630996
+          kmmlu_dev: 0.4198055893074119
+          global_mmlu_ko_dev: 0.4883720930232558
+        mean: 0.5463913307645891
+      shots0:
+        tasks:
+          kobest_dev: 0.5494464944649446
+          kmmlu_dev: 0.38092345078979345
+          global_mmlu_ko_dev: 0.4790697674418605
+        mean: 0.46981323756553284
+    gain_over_A_dev: 0.00917
+    selected_at: '2026-11-19T23:01:52.978526+00:00'
+  llama-3.2-3b:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.5819188191881919
+          kmmlu_dev: 0.40340218712029163
+          global_mmlu_ko_dev: 0.4325581395348837
+        mean: 0.4726263819477891
+      shots0:
+        tasks:
+          kobest_dev: 0.5118081180811808
+          kmmlu_dev: 0.38092345078979345
+          global_mmlu_ko_dev: 0.4325581395348837
+        mean: 0.44176323613528595
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:52.995950+00:00'
+  llama-3.2-3b-instruct:
+    chosen: chat
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.5952029520295203
+          kmmlu_dev: 0.4307411907654921
+          global_mmlu_ko_dev: 0.39069767441860465
+        mean: 0.4722139390712057
+      chat:
+        tasks:
+          kobest_dev: 0.6273062730627307
+          kmmlu_dev: 0.4289185905224787
+          global_mmlu_ko_dev: 0.37209302325581395
+        mean: 0.47610596228034113
+      shots0:
+        tasks:
+          kobest_dev: 0.47195571955719556
+          kmmlu_dev: 0.39671931956257594
+          global_mmlu_ko_dev: 0.39069767441860465
+        mean: 0.41979090451279205
+    gain_over_A_dev: 0.00389
+    selected_at: '2026-11-19T23:01:53.014828+00:00'
+  exaone-3.5-2.4b:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7350553505535056
+          kmmlu_dev: 0.4933171324422843
+          global_mmlu_ko_dev: 0.49767441860465117
+        mean: 0.575348967200147
+      chat:
+        tasks:
+          kobest_dev: 0.7723247232472324
+          kmmlu_dev: 0.5048602673147023
+          global_mmlu_ko_dev: 0.39069767441860465
+        mean: 0.5559608883268464
+      shots0:
+        tasks:
+          kobest_dev: 0.6560885608856089
+          kmmlu_dev: 0.425273390036452
+          global_mmlu_ko_dev: 0.49767441860465117
+        mean: 0.526345456508904
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:53.036134+00:00'
+  qwen3-30b-a3b-base:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7959409594095941
+          kmmlu_dev: 0.7253948967193196
+          global_mmlu_ko_dev: 0.6511627906976745
+        mean: 0.7241662156088626
+      shots0:
+        tasks:
+          kobest_dev: 0.6472324723247233
+          kmmlu_dev: 0.6524908869987849
+          global_mmlu_ko_dev: 0.6511627906976745
+        mean: 0.6502953833403943
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:53.051740+00:00'
+  qwen3-30b-a3b-2507:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7970479704797048
+          kmmlu_dev: 0.6986634264884569
+          global_mmlu_ko_dev: 0.6976744186046512
+        mean: 0.7311286051909377
+      chat:
+        tasks:
+          kobest_dev: 0.807749077490775
+          kmmlu_dev: 0.681044957472661
+          global_mmlu_ko_dev: 0.4186046511627907
+        mean: 0.6357995620420756
+      shots0:
+        tasks:
+          kobest_dev: 0.5819188191881919
+          kmmlu_dev: 0.681044957472661
+          global_mmlu_ko_dev: 0.6976744186046512
+        mean: 0.6535460650885013
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:53.073030+00:00'
+  kanana-2-30b-a3b-base:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.811070110701107
+          kmmlu_dev: 0.7296476306196841
+          global_mmlu_ko_dev: 0.6837209302325581
+        mean: 0.7414795571844497
+      shots0:
+        tasks:
+          kobest_dev: 0.6915129151291513
+          kmmlu_dev: 0.6883353584447145
+          global_mmlu_ko_dev: 0.6837209302325581
+        mean: 0.687856401268808
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:53.089947+00:00'
+  kanana-2-30b-a3b:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.8202952029520295
+          kmmlu_dev: 0.7253948967193196
+          global_mmlu_ko_dev: 0.7162790697674418
+        mean: 0.7539897231462636
+      chat:
+        tasks:
+          kobest_dev: 0.8047970479704797
+          kmmlu_dev: 0.6834750911300121
+          global_mmlu_ko_dev: 0.37209302325581395
+        mean: 0.6201217207854353
+      shots0:
+        tasks:
+          kobest_dev: 0.7586715867158672
+          kmmlu_dev: 0.6931956257594167
+          global_mmlu_ko_dev: 0.7162790697674418
+        mean: 0.7227154274142419
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:53.117993+00:00'
+  nemotron-3-nano-30b-a3b-base:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7712177121771218
+          kmmlu_dev: 0.6251518833535844
+          global_mmlu_ko_dev: 0.6976744186046512
+        mean: 0.6980146713784524
+      shots0:
+        tasks:
+          kobest_dev: 0.6763837638376384
+          kmmlu_dev: 0.5941676792223572
+          global_mmlu_ko_dev: 0.6976744186046512
+        mean: 0.656075287221549
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:53.137444+00:00'
+  nemotron-3-nano-30b-a3b:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7435424354243543
+          kmmlu_dev: 0.5953827460510328
+          global_mmlu_ko_dev: 0.5534883720930233
+        mean: 0.6308045178561368
+      chat:
+        tasks:
+          kobest_dev: 0.7461254612546125
+          kmmlu_dev: 0.5996354799513973
+          global_mmlu_ko_dev: 0.5348837209302325
+        mean: 0.6268815540454141
+      shots0:
+        tasks:
+          kobest_dev: 0.6686346863468635
+          kmmlu_dev: 0.49635479951397327
+          global_mmlu_ko_dev: 0.5534883720930233
+        mean: 0.5728259526512867
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-19T23:01:53.165661+00:00'
 evafrill_checkpoint:
   chosen: evafrill-mo-3b-pretrain
   best_instruct_stage: evafrill-mo-3b-dpo-r2

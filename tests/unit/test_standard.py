@@ -162,6 +162,36 @@ def test_bootstrap_and_paired_diff():
     assert paired_diff(a, a)[:3] == (0.0, 0.0, 0.0)
 
 
+def test_bpb_ratio_micro_ci_and_paired():
+    import math
+
+    from kobench.standard.report import _item_scores, bootstrap_ci, micro, paired_diff
+
+    # lm-eval bits_per_byte = −Σloglik / ln2 / Σbytes (문서 평균이 아니라 코퍼스 비율)
+    items = {("w", 0): {"bits_per_byte": [-100.0, 200]}, ("w", 1): {"bits_per_byte": [-10.0, 10]}}
+    sc = _item_scores(items, "bits_per_byte")
+    want = 110.0 / math.log(2) / 210
+    assert abs(micro(sc) - want) < 1e-12
+    lo, hi = bootstrap_ci(list(sc.values()))
+    assert lo <= want <= hi
+    worse = {k: (n * 1.1, d) for k, (n, d) in sc.items()}
+    d, lo, hi, n = paired_diff(worse, sc)
+    assert n == 2 and abs(d - want * 0.1) < 1e-12 and lo <= d <= hi
+
+
+def test_variant_from_name_and_chosen(tmp_path):
+    from kobench.standard.report import chosen_variants
+    from kobench.standard.run import Variant
+
+    for text in ["A", "docstart=eos", "chat=1", "docstart=eos,chat=1,shots=0", "shots=3"]:
+        v = Variant.parse(text)
+        assert Variant.from_name(v.name) == v
+    f = tmp_path / "best.yaml"
+    f.write_text("models:\n  m1: {chosen: chat}\n  m2: {chosen: A}\n", encoding="utf-8")
+    ch = chosen_variants(f)
+    assert ch["m1"] == Variant(chat=True) and ch["m2"] == Variant()
+
+
 # ── 설정 변형 ────────────────────────────────────────────────────────────────
 
 def test_variant_parse_name_and_paths():

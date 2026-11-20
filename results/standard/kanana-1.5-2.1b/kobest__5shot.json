@@ -1,0 +1,435 @@
+{
+ "task": "kobest",
+ "num_fewshot": 5,
+ "source": "KoBEST (Kim et al. 2022) k-shot 평가; 5종 boolq/copa/hellaswag/sentineg/wic",
+ "limit": null,
+ "wall_seconds": 91.6,
+ "finished_at": "2026-11-19T22:09:30.933489+00:00",
+ "results": {
+  "kobest_boolq": {
+   "name": "kobest_boolq",
+   "alias": "kobest_boolq",
+   "sample_len": 1404,
+   "acc,none": 0.8725071225071225,
+   "acc_stderr,none": 0.008904276070855971,
+   "f1,none": 0.8721615230173454,
+   "f1_stderr,none": "N/A"
+  },
+  "kobest_copa": {
+   "name": "kobest_copa",
+   "alias": "kobest_copa",
+   "sample_len": 1000,
+   "acc,none": 0.83,
+   "acc_stderr,none": 0.011884495834541793,
+   "f1,none": 0.8298032525599592,
+   "f1_stderr,none": "N/A"
+  },
+  "kobest_hellaswag": {
+   "name": "kobest_hellaswag",
+   "alias": "kobest_hellaswag",
+   "sample_len": 500,
+   "acc,none": 0.518,
+   "acc_stderr,none": 0.022368565117387874,
+   "f1,none": 0.514210339046261,
+   "f1_stderr,none": "N/A",
+   "acc_norm,none": 0.616,
+   "acc_norm_stderr,none": 0.021772369465547118
+  },
+  "kobest_sentineg": {
+   "name": "kobest_sentineg",
+   "alias": "kobest_sentineg",
+   "sample_len": 397,
+   "acc,none": 0.9496221662468514,
+   "acc_stderr,none": 0.010991262326228114,
+   "f1,none": 0.9495296211543351,
+   "f1_stderr,none": "N/A"
+  },
+  "kobest_wic": {
+   "name": "kobest_wic",
+   "alias": "kobest_wic",
+   "sample_len": 1260,
+   "acc,none": 0.6706349206349206,
+   "acc_stderr,none": 0.013245519387485446,
+   "f1,none": 0.6706098159408722,
+   "f1_stderr,none": "N/A"
+  },
+  "kobest": {
+   "alias": "kobest",
+   "name": "kobest",
+   "sample_len": 4561,
+   "acc,none": 0.7752685814514361,
+   "acc_stderr,none": 0.005883966315327942,
+   "acc_norm,none": 0.616,
+   "acc_norm_stderr,none": 0.021772369465547118,
+   "f1,none": 0.7746886270737148,
+   "f1_stderr,none": "N/A",
+   "sample_count": {
+    "acc,none": 4561,
+    "acc_norm,none": 500,
+    "f1,none": 4561
+   }
+  }
+ },
+ "groups": {
+  "kobest": {
+   "alias": "kobest",
+   "name": "kobest",
+   "sample_len": 4561,
+   "acc,none": 0.7752685814514361,
+   "acc_stderr,none": 0.005883966315327942,
+   "acc_norm,none": 0.616,
+   "acc_norm_stderr,none": 0.021772369465547118,
+   "f1,none": 0.7746886270737148,
+   "f1_stderr,none": "N/A",
+   "sample_count": {
+    "acc,none": 4561,
+    "acc_norm,none": 500,
+    "f1,none": 4561
+   }
+  }
+ },
+ "n-samples": {
+  "kobest_boolq": {
+   "original": 1404,
+   "effective": 1404
+  },
+  "kobest_copa": {
+   "original": 1000,
+   "effective": 1000
+  },
+  "kobest_hellaswag": {
+   "original": 500,
+   "effective": 500
+  },
+  "kobest_sentineg": {
+   "original": 397,
+   "effective": 397
+  },
+  "kobest_wic": {
+   "original": 1260,
+   "effective": 1260
+  }
+ },
+ "versions_task": {
+  "kobest": "1.0",
+  "kobest_boolq": 1.0,
+  "kobest_copa": 1.0,
+  "kobest_hellaswag": 1.0,
+  "kobest_sentineg": 1.0,
+  "kobest_wic": 1.0
+ },
+ "configs": {
+  "kobest_boolq": {
+   "task": "kobest_boolq",
+   "dataset_path": "skt/kobest_v1",
+   "dataset_name": "boolq",
+   "training_split": "train",
+   "validation_split": "validation",
+   "test_split": "test",
+   "doc_to_text": "{{paragraph}} 질문: {{question}} 답변: ",
+   "doc_to_target": "{{label}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "아니오",
+    "예"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{paragraph}} 질문: {{question}} 답변: ",
+    "doc_to_choice": [
+     "아니오",
+     "예"
+    ],
+    "doc_to_target": "{{label}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 5,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "f1",
+     "aggregation": "def macro_f1_score(items):\n    from sklearn.metrics import f1_score\n\n    unzipped_list = list(zip(*items))\n    golds = unzipped_list[0]\n    preds = unzipped_list[1]\n    fscore = f1_score(golds, preds, average=\"macro\")\n    return fscore\n",
+     "average": "macro",
+     "hf_evaluate": true,
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/kobest/kobest_boolq.yaml"
+   }
+  },
+  "kobest_copa": {
+   "task": "kobest_copa",
+   "dataset_path": "skt/kobest_v1",
+   "dataset_name": "copa",
+   "training_split": "train",
+   "validation_split": "validation",
+   "test_split": "test",
+   "doc_to_text": "def copa_doc_to_text(doc: dict) -> str:\n    connector = {\"원인\": \" 왜냐하면\", \"결과\": \" 그래서\"}[doc[\"question\"].strip()]\n    return f\"\"\"{doc[\"premise\"]} {connector}\"\"\"\n",
+   "doc_to_target": "def copa_doc_to_target(doc: dict) -> str:\n    correct_choice = doc[\"alternative_1\"] if doc[\"label\"] == 0 else doc[\"alternative_2\"]\n    return f\"\"\"{correct_choice}\"\"\"\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def copa_doc_to_choice(doc: dict) -> list:\n    return [f\"\"\"{doc[\"alternative_1\"]}\"\"\", f\"\"\"{doc[\"alternative_2\"]}\"\"\"]\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function copa_doc_to_text at 0x70c5ea5927a0>",
+    "doc_to_choice": "<function copa_doc_to_choice at 0x70c5ea592980>",
+    "doc_to_target": "<function copa_doc_to_target at 0x70c5ea5928e0>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 5,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "f1",
+     "aggregation": "def macro_f1_score(items):\n    from sklearn.metrics import f1_score\n\n    unzipped_list = list(zip(*items))\n    golds = unzipped_list[0]\n    preds = unzipped_list[1]\n    fscore = f1_score(golds, preds, average=\"macro\")\n    return fscore\n",
+     "average": "macro",
+     "hf_evaluate": true,
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/kobest/kobest_copa.yaml"
+   }
+  },
+  "kobest_hellaswag": {
+   "task": "kobest_hellaswag",
+   "dataset_path": "skt/kobest_v1",
+   "dataset_name": "hellaswag",
+   "training_split": "train",
+   "validation_split": "validation",
+   "test_split": "test",
+   "process_docs": "def hellaswag_process_doc(doc: Dataset) -> Dataset:\n    def preprocessor(dataset):\n        return {\n            \"query\": f\"\"\"문장: {dataset[\"context\"]}\"\"\",\n            \"choices\": [\n                dataset[\"ending_1\"],\n                dataset[\"ending_2\"],\n                dataset[\"ending_3\"],\n                dataset[\"ending_4\"],\n            ],\n            \"gold\": int(dataset[\"label\"]),\n        }\n\n    return doc.map(preprocessor)\n",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "{{label}}",
+   "unsafe_code": false,
+   "doc_to_choice": "choices",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": "<function hellaswag_process_doc at 0x70c5ea592b60>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": "choices",
+    "doc_to_target": "{{label}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 5,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "f1",
+     "aggregation": "def macro_f1_score(items):\n    from sklearn.metrics import f1_score\n\n    unzipped_list = list(zip(*items))\n    golds = unzipped_list[0]\n    preds = unzipped_list[1]\n    fscore = f1_score(golds, preds, average=\"macro\")\n    return fscore\n",
+     "average": "macro",
+     "hf_evaluate": true,
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/kobest/kobest_hellaswag.yaml"
+   }
+  },
+  "kobest_sentineg": {
+   "task": "kobest_sentineg",
+   "dataset_path": "skt/kobest_v1",
+   "dataset_name": "sentineg",
+   "training_split": "train",
+   "validation_split": "validation",
+   "test_split": "test",
+   "doc_to_text": "def sentineg_doc_to_text(doc: dict):\n    return f\"\"\"문장: {doc[\"sentence\"]} 긍부정:\"\"\"\n",
+   "doc_to_target": "{{label}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "부정",
+    "긍정"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function sentineg_doc_to_text at 0x70c5ea592a20>",
+    "doc_to_choice": [
+     "부정",
+     "긍정"
+    ],
+    "doc_to_target": "{{label}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 5,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "f1",
+     "aggregation": "def macro_f1_score(items):\n    from sklearn.metrics import f1_score\n\n    unzipped_list = list(zip(*items))\n    golds = unzipped_list[0]\n    preds = unzipped_list[1]\n    fscore = f1_score(golds, preds, average=\"macro\")\n    return fscore\n",
+     "average": "macro",
+     "hf_evaluate": true,
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/kobest/kobest_sentineg.yaml"
+   }
+  },
+  "kobest_wic": {
+   "task": "kobest_wic",
+   "dataset_path": "skt/kobest_v1",
+   "dataset_name": "wic",
+   "training_split": "train",
+   "validation_split": "validation",
+   "test_split": "test",
+   "doc_to_text": "def wic_doc_to_text(doc: dict) -> str:\n    return f\"\"\"문장1: {doc[\"context_1\"]} 문장2: {doc[\"context_2\"]} 두 문장에서 {doc[\"word\"]}가 같은 뜻으로 쓰였나?\"\"\"\n",
+   "doc_to_target": "{{label}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "아니오",
+    "예"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function wic_doc_to_text at 0x70c5ea592ac0>",
+    "doc_to_choice": [
+     "아니오",
+     "예"
+    ],
+    "doc_to_target": "{{label}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 5,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "f1",
+     "aggregation": "def macro_f1_score(items):\n    from sklearn.metrics import f1_score\n\n    unzipped_list = list(zip(*items))\n    golds = unzipped_list[0]\n    preds = unzipped_list[1]\n    fscore = f1_score(golds, preds, average=\"macro\")\n    return fscore\n",
+     "average": "macro",
+     "hf_evaluate": true,
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/kobest/kobest_wic.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "kanana-1.5-2.1b",
+  "family": "kanana-1.5",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "kakaocorp/kanana-1.5-2.1b-instruct-2505",
+  "revision": "7df4bc35ccd610e451809d7106e1c3cf82bfd44c",
+  "params_b": 2.1,
+  "active_b": 2.1,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {
+   "relax_head_dim_check": true
+  }
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "307de5632acbb5b15ce77169564a96a340e35818",
+ "load_seconds": 36.5,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": null
+}

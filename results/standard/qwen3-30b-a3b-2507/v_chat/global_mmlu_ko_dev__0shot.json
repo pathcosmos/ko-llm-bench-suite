@@ -1,0 +1,116 @@
+{
+ "task": "global_mmlu_ko_dev",
+ "num_fewshot": 0,
+ "source": "Global-MMLU-Lite ko dev",
+ "limit": null,
+ "wall_seconds": 7.6,
+ "finished_at": "2026-11-19T12:58:46.369671+00:00",
+ "results": {
+  "global_mmlu_ko_dev": {
+   "name": "global_mmlu_ko_dev",
+   "alias": "global_mmlu_ko_dev",
+   "sample_len": 215,
+   "acc,none": 0.4186046511627907,
+   "acc_stderr,none": 0.033723365896941755
+  }
+ },
+ "groups": null,
+ "n-samples": {
+  "global_mmlu_ko_dev": {
+   "original": 215,
+   "effective": 215
+  }
+ },
+ "versions_task": {
+  "global_mmlu_ko_dev": 0.0
+ },
+ "configs": {
+  "global_mmlu_ko_dev": {
+   "task": "global_mmlu_ko_dev",
+   "dataset_path": "CohereForAI/Global-MMLU-Lite",
+   "dataset_name": "ko",
+   "test_split": "dev",
+   "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+   "doc_to_target": "answer",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+    "doc_to_choice": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "doc_to_target": "answer",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 0.0,
+    "config_source": "/home/work/llm-dense/llm-test/ko-llm-bench-suite/kobench/standard/tasks/dev/global_mmlu_ko_dev.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "qwen3-30b-a3b-2507",
+  "family": "Qwen3-MoE",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+  "revision": "0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe",
+  "params_b": 30.5,
+  "active_b": 3.3,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "307de5632acbb5b15ce77169564a96a340e35818",
+ "load_seconds": 61.2,
+ "seed": 1234,
+ "apply_chat_template": true,
+ "variant": {
+  "name": "chat",
+  "doc_start": "none",
+  "chat": true,
+  "shots": null
+ },
+ "backend_info": null
+}
