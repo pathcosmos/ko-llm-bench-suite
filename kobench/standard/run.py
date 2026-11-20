@@ -95,6 +95,23 @@ class Variant:
                 raise ValueError(f"알 수 없는 변형 항목: {k}")
         return cls(**kw)
 
+    @classmethod
+    def from_name(cls, name: str | None) -> "Variant":
+        """name의 역변환. 예: 'docstart_eos+chat+shots0' (best_settings.yaml의 chosen 값)."""
+        if not name or name == "A":
+            return cls()
+        kw = {}
+        for part in name.split("+"):
+            if part.startswith("docstart_"):
+                kw["doc_start"] = part[len("docstart_"):]
+            elif part == "chat":
+                kw["chat"] = True
+            elif part.startswith("shots"):
+                kw["shots"] = int(part[len("shots"):])
+            else:
+                raise ValueError(f"알 수 없는 변형 이름: {part}")
+        return cls(**kw)
+
 
 def relax_head_dim_check() -> None:
     """transformers 5.20 LlamaConfig.validate_architecture는 hidden_size % num_attention_heads != 0이면 거부한다.
