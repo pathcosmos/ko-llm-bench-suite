@@ -1,0 +1,114 @@
+{
+ "task": "hellaswag",
+ "num_fewshot": 10,
+ "source": "",
+ "limit": null,
+ "wall_seconds": 620.1,
+ "finished_at": "2026-11-19T04:03:54.467432+00:00",
+ "results": {
+  "hellaswag": {
+   "name": "hellaswag",
+   "alias": "hellaswag",
+   "sample_len": 10042,
+   "acc,none": 0.5199163513244374,
+   "acc_stderr,none": 0.0049858213361460004,
+   "acc_norm,none": 0.7000597490539733,
+   "acc_norm_stderr,none": 0.004572949924250902
+  }
+ },
+ "groups": null,
+ "n-samples": {
+  "hellaswag": {
+   "original": 10042,
+   "effective": 10042
+  }
+ },
+ "versions_task": {
+  "hellaswag": 1.0
+ },
+ "configs": {
+  "hellaswag": {
+   "task": "hellaswag",
+   "dataset_path": "Rowan/hellaswag",
+   "training_split": "train",
+   "validation_split": "validation",
+   "process_docs": "def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:\n    def _process_doc(doc):\n        ctx = doc[\"ctx_a\"] + \" \" + doc[\"ctx_b\"].capitalize()\n        out_doc = {\n            \"query\": preprocess(doc[\"activity_label\"] + \": \" + ctx),\n            \"choices\": [preprocess(ending) for ending in doc[\"endings\"]],\n            \"gold\": int(doc[\"label\"]),\n        }\n        return out_doc\n\n    return dataset.map(_process_doc)\n",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "{{label}}",
+   "unsafe_code": false,
+   "doc_to_choice": "choices",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": "<function process_docs at 0x7790b018db20>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": "choices",
+    "doc_to_target": "{{label}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 10,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/hellaswag/hellaswag.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "kanana-2-3b",
+  "family": "kanana-2",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "kakaocorp/kanana-2-3b-instruct",
+  "revision": "6a5d7889964c4c590299d16e309eabab1f73f8a9",
+  "params_b": 3.0,
+  "active_b": 3.0,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "307de5632acbb5b15ce77169564a96a340e35818",
+ "load_seconds": 41.1,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": null
+}

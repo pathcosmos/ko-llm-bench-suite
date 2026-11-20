@@ -1,0 +1,446 @@
+{
+ "task": "haerae",
+ "num_fewshot": 0,
+ "source": "HAE-RAE Bench 1.0, lm-eval 기본",
+ "limit": null,
+ "wall_seconds": 24.5,
+ "finished_at": "2026-11-19T20:02:51.751701+00:00",
+ "results": {
+  "haerae_general_knowledge": {
+   "name": "haerae_general_knowledge",
+   "alias": "haerae_general_knowledge",
+   "sample_len": 176,
+   "acc,none": 0.3693181818181818,
+   "acc_stderr,none": 0.0364826582988759,
+   "acc_norm,none": 0.3693181818181818,
+   "acc_norm_stderr,none": 0.0364826582988759
+  },
+  "haerae_history": {
+   "name": "haerae_history",
+   "alias": "haerae_history",
+   "sample_len": 188,
+   "acc,none": 0.5159574468085106,
+   "acc_stderr,none": 0.03654499533330086,
+   "acc_norm,none": 0.5159574468085106,
+   "acc_norm_stderr,none": 0.03654499533330086
+  },
+  "haerae_loan_word": {
+   "name": "haerae_loan_word",
+   "alias": "haerae_loan_word",
+   "sample_len": 169,
+   "acc,none": 0.514792899408284,
+   "acc_stderr,none": 0.03855895070315004,
+   "acc_norm,none": 0.514792899408284,
+   "acc_norm_stderr,none": 0.03855895070315004
+  },
+  "haerae_rare_word": {
+   "name": "haerae_rare_word",
+   "alias": "haerae_rare_word",
+   "sample_len": 405,
+   "acc,none": 0.5530864197530864,
+   "acc_stderr,none": 0.024735323283016624,
+   "acc_norm,none": 0.5530864197530864,
+   "acc_norm_stderr,none": 0.024735323283016624
+  },
+  "haerae_standard_nomenclature": {
+   "name": "haerae_standard_nomenclature",
+   "alias": "haerae_standard_nomenclature",
+   "sample_len": 153,
+   "acc,none": 0.6470588235294118,
+   "acc_stderr,none": 0.03876156045061584,
+   "acc_norm,none": 0.6470588235294118,
+   "acc_norm_stderr,none": 0.03876156045061584
+  },
+  "haerae": {
+   "alias": "haerae",
+   "name": "haerae",
+   "sample_len": 1091,
+   "acc,none": 0.5242896425297892,
+   "acc_stderr,none": 0.014961222165157675,
+   "acc_norm,none": 0.5242896425297892,
+   "acc_norm_stderr,none": 0.014961222165157675,
+   "sample_count": {
+    "acc,none": 1091,
+    "acc_norm,none": 1091
+   }
+  }
+ },
+ "groups": {
+  "haerae": {
+   "alias": "haerae",
+   "name": "haerae",
+   "sample_len": 1091,
+   "acc,none": 0.5242896425297892,
+   "acc_stderr,none": 0.014961222165157675,
+   "acc_norm,none": 0.5242896425297892,
+   "acc_norm_stderr,none": 0.014961222165157675,
+   "sample_count": {
+    "acc,none": 1091,
+    "acc_norm,none": 1091
+   }
+  }
+ },
+ "n-samples": {
+  "haerae_general_knowledge": {
+   "original": 176,
+   "effective": 176
+  },
+  "haerae_history": {
+   "original": 188,
+   "effective": 188
+  },
+  "haerae_loan_word": {
+   "original": 169,
+   "effective": 169
+  },
+  "haerae_rare_word": {
+   "original": 405,
+   "effective": 405
+  },
+  "haerae_standard_nomenclature": {
+   "original": 153,
+   "effective": 153
+  }
+ },
+ "versions_task": {
+  "haerae": "1.0",
+  "haerae_general_knowledge": 1.0,
+  "haerae_history": 1.0,
+  "haerae_loan_word": 1.0,
+  "haerae_rare_word": 1.0,
+  "haerae_standard_nomenclature": 1.0
+ },
+ "configs": {
+  "haerae_general_knowledge": {
+   "task": "haerae_general_knowledge",
+   "dataset_path": "HAERAE-HUB/HAE_RAE_BENCH",
+   "dataset_name": "general_knowledge",
+   "test_split": "test",
+   "fewshot_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "{{answer}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "test",
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": [
+     "(A)",
+     "(B)",
+     "(C)",
+     "(D)",
+     "(E)"
+    ],
+    "doc_to_target": "{{answer}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/haerae/haerae_gk.yaml"
+   }
+  },
+  "haerae_history": {
+   "task": "haerae_history",
+   "dataset_path": "HAERAE-HUB/HAE_RAE_BENCH",
+   "dataset_name": "history",
+   "test_split": "test",
+   "fewshot_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "{{answer}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "test",
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": [
+     "(A)",
+     "(B)",
+     "(C)",
+     "(D)",
+     "(E)"
+    ],
+    "doc_to_target": "{{answer}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/haerae/haerae_hi.yaml"
+   }
+  },
+  "haerae_loan_word": {
+   "task": "haerae_loan_word",
+   "dataset_path": "HAERAE-HUB/HAE_RAE_BENCH",
+   "dataset_name": "loan_words",
+   "test_split": "test",
+   "fewshot_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "{{answer}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "test",
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": [
+     "(A)",
+     "(B)",
+     "(C)",
+     "(D)",
+     "(E)"
+    ],
+    "doc_to_target": "{{answer}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/haerae/haerae_lw.yaml"
+   }
+  },
+  "haerae_rare_word": {
+   "task": "haerae_rare_word",
+   "dataset_path": "HAERAE-HUB/HAE_RAE_BENCH",
+   "dataset_name": "rare_words",
+   "test_split": "test",
+   "fewshot_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "{{answer}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "test",
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": [
+     "(A)",
+     "(B)",
+     "(C)",
+     "(D)",
+     "(E)"
+    ],
+    "doc_to_target": "{{answer}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/haerae/haerae_rw.yaml"
+   }
+  },
+  "haerae_standard_nomenclature": {
+   "task": "haerae_standard_nomenclature",
+   "dataset_path": "HAERAE-HUB/HAE_RAE_BENCH",
+   "dataset_name": "standard_nomenclature",
+   "test_split": "test",
+   "fewshot_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "{{answer}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "test",
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": [
+     "(A)",
+     "(B)",
+     "(C)",
+     "(D)",
+     "(E)"
+    ],
+    "doc_to_target": "{{answer}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/haerae/haerae_sn.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "nemotron-3-nano-30b-a3b",
+  "family": "Nemotron-H-MoE",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+  "revision": "bf77c3174f68ad409e1c2aa60daeb46e32d1c606",
+  "params_b": 30,
+  "active_b": 3,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": true,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "307de5632acbb5b15ce77169564a96a340e35818",
+ "load_seconds": 55.9,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": null
+}

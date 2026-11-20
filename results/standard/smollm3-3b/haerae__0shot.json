@@ -1,0 +1,446 @@
+{
+ "task": "haerae",
+ "num_fewshot": 0,
+ "source": "HAE-RAE Bench 1.0, lm-eval 기본",
+ "limit": null,
+ "wall_seconds": 22.1,
+ "finished_at": "2026-11-19T09:21:25.396243+00:00",
+ "results": {
+  "haerae_general_knowledge": {
+   "name": "haerae_general_knowledge",
+   "alias": "haerae_general_knowledge",
+   "sample_len": 176,
+   "acc,none": 0.36363636363636365,
+   "acc_stderr,none": 0.03636363636363636,
+   "acc_norm,none": 0.36363636363636365,
+   "acc_norm_stderr,none": 0.03636363636363636
+  },
+  "haerae_history": {
+   "name": "haerae_history",
+   "alias": "haerae_history",
+   "sample_len": 188,
+   "acc,none": 0.39893617021276595,
+   "acc_stderr,none": 0.03580891819047115,
+   "acc_norm,none": 0.39893617021276595,
+   "acc_norm_stderr,none": 0.03580891819047115
+  },
+  "haerae_loan_word": {
+   "name": "haerae_loan_word",
+   "alias": "haerae_loan_word",
+   "sample_len": 169,
+   "acc,none": 0.6745562130177515,
+   "acc_stderr,none": 0.036148678472922066,
+   "acc_norm,none": 0.6745562130177515,
+   "acc_norm_stderr,none": 0.036148678472922066
+  },
+  "haerae_rare_word": {
+   "name": "haerae_rare_word",
+   "alias": "haerae_rare_word",
+   "sample_len": 405,
+   "acc,none": 0.6691358024691358,
+   "acc_stderr,none": 0.02340945693661287,
+   "acc_norm,none": 0.6691358024691358,
+   "acc_norm_stderr,none": 0.02340945693661287
+  },
+  "haerae_standard_nomenclature": {
+   "name": "haerae_standard_nomenclature",
+   "alias": "haerae_standard_nomenclature",
+   "sample_len": 153,
+   "acc,none": 0.6078431372549019,
+   "acc_stderr,none": 0.03960079226904003,
+   "acc_norm,none": 0.6078431372549019,
+   "acc_norm_stderr,none": 0.03960079226904003
+  },
+  "haerae": {
+   "alias": "haerae",
+   "name": "haerae",
+   "sample_len": 1091,
+   "acc,none": 0.5655362053162236,
+   "acc_stderr,none": 0.014498043257186488,
+   "acc_norm,none": 0.5655362053162236,
+   "acc_norm_stderr,none": 0.014498043257186488,
+   "sample_count": {
+    "acc,none": 1091,
+    "acc_norm,none": 1091
+   }
+  }
+ },
+ "groups": {
+  "haerae": {
+   "alias": "haerae",
+   "name": "haerae",
+   "sample_len": 1091,
+   "acc,none": 0.5655362053162236,
+   "acc_stderr,none": 0.014498043257186488,
+   "acc_norm,none": 0.5655362053162236,
+   "acc_norm_stderr,none": 0.014498043257186488,
+   "sample_count": {
+    "acc,none": 1091,
+    "acc_norm,none": 1091
+   }
+  }
+ },
+ "n-samples": {
+  "haerae_general_knowledge": {
+   "original": 176,
+   "effective": 176
+  },
+  "haerae_history": {
+   "original": 188,
+   "effective": 188
+  },
+  "haerae_loan_word": {
+   "original": 169,
+   "effective": 169
+  },
+  "haerae_rare_word": {
+   "original": 405,
+   "effective": 405
+  },
+  "haerae_standard_nomenclature": {
+   "original": 153,
+   "effective": 153
+  }
+ },
+ "versions_task": {
+  "haerae": "1.0",
+  "haerae_general_knowledge": 1.0,
+  "haerae_history": 1.0,
+  "haerae_loan_word": 1.0,
+  "haerae_rare_word": 1.0,
+  "haerae_standard_nomenclature": 1.0
+ },
+ "configs": {
+  "haerae_general_knowledge": {
+   "task": "haerae_general_knowledge",
+   "dataset_path": "HAERAE-HUB/HAE_RAE_BENCH",
+   "dataset_name": "general_knowledge",
+   "test_split": "test",
+   "fewshot_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "{{answer}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "test",
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": [
+     "(A)",
+     "(B)",
+     "(C)",
+     "(D)",
+     "(E)"
+    ],
+    "doc_to_target": "{{answer}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/haerae/haerae_gk.yaml"
+   }
+  },
+  "haerae_history": {
+   "task": "haerae_history",
+   "dataset_path": "HAERAE-HUB/HAE_RAE_BENCH",
+   "dataset_name": "history",
+   "test_split": "test",
+   "fewshot_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "{{answer}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "test",
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": [
+     "(A)",
+     "(B)",
+     "(C)",
+     "(D)",
+     "(E)"
+    ],
+    "doc_to_target": "{{answer}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/haerae/haerae_hi.yaml"
+   }
+  },
+  "haerae_loan_word": {
+   "task": "haerae_loan_word",
+   "dataset_path": "HAERAE-HUB/HAE_RAE_BENCH",
+   "dataset_name": "loan_words",
+   "test_split": "test",
+   "fewshot_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "{{answer}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "test",
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": [
+     "(A)",
+     "(B)",
+     "(C)",
+     "(D)",
+     "(E)"
+    ],
+    "doc_to_target": "{{answer}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/haerae/haerae_lw.yaml"
+   }
+  },
+  "haerae_rare_word": {
+   "task": "haerae_rare_word",
+   "dataset_path": "HAERAE-HUB/HAE_RAE_BENCH",
+   "dataset_name": "rare_words",
+   "test_split": "test",
+   "fewshot_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "{{answer}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "test",
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": [
+     "(A)",
+     "(B)",
+     "(C)",
+     "(D)",
+     "(E)"
+    ],
+    "doc_to_target": "{{answer}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/haerae/haerae_rw.yaml"
+   }
+  },
+  "haerae_standard_nomenclature": {
+   "task": "haerae_standard_nomenclature",
+   "dataset_path": "HAERAE-HUB/HAE_RAE_BENCH",
+   "dataset_name": "standard_nomenclature",
+   "test_split": "test",
+   "fewshot_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "{{answer}}",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "(A)",
+    "(B)",
+    "(C)",
+    "(D)",
+    "(E)"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "test",
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": [
+     "(A)",
+     "(B)",
+     "(C)",
+     "(D)",
+     "(E)"
+    ],
+    "doc_to_target": "{{answer}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/haerae/haerae_sn.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "smollm3-3b",
+  "family": "SmolLM3",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "HuggingFaceTB/SmolLM3-3B",
+  "revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+  "params_b": 3.1,
+  "active_b": 3.1,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "307de5632acbb5b15ce77169564a96a340e35818",
+ "load_seconds": 45.5,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": null
+}
