@@ -1,0 +1,29 @@
+{
+ "model": "qwen2.5-3b-instruct",
+ "variant": "U",
+ "task": "hrm8k",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 8011,
+ "n_generated": 8011,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.313069529397079,
+   "exact_match": 0.31319435775808263,
+   "format_fail": 0.1278242416677069,
+   "by_subset": {
+    "gsm8k": 0.6095526914329037,
+    "ksm": 0.0665266106442577,
+    "math": 0.3975736568457539,
+    "mmmlu": 0.39787234042553193,
+    "omni_math": 0.14405447878470404
+   },
+   "n": 8011,
+   "loop": 0.09836474847085258,
+   "rep3": 0.19218195150778564,
+   "truncated": 0.15416302583947072
+  }
+ }
+}

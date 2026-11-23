@@ -1,0 +1,57 @@
+{
+ "task": "ko_arena_hard",
+ "task_def": {
+  "dataset": "ko_arena",
+  "scorer": "judge",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 2048,
+  "metric": "winrate"
+ },
+ "dataset": {
+  "repo": "qwopqwop/ko-arena-hard-auto-v0.1",
+  "revision": "b32e04e571e137cc00f5363f4e150dca35921087",
+  "license": "Apache-2.0"
+ },
+ "limit": null,
+ "model": {
+  "id": "kanana-2-30b-a3b",
+  "family": "kanana-2-MoE",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "kakaocorp/kanana-2-30b-a3b-instruct-2601",
+  "revision": "4a781fe5027da4af8d8208cb21bc5108b913bb62",
+  "params_b": 30,
+  "active_b": 3,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "U",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {},
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 500,
+ "generated_tokens_this_run": 623981,
+ "wall_seconds": 63.9,
+ "finished_at": "2026-11-23T13:57:13.686867+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "b2ad20d13eaad2dc67bc407bfd6470375fa4c8dd"
+}

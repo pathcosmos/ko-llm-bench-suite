@@ -1,0 +1,29 @@
+{
+ "model": "llama-3.2-3b-instruct",
+ "variant": "U",
+ "task": "hrm8k",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 8011,
+ "n_generated": 8011,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.18062663837223816,
+   "exact_match": 0.18424666084134314,
+   "format_fail": 0.4822119585569841,
+   "by_subset": {
+    "gsm8k": 0.41925701288855194,
+    "ksm": 0.018907563025210083,
+    "math": 0.22495667244367418,
+    "mmmlu": 0.1723404255319149,
+    "omni_math": 0.071765322158198
+   },
+   "n": 8011,
+   "loop": 0.3658719261016103,
+   "rep3": 0.4374227632631828,
+   "truncated": 0.4839595556110348
+  }
+ }
+}

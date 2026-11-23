@@ -1,0 +1,21 @@
+{
+ "model": "kanana-2-30b-a3b",
+ "variant": "U",
+ "task": "mbpp_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 378,
+ "n_generated": 378,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.1455026455026455,
+   "n": 378,
+   "timeout": 0.0,
+   "loop": 0.2222222222222222,
+   "rep3": 0.3654920863114628,
+   "truncated": 0.38095238095238093
+  }
+ }
+}

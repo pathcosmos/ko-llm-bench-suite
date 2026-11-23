@@ -1,0 +1,34 @@
+{
+ "model": "evafrill-mo-3b-pretrain",
+ "variant": "U",
+ "task": "ifeval_ko",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 342,
+ "n_generated": 342,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "prompt_level_strict_acc": 0.16666666666666666,
+   "prompt_level_loose_acc": 0.16666666666666666,
+   "inst_level_strict_acc": 0.2681912681912682,
+   "inst_level_loose_acc": 0.27234927234927236,
+   "n": 342,
+   "loop": 0.14035087719298245,
+   "rep3": 0.3155514210398819,
+   "truncated": 0.14619883040935672
+  },
+  "unk_drop": {
+   "prompt_level_strict_acc": 0.1695906432748538,
+   "prompt_level_loose_acc": 0.1695906432748538,
+   "inst_level_strict_acc": 0.2702702702702703,
+   "inst_level_loose_acc": 0.2702702702702703,
+   "n": 342,
+   "loop": 0.14035087719298245,
+   "rep3": 0.31636097468070973,
+   "truncated": 0.14619883040935672
+  }
+ }
+}

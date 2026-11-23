@@ -1,0 +1,29 @@
+{
+ "model": "nemotron-3-nano-30b-a3b-base",
+ "variant": "U",
+ "task": "hrm8k",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 8011,
+ "n_generated": 8011,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.38509549369616775,
+   "exact_match": 0.38983897141430535,
+   "format_fail": 0.23268006491074772,
+   "by_subset": {
+    "gsm8k": 0.7680060652009097,
+    "ksm": 0.0861344537815126,
+    "math": 0.5233968804159446,
+    "mmmlu": 0.2297872340425532,
+    "omni_math": 0.17338920900995286
+   },
+   "n": 8011,
+   "loop": 0.15391336911746348,
+   "rep3": 0.22856485792339018,
+   "truncated": 0.20933716140307077
+  }
+ }
+}

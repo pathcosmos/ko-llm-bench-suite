@@ -1,0 +1,23 @@
+{
+ "model": "nemotron-3.5-lightning-30b-a3b",
+ "variant": "U",
+ "task": "humaneval_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 163,
+ "n_generated": 164,
+ "excluded": [
+  "HumanEval/32"
+ ],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.4233128834355828,
+   "n": 163,
+   "timeout": 0.006134969325153374,
+   "loop": 0.012269938650306749,
+   "rep3": 0.0745077529070582,
+   "truncated": 0.08588957055214724
+  }
+ }
+}

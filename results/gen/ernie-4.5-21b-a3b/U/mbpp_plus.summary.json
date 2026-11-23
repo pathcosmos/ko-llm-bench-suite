@@ -1,0 +1,21 @@
+{
+ "model": "ernie-4.5-21b-a3b",
+ "variant": "U",
+ "task": "mbpp_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 378,
+ "n_generated": 378,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.0,
+   "n": 378,
+   "timeout": 0.0,
+   "loop": 0.0,
+   "rep3": 0.0597815729822512,
+   "truncated": 0.0026455026455026454
+  }
+ }
+}

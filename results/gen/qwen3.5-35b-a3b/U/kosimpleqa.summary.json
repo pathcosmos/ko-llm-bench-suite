@@ -1,0 +1,20 @@
+{
+ "model": "qwen3.5-35b-a3b",
+ "variant": "U",
+ "task": "kosimpleqa",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 1000,
+   "parse_fail": 0,
+   "correct": 0.2,
+   "not_attempted": 0.027,
+   "incorrect": 0.773,
+   "correct_given_attempted": 0.20554984583761562,
+   "f_score": 0.20273694880892043,
+   "same_family_as_judge": true,
+   "truncated": 0.003
+  }
+ }
+}

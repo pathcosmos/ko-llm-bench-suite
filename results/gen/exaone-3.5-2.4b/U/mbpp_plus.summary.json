@@ -1,0 +1,21 @@
+{
+ "model": "exaone-3.5-2.4b",
+ "variant": "U",
+ "task": "mbpp_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 378,
+ "n_generated": 378,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.5661375661375662,
+   "n": 378,
+   "timeout": 0.013227513227513227,
+   "loop": 0.0,
+   "rep3": 0.023420859040022998,
+   "truncated": 0.0
+  }
+ }
+}

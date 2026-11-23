@@ -1,0 +1,34 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "U",
+ "task": "ifeval_ko",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 342,
+ "n_generated": 342,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "prompt_level_strict_acc": 0.11988304093567251,
+   "prompt_level_loose_acc": 0.11988304093567251,
+   "inst_level_strict_acc": 0.2286902286902287,
+   "inst_level_loose_acc": 0.23284823284823286,
+   "n": 342,
+   "loop": 0.14619883040935672,
+   "rep3": 0.31431711832158205,
+   "truncated": 0.13157894736842105
+  },
+  "unk_drop": {
+   "prompt_level_strict_acc": 0.11988304093567251,
+   "prompt_level_loose_acc": 0.11988304093567251,
+   "inst_level_strict_acc": 0.2286902286902287,
+   "inst_level_loose_acc": 0.2286902286902287,
+   "n": 342,
+   "loop": 0.14619883040935672,
+   "rep3": 0.3109742624246089,
+   "truncated": 0.13157894736842105
+  }
+ }
+}

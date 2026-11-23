@@ -1,0 +1,20 @@
+{
+ "model": "nemotron-3.5-lightning-30b-a3b",
+ "variant": "U",
+ "task": "kosimpleqa",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 1000,
+   "parse_fail": 0,
+   "correct": 0.229,
+   "not_attempted": 0.001,
+   "incorrect": 0.77,
+   "correct_given_attempted": 0.22922922922922923,
+   "f_score": 0.2291145572786393,
+   "same_family_as_judge": false,
+   "truncated": 0.008
+  }
+ }
+}

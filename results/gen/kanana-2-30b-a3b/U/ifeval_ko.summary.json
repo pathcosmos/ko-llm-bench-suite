@@ -1,0 +1,23 @@
+{
+ "model": "kanana-2-30b-a3b",
+ "variant": "U",
+ "task": "ifeval_ko",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 342,
+ "n_generated": 342,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "prompt_level_strict_acc": 0.5555555555555556,
+   "prompt_level_loose_acc": 0.5847953216374269,
+   "inst_level_strict_acc": 0.6299376299376299,
+   "inst_level_loose_acc": 0.6632016632016632,
+   "n": 342,
+   "loop": 0.1783625730994152,
+   "rep3": 0.4044974776394295,
+   "truncated": 0.43859649122807015
+  }
+ }
+}

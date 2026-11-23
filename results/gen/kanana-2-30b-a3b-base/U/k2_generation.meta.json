@@ -1,0 +1,57 @@
+{
+ "task": "k2_generation",
+ "task_def": {
+  "dataset": "k2_eval",
+  "scorer": "judge",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 2048,
+  "metric": "score"
+ },
+ "dataset": {
+  "repo": "HAERAE-HUB/K2-Eval",
+  "revision": "14bbbc9ee6eef17368508735700465eedc9ec4c5",
+  "license": "MIT"
+ },
+ "limit": null,
+ "model": {
+  "id": "kanana-2-30b-a3b-base",
+  "family": "kanana-2-MoE",
+  "kind": "base",
+  "backend": "vllm",
+  "path": "kakaocorp/kanana-2-30b-a3b-base-2601",
+  "revision": "0d31365acf656e5f9a593cacc4913e9c0d36cb1c",
+  "params_b": 30,
+  "active_b": 3,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "U",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {},
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 90,
+ "generated_tokens_this_run": 15245,
+ "wall_seconds": 14.5,
+ "finished_at": "2026-11-23T13:24:41.593724+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "b2ad20d13eaad2dc67bc407bfd6470375fa4c8dd"
+}

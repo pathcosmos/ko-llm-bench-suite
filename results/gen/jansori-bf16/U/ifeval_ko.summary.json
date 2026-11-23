@@ -1,0 +1,23 @@
+{
+ "model": "jansori-bf16",
+ "variant": "U",
+ "task": "ifeval_ko",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 342,
+ "n_generated": 342,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "prompt_level_strict_acc": 0.14912280701754385,
+   "prompt_level_loose_acc": 0.15204678362573099,
+   "inst_level_strict_acc": 0.25571725571725573,
+   "inst_level_loose_acc": 0.26195426195426197,
+   "n": 342,
+   "loop": 0.07017543859649122,
+   "rep3": 0.25790415717606124,
+   "truncated": 0.09064327485380116
+  }
+ }
+}

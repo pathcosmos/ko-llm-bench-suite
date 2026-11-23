@@ -1,0 +1,32 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "U",
+ "task": "humaneval_plus",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 163,
+ "n_generated": 164,
+ "excluded": [
+  "HumanEval/32"
+ ],
+ "metrics": {
+  "unk_nl": {
+   "pass_plus": 0.0,
+   "n": 163,
+   "timeout": 0.0,
+   "loop": 0.7607361963190185,
+   "rep3": 0.7704248788344586,
+   "truncated": 0.8895705521472392
+  },
+  "unk_drop": {
+   "pass_plus": 0.0,
+   "n": 163,
+   "timeout": 0.0,
+   "loop": 0.7668711656441718,
+   "rep3": 0.7831935134200506,
+   "truncated": 0.8895705521472392
+  }
+ }
+}

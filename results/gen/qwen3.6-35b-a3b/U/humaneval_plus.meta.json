@@ -1,0 +1,60 @@
+{
+ "task": "humaneval_plus",
+ "task_def": {
+  "dataset": "humanevalplus",
+  "scorer": "code",
+  "kinds": [
+   "instruct",
+   "base"
+  ],
+  "max_new": 1024,
+  "metric": "pass_plus"
+ },
+ "dataset": {
+  "repo": "evalplus/humanevalplus",
+  "revision": "d32357cf319e50e9c8d8dab5ea876c72b0fd321b",
+  "license": "Apache-2.0"
+ },
+ "limit": null,
+ "model": {
+  "id": "qwen3.6-35b-a3b",
+  "family": "Qwen3.6-MoE",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "Qwen/Qwen3.6-35B-A3B",
+  "revision": "345d467b117d1fd5eda9b879a5988de9ae5f47a7",
+  "params_b": 35,
+  "active_b": 3,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "U",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {
+  "enable_thinking": false
+ },
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 164,
+ "generated_tokens_this_run": 86329,
+ "wall_seconds": 19.5,
+ "finished_at": "2026-11-23T11:50:25.795958+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "b2ad20d13eaad2dc67bc407bfd6470375fa4c8dd"
+}

@@ -1,0 +1,26 @@
+{
+ "model": "evafrill-mo-3b-pretrain",
+ "variant": "U",
+ "task": "logickor",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "unk_nl",
+ "metrics": {
+  "judge": {
+   "n": 42,
+   "parse_fail": 0,
+   "score": 0.6865079365079365,
+   "by_category": {
+    "글쓰기(Writing)": 0.07142857142857142,
+    "문법(Grammar)": 1.8571428571428572,
+    "수학(Math)": 0.21428571428571427,
+    "이해(Understanding)": 0.42857142857142855,
+    "추론(Reasoning)": 0.6190476190476192,
+    "코딩(Coding)": 0.9285714285714286
+   },
+   "turn1": 1.3333333333333333,
+   "turn2": 0.11904761904761904,
+   "same_family_as_judge": false,
+   "truncated": 0.35714285714285715
+  }
+ }
+}

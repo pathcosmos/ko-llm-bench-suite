@@ -166,6 +166,8 @@ def gen_views(d: dict) -> dict:
     v = {}
     for name in ("gen_v1__A", "gen_v1__B", "gen_v1__think", "gen_dev_v1__A", "gen_dev_v1__B"):
         rows = d["gen"].get(name) or []
+        if name == "gen_v1__think":
+            rows = rows + (d["gen"].get("gen_v1__thinkrd") or [])   # qwen3.5-4b README 권장 샘플링 재실행(2026-11-23)은 같은 표의 별도 행
         if not rows:
             continue
         for kind in ("instruct", "base"):
@@ -174,10 +176,11 @@ def gen_views(d: dict) -> dict:
                 continue
             tasks = list(dict.fromkeys(r["task"] for r in rk))
             trows = []
-            for m in dict.fromkeys(r["model"] for r in rk):
-                rr = {r["task"]: r for r in rk if r["model"] == m}
+            for m, var in dict.fromkeys((r["model"], r["variant"]) for r in rk):
+                rr = {r["task"]: r for r in rk if r["model"] == m and r["variant"] == var}
                 a = next(iter(rr.values()))
-                cells = {"model": {"v": m, "slot": slot(m)}, "_set": {"v": f"{a['variant']}" + (f" / {a['unk_policy']}" if a['unk_policy'] not in ('raw', None) else "")}}
+                vlabel = "thinkrd (README 권장 샘플링)" if var == "thinkrd" else var
+                cells = {"model": {"v": m, "slot": slot(m)}, "_set": {"v": vlabel + (f" / {a['unk_policy']}" if a['unk_policy'] not in ('raw', None) else "")}}
                 for t in tasks:
                     r = rr.get(t)
                     if not r or _num(r["value"]) is None:

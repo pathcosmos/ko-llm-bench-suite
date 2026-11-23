@@ -1,0 +1,58 @@
+{
+ "task": "mbpp_plus",
+ "task_def": {
+  "dataset": "mbppplus",
+  "scorer": "code",
+  "kinds": [
+   "instruct",
+   "base"
+  ],
+  "max_new": 1024,
+  "metric": "pass_plus"
+ },
+ "dataset": {
+  "repo": "evalplus/mbppplus",
+  "revision": "b2d74c91837c3f2a20c1299ae98133cbe7cfa077",
+  "license": "Apache-2.0"
+ },
+ "limit": null,
+ "model": {
+  "id": "llama-3.2-3b",
+  "family": "Llama3.2",
+  "kind": "base",
+  "backend": "vllm",
+  "path": "meta-llama/Llama-3.2-3B",
+  "revision": "13afe5124825b4f3751f836b40dafda64c1ed062",
+  "params_b": 3.2,
+  "active_b": 3.2,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": true,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "U",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {},
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 378,
+ "generated_tokens_this_run": 41081,
+ "wall_seconds": 4.1,
+ "finished_at": "2026-11-23T10:59:09.999562+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "b2ad20d13eaad2dc67bc407bfd6470375fa4c8dd"
+}

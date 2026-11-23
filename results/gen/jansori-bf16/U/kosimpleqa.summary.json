@@ -1,0 +1,20 @@
+{
+ "model": "jansori-bf16",
+ "variant": "U",
+ "task": "kosimpleqa",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 1000,
+   "parse_fail": 0,
+   "correct": 0.174,
+   "not_attempted": 0.009,
+   "incorrect": 0.8170000000000001,
+   "correct_given_attempted": 0.17558022199798182,
+   "f_score": 0.17478653942742342,
+   "same_family_as_judge": false,
+   "truncated": 0.006
+  }
+ }
+}

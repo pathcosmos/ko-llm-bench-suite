@@ -1,0 +1,22 @@
+{
+ "model": "qwen3.5-4b",
+ "variant": "thinkrd",
+ "task": "ko_truthful_mc1",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 817,
+ "n_generated": 817,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.6903304773561811,
+   "format_fail": 0.0,
+   "n": 817,
+   "acc_answered": 0.6903304773561811,
+   "loop": 0.0,
+   "rep3": 0.0011126489768987038,
+   "truncated": 0.0
+  }
+ }
+}
