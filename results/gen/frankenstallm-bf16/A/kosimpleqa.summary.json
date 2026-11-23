@@ -1,0 +1,20 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "A",
+ "task": "kosimpleqa",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "unk_drop",
+ "metrics": {
+  "judge": {
+   "n": 1000,
+   "parse_fail": 0,
+   "correct": 0.057,
+   "not_attempted": 0.113,
+   "incorrect": 0.83,
+   "correct_given_attempted": 0.06426155580608794,
+   "f_score": 0.0604133545310016,
+   "same_family_as_judge": false,
+   "truncated": 0.165
+  }
+ }
+}

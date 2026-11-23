@@ -1,0 +1,32 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "rp11+orpo",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "acc": 0.03871576959395656,
+   "format_fail": 0.7950897072710104,
+   "n": 1059,
+   "acc_answered": 0.1889400921658986,
+   "loop": 0.11614730878186968,
+   "rep3": 0.39654636740051713,
+   "truncated": 0.5646836638338055
+  },
+  "unk_drop": {
+   "acc": 0.04060434372049103,
+   "format_fail": 0.7790368271954674,
+   "n": 1059,
+   "acc_answered": 0.18376068376068377,
+   "loop": 0.11142587346553352,
+   "rep3": 0.3743906542034743,
+   "truncated": 0.5646836638338055
+  }
+ }
+}

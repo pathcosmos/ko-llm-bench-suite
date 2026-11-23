@@ -1,0 +1,56 @@
+{
+ "task": "kormedmcqa_dev",
+ "task_def": {
+  "dataset": "kormedmcqa",
+  "scorer": "rule",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 1024,
+  "metric": "acc",
+  "dev": true
+ },
+ "dataset": {
+  "repo": "sean0042/KorMedMCQA",
+  "revision": "79efd6f91edfc8036330d7a4daa88b9f2deb9a82",
+  "license": "CC-BY-NC-2.0 비상업"
+ },
+ "limit": null,
+ "model": {
+  "id": "kanana-2-3b",
+  "family": "kanana-2",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "kakaocorp/kanana-2-3b-instruct",
+  "revision": "6a5d7889964c4c590299d16e309eabab1f73f8a9",
+  "params_b": 3.0,
+  "active_b": 3.0,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "A",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {},
+ "max_model_len": 4096,
+ "n_items": 1059,
+ "generated_tokens_this_run": 36408,
+ "wall_seconds": 3.9,
+ "finished_at": "2026-11-20T07:31:17.035296+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}

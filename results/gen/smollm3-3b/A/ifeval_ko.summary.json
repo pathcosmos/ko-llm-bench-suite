@@ -1,0 +1,23 @@
+{
+ "model": "smollm3-3b",
+ "variant": "A",
+ "task": "ifeval_ko",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 342,
+ "n_generated": 342,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "prompt_level_strict_acc": 0.48830409356725146,
+   "prompt_level_loose_acc": 0.5233918128654971,
+   "inst_level_strict_acc": 0.58004158004158,
+   "inst_level_loose_acc": 0.6174636174636174,
+   "n": 342,
+   "loop": 0.20760233918128654,
+   "rep3": 0.325544017339863,
+   "truncated": 0.2953216374269006
+  }
+ }
+}

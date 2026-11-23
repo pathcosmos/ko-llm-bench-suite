@@ -1,0 +1,30 @@
+{
+ "model": "evafrill-mo-3b",
+ "variant": "card",
+ "task": "mbpp_plus",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 378,
+ "n_generated": 378,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "pass_plus": 0.0,
+   "n": 378,
+   "timeout": 0.0,
+   "loop": 0.17195767195767195,
+   "rep3": 0.014058320310180804,
+   "truncated": 0.21693121693121692
+  },
+  "unk_drop": {
+   "pass_plus": 0.0,
+   "n": 378,
+   "timeout": 0.0,
+   "loop": 0.17195767195767195,
+   "rep3": 0.014146056974095161,
+   "truncated": 0.21693121693121692
+  }
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "model": "evafrill-mo-3b-pretrain",
+ "variant": "A",
+ "task": "mbpp_plus",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 378,
+ "n_generated": 378,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "pass_plus": 0.0,
+   "n": 378,
+   "timeout": 0.0,
+   "loop": 0.5661375661375662,
+   "rep3": 0.10736425580569782,
+   "truncated": 1.0
+  },
+  "unk_drop": {
+   "pass_plus": 0.0,
+   "n": 378,
+   "timeout": 0.0,
+   "loop": 0.5661375661375662,
+   "rep3": 0.10662746987477165,
+   "truncated": 1.0
+  }
+ }
+}

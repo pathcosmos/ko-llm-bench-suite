@@ -1,0 +1,22 @@
+{
+ "model": "gemma-4-e4b-it",
+ "variant": "A",
+ "task": "ko_truthful_mc1",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 817,
+ "n_generated": 817,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.5422276621787026,
+   "format_fail": 0.19951040391676866,
+   "n": 817,
+   "acc_answered": 0.6773700305810397,
+   "loop": 0.0,
+   "rep3": 0.021264637169004317,
+   "truncated": 0.15422276621787026
+  }
+ }
+}

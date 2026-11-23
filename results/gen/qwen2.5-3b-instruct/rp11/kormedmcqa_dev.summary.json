@@ -1,0 +1,22 @@
+{
+ "model": "qwen2.5-3b-instruct",
+ "variant": "rp11",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.45042492917847027,
+   "format_fail": 0.003777148253068933,
+   "n": 1059,
+   "acc_answered": 0.45213270142180095,
+   "loop": 0.0009442870632672333,
+   "rep3": 0.026126197072015193,
+   "truncated": 0.0009442870632672333
+  }
+ }
+}

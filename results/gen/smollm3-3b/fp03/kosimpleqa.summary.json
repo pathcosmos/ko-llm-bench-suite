@@ -1,0 +1,20 @@
+{
+ "model": "smollm3-3b",
+ "variant": "fp03",
+ "task": "kosimpleqa",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 1000,
+   "parse_fail": 0,
+   "correct": 0.051,
+   "not_attempted": 0.007,
+   "incorrect": 0.942,
+   "correct_given_attempted": 0.051359516616314195,
+   "f_score": 0.05117912694430506,
+   "same_family_as_judge": false,
+   "truncated": 0.015
+  }
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "model": "qwen3.6-35b-a3b",
+ "variant": "A",
+ "task": "humaneval_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 163,
+ "n_generated": 164,
+ "excluded": [
+  "HumanEval/32"
+ ],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.9141104294478528,
+   "n": 163,
+   "timeout": 0.0,
+   "loop": 0.0,
+   "rep3": 0.043785600847845774,
+   "truncated": 0.024539877300613498
+  }
+ }
+}

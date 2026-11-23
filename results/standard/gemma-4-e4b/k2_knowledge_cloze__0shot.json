@@ -1,0 +1,113 @@
+{
+ "task": "k2_knowledge_cloze",
+ "num_fewshot": 0,
+ "source": "K2-Eval knowledge (HAERAE-HUB 14bbbc9)",
+ "limit": null,
+ "wall_seconds": 3.4,
+ "finished_at": "2026-11-23T01:10:55.568165+00:00",
+ "results": {
+  "k2_knowledge_cloze": {
+   "name": "k2_knowledge_cloze",
+   "alias": "k2_knowledge_cloze",
+   "sample_len": 432,
+   "acc,none": 0.40046296296296297,
+   "acc_stderr,none": 0.02360209487034743,
+   "acc_norm,none": 0.5717592592592593,
+   "acc_norm_stderr,none": 0.02383482452457568
+  }
+ },
+ "groups": null,
+ "n-samples": {
+  "k2_knowledge_cloze": {
+   "original": 432,
+   "effective": 432
+  }
+ },
+ "versions_task": {
+  "k2_knowledge_cloze": 1.0
+ },
+ "configs": {
+  "k2_knowledge_cloze": {
+   "task": "k2_knowledge_cloze",
+   "custom_dataset": "def k2_knowledge(**kw):\n    import pandas as pd\n\n    f = _fmt(\"k2_knowledge_cloze\")\n    df = pd.read_csv(dataset_dir(\"k2_eval\") / \"data\" / \"k2-eval-knowledge.csv\")\n    rows = [{\"id\": str(i), \"query\": f.format(question=str(r[\"question\"]).strip()), \"choices\": [str(r[c]).strip() for c in \"abcd\"],\n             \"gold\": int(r[\"gold_answer\"]), \"n_options\": 4} for i, r in enumerate(df.to_dict(\"records\"))]\n    return _dd(rows)\n",
+   "test_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "gold",
+   "unsafe_code": false,
+   "doc_to_choice": "{{choices}}",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": "{{choices}}",
+    "doc_to_target": "gold",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "main_metric": "acc_norm",
+    "config_source": "/home/work/llm-dense/llm-test/ko-llm-bench-suite/kobench/standard/tasks/uni/k2_knowledge_cloze.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "gemma-4-e4b",
+  "family": "Gemma4",
+  "kind": "base",
+  "backend": "vllm",
+  "path": "google/gemma-4-E4B",
+  "revision": "11b8250ef59eb3ebc5dae7b21144d7b84f2c06dd",
+  "params_b": 8.0,
+  "active_b": 4.0,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty",
+ "load_seconds": 135.1,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": null
+}

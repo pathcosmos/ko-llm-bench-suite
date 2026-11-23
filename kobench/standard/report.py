@@ -141,6 +141,8 @@ def build(suite: str, ref: str | None, limit=None, table: str = "A", best_path: 
     chosen = chosen_variants(best_path) if table == "B" else {}
     rows = []
     for mid, spec in models.items():
+        if spec.backend == "llamacpp":            # GGUF는 양자화 표(--table Q)에서 따로 비교
+            continue
         var = chosen.get(mid, Variant())
         per_task = {}
         for t in tasks:
@@ -162,6 +164,86 @@ def build(suite: str, ref: str | None, limit=None, table: str = "A", best_path: 
                 if ref_row and tname in ref_row["tasks"] and r is not ref_row:
                     v["delta_ref"] = paired_diff(v["_items"], ref_row["tasks"][tname]["_items"])
     return {"suite": suite, "tasks": tasks, "rows": rows, "ref": ref, "table": table}
+
+
+QUANT_GROUPS = {   # 양자화 표: BF16(vLLM) 기준 → GGUF f16(엔진 차이) → Q8_0·Q4_K_M(양자화 손실)
+    "JANSORI": ["jansori-bf16", "jansori-gguf-f16", "jansori-gguf-q8_0", "jansori-gguf-q4_k_m"],
+    "FRANKENSTALLM": ["frankenstallm-bf16", "frankenstallm-gguf-f16", "frankenstallm-gguf-q8_0", "frankenstallm-gguf-q4_k_m"],
+}
+
+
+def build_quant(suite: str, limit=None) -> dict:
+    """같은 문항에서 BF16(vLLM) 대비, f16 GGUF(llama.cpp) 대비 paired 차이. f16 대비 차이 = 양자화 손실,
+    BF16 대비 f16 차이 = 엔진(vLLM↔llama.cpp)·정밀도(bf16↔f16) 차이."""
+    tasks = load_suites()[suite]["tasks"]
+    models = load_models()
+    groups = []
+    for fam, ids in QUANT_GROUPS.items():
+        rows = []
+        ents = {}
+        for mid in ids:
+            per = {}
+            for t in tasks:
+                e = _task_entry(mid, t, limit, Variant())
+                if e is not None:
+                    per[t.task] = e
+            ents[mid] = per
+        for mid in ids:
+            if not ents[mid]:
+                continue
+            for tname, e in ents[mid].items():
+                if mid != ids[0] and tname in ents[ids[0]]:
+                    e["delta_bf16"] = paired_diff(e["_items"], ents[ids[0]][tname]["_items"])
+                if mid not in ids[:2] and tname in ents.get(ids[1], {}):
+                    e["delta_f16"] = paired_diff(e["_items"], ents[ids[1]][tname]["_items"])
+            spec = models[mid]
+            rows.append({"model": mid, "quant": spec.extra.get("quant", "BF16"), "engine": "llama.cpp" if spec.backend == "llamacpp" else "vLLM",
+                         "size_gb": round(Path(spec.path).stat().st_size / 1e9, 2) if spec.backend == "llamacpp" else None,
+                         "tasks": ents[mid]})
+        groups.append({"family": fam, "rows": rows})
+    return {"suite": suite, "tasks": tasks, "groups": groups}
+
+
+def quant_markdown(rep: dict) -> str:
+    tasks = rep["tasks"]
+    lines = [f"# 양자화 손실 — {rep['suite']}", "",
+             "같은 문항·같은 토큰(학습 토크나이저 토큰 ID 입력)으로 BF16(vLLM)과 GGUF(llama.cpp, libllama 직접)를 비교한다. "
+             "셀 = micro [95% CI] / ΔBF16 [paired 95% CI] / Δf16 [paired 95% CI]. Δf16(Q8_0·Q4_K_M − f16 GGUF)이 양자화 손실, "
+             "f16의 ΔBF16이 엔진·정밀도(bf16→f16) 차이다.", ""]
+    for g in rep["groups"]:
+        lines += [f"## {g['family']}", "", "| 모델 | 형식 | 엔진 | 파일 GB | " + " | ".join(t.task for t in tasks) + " |",
+                  "|---|---|---|---:|" + "---|" * len(tasks)]
+        for r in g["rows"]:
+            cells = []
+            for t in tasks:
+                v = r["tasks"].get(t.task)
+                if not v:
+                    cells.append("–")
+                    continue
+                c = _fmt(v["micro"], t.metric) + (f" [{_fmt(v['ci'][0], t.metric)}–{_fmt(v['ci'][1], t.metric)}]" if v["ci"] else "")
+                if "delta_bf16" in v:
+                    c += " / ΔBF16 " + _fmt_d(v["delta_bf16"], t.metric)
+                if "delta_f16" in v:
+                    c += " / Δf16 " + _fmt_d(v["delta_f16"], t.metric)
+                cells.append(c)
+            lines.append(f"| {r['model']} | {r['quant']} | {r['engine']} | {r['size_gb'] or '–'} | " + " | ".join(cells) + " |")
+        lines.append("")
+    return "\n".join(lines)
+
+
+def quant_csv_rows(rep: dict) -> list[dict]:
+    out = []
+    for g in rep["groups"]:
+        for r in g["rows"]:
+            for tname, v in r["tasks"].items():
+                row = {"suite": rep["suite"], "family": g["family"], "model": r["model"], "quant": r["quant"], "engine": r["engine"],
+                       "task": tname, "micro": v["micro"], "ci_lo": v["ci"][0] if v["ci"] else None,
+                       "ci_hi": v["ci"][1] if v["ci"] else None, "n": v["n"]}
+                for k in ("delta_bf16", "delta_f16"):
+                    if k in v:
+                        row.update({k: v[k][0], k + "_lo": v[k][1], k + "_hi": v[k][2]})
+                out.append(row)
+    return out
 
 
 def _fmt(v, metric="acc"):
@@ -255,13 +337,28 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--suite", default="ko_mc_v1")
     ap.add_argument("--ref", default=None, help="paired 차이 기준 모델 id")
-    ap.add_argument("--table", choices=["A", "B"], default="A")
+    ap.add_argument("--table", choices=["A", "B", "Q"], default="A", help="Q = GGUF 양자화 손실 표")
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--out", default=str(ROOT / "reports" / "standard"))
     a = ap.parse_args(argv)
-    rep = build(a.suite, a.ref, a.limit, a.table)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
+    if a.table == "Q":
+        import csv
+
+        rq = build_quant(a.suite, a.limit)
+        stem = f"{a.suite}__quant" + (f"__limit{a.limit}" if a.limit else "")
+        (out / f"{stem}.md").write_text(quant_markdown(rq), encoding="utf-8")
+        rows = quant_csv_rows(rq)
+        keys = ["suite", "family", "model", "quant", "engine", "task", "micro", "ci_lo", "ci_hi", "n", "delta_bf16",
+                "delta_bf16_lo", "delta_bf16_hi", "delta_f16", "delta_f16_lo", "delta_f16_hi"]
+        with open(out / f"{stem}.csv", "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=keys)
+            w.writeheader()
+            w.writerows(rows)
+        print(quant_markdown(rq))
+        return 0
+    rep = build(a.suite, a.ref, a.limit, a.table)
     stem = a.suite + ("__B" if a.table == "B" else "") + (f"__limit{a.limit}" if a.limit else "")
     md = to_markdown(rep)
     (out / f"{stem}.md").write_text(md, encoding="utf-8")

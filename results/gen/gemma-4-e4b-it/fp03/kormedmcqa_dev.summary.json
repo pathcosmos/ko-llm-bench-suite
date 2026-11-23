@@ -1,0 +1,22 @@
+{
+ "model": "gemma-4-e4b-it",
+ "variant": "fp03",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.6052880075542965,
+   "format_fail": 0.141643059490085,
+   "n": 1059,
+   "acc_answered": 0.7051705170517052,
+   "loop": 0.0,
+   "rep3": 0.014523044804628928,
+   "truncated": 0.14353163361661944
+  }
+ }
+}

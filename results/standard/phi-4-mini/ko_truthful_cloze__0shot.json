@@ -1,0 +1,113 @@
+{
+ "task": "ko_truthful_cloze",
+ "num_fewshot": 0,
+ "source": "ko_truthful_qa MC1 (davidkim205 221bb55), TruthfulQA MC1 관례(acc)",
+ "limit": null,
+ "wall_seconds": 6.1,
+ "finished_at": "2026-11-23T01:21:47.513513+00:00",
+ "results": {
+  "ko_truthful_cloze": {
+   "name": "ko_truthful_cloze",
+   "alias": "ko_truthful_cloze",
+   "sample_len": 817,
+   "acc,none": 0.2974296205630355,
+   "acc_stderr,none": 0.01600265148736098,
+   "acc_norm,none": 0.3574051407588739,
+   "acc_norm_stderr,none": 0.016776599676729478
+  }
+ },
+ "groups": null,
+ "n-samples": {
+  "ko_truthful_cloze": {
+   "original": 817,
+   "effective": 817
+  }
+ },
+ "versions_task": {
+  "ko_truthful_cloze": 1.0
+ },
+ "configs": {
+  "ko_truthful_cloze": {
+   "task": "ko_truthful_cloze",
+   "custom_dataset": "def ko_truthful(**kw):\n    f = _fmt(\"ko_truthful_cloze\")\n    src = dataset_dir(\"ko_truthful\") / \"ko_truthful_qa-multiple_choice-validation.jsonl\"\n    rows = []\n    for i, line in enumerate(open(src, encoding=\"utf-8\")):\n        r = json.loads(line)\n        ch, lab = [str(c).strip() for c in r[\"mc1_targets\"][\"choices\"]], r[\"mc1_targets\"][\"labels\"]\n        rows.append({\"id\": str(i), \"query\": f.format(question=r[\"question\"].strip()), \"choices\": ch, \"gold\": lab.index(1),\n                     \"n_options\": len(ch)})\n    return _dd(rows)\n",
+   "test_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "gold",
+   "unsafe_code": false,
+   "doc_to_choice": "{{choices}}",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": "{{choices}}",
+    "doc_to_target": "gold",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "main_metric": "acc",
+    "config_source": "/home/work/llm-dense/llm-test/ko-llm-bench-suite/kobench/standard/tasks/uni/ko_truthful_cloze.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "phi-4-mini",
+  "family": "Phi4",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "microsoft/Phi-4-mini-instruct",
+  "revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+  "params_b": 3.8,
+  "active_b": 3.8,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty",
+ "load_seconds": 48.7,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": null
+}

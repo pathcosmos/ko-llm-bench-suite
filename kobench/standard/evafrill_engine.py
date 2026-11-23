@@ -250,7 +250,7 @@ class EvafrillEngine:
     def generate(self, prompts: list[list[int]], max_new_tokens: int, eos_ids=(2,), stop_strings=None,
                  decode_fn=None, use_graph: bool = True, record_logits: bool = False,
                  temperature: float = 0.0, top_p: float = 1.0, seed: int | None = None,
-                 timings: dict | None = None) -> list[GenResult]:
+                 timings: dict | None = None, repetition_penalty: float = 1.0) -> list[GenResult]:
         B = len(prompts)
         if not 1 <= B <= self.max_batch:
             raise ValueError(f"배치 {B}는 1..{self.max_batch}")
@@ -272,6 +272,13 @@ class EvafrillEngine:
         for b, p in enumerate(prompts):
             first.append(self.prefill(p, b)[-1])
         last = torch.stack(first)                                  # (B,V)
+        # repetition_penalty (HF 규칙: 프롬프트·생성에 나온 토큰의 로짓을 양수면 나누고 음수면 곱한다). 1.0이면 기존 경로 그대로
+        seen = None
+        if repetition_penalty != 1.0:
+            seen = torch.zeros(B, last.shape[-1], dtype=torch.bool, device=last.device)
+            for b, p in enumerate(prompts):
+                seen[b, torch.as_tensor(p, dtype=torch.long, device=last.device)] = True
+            last = self._penalize(last, seen, repetition_penalty)
         nxt = self._sample(last, temperature, top_p, gen)
         if Bx > B:                                                 # 빈 행은 더미 (토큰 0, 위치 0); 실제 행에 영향 없음
             nxt = torch.cat([nxt, torch.zeros(Bx - B, dtype=nxt.dtype, device=nxt.device)])
@@ -307,6 +314,9 @@ class EvafrillEngine:
                 cur_logits = s_out
             else:
                 cur_logits = self._step(nxt, pos, Bx, Lb)
+            if seen is not None:
+                seen[torch.arange(B, device=seen.device), nxt[:B]] = True
+                cur_logits = torch.cat([self._penalize(cur_logits[:B], seen, repetition_penalty), cur_logits[B:]])
             nxt = self._sample(cur_logits, temperature, top_p, gen)
             pos += 1
         sync()
@@ -329,6 +339,11 @@ class EvafrillEngine:
     def _bucket_static(cls, need: int) -> int:
         """need 이상인 가장 작은 버킷 (엔진 max_len을 정할 때)."""
         return next(b for b in cls.BUCKETS if need <= b)
+
+    @staticmethod
+    def _penalize(logits, seen, penalty):
+        lf = logits.float()
+        return torch.where(seen, torch.where(lf > 0, lf / penalty, lf * penalty), lf).to(logits.dtype)
 
     @staticmethod
     def _sample(logits, temperature, top_p, gen):

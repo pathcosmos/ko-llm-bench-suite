@@ -1,0 +1,23 @@
+{
+ "model": "nemotron-3-nano-30b-a3b",
+ "variant": "think",
+ "task": "humaneval_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 163,
+ "n_generated": 164,
+ "excluded": [
+  "HumanEval/32"
+ ],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.7668711656441718,
+   "n": 163,
+   "timeout": 0.006134969325153374,
+   "loop": 0.06134969325153374,
+   "rep3": 0.03441923939817156,
+   "truncated": 0.0
+  }
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "model": "exaone-3.5-2.4b",
+ "variant": "A",
+ "task": "ko_truthful_mc1",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 817,
+ "n_generated": 817,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.4749082007343941,
+   "format_fail": 0.008567931456548347,
+   "n": 817,
+   "acc_answered": 0.47901234567901235,
+   "loop": 0.0,
+   "rep3": 0.01534563657046838,
+   "truncated": 0.009791921664626682
+  }
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "model": "nemotron-3-nano-30b-a3b",
+ "variant": "A",
+ "task": "komt",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 80,
+   "parse_fail": 0,
+   "score": 5.86875,
+   "by_category": {
+    "coding": 6.8,
+    "extraction": 4.45,
+    "humanities": 5.75,
+    "math": 8.85,
+    "reasoning": 3.7,
+    "roleplay": 6.05,
+    "stem": 6.4,
+    "writing": 4.95
+   },
+   "turn1": 6.7,
+   "turn2": 5.0375,
+   "same_family_as_judge": false,
+   "truncated": 0.3375
+  }
+ }
+}

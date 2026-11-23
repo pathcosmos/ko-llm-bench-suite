@@ -1,0 +1,16 @@
+{
+ "model": "phi-4-mini",
+ "variant": "A",
+ "task": "k2_generation",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 90,
+   "parse_fail": 0,
+   "score": 2.588888888888889,
+   "same_family_as_judge": false,
+   "truncated": 0.26666666666666666
+  }
+ }
+}

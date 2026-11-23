@@ -1,0 +1,28 @@
+{
+ "model": "phi-4-mini",
+ "variant": "fp03",
+ "task": "komt",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 80,
+   "parse_fail": 0,
+   "score": 3.54375,
+   "by_category": {
+    "coding": 4.3,
+    "extraction": 4.05,
+    "humanities": 3.7,
+    "math": 4.4,
+    "reasoning": 3.05,
+    "roleplay": 3.3,
+    "stem": 2.85,
+    "writing": 2.7
+   },
+   "turn1": 3.6375,
+   "turn2": 3.45,
+   "same_family_as_judge": false,
+   "truncated": 0.0125
+  }
+ }
+}

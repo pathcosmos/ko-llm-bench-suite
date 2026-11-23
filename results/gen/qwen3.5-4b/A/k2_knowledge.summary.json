@@ -1,0 +1,22 @@
+{
+ "model": "qwen3.5-4b",
+ "variant": "A",
+ "task": "k2_knowledge",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 432,
+ "n_generated": 432,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.8240740740740741,
+   "format_fail": 0.006944444444444444,
+   "n": 432,
+   "acc_answered": 0.8298368298368298,
+   "loop": 0.004629629629629629,
+   "rep3": 0.009112324397748384,
+   "truncated": 0.006944444444444444
+  }
+ }
+}

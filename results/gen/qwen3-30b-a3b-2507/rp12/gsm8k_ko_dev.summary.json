@@ -1,0 +1,22 @@
+{
+ "model": "qwen3-30b-a3b-2507",
+ "variant": "rp12",
+ "task": "gsm8k_ko_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.82,
+   "exact_match": 0.82,
+   "format_fail": 0.04666666666666667,
+   "n": 300,
+   "loop": 0.0,
+   "rep3": 0.03967014132101515,
+   "truncated": 0.05
+  }
+ }
+}

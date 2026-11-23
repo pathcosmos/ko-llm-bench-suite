@@ -1,0 +1,26 @@
+{
+ "model": "qwen2.5-3b-instruct",
+ "variant": "rp11",
+ "task": "kobbq",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 2280,
+ "n_generated": 2280,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.6710526315789473,
+   "format_fail": 0.0035087719298245615,
+   "n": 2280,
+   "acc_answered": 0.6734154929577465,
+   "acc_amb": 0.5210526315789473,
+   "acc_dis": 0.8210526315789474,
+   "diff_bias_amb": 0.1543859649122807,
+   "diff_bias_dis": 0.16842105263157903,
+   "loop": 0.0,
+   "rep3": 0.0032529131694428418,
+   "truncated": 0.0
+  }
+ }
+}

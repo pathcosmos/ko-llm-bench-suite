@@ -1,0 +1,113 @@
+{
+ "task": "kobbq_cloze",
+ "num_fewshot": 0,
+ "source": "KoBBQ evaluation-test (naver-ai ccb902a)",
+ "limit": null,
+ "wall_seconds": 14.7,
+ "finished_at": "2026-11-23T00:54:31.146316+00:00",
+ "results": {
+  "kobbq_cloze": {
+   "name": "kobbq_cloze",
+   "alias": "kobbq_cloze",
+   "sample_len": 2280,
+   "acc,none": 0.36140350877192984,
+   "acc_stderr,none": 0.010063227333714389,
+   "acc_norm,none": 0.34342105263157896,
+   "acc_norm_stderr,none": 0.009946831742404936
+  }
+ },
+ "groups": null,
+ "n-samples": {
+  "kobbq_cloze": {
+   "original": 2280,
+   "effective": 2280
+  }
+ },
+ "versions_task": {
+  "kobbq_cloze": 1.0
+ },
+ "configs": {
+  "kobbq_cloze": {
+   "task": "kobbq_cloze",
+   "custom_dataset": "def kobbq(**kw):\n    import pandas as pd\n\n    f = _fmt(\"kobbq_cloze\")\n    df = pd.read_parquet(dataset_dir(\"kobbq\") / \"data\" / \"kobbq-evaluation-test.parquet\")\n    rows = []\n    for r in df.to_dict(\"records\"):\n        ch = [str(c).strip() for c in ast.literal_eval(r[\"choices\"])]\n        rows.append({\"id\": r[\"sample_id\"], \"query\": f.format(context=r[\"context\"].strip(), question=r[\"question\"].strip()),\n                     \"choices\": ch, \"gold\": ch.index(str(r[\"answer\"]).strip()), \"n_options\": len(ch)})\n    return _dd(rows)\n",
+   "test_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "gold",
+   "unsafe_code": false,
+   "doc_to_choice": "{{choices}}",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": "{{choices}}",
+    "doc_to_target": "gold",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "main_metric": "acc_norm",
+    "config_source": "/home/work/llm-dense/llm-test/ko-llm-bench-suite/kobench/standard/tasks/uni/kobbq_cloze.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "qwen2.5-3b",
+  "family": "Qwen2.5",
+  "kind": "base",
+  "backend": "vllm",
+  "path": "Qwen/Qwen2.5-3B",
+  "revision": "3aab1f1954e9cc14eb9509a215f9e5ca08227a9b",
+  "params_b": 3.1,
+  "active_b": 3.1,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty",
+ "load_seconds": 45.8,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": null
+}

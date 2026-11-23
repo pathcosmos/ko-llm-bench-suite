@@ -1,0 +1,17 @@
+{
+ "model": "phi-4-mini",
+ "variant": "fp03",
+ "task": "ko_arena_hard",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 500,
+   "parse_fail": 47,
+   "winrate": 0.6931122448979592,
+   "baseline": "llama-3.2-3b-instruct",
+   "same_family_as_judge": false,
+   "truncated": 0.016
+  }
+ }
+}

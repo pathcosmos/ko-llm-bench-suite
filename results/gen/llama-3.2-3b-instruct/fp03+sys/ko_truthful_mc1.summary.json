@@ -1,0 +1,22 @@
+{
+ "model": "llama-3.2-3b-instruct",
+ "variant": "fp03+sys",
+ "task": "ko_truthful_mc1",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 817,
+ "n_generated": 817,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.14443084455324356,
+   "format_fail": 0.6181150550795593,
+   "n": 817,
+   "acc_answered": 0.3782051282051282,
+   "loop": 0.0073439412484700125,
+   "rep3": 0.056367096882870095,
+   "truncated": 0.0
+  }
+ }
+}

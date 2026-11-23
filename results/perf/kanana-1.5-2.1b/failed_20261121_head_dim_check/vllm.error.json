@@ -1,0 +1,1 @@
+{"error": "StrictDataclassClassValidationError: Class validation error for validator 'validate_architecture':\n    ValueError: The hidden size (1792) is not a multiple of the number of attention heads (24).", "at": "2026-11-21T00:46:43.723669+00:00"}

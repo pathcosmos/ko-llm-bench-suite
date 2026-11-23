@@ -1,0 +1,22 @@
+{
+ "model": "kanana-1.5-2.1b",
+ "variant": "rp11",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.21435316336166194,
+   "format_fail": 0.4098205854579792,
+   "n": 1059,
+   "acc_answered": 0.3632,
+   "loop": 0.0028328611898017,
+   "rep3": 0.06665037012379427,
+   "truncated": 0.0028328611898017
+  }
+ }
+}

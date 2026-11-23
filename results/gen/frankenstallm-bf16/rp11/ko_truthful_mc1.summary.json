@@ -1,0 +1,32 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "rp11",
+ "task": "ko_truthful_mc1",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 817,
+ "n_generated": 817,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "acc": 0.08567931456548347,
+   "format_fail": 0.5397796817625459,
+   "n": 817,
+   "acc_answered": 0.18617021276595744,
+   "loop": 0.004895960832313341,
+   "rep3": 0.11040918883429604,
+   "truncated": 0.009791921664626682
+  },
+  "unk_drop": {
+   "acc": 0.08812729498164015,
+   "format_fail": 0.5361077111383109,
+   "n": 817,
+   "acc_answered": 0.18997361477572558,
+   "loop": 0.004895960832313341,
+   "rep3": 0.10443582129368073,
+   "truncated": 0.009791921664626682
+  }
+ }
+}

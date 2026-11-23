@@ -1,0 +1,22 @@
+{
+ "model": "ernie-4.5-21b-a3b",
+ "variant": "rp11",
+ "task": "gsm8k_ko_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.72,
+   "exact_match": 0.72,
+   "format_fail": 0.013333333333333334,
+   "n": 300,
+   "loop": 0.0033333333333333335,
+   "rep3": 0.07474322893249873,
+   "truncated": 0.013333333333333334
+  }
+ }
+}

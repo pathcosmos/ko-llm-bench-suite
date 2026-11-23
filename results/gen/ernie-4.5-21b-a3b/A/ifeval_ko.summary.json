@@ -1,0 +1,23 @@
+{
+ "model": "ernie-4.5-21b-a3b",
+ "variant": "A",
+ "task": "ifeval_ko",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 342,
+ "n_generated": 342,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "prompt_level_strict_acc": 0.5760233918128655,
+   "prompt_level_loose_acc": 0.6257309941520468,
+   "inst_level_strict_acc": 0.6528066528066528,
+   "inst_level_loose_acc": 0.6964656964656964,
+   "n": 342,
+   "loop": 0.02046783625730994,
+   "rep3": 0.08838125720929184,
+   "truncated": 0.1783625730994152
+  }
+ }
+}

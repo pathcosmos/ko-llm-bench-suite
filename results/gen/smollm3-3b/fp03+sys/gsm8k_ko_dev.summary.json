@@ -1,0 +1,22 @@
+{
+ "model": "smollm3-3b",
+ "variant": "fp03+sys",
+ "task": "gsm8k_ko_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.33666666666666667,
+   "exact_match": 0.33666666666666667,
+   "format_fail": 0.013333333333333334,
+   "n": 300,
+   "loop": 0.02,
+   "rep3": 0.05913976617242819,
+   "truncated": 0.01
+  }
+ }
+}

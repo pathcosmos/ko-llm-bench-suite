@@ -1,0 +1,806 @@
+{
+ "task": "click",
+ "num_fewshot": 0,
+ "source": "CLIcK (Kim et al. 2024) 0-shot",
+ "limit": null,
+ "wall_seconds": 67.0,
+ "finished_at": "2026-11-21T16:47:09.508109+00:00",
+ "results": {
+  "click_lang_function": {
+   "name": "click_lang_function",
+   "alias": "click_lang_function",
+   "sample_len": 132,
+   "acc,none": 0.3787878787878788,
+   "acc_stderr,none": 0.042382088042043145,
+   "acc_norm,none": 0.3787878787878788,
+   "acc_norm_stderr,none": 0.042382088042043145
+  },
+  "click_lang_grammar": {
+   "name": "click_lang_grammar",
+   "alias": "click_lang_grammar",
+   "sample_len": 233,
+   "acc,none": 0.33905579399141633,
+   "acc_stderr,none": 0.031079497798628317,
+   "acc_norm,none": 0.33905579399141633,
+   "acc_norm_stderr,none": 0.031079497798628317
+  },
+  "click_lang_text": {
+   "name": "click_lang_text",
+   "alias": "click_lang_text",
+   "sample_len": 285,
+   "acc,none": 0.6912280701754386,
+   "acc_stderr,none": 0.027413874428590727,
+   "acc_norm,none": 0.6912280701754386,
+   "acc_norm_stderr,none": 0.027413874428590727
+  },
+  "click_cul_economy": {
+   "name": "click_cul_economy",
+   "alias": "click_cul_economy",
+   "sample_len": 59,
+   "acc,none": 0.7796610169491526,
+   "acc_stderr,none": 0.05442326385157391,
+   "acc_norm,none": 0.7796610169491526,
+   "acc_norm_stderr,none": 0.05442326385157391
+  },
+  "click_cul_geography": {
+   "name": "click_cul_geography",
+   "alias": "click_cul_geography",
+   "sample_len": 131,
+   "acc,none": 0.6717557251908397,
+   "acc_stderr,none": 0.041184385658063025,
+   "acc_norm,none": 0.6717557251908397,
+   "acc_norm_stderr,none": 0.041184385658063025
+  },
+  "click_cul_history": {
+   "name": "click_cul_history",
+   "alias": "click_cul_history",
+   "sample_len": 280,
+   "acc,none": 0.32857142857142857,
+   "acc_stderr,none": 0.0281198309402347,
+   "acc_norm,none": 0.32857142857142857,
+   "acc_norm_stderr,none": 0.0281198309402347
+  },
+  "click_cul_kpop": {
+   "name": "click_cul_kpop",
+   "alias": "click_cul_kpop",
+   "sample_len": 41,
+   "acc,none": 0.6341463414634146,
+   "acc_stderr,none": 0.07615851217559022,
+   "acc_norm,none": 0.6341463414634146,
+   "acc_norm_stderr,none": 0.07615851217559022
+  },
+  "click_cul_law": {
+   "name": "click_cul_law",
+   "alias": "click_cul_law",
+   "sample_len": 219,
+   "acc,none": 0.3698630136986301,
+   "acc_stderr,none": 0.03269713429047202,
+   "acc_norm,none": 0.3698630136986301,
+   "acc_norm_stderr,none": 0.03269713429047202
+  },
+  "click_cul_politics": {
+   "name": "click_cul_politics",
+   "alias": "click_cul_politics",
+   "sample_len": 84,
+   "acc,none": 0.75,
+   "acc_stderr,none": 0.04752931878933585,
+   "acc_norm,none": 0.75,
+   "acc_norm_stderr,none": 0.04752931878933585
+  },
+  "click_cul_society": {
+   "name": "click_cul_society",
+   "alias": "click_cul_society",
+   "sample_len": 309,
+   "acc,none": 0.7313915857605178,
+   "acc_stderr,none": 0.025255701043374636,
+   "acc_norm,none": 0.7313915857605178,
+   "acc_norm_stderr,none": 0.025255701043374636
+  },
+  "click_cul_tradition": {
+   "name": "click_cul_tradition",
+   "alias": "click_cul_tradition",
+   "sample_len": 222,
+   "acc,none": 0.6126126126126126,
+   "acc_stderr,none": 0.03276948140689366,
+   "acc_norm,none": 0.6126126126126126,
+   "acc_norm_stderr,none": 0.03276948140689366
+  },
+  "click_lang": {
+   "alias": "click_lang",
+   "name": "click_lang",
+   "sample_len": 650,
+   "acc,none": 0.5015384615384615,
+   "acc_stderr,none": 0.018510923971836242,
+   "acc_norm,none": 0.5015384615384615,
+   "acc_norm_stderr,none": 0.018510923971836242,
+   "sample_count": {
+    "acc,none": 650,
+    "acc_norm,none": 650
+   }
+  },
+  "click_cul": {
+   "alias": "click_cul",
+   "name": "click_cul",
+   "sample_len": 1345,
+   "acc,none": 0.5635687732342007,
+   "acc_stderr,none": 0.01270971329467306,
+   "acc_norm,none": 0.5635687732342007,
+   "acc_norm_stderr,none": 0.01270971329467306,
+   "sample_count": {
+    "acc,none": 1345,
+    "acc_norm,none": 1345
+   }
+  },
+  "click": {
+   "alias": "click",
+   "name": "click",
+   "sample_len": 1995,
+   "acc,none": 0.5433583959899749,
+   "acc_stderr,none": 0.010478454035759376,
+   "acc_norm,none": 0.5433583959899749,
+   "acc_norm_stderr,none": 0.010478454035759376,
+   "sample_count": {
+    "acc,none": 1995,
+    "acc_norm,none": 1995
+   }
+  }
+ },
+ "groups": {
+  "click_lang": {
+   "alias": "click_lang",
+   "name": "click_lang",
+   "sample_len": 650,
+   "acc,none": 0.5015384615384615,
+   "acc_stderr,none": 0.018510923971836242,
+   "acc_norm,none": 0.5015384615384615,
+   "acc_norm_stderr,none": 0.018510923971836242,
+   "sample_count": {
+    "acc,none": 650,
+    "acc_norm,none": 650
+   }
+  },
+  "click_cul": {
+   "alias": "click_cul",
+   "name": "click_cul",
+   "sample_len": 1345,
+   "acc,none": 0.5635687732342007,
+   "acc_stderr,none": 0.01270971329467306,
+   "acc_norm,none": 0.5635687732342007,
+   "acc_norm_stderr,none": 0.01270971329467306,
+   "sample_count": {
+    "acc,none": 1345,
+    "acc_norm,none": 1345
+   }
+  },
+  "click": {
+   "alias": "click",
+   "name": "click",
+   "sample_len": 1995,
+   "acc,none": 0.5433583959899749,
+   "acc_stderr,none": 0.010478454035759376,
+   "acc_norm,none": 0.5433583959899749,
+   "acc_norm_stderr,none": 0.010478454035759376,
+   "sample_count": {
+    "acc,none": 1995,
+    "acc_norm,none": 1995
+   }
+  }
+ },
+ "n-samples": {
+  "click_lang_function": {
+   "original": 132,
+   "effective": 132
+  },
+  "click_lang_grammar": {
+   "original": 233,
+   "effective": 233
+  },
+  "click_lang_text": {
+   "original": 285,
+   "effective": 285
+  },
+  "click_cul_economy": {
+   "original": 59,
+   "effective": 59
+  },
+  "click_cul_geography": {
+   "original": 131,
+   "effective": 131
+  },
+  "click_cul_history": {
+   "original": 280,
+   "effective": 280
+  },
+  "click_cul_kpop": {
+   "original": 41,
+   "effective": 41
+  },
+  "click_cul_law": {
+   "original": 219,
+   "effective": 219
+  },
+  "click_cul_politics": {
+   "original": 84,
+   "effective": 84
+  },
+  "click_cul_society": {
+   "original": 309,
+   "effective": 309
+  },
+  "click_cul_tradition": {
+   "original": 222,
+   "effective": 222
+  }
+ },
+ "versions_task": {
+  "click": "1.0",
+  "click_cul": "1.0",
+  "click_cul_economy": 1.0,
+  "click_cul_geography": 1.0,
+  "click_cul_history": 1.0,
+  "click_cul_kpop": 1.0,
+  "click_cul_law": 1.0,
+  "click_cul_politics": 1.0,
+  "click_cul_society": 1.0,
+  "click_cul_tradition": 1.0,
+  "click_lang": "1.0",
+  "click_lang_function": 1.0,
+  "click_lang_grammar": 1.0,
+  "click_lang_text": 1.0
+ },
+ "configs": {
+  "click_cul_economy": {
+   "task": "click_cul_economy",
+   "dataset_path": "EunsuKim/CLIcK",
+   "test_split": "train",
+   "fewshot_split": "train",
+   "process_docs": "def extract_economy(dataset: Dataset) -> Dataset:\n    return dataset.filter(lambda example: \"economy\" in example[\"id\"].lower())\n",
+   "doc_to_text": "def get_context(doc) -> str:\n    ctx = doc[\"paragraph\"]\n    q = doc[\"question\"]\n    opt = doc[\"choices\"]\n    if ctx:\n        res = f\"주어진 맥락을 천천히 읽고, 질문에 대한 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n맥락: {ctx}\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n    else:\n        res = f\"주어진 질문을 천천히 읽고, 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n\n    return res\n",
+   "doc_to_target": "def get_target(doc) -> str:\n    ans = doc[\"answer\"]\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"][doc[\"choices\"].index(ans)]\n    return [\"A\", \"B\", \"C\", \"D\"][doc[\"choices\"].index(ans)]\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def get_choices(doc) -> List[str]:\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"]\n    return [\"A\", \"B\", \"C\", \"D\"]\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "train",
+    "process_docs": "<function extract_economy at 0x752fa3560fe0>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function get_context at 0x752fa3563060>",
+    "doc_to_choice": "<function get_choices at 0x752fa3561260>",
+    "doc_to_target": "<function get_target at 0x752fa3562fc0>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/click/click_cul/click_cul_economy.yaml"
+   }
+  },
+  "click_cul_geography": {
+   "task": "click_cul_geography",
+   "dataset_path": "EunsuKim/CLIcK",
+   "test_split": "train",
+   "fewshot_split": "train",
+   "process_docs": "def extract_geography(dataset: Dataset) -> Dataset:\n    return dataset.filter(lambda example: \"geography\" in example[\"id\"].lower())\n",
+   "doc_to_text": "def get_context(doc) -> str:\n    ctx = doc[\"paragraph\"]\n    q = doc[\"question\"]\n    opt = doc[\"choices\"]\n    if ctx:\n        res = f\"주어진 맥락을 천천히 읽고, 질문에 대한 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n맥락: {ctx}\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n    else:\n        res = f\"주어진 질문을 천천히 읽고, 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n\n    return res\n",
+   "doc_to_target": "def get_target(doc) -> str:\n    ans = doc[\"answer\"]\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"][doc[\"choices\"].index(ans)]\n    return [\"A\", \"B\", \"C\", \"D\"][doc[\"choices\"].index(ans)]\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def get_choices(doc) -> List[str]:\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"]\n    return [\"A\", \"B\", \"C\", \"D\"]\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "train",
+    "process_docs": "<function extract_geography at 0x752fa3563420>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function get_context at 0x752fa3563060>",
+    "doc_to_choice": "<function get_choices at 0x752fa3561260>",
+    "doc_to_target": "<function get_target at 0x752fa3562fc0>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/click/click_cul/click_cul_geography.yaml"
+   }
+  },
+  "click_cul_history": {
+   "task": "click_cul_history",
+   "dataset_path": "EunsuKim/CLIcK",
+   "test_split": "train",
+   "fewshot_split": "train",
+   "process_docs": "def extract_history(dataset: Dataset) -> Dataset:\n    return dataset.filter(\n        lambda example: \"KHB\" in example[\"id\"] or \"history\" in example[\"id\"].lower()\n    )\n",
+   "doc_to_text": "def get_context(doc) -> str:\n    ctx = doc[\"paragraph\"]\n    q = doc[\"question\"]\n    opt = doc[\"choices\"]\n    if ctx:\n        res = f\"주어진 맥락을 천천히 읽고, 질문에 대한 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n맥락: {ctx}\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n    else:\n        res = f\"주어진 질문을 천천히 읽고, 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n\n    return res\n",
+   "doc_to_target": "def get_target(doc) -> str:\n    ans = doc[\"answer\"]\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"][doc[\"choices\"].index(ans)]\n    return [\"A\", \"B\", \"C\", \"D\"][doc[\"choices\"].index(ans)]\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def get_choices(doc) -> List[str]:\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"]\n    return [\"A\", \"B\", \"C\", \"D\"]\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "train",
+    "process_docs": "<function extract_history at 0x752fa35631a0>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function get_context at 0x752fa3563060>",
+    "doc_to_choice": "<function get_choices at 0x752fa3561260>",
+    "doc_to_target": "<function get_target at 0x752fa3562fc0>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/click/click_cul/click_cul_history.yaml"
+   }
+  },
+  "click_cul_kpop": {
+   "task": "click_cul_kpop",
+   "dataset_path": "EunsuKim/CLIcK",
+   "test_split": "train",
+   "fewshot_split": "train",
+   "process_docs": "def extract_kpop(dataset: Dataset) -> Dataset:\n    return dataset.filter(lambda example: \"popular\" in example[\"id\"].lower())\n",
+   "doc_to_text": "def get_context(doc) -> str:\n    ctx = doc[\"paragraph\"]\n    q = doc[\"question\"]\n    opt = doc[\"choices\"]\n    if ctx:\n        res = f\"주어진 맥락을 천천히 읽고, 질문에 대한 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n맥락: {ctx}\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n    else:\n        res = f\"주어진 질문을 천천히 읽고, 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n\n    return res\n",
+   "doc_to_target": "def get_target(doc) -> str:\n    ans = doc[\"answer\"]\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"][doc[\"choices\"].index(ans)]\n    return [\"A\", \"B\", \"C\", \"D\"][doc[\"choices\"].index(ans)]\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def get_choices(doc) -> List[str]:\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"]\n    return [\"A\", \"B\", \"C\", \"D\"]\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "train",
+    "process_docs": "<function extract_kpop at 0x752fa1cbf6a0>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function get_context at 0x752fa3563060>",
+    "doc_to_choice": "<function get_choices at 0x752fa3561260>",
+    "doc_to_target": "<function get_target at 0x752fa3562fc0>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/click/click_cul/click_cul_kpop.yaml"
+   }
+  },
+  "click_cul_law": {
+   "task": "click_cul_law",
+   "dataset_path": "EunsuKim/CLIcK",
+   "test_split": "train",
+   "fewshot_split": "train",
+   "process_docs": "def extract_law(dataset: Dataset) -> Dataset:\n    return dataset.filter(\n        lambda example: \"law\" in example[\"id\"].lower() or \"PSAT\" in example[\"id\"]\n    )\n",
+   "doc_to_text": "def get_context(doc) -> str:\n    ctx = doc[\"paragraph\"]\n    q = doc[\"question\"]\n    opt = doc[\"choices\"]\n    if ctx:\n        res = f\"주어진 맥락을 천천히 읽고, 질문에 대한 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n맥락: {ctx}\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n    else:\n        res = f\"주어진 질문을 천천히 읽고, 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n\n    return res\n",
+   "doc_to_target": "def get_target(doc) -> str:\n    ans = doc[\"answer\"]\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"][doc[\"choices\"].index(ans)]\n    return [\"A\", \"B\", \"C\", \"D\"][doc[\"choices\"].index(ans)]\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def get_choices(doc) -> List[str]:\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"]\n    return [\"A\", \"B\", \"C\", \"D\"]\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "train",
+    "process_docs": "<function extract_law at 0x752fa3561080>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function get_context at 0x752fa3563060>",
+    "doc_to_choice": "<function get_choices at 0x752fa3561260>",
+    "doc_to_target": "<function get_target at 0x752fa3562fc0>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/click/click_cul/click_cul_law.yaml"
+   }
+  },
+  "click_cul_politics": {
+   "task": "click_cul_politics",
+   "dataset_path": "EunsuKim/CLIcK",
+   "test_split": "train",
+   "fewshot_split": "train",
+   "process_docs": "def extract_politics(dataset: Dataset) -> Dataset:\n    return dataset.filter(lambda example: \"politics\" in example[\"id\"].lower())\n",
+   "doc_to_text": "def get_context(doc) -> str:\n    ctx = doc[\"paragraph\"]\n    q = doc[\"question\"]\n    opt = doc[\"choices\"]\n    if ctx:\n        res = f\"주어진 맥락을 천천히 읽고, 질문에 대한 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n맥락: {ctx}\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n    else:\n        res = f\"주어진 질문을 천천히 읽고, 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n\n    return res\n",
+   "doc_to_target": "def get_target(doc) -> str:\n    ans = doc[\"answer\"]\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"][doc[\"choices\"].index(ans)]\n    return [\"A\", \"B\", \"C\", \"D\"][doc[\"choices\"].index(ans)]\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def get_choices(doc) -> List[str]:\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"]\n    return [\"A\", \"B\", \"C\", \"D\"]\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "train",
+    "process_docs": "<function extract_politics at 0x752fa3e16840>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function get_context at 0x752fa3563060>",
+    "doc_to_choice": "<function get_choices at 0x752fa3561260>",
+    "doc_to_target": "<function get_target at 0x752fa3562fc0>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/click/click_cul/click_cul_politics.yaml"
+   }
+  },
+  "click_cul_society": {
+   "task": "click_cul_society",
+   "dataset_path": "EunsuKim/CLIcK",
+   "test_split": "train",
+   "fewshot_split": "train",
+   "process_docs": "def extract_society(dataset: Dataset) -> Dataset:\n    return dataset.filter(lambda example: \"society\" in example[\"id\"].lower())\n",
+   "doc_to_text": "def get_context(doc) -> str:\n    ctx = doc[\"paragraph\"]\n    q = doc[\"question\"]\n    opt = doc[\"choices\"]\n    if ctx:\n        res = f\"주어진 맥락을 천천히 읽고, 질문에 대한 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n맥락: {ctx}\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n    else:\n        res = f\"주어진 질문을 천천히 읽고, 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n\n    return res\n",
+   "doc_to_target": "def get_target(doc) -> str:\n    ans = doc[\"answer\"]\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"][doc[\"choices\"].index(ans)]\n    return [\"A\", \"B\", \"C\", \"D\"][doc[\"choices\"].index(ans)]\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def get_choices(doc) -> List[str]:\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"]\n    return [\"A\", \"B\", \"C\", \"D\"]\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "train",
+    "process_docs": "<function extract_society at 0x752fa1cbf740>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function get_context at 0x752fa3563060>",
+    "doc_to_choice": "<function get_choices at 0x752fa3561260>",
+    "doc_to_target": "<function get_target at 0x752fa3562fc0>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/click/click_cul/click_cul_society.yaml"
+   }
+  },
+  "click_cul_tradition": {
+   "task": "click_cul_tradition",
+   "dataset_path": "EunsuKim/CLIcK",
+   "test_split": "train",
+   "fewshot_split": "train",
+   "process_docs": "def extract_tradition(dataset: Dataset) -> Dataset:\n    return dataset.filter(lambda example: \"tradition\" in example[\"id\"].lower())\n",
+   "doc_to_text": "def get_context(doc) -> str:\n    ctx = doc[\"paragraph\"]\n    q = doc[\"question\"]\n    opt = doc[\"choices\"]\n    if ctx:\n        res = f\"주어진 맥락을 천천히 읽고, 질문에 대한 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n맥락: {ctx}\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n    else:\n        res = f\"주어진 질문을 천천히 읽고, 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n\n    return res\n",
+   "doc_to_target": "def get_target(doc) -> str:\n    ans = doc[\"answer\"]\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"][doc[\"choices\"].index(ans)]\n    return [\"A\", \"B\", \"C\", \"D\"][doc[\"choices\"].index(ans)]\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def get_choices(doc) -> List[str]:\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"]\n    return [\"A\", \"B\", \"C\", \"D\"]\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "train",
+    "process_docs": "<function extract_tradition at 0x752fa1cbf7e0>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function get_context at 0x752fa3563060>",
+    "doc_to_choice": "<function get_choices at 0x752fa3561260>",
+    "doc_to_target": "<function get_target at 0x752fa3562fc0>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/click/click_cul/click_cul_tradition.yaml"
+   }
+  },
+  "click_lang_function": {
+   "task": "click_lang_function",
+   "dataset_path": "EunsuKim/CLIcK",
+   "test_split": "train",
+   "fewshot_split": "train",
+   "process_docs": "def extract_function(dataset: Dataset) -> Dataset:\n    return dataset.filter(\n        lambda example: (\n            \"CSAT_korean\" in example[\"id\"]\n            and (\n                int(example[\"id\"].split(\"_\")[-1]) > 34\n                or (\n                    int(example[\"id\"].split(\"_\")[2]) < 21\n                    and int(example[\"id\"].split(\"_\")[3]) < 11\n                )\n            )\n        )\n        or (\n            \"Kedu_16\" in example[\"id\"]\n            and (\n                \"대화\" in example[\"question\"]\n                or \"발화\" in example[\"question\"]\n                or \"질의\" in example[\"question\"]\n            )\n        )\n        or \"PSE_korean\" in example[\"id\"]\n    )\n",
+   "doc_to_text": "def get_context(doc) -> str:\n    ctx = doc[\"paragraph\"]\n    q = doc[\"question\"]\n    opt = doc[\"choices\"]\n    if ctx:\n        res = f\"주어진 맥락을 천천히 읽고, 질문에 대한 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n맥락: {ctx}\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n    else:\n        res = f\"주어진 질문을 천천히 읽고, 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n\n    return res\n",
+   "doc_to_target": "def get_target(doc) -> str:\n    ans = doc[\"answer\"]\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"][doc[\"choices\"].index(ans)]\n    return [\"A\", \"B\", \"C\", \"D\"][doc[\"choices\"].index(ans)]\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def get_choices(doc) -> List[str]:\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"]\n    return [\"A\", \"B\", \"C\", \"D\"]\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "train",
+    "process_docs": "<function extract_function at 0x7530c58dde40>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function get_context at 0x7530c58ddee0>",
+    "doc_to_choice": "<function get_choices at 0x7530c58de480>",
+    "doc_to_target": "<function get_target at 0x7530c58dec00>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/click/click_lang/click_lang_function.yaml"
+   }
+  },
+  "click_lang_grammar": {
+   "task": "click_lang_grammar",
+   "dataset_path": "EunsuKim/CLIcK",
+   "test_split": "train",
+   "fewshot_split": "train",
+   "process_docs": "def extract_grammar(dataset: Dataset) -> Dataset:\n    return dataset.filter(\n        lambda example: (\n            \"CSAT_korean\" in example[\"id\"]\n            and (\n                int(example[\"id\"].split(\"_\")[2]) < 21\n                and int(example[\"id\"].split(\"_\")[3]) > 10\n            )\n        )\n        or (\n            \"Kedu_1\" in example[\"id\"]\n            and (\n                example[\"id\"].split(\"_\")[1] != \"16\"\n                or not (\n                    \"대화\" in example[\"question\"]\n                    or \"발화\" in example[\"question\"]\n                    or \"질의\" in example[\"question\"]\n                )\n            )\n        )\n        or (\"TK\" in example[\"id\"] and int(example[\"id\"].split(\"_\")[-1]) < 5)\n    )\n",
+   "doc_to_text": "def get_context(doc) -> str:\n    ctx = doc[\"paragraph\"]\n    q = doc[\"question\"]\n    opt = doc[\"choices\"]\n    if ctx:\n        res = f\"주어진 맥락을 천천히 읽고, 질문에 대한 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n맥락: {ctx}\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n    else:\n        res = f\"주어진 질문을 천천히 읽고, 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n\n    return res\n",
+   "doc_to_target": "def get_target(doc) -> str:\n    ans = doc[\"answer\"]\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"][doc[\"choices\"].index(ans)]\n    return [\"A\", \"B\", \"C\", \"D\"][doc[\"choices\"].index(ans)]\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def get_choices(doc) -> List[str]:\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"]\n    return [\"A\", \"B\", \"C\", \"D\"]\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "train",
+    "process_docs": "<function extract_grammar at 0x7530c58de160>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function get_context at 0x7530c58ddee0>",
+    "doc_to_choice": "<function get_choices at 0x7530c58de480>",
+    "doc_to_target": "<function get_target at 0x7530c58dec00>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/click/click_lang/click_lang_grammar.yaml"
+   }
+  },
+  "click_lang_text": {
+   "task": "click_lang_text",
+   "dataset_path": "EunsuKim/CLIcK",
+   "test_split": "train",
+   "fewshot_split": "train",
+   "process_docs": "def extract_text(dataset: Dataset) -> Dataset:\n    return dataset.filter(\n        lambda example: \"CSAT_korean_22\" in example[\"id\"]\n        or (\n            \"CSAT_korean_23\" in example[\"id\"] and int(example[\"id\"].split(\"_\")[-1]) < 35\n        )\n        or (\"TK\" in example[\"id\"] and int(example[\"id\"].split(\"_\")[-1]) > 4)\n    )\n",
+   "doc_to_text": "def get_context(doc) -> str:\n    ctx = doc[\"paragraph\"]\n    q = doc[\"question\"]\n    opt = doc[\"choices\"]\n    if ctx:\n        res = f\"주어진 맥락을 천천히 읽고, 질문에 대한 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n맥락: {ctx}\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n    else:\n        res = f\"주어진 질문을 천천히 읽고, 적절한 정답을 A, B, C, D 중에 골라 알파벳 하나로 답하시오.\\n\\n질문: {q}\\n보기:\\nA:{opt[0]}, B: {opt[1]}, C: {opt[2]}, D: {opt[3]}\\n정답:\"\n\n    return res\n",
+   "doc_to_target": "def get_target(doc) -> str:\n    ans = doc[\"answer\"]\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"][doc[\"choices\"].index(ans)]\n    return [\"A\", \"B\", \"C\", \"D\"][doc[\"choices\"].index(ans)]\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def get_choices(doc) -> List[str]:\n    if \"CSAT\" in doc[\"id\"]:\n        return [\"A\", \"B\", \"C\", \"D\", \"E\"]\n    return [\"A\", \"B\", \"C\", \"D\"]\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "train",
+    "process_docs": "<function extract_text at 0x7530c58deb60>",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function get_context at 0x7530c58ddee0>",
+    "doc_to_choice": "<function get_choices at 0x7530c58de480>",
+    "doc_to_target": "<function get_target at 0x7530c58dec00>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/click/click_lang/click_lang_text.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "gemma-4-e4b",
+  "family": "Gemma4",
+  "kind": "base",
+  "backend": "vllm",
+  "path": "google/gemma-4-E4B",
+  "revision": "11b8250ef59eb3ebc5dae7b21144d7b84f2c06dd",
+  "params_b": 8.0,
+  "active_b": 4.0,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty",
+ "load_seconds": 118.4,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": null
+}

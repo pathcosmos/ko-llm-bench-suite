@@ -1,0 +1,22 @@
+{
+ "model": "nemotron-3-nano-30b-a3b",
+ "variant": "card",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.5080264400377715,
+   "format_fail": 0.0084985835694051,
+   "n": 1059,
+   "acc_answered": 0.5123809523809524,
+   "loop": 0.0,
+   "rep3": 0.005539668385322183,
+   "truncated": 0.0056657223796034
+  }
+ }
+}

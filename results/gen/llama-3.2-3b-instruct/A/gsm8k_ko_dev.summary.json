@@ -1,0 +1,22 @@
+{
+ "model": "llama-3.2-3b-instruct",
+ "variant": "A",
+ "task": "gsm8k_ko_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.37,
+   "exact_match": 0.37,
+   "format_fail": 0.30333333333333334,
+   "n": 300,
+   "loop": 0.14,
+   "rep3": 0.20255124993190632,
+   "truncated": 0.12666666666666668
+  }
+ }
+}

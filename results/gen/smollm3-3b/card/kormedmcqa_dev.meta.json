@@ -1,0 +1,59 @@
+{
+ "task": "kormedmcqa_dev",
+ "task_def": {
+  "dataset": "kormedmcqa",
+  "scorer": "rule",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 1024,
+  "metric": "acc",
+  "dev": true
+ },
+ "dataset": {
+  "repo": "sean0042/KorMedMCQA",
+  "revision": "79efd6f91edfc8036330d7a4daa88b9f2deb9a82",
+  "license": "CC-BY-NC-2.0 비상업"
+ },
+ "limit": null,
+ "model": {
+  "id": "smollm3-3b",
+  "family": "SmolLM3",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "HuggingFaceTB/SmolLM3-3B",
+  "revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+  "params_b": 3.1,
+  "active_b": 3.1,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "card",
+ "sampling": {
+  "temperature": 0.6,
+  "top_p": 0.95
+ },
+ "think_kwargs": {
+  "enable_thinking": false
+ },
+ "max_model_len": 4096,
+ "n_items": 1059,
+ "generated_tokens_this_run": 24376,
+ "wall_seconds": 6.2,
+ "finished_at": "2026-11-20T09:12:04.381218+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}

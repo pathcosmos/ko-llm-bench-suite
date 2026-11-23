@@ -1,0 +1,32 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "A",
+ "task": "k2_knowledge",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 432,
+ "n_generated": 432,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "acc": 0.0787037037037037,
+   "format_fail": 0.6875,
+   "n": 432,
+   "acc_answered": 0.2518518518518518,
+   "loop": 0.06018518518518518,
+   "rep3": 0.21265010813341856,
+   "truncated": 0.05555555555555555
+  },
+  "unk_drop": {
+   "acc": 0.09722222222222222,
+   "format_fail": 0.6134259259259259,
+   "n": 432,
+   "acc_answered": 0.25149700598802394,
+   "loop": 0.06018518518518518,
+   "rep3": 0.20613329468795225,
+   "truncated": 0.05555555555555555
+  }
+ }
+}

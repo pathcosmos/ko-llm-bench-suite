@@ -1,0 +1,21 @@
+{
+ "model": "smollm3-3b",
+ "variant": "fp03",
+ "task": "mbpp_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 378,
+ "n_generated": 378,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.5343915343915344,
+   "n": 378,
+   "timeout": 0.0,
+   "loop": 0.0,
+   "rep3": 0.0760277409793475,
+   "truncated": 0.005291005291005291
+  }
+ }
+}

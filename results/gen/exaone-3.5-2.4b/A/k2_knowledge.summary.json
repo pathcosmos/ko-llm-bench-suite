@@ -1,0 +1,22 @@
+{
+ "model": "exaone-3.5-2.4b",
+ "variant": "A",
+ "task": "k2_knowledge",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 432,
+ "n_generated": 432,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.7986111111111112,
+   "format_fail": 0.0,
+   "n": 432,
+   "acc_answered": 0.7986111111111112,
+   "loop": 0.0,
+   "rep3": 0.006785305327330439,
+   "truncated": 0.0
+  }
+ }
+}

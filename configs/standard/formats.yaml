@@ -115,6 +115,14 @@ models:
   evafrill-mo-3b-dpo-r3: {alias_of: evafrill-mo-3b}
   evafrill-mo-3b-orpo: {alias_of: evafrill-mo-3b}
 
+  # GGUF 평가 항목 (같은 학습 형식·토크나이저)
+  jansori-gguf-f16: {alias_of: jansori-bf16}
+  jansori-gguf-q8_0: {alias_of: jansori-bf16}
+  jansori-gguf-q4_k_m: {alias_of: jansori-bf16}
+  frankenstallm-gguf-f16: {alias_of: frankenstallm-bf16}
+  frankenstallm-gguf-q8_0: {alias_of: frankenstallm-bf16}
+  frankenstallm-gguf-q4_k_m: {alias_of: frankenstallm-bf16}
+
 eval_paths:
   # 2026-11-18 token_conformance.json (텍스트 24 + 대화 29, 원본 학습 코드 함수로 만든 기준값과 비교)
   vllm:

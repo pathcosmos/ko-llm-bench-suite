@@ -1,0 +1,22 @@
+{
+ "model": "exaone-3.5-2.4b",
+ "variant": "rp11",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.40132200188857414,
+   "format_fail": 0.0018885741265344666,
+   "n": 1059,
+   "acc_answered": 0.402081362346263,
+   "loop": 0.0,
+   "rep3": 0.009959438416664117,
+   "truncated": 0.0
+  }
+ }
+}

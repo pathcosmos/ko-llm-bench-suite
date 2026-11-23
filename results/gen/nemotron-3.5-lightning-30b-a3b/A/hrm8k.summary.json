@@ -1,0 +1,29 @@
+{
+ "model": "nemotron-3.5-lightning-30b-a3b",
+ "variant": "A",
+ "task": "hrm8k",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 8011,
+ "n_generated": 8011,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.5861939832729997,
+   "exact_match": 0.5869429534390214,
+   "format_fail": 0.1134689801522906,
+   "by_subset": {
+    "gsm8k": 0.8476118271417741,
+    "ksm": 0.24439775910364145,
+    "math": 0.7760831889081455,
+    "mmmlu": 0.7893617021276595,
+    "omni_math": 0.3242535358826611
+   },
+   "n": 8011,
+   "loop": 0.0023717388590687805,
+   "rep3": 0.08291654401515067,
+   "truncated": 0.11434277867931594
+  }
+ }
+}

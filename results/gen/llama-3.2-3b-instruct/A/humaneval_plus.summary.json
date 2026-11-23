@@ -1,0 +1,23 @@
+{
+ "model": "llama-3.2-3b-instruct",
+ "variant": "A",
+ "task": "humaneval_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 163,
+ "n_generated": 164,
+ "excluded": [
+  "HumanEval/32"
+ ],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.5214723926380368,
+   "n": 163,
+   "timeout": 0.006134969325153374,
+   "loop": 0.0,
+   "rep3": 0.12947046448518126,
+   "truncated": 0.0
+  }
+ }
+}

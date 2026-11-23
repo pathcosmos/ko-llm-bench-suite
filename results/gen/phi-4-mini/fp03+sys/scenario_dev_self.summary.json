@@ -1,0 +1,71 @@
+{
+ "model": "phi-4-mini",
+ "variant": "fp03+sys",
+ "task": "scenario_dev_self",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 100,
+ "n_generated": 100,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "turn_pass": 0.551,
+   "scenario_pass": 0.2,
+   "n": 100,
+   "by_category": {
+    "code_revise": {
+     "turn_pass": 0.8,
+     "scenario_pass": 0.7
+    },
+    "format_transform": {
+     "turn_pass": 0.6,
+     "scenario_pass": 0.1
+    },
+    "instruction_persist": {
+     "turn_pass": 0.56,
+     "scenario_pass": 0.2
+    },
+    "korean_style": {
+     "turn_pass": 0.275,
+     "scenario_pass": 0.0
+    },
+    "list_tracking": {
+     "turn_pass": 0.8800000000000001,
+     "scenario_pass": 0.4
+    },
+    "logic_order": {
+     "turn_pass": 0.275,
+     "scenario_pass": 0.0
+    },
+    "math_update": {
+     "turn_pass": 0.48,
+     "scenario_pass": 0.2
+    },
+    "memory": {
+     "turn_pass": 0.72,
+     "scenario_pass": 0.1
+    },
+    "story_continue": {
+     "turn_pass": 0.62,
+     "scenario_pass": 0.3
+    },
+    "unknown_entity": {
+     "turn_pass": 0.3,
+     "scenario_pass": 0.0
+    }
+   },
+   "by_turn": {
+    "1": 0.63,
+    "2": 0.62,
+    "3": 0.53,
+    "4": 0.4875,
+    "5": 0.5
+   },
+   "loop": 0.0069767441860465115,
+   "overlap_prev": 0.13591162790697675,
+   "copy_prev": 0.03953488372093023,
+   "rep3": 0.027868564351624634
+  }
+ }
+}

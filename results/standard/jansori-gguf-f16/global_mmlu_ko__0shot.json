@@ -1,0 +1,473 @@
+{
+ "task": "global_mmlu_ko",
+ "num_fewshot": 0,
+ "source": "Global-MMLU ko (lite), lm-eval 기본",
+ "limit": null,
+ "wall_seconds": 19.0,
+ "finished_at": "2026-11-20T05:52:15.993559+00:00",
+ "results": {
+  "global_mmlu_ko_business": {
+   "name": "global_mmlu_ko_business",
+   "alias": "global_mmlu_ko_business",
+   "sample_len": 58,
+   "acc,none": 0.27586206896551724,
+   "acc_stderr,none": 0.05919966036406566
+  },
+  "global_mmlu_ko_humanities": {
+   "name": "global_mmlu_ko_humanities",
+   "alias": "global_mmlu_ko_humanities",
+   "sample_len": 102,
+   "acc,none": 0.29411764705882354,
+   "acc_stderr,none": 0.04533838195929776
+  },
+  "global_mmlu_ko_medical": {
+   "name": "global_mmlu_ko_medical",
+   "alias": "global_mmlu_ko_medical",
+   "sample_len": 36,
+   "acc,none": 0.19444444444444445,
+   "acc_stderr,none": 0.0668977476599572
+  },
+  "global_mmlu_ko_other": {
+   "name": "global_mmlu_ko_other",
+   "alias": "global_mmlu_ko_other",
+   "sample_len": 56,
+   "acc,none": 0.2857142857142857,
+   "acc_stderr,none": 0.06091449038731726
+  },
+  "global_mmlu_ko_stem": {
+   "name": "global_mmlu_ko_stem",
+   "alias": "global_mmlu_ko_stem",
+   "sample_len": 46,
+   "acc,none": 0.1956521739130435,
+   "acc_stderr,none": 0.05913682829884976
+  },
+  "global_mmlu_ko_social_sciences": {
+   "name": "global_mmlu_ko_social_sciences",
+   "alias": "global_mmlu_ko_social_sciences",
+   "sample_len": 102,
+   "acc,none": 0.17647058823529413,
+   "acc_stderr,none": 0.03793281185307812
+  },
+  "global_mmlu_ko": {
+   "alias": "global_mmlu_ko",
+   "name": "global_mmlu_ko",
+   "sample_len": 400,
+   "acc,none": 0.24,
+   "acc_stderr,none": 0.0213581968788021,
+   "sample_count": {
+    "acc,none": 400
+   }
+  }
+ },
+ "groups": {
+  "global_mmlu_ko": {
+   "alias": "global_mmlu_ko",
+   "name": "global_mmlu_ko",
+   "sample_len": 400,
+   "acc,none": 0.24,
+   "acc_stderr,none": 0.0213581968788021,
+   "sample_count": {
+    "acc,none": 400
+   }
+  }
+ },
+ "n-samples": {
+  "global_mmlu_ko_business": {
+   "original": 58,
+   "effective": 58
+  },
+  "global_mmlu_ko_humanities": {
+   "original": 102,
+   "effective": 102
+  },
+  "global_mmlu_ko_medical": {
+   "original": 36,
+   "effective": 36
+  },
+  "global_mmlu_ko_other": {
+   "original": 56,
+   "effective": 56
+  },
+  "global_mmlu_ko_stem": {
+   "original": 46,
+   "effective": 46
+  },
+  "global_mmlu_ko_social_sciences": {
+   "original": 102,
+   "effective": 102
+  }
+ },
+ "versions_task": {
+  "global_mmlu_ko": "0.0",
+  "global_mmlu_ko_business": 0.0,
+  "global_mmlu_ko_humanities": 0.0,
+  "global_mmlu_ko_medical": 0.0,
+  "global_mmlu_ko_other": 0.0,
+  "global_mmlu_ko_social_sciences": 0.0,
+  "global_mmlu_ko_stem": 0.0
+ },
+ "configs": {
+  "global_mmlu_ko_business": {
+   "task": "global_mmlu_ko_business",
+   "dataset_path": "CohereForAI/Global-MMLU-Lite",
+   "dataset_name": "ko",
+   "test_split": "test",
+   "fewshot_split": "dev",
+   "process_docs": "functools.partial(<function process_docs at 0x74e96f91b880>, category='Business')",
+   "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+   "doc_to_target": "answer",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "dev",
+    "process_docs": "functools.partial(<function process_docs at 0x74e96f91b880>, category='Business')",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+    "doc_to_choice": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "doc_to_target": "answer",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 0.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/global_mmlu/default/ko/global_mmlu_ko_business.yaml"
+   }
+  },
+  "global_mmlu_ko_humanities": {
+   "task": "global_mmlu_ko_humanities",
+   "dataset_path": "CohereForAI/Global-MMLU-Lite",
+   "dataset_name": "ko",
+   "test_split": "test",
+   "fewshot_split": "dev",
+   "process_docs": "functools.partial(<function process_docs at 0x74e96f91b880>, category='Humanities')",
+   "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+   "doc_to_target": "answer",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "dev",
+    "process_docs": "functools.partial(<function process_docs at 0x74e96f91b880>, category='Humanities')",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+    "doc_to_choice": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "doc_to_target": "answer",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 0.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/global_mmlu/default/ko/global_mmlu_ko_humanities.yaml"
+   }
+  },
+  "global_mmlu_ko_medical": {
+   "task": "global_mmlu_ko_medical",
+   "dataset_path": "CohereForAI/Global-MMLU-Lite",
+   "dataset_name": "ko",
+   "test_split": "test",
+   "fewshot_split": "dev",
+   "process_docs": "functools.partial(<function process_docs at 0x74e96f91b880>, category='Medical')",
+   "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+   "doc_to_target": "answer",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "dev",
+    "process_docs": "functools.partial(<function process_docs at 0x74e96f91b880>, category='Medical')",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+    "doc_to_choice": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "doc_to_target": "answer",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 0.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/global_mmlu/default/ko/global_mmlu_ko_medical.yaml"
+   }
+  },
+  "global_mmlu_ko_other": {
+   "task": "global_mmlu_ko_other",
+   "dataset_path": "CohereForAI/Global-MMLU-Lite",
+   "dataset_name": "ko",
+   "test_split": "test",
+   "fewshot_split": "dev",
+   "process_docs": "functools.partial(<function process_docs at 0x74e96f91b880>, category='Other')",
+   "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+   "doc_to_target": "answer",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "dev",
+    "process_docs": "functools.partial(<function process_docs at 0x74e96f91b880>, category='Other')",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+    "doc_to_choice": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "doc_to_target": "answer",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 0.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/global_mmlu/default/ko/global_mmlu_ko_other.yaml"
+   }
+  },
+  "global_mmlu_ko_social_sciences": {
+   "task": "global_mmlu_ko_social_sciences",
+   "dataset_path": "CohereForAI/Global-MMLU-Lite",
+   "dataset_name": "ko",
+   "test_split": "test",
+   "fewshot_split": "dev",
+   "process_docs": "functools.partial(<function process_docs at 0x74e96f91b880>, category='Social Sciences')",
+   "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+   "doc_to_target": "answer",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "dev",
+    "process_docs": "functools.partial(<function process_docs at 0x74e96f91b880>, category='Social Sciences')",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+    "doc_to_choice": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "doc_to_target": "answer",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 0.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/global_mmlu/default/ko/global_mmlu_ko_social_sciences.yaml"
+   }
+  },
+  "global_mmlu_ko_stem": {
+   "task": "global_mmlu_ko_stem",
+   "dataset_path": "CohereForAI/Global-MMLU-Lite",
+   "dataset_name": "ko",
+   "test_split": "test",
+   "fewshot_split": "dev",
+   "process_docs": "functools.partial(<function process_docs at 0x74e96f91b880>, category='STEM')",
+   "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+   "doc_to_target": "answer",
+   "unsafe_code": false,
+   "doc_to_choice": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": "dev",
+    "process_docs": "functools.partial(<function process_docs at 0x74e96f91b880>, category='STEM')",
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{question.strip()}}\nA. {{option_a}}\nB. {{option_b}}\nC. {{option_c}}\nD. {{option_d}}\nAnswer:",
+    "doc_to_choice": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "doc_to_target": "answer",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 0.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/global_mmlu/default/ko/global_mmlu_ko_stem.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "jansori-gguf-f16",
+  "family": "JANSORI",
+  "kind": "base",
+  "backend": "llamacpp",
+  "path": "/workspace/llm-test/gguf/jansori-3b-47k-f16.gguf",
+  "revision": "e68bfa3cb31e9589f4481a2e31d6d75c731fec9d",
+  "params_b": 3.2,
+  "active_b": 3.2,
+  "owner": "self",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {
+   "quant": "F16"
+  }
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty",
+ "load_seconds": 7.3,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": {
+  "gguf": "/workspace/llm-test/gguf/jansori-3b-47k-f16.gguf",
+  "format_id": "jansori-gguf-f16",
+  "binary": "/workspace/llm-test/bin/llama_loglik",
+  "tokenizer": "jansori_bbpe65k",
+  "gguf_size": 6446084064
+ }
+}

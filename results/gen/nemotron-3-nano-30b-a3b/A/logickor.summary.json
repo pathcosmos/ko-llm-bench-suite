@@ -1,0 +1,26 @@
+{
+ "model": "nemotron-3-nano-30b-a3b",
+ "variant": "A",
+ "task": "logickor",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 42,
+   "parse_fail": 0,
+   "score": 6.908730158730159,
+   "by_category": {
+    "글쓰기(Writing)": 6.857142857142857,
+    "문법(Grammar)": 3.4285714285714284,
+    "수학(Math)": 8.5,
+    "이해(Understanding)": 7.642857142857143,
+    "추론(Reasoning)": 6.309523809523809,
+    "코딩(Coding)": 8.714285714285714
+   },
+   "turn1": 7.333333333333333,
+   "turn2": 6.4523809523809526,
+   "same_family_as_judge": false,
+   "truncated": 0.21428571428571427
+  }
+ }
+}

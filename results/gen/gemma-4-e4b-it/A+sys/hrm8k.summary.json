@@ -1,0 +1,29 @@
+{
+ "model": "gemma-4-e4b-it",
+ "variant": "A+sys",
+ "task": "hrm8k",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 8011,
+ "n_generated": 8011,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.6372487829234802,
+   "exact_match": 0.6381225814505056,
+   "format_fail": 0.14692298090126077,
+   "by_subset": {
+    "gsm8k": 0.8423047763457164,
+    "ksm": 0.3011204481792717,
+    "math": 0.8412478336221837,
+    "mmmlu": 0.8276595744680851,
+    "omni_math": 0.391828182294395
+   },
+   "n": 8011,
+   "loop": 0.005242791162152041,
+   "rep3": 0.09210106734378347,
+   "truncated": 0.1434277867931594
+  }
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "model": "llama-3.2-3b-instruct",
+ "variant": "fp03",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.2474032105760151,
+   "format_fail": 0.06232294617563739,
+   "n": 1059,
+   "acc_answered": 0.2638469284994965,
+   "loop": 0.0018885741265344666,
+   "rep3": 0.0688689074981956,
+   "truncated": 0.0009442870632672333
+  }
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "model": "llama-3.2-3b-instruct",
+ "variant": "fp03+sys",
+ "task": "k2_knowledge",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 432,
+ "n_generated": 432,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.16435185185185186,
+   "format_fail": 0.5902777777777778,
+   "n": 432,
+   "acc_answered": 0.4011299435028249,
+   "loop": 0.004629629629629629,
+   "rep3": 0.02417261815244909,
+   "truncated": 0.0
+  }
+ }
+}

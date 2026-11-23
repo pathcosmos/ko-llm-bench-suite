@@ -1,0 +1,29 @@
+{
+ "model": "kanana-2-3b",
+ "variant": "rp11",
+ "task": "hrm8k",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 8011,
+ "n_generated": 8011,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.1514168018973911,
+   "exact_match": 0.1514168018973911,
+   "format_fail": 0.0,
+   "by_subset": {
+    "gsm8k": 0.15845337376800606,
+    "ksm": 0.06022408963585434,
+    "math": 0.18682842287694973,
+    "mmmlu": 0.49361702127659574,
+    "omni_math": 0.07700366684127816
+   },
+   "n": 8011,
+   "loop": 0.0,
+   "rep3": 0.06784754352519035,
+   "truncated": 0.0
+  }
+ }
+}

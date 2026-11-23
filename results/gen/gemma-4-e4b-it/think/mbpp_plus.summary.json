@@ -1,0 +1,21 @@
+{
+ "model": "gemma-4-e4b-it",
+ "variant": "think",
+ "task": "mbpp_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 378,
+ "n_generated": 378,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.6296296296296297,
+   "n": 378,
+   "timeout": 0.0,
+   "loop": 0.0,
+   "rep3": 0.04161517986297615,
+   "truncated": 0.0
+  }
+ }
+}

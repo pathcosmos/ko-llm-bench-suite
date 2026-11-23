@@ -1,0 +1,22 @@
+{
+ "model": "kanana-2-30b-a3b",
+ "variant": "fp03+sys",
+ "task": "kormedmcqa",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 3009,
+ "n_generated": 3009,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.751412429378531,
+   "format_fail": 0.0,
+   "n": 3009,
+   "acc_answered": 0.751412429378531,
+   "loop": 0.0,
+   "rep3": 0.0019048902183260697,
+   "truncated": 0.0
+  }
+ }
+}

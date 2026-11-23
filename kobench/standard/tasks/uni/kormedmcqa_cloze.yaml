@@ -1,0 +1,19 @@
+# 통일 프로토콜 U1 (configs/standard/unified.yaml mc_loglik.kormedmcqa_cloze): 선택지 문장 로그우도, 0-shot, 원 선택지 순서
+task: kormedmcqa_cloze
+custom_dataset: !function utils.kormedmcqa
+output_type: multiple_choice
+test_split: test
+doc_to_text: "{{query}}"
+doc_to_choice: "{{choices}}"
+doc_to_target: gold
+target_delimiter: " "
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+  - metric: acc_norm
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 1.0
+  main_metric: acc_norm

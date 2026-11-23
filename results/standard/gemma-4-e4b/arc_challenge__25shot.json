@@ -1,0 +1,116 @@
+{
+ "task": "arc_challenge",
+ "num_fewshot": 25,
+ "source": "",
+ "limit": null,
+ "wall_seconds": 148.1,
+ "finished_at": "2026-11-21T17:20:07.538991+00:00",
+ "results": {
+  "arc_challenge": {
+   "name": "arc_challenge",
+   "alias": "arc_challenge",
+   "sample_len": 1172,
+   "acc,none": 0.6100682593856656,
+   "acc_stderr,none": 0.014252959848892797,
+   "acc_norm,none": 0.659556313993174,
+   "acc_norm_stderr,none": 0.013847460518892936
+  }
+ },
+ "groups": null,
+ "n-samples": {
+  "arc_challenge": {
+   "original": 1172,
+   "effective": 1172
+  }
+ },
+ "versions_task": {
+  "arc_challenge": 1.0
+ },
+ "configs": {
+  "arc_challenge": {
+   "task": "arc_challenge",
+   "dataset_path": "allenai/ai2_arc",
+   "dataset_name": "ARC-Challenge",
+   "training_split": "train",
+   "validation_split": "validation",
+   "test_split": "test",
+   "doc_to_text": "Question: {{question}}\nAnswer:",
+   "doc_to_target": "{{choices.label.index(answerKey)}}",
+   "unsafe_code": false,
+   "doc_to_choice": "{{choices.text}}",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "Question: {{question}}\nAnswer:",
+    "doc_to_choice": "{{choices.text}}",
+    "doc_to_target": "{{choices.label.index(answerKey)}}",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 25,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": true,
+   "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+   "metadata": {
+    "version": 1.0,
+    "config_source": "/workspace/llm-test/venv/lib/python3.12/site-packages/lm_eval/tasks/arc/arc_challenge.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "gemma-4-e4b",
+  "family": "Gemma4",
+  "kind": "base",
+  "backend": "vllm",
+  "path": "google/gemma-4-E4B",
+  "revision": "11b8250ef59eb3ebc5dae7b21144d7b84f2c06dd",
+  "params_b": 8.0,
+  "active_b": 4.0,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty",
+ "load_seconds": 125.5,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": null
+}

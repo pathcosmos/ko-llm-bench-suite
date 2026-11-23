@@ -1,0 +1,22 @@
+{
+ "model": "qwen3-4b-2507",
+ "variant": "fp03+sys",
+ "task": "ko_truthful_mc1",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 817,
+ "n_generated": 817,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.5630354957160343,
+   "format_fail": 0.006119951040391677,
+   "n": 817,
+   "acc_answered": 0.5665024630541872,
+   "loop": 0.0,
+   "rep3": 0.007717347028149863,
+   "truncated": 0.006119951040391677
+  }
+ }
+}

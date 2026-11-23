@@ -1,0 +1,26 @@
+{
+ "model": "exaone-3.5-2.4b",
+ "variant": "A",
+ "task": "kobbq",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 2280,
+ "n_generated": 2280,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.8324561403508772,
+   "format_fail": 0.0004385964912280702,
+   "n": 2280,
+   "acc_answered": 0.8328214129003949,
+   "acc_amb": 0.8096491228070175,
+   "acc_dis": 0.8552631578947368,
+   "diff_bias_amb": 0.05701754385964912,
+   "diff_bias_dis": 0.05438596491228065,
+   "loop": 0.0,
+   "rep3": 0.002385842109308364,
+   "truncated": 0.0
+  }
+ }
+}

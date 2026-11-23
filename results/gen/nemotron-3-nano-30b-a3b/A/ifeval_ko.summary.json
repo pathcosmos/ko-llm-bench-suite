@@ -1,0 +1,23 @@
+{
+ "model": "nemotron-3-nano-30b-a3b",
+ "variant": "A",
+ "task": "ifeval_ko",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 342,
+ "n_generated": 342,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "prompt_level_strict_acc": 0.7046783625730995,
+   "prompt_level_loose_acc": 0.7309941520467836,
+   "inst_level_strict_acc": 0.7754677754677755,
+   "inst_level_loose_acc": 0.7983367983367984,
+   "n": 342,
+   "loop": 0.05555555555555555,
+   "rep3": 0.09575518188563759,
+   "truncated": 0.12573099415204678
+  }
+ }
+}

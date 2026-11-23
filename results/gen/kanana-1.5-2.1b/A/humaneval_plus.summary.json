@@ -1,0 +1,23 @@
+{
+ "model": "kanana-1.5-2.1b",
+ "variant": "A",
+ "task": "humaneval_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 163,
+ "n_generated": 164,
+ "excluded": [
+  "HumanEval/32"
+ ],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.6748466257668712,
+   "n": 163,
+   "timeout": 0.006134969325153374,
+   "loop": 0.0,
+   "rep3": 0.040158273568557265,
+   "truncated": 0.0
+  }
+ }
+}

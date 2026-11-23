@@ -23,7 +23,7 @@ class ModelSpec:
     id: str
     family: str
     kind: str                 # base | instruct
-    backend: str              # vllm | evafrill
+    backend: str              # vllm | evafrill | llamacpp(GGUF 로그우도, kobench.standard.llamacpp_lm)
     path: str
     revision: str | None
     params_b: float
@@ -57,8 +57,8 @@ def load_models(path: Path | None = None) -> dict[str, ModelSpec]:
     for mid, d in data["models"].items():
         if d.get("kind") not in ("base", "instruct"):
             raise ValueError(f"{mid}: kind는 base|instruct")
-        if d.get("backend") not in ("vllm", "evafrill"):
-            raise ValueError(f"{mid}: backend는 vllm|evafrill")
+        if d.get("backend") not in ("vllm", "evafrill", "llamacpp"):
+            raise ValueError(f"{mid}: backend는 vllm|evafrill|llamacpp")
         known = {k: v for k, v in d.items() if k in _MODEL_KEYS}
         known["path"] = _expand(str(known["path"]))
         out[mid] = ModelSpec(id=mid, extra={k: v for k, v in d.items() if k not in _MODEL_KEYS}, **known)

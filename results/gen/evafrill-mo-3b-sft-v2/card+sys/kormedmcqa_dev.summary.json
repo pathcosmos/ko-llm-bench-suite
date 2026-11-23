@@ -1,0 +1,32 @@
+{
+ "model": "evafrill-mo-3b-sft-v2",
+ "variant": "card+sys",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "acc": 0.03493862134088763,
+   "format_fail": 0.8659112370160529,
+   "n": 1059,
+   "acc_answered": 0.2605633802816901,
+   "loop": 0.012275731822474031,
+   "rep3": 0.0010385807348301471,
+   "truncated": 0.031161473087818695
+  },
+  "unk_drop": {
+   "acc": 0.03493862134088763,
+   "format_fail": 0.8621340887629839,
+   "n": 1059,
+   "acc_answered": 0.2534246575342466,
+   "loop": 0.012275731822474031,
+   "rep3": 0.0010285550268008064,
+   "truncated": 0.031161473087818695
+  }
+ }
+}

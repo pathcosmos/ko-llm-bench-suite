@@ -176,6 +176,12 @@ def build_lm(spec: ModelSpec, gpu_mem: float, batch_size: str, variant: "Variant
             doc_prefix_eos=variant.doc_start == "eos",
             **spec.extra.get("evafrill_args", {}),
         )
+    if spec.backend == "llamacpp":
+        if variant.name != "A":
+            raise ValueError("GGUF(llama.cpp)는 A 프로토콜만 (BF16 A와 문항 단위 비교)")
+        from kobench.standard.llamacpp_lm import LlamaCppLM
+
+        return LlamaCppLM(gguf=spec.path, format_id=spec.id, max_length=spec.max_length)
     raise ValueError(spec.backend)
 
 

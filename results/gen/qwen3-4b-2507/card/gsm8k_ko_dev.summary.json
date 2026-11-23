@@ -1,0 +1,22 @@
+{
+ "model": "qwen3-4b-2507",
+ "variant": "card",
+ "task": "gsm8k_ko_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.76,
+   "exact_match": 0.76,
+   "format_fail": 0.07333333333333333,
+   "n": 300,
+   "loop": 0.0,
+   "rep3": 0.06439378954796175,
+   "truncated": 0.07333333333333333
+  }
+ }
+}

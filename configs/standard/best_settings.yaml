@@ -28,7 +28,7 @@ models:
           global_mmlu_ko_dev: 0.26046511627906976
         mean: 0.3411981131029485
     gain_over_A_dev: 0.00694
-    selected_at: '2026-11-19T23:01:52.647626+00:00'
+    selected_at: '2026-11-22T05:38:21.718201+00:00'
   frankenstallm-bf16:
     chosen: A
     dev:
@@ -63,7 +63,7 @@ models:
           global_mmlu_ko_dev: 0.22790697674418606
         mean: 0.31790867531439454
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:52.683311+00:00'
+    selected_at: '2026-11-22T05:38:21.764701+00:00'
   evafrill-mo-3b-pretrain:
     chosen: A
     dev:
@@ -86,7 +86,7 @@ models:
           global_mmlu_ko_dev: 0.24186046511627907
         mean: 0.32249392857600906
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:52.718028+00:00'
+    selected_at: '2026-11-22T05:38:21.809125+00:00'
   qwen3-4b-base:
     chosen: A
     dev:
@@ -103,7 +103,7 @@ models:
           global_mmlu_ko_dev: 0.5720930232558139
         mean: 0.574537733961363
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:52.795443+00:00'
+    selected_at: '2026-11-22T05:38:21.935515+00:00'
   qwen3-4b-2507:
     chosen: A
     dev:
@@ -126,7 +126,7 @@ models:
           global_mmlu_ko_dev: 0.5720930232558139
         mean: 0.5637584621346227
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:52.825424+00:00'
+    selected_at: '2026-11-22T05:38:21.955325+00:00'
   qwen2.5-3b:
     chosen: A
     dev:
@@ -143,7 +143,7 @@ models:
           global_mmlu_ko_dev: 0.5348837209302325
         mean: 0.5052990976376179
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:52.839154+00:00'
+    selected_at: '2026-11-22T05:38:21.970749+00:00'
   qwen2.5-3b-instruct:
     chosen: A
     dev:
@@ -166,7 +166,7 @@ models:
           global_mmlu_ko_dev: 0.49767441860465117
         mean: 0.5270876486209831
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:52.859463+00:00'
+    selected_at: '2026-11-22T05:38:21.990809+00:00'
   kanana-2-3b-base:
     chosen: A
     dev:
@@ -183,7 +183,7 @@ models:
           global_mmlu_ko_dev: 0.5069767441860465
         mean: 0.5529097251468714
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:52.871726+00:00'
+    selected_at: '2026-11-22T05:38:22.003670+00:00'
   kanana-2-3b:
     chosen: A
     dev:
@@ -206,7 +206,7 @@ models:
           global_mmlu_ko_dev: 0.5488372093023256
         mean: 0.558656057328326
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:52.894615+00:00'
+    selected_at: '2026-11-22T05:38:22.023711+00:00'
   kanana-1.5-2.1b-base:
     chosen: A
     dev:
@@ -223,7 +223,7 @@ models:
           global_mmlu_ko_dev: 0.37209302325581395
         mean: 0.45671794944517025
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:52.909540+00:00'
+    selected_at: '2026-11-22T05:38:22.038392+00:00'
   kanana-1.5-2.1b:
     chosen: A
     dev:
@@ -246,7 +246,7 @@ models:
           global_mmlu_ko_dev: 0.4511627906976744
         mean: 0.5102572126063175
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:52.928515+00:00'
+    selected_at: '2026-11-22T05:38:22.059998+00:00'
   smollm3-3b-base:
     chosen: A
     dev:
@@ -263,7 +263,7 @@ models:
           global_mmlu_ko_dev: 0.4372093023255814
         mean: 0.4315829231931021
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:52.957620+00:00'
+    selected_at: '2026-11-22T05:38:22.074833+00:00'
   smollm3-3b:
     chosen: chat
     dev:
@@ -286,7 +286,7 @@ models:
           global_mmlu_ko_dev: 0.4790697674418605
         mean: 0.46981323756553284
     gain_over_A_dev: 0.00917
-    selected_at: '2026-11-19T23:01:52.978526+00:00'
+    selected_at: '2026-11-22T05:38:22.093798+00:00'
   llama-3.2-3b:
     chosen: A
     dev:
@@ -303,7 +303,7 @@ models:
           global_mmlu_ko_dev: 0.4325581395348837
         mean: 0.44176323613528595
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:52.995950+00:00'
+    selected_at: '2026-11-22T05:38:22.146700+00:00'
   llama-3.2-3b-instruct:
     chosen: chat
     dev:
@@ -326,7 +326,7 @@ models:
           global_mmlu_ko_dev: 0.39069767441860465
         mean: 0.41979090451279205
     gain_over_A_dev: 0.00389
-    selected_at: '2026-11-19T23:01:53.014828+00:00'
+    selected_at: '2026-11-22T05:38:22.168205+00:00'
   exaone-3.5-2.4b:
     chosen: A
     dev:
@@ -349,7 +349,7 @@ models:
           global_mmlu_ko_dev: 0.49767441860465117
         mean: 0.526345456508904
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:53.036134+00:00'
+    selected_at: '2026-11-22T05:38:22.187422+00:00'
   qwen3-30b-a3b-base:
     chosen: A
     dev:
@@ -366,7 +366,7 @@ models:
           global_mmlu_ko_dev: 0.6511627906976745
         mean: 0.6502953833403943
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:53.051740+00:00'
+    selected_at: '2026-11-22T05:38:22.278845+00:00'
   qwen3-30b-a3b-2507:
     chosen: A
     dev:
@@ -389,7 +389,7 @@ models:
           global_mmlu_ko_dev: 0.6976744186046512
         mean: 0.6535460650885013
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:53.073030+00:00'
+    selected_at: '2026-11-22T05:38:22.298741+00:00'
   kanana-2-30b-a3b-base:
     chosen: A
     dev:
@@ -406,7 +406,7 @@ models:
           global_mmlu_ko_dev: 0.6837209302325581
         mean: 0.687856401268808
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:53.089947+00:00'
+    selected_at: '2026-11-22T05:38:22.315044+00:00'
   kanana-2-30b-a3b:
     chosen: A
     dev:
@@ -429,7 +429,7 @@ models:
           global_mmlu_ko_dev: 0.7162790697674418
         mean: 0.7227154274142419
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:53.117993+00:00'
+    selected_at: '2026-11-22T05:38:22.335609+00:00'
   nemotron-3-nano-30b-a3b-base:
     chosen: A
     dev:
@@ -446,7 +446,7 @@ models:
           global_mmlu_ko_dev: 0.6976744186046512
         mean: 0.656075287221549
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:53.137444+00:00'
+    selected_at: '2026-11-22T05:38:22.369345+00:00'
   nemotron-3-nano-30b-a3b:
     chosen: A
     dev:
@@ -469,7 +469,236 @@ models:
           global_mmlu_ko_dev: 0.5534883720930233
         mean: 0.5728259526512867
     gain_over_A_dev: 0.0
-    selected_at: '2026-11-19T23:01:53.165661+00:00'
+    selected_at: '2026-11-22T05:38:22.388702+00:00'
+  qwen3.5-4b-base:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7575645756457564
+          kmmlu_dev: 0.6397326852976913
+          global_mmlu_ko_dev: 0.6232558139534884
+        mean: 0.6735176916323121
+      shots0:
+        tasks:
+          kobest_dev: 0.5778597785977859
+          kmmlu_dev: 0.6123936816524909
+          global_mmlu_ko_dev: 0.6232558139534884
+        mean: 0.6045030914012551
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-22T05:38:21.891547+00:00'
+  qwen3.5-4b:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.740590405904059
+          kmmlu_dev: 0.6093560145808019
+          global_mmlu_ko_dev: 0.6232558139534884
+        mean: 0.6577340781461164
+      chat:
+        tasks:
+          kobest_dev: 0.5158671586715867
+          kmmlu_dev: 0.29647630619684084
+          global_mmlu_ko_dev: 0.22790697674418606
+        mean: 0.34675014720420455
+      shots0:
+        tasks:
+          kobest_dev: 0.5638376383763838
+          kmmlu_dev: 0.586269744835966
+          global_mmlu_ko_dev: 0.6232558139534884
+        mean: 0.591121065721946
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-22T05:38:21.919662+00:00'
+  gemma-4-e4b:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7660516605166051
+          kmmlu_dev: 0.5978128797083839
+          global_mmlu_ko_dev: 0.5627906976744186
+        mean: 0.6422184126331358
+      shots0:
+        tasks:
+          kobest_dev: 0.6416974169741697
+          kmmlu_dev: 0.517010935601458
+          global_mmlu_ko_dev: 0.5627906976744186
+        mean: 0.5738330167500155
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-22T05:38:22.106937+00:00'
+  gemma-4-e4b-it:
+    chosen: chat
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.618450184501845
+          kmmlu_dev: 0.4526123936816525
+          global_mmlu_ko_dev: 0.2744186046511628
+        mean: 0.4484937276115534
+      chat:
+        tasks:
+          kobest_dev: 0.8166051660516606
+          kmmlu_dev: 0.6057108140947752
+          global_mmlu_ko_dev: 0.2744186046511628
+        mean: 0.5655781949325328
+      shots0:
+        tasks:
+          kobest_dev: 0.45461254612546126
+          kmmlu_dev: 0.2551640340218712
+          global_mmlu_ko_dev: 0.2744186046511628
+        mean: 0.32806506159949844
+    gain_over_A_dev: 0.11708
+    selected_at: '2026-11-22T05:38:22.125240+00:00'
+  phi-4-mini:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.6468634686346864
+          kmmlu_dev: 0.4082624544349939
+          global_mmlu_ko_dev: 0.3813953488372093
+        mean: 0.4788404239689632
+      chat:
+        tasks:
+          kobest_dev: 0.6309963099630996
+          kmmlu_dev: 0.40340218712029163
+          global_mmlu_ko_dev: 0.34418604651162793
+        mean: 0.45952818119833977
+      shots0:
+        tasks:
+          kobest_dev: 0.4881918819188192
+          kmmlu_dev: 0.38760631834750914
+          global_mmlu_ko_dev: 0.3813953488372093
+        mean: 0.4190645163678459
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-22T05:38:22.205070+00:00'
+  qwen3.6-35b-a3b:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.8317343173431734
+          kmmlu_dev: 0.7460510328068044
+          global_mmlu_ko_dev: 0.786046511627907
+        mean: 0.7879439539259616
+      chat:
+        tasks:
+          kobest_dev: 0.5140221402214022
+          kmmlu_dev: 0.47023086269744835
+          global_mmlu_ko_dev: 0.24186046511627907
+        mean: 0.40870448934504316
+      shots0:
+        tasks:
+          kobest_dev: 0.6088560885608856
+          kmmlu_dev: 0.7235722964763062
+          global_mmlu_ko_dev: 0.7906976744186046
+        mean: 0.7077086864852654
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-22T05:38:22.229073+00:00'
+  qwen3.5-35b-a3b-base:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.8276752767527675
+          kmmlu_dev: 0.7339003645200486
+          global_mmlu_ko_dev: 0.7813953488372093
+        mean: 0.7809903300366751
+      shots0:
+        tasks:
+          kobest_dev: 0.6118081180811809
+          kmmlu_dev: 0.727217496962333
+          global_mmlu_ko_dev: 0.7767441860465116
+        mean: 0.7052566003633419
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-22T05:38:22.242001+00:00'
+  qwen3.5-35b-a3b:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.8273062730627306
+          kmmlu_dev: 0.7430133657351154
+          global_mmlu_ko_dev: 0.7906976744186046
+        mean: 0.7870057710721502
+      chat:
+        tasks:
+          kobest_dev: 0.6660516605166051
+          kmmlu_dev: 0.6154313487241798
+          global_mmlu_ko_dev: 0.23255813953488372
+        mean: 0.5046803829252229
+      shots0:
+        tasks:
+          kobest_dev: 0.5988929889298893
+          kmmlu_dev: 0.7339003645200486
+          global_mmlu_ko_dev: 0.7906976744186046
+        mean: 0.7078303426228475
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-22T05:38:22.263871+00:00'
+  nemotron-3.5-lightning-30b-a3b:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7896678966789668
+          kmmlu_dev: 0.6427703523693803
+          global_mmlu_ko_dev: 0.7348837209302326
+        mean: 0.7224406566595265
+      chat:
+        tasks:
+          kobest_dev: 0.7623616236162362
+          kmmlu_dev: 0.6415552855407047
+          global_mmlu_ko_dev: 0.6186046511627907
+        mean: 0.6741738534399105
+      shots0:
+        tasks:
+          kobest_dev: 0.6195571955719558
+          kmmlu_dev: 0.6154313487241798
+          global_mmlu_ko_dev: 0.7348837209302326
+        mean: 0.6566240884087894
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-22T05:38:22.356948+00:00'
+  ernie-4.5-21b-a3b-base:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7302583025830258
+          kmmlu_dev: 0.5917375455650061
+          global_mmlu_ko_dev: 0.5255813953488372
+        mean: 0.615859081165623
+      shots0:
+        tasks:
+          kobest_dev: 0.5402214022140222
+          kmmlu_dev: 0.540097205346294
+          global_mmlu_ko_dev: 0.5255813953488372
+        mean: 0.5353000009697179
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-22T05:38:22.399878+00:00'
+  ernie-4.5-21b-a3b:
+    chosen: A
+    dev:
+      A:
+        tasks:
+          kobest_dev: 0.7464944649446494
+          kmmlu_dev: 0.5905224787363305
+          global_mmlu_ko_dev: 0.5581395348837209
+        mean: 0.6317188261882336
+      chat:
+        tasks:
+          kobest_dev: 0.7616236162361624
+          kmmlu_dev: 0.5795868772782503
+          global_mmlu_ko_dev: 0.2744186046511628
+        mean: 0.5385430327218584
+      shots0:
+        tasks:
+          kobest_dev: 0.5571955719557196
+          kmmlu_dev: 0.5680437424058323
+          global_mmlu_ko_dev: 0.5581395348837209
+        mean: 0.5611262830817576
+    gain_over_A_dev: 0.0
+    selected_at: '2026-11-22T05:38:22.422508+00:00'
 evafrill_checkpoint:
   chosen: evafrill-mo-3b-pretrain
   best_instruct_stage: evafrill-mo-3b-dpo-r2
@@ -517,3 +746,2443 @@ evafrill_checkpoint:
         global_mmlu_ko_dev: 0.22325581395348837
       mean: 0.33688454765810194
   note: 규칙대로 최고 점수 체크포인트를 고른다. best_instruct_stage는 instruct 표용 참고값(규칙 외 보조 정보).
+gen:
+  frankenstallm-bf16:
+    stage1:
+      chosen: rp11
+      unk_policy: unk_drop
+      feasible:
+      - card|unk_nl
+      - card|unk_drop
+      - rep|unk_nl
+      - rep|unk_drop
+      - rp11|unk_nl
+      - rp11|unk_drop
+      - rp12|unk_nl
+      - rp12|unk_drop
+      - fp03|unk_nl
+      - fp03|unk_drop
+      dev:
+        A|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.10387157695939565
+            scenario_dev_self: 0.10366666666666667
+          mean: 0.06917941454202077
+          malfunction:
+            loop: 0.09111235326998324
+            lang: 0.01621017328116266
+            leak: 0.0
+            empty: 0.0016769144773616546
+            trunc: 0.07825600894354388
+          n_outputs: 1789
+        A|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.125590179414542
+            scenario_dev_self: 0.099
+          mean: 0.07486339313818068
+          malfunction:
+            loop: 0.09111235326998324
+            lang: 0.01621017328116266
+            leak: 0.0
+            empty: 0.0016769144773616546
+            trunc: 0.07825600894354388
+          n_outputs: 1789
+        card|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.08876298394711993
+            scenario_dev_self: 0.06316666666666668
+          mean: 0.0506432168712622
+          malfunction:
+            loop: 0.005030743432084964
+            lang: 0.009502515371716043
+            leak: 0.0
+            empty: 0.0005589714924538849
+            trunc: 0.003912800447177194
+          n_outputs: 1789
+        card|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.0906515580736544
+            scenario_dev_self: 0.06983333333333333
+          mean: 0.053494963802329244
+          malfunction:
+            loop: 0.005030743432084964
+            lang: 0.009502515371716043
+            leak: 0.0
+            empty: 0.0005589714924538849
+            trunc: 0.003912800447177194
+          n_outputs: 1789
+        rep|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.11898016997167139
+            scenario_dev_self: 0.07883333333333332
+          mean: 0.06593783443500158
+          malfunction:
+            loop: 0.006707657909446618
+            lang: 0.006148686416992733
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.010620458356623811
+          n_outputs: 1789
+        rep|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.11898016997167139
+            scenario_dev_self: 0.10883333333333332
+          mean: 0.07593783443500157
+          malfunction:
+            loop: 0.006707657909446618
+            lang: 0.006148686416992733
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.010620458356623811
+          n_outputs: 1789
+        rp11|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.11614730878186968
+            scenario_dev_self: 0.1045
+          mean: 0.07354910292728989
+          malfunction:
+            loop: 0.012297372833985467
+            lang: 0.005030743432084964
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.011179429849077696
+          n_outputs: 1789
+        rp11|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.12275731822474033
+            scenario_dev_self: 0.1065
+          mean: 0.07641910607491344
+          malfunction:
+            loop: 0.012297372833985467
+            lang: 0.005030743432084964
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.011179429849077696
+          n_outputs: 1789
+        rp12|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.11898016997167139
+            scenario_dev_self: 0.07883333333333332
+          mean: 0.06593783443500158
+          malfunction:
+            loop: 0.006707657909446618
+            lang: 0.006148686416992733
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.010061486864169928
+          n_outputs: 1789
+        rp12|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.11898016997167139
+            scenario_dev_self: 0.10883333333333332
+          mean: 0.07593783443500157
+          malfunction:
+            loop: 0.006707657909446618
+            lang: 0.006148686416992733
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.010061486864169928
+          n_outputs: 1789
+        fp03|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.10198300283286119
+            scenario_dev_self: 0.10033333333333333
+          mean: 0.06743877872206484
+          malfunction:
+            loop: 0.011179429849077696
+            lang: 0.011738401341531582
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+        fp03|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.12464589235127478
+            scenario_dev_self: 0.10233333333333335
+          mean: 0.07565974189486938
+          malfunction:
+            loop: 0.011179429849077696
+            lang: 0.011738401341531582
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:22:51.503478+00:00'
+      rule: v3
+    stage2:
+      chosen: rp11
+      unk_policy: unk_drop
+      feasible:
+      - rp11|unk_nl
+      - rp11|unk_drop
+      - rp11+sys|unk_nl
+      - rp11+sys|unk_drop
+      dev:
+        rp11|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.11614730878186968
+            scenario_dev_self: 0.1045
+          mean: 0.07354910292728989
+          malfunction:
+            loop: 0.012297372833985467
+            lang: 0.005030743432084964
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.011179429849077696
+          n_outputs: 1789
+        rp11|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.12275731822474033
+            scenario_dev_self: 0.1065
+          mean: 0.07641910607491344
+          malfunction:
+            loop: 0.012297372833985467
+            lang: 0.005030743432084964
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.011179429849077696
+          n_outputs: 1789
+        rp11+sys|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.09254013220018886
+            scenario_dev_self: 0.09366666666666668
+          mean: 0.062068932955618515
+          malfunction:
+            loop: 0.016769144773616546
+            lang: 0.008384572386808273
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.016769144773616546
+          n_outputs: 1789
+        rp11+sys|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.09726156751652502
+            scenario_dev_self: 0.09900000000000002
+          mean: 0.06542052250550835
+          malfunction:
+            loop: 0.012297372833985467
+            lang: 0.008384572386808273
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.016769144773616546
+          n_outputs: 1789
+        rp11+orpo|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.03871576959395656
+            scenario_dev_self: 0.09166666666666666
+          mean: 0.04346081208687441
+          malfunction:
+            loop: 0.08552263834544438
+            lang: 0.02068194522079374
+            leak: 0.0
+            empty: 0.011738401341531582
+            trunc: 0.3773057574063723
+          n_outputs: 1789
+        rp11+orpo|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.04060434372049103
+            scenario_dev_self: 0.09566666666666666
+          mean: 0.04542367012905257
+          malfunction:
+            loop: 0.08272778088317496
+            lang: 0.02068194522079374
+            leak: 0.0
+            empty: 0.011738401341531582
+            trunc: 0.3773057574063723
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:25:56.235722+00:00'
+      rule: v3
+    chosen: rp11
+    unk_policy: unk_drop
+    rule: v3
+    selected_at: '2026-11-20T09:25:56.235722+00:00'
+    gain_over_A_dev: null
+  llama-3.2-3b-instruct:
+    stage1:
+      chosen: fp03
+      unk_policy: raw
+      feasible: []
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.37
+            kormedmcqa_dev: 0.24362606232294617
+            scenario_dev_self: 0.5526666666666668
+          mean: 0.38876424299653767
+          malfunction:
+            loop: 0.06484069312465064
+            lang: 0.029625489100055896
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.044158747903856904
+          n_outputs: 1789
+        card|raw:
+          tasks:
+            gsm8k_ko_dev: 0.33
+            kormedmcqa_dev: 0.24268177525967893
+            scenario_dev_self: 0.5086666666666667
+          mean: 0.3604494806421152
+          malfunction:
+            loop: 0.0368921185019564
+            lang: 0.03465623253214086
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.021240916713247623
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.36
+            kormedmcqa_dev: 0.26062322946175637
+            scenario_dev_self: 0.5231666666666668
+          mean: 0.3812632987094744
+          malfunction:
+            loop: 0.024594745667970933
+            lang: 0.05366126327557295
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.024594745667970933
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.2633333333333333
+            kormedmcqa_dev: 0.29178470254957506
+            scenario_dev_self: 0.48333333333333334
+          mean: 0.3461504564054139
+          malfunction:
+            loop: 0.01509223029625489
+            lang: 0.12297372833985466
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.021799888205701508
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.36666666666666664
+            kormedmcqa_dev: 0.2474032105760151
+            scenario_dev_self: 0.5273333333333334
+          mean: 0.38046773685867175
+          malfunction:
+            loop: 0.013415315818893237
+            lang: 0.03353828954723309
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0022358859698155395
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:30:27.208474+00:00'
+      rule: v3
+    stage2:
+      chosen: fp03+sys
+      unk_policy: raw
+      feasible: []
+      dev:
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.36666666666666664
+            kormedmcqa_dev: 0.2474032105760151
+            scenario_dev_self: 0.5273333333333334
+          mean: 0.38046773685867175
+          malfunction:
+            loop: 0.013415315818893237
+            lang: 0.03353828954723309
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0022358859698155395
+          n_outputs: 1789
+        fp03+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.13666666666666666
+            kormedmcqa_dev: 0.14825306893295562
+            scenario_dev_self: 0.42833333333333334
+          mean: 0.23775102297765185
+          malfunction:
+            loop: 0.006707657909446618
+            lang: 0.03130240357741755
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0005589714924538849
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:31:29.530348+00:00'
+      rule: v3
+    chosen: fp03+sys
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-20T09:31:29.530348+00:00'
+    gain_over_A_dev: null
+  qwen2.5-3b-instruct:
+    stage1:
+      chosen: rp11
+      unk_policy: raw
+      feasible:
+      - A|raw
+      - card|raw
+      - rp11|raw
+      - fp03|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.5666666666666667
+            kormedmcqa_dev: 0.4542020774315392
+            scenario_dev_self: 0.6575
+          mean: 0.5594562480327353
+          malfunction:
+            loop: 0.0022358859698155395
+            lang: 0.017887087758524316
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0011179429849077697
+          n_outputs: 1789
+        card|raw:
+          tasks:
+            gsm8k_ko_dev: 0.5433333333333333
+            kormedmcqa_dev: 0.4466477809254013
+            scenario_dev_self: 0.7106666666666668
+          mean: 0.5668825936418005
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.019005030743432086
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0005589714924538849
+          n_outputs: 1789
+        rep|raw:
+          tasks:
+            gsm8k_ko_dev: 0.56
+            kormedmcqa_dev: 0.4466477809254013
+            scenario_dev_self: 0.7221666666666667
+          mean: 0.5762714825306894
+          malfunction:
+            loop: 0.0022358859698155395
+            lang: 0.020122973728339856
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.5733333333333334
+            kormedmcqa_dev: 0.45042492917847027
+            scenario_dev_self: 0.6993333333333333
+          mean: 0.5743638652817123
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.019005030743432086
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0005589714924538849
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.5
+            kormedmcqa_dev: 0.4466477809254013
+            scenario_dev_self: 0.5643333333333334
+          mean: 0.5036603714195782
+          malfunction:
+            loop: 0.0
+            lang: 0.0626048071548351
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.53
+            kormedmcqa_dev: 0.4542020774315392
+            scenario_dev_self: 0.6921666666666667
+          mean: 0.5587895813660686
+          malfunction:
+            loop: 0.0011179429849077697
+            lang: 0.01621017328116266
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0011179429849077697
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:36:53.425262+00:00'
+      rule: v3
+    stage2:
+      chosen: rp11
+      unk_policy: raw
+      feasible:
+      - rp11|raw
+      - rp11+sys|raw
+      dev:
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.5733333333333334
+            kormedmcqa_dev: 0.45042492917847027
+            scenario_dev_self: 0.6993333333333333
+          mean: 0.5743638652817123
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.019005030743432086
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0005589714924538849
+          n_outputs: 1789
+        rp11+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.15
+            kormedmcqa_dev: 0.45797922568460814
+            scenario_dev_self: 0.5685
+          mean: 0.3921597418948694
+          malfunction:
+            loop: 0.0
+            lang: 0.012856344326439352
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:37:48.957258+00:00'
+      rule: v3
+    chosen: rp11
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-20T09:37:48.957258+00:00'
+    gain_over_A_dev: null
+  kanana-1.5-2.1b:
+    stage1:
+      chosen: rp11
+      unk_policy: raw
+      feasible:
+      - A|raw
+      - rp11|raw
+      - rp12|raw
+      - fp03|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.6233333333333333
+            kormedmcqa_dev: 0.18791312559017942
+            scenario_dev_self: 0.7378333333333331
+          mean: 0.5163599307522819
+          malfunction:
+            loop: 0.004471771939631079
+            lang: 0.006707657909446618
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.005030743432084964
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.6066666666666667
+            kormedmcqa_dev: 0.21435316336166194
+            scenario_dev_self: 0.7361666666666664
+          mean: 0.5190621655649984
+          malfunction:
+            loop: 0.0022358859698155395
+            lang: 0.012856344326439352
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0022358859698155395
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.5933333333333334
+            kormedmcqa_dev: 0.22568460812086874
+            scenario_dev_self: 0.6934999999999999
+          mean: 0.5041726471514006
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.01621017328116266
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.003912800447177194
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.6066666666666667
+            kormedmcqa_dev: 0.18791312559017942
+            scenario_dev_self: 0.7366666666666668
+          mean: 0.5104154863078376
+          malfunction:
+            loop: 0.0011179429849077697
+            lang: 0.0072666294019005035
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0005589714924538849
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:41:50.085290+00:00'
+      rule: v3
+    stage2:
+      chosen: rp11
+      unk_policy: raw
+      feasible:
+      - rp11|raw
+      - rp11+sys|raw
+      dev:
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.6066666666666667
+            kormedmcqa_dev: 0.21435316336166194
+            scenario_dev_self: 0.7361666666666664
+          mean: 0.5190621655649984
+          malfunction:
+            loop: 0.0022358859698155395
+            lang: 0.012856344326439352
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0022358859698155395
+          n_outputs: 1789
+        rp11+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.18333333333333332
+            kormedmcqa_dev: 0.3493862134088763
+            scenario_dev_self: 0.6466666666666667
+          mean: 0.3931287378029588
+          malfunction:
+            loop: 0.0016769144773616546
+            lang: 0.0011179429849077697
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0016769144773616546
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:42:43.880677+00:00'
+      rule: v3
+    chosen: rp11
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-20T09:42:43.880677+00:00'
+    gain_over_A_dev: null
+  kanana-2-3b:
+    stage1:
+      chosen: rp11
+      unk_policy: raw
+      feasible:
+      - A|raw
+      - rp11|raw
+      - rp12|raw
+      - fp03|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.13333333333333333
+            kormedmcqa_dev: 0.38526912181303113
+            scenario_dev_self: 0.7908333333333332
+          mean: 0.4364785961598992
+          malfunction:
+            loop: 0.0
+            lang: 0.003353828954723309
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.13
+            kormedmcqa_dev: 0.4145420207743154
+            scenario_dev_self: 0.8098333333333333
+          mean: 0.4514584513692162
+          malfunction:
+            loop: 0.0
+            lang: 0.0022358859698155395
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.13
+            kormedmcqa_dev: 0.41076487252124644
+            scenario_dev_self: 0.7166666666666666
+          mean: 0.41914384639597096
+          malfunction:
+            loop: 0.0016769144773616546
+            lang: 0.0005589714924538849
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.13333333333333333
+            kormedmcqa_dev: 0.3777148253068933
+            scenario_dev_self: 0.7953333333333333
+          mean: 0.43546049732452
+          malfunction:
+            loop: 0.0011179429849077697
+            lang: 0.003353828954723309
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:45:26.023950+00:00'
+      rule: v3
+    stage2:
+      chosen: rp11
+      unk_policy: raw
+      feasible:
+      - rp11|raw
+      - rp11+sys|raw
+      dev:
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.13
+            kormedmcqa_dev: 0.4145420207743154
+            scenario_dev_self: 0.8098333333333333
+          mean: 0.4514584513692162
+          malfunction:
+            loop: 0.0
+            lang: 0.0022358859698155395
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+        rp11+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.17666666666666667
+            kormedmcqa_dev: 0.39660056657223797
+            scenario_dev_self: 0.6711666666666666
+          mean: 0.4148112999685238
+          malfunction:
+            loop: 0.0
+            lang: 0.0
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:46:15.629813+00:00'
+      rule: v3
+    chosen: rp11
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-20T09:46:15.629813+00:00'
+    gain_over_A_dev: null
+  exaone-3.5-2.4b:
+    stage1:
+      chosen: A
+      unk_policy: raw
+      feasible:
+      - A|raw
+      - rp11|raw
+      - rp12|raw
+      - fp03|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.6233333333333333
+            kormedmcqa_dev: 0.39660056657223797
+            scenario_dev_self: 0.7046666666666667
+          mean: 0.5748668555240793
+          malfunction:
+            loop: 0.0
+            lang: 0.002794857462269424
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.5833333333333334
+            kormedmcqa_dev: 0.40132200188857414
+            scenario_dev_self: 0.6883333333333332
+          mean: 0.5576628895184136
+          malfunction:
+            loop: 0.0
+            lang: 0.003912800447177194
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.52
+            kormedmcqa_dev: 0.3937677053824363
+            scenario_dev_self: 0.6831666666666669
+          mean: 0.5323114573497011
+          malfunction:
+            loop: 0.0
+            lang: 0.008943543879262158
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.5766666666666667
+            kormedmcqa_dev: 0.39660056657223797
+            scenario_dev_self: 0.6760000000000003
+          mean: 0.5497557444129683
+          malfunction:
+            loop: 0.0016769144773616546
+            lang: 0.0016769144773616546
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0005589714924538849
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:50:26.637494+00:00'
+      rule: v3
+    stage2:
+      chosen: A
+      unk_policy: raw
+      feasible:
+      - A|raw
+      - A+sys|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.6233333333333333
+            kormedmcqa_dev: 0.39660056657223797
+            scenario_dev_self: 0.7046666666666667
+          mean: 0.5748668555240793
+          malfunction:
+            loop: 0.0
+            lang: 0.002794857462269424
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+        A+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.4
+            kormedmcqa_dev: 0.3899905571293673
+            scenario_dev_self: 0.6753333333333335
+          mean: 0.4884412968209002
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.0011179429849077697
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:51:33.940513+00:00'
+      rule: v3
+    chosen: A
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-20T09:51:33.940513+00:00'
+    gain_over_A_dev: 0.0
+  qwen3-4b-2507:
+    stage1:
+      chosen: fp03
+      unk_policy: raw
+      feasible: []
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7466666666666667
+            kormedmcqa_dev: 0.5977337110481586
+            scenario_dev_self: 0.871
+          mean: 0.7384667925716085
+          malfunction:
+            loop: 0.005589714924538848
+            lang: 0.006148686416992733
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.06931246506428172
+          n_outputs: 1789
+        card|raw:
+          tasks:
+            gsm8k_ko_dev: 0.76
+            kormedmcqa_dev: 0.5816808309726157
+            scenario_dev_self: 0.8526666666666668
+          mean: 0.7314491658797609
+          malfunction:
+            loop: 0.0
+            lang: 0.008384572386808273
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.07210732252655115
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.76
+            kormedmcqa_dev: 0.5920679886685553
+            scenario_dev_self: 0.8541666666666667
+          mean: 0.7354115517784073
+          malfunction:
+            loop: 0.0011179429849077697
+            lang: 0.009502515371716043
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.06595863610955842
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7466666666666667
+            kormedmcqa_dev: 0.5949008498583569
+            scenario_dev_self: 0.8411666666666667
+          mean: 0.7275780610638968
+          malfunction:
+            loop: 0.0
+            lang: 0.03353828954723309
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.07657909446618222
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7566666666666667
+            kormedmcqa_dev: 0.6081208687440982
+            scenario_dev_self: 0.8763333333333333
+          mean: 0.747040289581366
+          malfunction:
+            loop: 0.002794857462269424
+            lang: 0.010620458356623811
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.06092789267747345
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:57:30.129190+00:00'
+      rule: v3
+    stage2:
+      chosen: fp03+sys
+      unk_policy: raw
+      feasible:
+      - fp03+sys|raw
+      dev:
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7566666666666667
+            kormedmcqa_dev: 0.6081208687440982
+            scenario_dev_self: 0.8763333333333333
+          mean: 0.747040289581366
+          malfunction:
+            loop: 0.002794857462269424
+            lang: 0.010620458356623811
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.06092789267747345
+          n_outputs: 1789
+        fp03+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.76
+            kormedmcqa_dev: 0.5930122757318225
+            scenario_dev_self: 0.8323333333333334
+          mean: 0.7284485363550518
+          malfunction:
+            loop: 0.0011179429849077697
+            lang: 0.004471771939631079
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.009502515371716043
+          n_outputs: 1789
+      selected_at: '2026-11-20T09:59:05.783487+00:00'
+      rule: v3
+    chosen: fp03+sys
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-20T09:59:05.783487+00:00'
+    gain_over_A_dev: null
+  smollm3-3b:
+    stage1:
+      chosen: fp03
+      unk_policy: raw
+      feasible:
+      - rp11|raw
+      - fp03|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.53
+            kormedmcqa_dev: 0.3578847969782814
+            scenario_dev_self: 0.6764999999999999
+          mean: 0.5214615989927605
+          malfunction:
+            loop: 0.026830631637786474
+            lang: 0.010061486864169928
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.03186137506987144
+          n_outputs: 1789
+        card|raw:
+          tasks:
+            gsm8k_ko_dev: 0.5066666666666667
+            kormedmcqa_dev: 0.35033050047214354
+            scenario_dev_self: 0.6858333333333333
+          mean: 0.5142768334907145
+          malfunction:
+            loop: 0.021799888205701508
+            lang: 0.009502515371716043
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.025712688652878703
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.4866666666666667
+            kormedmcqa_dev: 0.3616619452313503
+            scenario_dev_self: 0.6301666666666668
+          mean: 0.4928317595215613
+          malfunction:
+            loop: 0.011179429849077696
+            lang: 0.010061486864169928
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.012297372833985467
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.36666666666666664
+            kormedmcqa_dev: 0.34749763928234184
+            scenario_dev_self: 0.43800000000000006
+          mean: 0.38405476864966953
+          malfunction:
+            loop: 0.005030743432084964
+            lang: 0.11403018446059252
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0737842370039128
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.5133333333333333
+            kormedmcqa_dev: 0.3588290840415486
+            scenario_dev_self: 0.6958333333333332
+          mean: 0.5226652502360717
+          malfunction:
+            loop: 0.013415315818893237
+            lang: 0.011738401341531582
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.008943543879262158
+          n_outputs: 1789
+      selected_at: '2026-11-20T10:05:16.570401+00:00'
+      rule: v3
+    stage2:
+      chosen: fp03
+      unk_policy: raw
+      feasible:
+      - fp03|raw
+      - fp03+sys|raw
+      dev:
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.5133333333333333
+            kormedmcqa_dev: 0.3588290840415486
+            scenario_dev_self: 0.6958333333333332
+          mean: 0.5226652502360717
+          malfunction:
+            loop: 0.013415315818893237
+            lang: 0.011738401341531582
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.008943543879262158
+          n_outputs: 1789
+        fp03+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.33666666666666667
+            kormedmcqa_dev: 0.3814919735599622
+            scenario_dev_self: 0.6128333333333335
+          mean: 0.44366399118665417
+          malfunction:
+            loop: 0.0072666294019005035
+            lang: 0.006707657909446618
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.006707657909446618
+          n_outputs: 1789
+      selected_at: '2026-11-20T10:06:36.236812+00:00'
+      rule: v3
+    chosen: fp03
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-20T10:06:36.236812+00:00'
+    gain_over_A_dev: null
+  qwen3-30b-a3b-2507:
+    stage1:
+      chosen: A
+      unk_policy: raw
+      feasible:
+      - A|raw
+      - card|raw
+      - rp11|raw
+      - fp03|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.81
+            kormedmcqa_dev: 0.7714825306893296
+            scenario_dev_self: 0.9121666666666667
+          mean: 0.8312163991186655
+          malfunction:
+            loop: 0.003353828954723309
+            lang: 0.007825600894354388
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.03577417551704863
+          n_outputs: 1789
+        card|raw:
+          tasks:
+            gsm8k_ko_dev: 0.8133333333333334
+            kormedmcqa_dev: 0.7648725212464589
+            scenario_dev_self: 0.8996666666666667
+          mean: 0.825957507082153
+          malfunction:
+            loop: 0.0016769144773616546
+            lang: 0.008384572386808273
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.03745108999441028
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.8233333333333334
+            kormedmcqa_dev: 0.7629839471199245
+            scenario_dev_self: 0.9000000000000001
+          mean: 0.8287724268177525
+          malfunction:
+            loop: 0.0
+            lang: 0.009502515371716043
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.03018446059250978
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.82
+            kormedmcqa_dev: 0.7592067988668555
+            scenario_dev_self: 0.8760000000000002
+          mean: 0.818402266288952
+          malfunction:
+            loop: 0.0
+            lang: 0.02515371716042482
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.03912800447177194
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.8033333333333333
+            kormedmcqa_dev: 0.7743153918791312
+            scenario_dev_self: 0.9086666666666666
+          mean: 0.8287717972930437
+          malfunction:
+            loop: 0.0022358859698155395
+            lang: 0.007825600894354388
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.029066517607602014
+          n_outputs: 1789
+      selected_at: '2026-11-20T10:17:50.558602+00:00'
+      rule: v3
+    stage2:
+      chosen: A
+      unk_policy: raw
+      feasible:
+      - A|raw
+      - A+sys|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.81
+            kormedmcqa_dev: 0.7714825306893296
+            scenario_dev_self: 0.9121666666666667
+          mean: 0.8312163991186655
+          malfunction:
+            loop: 0.003353828954723309
+            lang: 0.007825600894354388
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.03577417551704863
+          n_outputs: 1789
+        A+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.8233333333333334
+            kormedmcqa_dev: 0.7686496694995278
+            scenario_dev_self: 0.9026666666666666
+          mean: 0.8315498898331759
+          malfunction:
+            loop: 0.0011179429849077697
+            lang: 0.003353828954723309
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.011179429849077696
+          n_outputs: 1789
+      selected_at: '2026-11-20T10:20:23.553078+00:00'
+      rule: v3
+    chosen: A
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-20T10:20:23.553078+00:00'
+    gain_over_A_dev: 0.0
+  kanana-2-30b-a3b:
+    stage1:
+      chosen: fp03
+      unk_policy: raw
+      feasible: []
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7733333333333333
+            kormedmcqa_dev: 0.7129367327667611
+            scenario_dev_self: 0.8925000000000002
+          mean: 0.7929233553666982
+          malfunction:
+            loop: 0.05030743432084964
+            lang: 0.10844046953605366
+            leak: 0.0
+            empty: 0.0005589714924538849
+            trunc: 0.0626048071548351
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.79
+            kormedmcqa_dev: 0.6770538243626062
+            scenario_dev_self: 0.866
+          mean: 0.7776846081208687
+          malfunction:
+            loop: 0.013415315818893237
+            lang: 0.20011179429849077
+            leak: 0.0
+            empty: 0.0005589714924538849
+            trunc: 0.02850754611514813
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.75
+            kormedmcqa_dev: 0.6562795089707271
+            scenario_dev_self: 0.858
+          mean: 0.7547598363235757
+          malfunction:
+            loop: 0.005589714924538848
+            lang: 0.2252655114589156
+            leak: 0.0
+            empty: 0.0016769144773616546
+            trunc: 0.10564561207378424
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.77
+            kormedmcqa_dev: 0.7129367327667611
+            scenario_dev_self: 0.8930000000000001
+          mean: 0.7919789109222538
+          malfunction:
+            loop: 0.016769144773616546
+            lang: 0.10452766908887647
+            leak: 0.0
+            empty: 0.0005589714924538849
+            trunc: 0.012856344326439352
+          n_outputs: 1789
+      selected_at: '2026-11-20T10:32:03.914921+00:00'
+      rule: v3
+    stage2:
+      chosen: fp03+sys
+      unk_policy: raw
+      feasible:
+      - fp03+sys|raw
+      dev:
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.77
+            kormedmcqa_dev: 0.7129367327667611
+            scenario_dev_self: 0.8930000000000001
+          mean: 0.7919789109222538
+          malfunction:
+            loop: 0.016769144773616546
+            lang: 0.10452766908887647
+            leak: 0.0
+            empty: 0.0005589714924538849
+            trunc: 0.012856344326439352
+          n_outputs: 1789
+        fp03+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.59
+            kormedmcqa_dev: 0.7403210576015109
+            scenario_dev_self: 0.8756666666666668
+          mean: 0.7353292414227258
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.0
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0005589714924538849
+          n_outputs: 1789
+      selected_at: '2026-11-20T10:34:00.378435+00:00'
+      rule: v3
+    chosen: fp03+sys
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-20T10:34:00.378435+00:00'
+    gain_over_A_dev: null
+  nemotron-3-nano-30b-a3b:
+    stage1:
+      chosen: A
+      unk_policy: raw
+      feasible: []
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.41
+            kormedmcqa_dev: 0.6090651558073654
+            scenario_dev_self: 0.7451666666666665
+          mean: 0.5880772741580106
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.022917831190609278
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.008943543879262158
+          n_outputs: 1789
+        card|raw:
+          tasks:
+            gsm8k_ko_dev: 0.4533333333333333
+            kormedmcqa_dev: 0.5080264400377715
+            scenario_dev_self: 0.7716666666666666
+          mean: 0.5776754800125904
+          malfunction:
+            loop: 0.0
+            lang: 0.10955841252096143
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.013415315818893237
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.37333333333333335
+            kormedmcqa_dev: 0.5637393767705382
+            scenario_dev_self: 0.7781666666666668
+          mean: 0.5717464589235127
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.047512576858580215
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.007825600894354388
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.31
+            kormedmcqa_dev: 0.5524079320113314
+            scenario_dev_self: 0.7158333333333334
+          mean: 0.5260804217815549
+          malfunction:
+            loop: 0.0
+            lang: 0.16545556176634993
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.022358859698155393
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.39
+            kormedmcqa_dev: 0.6090651558073654
+            scenario_dev_self: 0.7648333333333334
+          mean: 0.5879661630468996
+          malfunction:
+            loop: 0.0
+            lang: 0.02515371716042482
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.006707657909446618
+          n_outputs: 1789
+      selected_at: '2026-11-20T10:43:59.671939+00:00'
+      rule: v3
+    stage2:
+      chosen: A+sys
+      unk_policy: raw
+      feasible:
+      - A+sys|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.41
+            kormedmcqa_dev: 0.6090651558073654
+            scenario_dev_self: 0.7451666666666665
+          mean: 0.5880772741580106
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.022917831190609278
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.008943543879262158
+          n_outputs: 1789
+        A+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.23333333333333334
+            kormedmcqa_dev: 0.6081208687440982
+            scenario_dev_self: 0.7266666666666665
+          mean: 0.5227069562480327
+          malfunction:
+            loop: 0.0022358859698155395
+            lang: 0.004471771939631079
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.003912800447177194
+          n_outputs: 1789
+      selected_at: '2026-11-20T10:45:33.206473+00:00'
+      rule: v3
+    chosen: A+sys
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-20T10:45:33.206473+00:00'
+    gain_over_A_dev: -0.06537
+  evafrill:
+    checkpoint: evafrill-mo-3b
+    checkpoint_dev:
+      evafrill-mo-3b-sft-v2|unk_nl:
+        tasks:
+          gsm8k_ko_dev: 0.0
+          kormedmcqa_dev: 0.06893295561850803
+        mean: 0.03446647780925401
+        loop: 0.3090507726269316
+      evafrill-mo-3b-sft-v2|unk_drop:
+        tasks:
+          gsm8k_ko_dev: 0.0
+          kormedmcqa_dev: 0.09915014164305949
+        mean: 0.049575070821529746
+        loop: 0.3105224429727741
+      evafrill-mo-3b-dpo-r1|unk_nl:
+        tasks:
+          gsm8k_ko_dev: 0.0
+          kormedmcqa_dev: 0.0708215297450425
+        mean: 0.03541076487252125
+        loop: 0.29874908020603386
+      evafrill-mo-3b-dpo-r1|unk_drop:
+        tasks:
+          gsm8k_ko_dev: 0.0
+          kormedmcqa_dev: 0.09254013220018886
+        mean: 0.04627006610009443
+        loop: 0.30095658572479767
+      evafrill-mo-3b-dpo-r2|unk_nl:
+        tasks:
+          gsm8k_ko_dev: 0.0
+          kormedmcqa_dev: 0.07365439093484419
+        mean: 0.036827195467422094
+        loop: 0.304635761589404
+      evafrill-mo-3b-dpo-r2|unk_drop:
+        tasks:
+          gsm8k_ko_dev: 0.0
+          kormedmcqa_dev: 0.09820585457979225
+        mean: 0.049102927289896126
+        loop: 0.3068432671081678
+      evafrill-mo-3b-dpo-r3|unk_nl:
+        tasks:
+          gsm8k_ko_dev: 0.0
+          kormedmcqa_dev: 0.06893295561850803
+        mean: 0.03446647780925401
+        loop: 0.29433406916850624
+      evafrill-mo-3b-dpo-r3|unk_drop:
+        tasks:
+          gsm8k_ko_dev: 0.0
+          kormedmcqa_dev: 0.09537299338999056
+        mean: 0.04768649669499528
+        loop: 0.29433406916850624
+      evafrill-mo-3b-orpo|unk_nl:
+        tasks:
+          gsm8k_ko_dev: 0.0
+          kormedmcqa_dev: 0.0009442870632672333
+        mean: 0.00047214353163361664
+        loop: 1.0
+      evafrill-mo-3b-orpo|unk_drop:
+        tasks:
+          gsm8k_ko_dev: 0.0
+          kormedmcqa_dev: 0.0009442870632672333
+        mean: 0.00047214353163361664
+        loop: 0.9992641648270787
+      evafrill-mo-3b|unk_nl:
+        tasks:
+          gsm8k_ko_dev: 0.0
+          kormedmcqa_dev: 0.07176581680830972
+        mean: 0.03588290840415486
+        loop: 0.30978660779985284
+      evafrill-mo-3b|unk_drop:
+        tasks:
+          gsm8k_ko_dev: 0.0
+          kormedmcqa_dev: 0.09915014164305949
+        mean: 0.049575070821529746
+        loop: 0.3105224429727741
+    checkpoint_gain_over_slerp: 0.0
+    stage1:
+      chosen: card
+      unk_policy: unk_drop
+      feasible: []
+      dev:
+        A|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.07176581680830972
+            scenario_dev_self: 0.07433333333333333
+          mean: 0.048699716713881014
+          malfunction:
+            loop: 0.3141419787590833
+            lang: 0.021799888205701508
+            leak: 0.0
+            empty: 0.0005589714924538849
+            trunc: 0.3208496366685299
+          n_outputs: 1789
+        A|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.09915014164305949
+            scenario_dev_self: 0.11233333333333334
+          mean: 0.0704944916587976
+          malfunction:
+            loop: 0.31637786472889884
+            lang: 0.021799888205701508
+            leak: 0.0
+            empty: 0.0005589714924538849
+            trunc: 0.3208496366685299
+          n_outputs: 1789
+        card|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.05193578847969783
+            scenario_dev_self: 0.048833333333333326
+          mean: 0.033589707271010384
+          malfunction:
+            loop: 0.022358859698155393
+            lang: 0.01509223029625489
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.044717719396310786
+          n_outputs: 1789
+        card|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.05288007554296506
+            scenario_dev_self: 0.06816666666666667
+          mean: 0.04034891406987724
+          malfunction:
+            loop: 0.022358859698155393
+            lang: 0.01509223029625489
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.044717719396310786
+          n_outputs: 1789
+        rep|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.06515580736543909
+            scenario_dev_self: 0.06216666666666667
+          mean: 0.04244082467736859
+          malfunction:
+            loop: 0.019005030743432086
+            lang: 0.009502515371716043
+            leak: 0.0
+            empty: 0.0011179429849077697
+            trunc: 0.08664058133035216
+          n_outputs: 1789
+        rep|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.06610009442870633
+            scenario_dev_self: 0.06216666666666667
+          mean: 0.042755587031791
+          malfunction:
+            loop: 0.017887087758524316
+            lang: 0.009502515371716043
+            leak: 0.0
+            empty: 0.0011179429849077697
+            trunc: 0.08664058133035216
+          n_outputs: 1789
+        rp11|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.059490084985835696
+            scenario_dev_self: 0.08
+          mean: 0.046496694995278566
+          malfunction:
+            loop: 0.05589714924538849
+            lang: 0.010061486864169928
+            leak: 0.0
+            empty: 0.0011179429849077697
+            trunc: 0.09726103968697597
+          n_outputs: 1789
+        rp11|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.06610009442870633
+            scenario_dev_self: 0.06666666666666667
+          mean: 0.044255587031791
+          malfunction:
+            loop: 0.05701509223029626
+            lang: 0.010061486864169928
+            leak: 0.0
+            empty: 0.0011179429849077697
+            trunc: 0.09726103968697597
+          n_outputs: 1789
+        rp12|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.06515580736543909
+            scenario_dev_self: 0.06216666666666667
+          mean: 0.04244082467736859
+          malfunction:
+            loop: 0.019005030743432086
+            lang: 0.009502515371716043
+            leak: 0.0
+            empty: 0.0011179429849077697
+            trunc: 0.08664058133035216
+          n_outputs: 1789
+        rp12|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.06610009442870633
+            scenario_dev_self: 0.06216666666666667
+          mean: 0.042755587031791
+          malfunction:
+            loop: 0.017887087758524316
+            lang: 0.009502515371716043
+            leak: 0.0
+            empty: 0.0011179429849077697
+            trunc: 0.08664058133035216
+          n_outputs: 1789
+      selected_at: '2026-11-20T12:29:58.526934+00:00'
+      rule: v3
+    stage2:
+      chosen: card
+      unk_policy: unk_drop
+      feasible: []
+      dev:
+        card|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.05193578847969783
+            scenario_dev_self: 0.048833333333333326
+          mean: 0.033589707271010384
+          malfunction:
+            loop: 0.022358859698155393
+            lang: 0.01509223029625489
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.044717719396310786
+          n_outputs: 1789
+        card|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.05288007554296506
+            scenario_dev_self: 0.06816666666666667
+          mean: 0.04034891406987724
+          malfunction:
+            loop: 0.022358859698155393
+            lang: 0.01509223029625489
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.044717719396310786
+          n_outputs: 1789
+        card+sys|unk_nl:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.03493862134088763
+            scenario_dev_self: 0.0645
+          mean: 0.03314620711362921
+          malfunction:
+            loop: 0.022917831190609278
+            lang: 0.024035774175517048
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.03521520402459474
+          n_outputs: 1789
+        card+sys|unk_drop:
+          tasks:
+            gsm8k_ko_dev: 0.0
+            kormedmcqa_dev: 0.0339943342776204
+            scenario_dev_self: 0.07566666666666666
+          mean: 0.03655366698142902
+          malfunction:
+            loop: 0.022358859698155393
+            lang: 0.024035774175517048
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.03521520402459474
+          n_outputs: 1789
+      selected_at: '2026-11-20T12:36:41.769148+00:00'
+      rule: v3
+    chosen: card
+    unk_policy: unk_drop
+    rule: v3
+    selected_at: '2026-11-20T12:36:41.769148+00:00'
+    gain_over_A_dev: null
+  evafrill-mo-3b:
+    unk_policy: unk_drop
+  evafrill-mo-3b-sft-v2:
+    unk_policy: unk_drop
+  evafrill-mo-3b-dpo-r1:
+    unk_policy: unk_drop
+  evafrill-mo-3b-dpo-r2:
+    unk_policy: unk_drop
+  evafrill-mo-3b-dpo-r3:
+    unk_policy: unk_drop
+  evafrill-mo-3b-orpo:
+    unk_policy: unk_drop
+  qwen3.5-4b:
+    stage1:
+      chosen: A
+      unk_policy: raw
+      feasible: []
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7066666666666667
+            kormedmcqa_dev: 0.6336166194523135
+            scenario_dev_self: 0.838166666666667
+          mean: 0.7261499842618825
+          malfunction:
+            loop: 0.007825600894354388
+            lang: 0.02627166014533259
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0368921185019564
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.74
+            kormedmcqa_dev: 0.6373937677053825
+            scenario_dev_self: 0.8336666666666669
+          mean: 0.7370201447906831
+          malfunction:
+            loop: 0.0011179429849077697
+            lang: 0.06595863610955842
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.030743432084963666
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7166666666666667
+            kormedmcqa_dev: 0.6251180358829084
+            scenario_dev_self: 0.8440000000000002
+          mean: 0.7285949008498585
+          malfunction:
+            loop: 0.0
+            lang: 0.1693683622135271
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.06036892118501956
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.6633333333333333
+            kormedmcqa_dev: 0.6543909348441926
+            scenario_dev_self: 0.8266666666666669
+          mean: 0.7147969782813975
+          malfunction:
+            loop: 0.009502515371716043
+            lang: 0.04136389044158748
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.040804918949133594
+          n_outputs: 1789
+      selected_at: '2026-11-21T02:08:34.249726+00:00'
+      rule: v3
+    stage2:
+      chosen: A+sys
+      unk_policy: raw
+      feasible:
+      - A+sys|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7066666666666667
+            kormedmcqa_dev: 0.6336166194523135
+            scenario_dev_self: 0.838166666666667
+          mean: 0.7261499842618825
+          malfunction:
+            loop: 0.007825600894354388
+            lang: 0.02627166014533259
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0368921185019564
+          n_outputs: 1789
+        A+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.6833333333333333
+            kormedmcqa_dev: 0.6525023607176582
+            scenario_dev_self: 0.7791666666666666
+          mean: 0.705000786905886
+          malfunction:
+            loop: 0.006148686416992733
+            lang: 0.006148686416992733
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.011738401341531582
+          n_outputs: 1789
+      selected_at: '2026-11-21T02:23:57.518970+00:00'
+      rule: v3
+    chosen: A+sys
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-21T02:23:57.518970+00:00'
+    gain_over_A_dev: -0.02115
+  gemma-4-e4b-it:
+    stage1:
+      chosen: A
+      unk_policy: raw
+      feasible: []
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7466666666666667
+            kormedmcqa_dev: 0.6222851746931067
+            scenario_dev_self: 0.9413333333333334
+          mean: 0.7700950582310355
+          malfunction:
+            loop: 0.0
+            lang: 0.006707657909446618
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.07322526551145891
+          n_outputs: 1789
+        card|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7533333333333333
+            kormedmcqa_dev: 0.5949008498583569
+            scenario_dev_self: 0.9188333333333334
+          mean: 0.7556891721750079
+          malfunction:
+            loop: 0.0
+            lang: 0.006707657909446618
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.09055338177752935
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7666666666666667
+            kormedmcqa_dev: 0.6005665722379604
+            scenario_dev_self: 0.9021666666666666
+          mean: 0.7564666351904311
+          malfunction:
+            loop: 0.0
+            lang: 0.006707657909446618
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.08328675237562884
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.72
+            kormedmcqa_dev: 0.5533522190745986
+            scenario_dev_self: 0.8846666666666668
+          mean: 0.7193396285804218
+          malfunction:
+            loop: 0.0011179429849077697
+            lang: 0.006148686416992733
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.11626607043040806
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.73
+            kormedmcqa_dev: 0.6052880075542965
+            scenario_dev_self: 0.9381666666666668
+          mean: 0.7578182247403212
+          malfunction:
+            loop: 0.0011179429849077697
+            lang: 0.0072666294019005035
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.09055338177752935
+          n_outputs: 1789
+      selected_at: '2026-11-21T03:06:32.644049+00:00'
+      rule: v3
+    stage2:
+      chosen: A+sys
+      unk_policy: raw
+      feasible:
+      - A+sys|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7466666666666667
+            kormedmcqa_dev: 0.6222851746931067
+            scenario_dev_self: 0.9413333333333334
+          mean: 0.7700950582310355
+          malfunction:
+            loop: 0.0
+            lang: 0.006707657909446618
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.07322526551145891
+          n_outputs: 1789
+        A+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7633333333333333
+            kormedmcqa_dev: 0.6288951841359773
+            scenario_dev_self: 0.8906666666666667
+          mean: 0.7609650613786592
+          malfunction:
+            loop: 0.0
+            lang: 0.003353828954723309
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0072666294019005035
+          n_outputs: 1789
+      selected_at: '2026-11-21T03:09:56.959061+00:00'
+      rule: v3
+    chosen: A+sys
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-21T03:09:56.959061+00:00'
+    gain_over_A_dev: -0.00913
+  phi-4-mini:
+    stage1:
+      chosen: fp03
+      unk_policy: raw
+      feasible:
+      - A|raw
+      - rp11|raw
+      - fp03|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.62
+            kormedmcqa_dev: 0.27101038715769593
+            scenario_dev_self: 0.5913333333333334
+          mean: 0.49411457349700977
+          malfunction:
+            loop: 0.008943543879262158
+            lang: 0.003353828954723309
+            leak: 0.0
+            empty: 0.0011179429849077697
+            trunc: 0.011738401341531582
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.5233333333333333
+            kormedmcqa_dev: 0.29367327667610954
+            scenario_dev_self: 0.5305000000000001
+          mean: 0.4491688700031477
+          malfunction:
+            loop: 0.0016769144773616546
+            lang: 0.01509223029625489
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0016769144773616546
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.14
+            kormedmcqa_dev: 0.267233238904627
+            scenario_dev_self: 0.319
+          mean: 0.24207774630154236
+          malfunction:
+            loop: 0.002794857462269424
+            lang: 0.11794298490776971
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.047512576858580215
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.6466666666666666
+            kormedmcqa_dev: 0.27101038715769593
+            scenario_dev_self: 0.6053333333333334
+          mean: 0.5076701290525653
+          malfunction:
+            loop: 0.002794857462269424
+            lang: 0.003912800447177194
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0005589714924538849
+          n_outputs: 1789
+      selected_at: '2026-11-21T03:15:37.051518+00:00'
+      rule: v3
+    stage2:
+      chosen: fp03
+      unk_policy: raw
+      feasible:
+      - fp03|raw
+      - fp03+sys|raw
+      dev:
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.6466666666666666
+            kormedmcqa_dev: 0.27101038715769593
+            scenario_dev_self: 0.6053333333333334
+          mean: 0.5076701290525653
+          malfunction:
+            loop: 0.002794857462269424
+            lang: 0.003912800447177194
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0005589714924538849
+          n_outputs: 1789
+        fp03+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.16666666666666666
+            kormedmcqa_dev: 0.28234183191690276
+            scenario_dev_self: 0.551
+          mean: 0.3333361661945231
+          malfunction:
+            loop: 0.0022358859698155395
+            lang: 0.0005589714924538849
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+      selected_at: '2026-11-21T03:16:36.662384+00:00'
+      rule: v3
+    chosen: fp03
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-21T03:16:36.662384+00:00'
+    gain_over_A_dev: null
+  qwen3.5-35b-a3b:
+    stage1:
+      chosen: A
+      unk_policy: raw
+      feasible:
+      - A|raw
+      - fp03|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.8433333333333334
+            kormedmcqa_dev: 0.826251180358829
+            scenario_dev_self: 0.9396666666666667
+          mean: 0.869750393452943
+          malfunction:
+            loop: 0.002794857462269424
+            lang: 0.004471771939631079
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.03130240357741755
+          n_outputs: 1789
+        card|raw:
+          tasks:
+            gsm8k_ko_dev: 0.82
+            kormedmcqa_dev: 0.8158640226628895
+            scenario_dev_self: 0.9266666666666667
+          mean: 0.8541768964431854
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.03297931805477921
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.041922861934041364
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.81
+            kormedmcqa_dev: 0.8394711992445704
+            scenario_dev_self: 0.9125
+          mean: 0.8539903997481901
+          malfunction:
+            loop: 0.0
+            lang: 0.02068194522079374
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.030743432084963666
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.8133333333333334
+            kormedmcqa_dev: 0.8215297450424929
+            scenario_dev_self: 0.9155
+          mean: 0.8501210261252754
+          malfunction:
+            loop: 0.0
+            lang: 0.07657909446618222
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.048630519843487985
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7733333333333333
+            kormedmcqa_dev: 0.8281397544853636
+            scenario_dev_self: 0.9283333333333332
+          mean: 0.8432688070506767
+          malfunction:
+            loop: 0.008943543879262158
+            lang: 0.012297372833985467
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.039686975964225824
+          n_outputs: 1789
+      selected_at: '2026-11-21T03:38:34.530180+00:00'
+      rule: v3
+    stage2:
+      chosen: A
+      unk_policy: raw
+      feasible:
+      - A|raw
+      - A+sys|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.8433333333333334
+            kormedmcqa_dev: 0.826251180358829
+            scenario_dev_self: 0.9396666666666667
+          mean: 0.869750393452943
+          malfunction:
+            loop: 0.002794857462269424
+            lang: 0.004471771939631079
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.03130240357741755
+          n_outputs: 1789
+        A+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.81
+            kormedmcqa_dev: 0.8385269121813032
+            scenario_dev_self: 0.8973333333333335
+          mean: 0.8486200818382122
+          malfunction:
+            loop: 0.0016769144773616546
+            lang: 0.0022358859698155395
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.007825600894354388
+          n_outputs: 1789
+      selected_at: '2026-11-21T03:41:57.187671+00:00'
+      rule: v3
+    chosen: A
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-21T03:41:57.187671+00:00'
+    gain_over_A_dev: 0.0
+  qwen3.6-35b-a3b:
+    stage1:
+      chosen: A
+      unk_policy: raw
+      feasible:
+      - A|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.8033333333333333
+            kormedmcqa_dev: 0.8168083097261567
+            scenario_dev_self: 0.919
+          mean: 0.8463805476864966
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.01956400223588597
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.041922861934041364
+          n_outputs: 1789
+        card|raw:
+          tasks:
+            gsm8k_ko_dev: 0.81
+            kormedmcqa_dev: 0.8035882908404155
+            scenario_dev_self: 0.8951666666666668
+          mean: 0.8362516525023608
+          malfunction:
+            loop: 0.0
+            lang: 0.07602012297372834
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.05925097820011179
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.83
+            kormedmcqa_dev: 0.8130311614730878
+            scenario_dev_self: 0.8913333333333334
+          mean: 0.8447881649354737
+          malfunction:
+            loop: 0.0
+            lang: 0.045835662381218556
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.046394633873672445
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.8166666666666667
+            kormedmcqa_dev: 0.7847025495750708
+            scenario_dev_self: 0.8736666666666669
+          mean: 0.825011960969468
+          malfunction:
+            loop: 0.0
+            lang: 0.1403018446059251
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.07602012297372834
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7433333333333333
+            kormedmcqa_dev: 0.826251180358829
+            scenario_dev_self: 0.9176666666666666
+          mean: 0.8290837267862763
+          malfunction:
+            loop: 0.006148686416992733
+            lang: 0.030743432084963666
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.05086640581330352
+          n_outputs: 1789
+      selected_at: '2026-11-21T04:44:46.494274+00:00'
+      rule: v3
+    stage2:
+      chosen: A+sys
+      unk_policy: raw
+      feasible:
+      - A|raw
+      - A+sys|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.8033333333333333
+            kormedmcqa_dev: 0.8168083097261567
+            scenario_dev_self: 0.919
+          mean: 0.8463805476864966
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.01956400223588597
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.041922861934041364
+          n_outputs: 1789
+        A+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.8333333333333334
+            kormedmcqa_dev: 0.8234183191690274
+            scenario_dev_self: 0.9136666666666667
+          mean: 0.8568061063896759
+          malfunction:
+            loop: 0.0
+            lang: 0.006148686416992733
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.013974287311347122
+          n_outputs: 1789
+      selected_at: '2026-11-21T04:48:28.304951+00:00'
+      rule: v3
+    chosen: A+sys
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-21T04:48:28.304951+00:00'
+    gain_over_A_dev: 0.01043
+  nemotron-3.5-lightning-30b-a3b:
+    stage1:
+      chosen: A
+      unk_policy: raw
+      feasible:
+      - A|raw
+      - card|raw
+      - rp11|raw
+      - rp12|raw
+      - fp03|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.8
+            kormedmcqa_dev: 0.6779981114258735
+            scenario_dev_self: 0.758
+          mean: 0.7453327038086245
+          malfunction:
+            loop: 0.0016769144773616546
+            lang: 0.0016769144773616546
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0022358859698155395
+          n_outputs: 1789
+        card|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7033333333333334
+            kormedmcqa_dev: 0.6373937677053825
+            scenario_dev_self: 0.7058333333333333
+          mean: 0.6821868114573496
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.0016769144773616546
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0011179429849077697
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.63
+            kormedmcqa_dev: 0.6562795089707271
+            scenario_dev_self: 0.753
+          mean: 0.6797598363235756
+          malfunction:
+            loop: 0.0
+            lang: 0.003353828954723309
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0011179429849077697
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.54
+            kormedmcqa_dev: 0.6458923512747875
+            scenario_dev_self: 0.7168333333333332
+          mean: 0.6342418948693735
+          malfunction:
+            loop: 0.0
+            lang: 0.008384572386808273
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0011179429849077697
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7833333333333333
+            kormedmcqa_dev: 0.676109537299339
+            scenario_dev_self: 0.7558333333333331
+          mean: 0.7384254013220017
+          malfunction:
+            loop: 0.0011179429849077697
+            lang: 0.0022358859698155395
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.002794857462269424
+          n_outputs: 1789
+      selected_at: '2026-11-21T04:58:50.377119+00:00'
+      rule: v3
+    stage2:
+      chosen: A
+      unk_policy: raw
+      feasible:
+      - A|raw
+      - A+sys|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.8
+            kormedmcqa_dev: 0.6779981114258735
+            scenario_dev_self: 0.758
+          mean: 0.7453327038086245
+          malfunction:
+            loop: 0.0016769144773616546
+            lang: 0.0016769144773616546
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0022358859698155395
+          n_outputs: 1789
+        A+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.6366666666666667
+            kormedmcqa_dev: 0.6742209631728046
+            scenario_dev_self: 0.7439999999999999
+          mean: 0.6849625432798238
+          malfunction:
+            loop: 0.0
+            lang: 0.0016769144773616546
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.0
+          n_outputs: 1789
+      selected_at: '2026-11-21T05:00:19.171966+00:00'
+      rule: v3
+    chosen: A
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-21T05:00:19.171966+00:00'
+    gain_over_A_dev: 0.0
+  ernie-4.5-21b-a3b:
+    stage1:
+      chosen: A
+      unk_policy: raw
+      feasible: []
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7033333333333334
+            kormedmcqa_dev: 0.5127478753541076
+            scenario_dev_self: 0.7243333333333333
+          mean: 0.6468048473402581
+          malfunction:
+            loop: 0.002794857462269424
+            lang: 0.02068194522079374
+            leak: 0.0
+            empty: 0.0005589714924538849
+            trunc: 0.017887087758524316
+          n_outputs: 1789
+        card|raw:
+          tasks:
+            gsm8k_ko_dev: 0.74
+            kormedmcqa_dev: 0.5042492917847026
+            scenario_dev_self: 0.7271666666666664
+          mean: 0.6571386528171229
+          malfunction:
+            loop: 0.0005589714924538849
+            lang: 0.029625489100055896
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.013974287311347122
+          n_outputs: 1789
+        rp11|raw:
+          tasks:
+            gsm8k_ko_dev: 0.72
+            kormedmcqa_dev: 0.5127478753541076
+            scenario_dev_self: 0.7266666666666666
+          mean: 0.6531381806735914
+          malfunction:
+            loop: 0.0011179429849077697
+            lang: 0.06707657909446618
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.011738401341531582
+          n_outputs: 1789
+        rp12|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7
+            kormedmcqa_dev: 0.493862134088763
+            scenario_dev_self: 0.6646666666666665
+          mean: 0.6195096002518098
+          malfunction:
+            loop: 0.0
+            lang: 0.15595304639463387
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.013974287311347122
+          n_outputs: 1789
+        fp03|raw:
+          tasks:
+            gsm8k_ko_dev: 0.6933333333333334
+            kormedmcqa_dev: 0.5231350330500472
+            scenario_dev_self: 0.7301666666666665
+          mean: 0.6488783443500156
+          malfunction:
+            loop: 0.004471771939631079
+            lang: 0.045835662381218556
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.010620458356623811
+          n_outputs: 1789
+      selected_at: '2026-11-21T05:15:03.047358+00:00'
+      rule: v3
+    stage2:
+      chosen: A+sys
+      unk_policy: raw
+      feasible:
+      - A+sys|raw
+      dev:
+        A|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7033333333333334
+            kormedmcqa_dev: 0.5127478753541076
+            scenario_dev_self: 0.7243333333333333
+          mean: 0.6468048473402581
+          malfunction:
+            loop: 0.002794857462269424
+            lang: 0.02068194522079374
+            leak: 0.0
+            empty: 0.0005589714924538849
+            trunc: 0.017887087758524316
+          n_outputs: 1789
+        A+sys|raw:
+          tasks:
+            gsm8k_ko_dev: 0.7266666666666667
+            kormedmcqa_dev: 0.4400377714825307
+            scenario_dev_self: 0.7481666666666665
+          mean: 0.6382903682719546
+          malfunction:
+            loop: 0.002794857462269424
+            lang: 0.008384572386808273
+            leak: 0.0
+            empty: 0.0
+            trunc: 0.002794857462269424
+          n_outputs: 1789
+      selected_at: '2026-11-21T05:17:20.350481+00:00'
+      rule: v3
+    chosen: A+sys
+    unk_policy: raw
+    rule: v3
+    selected_at: '2026-11-21T05:17:20.350481+00:00'
+    gain_over_A_dev: -0.00851
+gen_rule_file: dev_selection.yaml#generation_v3

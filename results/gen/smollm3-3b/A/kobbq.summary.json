@@ -1,0 +1,26 @@
+{
+ "model": "smollm3-3b",
+ "variant": "A",
+ "task": "kobbq",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 2280,
+ "n_generated": 2280,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.5793859649122807,
+   "format_fail": 0.0,
+   "n": 2280,
+   "acc_answered": 0.5793859649122807,
+   "acc_amb": 0.4394736842105263,
+   "acc_dis": 0.7192982456140351,
+   "diff_bias_amb": 0.19035087719298247,
+   "diff_bias_dis": 0.06315789473684208,
+   "loop": 0.0,
+   "rep3": 0.0,
+   "truncated": 0.0
+  }
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "model": "qwen2.5-3b-instruct",
+ "variant": "rp11",
+ "task": "komt",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 80,
+   "parse_fail": 0,
+   "score": 3.8,
+   "by_category": {
+    "coding": 3.95,
+    "extraction": 5.25,
+    "humanities": 2.85,
+    "math": 5.05,
+    "reasoning": 2.9,
+    "roleplay": 3.9,
+    "stem": 3.6,
+    "writing": 2.9
+   },
+   "turn1": 4.35,
+   "turn2": 3.25,
+   "same_family_as_judge": true,
+   "truncated": 0.0125
+  }
+ }
+}

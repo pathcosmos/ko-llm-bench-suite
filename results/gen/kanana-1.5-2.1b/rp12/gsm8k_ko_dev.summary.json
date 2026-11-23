@@ -1,0 +1,22 @@
+{
+ "model": "kanana-1.5-2.1b",
+ "variant": "rp12",
+ "task": "gsm8k_ko_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.5933333333333334,
+   "exact_match": 0.5933333333333334,
+   "format_fail": 0.01,
+   "n": 300,
+   "loop": 0.0033333333333333335,
+   "rep3": 0.036614086819512996,
+   "truncated": 0.01
+  }
+ }
+}

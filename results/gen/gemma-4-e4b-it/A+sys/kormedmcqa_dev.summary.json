@@ -1,0 +1,22 @@
+{
+ "model": "gemma-4-e4b-it",
+ "variant": "A+sys",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.6288951841359773,
+   "format_fail": 0.01794145420207743,
+   "n": 1059,
+   "acc_answered": 0.6403846153846153,
+   "loop": 0.0,
+   "rep3": 0.011378998989449838,
+   "truncated": 0.012275731822474031
+  }
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "model": "evafrill-mo-3b",
+ "variant": "card",
+ "task": "hrm8k",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 8011,
+ "n_generated": 8011,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "exact_match_strict": 0.00024965672200724003,
+   "exact_match": 0.0076145300212208215,
+   "format_fail": 0.9347147671951067,
+   "by_subset": {
+    "gsm8k": 0.000758150113722517,
+    "ksm": 0.0,
+    "math": 0.0,
+    "mmmlu": 0.0,
+    "omni_math": 0.0005238344683080147
+   },
+   "n": 8011,
+   "loop": 0.031956060416926724,
+   "rep3": 0.006546681937732149,
+   "truncated": 0.03819747846710773
+  },
+  "unk_drop": {
+   "exact_match_strict": 0.00024965672200724003,
+   "exact_match": 0.007364873299213581,
+   "format_fail": 0.9347147671951067,
+   "by_subset": {
+    "gsm8k": 0.000758150113722517,
+    "ksm": 0.0,
+    "math": 0.0,
+    "mmmlu": 0.0,
+    "omni_math": 0.0005238344683080147
+   },
+   "n": 8011,
+   "loop": 0.031956060416926724,
+   "rep3": 0.0063581772609472365,
+   "truncated": 0.03819747846710773
+  }
+ }
+}
