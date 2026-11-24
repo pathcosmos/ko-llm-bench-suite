@@ -1,0 +1,39 @@
+# 최종 보고서(reports/final)만 GitHub Pages로 배포한다. 저장소의 다른 파일은 사이트에 올리지 않는다.
+# 주소: https://pathcosmos.github.io/ko-llm-bench-suite/ (= report.html)
+name: Pages (final report)
+
+on:
+  push:
+    branches: [master]
+    paths: ["reports/final/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp reports/final/report.html _site/index.html
+          cp reports/final/report.html reports/final/data.json _site/
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

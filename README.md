@@ -2,110 +2,113 @@
 
 [English](README_EN.md)
 
-한국어 LLM 종합 벤치마크 평가 도구
+한국어 LLM 평가 도구. 공개 표준 벤치마크를 같은 조건으로 돌리는 **표준 벤치 모듈**과, 자체 문항으로 생성 품질·일관성·속도를 보는 **7개 트랙**으로 이루어져 있다.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org)
-[![Tests](https://img.shields.io/badge/tests-637%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/tests-638%20passed-brightgreen.svg)](tests/)
+[![Report](https://img.shields.io/badge/report-GitHub%20Pages-2f4a7a.svg)](https://pathcosmos.github.io/ko-llm-bench-suite/)
+
+**최종 보고서: <https://pathcosmos.github.io/ko-llm-bench-suite/>** — 직접 만든 3B 모델 3종과 공개 모델 30개(dense 3B급, MoE A3B급)를 H200 한 장에서 같은 조건으로 비교했다.
 
 ---
 
-## 소개
+## 목차
 
-KoBench Suite는 한국어 대형 언어 모델(LLM)의 성능을 **7개 트랙**에 걸쳐 종합 평가하는 벤치마크 도구입니다.
-YAML 설정 파일만으로 새로운 모델을 추가하고 평가할 수 있으며, 코드 수정 없이 다양한 모델을 비교할 수 있습니다.
+- [구성](#구성)
+- [최종 보고서와 주요 결과](#최종-보고서와-주요-결과)
+- [빠른 시작](#빠른-시작)
+- [표준 벤치마크](#표준-벤치마크-kobenchstandard)
+- [7개 평가 트랙](#7개-평가-트랙)
+- [시스템 요구사항](#시스템-요구사항)
+- [프로젝트 구조](#프로젝트-구조)
+- [테스트](#테스트)
+- [예제: Frankenstallm 평가 결과 (v0.2)](#예제-frankenstallm-평가-결과-v02)
+- [운영 기능](#운영-기능) (원격 Ollama, EVAFRILL 모드, 체크포인트, 멀티머신, 위저드, 대시보드)
 
-단순한 정확도 측정을 넘어, 한국어 생성 품질·심층 문화 이해·코드/수학 추론·응답 일관성·추론 속도·모델 간 직접 비교(Elo)까지 아우르는 다차원 평가를 제공합니다. 이중 LLM Judge 시스템으로 평가 편향을 줄이고, 자동 생성되는 HTML/Markdown 리포트와 시각화 차트로 결과를 한눈에 파악할 수 있습니다.
+## 구성
 
-### 왜 KoBench Suite인가?
+| 구성 | 실행 | 하는 일 |
+|---|---|---|
+| **표준 벤치** (`kobench/standard`) | `python -m kobench.standard.*` | lm-evaluation-harness·vLLM(BF16)·llama.cpp로 공개 벤치마크를 같은 조건에서 실행한다. 객관식은 선택지 로그우도, PPL은 bits-per-byte로 채점해 base 모델도 공정하게 비교한다. 생성 13종(규칙·코드 실행·LLM judge), 다턴 시나리오, thinking on/off, 통일 비교 프로토콜, 서빙 성능, GGUF 양자화 손실, dev 기반 설정 선택, bootstrap CI를 포함한다. |
+| **7개 트랙** (`kobench.py`) | `python kobench.py --config ...` | 자체 문항으로 KoBEST, 한국어 생성(이중 judge), 심층 이해, 코드·수학, 일관성, 속도, Pairwise Elo를 본다. 백엔드는 Ollama, vLLM·llama.cpp(OpenAI 호환), EVAFRILL. |
 
-- **한국어 특화**: KoBEST, 속담/존댓말/문화 이해 등 한국어 고유 능력을 정밀 측정
-- **종합 평가**: 7개 독립 트랙으로 모델의 강점과 약점을 다각도로 분석
-- **공정한 비교**: 이중 Judge + Pairwise Elo로 주관적 편향 최소화
-- **확장 가능**: YAML 설정만 수정하면 새 모델·새 트랙 추가 가능
-- **재현 가능**: 체크포인트, 시드 고정, JSON 원본 데이터 보존
+두 구성은 독립적이다. 공개 모델과 정밀하게 비교하려면 표준 벤치를, Ollama로 빠르게 여러 모델을 훑으려면 7개 트랙을 쓴다.
 
-## 주요 기능
+## 최종 보고서와 주요 결과
 
-| 기능 | 설명 |
-|------|------|
-| **7개 평가 트랙** | KoBEST NLU, Ko-Bench 생성, 심층이해, 코드/수학, 일관성, 성능, Pairwise Elo |
-| **다중 추론 백엔드** | Ollama (로컬/원격), EVAFRILL PyTorch 직접 추론, vLLM (표준 벤치) |
-| **표준 벤치마크** | lm-eval 기반 로그우도 객관식(KoBEST·KMMLU·KMMLU-Redux/Pro·KoBALT 등), bits-per-byte PPL, 생성 13종(규칙·코드 실행·LLM judge), 다턴 시나리오, thinking on/off, 통일 비교 프로토콜(34모델 한 줄 비교), 서빙 성능, GGUF 양자화 손실, dev 기반 설정 선택(A/B 표), bootstrap CI — [docs/standard-benchmarks.md](docs/standard-benchmarks.md) |
-| **최종 보고서** | 사용자 모델 3종과 공개 모델 30개(dense 3B급·MoE A3B급) 비교 결과 HTML — [reports/final/report.html](reports/final/report.html) |
-| **이중 Judge 시스템** | 두 개의 LLM Judge로 교차 검증 (가중 평균), 평가 편향 감소 |
-| **YAML 기반 설정** | 코드 수정 없이 모델/트랙/Judge/샘플링 파라미터 구성 |
-| **자동 리포트** | HTML/Markdown 리포트 + 26종 시각화 차트 자동 생성 |
-| **체크포인트/재개** | 장시간 평가 중단 후 이어서 실행 가능 |
-| **원격 서버 지원** | 원격 GPU 서버의 Ollama를 네트워크를 통해 활용 |
-| **EVAFRILL 지원** | Mamba-2 하이브리드 아키텍처 모델의 HTTP 서버 + PyTorch 직접 추론 |
+보고서: **<https://pathcosmos.github.io/ko-llm-bench-suite/>** (원본 [`reports/final/report.html`](reports/final/report.html), 해설 [`narrative.json`](reports/final/narrative.json), 차트 데이터 [`data.json`](reports/final/data.json)). 2026-11 측정, H200 1장, vLLM 0.33 BF16.
 
-## 평가 결과 미리보기
+- **비교 대상**: JANSORI(3B base), frankenstallm(3B instruct), EVAFRILL-Mo(2.94B Mamba-2 하이브리드, pretrain·slerp)와 공개 모델 30개 — Qwen3.5/3.6·Qwen3·Qwen2.5, kanana-1.5/2, SmolLM3, Gemma 4, Llama 3.2, Phi-4-mini, EXAONE 3.5, Nemotron 3/3.5, ERNIE 4.5. base끼리, instruct끼리 비교하고 MoE는 총/활성 파라미터를 함께 적는다.
+- **설정 선택**: 모델별 설정(디코딩·시스템 지시·체크포인트)은 dev 분할에서만, 측정 전에 정한 규칙으로 골랐다. test 결과는 선택에 쓰지 않았다.
 
-실제 13개 모델(커스텀 5 + 베이스라인 8)을 RTX 5060 Ti 16GB에서 평가한 결과입니다.
+### 통일 비교 (34개 모델, 한 줄)
 
-### 종합 히트맵
+chat 템플릿 없이 모든 모델에 같은 원문 프롬프트(로그우도 cloze, few-shot, URIAL)를 넣고, 9개 영역(지식, 전문·의료, 사실성·편향, 수학, 코드, 지시 수행, 대화·생성 품질, 다턴, 언어 모델링)을 같은 가중치로 평균했다(0~1).
 
-전 모델 × 전 트랙의 점수를 한눈에 비교할 수 있는 히트맵입니다. 각 셀의 색상이 진할수록 높은 점수를 의미합니다.
+| 순위 | 모델 | 구분 | 총/활성 파라미터 | 종합 |
+|---:|---|---|---|---:|
+| 1 | qwen3.6-35b-a3b | instruct, MoE | 35B / 3B | 0.585 |
+| 2 | qwen3.5-35b-a3b | instruct, MoE | 35B / 3B | 0.581 |
+| 3 | qwen3.5-35b-a3b-base | base, MoE | 35B / 3B | 0.577 |
+| 4 | qwen3-30b-a3b-2507 | instruct, MoE | 30.5B / 3.3B | 0.571 |
+| 8 | qwen3-4b-2507 (dense 최고) | instruct, dense | 4.0B | 0.492 |
+| 10 | exaone-3.5-2.4b | instruct, dense | 2.4B | 0.467 |
+| 30 | llama-3.2-3b (공개 모델 최하위) | base, dense | 3.2B | 0.246 |
+| 31 | **JANSORI** | base, dense | 3.2B | 0.181 |
+| 32 | **EVAFRILL-Mo slerp** | instruct, 하이브리드 | 2.94B | 0.155 |
+| 33 | **frankenstallm** | instruct, dense | 3.0B | 0.152 |
+| 34 | **EVAFRILL-Mo pretrain** | base, 하이브리드 | 2.94B | 0.151 |
 
-![종합 히트맵](examples/frankenstallm/reports/visualizations/01_heatmap_overview.png)
+### 그 밖의 관찰
 
-### 레이더 비교 차트
-
-주요 모델들의 트랙별 강점과 약점을 레이더 차트로 시각화한 것입니다. 다각형의 면적이 넓을수록 종합 성능이 우수합니다.
-
-![레이더 비교](examples/frankenstallm/reports/visualizations/07_radar_comparison.png)
-
-### Elo 랭킹 (Pairwise 비교)
-
-Track 7의 모델 간 직접 대결 결과를 Bradley-Terry Elo 레이팅으로 환산한 랭킹입니다. Judge가 두 모델의 응답을 직접 비교하여 산출합니다.
-
-![Elo 랭킹](examples/frankenstallm/reports/visualizations/05_t7_elo_ranking.png)
+- **언어 모델링만 상위권**: 한국어 bits-per-byte(wiki40b_ko)에서 JANSORI는 0.752로 base 15개 중 4위다. 지식형 객관식(KMMLU, HAE-RAE, Belebele 등)은 사용자 모델 3종 모두 무작위 수준 근처이고, 수학·코드는 0에 가깝다.
+- **객관식(ko_mc_v1 평균)**: base 1위 kanana-2-30b-a3b-base 74.7, dense base 1위 qwen3-4b-base 64.1, JANSORI 29.6, EVAFRILL pretrain 28.4.
+- **thinking 샘플링**: qwen3.5-4b thinking을 greedy로 돌리면 생각이 문맥 끝까지 이어져 잘린다. README 권장 샘플링으로 다시 돌리면 IFEval-Ko 31.9→79.2%, KorMedMCQA 62.1→80.1%, 다턴 시나리오 통과 0.31→0.82로 오른다.
+- **서빙 성능**: 동시 요청 64에서 MoE A3B의 출력 처리량(약 3.5~4.8k tok/s)은 dense 3~4B(약 9~15k tok/s)의 1/4~1/2 수준이다. 매 단계 30B급 가중치를 읽는 메모리 대역 한계와 맞는다.
+- **GGUF 양자화**: Q8_0은 f16 GGUF와 차이가 95% CI 안이다. Q4_K_M은 JANSORI KoBEST에서 −0.9%p [−1.8, −0.2]로 유의한 손실이 있다.
+- **주의**: 통일 비교의 코드 태스크는 base 이어쓰기 형식이라 이 형식을 따르지 않는 일부 instruct 모델은 MBPP+가 0에 가깝다. judge(Qwen3.6-35B-A3B)와 같은 Qwen 계열의 judge 점수는 자기 선호 편향이 있을 수 있다. 공개 벤치마크는 공개 모델의 학습 데이터에 섞였을 수 있다. 측정 중 찾아 고친 버그와 그 영향은 보고서 부록에 적었다.
 
 ## 빠른 시작
 
-### 설치
-
 ```bash
-# 리포지토리 클론
 git clone https://github.com/pathcosmos/ko-llm-bench-suite.git
 cd ko-llm-bench-suite
-
-# Python 패키지 설치
-pip install -r requirements.txt
-
-# 개발/테스트용 (선택)
-pip install -r requirements-dev.txt
-
-# 자동 설치 (Ollama + Judge 모델 포함)
-bash setup.sh
-
-# Ollama 설치 (이미 설치되어 있으면 건너뛰기)
-curl -fsSL https://ollama.com/install.sh | sh
-
-# Judge 모델 다운로드
-ollama pull qwen2.5:7b-instruct
-ollama pull exaone3.5:7.8b
-
-# 평가 대상 모델 다운로드 (예시)
-ollama pull qwen2.5:3b
-ollama pull gemma3:4b
+pip install -r requirements.txt          # 7개 트랙
+pip install -r requirements-dev.txt      # 테스트 (선택)
 ```
 
-### 실행
+### 표준 벤치
+
+CUDA GPU가 필요하다. 검증한 버전은 [`requirements-standard.txt`](requirements-standard.txt)에 고정했다(vLLM 0.33.0, lm-eval 0.4.13). 새 venv에 설치하기를 권한다.
 
 ```bash
-# 설정 파일로 전체 평가 실행
-python kobench.py --config configs/examples/frankenstallm.yaml
+pip install -r requirements-standard.txt
+python -c "import nltk; nltk.download('punkt_tab')"            # IFEval 채점기 데이터
 
-# 특정 트랙만 실행
-python kobench.py --config configs/examples/frankenstallm.yaml --tracks 1 4 6
-
-# 기존 결과로 리포트만 생성
-python kobench.py --config configs/examples/frankenstallm.yaml --report-only
+python -m kobench.standard.run --list                                         # 모델·스위트, revision 고정 여부
+python -m kobench.standard.run --download --models qwen3-4b-base              # 고정 revision으로 내려받기
+python -m kobench.standard.run --models qwen3-4b-base --suite ko_mc_v1        # 객관식 (완료 태스크는 건너뜀)
+python -m kobench.standard.gen run   --models qwen3-4b-2507 --suite gen_v1 --variant A   # 생성
+python -m kobench.standard.gen score --models qwen3-4b-2507 --suite gen_v1 --variant A   # 규칙·코드 채점
+python -m kobench.standard.judge run --models qwen3-4b-2507 && python -m kobench.standard.judge score
+python -m kobench.standard.perf --models qwen3-4b-2507                        # 서빙 성능
+python -m kobench.standard.final_data --regen && python -m kobench.standard.final_report   # 보고서
 ```
 
-### 설정 파일 예시
+### 7개 트랙
+
+```bash
+bash setup.sh                            # Ollama + judge 모델 자동 설치 (또는 아래 수동 설치)
+ollama pull qwen2.5:7b-instruct && ollama pull exaone3.5:7.8b     # judge
+ollama pull qwen2.5:3b                   # 평가 대상 (예시)
+
+python kobench.py --config configs/examples/frankenstallm.yaml               # 전체 실행
+python kobench.py --config configs/examples/frankenstallm.yaml --tracks 1 4 6
+python kobench.py --config configs/examples/frankenstallm.yaml --report-only # 기존 결과로 리포트만
+```
+
+설정 파일 예시:
 
 ```yaml
 project:
@@ -114,13 +117,11 @@ project:
   reports_dir: "./reports"
 
 backend:
-  type: ollama
+  type: ollama            # ollama | vllm | llamacpp (vLLM·llama.cpp는 OpenAI 호환 서버 url)
   url: "http://localhost:11434"
 
 models:
   - name: "qwen2.5:3b"
-    tags: [baseline]
-  - name: "gemma3:4b"
     tags: [baseline]
 
 tracks:
@@ -128,12 +129,8 @@ tracks:
 
 judge:
   dual_enabled: true
-  primary:
-    model: "qwen2.5:7b-instruct"
-    weight: 0.6
-  secondary:
-    model: "exaone3.5:7.8b"
-    weight: 0.4
+  primary:   {model: "qwen2.5:7b-instruct", weight: 0.6}
+  secondary: {model: "exaone3.5:7.8b", weight: 0.4}
 
 sampling:
   temperature: 0.7
@@ -142,33 +139,32 @@ sampling:
   seed: 42
 ```
 
-전체 설정 옵션은 [`configs/default.yaml`](configs/default.yaml)을 참조하세요.
+전체 옵션은 [`configs/default.yaml`](configs/default.yaml)을 참조한다.
 
 ## 표준 벤치마크 (`kobench/standard`)
 
-7개 트랙과 별도로, 공개 표준 벤치마크를 lm-evaluation-harness + vLLM(BF16)으로 같은 조건에서 실행하는 모듈이다. base 모델도 공정하게 비교할 수 있도록 객관식은 선택지 로그우도로, PPL은 토크나이저와 무관한 bits-per-byte로 채점한다. 공개 모델은 HF revision을 고정해야 실행되고, 설정 변형은 dev 분할에서만 고른다(test 결과는 선택에 쓰지 않음).
+상세 문서: [docs/standard-benchmarks.md](docs/standard-benchmarks.md)
 
-```bash
-python -m kobench.standard.run --models qwen3-4b-base --suite ko_mc_v1          # 실행 (완료 태스크는 건너뜀)
-python -m kobench.standard.dev_search select                                   # dev로 최적 설정 선택 → best_settings.yaml
-python -m kobench.standard.report --suite ko_mc_v1 --ref jansori-bf16 [--table B]  # 표 + bootstrap CI
-python -m kobench.standard.gen run --models qwen3-4b-2507 --suite gen_v1 --variant A  # 생성 (규칙·코드 채점은 gen score, judge는 kobench.standard.judge)
-python -m kobench.standard.perf --models qwen3-4b-2507                             # 서빙 성능
-python -m kobench.standard.final_data --regen && python -m kobench.standard.final_report   # 최종 보고서
-```
+| 영역 | 스위트·태스크 | 채점 |
+|---|---|---|
+| 한국어 객관식 | `ko_mc_v1`: KoBEST, KMMLU, HAE-RAE, CLIcK, Belebele-ko, Global-MMLU-ko / `ko_mc_ext_v1`: KMMLU-Redux, KMMLU-Pro, KoBALT-700 (gated·비상업) | 선택지 로그우도, bootstrap 95% CI |
+| 영어 객관식 | `en_mc_v1`: MMLU, ARC-Challenge, HellaSwag, Winogrande | 선택지 로그우도 |
+| 언어 모델링 | `ppl_v1`: wiki40b_ko, wikitext-2 | bits-per-byte (토크나이저 무관) |
+| 생성 | `gen_v1`: HRM8K(`\boxed` 필수 엄격 채점), IFEval-Ko, KorMedMCQA·KoBBQ·TruthfulQA-ko·K2 knowledge(생성 객관식), KoMT, LogicKor, K2 generation, ko-arena-hard, KoSimpleQA, HumanEval+, MBPP+ | 정답 규칙, 격리 코드 실행, LLM judge(Qwen3.6-35B-A3B) |
+| 다턴 | `scenario_v1`: 10개 범주 절차 생성 300개(3~5턴), 앞 턴 이력 = 모델 답 / 참조 답 | 규칙 |
+| 통일 비교 | `uni_mc_v1` + `uni_v1`: 모든 모델에 chat 템플릿 없이 같은 원문 프롬프트 | 9개 영역 정규화 평균 |
+| 성능 | `perf`: 동시 1~64 처리량·TTFT·TPOT, 공유 prefix caching on/off, VRAM | 클라이언트 측 측정 |
+| 양자화 | GGUF f16·Q8_0·Q4_K_M (llama.cpp) vs BF16 (vLLM) | 같은 문항·토큰 paired 차이 |
 
-스위트: 객관식·PPL `ko_mc_v1`(한국어 객관식), `ko_mc_ext_v1`(KMMLU-Redux/Pro·KoBALT-700, 비상업·gated), `ppl_v1`, `en_mc_v1`, `uni_mc_v1`, `dev_mc_v1` / 생성 `gen_v1`, `scenario_v1`(다턴), `uni_v1`(통일 비교). 결과 표는 `reports/standard/`·`reports/gen/`, 요약 JSON은 `results/{standard,gen,perf}/`에 있다(문항별 파일·모델 출력은 데이터셋 원문을 포함해 커밋하지 않음). 상세: [docs/standard-benchmarks.md](docs/standard-benchmarks.md)
+원칙:
 
-### 최종 보고서: 사용자 모델 3종 vs 공개 모델 30개
+- 공개 모델은 HF revision(commit SHA)을 고정해야 실행되고, 데이터셋 revision도 설정에 고정한다.
+- **A 표**는 모든 모델이 같은 프로토콜, **B 표**는 모델별로 dev에서 고른 설정이다. 선택 규칙은 측정 전에 `configs/standard/dev_selection.yaml`에 등록했다.
+- 생성 표에는 오동작 지표(반복 루프, 중복 3-gram, 언어 이탈, 템플릿 누출, 빈 답, 잘림)를 함께 낸다. 생성 설정은 dev에서 오동작 제약(루프 ≤2%, 언어 이탈 ≤2%, 누출 ≤0.5%, 잘림 ≤5%)을 만족하는 후보 중 품질 최고로 고른다.
+- 사용자 모델은 학습 때와 같은 토크나이저·형식(`configs/standard/formats.yaml`)으로 평가한다. EVAFRILL-Mo는 자체 증분 디코딩 엔진(`evafrill_engine.py`, 배치 불변)으로 생성한다.
+- 결과 표: `reports/standard/`, `reports/gen/`. 저장소에는 요약 JSON만 커밋한다(`results/{standard,gen,perf}/`). 문항별 출력·점수는 데이터셋 원문을 포함해 커밋하지 않는다.
 
-[`reports/final/report.html`](reports/final/report.html) (내려받아 브라우저에서 열기, 차트는 d3). H200 1장, BF16 vLLM 기준이다.
-
-- 비교 대상: JANSORI(base 3B), frankenstallm(instruct 3B), EVAFRILL-Mo(Mamba-2 하이브리드 3B, pretrain·slerp)와 공개 dense 3B급·MoE A3B급 모델 30개(base·instruct).
-- 통일 비교(chat 템플릿 없이 같은 원문 프롬프트, 9개 영역 같은 가중치) 종합 1위는 qwen3.6-35b-a3b 0.585, dense 최고는 qwen3-4b-2507 0.492(8위)다. 사용자 모델은 JANSORI 0.181, EVAFRILL slerp 0.155, frankenstallm 0.152, EVAFRILL pretrain 0.151로 34개 중 31~34위다.
-- 사용자 모델이 상위권인 영역은 언어 모델링(한국어 bits-per-byte)뿐이다(JANSORI base 15개 중 4위). 지식형 객관식은 무작위 수준 근처이고, 수학·코드는 0에 가깝다.
-- 보고서에는 설정 선택 근거(dev), 실패·주의 사항(코드 형식 불일치, judge 자기 선호 가능성, 버그 수정 이력)도 함께 적었다.
-
-## 평가 트랙
+## 7개 평가 트랙
 
 | 트랙 | 이름 | 설명 | LLM Judge |
 |------|------|------|:---------:|
@@ -180,170 +176,74 @@ python -m kobench.standard.final_data --regen && python -m kobench.standard.fina
 | T6 | Performance | 토큰 생성 속도(TPS), 레이턴시, 동시성 | |
 | T7 | Pairwise Elo | 모델 쌍대비교 → Bradley-Terry Elo 레이팅 | O |
 
-### T1: Korean Bench (KoBEST)
+- **T1 Korean Bench**: KoBEST의 BoolQ(참/거짓), COPA(인과 추론), SentiNeg(부정 감성), HellaSwag(상황 완성) 정확도. lm-eval이 없을 때 쓰는 자체 대체 문항은 실제 KoBEST가 아니므로 점수 키에 `custom_` 접두어를 붙이고, 정답 위치가 고르게 퍼지도록 선택지를 결정적으로 회전한다. 생성 답에서 선택지를 뽑을 때는 독립된 대문자만 인정한다(영어 단어 속 a·d 오인식 방지). base 모델 비교에는 표준 벤치의 로그우도 채점을 쓴다.
+- **T2 Ko-Bench**: 창작, 요약, 번역, 분석 등 8개 카테고리의 싱글턴·멀티턴 생성. judge가 유창성·정확성·완결성·지시 따르기로 1~10점을 매기고, 멀티턴 품질 저하도 분석한다.
+- **T3 Korean Deep**: 속담 해석, 존댓말/반말 변환, 한국 문화 상식, 한자성어 등 한국어 고유의 이해력.
+- **T4 Code & Math**: 코드는 테스트 케이스 실행, 수학은 최종 답 정확성으로 채점한다.
+- **T5 Consistency**: 같은 질문을 3회 반복해 응답 간 의미 일관성(코사인 유사도)을 잰다.
+- **T6 Performance**: 생성 속도(tokens/sec), TTFT, 동시 요청 처리. 엔진과 무관한 정밀 측정은 표준 벤치 `perf`를 쓴다.
+- **T7 Pairwise Elo**: 모든 모델 쌍의 응답을 judge가 직접 비교하고(순서 교차로 위치 편향 감소) Bradley-Terry Elo를 산출한다.
 
-한국어 자연어 이해(NLU)의 기초 체력을 측정합니다. KoBEST 데이터셋의 4개 태스크 -- BoolQ(참/거짓 판단), COPA(인과 추론), SentiNeg(부정 감성 분석), HellaSwag(상황 완성) -- 에서 정확도를 측정합니다. 객관식 형태이므로 LLM Judge가 필요 없으며, 모든 모델의 한국어 기본 이해력을 공정하게 비교할 수 있는 기반 트랙입니다.
-
-### T2: Ko-Bench (한국어 생성 품질)
-
-창작, 요약, 번역, 분석 등 8개 카테고리에 걸쳐 한국어 텍스트 생성 품질을 평가합니다. 싱글턴과 멀티턴 대화 모두를 포함하며, LLM Judge가 유창성·정확성·완결성·지시 따르기를 기준으로 1-10점을 부여합니다. 멀티턴에서의 품질 저하(turn degradation) 패턴도 분석합니다.
-
-### T3: Korean Deep (심층 한국어 이해)
-
-한국어 속담 해석, 존댓말/반말 변환, 한국 문화 상식, 한자성어 등 한국어 고유의 깊은 이해력을 테스트합니다. 단순 번역으로는 획득할 수 없는 문화적 맥락 이해를 측정하며, 한국어 특화 학습 데이터의 양과 질을 간접적으로 반영합니다.
-
-### T4: Code & Math (코드 및 수학)
-
-Python 코딩 문제와 수학 문제를 제시하고, 코드는 실제 실행을 통한 테스트 케이스 통과 여부로, 수학은 최종 답의 정확성으로 평가합니다. 소형 모델(3B 이하)에서는 매우 도전적인 트랙으로, 모델의 논리적 추론 능력과 코드 생성 품질을 엄격하게 측정합니다.
-
-### T5: Consistency (응답 일관성)
-
-동일한 질문을 3회 반복하여 응답 간 의미적 일관성을 측정합니다. 코사인 유사도 기반으로 응답 변동성을 정량화하며, 높은 일관성은 모델의 안정성과 신뢰성을 나타냅니다. temperature 설정에 따른 변동성도 함께 분석합니다.
-
-### T6: Performance (추론 성능)
-
-토큰 생성 속도(tokens/sec), 첫 토큰 도달 시간(TTFT), 동시 요청 처리 능력을 측정합니다. 동일 하드웨어에서의 상대 비교에 초점을 맞추며, 모델 크기 대비 효율성(tokens/sec per billion parameters)을 산출하여 실용적인 배포 관점의 정보를 제공합니다.
-
-### T7: Pairwise Elo (쌍대비교 랭킹)
-
-모든 모델 쌍에 대해 동일 프롬프트에 대한 응답을 LLM Judge가 직접 비교합니다. Bradley-Terry 모델을 적용하여 Elo 레이팅을 산출하며, 위치 편향(position bias)을 줄이기 위해 응답 순서를 교차합니다. Track 1의 객관식 정확도와 r=0.90의 높은 상관을 보이는 것이 특징입니다.
+judge 모델 요구사항: T2·T3·T7은 Ollama에 `qwen2.5:7b-instruct`(약 4.7 GB)와 `exaone3.5:7.8b`(약 4.8 GB)가 있어야 한다. judge 없이 실행하려면 `--tracks 1 4 5 6`.
 
 ## 시스템 요구사항
 
-| 항목 | 최소 | 권장 |
+| 항목 | 7개 트랙 | 표준 벤치 |
 |------|------|------|
-| OS | Ubuntu 22.04+ | Ubuntu 24.04 |
-| Python | 3.10+ | 3.12 |
-| RAM | 16GB | 32GB |
-| GPU | 없음 (CPU 가능) | NVIDIA 16GB+ VRAM |
-| 디스크 | 20GB 여유 | 50GB 여유 |
+| OS | Ubuntu 22.04+ | Linux |
+| Python | 3.10+ | 3.12 (검증 환경) |
+| GPU | 없어도 됨(CPU 가능, 느림), 권장 NVIDIA 16 GB+ | CUDA GPU 필수. dense 3B급 BF16 가중치 약 6~8 GB, MoE 30~35B급 BF16 약 57~67 GiB(80 GB급 이상). 검증: H200 143 GB |
+| RAM | 16 GB (권장 32 GB) | 모델 크기 이상 |
+| 디스크 | 20~50 GB | 모델당 3B급 약 6~8 GB, A3B급 약 60~70 GB |
 
-> **참고**: GPU 없이 CPU만으로도 평가가 가능하지만, 추론 속도가 크게 느려집니다.
-> 13개 모델 전체 평가 기준, RTX 5060 Ti에서 약 4-6시간, CPU에서는 수일이 소요될 수 있습니다.
+7개 트랙 기준 13개 모델 전체 평가는 RTX 5060 Ti에서 약 4~6시간, CPU에서는 수일이 걸릴 수 있다.
 
 ## 프로젝트 구조
 
 ```
 ko-llm-bench-suite/
-├── kobench.py                 # 메인 실행 스크립트
-├── kobench/                   # 평가 프레임워크 코어 패키지
-│   ├── __init__.py
-│   ├── config.py              # 설정 관리
-│   ├── runner.py              # Ollama API 실행 엔진
-│   ├── judge.py               # 이중 LLM-as-Judge 시스템
-│   ├── evafrill_runner.py     # EVAFRILL PyTorch 직접 추론
-│   ├── evafrill_server.py     # EVAFRILL HTTP 추론 서버
-│   ├── scoring.py             # 스코어카드 + Bradley-Terry Elo
-│   ├── report.py              # HTML/Markdown 리포트 생성
-│   ├── standard/              # 표준 벤치 (lm-eval·vLLM·EVAFRILL·llama.cpp, 생성·judge·다턴·통일 비교·성능·최종 보고서)
-│   │   └── tasks/             #   커스텀 태스크 (dev / custom / gen / uni)
-│   ├── backends/              # 추론 백엔드 추상화
-│   │   ├── base.py            #   InferenceBackend ABC
-│   │   └── ollama.py          #   OllamaBackend 구현
-│   └── tracks/                # 7개 평가 트랙
-│       ├── korean_bench.py    #   T1: KoBEST
-│       ├── ko_bench.py        #   T2: Ko-Bench
-│       ├── korean_deep.py     #   T3: 심층이해
-│       ├── code_math.py       #   T4: 코드/수학
-│       ├── consistency.py     #   T5: 일관성
-│       ├── performance.py     #   T6: 성능
-│       └── pairwise.py        #   T7: Pairwise Elo
-├── configs/                   # YAML 설정 파일
-│   ├── default.yaml           #   기본 설정 (템플릿)
-│   ├── standard/              #   표준 벤치: models·suites·gen·unified·dev_selection·best_settings
-│   └── examples/
-│       └── frankenstallm.yaml #   13모델 평가 예시
-├── benchmarks/                # 벤치마크 데이터셋
-│   ├── ko_bench/              #   T2 질문 데이터
-│   ├── korean_deep/           #   T3 질문 데이터
-│   ├── code_problems/         #   T4 코딩 문제
-│   ├── math_problems/         #   T4 수학 문제
-│   └── track7_prompts.json    #   T7 Pairwise 프롬프트
-├── examples/
-│   └── frankenstallm/         # Frankenstallm 평가 결과 아카이브
-│       └── reports/
-│           └── visualizations/ #  26종 시각화 차트
-├── tests/                     # pytest 테스트 (637개 + GPU·데이터 6개)
-│   ├── unit/
-│   └── integration/
-├── results/                   # 평가 결과 출력 (JSON, standard/·gen/·perf/는 요약 JSON만 커밋)
-├── reports/                   # 생성된 리포트 (HTML/MD, standard/·gen/ 표, final/ 최종 보고서)
-├── pyproject.toml
-├── requirements.txt
-└── requirements-dev.txt
-```
-
-## 원격 Ollama 서버 사용
-
-원격 GPU 서버의 Ollama를 사용하려면 설정 파일에서 URL과 `remote: true`를 지정합니다.
-
-```yaml
-backend:
-  type: ollama
-  url: "http://192.168.1.100:11434"
-  remote: true
-```
-
-원격 모드에서는 모델 로드/언로드를 HTTP API를 통해 자동으로 관리합니다. 평가 종료 후 모델이 자동으로 언로드되어 VRAM을 확보합니다. 네트워크 지연이 있으므로 T6(성능 측정) 트랙의 결과는 로컬 실행과 차이가 있을 수 있습니다.
-
-```bash
-# 원격 서버 연결 확인
-curl http://192.168.1.100:11434/api/tags
-
-# 원격 서버에 모델이 설치되어 있는지 확인
-curl http://192.168.1.100:11434/api/tags | python -m json.tool
-```
-
-## EVAFRILL 모드
-
-EVAFRILL(Mamba-2 하이브리드 아키텍처) 모델은 Ollama를 통하지 않고 PyTorch로 직접 추론합니다.
-
-```yaml
-backend:
-  type: evafrill
-  evafrill:
-    model_path: "/path/to/evafrill/model"
-    device: "cuda"
-```
-
-또는 HTTP 서버 모드로 원격 실행이 가능합니다:
-
-```bash
-# 원격 서버에서 EVAFRILL HTTP 서버 시작
-python -m kobench.evafrill_server --model-path /path/to/model --port 8000
-
-# 클라이언트에서 설정
-# backend:
-#   type: evafrill
-#   evafrill:
-#     url: "http://192.168.1.100:8000"
+├── kobench.py                 # 7개 트랙 실행 스크립트
+├── kobench/
+│   ├── config.py, runner.py   # 설정, 생성 실행 (설정한 백엔드로 요청)
+│   ├── judge.py               # 이중 LLM-as-Judge
+│   ├── scoring.py, report.py  # 스코어카드 + Bradley-Terry Elo, HTML/Markdown 리포트
+│   ├── evafrill_runner.py, evafrill_server.py   # EVAFRILL PyTorch 직접 추론 / HTTP 서버
+│   ├── backends/              # base.py(ABC), ollama.py, openai_compat.py(vLLM·llama.cpp)
+│   ├── tracks/                # T1~T7
+│   └── standard/              # 표준 벤치
+│       ├── run.py, registry.py, dev_search.py, report.py      # 객관식·PPL 실행, 설정, dev 선택, 표
+│       ├── gen.py, gen_data.py, gen_score.py, gen_report.py   # 생성 실행·문항·채점·표
+│       ├── judge.py, code_exec.py, scenario.py, unified.py    # judge, 격리 코드 실행, 다턴, 통일 비교
+│       ├── perf.py, llamacpp_lm.py, native/                   # 서빙 성능, GGUF 로그우도
+│       ├── formats.py, evafrill_lm.py, evafrill_engine.py     # 학습 형식, EVAFRILL 백엔드·엔진
+│       ├── final_data.py, final_report.py                     # 최종 보고서
+│       └── tasks/             # 커스텀 lm-eval 태스크 (dev / custom / gen / uni)
+├── configs/
+│   ├── default.yaml, examples/                # 7개 트랙 설정
+│   └── standard/              # models, suites, gen, unified, formats, dev_selection, best_settings
+├── benchmarks/                # 7개 트랙 문항 (T2·T3·T4·T7)
+├── results/                   # standard/·gen/·perf/는 요약 JSON만 커밋
+├── reports/                   # standard/·gen/ 표, final/ 최종 보고서
+├── examples/frankenstallm/    # v0.2 7개 트랙 평가 결과 아카이브 (시각화 26종)
+├── docs/standard-benchmarks.md
+├── tests/                     # unit/, integration/
+├── .github/workflows/pages.yml   # reports/final → GitHub Pages
+├── requirements.txt, requirements-dev.txt, requirements-standard.txt
+└── pyproject.toml
 ```
 
 ## 테스트
 
 ```bash
-# 전체 테스트 실행 (Ollama/GPU 불필요, mock 기반)
-pytest tests/ -v
-
-# 단위 테스트만
-pytest tests/unit/ -v
-
-# 통합 테스트만
-pytest tests/integration/ -v
-
-# 커버리지 리포트
-pytest tests/ --cov=kobench --cov-report=html
+pytest tests/ -v                                         # 638개, Ollama·GPU 불필요 (mock 기반)
+pytest tests/unit/test_gen.py -q                         # 파일 하나
+KOBENCH_GPU=1 KOBENCH_SLOW=1 pytest tests/               # + GPU 엔진·llama.cpp·실제 Ollama 토큰 검사·데이터 스냅샷 6개
+pytest tests/ --cov=kobench --cov-report=html            # 커버리지
 ```
 
-> 637개 테스트가 Ollama나 GPU 없이 동작합니다. 표준 벤치의 GPU 엔진·llama.cpp·실제 Ollama 토큰 검사·데이터 스냅샷이 필요한 6개는
-> `KOBENCH_GPU=1 KOBENCH_SLOW=1 pytest tests/`로 실행합니다.
-> 이중 Judge, HTTP 모드, 체크포인트 재개 등 모든 핵심 기능이 테스트에 포함되어 있습니다.
+## 예제: Frankenstallm 평가 결과 (v0.2)
 
-## 예제: Frankenstallm 평가 결과
-
-`examples/frankenstallm/` 디렉토리에 13개 모델(커스텀 5 + 베이스라인 8)에 대한 7트랙 종합 평가 결과가 포함되어 있습니다. RTX 5060 Ti 16GB에서 실행된 결과이며, HTML/Markdown 리포트와 원본 JSON 데이터를 확인할 수 있습니다.
-
-### Top 5 종합 랭킹
+`examples/frankenstallm/`에는 v0.2 시점에 13개 모델(커스텀 5 + 베이스라인 8)을 7개 트랙으로 평가한 결과가 있다(RTX 5060 Ti 16GB, Ollama). 이후 고친 T1 대체 문항의 정답 위치 편향과 선택지 정규식 문제 이전에 측정했으므로 T1 수치는 그 영향을 받았을 수 있다. 현재 기준 비교는 위 [최종 보고서](#최종-보고서와-주요-결과)를 본다.
 
 | 순위 | 모델 | T1 NLU | T2 생성 | T3 심층 | T7 Elo | 종합 |
 |:----:|-------|:------:|:------:|:------:|:------:|:----:|
@@ -353,158 +253,69 @@ pytest tests/ --cov=kobench --cov-report=html
 | 4 | Qwen2.5:3b | 60.5 | 6.5 | 58.0 | 1020 | **63.2** |
 | 5 | Llama3.2:3b | 58.0 | 6.2 | 52.0 | 980 | **59.8** |
 
-### 주요 발견
+| 종합 히트맵 | 레이더 비교 | Elo 랭킹 |
+|---|---|---|
+| ![종합 히트맵](examples/frankenstallm/reports/visualizations/01_heatmap_overview.png) | ![레이더 비교](examples/frankenstallm/reports/visualizations/07_radar_comparison.png) | ![Elo 랭킹](examples/frankenstallm/reports/visualizations/05_t7_elo_ranking.png) |
 
-- **T1과 T7의 높은 상관관계 (r=0.90)**: 객관식 NLU 정확도와 Pairwise Elo 순위가 거의 일치합니다. 기초 이해력이 뛰어난 모델이 직접 비교에서도 선호되는 경향을 보여, T1만으로도 모델의 전반적 한국어 능력을 예측할 수 있습니다.
+당시 관찰: T1과 T7 순위의 상관이 높았고(r=0.90), 3B 이하 모델은 T4에서 모두 0%였으며, 일부 커스텀 모델은 v2가 v1보다 낮았다. 시각화 26종은 `examples/frankenstallm/reports/visualizations/`에 있다(히트맵, 트랙별 상세, 멀티턴 저하, 속도 곡선, 양자화 영향, 효율성 프론티어 등).
 
-- **T4 코드/수학의 극단적 난이도**: 3B 이하 모델 전체가 T4에서 0% 정답률을 기록했습니다. 소형 모델의 코드 생성 및 수학적 추론 능력이 실용 수준에 도달하지 못했음을 보여주며, 이 트랙이 모델 크기에 가장 민감한 변별 요소임을 확인했습니다.
+## 운영 기능
 
-- **EXAONE 3.5의 크기 대비 효율성**: EXAONE3.5:7.8b가 종합 1위를 차지하며, 파라미터 수 대비 뛰어난 효율성을 입증했습니다. 특히 T3(심층 한국어 이해)에서 한국어 특화 학습의 효과가 두드러지며, T6에서도 준수한 추론 속도를 유지합니다.
+### 원격 Ollama 서버
 
-- **v1 > v2 역설**: 일부 커스텀 모델에서 v2(개선 버전)가 v1보다 낮은 점수를 기록하는 역설이 관찰되었습니다. 파인튜닝 데이터 증량이나 학습 에폭 증가가 반드시 성능 향상으로 이어지지 않을 수 있음을 시사하며, 과적합(overfitting) 또는 catastrophic forgetting의 가능성을 보여줍니다.
-
-### 시각화 목록
-
-`examples/frankenstallm/reports/visualizations/` 디렉토리에 26종의 차트가 포함되어 있습니다:
-
-| 번호 | 차트 | 설명 |
-|:----:|------|------|
-| 01 | heatmap_overview | 전 모델 × 전 트랙 종합 히트맵 |
-| 02 | t1_korean_bench | T1 KoBEST 세부 태스크별 정확도 |
-| 03 | t2_ko_bench | T2 Ko-Bench 카테고리별 점수 |
-| 04 | t4_code_math | T4 코드/수학 정답률 |
-| 05 | t7_elo_ranking | T7 Elo 레이팅 랭킹 |
-| 06 | t6_speed_t5_consistency | T6 속도 vs T5 일관성 |
-| 07 | radar_comparison | 주요 모델 레이더 비교 |
-| 08 | dashboard | 종합 대시보드 |
-| 09 | t2_turn_degradation | T2 멀티턴 품질 저하 분석 |
-| 10 | t3_korean_deep_categories | T3 카테고리별 심층 분석 |
-| 11 | t4_problem_heatmap | T4 문제별 정답 히트맵 |
-| 12 | t5_consistency_radar | T5 일관성 레이더 |
-| 13 | t6_speed_curves | T6 속도 곡선 |
-| 14 | t6_quantization | T6 양자화 영향 분석 |
-| 15 | t7_h2h_winrate | T7 Head-to-Head 승률 |
-| 16 | cross_track_correlation | 트랙 간 상관관계 |
-| 17 | frankenstallm_lineage | Frankenstallm 계보도 |
-| 18 | efficiency_frontier | 효율성 프론티어 |
-| 19 | t2_turn_scatter | T2 턴 산점도 |
-| 20 | t4_discriminating_problems | T4 변별력 높은 문제 |
-| 21 | t6_context_limits | T6 컨텍스트 한계 |
-| 22 | v1_vs_v2_paired | v1 vs v2 대응 비교 |
-| 23 | korean_specialization | 한국어 특화도 분석 |
-| 24 | quality_speed_tradeoff | 품질-속도 트레이드오프 |
-| 25 | t5_stacked_consistency | T5 적층 일관성 |
-| 26 | efficiency_bubble | 효율성 버블 차트 |
-
-## 체크포인트 & 재개
-
-장시간 평가가 중단되어도 자동으로 이어서 실행할 수 있습니다.
-
-- 각 모델 완료 후 `results/{track}_checkpoint.json`에 자동 저장
-- 동일 명령어로 재실행하면 완료된 모델은 건너뛰고 이어서 진행
-- 병렬 실행 시 체크포인트 충돌 방지:
-
-```bash
-# 머신 A
-EVAL_CHECKPOINT_SUFFIX="_a" python kobench.py --tracks 1 2 3
-
-# 머신 B
-EVAL_CHECKPOINT_SUFFIX="_b" python kobench.py --tracks 4 5 6 7
+```yaml
+backend:
+  type: ollama
+  url: "http://192.168.1.100:11434"
+  remote: true
 ```
 
-## 멀티머신 병렬 실행
+원격 모드에서는 모델 로드/언로드를 HTTP API로 관리하고, 평가가 끝나면 모델을 내려 VRAM을 비운다. 네트워크 지연 때문에 T6 결과는 로컬 실행과 다를 수 있다. SSH 터널: `ssh -NL 11434:localhost:11434 user@gpu-server &` 후 `OLLAMA_BASE_URL="http://localhost:11434" OLLAMA_REMOTE=1 python kobench.py --config my_config.yaml`.
 
-여러 GPU 서버에 평가를 분산할 수 있습니다.
+### EVAFRILL 모드
+
+모델 이름에 `evafrill`이 들어간 모델(예: `evafrill-mo-3b-slerp`)은 Ollama 대신 PyTorch로 직접 추론한다(`kobench/evafrill_runner.py`, 원본 소스·체크포인트 경로는 파일 상단 상수). Ollama와 GPU를 나눠 쓰는 방식은 YAML `gpu.evafrill_strategy`로 정한다.
+
+다른 서버에서 돌리려면 그 서버에서 HTTP 서버를 띄우고 클라이언트에 주소를 준다.
 
 ```bash
-# 서버 A (로컬 Ollama)
-EVAL_CHECKPOINT_SUFFIX="_server_a" python kobench.py --tracks 1 2 3 --models "qwen2.5:3b" "gemma3:4b"
+python -m uvicorn kobench.evafrill_server:app --host 0.0.0.0 --port 8000     # GPU 서버
+EVAFRILL_HTTP_URL="http://gpu-server:8000" python kobench.py --config my.yaml # 클라이언트
+```
 
-# 서버 B (원격 Ollama)
+표준 벤치는 이 경로가 아니라 증분 디코딩 엔진을 쓰는 `evafrill` lm-eval 백엔드(`kobench/standard/evafrill_lm.py`)를 쓴다.
+
+### 체크포인트·멀티머신
+
+각 모델이 끝나면 `results/{track}_checkpoint.json`에 저장되고, 같은 명령으로 다시 실행하면 완료된 모델은 건너뛴다. 여러 서버에 나눠 돌릴 때는 체크포인트 접미사를 다르게 준다.
+
+```bash
+EVAL_CHECKPOINT_SUFFIX="_a" python kobench.py --tracks 1 2 3                    # 서버 A
 OLLAMA_BASE_URL="http://gpu-server:11434" OLLAMA_REMOTE=1 \
-EVAL_CHECKPOINT_SUFFIX="_server_b" python kobench.py --tracks 4 5 6 --models "qwen2.5:3b" "gemma3:4b"
-
-# 결과 병합 (리포트만 재생성)
-python kobench.py --report-only
+EVAL_CHECKPOINT_SUFFIX="_b" python kobench.py --tracks 4 5 6 7                  # 서버 B
+python kobench.py --report-only                                                  # 결과 병합
 ```
 
-### SSH 터널을 통한 원격 접속
+### 인터랙티브 위저드·대시보드
 
 ```bash
-# 원격 서버 Ollama에 SSH 터널 연결
-ssh -NL 11434:localhost:11434 user@gpu-server &
-
-# 터널을 통해 원격 Ollama 사용
-OLLAMA_BASE_URL="http://localhost:11434" OLLAMA_REMOTE=1 \
-python kobench.py --config my_config.yaml
+python kobench.py setup    # 설치 검증 + Ollama/judge 자동 설치
+python kobench.py eval     # 모델·트랙 선택 → 실행 → 결과 (대시보드 자동 시작)
+python kobench.py config   # YAML 설정 파일 생성
+python kobench.py status   # GPU, Ollama, 모델 상태
+python kobench.py --config my.yaml --dashboard [--dashboard-port 9999]
 ```
 
-## Judge 모델 요구사항
-
-> **필수:** Track 2, 3, 7 실행 시 Judge 모델이 Ollama에 설치되어 있어야 합니다.
-> - Primary: `qwen2.5:7b-instruct` (~4.7GB)
-> - Secondary: `exaone3.5:7.8b` (~4.8GB)
-> - Judge 모델 없이 T1, T4, T5, T6만 실행 가능: `--tracks 1 4 5 6`
-
-## 인터랙티브 위저드
-
-서브커맨드를 통해 단계별 안내를 받을 수 있습니다.
-
-```bash
-# 설치 검증 + Ollama/Judge 자동 설치
-python kobench.py setup
-
-# 인터랙티브 평가 실행 (모델/트랙 선택 → 실행 → 결과)
-python kobench.py eval
-
-# YAML 설정 파일 생성
-python kobench.py config
-
-# 시스템 진단 (GPU, Ollama, 모델 상태)
-python kobench.py status
-```
-
-> **참고:** 기존 배치 모드(`--config`, `--tracks`, `--models`)도 그대로 사용 가능합니다.
-
-### 실시간 대시보드
-
-평가 실행 중 브라우저에서 진행 상황을 실시간으로 모니터링할 수 있습니다.
-
-```bash
-# eval 위저드에서 자동 시작
-python kobench.py eval
-
-# 배치 모드에서 대시보드 활성화
-python kobench.py --config my.yaml --dashboard
-python kobench.py --config my.yaml --dashboard --dashboard-port 9999
-```
-
-브라우저에서 `http://localhost:8888`을 열면 다음을 확인할 수 있습니다:
-- 트랙별 진행 상황 (완료/진행중/대기)
-- 현재 모델 + 아이템 진행률
-- GPU 상태 (VRAM 사용량)
-- 에러 로그
-- 예상 잔여 시간
+대시보드(`http://localhost:8888`)는 트랙별 진행, 현재 모델·문항 진행률, VRAM, 에러 로그, 예상 잔여 시간을 보여 준다.
 
 ## Contributing
 
-기여를 환영합니다! 다음과 같은 방법으로 참여할 수 있습니다:
+1. **새 모델 평가**: 표준 벤치는 `configs/standard/models.yaml`, 7개 트랙은 `configs/examples/`에 설정 추가
+2. **새 트랙·태스크**: `kobench/tracks/`(TrackEvaluator) 또는 `kobench/standard/tasks/`(lm-eval 태스크)
+3. **벤치마크 데이터 확장**: `benchmarks/`
+4. **버그 리포트**: GitHub Issues
 
-1. **새 모델 평가**: `configs/examples/`에 YAML 설정 추가 후 결과 공유
-2. **새 트랙 추가**: `kobench/tracks/` 에 TrackEvaluator 구현
-3. **벤치마크 데이터 확장**: `benchmarks/` 에 새로운 질문/문제 추가
-4. **버그 리포트 및 개선**: GitHub Issues 활용
-
-```bash
-# 개발 환경 설정
-pip install -r requirements-dev.txt
-
-# 테스트 실행 (PR 제출 전 필수)
-pytest tests/ -v
-
-# 코드 스타일 확인
-ruff check kobench/
-```
+PR 전에 `pytest tests/`와 `ruff check kobench/`를 실행한다.
 
 ## License
 

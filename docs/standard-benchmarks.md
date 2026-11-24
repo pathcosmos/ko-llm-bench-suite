@@ -150,7 +150,7 @@ python -m kobench.standard.final_data --regen    # 표 재생성 + reports/final
 python -m kobench.standard.final_report          # data.json + narrative.json(해설) → reports/final/report.html
 ```
 
-[`reports/final/report.html`](../reports/final/report.html)은 사용자 모델(JANSORI, frankenstallm, EVAFRILL-Mo)과 공개 모델 30개(dense 3B급, MoE A3B급)를 비교한 한 장짜리 보고서다. 객관식·PPL, 양자화 손실, 생성(A/B/thinking), 다턴, 통일 비교 U, 서빙 성능을 담았다. 차트는 d3(cdnjs)로 그리므로 파일을 내려받아 브라우저에서 연다. 해설 문장은 `reports/final/narrative.json`에 따로 두고, 차트·표는 `data.json`에서 계산한다.
+[`reports/final/report.html`](../reports/final/report.html)은 사용자 모델(JANSORI, frankenstallm, EVAFRILL-Mo)과 공개 모델 30개(dense 3B급, MoE A3B급)를 비교한 한 장짜리 보고서다. 객관식·PPL, 양자화 손실, 생성(A/B/thinking), 다턴, 통일 비교 U, 서빙 성능을 담았다. GitHub Pages(<https://pathcosmos.github.io/ko-llm-bench-suite/>)에서 바로 볼 수 있고, `.github/workflows/pages.yml`이 master의 `reports/final`이 바뀔 때마다 다시 배포한다. 파일은 doctype·charset을 갖춘 단독 문서라 내려받아 열어도 된다(차트는 d3, cdnjs에서 불러옴). 골격을 덧씌우는 호스팅에 올릴 조각이 필요하면 `final_report --fragment`. 해설 문장은 `reports/final/narrative.json`에 따로 두고, 차트·표는 `data.json`에서 계산한다.
 
 ## 결과 파일 공개 정책
 

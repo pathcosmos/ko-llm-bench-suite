@@ -1,3 +1,9 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>한국어 소형 LLM 심층 평가</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,6 +74,8 @@ svg .lab{fill:var(--ink);font-size:12px}
 td.na{color:var(--muted);font-size:12.5px}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
 </style>
+</head>
+<body>
 <div class="rep">
 <header class="top"><h1>한국어 소형 LLM 심층 평가</h1><p class="sub">사용자 모델 3종(JANSORI · frankenstallm · EVAFRILL-Mo) vs 공개 dense 3B급 · MoE A3B급 — 최종본: 1·2순위 객관식·PPL·생성·judge·코드·다턴·성능·GGUF·thinking, 34모델 통일 비교(U) (2026-11-24)</p><p class="meta">데이터 생성 2026-11-23T18:25:17.175692+00:00</p></header>
 <nav class="toc" aria-label="목차"><a href="#summary">요약</a><a href="#users">사용자 모델 3종 한눈에</a><a href="#uni">통일 비교: 모든 모델을 한 라인에</a><a href="#scope">평가 대상과 방법</a><a href="#mc">객관식과 PPL (base·instruct 공통 로그우도, 한 라인)</a><a href="#gen">생성 벤치 (instruct 생성·judge, base 코드 이어쓰기)</a><a href="#tune">모델별 운용 설정과 오동작</a><a href="#scenario">다턴 시나리오</a><a href="#quant">GGUF 양자화 손실</a><a href="#perf">속도와 메모리 (모든 모델 한 축)</a><a href="#strengths">강점과 약점</a><a href="#caveats">오염 가능성, 실패·미확인 항목</a><a href="#repro">재현 명령과 남은 과제</a><a href="#appendix">부록</a></nav>
@@ -285,3 +293,5 @@ if(window.d3){renderAll();let t;addEventListener('resize',()=>{clearTimeout(t);t
   new MutationObserver(renderAll).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});}
 else document.querySelectorAll('.viz').forEach(el=>el.textContent='차트 라이브러리를 불러오지 못했습니다.');
 </script>
+</body>
+</html>
