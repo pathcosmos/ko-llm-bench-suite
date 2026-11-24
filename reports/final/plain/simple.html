@@ -1,0 +1,131 @@
+<title>한국어 소형 AI 성적표</title>
+<style>
+:root{--bg:#f5f7f8;--surface:#ffffff;--ink:#16212b;--ink2:#46535f;--mute:#6b7884;--line:#dde3e8;--user:#d4480f;--small:#2f6f9f;--moe:#9db3c4;--good:#1f7a4d;--soft:#fdeee6;--heat:#2f6f9f;--track:#e8edf1}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f161c;--surface:#17212a;--ink:#e8eef2;--ink2:#b3c0ca;--mute:#8a98a4;--line:#2a3742;--user:#ff8a52;--small:#6fb0e0;--moe:#4a6073;--good:#5fd09a;--soft:#2a1d17;--heat:#6fb0e0;--track:#22303b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f161c;--surface:#17212a;--ink:#e8eef2;--ink2:#b3c0ca;--mute:#8a98a4;--line:#2a3742;--user:#ff8a52;--small:#6fb0e0;--moe:#4a6073;--good:#5fd09a;--soft:#2a1d17;--heat:#6fb0e0;--track:#22303b;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:16px;line-height:1.7;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));word-break:keep-all}
+*{box-sizing:border-box}
+.wrap{max-width:860px;margin:0 auto;padding-block:32px 64px;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:"Noto Sans KR",system-ui,sans-serif;line-height:1.3;text-wrap:balance;margin:0}
+h1{font-size:clamp(1.7rem,5vw,2.4rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.4rem;font-weight:700;letter-spacing:-.01em}
+h3{font-size:1.05rem;font-weight:700}
+p{margin:0}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;color:var(--mute);font-weight:600;text-transform:uppercase}
+.lead{font-size:1.15rem;color:var(--ink2)}
+.sec{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
+.hero{display:flex;flex-direction:column;gap:14px}
+.verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.verdict .card h3{margin-bottom:6px}
+.big{font-size:2.2rem;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.good .big{color:var(--good)} .bad .big{color:var(--user)}
+.note{font-size:.9rem;color:var(--mute)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.85rem;color:var(--ink2)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.rank{display:flex;flex-direction:column;gap:2px}
+.rk{display:grid;grid-template-columns:2rem minmax(7rem,12rem) 1fr 3.2rem;gap:8px;align-items:center;font-size:.88rem;padding:2px 0}
+.rk .n{color:var(--mute);text-align:right;font-variant-numeric:tabular-nums}
+.rk .nm{overflow-wrap:anywhere;line-height:1.25}
+.rk.u .nm{font-weight:700;color:var(--user)}
+.rk .tr{height:14px;background:var(--track);border-radius:3px;position:relative}
+.rk .b{height:100%;border-radius:3px}
+.rk .v{font-variant-numeric:tabular-nums;text-align:right;color:var(--ink2)}
+.rk.u{background:var(--soft);border-radius:6px}
+.rk.gap{color:var(--mute);justify-content:center;padding-left:2.5rem;font-size:.8rem}
+.ar{display:grid;grid-template-columns:minmax(8.5rem,11rem) 1fr;gap:6px 12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.ar:first-of-type{border-top:0}
+.ar .lab b{display:block;font-size:.95rem}.ar .lab span{font-size:.78rem;color:var(--mute)}
+.bars{display:flex;flex-direction:column;gap:3px}
+.bar{display:grid;grid-template-columns:1fr 2.8rem;gap:8px;align-items:center;font-size:.8rem}
+.bar .tr{height:10px;background:var(--track);border-radius:3px}
+.bar .b{height:100%;border-radius:3px}
+.bar em{font-style:normal;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink2)}
+.tag{font-size:.7rem;color:var(--mute)}
+.speed .rk{grid-template-columns:minmax(7rem,12rem) 1fr 4.5rem}
+.faq{display:flex;flex-direction:column;gap:10px}
+.faq b{display:block}
+table{border-collapse:collapse;width:100%;font-size:.85rem}
+th,td{padding:5px 8px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:600;color:var(--ink2);font-size:.78rem;vertical-align:bottom}
+td.h{background:color-mix(in srgb,var(--heat) calc(var(--v)*1%),var(--surface));color:var(--ink)}
+tr.u td{font-weight:700}
+tr.u td:first-child{color:var(--user)}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.scroll table{min-width:760px}
+.callout{border-left:4px solid var(--user);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.foot{font-size:.85rem;color:var(--mute);display:flex;flex-direction:column;gap:6px}
+ul{margin:0;padding-left:1.2rem;display:flex;flex-direction:column;gap:6px}
+.kv{display:grid;grid-template-columns:minmax(9rem,13rem) 1fr;gap:4px 14px;font-size:.92rem}
+.kv dt{color:var(--mute)} .kv dd{margin:0}
+.nav{font-size:.85rem;color:var(--mute)}
+@media (max-width:560px){.rk{grid-template-columns:1.6rem 1fr 3rem}.rk .tr{grid-column:2/4}.rk .v{grid-row:1;grid-column:3}.rk .nm{grid-column:2}.ar{grid-template-columns:1fr}.speed .rk{grid-template-columns:1fr 4.5rem}.speed .rk .tr{grid-column:1/3}.kv{grid-template-columns:1fr}.kv dt{margin-top:6px}}
+</style>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+
+<main class="wrap">
+<header class="hero">
+<p class="eyebrow">직접 만든 한국어 AI 3종 · 2026-11-24</p>
+<h1>우리가 만든 AI는 34개 중 31~34위였습니다</h1>
+<p class="lead">글을 자연스럽게 이어 쓰는 능력과 답하는 속도는 상위권입니다. 문제를 풀고, 시킨 일을 하고, 대화하는 능력은 아직 많이 부족합니다.</p>
+</header>
+
+<section class="verdict">
+<div class="card good"><h3>잘하는 것</h3><p class="big">상위권</p><p>한국어 글 이어쓰기와 답변 속도. JANSORI는 글 이어쓰기에서 같은 종류(base) 15개 중 4위입니다.</p></div>
+<div class="card bad"><h3>부족한 것</h3><p class="big">최하위권</p><p>지식 문제, 수학, 프로그래밍, 지시 따르기, 여러 번 주고받는 대화에서 비교한 모델 중 거의 꼴찌입니다.</p></div>
+</section>
+
+<section class="sec">
+<h2>무엇을 비교했나요</h2>
+<p>직접 만든 AI 3종(JANSORI, frankenstallm, EVAFRILL-Mo)을 인터넷에 공개된 AI 30개와 같은 문제, 같은 방식으로 풀게 했습니다. EVAFRILL-Mo는 학습 단계가 다른 두 버전(pretrain, slerp)을 따로 재서 우리 쪽 항목은 4개입니다.</p>
+<p>공개 모델에는 우리 것과 비슷한 크기(약 30억 개 매개변수)의 소형 모델과, 전체 크기는 크지만 실제 계산에는 약 30억 개만 쓰는 대형 모델이 함께 들어 있습니다.</p>
+<p class="note">매개변수는 AI 안의 조절 나사 수입니다. 많을수록 대체로 더 많이 배울 수 있습니다.</p>
+</section>
+
+<section class="sec">
+<h2>종합 순위</h2>
+<p>9개 영역(지식, 의료, 사실성, 수학, 프로그래밍, 지시 수행, 대화 품질, 여러 번 주고받는 대화, 글 이어쓰기)을 같은 비중으로 평균한 100점 만점 점수입니다.</p>
+<div class="legend"><span><i style="background:var(--user)"></i>우리가 만든 모델</span><span><i style="background:var(--small)"></i>공개 소형 모델(약 2~8B)</span><span><i style="background:var(--moe)"></i>공개 대형 모델(전체 21~35B, 계산에는 약 3B만 사용)</span></div>
+<div class="rank"><div class="rk"><span class="n">1</span><span class="nm">qwen3.6-35b-a3b</span><span class="tr"><span class="b" style="display:block;width:97.5%;background:var(--moe)"></span></span><span class="v">58</span></div><div class="rk"><span class="n">2</span><span class="nm">qwen3.5-35b-a3b</span><span class="tr"><span class="b" style="display:block;width:96.8%;background:var(--moe)"></span></span><span class="v">58</span></div><div class="rk gap">… 5개 모델 생략 …</div><div class="rk"><span class="n">8</span><span class="nm">qwen3-4b-2507</span><span class="tr"><span class="b" style="display:block;width:82.0%;background:var(--small)"></span></span><span class="v">49</span></div><div class="rk gap">… 1개 모델 생략 …</div><div class="rk"><span class="n">10</span><span class="nm">exaone-3.5-2.4b</span><span class="tr"><span class="b" style="display:block;width:77.9%;background:var(--small)"></span></span><span class="v">47</span></div><div class="rk gap">… 6개 모델 생략 …</div><div class="rk"><span class="n">17</span><span class="nm">kanana-2-3b-base</span><span class="tr"><span class="b" style="display:block;width:71.0%;background:var(--small)"></span></span><span class="v">43</span></div><div class="rk gap">… 6개 모델 생략 …</div><div class="rk"><span class="n">24</span><span class="nm">phi-4-mini</span><span class="tr"><span class="b" style="display:block;width:56.6%;background:var(--small)"></span></span><span class="v">34</span></div><div class="rk gap">… 5개 모델 생략 …</div><div class="rk"><span class="n">30</span><span class="nm">llama-3.2-3b</span><span class="tr"><span class="b" style="display:block;width:41.1%;background:var(--small)"></span></span><span class="v">25</span></div><div class="rk u"><span class="n">31</span><span class="nm">JANSORI</span><span class="tr"><span class="b" style="display:block;width:30.1%;background:var(--user)"></span></span><span class="v">18</span></div><div class="rk u"><span class="n">32</span><span class="nm">EVAFRILL-Mo slerp</span><span class="tr"><span class="b" style="display:block;width:25.8%;background:var(--user)"></span></span><span class="v">15</span></div><div class="rk u"><span class="n">33</span><span class="nm">frankenstallm</span><span class="tr"><span class="b" style="display:block;width:25.3%;background:var(--user)"></span></span><span class="v">15</span></div><div class="rk u"><span class="n">34</span><span class="nm">EVAFRILL-Mo pretrain</span><span class="tr"><span class="b" style="display:block;width:25.2%;background:var(--user)"></span></span><span class="v">15</span></div></div>
+<p class="note">1위 qwen3.6-35b-a3b는 58점, 우리 모델은 15~18점입니다. 공개 모델 중 가장 낮은 llama-3.2-3b도 25점입니다.</p>
+</section>
+
+<section class="sec">
+<h2>영역별로 보면</h2>
+<p>주황색이 JANSORI, 파란색이 공개 모델 중간값, 회색이 공개 모델 최고점입니다. 숫자는 100점 만점입니다.</p>
+<div class="card"><div class="ar"><div class="lab"><b>상식·학과 지식 문제</b><span>지식</span></div><div class="bars"><div class="bar"><span><span class="tag">JANSORI</span><span class="tr" style="display:block"><span class="b" style="display:block;width:14.4%;background:var(--user)"></span></span></span><em>14</em></div><div class="bar"><span><span class="tag">공개 모델 중간값</span><span class="tr" style="display:block"><span class="b" style="display:block;width:38.5%;background:var(--small)"></span></span></span><em>38</em></div><div class="bar"><span><span class="tag">공개 모델 최고</span><span class="tr" style="display:block"><span class="b" style="display:block;width:57.1%;background:var(--moe)"></span></span></span><em>57</em></div></div></div><div class="ar"><div class="lab"><b>의료 국가시험 문제</b><span>전문·의료</span></div><div class="bars"><div class="bar"><span><span class="tag">JANSORI</span><span class="tr" style="display:block"><span class="b" style="display:block;width:9.4%;background:var(--user)"></span></span></span><em>9</em></div><div class="bar"><span><span class="tag">공개 모델 중간값</span><span class="tr" style="display:block"><span class="b" style="display:block;width:16.1%;background:var(--small)"></span></span></span><em>16</em></div><div class="bar"><span><span class="tag">공개 모델 최고</span><span class="tr" style="display:block"><span class="b" style="display:block;width:36.6%;background:var(--moe)"></span></span></span><em>37</em></div></div></div><div class="ar"><div class="lab"><b>사실 맞히기·편견 피하기</b><span>사실성·편향</span></div><div class="bars"><div class="bar"><span><span class="tag">JANSORI</span><span class="tr" style="display:block"><span class="b" style="display:block;width:7.4%;background:var(--user)"></span></span></span><em>7</em></div><div class="bar"><span><span class="tag">공개 모델 중간값</span><span class="tr" style="display:block"><span class="b" style="display:block;width:11.0%;background:var(--small)"></span></span></span><em>11</em></div><div class="bar"><span><span class="tag">공개 모델 최고</span><span class="tr" style="display:block"><span class="b" style="display:block;width:26.5%;background:var(--moe)"></span></span></span><em>26</em></div></div></div><div class="ar"><div class="lab"><b>수학 문장제</b><span>수학</span></div><div class="bars"><div class="bar"><span><span class="tag">JANSORI</span><span class="tr" style="display:block"><span class="b" style="display:block;width:1.2%;background:var(--user)"></span></span></span><em>1</em></div><div class="bar"><span><span class="tag">공개 모델 중간값</span><span class="tr" style="display:block"><span class="b" style="display:block;width:34.9%;background:var(--small)"></span></span></span><em>35</em></div><div class="bar"><span><span class="tag">공개 모델 최고</span><span class="tr" style="display:block"><span class="b" style="display:block;width:67.5%;background:var(--moe)"></span></span></span><em>67</em></div></div></div><div class="ar"><div class="lab"><b>프로그래밍</b><span>코드</span></div><div class="bars"><div class="bar"><span><span class="tag">JANSORI</span><span class="tr" style="display:block"><span class="b" style="display:block;width:0.8%;background:var(--user)"></span></span></span><em>1</em></div><div class="bar"><span><span class="tag">공개 모델 중간값</span><span class="tr" style="display:block"><span class="b" style="display:block;width:43.9%;background:var(--small)"></span></span></span><em>44</em></div><div class="bar"><span><span class="tag">공개 모델 최고</span><span class="tr" style="display:block"><span class="b" style="display:block;width:62.9%;background:var(--moe)"></span></span></span><em>63</em></div></div></div><div class="ar"><div class="lab"><b>시킨 대로 따라 하기</b><span>지시 수행</span></div><div class="bars"><div class="bar"><span><span class="tag">JANSORI</span><span class="tr" style="display:block"><span class="b" style="display:block;width:14.9%;background:var(--user)"></span></span></span><em>15</em></div><div class="bar"><span><span class="tag">공개 모델 중간값</span><span class="tr" style="display:block"><span class="b" style="display:block;width:51.6%;background:var(--small)"></span></span></span><em>52</em></div><div class="bar"><span><span class="tag">공개 모델 최고</span><span class="tr" style="display:block"><span class="b" style="display:block;width:75.4%;background:var(--moe)"></span></span></span><em>75</em></div></div></div><div class="ar"><div class="lab"><b>대화·글쓰기 품질</b><span>대화·생성 품질</span></div><div class="bars"><div class="bar"><span><span class="tag">JANSORI</span><span class="tr" style="display:block"><span class="b" style="display:block;width:14.2%;background:var(--user)"></span></span></span><em>14</em></div><div class="bar"><span><span class="tag">공개 모델 중간값</span><span class="tr" style="display:block"><span class="b" style="display:block;width:50.4%;background:var(--small)"></span></span></span><em>50</em></div><div class="bar"><span><span class="tag">공개 모델 최고</span><span class="tr" style="display:block"><span class="b" style="display:block;width:77.4%;background:var(--moe)"></span></span></span><em>77</em></div></div></div><div class="ar"><div class="lab"><b>여러 번 주고받는 대화</b><span>다턴</span></div><div class="bars"><div class="bar"><span><span class="tag">JANSORI</span><span class="tr" style="display:block"><span class="b" style="display:block;width:12.3%;background:var(--user)"></span></span></span><em>12</em></div><div class="bar"><span><span class="tag">공개 모델 중간값</span><span class="tr" style="display:block"><span class="b" style="display:block;width:66.6%;background:var(--small)"></span></span></span><em>67</em></div><div class="bar"><span><span class="tag">공개 모델 최고</span><span class="tr" style="display:block"><span class="b" style="display:block;width:88.9%;background:var(--moe)"></span></span></span><em>89</em></div></div></div><div class="ar"><div class="lab"><b>한국어 글 이어쓰기</b><span>언어 모델링</span></div><div class="bars"><div class="bar"><span><span class="tag">JANSORI</span><span class="tr" style="display:block"><span class="b" style="display:block;width:88.1%;background:var(--user)"></span></span></span><em>88</em></div><div class="bar"><span><span class="tag">공개 모델 중간값</span><span class="tr" style="display:block"><span class="b" style="display:block;width:75.9%;background:var(--small)"></span></span></span><em>76</em></div><div class="bar"><span><span class="tag">공개 모델 최고</span><span class="tr" style="display:block"><span class="b" style="display:block;width:100.0%;background:var(--moe)"></span></span></span><em>100</em></div></div></div></div>
+<p class="note">글 이어쓰기는 JANSORI(88점)가 공개 모델 중간값(76점)보다 높습니다. 나머지 영역은 1~15점으로, 공개 모델 중간값(11~67점)에 크게 못 미칩니다.</p>
+</section>
+
+<section class="sec">
+<h2>속도는 강점입니다</h2>
+<p>한 번에 64명이 질문할 때 1초에 만들어내는 글자 조각(토큰) 수입니다. 높을수록 많은 사람에게 동시에 빨리 답할 수 있습니다.</p>
+<div class="legend"><span><i style="background:var(--user)"></i>우리가 만든 모델</span><span><i style="background:var(--small)"></i>공개 소형 모델(약 2~8B)</span><span><i style="background:var(--moe)"></i>공개 대형 모델(전체 21~35B, 계산에는 약 3B만 사용)</span></div>
+<div class="rank speed"><div class="rk"><span class="nm">kanana-1.5-2.1b</span><span class="tr"><span class="b" style="display:block;width:98.6%;background:var(--small)"></span></span><span class="v">16.5k</span></div><div class="rk u"><span class="nm">JANSORI</span><span class="tr"><span class="b" style="display:block;width:99.0%;background:var(--user)"></span></span><span class="v">16.5k</span></div><div class="rk u"><span class="nm">frankenstallm</span><span class="tr"><span class="b" style="display:block;width:96.9%;background:var(--user)"></span></span><span class="v">16.2k</span></div><div class="rk"><span class="nm">qwen2.5-3b-instruct</span><span class="tr"><span class="b" style="display:block;width:93.8%;background:var(--small)"></span></span><span class="v">15.7k</span></div><div class="rk"><span class="nm">llama-3.2-3b-instruct</span><span class="tr"><span class="b" style="display:block;width:95.0%;background:var(--small)"></span></span><span class="v">15.9k</span></div><div class="rk"><span class="nm">qwen3-4b-2507</span><span class="tr"><span class="b" style="display:block;width:73.0%;background:var(--small)"></span></span><span class="v">12.2k</span></div><div class="rk"><span class="nm">gemma-4-e4b-it</span><span class="tr"><span class="b" style="display:block;width:56.2%;background:var(--small)"></span></span><span class="v">9.4k</span></div><div class="rk"><span class="nm">qwen3.6-35b-a3b</span><span class="tr"><span class="b" style="display:block;width:22.4%;background:var(--moe)"></span></span><span class="v">3.7k</span></div></div>
+<p class="note">JANSORI와 frankenstallm은 비슷한 크기의 공개 모델 12개 중 1위와 3위입니다. EVAFRILL-Mo는 구조가 달라 직접 만든 실행기로 측정했고 약 4분의 1 속도입니다. 같은 컴퓨터(H200 1장)에서 쟀습니다.</p>
+</section>
+
+<section class="sec">
+<h2>설정을 바꾸면 나아지나요</h2>
+<p>같은 말을 반복하는 문제는 설정으로 크게 줄었습니다(frankenstallm 9.1%에서 1.2%, EVAFRILL 31.6%에서 2.2%). 하지만 문제를 맞히는 비율은 오르지 않았고 일부는 오히려 내려갔습니다. 설정 조정만으로 실력 차이를 메우기는 어렵습니다.</p>
+</section>
+
+<section class="sec">
+<h2>읽을 때 알아둘 점</h2>
+<ul>
+<li>순위는 모든 모델에 같은 형식의 문제를 낸 조건입니다. 대화 전용 모델에는 불리한 조건이라, 모델마다 최선의 조건으로 잰 표와는 순위가 다를 수 있습니다.</li>
+<li>JANSORI는 대화용이 아니라 글을 이어 쓰는 데만 학습된 기초 모델(base)입니다. 시킨 일을 하는 능력은 원래 목표가 아닙니다.</li>
+<li>프로그래밍은 정해진 형식을 따르지 못하면 0점이 되어, 공개 모델 일부도 0에 가깝습니다.</li>
+<li>왜 점수가 낮은지, 학습 데이터나 크기의 영향은 이번 평가에서 따로 확인하지 않았습니다.</li>
+</ul>
+</section>
+
+<footer class="foot">
+<p>자세한 방법과 모델별 전체 수치는 상세판에 있습니다. 차트를 직접 눌러 볼 수 있는 전체 보고서는 https://pathcosmos.github.io/ko-llm-bench-suite/ 에 있습니다.</p>
+<p>점수는 영역별 정규화 점수(무작위로 찍어도 나오는 점수를 뺀 값)의 평균이며, 오차 범위(95% 신뢰구간)는 약 ±0.01입니다.</p>
+</footer>
+</main>
