@@ -36,3 +36,9 @@ results/**/*.samples.jsonl.gz
 results/**/*.tmp
 # 스모크(--limit) 결과
 results/**/*__limit*
+
+# 생성 벤치(results/gen): 모델 출력·judge 기록(*.jsonl, 문항 원문 포함)과 문항별 점수(*.score.json)는 로컬(NFS)에만 둔다.
+# 커밋은 설정·버전(*.meta.json)과 문항 결과를 뺀 요약(*.summary.json, `gen_report summarize`)만. 수정 전 보존본(_superseded*)도 로컬.
+results/gen/**/*.jsonl
+results/gen/**/*.score.json
+results/gen/_superseded*/

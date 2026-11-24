@@ -1,0 +1,23 @@
+{
+ "model": "qwen3.6-35b-a3b",
+ "variant": "U",
+ "task": "ifeval_ko",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 342,
+ "n_generated": 342,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "prompt_level_strict_acc": 0.6081871345029239,
+   "prompt_level_loose_acc": 0.631578947368421,
+   "inst_level_strict_acc": 0.6465696465696466,
+   "inst_level_loose_acc": 0.6632016632016632,
+   "n": 342,
+   "loop": 0.014619883040935672,
+   "rep3": 0.046133228237979794,
+   "truncated": 0.260233918128655
+  }
+ }
+}

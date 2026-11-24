@@ -1,0 +1,71 @@
+{
+ "model": "qwen3.5-35b-a3b",
+ "variant": "think",
+ "task": "scenario_self",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "turn_pass": 0.9293333333333333,
+   "scenario_pass": 0.7766666666666666,
+   "n": 300,
+   "by_category": {
+    "code_revise": {
+     "turn_pass": 1.0,
+     "scenario_pass": 1.0
+    },
+    "format_transform": {
+     "turn_pass": 0.975,
+     "scenario_pass": 0.9
+    },
+    "instruction_persist": {
+     "turn_pass": 0.8933333333333333,
+     "scenario_pass": 0.6333333333333333
+    },
+    "korean_style": {
+     "turn_pass": 0.6916666666666667,
+     "scenario_pass": 0.0
+    },
+    "list_tracking": {
+     "turn_pass": 1.0,
+     "scenario_pass": 1.0
+    },
+    "logic_order": {
+     "turn_pass": 1.0,
+     "scenario_pass": 1.0
+    },
+    "math_update": {
+     "turn_pass": 1.0,
+     "scenario_pass": 1.0
+    },
+    "memory": {
+     "turn_pass": 0.9133333333333333,
+     "scenario_pass": 0.6666666666666666
+    },
+    "story_continue": {
+     "turn_pass": 0.92,
+     "scenario_pass": 0.8
+    },
+    "unknown_entity": {
+     "turn_pass": 0.9,
+     "scenario_pass": 0.7666666666666667
+    }
+   },
+   "by_turn": {
+    "1": 0.8633333333333333,
+    "2": 0.98,
+    "3": 0.94,
+    "4": 0.9083333333333333,
+    "5": 0.98
+   },
+   "loop": 0.0,
+   "overlap_prev": 0.10005697674418604,
+   "copy_prev": 0.0007751937984496124,
+   "rep3": 0.01892357393010587
+  }
+ }
+}

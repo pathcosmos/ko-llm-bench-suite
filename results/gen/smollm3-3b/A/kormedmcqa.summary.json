@@ -1,0 +1,22 @@
+{
+ "model": "smollm3-3b",
+ "variant": "A",
+ "task": "kormedmcqa",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 3009,
+ "n_generated": 3009,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.38584247258225324,
+   "format_fail": 0.013958125623130608,
+   "n": 3009,
+   "acc_answered": 0.391304347826087,
+   "loop": 0.009970089730807577,
+   "rep3": 0.2969938988667835,
+   "truncated": 0.010967098703888335
+  }
+ }
+}

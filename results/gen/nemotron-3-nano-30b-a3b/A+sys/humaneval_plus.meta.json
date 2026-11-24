@@ -1,0 +1,60 @@
+{
+ "task": "humaneval_plus",
+ "task_def": {
+  "dataset": "humanevalplus",
+  "scorer": "code",
+  "kinds": [
+   "instruct",
+   "base"
+  ],
+  "max_new": 1024,
+  "metric": "pass_plus"
+ },
+ "dataset": {
+  "repo": "evalplus/humanevalplus",
+  "revision": "d32357cf319e50e9c8d8dab5ea876c72b0fd321b",
+  "license": "Apache-2.0"
+ },
+ "limit": null,
+ "model": {
+  "id": "nemotron-3-nano-30b-a3b",
+  "family": "Nemotron-H-MoE",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+  "revision": "bf77c3174f68ad409e1c2aa60daeb46e32d1c606",
+  "params_b": 30,
+  "active_b": 3,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": true,
+  "extra": {}
+ },
+ "variant": "A+sys",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {
+  "enable_thinking": false
+ },
+ "max_model_len": 4096,
+ "system": "당신은 도움이 되는 한국어 어시스턴트입니다. 사용자의 질문에 한국어로 정확하고 간결하게 답하세요. 같은 문장이나 내용을 되풀이하지 말고, 답을 마치면 바로 끝내세요.",
+ "template": null,
+ "n_items": 164,
+ "generated_tokens_this_run": 29710,
+ "wall_seconds": 7.2,
+ "finished_at": "2026-11-20T15:39:47.754107+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}

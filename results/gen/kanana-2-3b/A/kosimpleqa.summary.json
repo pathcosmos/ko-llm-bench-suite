@@ -1,0 +1,20 @@
+{
+ "model": "kanana-2-3b",
+ "variant": "A",
+ "task": "kosimpleqa",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 1000,
+   "parse_fail": 0,
+   "correct": 0.218,
+   "not_attempted": 0.009,
+   "incorrect": 0.773,
+   "correct_given_attempted": 0.2199798183652876,
+   "f_score": 0.21898543445504773,
+   "same_family_as_judge": false,
+   "truncated": 0.001
+  }
+ }
+}

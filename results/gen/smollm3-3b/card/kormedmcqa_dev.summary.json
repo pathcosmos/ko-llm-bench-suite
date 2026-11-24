@@ -1,0 +1,22 @@
+{
+ "model": "smollm3-3b",
+ "variant": "card",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.35033050047214354,
+   "format_fail": 0.031161473087818695,
+   "n": 1059,
+   "acc_answered": 0.361598440545809,
+   "loop": 0.0084985835694051,
+   "rep3": 0.12105374181509895,
+   "truncated": 0.0084985835694051
+  }
+ }
+}

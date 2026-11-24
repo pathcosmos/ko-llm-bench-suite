@@ -1,0 +1,28 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "U",
+ "task": "komt",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "unk_drop",
+ "metrics": {
+  "judge": {
+   "n": 80,
+   "parse_fail": 0,
+   "score": 1.0625,
+   "by_category": {
+    "coding": 1.0,
+    "extraction": 1.05,
+    "humanities": 1.0,
+    "math": 1.0,
+    "reasoning": 1.0,
+    "roleplay": 1.25,
+    "stem": 1.1,
+    "writing": 1.1
+   },
+   "turn1": 1.0875,
+   "turn2": 1.0375,
+   "same_family_as_judge": false,
+   "truncated": 0.1625
+  }
+ }
+}

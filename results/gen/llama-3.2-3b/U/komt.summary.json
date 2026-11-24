@@ -1,0 +1,28 @@
+{
+ "model": "llama-3.2-3b",
+ "variant": "U",
+ "task": "komt",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 80,
+   "parse_fail": 0,
+   "score": 1.75625,
+   "by_category": {
+    "coding": 1.1,
+    "extraction": 2.65,
+    "humanities": 1.1,
+    "math": 3.95,
+    "reasoning": 1.65,
+    "roleplay": 1.2,
+    "stem": 1.4,
+    "writing": 1.0
+   },
+   "turn1": 2.025,
+   "turn2": 1.4875,
+   "same_family_as_judge": false,
+   "truncated": 0.3625
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "model": "exaone-3.5-2.4b",
+ "variant": "U",
+ "task": "ko_arena_hard",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 500,
+   "parse_fail": 29,
+   "winrate": 0.8232323232323232,
+   "baseline": "llama-3.2-3b-instruct",
+   "same_family_as_judge": false,
+   "truncated": 0.01
+  }
+ }
+}

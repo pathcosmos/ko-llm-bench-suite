@@ -18,13 +18,23 @@ from . import config
 
 def _call_judge(prompt: str, timeout: int | None = None, model: str | None = None) -> str:
     """
-    Ollama /api/generate로 judge 모델 호출.
+    judge 모델 호출 (기본 Ollama /api/generate, judge.backend가 vllm|llamacpp이면 그 서버).
     model 파라미터로 특정 모델 지정 가능 (이중 judge용).
     """
     if timeout is None:
         timeout = config.JUDGE_TIMEOUT
     if model is None:
         model = config.JUDGE_MODEL
+
+    jbt = getattr(config, "JUDGE_BACKEND_TYPE", "ollama")
+    if isinstance(jbt, str) and jbt != "ollama":  # judge 전용 vLLM/llama-server (평가 대상 서버와 별도)
+        from kobench.backends import get_backend
+
+        be = get_backend(jbt, url=config.JUDGE_BACKEND_URL)
+        r = be.generate(model, prompt, options=config.JUDGE_SAMPLING, timeout=timeout)
+        if r.get("error"):
+            raise RuntimeError(f"judge 호출 실패: {r['error']}")
+        return r["response"].strip()
 
     resp = requests.post(
         config.OLLAMA_API_GENERATE,

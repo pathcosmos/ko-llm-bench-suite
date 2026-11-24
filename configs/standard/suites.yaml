@@ -20,6 +20,13 @@ suites:
       - {task: kmmlu_redux, num_fewshot: 0, source: "KMMLU-Redux (LGAI-EXAONE) 2,587문항, cc-by-nc-nd-4.0 비상업"}
       - {task: kmmlu_pro,   num_fewshot: 0, source: "KMMLU-Pro (LGAI-EXAONE) 2,822문항, 선택지 4~5, cc-by-nc-nd-4.0 비상업"}
       - {task: kobalt_700,  num_fewshot: 0, source: "KoBALT-700 (snunlp) 700문항, 선택지 10, cc-by-nc-4.0 비상업"}
+  uni_mc_v1:
+    description: 통일 프로토콜 U1 (configs/standard/unified.yaml) — 생성으로 풀던 객관식 4종의 선택지 문장 로그우도, 모든 모델 같은 조건 (2026-11-22)
+    tasks:
+      - {task: kormedmcqa_cloze,   num_fewshot: 0, metric: acc_norm, source: "KorMedMCQA test 4과목(sean0042 79efd6f, 비상업), 선택지 문장 로그우도"}
+      - {task: kobbq_cloze,        num_fewshot: 0, metric: acc_norm, source: "KoBBQ evaluation-test (naver-ai ccb902a)"}
+      - {task: ko_truthful_cloze,  num_fewshot: 0, metric: acc,      source: "ko_truthful_qa MC1 (davidkim205 221bb55), TruthfulQA MC1 관례(acc)"}
+      - {task: k2_knowledge_cloze, num_fewshot: 0, metric: acc_norm, source: "K2-Eval knowledge (HAERAE-HUB 14bbbc9)"}
   ppl_v1:
     description: PPL (loglikelihood_rolling, 대표 지표 bits_per_byte — 토크나이저가 달라도 비교 가능, 낮을수록 좋음)
     tasks:

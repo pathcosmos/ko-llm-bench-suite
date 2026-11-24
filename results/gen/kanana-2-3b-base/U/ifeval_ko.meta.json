@@ -1,0 +1,57 @@
+{
+ "task": "ifeval_ko",
+ "task_def": {
+  "dataset": "ifeval_ko",
+  "scorer": "rule",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 1280,
+  "metric": "prompt_level_strict_acc"
+ },
+ "dataset": {
+  "repo": "allganize/IFEval-Ko",
+  "revision": "54199e3801116897697babf341865741dcd06fc8",
+  "license": "Apache-2.0"
+ },
+ "limit": null,
+ "model": {
+  "id": "kanana-2-3b-base",
+  "family": "kanana-2",
+  "kind": "base",
+  "backend": "vllm",
+  "path": "kakaocorp/kanana-2-3b-base",
+  "revision": "9fa2a678c379700868d72685a22ea8ed0263ef33",
+  "params_b": 3.0,
+  "active_b": 3.0,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "U",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {},
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 342,
+ "generated_tokens_this_run": 140425,
+ "wall_seconds": 8.9,
+ "finished_at": "2026-11-23T09:50:34.010693+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "b2ad20d13eaad2dc67bc407bfd6470375fa4c8dd"
+}

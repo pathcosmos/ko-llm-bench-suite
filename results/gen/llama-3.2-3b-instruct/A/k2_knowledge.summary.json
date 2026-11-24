@@ -1,0 +1,22 @@
+{
+ "model": "llama-3.2-3b-instruct",
+ "variant": "A",
+ "task": "k2_knowledge",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 432,
+ "n_generated": 432,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.2523148148148148,
+   "format_fail": 0.39814814814814814,
+   "n": 432,
+   "acc_answered": 0.41923076923076924,
+   "loop": 0.032407407407407406,
+   "rep3": 0.12920833530171633,
+   "truncated": 0.020833333333333332
+  }
+ }
+}

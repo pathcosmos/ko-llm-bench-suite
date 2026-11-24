@@ -1,0 +1,26 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "rp11",
+ "task": "logickor",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "unk_drop",
+ "metrics": {
+  "judge": {
+   "n": 42,
+   "parse_fail": 0,
+   "score": 0.8650793650793651,
+   "by_category": {
+    "글쓰기(Writing)": 1.2142857142857142,
+    "문법(Grammar)": 0.35714285714285715,
+    "수학(Math)": 0.14285714285714285,
+    "이해(Understanding)": 1.6428571428571428,
+    "추론(Reasoning)": 1.261904761904762,
+    "코딩(Coding)": 0.5714285714285714
+   },
+   "turn1": 0.9285714285714286,
+   "turn2": 0.8095238095238095,
+   "same_family_as_judge": false,
+   "truncated": 0.07142857142857142
+  }
+ }
+}

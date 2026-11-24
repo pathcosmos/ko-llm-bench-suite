@@ -1,0 +1,23 @@
+{
+ "model": "llama-3.2-3b",
+ "variant": "U",
+ "task": "ifeval_ko",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 342,
+ "n_generated": 342,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "prompt_level_strict_acc": 0.27485380116959063,
+   "prompt_level_loose_acc": 0.29239766081871343,
+   "inst_level_strict_acc": 0.3970893970893971,
+   "inst_level_loose_acc": 0.41164241164241167,
+   "n": 342,
+   "loop": 0.31871345029239767,
+   "rep3": 0.5459376063015761,
+   "truncated": 0.3157894736842105
+  }
+ }
+}

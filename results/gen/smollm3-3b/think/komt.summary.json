@@ -1,0 +1,28 @@
+{
+ "model": "smollm3-3b",
+ "variant": "think",
+ "task": "komt",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 80,
+   "parse_fail": 8,
+   "score": 3.038961038961039,
+   "by_category": {
+    "coding": 4.1,
+    "extraction": 3.0,
+    "humanities": 3.7,
+    "math": 3.35,
+    "reasoning": 3.85,
+    "roleplay": 2.3333333333333335,
+    "stem": 2.0555555555555554,
+    "writing": 1.6111111111111112
+   },
+   "turn1": 3.74025974025974,
+   "turn2": 2.3733333333333335,
+   "same_family_as_judge": false,
+   "truncated": 0.175
+  }
+ }
+}

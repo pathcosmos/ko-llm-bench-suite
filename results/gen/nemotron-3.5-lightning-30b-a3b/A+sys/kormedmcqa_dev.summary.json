@@ -1,0 +1,22 @@
+{
+ "model": "nemotron-3.5-lightning-30b-a3b",
+ "variant": "A+sys",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.6742209631728046,
+   "format_fail": 0.0,
+   "n": 1059,
+   "acc_answered": 0.6742209631728046,
+   "loop": 0.0,
+   "rep3": 0.0024658466856788594,
+   "truncated": 0.0
+  }
+ }
+}

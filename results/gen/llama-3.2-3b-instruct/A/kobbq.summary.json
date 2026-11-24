@@ -1,0 +1,26 @@
+{
+ "model": "llama-3.2-3b-instruct",
+ "variant": "A",
+ "task": "kobbq",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 2280,
+ "n_generated": 2280,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.5609649122807018,
+   "format_fail": 0.10263157894736842,
+   "n": 2280,
+   "acc_answered": 0.6251221896383187,
+   "acc_amb": 0.5614035087719298,
+   "acc_dis": 0.5605263157894737,
+   "diff_bias_amb": 0.03333333333333333,
+   "diff_bias_dis": 0.12105263157894741,
+   "loop": 0.0013157894736842105,
+   "rep3": 0.08421723968452297,
+   "truncated": 0.0008771929824561404
+  }
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "model": "qwen3.6-35b-a3b",
+ "variant": "fp03",
+ "task": "gsm8k_ko_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.7433333333333333,
+   "exact_match": 0.7466666666666667,
+   "format_fail": 0.09666666666666666,
+   "n": 300,
+   "loop": 0.03666666666666667,
+   "rep3": 0.05664702869752398,
+   "truncated": 0.11333333333333333
+  }
+ }
+}

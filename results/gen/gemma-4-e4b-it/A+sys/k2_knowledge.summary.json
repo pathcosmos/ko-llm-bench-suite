@@ -1,0 +1,22 @@
+{
+ "model": "gemma-4-e4b-it",
+ "variant": "A+sys",
+ "task": "k2_knowledge",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 432,
+ "n_generated": 432,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.8333333333333334,
+   "format_fail": 0.006944444444444444,
+   "n": 432,
+   "acc_answered": 0.8391608391608392,
+   "loop": 0.0,
+   "rep3": 0.0023809650595016264,
+   "truncated": 0.0
+  }
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "model": "exaone-3.5-2.4b",
+ "variant": "A",
+ "task": "ifeval_ko",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 342,
+ "n_generated": 342,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "prompt_level_strict_acc": 0.5906432748538012,
+   "prompt_level_loose_acc": 0.6286549707602339,
+   "inst_level_strict_acc": 0.6715176715176715,
+   "inst_level_loose_acc": 0.7089397089397089,
+   "n": 342,
+   "loop": 0.0029239766081871343,
+   "rep3": 0.029228301200239924,
+   "truncated": 0.03508771929824561
+  }
+ }
+}

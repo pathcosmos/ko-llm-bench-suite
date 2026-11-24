@@ -1,0 +1,26 @@
+{
+ "model": "kanana-2-3b",
+ "variant": "rp11",
+ "task": "kobbq",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 2280,
+ "n_generated": 2280,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.637280701754386,
+   "format_fail": 0.0,
+   "n": 2280,
+   "acc_answered": 0.637280701754386,
+   "acc_amb": 0.41228070175438597,
+   "acc_dis": 0.862280701754386,
+   "diff_bias_amb": 0.25263157894736843,
+   "diff_bias_dis": -0.0052631578947368585,
+   "loop": 0.0,
+   "rep3": 0.000593254378203699,
+   "truncated": 0.0
+  }
+ }
+}

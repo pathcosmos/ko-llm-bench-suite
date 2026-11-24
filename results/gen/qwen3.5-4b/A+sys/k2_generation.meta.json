@@ -1,0 +1,59 @@
+{
+ "task": "k2_generation",
+ "task_def": {
+  "dataset": "k2_eval",
+  "scorer": "judge",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 2048,
+  "metric": "score"
+ },
+ "dataset": {
+  "repo": "HAERAE-HUB/K2-Eval",
+  "revision": "14bbbc9ee6eef17368508735700465eedc9ec4c5",
+  "license": "MIT"
+ },
+ "limit": null,
+ "model": {
+  "id": "qwen3.5-4b",
+  "family": "Qwen3.5",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "params_b": 4.0,
+  "active_b": 4.0,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "A+sys",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {
+  "enable_thinking": false
+ },
+ "max_model_len": 4096,
+ "system": "당신은 도움이 되는 한국어 어시스턴트입니다. 사용자의 질문에 한국어로 정확하고 간결하게 답하세요. 같은 문장이나 내용을 되풀이하지 말고, 답을 마치면 바로 끝내세요.",
+ "template": null,
+ "n_items": 90,
+ "generated_tokens_this_run": 13310,
+ "wall_seconds": 4.0,
+ "finished_at": "2026-11-21T05:43:14.956756+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}

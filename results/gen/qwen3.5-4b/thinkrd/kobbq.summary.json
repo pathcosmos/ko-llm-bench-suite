@@ -1,0 +1,26 @@
+{
+ "model": "qwen3.5-4b",
+ "variant": "thinkrd",
+ "task": "kobbq",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 2280,
+ "n_generated": 2280,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.9526315789473684,
+   "format_fail": 0.0008771929824561404,
+   "n": 2280,
+   "acc_answered": 0.9534679543459175,
+   "acc_amb": 0.9456140350877194,
+   "acc_dis": 0.9596491228070175,
+   "diff_bias_amb": 0.02894736842105263,
+   "diff_bias_dis": 0.007017543859649145,
+   "loop": 0.0,
+   "rep3": 0.002143702044262064,
+   "truncated": 0.0
+  }
+ }
+}

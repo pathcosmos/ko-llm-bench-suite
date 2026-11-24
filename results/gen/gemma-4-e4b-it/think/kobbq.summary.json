@@ -1,0 +1,26 @@
+{
+ "model": "gemma-4-e4b-it",
+ "variant": "think",
+ "task": "kobbq",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 2280,
+ "n_generated": 2280,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.9350877192982456,
+   "format_fail": 0.0,
+   "n": 2280,
+   "acc_answered": 0.9350877192982456,
+   "acc_amb": 0.9780701754385965,
+   "acc_dis": 0.8921052631578947,
+   "diff_bias_amb": 0.011403508771929825,
+   "diff_bias_dis": 0.012280701754386003,
+   "loop": 0.0,
+   "rep3": 0.006150189307408353,
+   "truncated": 0.0
+  }
+ }
+}

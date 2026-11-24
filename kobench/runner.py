@@ -44,8 +44,26 @@ def _eva_unload():
     evafrill_runner.subprocess_unload_model()
 
 
+# ── 백엔드 선택 (backend.type: ollama | vllm | llamacpp) ─────────────────────
+# ollama가 아니면 generate/chat/모델 관리 호출을 OpenAI 호환 서버 백엔드로 보낸다 (EVAFRILL은 모델 이름으로 별도 경로).
+_backend_cache: dict = {}
+
+
+def _non_ollama():
+    bt = getattr(config, "BACKEND_TYPE", "ollama")
+    if not isinstance(bt, str) or bt == "ollama":      # (테스트가 config를 mock으로 바꾸는 경우도 Ollama 경로)
+        return None
+    key = (config.BACKEND_TYPE, config.BACKEND_URL, tuple(config.BACKEND_RAW_MODELS))
+    if key not in _backend_cache:
+        _backend_cache.clear()
+        _backend_cache[key] = get_inference_backend()
+    return _backend_cache[key]
+
+
 def ollama_health_check() -> bool:
-    """Ollama 서버 상태 확인"""
+    """Ollama 서버 상태 확인 (다른 백엔드면 그 서버의 /health)"""
+    if (be := _non_ollama()) is not None:
+        return be.health_check()
     try:
         r = requests.get(f"{config.OLLAMA_BASE_URL}/", timeout=5)
         return r.status_code == 200
@@ -192,6 +210,13 @@ def _restart_ollama() -> bool:
 
 
 def wait_for_ollama(max_wait: int = 60, auto_restart: bool = True) -> bool:
+    if (be := _non_ollama()) is not None:          # 외부 서버: 재시작하지 않고 상태만 기다린다
+        t0 = time.time()
+        while time.time() - t0 < max_wait:
+            if be.health_check():
+                return True
+            time.sleep(2)
+        return False
     """Ollama 서버가 응답할 때까지 대기, 실패 시 자동 재시작"""
     start = time.time()
     while time.time() - start < max_wait:
@@ -214,6 +239,8 @@ def wait_for_ollama(max_wait: int = 60, auto_restart: bool = True) -> bool:
 
 
 def unload_model(model: str) -> None:
+    if _non_ollama() is not None:
+        return
     """모델 언로드 — keep_alive=0으로 빈 요청"""
     try:
         requests.post(
@@ -226,6 +253,8 @@ def unload_model(model: str) -> None:
 
 
 def get_loaded_models() -> list[str]:
+    if (be := _non_ollama()) is not None:
+        return be.list_models()
     """현재 로딩된 모델 목록"""
     try:
         r = requests.get(config.OLLAMA_API_PS, timeout=10)
@@ -236,6 +265,8 @@ def get_loaded_models() -> list[str]:
 
 
 def unload_all_models() -> None:
+    if _non_ollama() is not None:
+        return
     """모든 로딩된 모델 언로드 (Ollama + EVAFRILL)"""
     for model in get_loaded_models():
         unload_model(model)
@@ -244,6 +275,8 @@ def unload_all_models() -> None:
 
 
 def warmup_model(model: str) -> bool:
+    if (be := _non_ollama()) is not None and not evafrill_runner.is_evafrill(model):
+        return be.load_model(model)
     """모델 로딩 (warm-up) — 짧은 프롬프트로 모델을 메모리에 올림"""
     try:
         r = requests.post(
@@ -288,6 +321,8 @@ def generate(
         return _eva_generate(
             prompt=prompt, system=system, options=options, timeout=timeout,
         )
+    if (be := _non_ollama()) is not None:
+        return be.generate(model, prompt, system=system, options=options, timeout=timeout)
 
     payload = {
         "model": model,
@@ -371,6 +406,9 @@ def chat(
         return _eva_generate(
             prompt=prompt, system=system_msg, options=options, timeout=timeout,
         )
+
+    if (be := _non_ollama()) is not None:
+        return be.chat(model, messages, options=options, timeout=timeout)
 
     payload = {
         "model": model,
@@ -559,6 +597,10 @@ def check_models_available(models: list[str]) -> tuple[list[str], list[str]]:
 def get_inference_backend():
     """현재 설정에 맞는 InferenceBackend 인스턴스 반환."""
     from kobench.backends import get_backend
+    if config.BACKEND_TYPE != "ollama":
+        return get_backend(config.BACKEND_TYPE, url=config.BACKEND_URL, max_retries=config.MAX_RETRIES,
+                           retry_backoff_base=config.RETRY_BACKOFF_BASE, default_options=dict(config.SAMPLING_PARAMS),
+                           raw_models=config.BACKEND_RAW_MODELS)
     return get_backend(
         "ollama",
         url=config.OLLAMA_BASE_URL,

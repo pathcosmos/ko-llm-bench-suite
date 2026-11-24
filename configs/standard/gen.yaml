@@ -1,0 +1,101 @@
+# 생성 벤치 설정 (kobench.standard.gen) — 2026-11-20 측정 전 고정
+# 데이터는 모두 HF revision 고정. 채점: rule = 규칙(정답 기반), judge = LLM judge(kobench.standard.judge), code = 격리 실행.
+# 공통 프로토콜(A): greedy, thinking off, 최대 문맥 4096(사용자 모델 한계와 같음), 0-shot, chat 템플릿(instruct).
+# 변형:
+#   A      : greedy (temperature 0), thinking off
+#   card   : 모델 권장 샘플링 — 공개 모델은 저장소 generation_config.json, 사용자 모델은 모델 카드 권장값(아래 user_card)
+#   think  : thinking on (thinking 지원 모델만, card 샘플링, 최대 문맥 16384). A·B 표와 별도 열로 보고
+# 문항별 출력: results/gen/<model>/<variant>/<task>.jsonl, 채점: <task>.score.json
+
+common:
+  max_model_len: 4096
+  think_max_model_len: 16384
+  seed: 1234
+  chunk: 2000            # 재개 단위 (이 개수마다 jsonl에 추가 기록)
+
+# 사용자 모델 카드 권장값 (README): frankenstallm·EVAFRILL 모두 temperature 0.7, repetition_penalty 1.2
+# frankenstallm 카드는 top_p 0.9, top_k 50도 권장 (CLAUDE.md). EVAFRILL 엔진은 top_k 미지원 → top_p 0.9만
+user_card:
+  frankenstallm-bf16: {temperature: 0.7, top_p: 0.9, top_k: 50, repetition_penalty: 1.2}
+  evafrill: {temperature: 0.7, top_p: 0.9, repetition_penalty: 1.2}
+
+# thinking 제어 (chat 템플릿 인자). 목록에 없는 모델은 thinking 없음
+thinking:
+  smollm3-3b: {think_off: {enable_thinking: false}, think_on: {enable_thinking: true}}             # 템플릿 기본 on
+  nemotron-3-nano-30b-a3b: {think_off: {enable_thinking: false}, think_on: {enable_thinking: true}} # 템플릿 기본 on
+  # kanana-2-3b(instruct): 템플릿에 thinking_mode(think/no_think/auto)가 있으나 모델 카드에 thinking 언급이 없고, 2026-11-20 스모크에서
+  # think 모드 4/4가 '</think>' 없이 답만 내고 끝났다 → thinking 모델로 보지 않는다 (템플릿 기본 no_think 그대로 사용)
+  qwen3.5-4b: {think_off: {enable_thinking: false}, think_on: {enable_thinking: true}}
+  qwen3.5-35b-a3b: {think_off: {enable_thinking: false}, think_on: {enable_thinking: true}}
+  qwen3.6-35b-a3b: {think_off: {enable_thinking: false}, think_on: {enable_thinking: true}}
+  nemotron-3.5-lightning-30b-a3b: {think_off: {enable_thinking: false}, think_on: {enable_thinking: true}}
+  gemma-4-e4b-it: {think_off: {enable_thinking: false}, think_on: {enable_thinking: true}}
+
+# thinkrd 변형: thinking on + 모델 README의 thinking 권장 샘플링 (2026-11-23 사용자 결정으로 추가)
+# qwen3.5-4b는 저장소(851bf6e)에 generation_config.json이 없어 think가 등록 규칙의 대체값(greedy)으로 실행됐다.
+# 값은 README.md 'Thinking mode for general tasks' 그대로이고 test 결과로 고른 값이 아니다. 기존 think 결과는 그대로 두고 별도 열로 보고한다.
+think_readme_sampling:
+  qwen3.5-4b:
+    source: "Qwen/Qwen3.5-4B README.md @851bf6e, Thinking mode for general tasks"
+    sampling: {temperature: 1.0, top_p: 0.95, top_k: 20, min_p: 0.0, presence_penalty: 1.5, repetition_penalty: 1.0}
+datasets:
+  hrm8k:        {repo: HAERAE-HUB/HRM8K, revision: c360cabf8d733a82455565358b3dc965aab9ba8d, license: MIT}
+  gsm8k_ko:     {repo: kuotient/gsm8k-ko, revision: 0b63c02fedcdf506c2f98396659084da83471d1a, license: "MIT(GSM8K 원본), 번역본 라이선스 표기 없음"}
+  ifeval_ko:    {repo: allganize/IFEval-Ko, revision: 54199e3801116897697babf341865741dcd06fc8, license: Apache-2.0}
+  komt:         {repo: LGAI-EXAONE/KoMT-Bench, revision: e240c8154aee230b48d5e716e9c23759f4d72c64, license: LGPL-3.0}
+  logickor:     {repo: maywell/LogicKor, revision: e31e5f8984d90ec76269ce93173a7d990c621c8a, license: CC-BY-SA-4.0}
+  ko_arena:     {repo: qwopqwop/ko-arena-hard-auto-v0.1, revision: b32e04e571e137cc00f5363f4e150dca35921087, license: Apache-2.0}
+  k2_eval:      {repo: HAERAE-HUB/K2-Eval, revision: 14bbbc9ee6eef17368508735700465eedc9ec4c5, license: MIT}
+  kosimpleqa:   {repo: bzantium/KoSimpleQA, revision: f066b879730818258200b440e47ee5ce83e0b652, license: CC-BY-4.0}
+  kormedmcqa:   {repo: sean0042/KorMedMCQA, revision: 79efd6f91edfc8036330d7a4daa88b9f2deb9a82, license: "CC-BY-NC-2.0 비상업"}
+  kobbq:        {repo: naver-ai/kobbq, revision: ccb902a2209a9d79ef921a21d90b52711cbf4d2a, license: MIT}
+  ko_truthful:  {repo: davidkim205/ko_truthful_qa, revision: 221bb55a282c165886f6a4635d3ce65dd0bf5d0f, license: "표기 없음(TruthfulQA 원본 Apache-2.0)"}
+  humanevalplus: {repo: evalplus/humanevalplus, revision: d32357cf319e50e9c8d8dab5ea876c72b0fd321b, license: Apache-2.0}
+  mbppplus:     {repo: evalplus/mbppplus, revision: b2d74c91837c3f2a20c1299ae98133cbe7cfa077, license: Apache-2.0}
+
+# 태스크: scorer rule|judge|code, kinds = 적용 모델 종류, max_new = 최대 생성 토큰(A·card; think는 문맥 한도까지)
+tasks:
+  hrm8k:          {dataset: hrm8k, scorer: rule, kinds: [instruct], max_new: 2048, metric: exact_match_strict}
+  ifeval_ko:      {dataset: ifeval_ko, scorer: rule, kinds: [instruct], max_new: 1280, metric: prompt_level_strict_acc}
+  kormedmcqa:     {dataset: kormedmcqa, scorer: rule, kinds: [instruct], max_new: 1024, metric: acc}
+  kobbq:          {dataset: kobbq, scorer: rule, kinds: [instruct], max_new: 512, metric: acc}
+  ko_truthful_mc1: {dataset: ko_truthful, scorer: rule, kinds: [instruct], max_new: 512, metric: acc}
+  k2_knowledge:   {dataset: k2_eval, scorer: rule, kinds: [instruct], max_new: 1024, metric: acc}
+  komt:           {dataset: komt, scorer: judge, kinds: [instruct], max_new: 2048, turns: 2, metric: score}
+  logickor:       {dataset: logickor, scorer: judge, kinds: [instruct], max_new: 2048, turns: 2, metric: score}
+  k2_generation:  {dataset: k2_eval, scorer: judge, kinds: [instruct], max_new: 2048, metric: score}
+  ko_arena_hard:  {dataset: ko_arena, scorer: judge, kinds: [instruct], max_new: 2048, metric: winrate}
+  kosimpleqa:     {dataset: kosimpleqa, scorer: judge, kinds: [instruct], max_new: 512, metric: correct}
+  humaneval_plus: {dataset: humanevalplus, scorer: code, kinds: [instruct, base], max_new: 1024, metric: pass_plus}
+  mbpp_plus:      {dataset: mbppplus, scorer: code, kinds: [instruct, base], max_new: 1024, metric: pass_plus}
+  # 다턴 대화 시나리오 (custom 자체 작성, kobench/standard/scenario.py 절차 생성, 규칙 채점). self = 앞 턴 이력이 모델 자신의 답,
+  # oracle = 앞 턴 이력이 참조 답. 10범주 × test 30 (시드 100000~) / dev 10 (시드 0~)
+  scenario_self:       {dataset: null, generator: kobench.standard.scenario, scorer: scenario, kinds: [instruct], max_new: 1024, metric: turn_pass}
+  scenario_oracle:     {dataset: null, generator: kobench.standard.scenario, scorer: scenario, kinds: [instruct], max_new: 1024, metric: turn_pass}
+  scenario_dev_self:   {dataset: null, generator: kobench.standard.scenario, scorer: scenario, kinds: [instruct], max_new: 1024, metric: turn_pass, dev: true}
+  scenario_dev_oracle: {dataset: null, generator: kobench.standard.scenario, scorer: scenario, kinds: [instruct], max_new: 1024, metric: turn_pass, dev: true}
+  # dev 전용 (생성 디코딩 선택): test와 겹치지 않는 분할
+  gsm8k_ko_dev:   {dataset: gsm8k_ko, scorer: rule, kinds: [instruct], max_new: 2048, metric: exact_match_strict, dev: true}
+  kormedmcqa_dev: {dataset: kormedmcqa, scorer: rule, kinds: [instruct], max_new: 1024, metric: acc, dev: true}
+
+suites:
+  gen_v1: [hrm8k, ifeval_ko, kormedmcqa, kobbq, ko_truthful_mc1, k2_knowledge, komt, logickor, k2_generation, ko_arena_hard, kosimpleqa, humaneval_plus, mbpp_plus]
+  gen_dev_v1: [gsm8k_ko_dev, kormedmcqa_dev]
+  scenario_v1: [scenario_self, scenario_oracle]
+  scenario_dev_v1: [scenario_dev_self, scenario_dev_oracle]
+  tune_dev_v1: [gsm8k_ko_dev, kormedmcqa_dev, scenario_dev_self]     # 규칙 v3 운용 설정 탐색 dev
+  # 통일 프로토콜 U (configs/standard/unified.yaml, 2026-11-22): 모든 모델(base·instruct) 같은 원문 프롬프트, 변형 U로만 실행
+  uni_v1: [hrm8k, kosimpleqa, humaneval_plus, mbpp_plus, ifeval_ko, komt, logickor, k2_generation, ko_arena_hard, scenario_self]
+  uni_dev_v1: [gsm8k_ko_dev, scenario_dev_self]                      # 통일 프롬프트 동작 확인(dev)
+
+judge:
+  model: qwen3.6-35b-a3b          # vLLM, thinking off, greedy
+  max_model_len: 16384
+  max_new: 4096          # arena-hard 방식은 judge가 먼저 자기 답을 쓰므로 2048에서 잘림(스모크 12건 중 1건) → 4096
+  # ko-arena-hard 기준 응답 모델 (arena-hard는 고정 기준 모델과 쌍대 비교). 측정 전 고정: judge(Qwen)와 다른 계열의 dense 3B
+  arena_baseline: llama-3.2-3b-instruct
+  same_family_as_judge: [Qwen3.6-MoE, Qwen3.5-MoE, Qwen3.5, Qwen3-MoE, Qwen3, Qwen2.5]
+
+# 채점에서 뺄 문항 (정답 코드도 실패하는 데이터 결함). 2026-11-20 canonical 541/542 통과 확인
+exclude:
+  humaneval_plus: ["HumanEval/32"]   # evalplus/humanevalplus@d32357c 테스트가 _poly(*candidate(*inp), inp)로 float를 펼쳐 TypeError

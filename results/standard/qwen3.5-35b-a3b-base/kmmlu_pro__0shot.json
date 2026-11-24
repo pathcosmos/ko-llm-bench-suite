@@ -1,0 +1,109 @@
+{
+ "task": "kmmlu_pro",
+ "num_fewshot": 0,
+ "source": "KMMLU-Pro (LGAI-EXAONE) 2,822문항, 선택지 4~5, cc-by-nc-nd-4.0 비상업",
+ "limit": null,
+ "wall_seconds": 69.4,
+ "finished_at": "2026-11-21T21:57:42.097495+00:00",
+ "results": {
+  "kmmlu_pro": {
+   "name": "kmmlu_pro",
+   "alias": "kmmlu_pro",
+   "sample_len": 2822,
+   "acc,none": 0.5843373493975904,
+   "acc_stderr,none": 0.009278991596049458
+  }
+ },
+ "groups": null,
+ "n-samples": {
+  "kmmlu_pro": {
+   "original": 2822,
+   "effective": 2822
+  }
+ },
+ "versions_task": {
+  "kmmlu_pro": 1.0
+ },
+ "configs": {
+  "kmmlu_pro": {
+   "task": "kmmlu_pro",
+   "dataset_path": "LGAI-EXAONE/KMMLU-Pro",
+   "dataset_kwargs": {
+    "revision": "e1567939724a369e428e66f15472562c55a5d181"
+   },
+   "test_split": "test",
+   "doc_to_text": "def kmmlu_x_text(doc):\n    opts = _options(doc)\n    body = \"\\n\".join(f\"{LETTERS[i]}. {o}\" for i, o in enumerate(opts))\n    return f\"{doc['question'].strip()}\\n{body}\\n정답：\"\n",
+   "doc_to_target": "def kmmlu_x_target(doc):\n    return int(str(doc[\"solution\"]).strip()) - 1\n",
+   "unsafe_code": false,
+   "doc_to_choice": "def kmmlu_x_choices(doc):\n    return list(LETTERS[: len(_options(doc))])\n",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "<function kmmlu_x_text at 0x78ffa8b2a8e0>",
+    "doc_to_choice": "<function kmmlu_x_choices at 0x78ffa8b2a980>",
+    "doc_to_target": "<function kmmlu_x_target at 0x78ffa8b2aa20>",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "license": "cc-by-nc-nd-4.0 (비상업)",
+    "config_source": "/home/work/llm-dense/llm-test/ko-llm-bench-suite/kobench/standard/tasks/custom/kmmlu_pro.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "qwen3.5-35b-a3b-base",
+  "family": "Qwen3.5-MoE",
+  "kind": "base",
+  "backend": "vllm",
+  "path": "Qwen/Qwen3.5-35B-A3B-Base",
+  "revision": "0f0813072d2358973511097385626f21fcb6d422",
+  "params_b": 35,
+  "active_b": 3,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty",
+ "load_seconds": 171.7,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": null
+}

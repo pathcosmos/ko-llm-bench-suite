@@ -1,0 +1,22 @@
+{
+ "model": "smollm3-3b",
+ "variant": "think",
+ "task": "ko_truthful_mc1",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 817,
+ "n_generated": 817,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.5471236230110159,
+   "format_fail": 0.04895960832313342,
+   "n": 817,
+   "acc_answered": 0.5752895752895753,
+   "loop": 0.0,
+   "rep3": null,
+   "truncated": 0.04773561811505508
+  }
+ }
+}

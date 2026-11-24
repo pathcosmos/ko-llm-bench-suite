@@ -1,0 +1,21 @@
+{
+ "model": "qwen2.5-3b-instruct",
+ "variant": "rp11",
+ "task": "mbpp_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 378,
+ "n_generated": 378,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.544973544973545,
+   "n": 378,
+   "timeout": 0.0026455026455026454,
+   "loop": 0.0,
+   "rep3": 0.04708684783428527,
+   "truncated": 0.0
+  }
+ }
+}

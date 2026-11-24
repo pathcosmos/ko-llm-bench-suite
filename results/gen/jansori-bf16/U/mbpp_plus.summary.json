@@ -1,0 +1,21 @@
+{
+ "model": "jansori-bf16",
+ "variant": "U",
+ "task": "mbpp_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 378,
+ "n_generated": 378,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.010582010582010581,
+   "n": 378,
+   "timeout": 0.0,
+   "loop": 0.042328042328042326,
+   "rep3": 0.17759525560462142,
+   "truncated": 0.07936507936507936
+  }
+ }
+}

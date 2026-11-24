@@ -1,0 +1,57 @@
+{
+ "task": "kosimpleqa",
+ "task_def": {
+  "dataset": "kosimpleqa",
+  "scorer": "judge",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 512,
+  "metric": "correct"
+ },
+ "dataset": {
+  "repo": "bzantium/KoSimpleQA",
+  "revision": "f066b879730818258200b440e47ee5ce83e0b652",
+  "license": "CC-BY-4.0"
+ },
+ "limit": null,
+ "model": {
+  "id": "qwen3-4b-2507",
+  "family": "Qwen3",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "params_b": 4.0,
+  "active_b": 4.0,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "A",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {},
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 1000,
+ "generated_tokens_this_run": 317497,
+ "wall_seconds": 11.5,
+ "finished_at": "2026-11-20T14:03:32.399312+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}

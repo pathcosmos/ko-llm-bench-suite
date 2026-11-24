@@ -1,0 +1,60 @@
+{
+ "task": "logickor",
+ "task_def": {
+  "dataset": "logickor",
+  "scorer": "judge",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 2048,
+  "turns": 2,
+  "metric": "score"
+ },
+ "dataset": {
+  "repo": "maywell/LogicKor",
+  "revision": "e31e5f8984d90ec76269ce93173a7d990c621c8a",
+  "license": "CC-BY-SA-4.0"
+ },
+ "limit": null,
+ "model": {
+  "id": "smollm3-3b",
+  "family": "SmolLM3",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "HuggingFaceTB/SmolLM3-3B",
+  "revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+  "params_b": 3.1,
+  "active_b": 3.1,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "A",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {
+  "enable_thinking": false
+ },
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 42,
+ "generated_tokens_this_run": 77387,
+ "wall_seconds": 20.8,
+ "finished_at": "2026-11-20T14:24:04.586375+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}

@@ -1,0 +1,21 @@
+{
+ "model": "llama-3.2-3b-instruct",
+ "variant": "U",
+ "task": "mbpp_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 378,
+ "n_generated": 378,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.48412698412698413,
+   "n": 378,
+   "timeout": 0.010582010582010581,
+   "loop": 0.13756613756613756,
+   "rep3": 0.31386129917182864,
+   "truncated": 0.328042328042328
+  }
+ }
+}

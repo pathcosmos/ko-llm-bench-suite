@@ -1,0 +1,16 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "U",
+ "task": "k2_generation",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "unk_drop",
+ "metrics": {
+  "judge": {
+   "n": 90,
+   "parse_fail": 0,
+   "score": 1.511111111111111,
+   "same_family_as_judge": false,
+   "truncated": 0.16666666666666666
+  }
+ }
+}

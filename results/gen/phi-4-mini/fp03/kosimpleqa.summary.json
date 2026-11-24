@@ -1,0 +1,20 @@
+{
+ "model": "phi-4-mini",
+ "variant": "fp03",
+ "task": "kosimpleqa",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 1000,
+   "parse_fail": 0,
+   "correct": 0.022,
+   "not_attempted": 0.031,
+   "incorrect": 0.947,
+   "correct_given_attempted": 0.022703818369453045,
+   "f_score": 0.0223463687150838,
+   "same_family_as_judge": false,
+   "truncated": 0.006
+  }
+ }
+}

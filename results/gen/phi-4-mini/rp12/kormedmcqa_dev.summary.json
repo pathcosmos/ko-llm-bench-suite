@@ -1,0 +1,22 @@
+{
+ "model": "phi-4-mini",
+ "variant": "rp12",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.267233238904627,
+   "format_fail": 0.125590179414542,
+   "n": 1059,
+   "acc_answered": 0.30561555075593955,
+   "loop": 0.0,
+   "rep3": 0.0027783704579457526,
+   "truncated": 0.0113314447592068
+  }
+ }
+}

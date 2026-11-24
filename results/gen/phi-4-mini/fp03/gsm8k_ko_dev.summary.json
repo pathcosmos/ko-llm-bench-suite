@@ -1,0 +1,22 @@
+{
+ "model": "phi-4-mini",
+ "variant": "fp03",
+ "task": "gsm8k_ko_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.6466666666666666,
+   "exact_match": 0.6466666666666666,
+   "format_fail": 0.0,
+   "n": 300,
+   "loop": 0.0033333333333333335,
+   "rep3": 0.07712948342274818,
+   "truncated": 0.0
+  }
+ }
+}

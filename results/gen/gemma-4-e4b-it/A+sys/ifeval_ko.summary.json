@@ -1,0 +1,23 @@
+{
+ "model": "gemma-4-e4b-it",
+ "variant": "A+sys",
+ "task": "ifeval_ko",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 342,
+ "n_generated": 342,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "prompt_level_strict_acc": 0.7777777777777778,
+   "prompt_level_loose_acc": 0.7953216374269005,
+   "inst_level_strict_acc": 0.8274428274428275,
+   "inst_level_loose_acc": 0.8461538461538461,
+   "n": 342,
+   "loop": 0.0029239766081871343,
+   "rep3": 0.01568164894608497,
+   "truncated": 0.008771929824561403
+  }
+ }
+}

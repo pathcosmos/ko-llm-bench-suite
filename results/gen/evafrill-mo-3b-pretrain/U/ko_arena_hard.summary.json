@@ -1,0 +1,17 @@
+{
+ "model": "evafrill-mo-3b-pretrain",
+ "variant": "U",
+ "task": "ko_arena_hard",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "unk_nl",
+ "metrics": {
+  "judge": {
+   "n": 500,
+   "parse_fail": 36,
+   "winrate": 0.2127016129032258,
+   "baseline": "llama-3.2-3b-instruct",
+   "same_family_as_judge": false,
+   "truncated": 0.198
+  }
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "task": "hrm8k",
+ "task_def": {
+  "dataset": "hrm8k",
+  "scorer": "rule",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 2048,
+  "metric": "exact_match_strict"
+ },
+ "dataset": {
+  "repo": "HAERAE-HUB/HRM8K",
+  "revision": "c360cabf8d733a82455565358b3dc965aab9ba8d",
+  "license": "MIT"
+ },
+ "limit": null,
+ "model": {
+  "id": "qwen3-4b-base",
+  "family": "Qwen3",
+  "kind": "base",
+  "backend": "vllm",
+  "path": "Qwen/Qwen3-4B-Base",
+  "revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+  "params_b": 4.0,
+  "active_b": 4.0,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "U",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {},
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 8011,
+ "generated_tokens_this_run": 3153424,
+ "wall_seconds": 276.5,
+ "finished_at": "2026-11-23T09:10:27.271603+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "b2ad20d13eaad2dc67bc407bfd6470375fa4c8dd"
+}

@@ -1,0 +1,26 @@
+{
+ "model": "nemotron-3.5-lightning-30b-a3b",
+ "variant": "think",
+ "task": "kobbq",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 2280,
+ "n_generated": 2280,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.9697368421052631,
+   "format_fail": 0.0,
+   "n": 2280,
+   "acc_answered": 0.9697368421052631,
+   "acc_amb": 0.9833333333333333,
+   "acc_dis": 0.956140350877193,
+   "diff_bias_amb": 0.016666666666666666,
+   "diff_bias_dis": 0.0035087719298245723,
+   "loop": 0.0,
+   "rep3": 0.0036696978397377984,
+   "truncated": 0.0
+  }
+ }
+}

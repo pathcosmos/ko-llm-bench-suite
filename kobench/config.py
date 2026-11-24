@@ -42,7 +42,8 @@ def apply_yaml_to_config(yaml_cfg: dict) -> None:
     YAML에 없는 필드는 기존 기본값 유지.
     """
     # Need to declare globals for all variables we want to modify
-    global OLLAMA_BASE_URL, OLLAMA_REMOTE
+    global OLLAMA_BASE_URL, OLLAMA_REMOTE, BACKEND_TYPE, BACKEND_URL, BACKEND_RAW_MODELS
+    global JUDGE_BACKEND_TYPE, JUDGE_BACKEND_URL
     global OLLAMA_API_GENERATE, OLLAMA_API_CHAT, OLLAMA_API_SHOW, OLLAMA_API_PS
     global JUDGE_MODEL, JUDGE_MODELS, JUDGE_WEIGHTS
     global JUDGE_DUAL_ENABLED, JUDGE_TIMEOUT, JUDGE_DISAGREEMENT_THRESHOLD
@@ -58,6 +59,9 @@ def apply_yaml_to_config(yaml_cfg: dict) -> None:
             OLLAMA_BASE_URL = b["url"]
         if "remote" in b:
             OLLAMA_REMOTE = bool(b["remote"])
+        BACKEND_TYPE = b.get("type", BACKEND_TYPE)
+        BACKEND_URL = b.get("url", BACKEND_URL)
+        BACKEND_RAW_MODELS = list(b.get("raw_models", BACKEND_RAW_MODELS))
         # Regenerate derived API endpoints
         OLLAMA_API_GENERATE = f"{OLLAMA_BASE_URL}/api/generate"
         OLLAMA_API_CHAT = f"{OLLAMA_BASE_URL}/api/chat"
@@ -67,6 +71,9 @@ def apply_yaml_to_config(yaml_cfg: dict) -> None:
     # Judge
     if "judge" in yaml_cfg:
         j = yaml_cfg["judge"]
+        if "backend" in j:                    # judge 전용 서버 (vLLM/llama-server는 서버 하나 = 모델 하나)
+            JUDGE_BACKEND_TYPE = j["backend"].get("type", JUDGE_BACKEND_TYPE)
+            JUDGE_BACKEND_URL = j["backend"].get("url", JUDGE_BACKEND_URL)
         if "dual_enabled" in j:
             JUDGE_DUAL_ENABLED = bool(j["dual_enabled"])
         if "timeout" in j:
@@ -126,14 +133,31 @@ def apply_yaml_to_config(yaml_cfg: dict) -> None:
             EVAFRILL_GPU_STRATEGY = gs
 
 
+# 백엔드 (apply_yaml_config가 덮어쓴다). ollama 외에는 OpenAI 호환 서버 주소가 필요하다.
+SUPPORTED_BACKENDS = ("ollama", "vllm", "llamacpp")
+BACKEND_TYPE = os.environ.get("KOBENCH_BACKEND", "ollama")
+BACKEND_URL = os.environ.get("KOBENCH_BACKEND_URL", "")
+BACKEND_RAW_MODELS: list = []          # chat 템플릿 없이 /v1/completions로 보낼 모델 (base 등)
+JUDGE_BACKEND_TYPE = os.environ.get("KOBENCH_JUDGE_BACKEND", "ollama")
+JUDGE_BACKEND_URL = os.environ.get("KOBENCH_JUDGE_BACKEND_URL", "")
+# 자체 작성 문항 트랙 (공개 벤치마크가 아님 → 결과·스코어카드에 custom 표시). T1 자체 문항은 custom_ 접두어로 이미 구분
+CUSTOM_TRACKS = {"track2": "Ko-Bench 자체 문항", "track3": "한국어 심층 100문항(자체)", "track4": "코드·SQL·디버깅·수학(자체)",
+                 "track5": "일관성(자체 프롬프트)", "track7": "쌍대 비교(자체 프롬프트)"}
+
+
 def validate_config(yaml_cfg: dict) -> list[str]:
     """YAML 설정 유효성 검증. 오류 목록 반환 (빈 리스트 = 유효)."""
     errors = []
 
     # backend.type
     bt = yaml_cfg.get("backend", {}).get("type", "ollama")
-    if bt not in ("ollama",):
-        errors.append(f"backend.type '{bt}' 미지원 (가능: ollama)")
+    if bt not in SUPPORTED_BACKENDS:
+        errors.append(f"backend.type '{bt}' 미지원 (가능: {', '.join(SUPPORTED_BACKENDS)})")
+    if bt != "ollama" and not yaml_cfg.get("backend", {}).get("url"):
+        errors.append(f"backend.type '{bt}'에는 backend.url(OpenAI 호환 서버 주소)이 필요")
+    jb = yaml_cfg.get("judge", {}).get("backend", {})
+    if jb and jb.get("type", "ollama") not in SUPPORTED_BACKENDS:
+        errors.append(f"judge.backend.type '{jb.get('type')}' 미지원")
 
     # tracks.enabled
     for t in yaml_cfg.get("tracks", {}).get("enabled", []):

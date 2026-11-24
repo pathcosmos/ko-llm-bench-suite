@@ -1,0 +1,16 @@
+{
+ "model": "qwen3.5-4b",
+ "variant": "A",
+ "task": "k2_generation",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 90,
+   "parse_fail": 0,
+   "score": 5.533333333333333,
+   "same_family_as_judge": true,
+   "truncated": 0.07777777777777778
+  }
+ }
+}

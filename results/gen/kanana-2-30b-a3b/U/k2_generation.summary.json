@@ -1,0 +1,16 @@
+{
+ "model": "kanana-2-30b-a3b",
+ "variant": "U",
+ "task": "k2_generation",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 90,
+   "parse_fail": 3,
+   "score": 3.781609195402299,
+   "same_family_as_judge": false,
+   "truncated": 0.4111111111111111
+  }
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "card",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "acc": 0.08876298394711993,
+   "format_fail": 0.5269121813031161,
+   "n": 1059,
+   "acc_answered": 0.18762475049900199,
+   "loop": 0.004721435316336166,
+   "rep3": 0.002572399035208511,
+   "truncated": 0.003777148253068933
+  },
+  "unk_drop": {
+   "acc": 0.0906515580736544,
+   "format_fail": 0.5174693106704438,
+   "n": 1059,
+   "acc_answered": 0.18786692759295498,
+   "loop": 0.004721435316336166,
+   "rep3": 0.0025067537881368904,
+   "truncated": 0.003777148253068933
+  }
+ }
+}

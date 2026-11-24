@@ -1,0 +1,20 @@
+{
+ "model": "llama-3.2-3b-instruct",
+ "variant": "fp03+sys",
+ "task": "kosimpleqa",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 1000,
+   "parse_fail": 0,
+   "correct": 0.043,
+   "not_attempted": 0.014,
+   "incorrect": 0.943,
+   "correct_given_attempted": 0.0436105476673428,
+   "f_score": 0.04330312185297079,
+   "same_family_as_judge": false,
+   "truncated": 0.0
+  }
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "model": "kanana-1.5-2.1b",
+ "variant": "A",
+ "task": "scenario_oracle",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "turn_pass": 0.8106666666666666,
+   "scenario_pass": 0.56,
+   "n": 300,
+   "by_category": {
+    "code_revise": {
+     "turn_pass": 0.8222222222222223,
+     "scenario_pass": 0.5333333333333333
+    },
+    "format_transform": {
+     "turn_pass": 0.8333333333333334,
+     "scenario_pass": 0.4666666666666667
+    },
+    "instruction_persist": {
+     "turn_pass": 0.8866666666666667,
+     "scenario_pass": 0.7333333333333333
+    },
+    "korean_style": {
+     "turn_pass": 0.7083333333333334,
+     "scenario_pass": 0.0
+    },
+    "list_tracking": {
+     "turn_pass": 0.9933333333333334,
+     "scenario_pass": 0.9666666666666667
+    },
+    "logic_order": {
+     "turn_pass": 0.325,
+     "scenario_pass": 0.03333333333333333
+    },
+    "math_update": {
+     "turn_pass": 0.9933333333333334,
+     "scenario_pass": 0.9666666666666667
+    },
+    "memory": {
+     "turn_pass": 0.9666666666666667,
+     "scenario_pass": 0.8333333333333334
+    },
+    "story_continue": {
+     "turn_pass": 1.0,
+     "scenario_pass": 1.0
+    },
+    "unknown_entity": {
+     "turn_pass": 0.5777777777777777,
+     "scenario_pass": 0.06666666666666667
+    }
+   },
+   "by_turn": {
+    "1": 0.7833333333333333,
+    "2": 0.81,
+    "3": 0.8633333333333333,
+    "4": 0.8083333333333333,
+    "5": 0.9666666666666667
+   },
+   "loop": 0.0,
+   "overlap_prev": 0.07981635658914729,
+   "copy_prev": 0.002325581395348837,
+   "rep3": 0.01151244481069066
+  }
+ }
+}

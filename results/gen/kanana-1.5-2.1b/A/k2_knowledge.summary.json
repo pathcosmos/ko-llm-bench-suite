@@ -1,0 +1,22 @@
+{
+ "model": "kanana-1.5-2.1b",
+ "variant": "A",
+ "task": "k2_knowledge",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 432,
+ "n_generated": 432,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.47453703703703703,
+   "format_fail": 0.2199074074074074,
+   "n": 432,
+   "acc_answered": 0.6083086053412463,
+   "loop": 0.004629629629629629,
+   "rep3": 0.05155650278566602,
+   "truncated": 0.004629629629629629
+  }
+ }
+}

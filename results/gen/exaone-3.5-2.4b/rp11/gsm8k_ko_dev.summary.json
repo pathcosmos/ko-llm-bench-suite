@@ -1,0 +1,22 @@
+{
+ "model": "exaone-3.5-2.4b",
+ "variant": "rp11",
+ "task": "gsm8k_ko_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.5833333333333334,
+   "exact_match": 0.5833333333333334,
+   "format_fail": 0.0,
+   "n": 300,
+   "loop": 0.0,
+   "rep3": 0.055690495702786495,
+   "truncated": 0.0
+  }
+ }
+}

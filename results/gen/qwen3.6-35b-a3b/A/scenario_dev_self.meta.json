@@ -1,0 +1,59 @@
+{
+ "task": "scenario_dev_self",
+ "task_def": {
+  "dataset": null,
+  "generator": "kobench.standard.scenario",
+  "scorer": "scenario",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 1024,
+  "metric": "turn_pass",
+  "dev": true
+ },
+ "dataset": {
+  "generator": "kobench.standard.scenario"
+ },
+ "limit": null,
+ "model": {
+  "id": "qwen3.6-35b-a3b",
+  "family": "Qwen3.6-MoE",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "Qwen/Qwen3.6-35B-A3B",
+  "revision": "345d467b117d1fd5eda9b879a5988de9ae5f47a7",
+  "params_b": 35,
+  "active_b": 3,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "A",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {
+  "enable_thinking": false
+ },
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 100,
+ "generated_tokens_this_run": 43770,
+ "wall_seconds": 22.1,
+ "finished_at": "2026-11-21T03:46:31.692661+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}

@@ -1,0 +1,32 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "fp03",
+ "task": "gsm8k_ko_dev",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "exact_match_strict": 0.0,
+   "exact_match": 0.006666666666666667,
+   "format_fail": 1.0,
+   "n": 300,
+   "loop": 0.0033333333333333335,
+   "rep3": 0.061658050552799895,
+   "truncated": 0.0
+  },
+  "unk_drop": {
+   "exact_match_strict": 0.0,
+   "exact_match": 0.006666666666666667,
+   "format_fail": 1.0,
+   "n": 300,
+   "loop": 0.0033333333333333335,
+   "rep3": 0.06054185437180258,
+   "truncated": 0.0
+  }
+ }
+}

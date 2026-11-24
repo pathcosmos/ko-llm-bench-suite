@@ -1,0 +1,99 @@
+{
+ "model": "evafrill-mo-3b",
+ "engine": "evafrill",
+ "params_b": 2.94,
+ "active_b": 2.94,
+ "family": "EVAFRILL-Mo",
+ "kind": "instruct",
+ "revision": "e95edece955af9df9a6215210db594a9984fddf5",
+ "max_model_len": 4096,
+ "workload": {
+  "w1": "ko-arena-hard 질문 128개(학습 chat 형식), 출력 256 토큰 고정(EOS 무시), greedy, 정적 배치",
+  "w1_mean_in_tokens": 140.9,
+  "w2": "해당 없음 (엔진에 prefix cache 없음)"
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "at": "2026-11-21T01:40:48.072865+00:00",
+ "runs": {
+  "static_batch": {
+   "startup_s": 30.1,
+   "w1": [
+    {
+     "concurrency": 1,
+     "requests": 32,
+     "ok": 32,
+     "wall_s": 29.383,
+     "output_tok_per_s": 278.8,
+     "req_per_s": 1.089,
+     "ttft_ms_p50": 38.0,
+     "ttft_ms_p90": 43.8,
+     "tpot_ms_p50": 3.42,
+     "tpot_ms_p90": 3.45,
+     "per_stream_tok_per_s_p50": 292.1
+    },
+    {
+     "concurrency": 4,
+     "requests": 32,
+     "ok": 32,
+     "wall_s": 9.046,
+     "output_tok_per_s": 905.6,
+     "req_per_s": 3.538,
+     "ttft_ms_p50": 121.7,
+     "ttft_ms_p90": 122.5,
+     "tpot_ms_p50": 3.87,
+     "tpot_ms_p90": 4.23,
+     "per_stream_tok_per_s_p50": 258.2
+    },
+    {
+     "concurrency": 16,
+     "requests": 64,
+     "ok": 64,
+     "wall_s": 7.154,
+     "output_tok_per_s": 2290.2,
+     "req_per_s": 8.946,
+     "ttft_ms_p50": 535.2,
+     "ttft_ms_p90": 538.1,
+     "tpot_ms_p50": 5.14,
+     "tpot_ms_p90": 5.2,
+     "per_stream_tok_per_s_p50": 194.5
+    },
+    {
+     "concurrency": 32,
+     "requests": 128,
+     "ok": 128,
+     "wall_s": 10.052,
+     "output_tok_per_s": 3259.9,
+     "req_per_s": 12.734,
+     "ttft_ms_p50": 1031.8,
+     "ttft_ms_p90": 1071.8,
+     "tpot_ms_p50": 6.02,
+     "tpot_ms_p90": 6.19,
+     "per_stream_tok_per_s_p50": 166.2
+    },
+    {
+     "concurrency": 64,
+     "requests": 256,
+     "ok": 256,
+     "wall_s": 15.725,
+     "output_tok_per_s": 4167.7,
+     "req_per_s": 16.28,
+     "ttft_ms_p50": 1971.5,
+     "ttft_ms_p90": 1985.6,
+     "tpot_ms_p50": 7.68,
+     "tpot_ms_p90": 8.0,
+     "per_stream_tok_per_s_p50": 130.2
+    }
+   ],
+   "vram_peak_mib": 20717,
+   "torch_max_allocated_gib": 19.34
+  }
+ }
+}

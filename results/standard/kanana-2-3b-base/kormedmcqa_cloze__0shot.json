@@ -1,0 +1,113 @@
+{
+ "task": "kormedmcqa_cloze",
+ "num_fewshot": 0,
+ "source": "KorMedMCQA test 4과목(sean0042 79efd6f, 비상업), 선택지 문장 로그우도",
+ "limit": null,
+ "wall_seconds": 23.6,
+ "finished_at": "2026-11-23T00:57:47.738153+00:00",
+ "results": {
+  "kormedmcqa_cloze": {
+   "name": "kormedmcqa_cloze",
+   "alias": "kormedmcqa_cloze",
+   "sample_len": 3009,
+   "acc,none": 0.3413094051179794,
+   "acc_stderr,none": 0.00864521788346924,
+   "acc_norm,none": 0.3645729478231971,
+   "acc_norm_stderr,none": 0.008775788621945512
+  }
+ },
+ "groups": null,
+ "n-samples": {
+  "kormedmcqa_cloze": {
+   "original": 3009,
+   "effective": 3009
+  }
+ },
+ "versions_task": {
+  "kormedmcqa_cloze": 1.0
+ },
+ "configs": {
+  "kormedmcqa_cloze": {
+   "task": "kormedmcqa_cloze",
+   "custom_dataset": "def kormedmcqa(**kw):\n    import pandas as pd\n\n    d, f = dataset_dir(\"kormedmcqa\"), _fmt(\"kormedmcqa_cloze\")\n    rows = []\n    for sub in (\"doctor\", \"nurse\", \"pharm\", \"dentist\"):\n        df = pd.read_parquet(glob.glob(str(d / sub / \"test-*.parquet\"))[0])\n        for i, r in enumerate(df.to_dict(\"records\")):\n            ch = [str(r[c]).strip() for c in \"ABCDE\"]\n            rows.append({\"id\": f\"{sub}/{i}\", \"query\": f.format(subject=SUBJECT[sub], question=str(r[\"question\"]).strip()),\n                         \"choices\": ch, \"gold\": int(r[\"answer\"]) - 1, \"n_options\": 5})\n    return _dd(rows)\n",
+   "test_split": "test",
+   "doc_to_text": "{{query}}",
+   "doc_to_target": "gold",
+   "unsafe_code": false,
+   "doc_to_choice": "{{choices}}",
+   "description": "",
+   "target_delimiter": " ",
+   "fewshot_delimiter": "\n\n",
+   "fewshot_config": {
+    "sampler": "default",
+    "split": null,
+    "process_docs": null,
+    "fewshot_indices": null,
+    "samples": null,
+    "doc_to_text": "{{query}}",
+    "doc_to_choice": "{{choices}}",
+    "doc_to_target": "gold",
+    "gen_prefix": null,
+    "fewshot_delimiter": "\n\n",
+    "target_delimiter": " "
+   },
+   "num_fewshot": 0,
+   "metric_list": [
+    {
+     "metric": "acc",
+     "aggregation": "mean",
+     "higher_is_better": true
+    },
+    {
+     "metric": "acc_norm",
+     "aggregation": "mean",
+     "higher_is_better": true
+    }
+   ],
+   "output_type": "multiple_choice",
+   "repeats": 1,
+   "should_decontaminate": false,
+   "metadata": {
+    "version": 1.0,
+    "main_metric": "acc_norm",
+    "config_source": "/home/work/llm-dense/llm-test/ko-llm-bench-suite/kobench/standard/tasks/uni/kormedmcqa_cloze.yaml"
+   }
+  }
+ },
+ "model": {
+  "id": "kanana-2-3b-base",
+  "family": "kanana-2",
+  "kind": "base",
+  "backend": "vllm",
+  "path": "kakaocorp/kanana-2-3b-base",
+  "revision": "9fa2a678c379700868d72685a22ea8ed0263ef33",
+  "params_b": 3.0,
+  "active_b": 3.0,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty",
+ "load_seconds": 46.5,
+ "seed": 1234,
+ "apply_chat_template": false,
+ "variant": {
+  "name": "A",
+  "doc_start": "none",
+  "chat": false,
+  "shots": null
+ },
+ "backend_info": null
+}

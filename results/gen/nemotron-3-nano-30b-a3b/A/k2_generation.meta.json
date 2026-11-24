@@ -1,0 +1,59 @@
+{
+ "task": "k2_generation",
+ "task_def": {
+  "dataset": "k2_eval",
+  "scorer": "judge",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 2048,
+  "metric": "score"
+ },
+ "dataset": {
+  "repo": "HAERAE-HUB/K2-Eval",
+  "revision": "14bbbc9ee6eef17368508735700465eedc9ec4c5",
+  "license": "MIT"
+ },
+ "limit": null,
+ "model": {
+  "id": "nemotron-3-nano-30b-a3b",
+  "family": "Nemotron-H-MoE",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+  "revision": "bf77c3174f68ad409e1c2aa60daeb46e32d1c606",
+  "params_b": 30,
+  "active_b": 3,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": true,
+  "extra": {}
+ },
+ "variant": "A",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {
+  "enable_thinking": false
+ },
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 90,
+ "generated_tokens_this_run": 147856,
+ "wall_seconds": 34.1,
+ "finished_at": "2026-11-20T15:31:47.068906+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}

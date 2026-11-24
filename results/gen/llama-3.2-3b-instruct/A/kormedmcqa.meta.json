@@ -1,0 +1,57 @@
+{
+ "task": "kormedmcqa",
+ "task_def": {
+  "dataset": "kormedmcqa",
+  "scorer": "rule",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 1024,
+  "metric": "acc"
+ },
+ "dataset": {
+  "repo": "sean0042/KorMedMCQA",
+  "revision": "79efd6f91edfc8036330d7a4daa88b9f2deb9a82",
+  "license": "CC-BY-NC-2.0 비상업"
+ },
+ "limit": null,
+ "model": {
+  "id": "llama-3.2-3b-instruct",
+  "family": "Llama3.2",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "meta-llama/Llama-3.2-3B-Instruct",
+  "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+  "params_b": 3.2,
+  "active_b": 3.2,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": true,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "A",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {},
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 3009,
+ "generated_tokens_this_run": 69942,
+ "wall_seconds": 14.1,
+ "finished_at": "2026-11-20T12:49:53.102455+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}

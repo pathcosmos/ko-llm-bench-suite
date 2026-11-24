@@ -1,0 +1,228 @@
+{
+ "model": "frankenstallm-bf16",
+ "engine": "vllm",
+ "params_b": 3.0,
+ "active_b": 3.0,
+ "family": "FRANKENSTALLM",
+ "kind": "instruct",
+ "revision": "b9f7777f01479b18e5a3a55f9cad4582df122f7d",
+ "max_model_len": 4096,
+ "workload": {
+  "w1": "ko-arena-hard 질문 128개(모델 chat 형식), 출력 256 토큰 고정(ignore_eos), greedy",
+  "w1_mean_in_tokens": 140.9,
+  "w2": "공유 prefix 1933토큰 + 질문 64개, 동시 16, 출력 64 토큰"
+ },
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "at": "2026-11-20T05:27:50.044708+00:00",
+ "runs": {
+  "prefix_cache_on": {
+   "startup_s": 63.1,
+   "cmd": [
+    "/workspace/llm-test/venv/bin/vllm",
+    "serve",
+    "pathcosmos/frankenstallm",
+    "--port",
+    "34559",
+    "--host",
+    "127.0.0.1",
+    "--dtype",
+    "bfloat16",
+    "--max-model-len",
+    "4096",
+    "--gpu-memory-utilization",
+    "0.85",
+    "--seed",
+    "1234",
+    "--max-num-seqs",
+    "128",
+    "--disable-uvicorn-access-log",
+    "--enable-prefix-caching",
+    "--revision",
+    "b9f7777f01479b18e5a3a55f9cad4582df122f7d",
+    "--tokenizer",
+    "/workspace/llm-test/tokenizer_overrides/frankenstallm-bf16"
+   ],
+   "w1": [
+    {
+     "concurrency": 1,
+     "requests": 32,
+     "ok": 0,
+     "errors": [
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}"
+     ],
+     "wall_s": 0.043,
+     "output_tok_per_s": 0.0,
+     "req_per_s": 0.0,
+     "ttft_ms_p50": null,
+     "ttft_ms_p90": null,
+     "tpot_ms_p50": null,
+     "tpot_ms_p90": null,
+     "per_stream_tok_per_s_p50": null,
+     "mean_in_tokens": null
+    },
+    {
+     "concurrency": 4,
+     "requests": 32,
+     "ok": 0,
+     "errors": [
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}"
+     ],
+     "wall_s": 0.031,
+     "output_tok_per_s": 0.0,
+     "req_per_s": 0.0,
+     "ttft_ms_p50": null,
+     "ttft_ms_p90": null,
+     "tpot_ms_p50": null,
+     "tpot_ms_p90": null,
+     "per_stream_tok_per_s_p50": null,
+     "mean_in_tokens": null
+    },
+    {
+     "concurrency": 16,
+     "requests": 64,
+     "ok": 0,
+     "errors": [
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}"
+     ],
+     "wall_s": 0.044,
+     "output_tok_per_s": 0.0,
+     "req_per_s": 0.0,
+     "ttft_ms_p50": null,
+     "ttft_ms_p90": null,
+     "tpot_ms_p50": null,
+     "tpot_ms_p90": null,
+     "per_stream_tok_per_s_p50": null,
+     "mean_in_tokens": null
+    },
+    {
+     "concurrency": 32,
+     "requests": 128,
+     "ok": 0,
+     "errors": [
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}"
+     ],
+     "wall_s": 0.083,
+     "output_tok_per_s": 0.0,
+     "req_per_s": 0.0,
+     "ttft_ms_p50": null,
+     "ttft_ms_p90": null,
+     "tpot_ms_p50": null,
+     "tpot_ms_p90": null,
+     "per_stream_tok_per_s_p50": null,
+     "mean_in_tokens": null
+    },
+    {
+     "concurrency": 64,
+     "requests": 256,
+     "ok": 0,
+     "errors": [
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+      "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}"
+     ],
+     "wall_s": 0.148,
+     "output_tok_per_s": 0.0,
+     "req_per_s": 0.0,
+     "ttft_ms_p50": null,
+     "ttft_ms_p90": null,
+     "tpot_ms_p50": null,
+     "tpot_ms_p90": null,
+     "per_stream_tok_per_s_p50": null,
+     "mean_in_tokens": null
+    }
+   ],
+   "w2": {
+    "concurrency": 16,
+    "requests": 64,
+    "ok": 0,
+    "errors": [
+     "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+     "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+     "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}"
+    ],
+    "wall_s": 0.05,
+    "output_tok_per_s": 0.0,
+    "req_per_s": 0.0,
+    "ttft_ms_p50": null,
+    "ttft_ms_p90": null,
+    "tpot_ms_p50": null,
+    "tpot_ms_p90": null,
+    "per_stream_tok_per_s_p50": null,
+    "mean_in_tokens": null
+   },
+   "vram_peak_mib": 122391,
+   "weights_gib": 5.62,
+   "kv_cache_gib": 112.22,
+   "kv_cache_tokens": 1050608,
+   "max_concurrency_at_max_len": 256.5
+  },
+  "prefix_cache_off": {
+   "startup_s": 43.0,
+   "cmd": [
+    "/workspace/llm-test/venv/bin/vllm",
+    "serve",
+    "pathcosmos/frankenstallm",
+    "--port",
+    "42881",
+    "--host",
+    "127.0.0.1",
+    "--dtype",
+    "bfloat16",
+    "--max-model-len",
+    "4096",
+    "--gpu-memory-utilization",
+    "0.85",
+    "--seed",
+    "1234",
+    "--max-num-seqs",
+    "128",
+    "--disable-uvicorn-access-log",
+    "--no-enable-prefix-caching",
+    "--revision",
+    "b9f7777f01479b18e5a3a55f9cad4582df122f7d",
+    "--tokenizer",
+    "/workspace/llm-test/tokenizer_overrides/frankenstallm-bf16"
+   ],
+   "w2": {
+    "concurrency": 16,
+    "requests": 64,
+    "ok": 0,
+    "errors": [
+     "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+     "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}",
+     "HTTP 404: {\"error\":{\"message\":\"The model `m` does not exist. Valid aliases: pathcosmos/frankenstallm.\",\"type\":\"NotFoundError\",\"param\":\"model\",\"code\":404}}"
+    ],
+    "wall_s": 0.094,
+    "output_tok_per_s": 0.0,
+    "req_per_s": 0.0,
+    "ttft_ms_p50": null,
+    "ttft_ms_p90": null,
+    "tpot_ms_p50": null,
+    "tpot_ms_p90": null,
+    "per_stream_tok_per_s_p50": null,
+    "mean_in_tokens": null
+   },
+   "vram_peak_mib": 122415,
+   "weights_gib": 5.62,
+   "kv_cache_gib": 112.24,
+   "kv_cache_tokens": 1050832,
+   "max_concurrency_at_max_len": 256.55
+  }
+ }
+}

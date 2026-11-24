@@ -1,0 +1,26 @@
+{
+ "model": "jansori-bf16",
+ "variant": "U",
+ "task": "logickor",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 42,
+   "parse_fail": 0,
+   "score": 1.0357142857142858,
+   "by_category": {
+    "글쓰기(Writing)": 0.35714285714285715,
+    "문법(Grammar)": 2.357142857142857,
+    "수학(Math)": 0.21428571428571427,
+    "이해(Understanding)": 2.0714285714285716,
+    "추론(Reasoning)": 0.42857142857142855,
+    "코딩(Coding)": 0.7857142857142857
+   },
+   "turn1": 1.1666666666666667,
+   "turn2": 0.9047619047619048,
+   "same_family_as_judge": false,
+   "truncated": 0.21428571428571427
+  }
+ }
+}

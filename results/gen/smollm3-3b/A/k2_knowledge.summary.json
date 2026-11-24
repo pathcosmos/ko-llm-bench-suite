@@ -1,0 +1,22 @@
+{
+ "model": "smollm3-3b",
+ "variant": "A",
+ "task": "k2_knowledge",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 432,
+ "n_generated": 432,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.6296296296296297,
+   "format_fail": 0.006944444444444444,
+   "n": 432,
+   "acc_answered": 0.634032634032634,
+   "loop": 0.0,
+   "rep3": 0.06060606060606061,
+   "truncated": 0.0
+  }
+ }
+}

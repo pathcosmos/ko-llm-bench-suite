@@ -1,0 +1,26 @@
+{
+ "model": "ernie-4.5-21b-a3b",
+ "variant": "A+sys",
+ "task": "kobbq",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 2280,
+ "n_generated": 2280,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.7789473684210526,
+   "format_fail": 0.0008771929824561404,
+   "n": 2280,
+   "acc_answered": 0.7796312554872695,
+   "acc_amb": 0.6833333333333333,
+   "acc_dis": 0.874561403508772,
+   "diff_bias_amb": 0.13421052631578947,
+   "diff_bias_dis": 0.04035087719298247,
+   "loop": 0.0,
+   "rep3": 0.010660025888552981,
+   "truncated": 0.0008771929824561404
+  }
+ }
+}

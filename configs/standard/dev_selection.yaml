@@ -22,3 +22,65 @@ search_space:
 notes:
   - "생성 태스크용 설정(디코딩, <unk> 처리, system 처리, frankenstallm SFT 대 ORPO 형식)은 생성 dev 세트가 준비되면 같은 방식으로 별도 등록한다."
   - "효과 보고: 선택된 변형과 A의 차이를 dev와 test 모두에서 paired bootstrap CI로 보고하되, 선택은 dev로만 한다."
+
+# ── 생성(instruct) 설정 선택 — 2026-11-20 등록, 생성 dev 측정 전 ─────────────────────────────
+generation:
+  registered_at: "2026-11-20"
+  suite: gen_dev_v1       # gsm8k_ko_dev(GSM8K-ko train 결정적 표본 300, HRM8K의 GSM8K test 번역과 겹치지 않음) + kormedmcqa_dev(KorMedMCQA dev 1,059)
+  score: >-
+    두 dev 태스크 대표 지표의 산술 평균: gsm8k_ko_dev exact_match_strict(\boxed 필수), kormedmcqa_dev acc(형식 실패 = 오답).
+  rule: >-
+    점수가 가장 높은 설정을 고른다. 1위와 A(greedy)의 차이가 0.001 이하면 A. thinking on은 선택 대상이 아니다(별도 열로 보고).
+  search_space:
+    public_instruct: ["A", "card"]           # card = 저장소 generation_config.json 샘플링. 없으면 A만
+    frankenstallm-bf16:
+      decoding: ["A", "card"]                # card = 모델 카드 권장(temperature 0.7, top_p 0.9, top_k 50, repetition_penalty 1.2)
+      unk_policy: ["unk_nl", "unk_drop"]     # 생성된 <unk>(3) 처리: 개행 복원 / 삭제 (채점 단계 정책, 생성은 한 번)
+    evafrill:
+      # 1차: 체크포인트 6개(instruct 단계)를 A(greedy)로 비교해 생성용 체크포인트를 고른다(동점 기준은 위 규칙, 기준점은 slerp=최종).
+      # 2차: 고른 체크포인트에 card(temperature 0.7, top_p 0.9, repetition_penalty 1.2)를 비교한다. unk_policy도 함께 고른다.
+      checkpoints: [evafrill-mo-3b-sft-v2, evafrill-mo-3b-dpo-r1, evafrill-mo-3b-dpo-r2, evafrill-mo-3b-dpo-r3, evafrill-mo-3b-orpo, evafrill-mo-3b]
+      decoding_after_selection: ["A", "card"]
+      unk_policy: ["unk_nl", "unk_drop"]
+  test_runs: >-
+    A 표 = 모든 instruct 모델 A(greedy). B 표 = 선택 설정. EVAFRILL은 최종(slerp) A와 dev 선택 체크포인트·설정 둘 다 test를 돌린다.
+    unk_policy는 A·B 모두 dev에서 고른 값을 쓴다(채점 정책이므로 A 표에도 같게 적용하고, 다른 정책 값도 함께 기록한다).
+
+# ── 생성 설정 선택 규칙 개정 v2 — 2026-11-20 17:00 (사용자 결정) ─────────────────────────────
+# 사유: dev(A·card) 출력에서 greedy 반복이 심했다(frankenstallm A: KorMedMCQA dev 루프 8.9%·중복 3-gram 19.7%,
+# llama-3.2-3b-instruct A: GSM8K-ko dev 루프 14%). v1 규칙은 정답률만 봐서 반복 출력이 B로 뽑힐 수 있다.
+# 개정은 dev 출력의 반복 관찰에 근거하며 test 결과는 보지 않았다(이 시점에 생성 test는 실행 전).
+generation_v2:
+  registered_at: "2026-11-20T17:00+09:00"
+  adds_candidate: >-
+    rep = greedy + 모델 카드 권장 repetition_penalty (사용자 모델 1.2; 공개 모델은 generation_config.json에 1.0이 아닌 값이 있을 때만
+    — 1순위에서는 qwen2.5-3b-instruct 1.05). 모든 search_space(공개 instruct, frankenstallm, EVAFRILL 2차)에 추가.
+  repetition_guard: >-
+    dev 루프율(두 dev 태스크 전체 출력 중, 끝 600자 안에 20자 이상 조각이 연속 3번 이상인 응답의 비율; korean_sp 모델은 해당 unk 정책
+    텍스트)이 0.05를 넘는 설정은 선택에서 뺀다. 모든 후보가 넘으면 루프율이 가장 낮은 설정을 고른다(같으면 점수).
+  rule: >-
+    남은 후보 중 점수 최고를 고르되, A가 남아 있고 1위와 A의 차이가 0.001 이하이면 A. 효과(gain)는 계속 A 대비로 보고한다.
+    EVAFRILL 1차(체크포인트 선택, A)는 v1 그대로다.
+  reporting: 모든 생성 표에 반복 지표(루프율, 중복 3-gram 비율, 최대 길이 잘림)를 함께 기록한다.
+
+# ── 생성 설정 선택 규칙 v3 — 2026-11-20 18:30 (사용자 결정: 모델별 운용 최적 설정, 1·2순위 전체, 디코딩+종료+프롬프트) ──
+# v2(A/card/rep + 루프 5%)를 대체한다. 근거: dev 출력의 사용상 오동작(반복 루프, 앞 답 복사, 언어 이탈, 멈추지 않음)을
+# 모델별 설정으로 바로잡을 수 있는지 찾는다. test 결과는 보지 않았다(1순위 생성 test 시작 전).
+generation_v3:
+  registered_at: "2026-11-20T18:30+09:00"
+  dev_suite: tune_dev_v1      # gsm8k_ko_dev(300) + kormedmcqa_dev(1,059) + scenario_dev_self(다턴 시나리오 dev 100, 자기 이력)
+  quality: 세 태스크 대표 지표 평균 (exact_match_strict, acc, 턴 통과율)
+  malfunction:                # 세 태스크 모든 턴 출력에서의 비율 (gen_score.malfunction)
+    loop: "끝 600자 안 20자 이상 조각 연속 3회 이상"
+    lang: "외국 문자(라틴 확장·키릴·태국·가나·한자·아랍) 3자 이상 또는 글자 중 한글 20% 미만 (코드 블록·코드 범주 제외)"
+    leak: "템플릿 토큰 문자열(<|user|>, <|im_start|>, [INST], ### User, <think> 등) 출력"
+    trunc: "최대 길이까지 생성(멈추지 않음)"
+  limits: {loop: 0.02, lang: 0.02, leak: 0.005, trunc: 0.05}
+  stage1_decoding: [A, card, rep, rp11, rp12, fp03]   # 해당 없는 조합(카드 값 없음, EVAFRILL fp03)은 건너뜀; korean_sp 모델은 × unk_policy
+  stage2_modifiers: [none, +sys, +orpo]              # +sys = 한국어 시스템 지시(사용자 모델은 첫 user 앞), +orpo = frankenstallm ORPO 형식(단일 턴)
+  rule: >-
+    단계마다 제약을 모두 만족하는 후보 중 품질 최고를 고른다. 기준 후보(1단계 A, 2단계 1단계 선택)가 제약을 만족하고 1위와 품질 차이가
+    0.001 이하이면 기준 후보. 제약을 만족하는 후보가 없으면 위반 정도(Σ max(0, 비율−한도)/한도)가 가장 작은 후보(같으면 품질)이고,
+    그 모델은 '설정으로 오동작을 다 막지 못함'으로 보고한다.
+  evafrill: 체크포인트는 v1과 같이 6개 A·gen_dev_v1로 고르고, 고른 체크포인트에서 1·2단계를 수행한다(fp03 제외).
+  scope: 1순위 instruct 10 + frankenstallm + EVAFRILL, 2순위 instruct 7. B 표 = 최종 선택 설정.

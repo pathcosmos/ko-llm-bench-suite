@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org)
-[![Tests](https://img.shields.io/badge/tests-557%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/tests-637%20passed-brightgreen.svg)](tests/)
 
 ---
 
@@ -31,7 +31,8 @@ YAML 설정 파일만으로 새로운 모델을 추가하고 평가할 수 있�
 |------|------|
 | **7개 평가 트랙** | KoBEST NLU, Ko-Bench 생성, 심층이해, 코드/수학, 일관성, 성능, Pairwise Elo |
 | **다중 추론 백엔드** | Ollama (로컬/원격), EVAFRILL PyTorch 직접 추론, vLLM (표준 벤치) |
-| **표준 벤치마크** | lm-eval 기반 로그우도 객관식(KoBEST·KMMLU·KMMLU-Redux/Pro·KoBALT 등), bits-per-byte PPL, 생성(HRM8K·IFEval-Ko), dev 기반 설정 선택(A/B 표), bootstrap CI — [docs/standard-benchmarks.md](docs/standard-benchmarks.md) |
+| **표준 벤치마크** | lm-eval 기반 로그우도 객관식(KoBEST·KMMLU·KMMLU-Redux/Pro·KoBALT 등), bits-per-byte PPL, 생성 13종(규칙·코드 실행·LLM judge), 다턴 시나리오, thinking on/off, 통일 비교 프로토콜(34모델 한 줄 비교), 서빙 성능, GGUF 양자화 손실, dev 기반 설정 선택(A/B 표), bootstrap CI — [docs/standard-benchmarks.md](docs/standard-benchmarks.md) |
+| **최종 보고서** | 사용자 모델 3종과 공개 모델 30개(dense 3B급·MoE A3B급) 비교 결과 HTML — [reports/final/report.html](reports/final/report.html) |
 | **이중 Judge 시스템** | 두 개의 LLM Judge로 교차 검증 (가중 평균), 평가 편향 감소 |
 | **YAML 기반 설정** | 코드 수정 없이 모델/트랙/Judge/샘플링 파라미터 구성 |
 | **자동 리포트** | HTML/Markdown 리포트 + 26종 시각화 차트 자동 생성 |
@@ -151,9 +152,21 @@ sampling:
 python -m kobench.standard.run --models qwen3-4b-base --suite ko_mc_v1          # 실행 (완료 태스크는 건너뜀)
 python -m kobench.standard.dev_search select                                   # dev로 최적 설정 선택 → best_settings.yaml
 python -m kobench.standard.report --suite ko_mc_v1 --ref jansori-bf16 [--table B]  # 표 + bootstrap CI
+python -m kobench.standard.gen run --models qwen3-4b-2507 --suite gen_v1 --variant A  # 생성 (규칙·코드 채점은 gen score, judge는 kobench.standard.judge)
+python -m kobench.standard.perf --models qwen3-4b-2507                             # 서빙 성능
+python -m kobench.standard.final_data --regen && python -m kobench.standard.final_report   # 최종 보고서
 ```
 
-스위트: `ko_mc_v1`(한국어 객관식), `ko_mc_ext_v1`(KMMLU-Redux/Pro·KoBALT-700, 비상업·gated), `ppl_v1`, `en_mc_v1`, `gen_v1`, `dev_mc_v1`. 결과 표는 `reports/standard/`, 요약 JSON은 `results/standard/`에 있다(문항별 파일은 데이터셋 원문을 포함해 커밋하지 않음). 상세: [docs/standard-benchmarks.md](docs/standard-benchmarks.md)
+스위트: 객관식·PPL `ko_mc_v1`(한국어 객관식), `ko_mc_ext_v1`(KMMLU-Redux/Pro·KoBALT-700, 비상업·gated), `ppl_v1`, `en_mc_v1`, `uni_mc_v1`, `dev_mc_v1` / 생성 `gen_v1`, `scenario_v1`(다턴), `uni_v1`(통일 비교). 결과 표는 `reports/standard/`·`reports/gen/`, 요약 JSON은 `results/{standard,gen,perf}/`에 있다(문항별 파일·모델 출력은 데이터셋 원문을 포함해 커밋하지 않음). 상세: [docs/standard-benchmarks.md](docs/standard-benchmarks.md)
+
+### 최종 보고서: 사용자 모델 3종 vs 공개 모델 30개
+
+[`reports/final/report.html`](reports/final/report.html) (내려받아 브라우저에서 열기, 차트는 d3). H200 1장, BF16 vLLM 기준이다.
+
+- 비교 대상: JANSORI(base 3B), frankenstallm(instruct 3B), EVAFRILL-Mo(Mamba-2 하이브리드 3B, pretrain·slerp)와 공개 dense 3B급·MoE A3B급 모델 30개(base·instruct).
+- 통일 비교(chat 템플릿 없이 같은 원문 프롬프트, 9개 영역 같은 가중치) 종합 1위는 qwen3.6-35b-a3b 0.585, dense 최고는 qwen3-4b-2507 0.492(8위)다. 사용자 모델은 JANSORI 0.181, EVAFRILL slerp 0.155, frankenstallm 0.152, EVAFRILL pretrain 0.151로 34개 중 31~34위다.
+- 사용자 모델이 상위권인 영역은 언어 모델링(한국어 bits-per-byte)뿐이다(JANSORI base 15개 중 4위). 지식형 객관식은 무작위 수준 근처이고, 수학·코드는 0에 가깝다.
+- 보고서에는 설정 선택 근거(dev), 실패·주의 사항(코드 형식 불일치, judge 자기 선호 가능성, 버그 수정 이력)도 함께 적었다.
 
 ## 평가 트랙
 
@@ -222,8 +235,8 @@ ko-llm-bench-suite/
 │   ├── evafrill_server.py     # EVAFRILL HTTP 추론 서버
 │   ├── scoring.py             # 스코어카드 + Bradley-Terry Elo
 │   ├── report.py              # HTML/Markdown 리포트 생성
-│   ├── standard/              # 표준 벤치 (lm-eval·vLLM·EVAFRILL, A/B 표, dev 설정 선택)
-│   │   └── tasks/             #   커스텀 태스크 (dev / custom / gen)
+│   ├── standard/              # 표준 벤치 (lm-eval·vLLM·EVAFRILL·llama.cpp, 생성·judge·다턴·통일 비교·성능·최종 보고서)
+│   │   └── tasks/             #   커스텀 태스크 (dev / custom / gen / uni)
 │   ├── backends/              # 추론 백엔드 추상화
 │   │   ├── base.py            #   InferenceBackend ABC
 │   │   └── ollama.py          #   OllamaBackend 구현
@@ -237,7 +250,7 @@ ko-llm-bench-suite/
 │       └── pairwise.py        #   T7: Pairwise Elo
 ├── configs/                   # YAML 설정 파일
 │   ├── default.yaml           #   기본 설정 (템플릿)
-│   ├── standard/              #   표준 벤치: models·suites·dev_selection·best_settings
+│   ├── standard/              #   표준 벤치: models·suites·gen·unified·dev_selection·best_settings
 │   └── examples/
 │       └── frankenstallm.yaml #   13모델 평가 예시
 ├── benchmarks/                # 벤치마크 데이터셋
@@ -250,11 +263,11 @@ ko-llm-bench-suite/
 │   └── frankenstallm/         # Frankenstallm 평가 결과 아카이브
 │       └── reports/
 │           └── visualizations/ #  26종 시각화 차트
-├── tests/                     # pytest 테스트 (557개 + GPU 5개)
+├── tests/                     # pytest 테스트 (637개 + GPU·데이터 6개)
 │   ├── unit/
 │   └── integration/
-├── results/                   # 평가 결과 출력 (JSON, standard/는 요약 JSON만 커밋)
-├── reports/                   # 생성된 리포트 (HTML/MD)
+├── results/                   # 평가 결과 출력 (JSON, standard/·gen/·perf/는 요약 JSON만 커밋)
+├── reports/                   # 생성된 리포트 (HTML/MD, standard/·gen/ 표, final/ 최종 보고서)
 ├── pyproject.toml
 ├── requirements.txt
 └── requirements-dev.txt
@@ -322,7 +335,7 @@ pytest tests/integration/ -v
 pytest tests/ --cov=kobench --cov-report=html
 ```
 
-> 557개 테스트가 Ollama나 GPU 없이 동작합니다. 표준 벤치의 GPU 엔진·llama.cpp·실제 Ollama 토큰 검사 5개는
+> 637개 테스트가 Ollama나 GPU 없이 동작합니다. 표준 벤치의 GPU 엔진·llama.cpp·실제 Ollama 토큰 검사·데이터 스냅샷이 필요한 6개는
 > `KOBENCH_GPU=1 KOBENCH_SLOW=1 pytest tests/`로 실행합니다.
 > 이중 Judge, HTTP 모드, 체크포인트 재개 등 모든 핵심 기능이 테스트에 포함되어 있습니다.
 

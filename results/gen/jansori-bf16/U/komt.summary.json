@@ -1,0 +1,28 @@
+{
+ "model": "jansori-bf16",
+ "variant": "U",
+ "task": "komt",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 80,
+   "parse_fail": 0,
+   "score": 1.1,
+   "by_category": {
+    "coding": 1.1,
+    "extraction": 1.0,
+    "humanities": 1.05,
+    "math": 1.0,
+    "reasoning": 1.2,
+    "roleplay": 1.3,
+    "stem": 1.15,
+    "writing": 1.0
+   },
+   "turn1": 1.125,
+   "turn2": 1.075,
+   "same_family_as_judge": false,
+   "truncated": 0.225
+  }
+ }
+}

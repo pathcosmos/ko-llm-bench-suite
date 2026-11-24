@@ -1,0 +1,32 @@
+{
+ "model": "evafrill-mo-3b",
+ "variant": "A",
+ "task": "ko_truthful_mc1",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 817,
+ "n_generated": 817,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "acc": 0.14320685434516525,
+   "format_fail": 0.401468788249694,
+   "n": 817,
+   "acc_answered": 0.2392638036809816,
+   "loop": 0.06364749082007344,
+   "rep3": 0.20941068223945805,
+   "truncated": 0.05018359853121175
+  },
+  "unk_drop": {
+   "acc": 0.17380660954712362,
+   "format_fail": 0.19706242350061198,
+   "n": 817,
+   "acc_answered": 0.21646341463414634,
+   "loop": 0.06364749082007344,
+   "rep3": 0.19437777911646212,
+   "truncated": 0.05018359853121175
+  }
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "model": "phi-4-mini",
+ "variant": "A",
+ "task": "hrm8k",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 8011,
+ "n_generated": 8011,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.3013356634627387,
+   "exact_match": 0.30171014854574957,
+   "format_fail": 0.10860067407314943,
+   "by_subset": {
+    "gsm8k": 0.6694465504169825,
+    "ksm": 0.04831932773109244,
+    "math": 0.39549393414211437,
+    "mmmlu": 0.1,
+    "omni_math": 0.143530644316396
+   },
+   "n": 8011,
+   "loop": 0.05692173261765073,
+   "rep3": 0.1974575337692044,
+   "truncated": 0.1090999875171639
+  }
+ }
+}

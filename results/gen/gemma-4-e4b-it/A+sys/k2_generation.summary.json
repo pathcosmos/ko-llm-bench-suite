@@ -1,0 +1,16 @@
+{
+ "model": "gemma-4-e4b-it",
+ "variant": "A+sys",
+ "task": "k2_generation",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 90,
+   "parse_fail": 0,
+   "score": 7.788888888888889,
+   "same_family_as_judge": false,
+   "truncated": 0.0
+  }
+ }
+}

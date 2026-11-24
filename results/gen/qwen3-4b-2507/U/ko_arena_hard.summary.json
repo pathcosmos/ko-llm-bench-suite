@@ -1,0 +1,17 @@
+{
+ "model": "qwen3-4b-2507",
+ "variant": "U",
+ "task": "ko_arena_hard",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 500,
+   "parse_fail": 23,
+   "winrate": 0.8719818913480886,
+   "baseline": "llama-3.2-3b-instruct",
+   "same_family_as_judge": true,
+   "truncated": 0.13
+  }
+ }
+}

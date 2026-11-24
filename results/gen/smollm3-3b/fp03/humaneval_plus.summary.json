@@ -1,0 +1,23 @@
+{
+ "model": "smollm3-3b",
+ "variant": "fp03",
+ "task": "humaneval_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 163,
+ "n_generated": 164,
+ "excluded": [
+  "HumanEval/32"
+ ],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.6625766871165644,
+   "n": 163,
+   "timeout": 0.006134969325153374,
+   "loop": 0.006134969325153374,
+   "rep3": 0.07200183975161323,
+   "truncated": 0.04294478527607362
+  }
+ }
+}

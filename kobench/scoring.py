@@ -281,6 +281,9 @@ def build_scorecard(track_results: dict[str, dict]) -> dict[str, dict]:
 def save_scorecard(scorecard: dict, path: Optional[Path] = None) -> Path:
     if path is None:
         path = config.RESULTS_DIR / "scorecard.json"
+    # 자체 작성 문항 트랙은 공개 벤치마크와 구분되도록 표시한다 (config.CUSTOM_TRACKS)
+    doc = {"_custom_tracks": dict(getattr(config, "CUSTOM_TRACKS", {})), "_backend": getattr(config, "BACKEND_TYPE", "ollama"),
+           **scorecard}
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(scorecard, f, ensure_ascii=False, indent=2, default=str)
+        json.dump(doc, f, ensure_ascii=False, indent=2, default=str)
     return path

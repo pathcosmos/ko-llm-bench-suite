@@ -1,0 +1,26 @@
+{
+ "model": "kanana-1.5-2.1b-base",
+ "variant": "U",
+ "task": "logickor",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 42,
+   "parse_fail": 0,
+   "score": 3.468253968253968,
+   "by_category": {
+    "글쓰기(Writing)": 0.8571428571428571,
+    "문법(Grammar)": 5.285714285714286,
+    "수학(Math)": 3.142857142857143,
+    "이해(Understanding)": 4.285714285714286,
+    "추론(Reasoning)": 3.7380952380952377,
+    "코딩(Coding)": 3.5
+   },
+   "turn1": 4.0,
+   "turn2": 2.9047619047619047,
+   "same_family_as_judge": false,
+   "truncated": 0.14285714285714285
+  }
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "task": "ko_arena_hard",
+ "task_def": {
+  "dataset": "ko_arena",
+  "scorer": "judge",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 2048,
+  "metric": "winrate"
+ },
+ "dataset": {
+  "repo": "qwopqwop/ko-arena-hard-auto-v0.1",
+  "revision": "b32e04e571e137cc00f5363f4e150dca35921087",
+  "license": "Apache-2.0"
+ },
+ "limit": null,
+ "model": {
+  "id": "qwen3-4b-2507",
+  "family": "Qwen3",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "params_b": 4.0,
+  "active_b": 4.0,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "fp03+sys",
+ "sampling": {
+  "temperature": 0.0,
+  "frequency_penalty": 0.3
+ },
+ "think_kwargs": {},
+ "max_model_len": 4096,
+ "system": "당신은 도움이 되는 한국어 어시스턴트입니다. 사용자의 질문에 한국어로 정확하고 간결하게 답하세요. 같은 문장이나 내용을 되풀이하지 말고, 답을 마치면 바로 끝내세요.",
+ "template": null,
+ "n_items": 500,
+ "generated_tokens_this_run": 220672,
+ "wall_seconds": 16.9,
+ "finished_at": "2026-11-20T14:16:19.211720+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}

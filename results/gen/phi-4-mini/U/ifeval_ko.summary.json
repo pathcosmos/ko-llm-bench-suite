@@ -1,0 +1,23 @@
+{
+ "model": "phi-4-mini",
+ "variant": "U",
+ "task": "ifeval_ko",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 342,
+ "n_generated": 342,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "prompt_level_strict_acc": 0.40350877192982454,
+   "prompt_level_loose_acc": 0.4649122807017544,
+   "inst_level_strict_acc": 0.49480249480249483,
+   "inst_level_loose_acc": 0.5467775467775468,
+   "n": 342,
+   "loop": 0.11695906432748537,
+   "rep3": 0.21691402088795403,
+   "truncated": 0.13450292397660818
+  }
+ }
+}

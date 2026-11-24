@@ -1,0 +1,26 @@
+{
+ "model": "nemotron-3.5-lightning-30b-a3b",
+ "variant": "think",
+ "task": "logickor",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 42,
+   "parse_fail": 0,
+   "score": 5.51984126984127,
+   "by_category": {
+    "글쓰기(Writing)": 5.142857142857143,
+    "문법(Grammar)": 7.285714285714286,
+    "수학(Math)": 4.928571428571429,
+    "이해(Understanding)": 6.428571428571429,
+    "추론(Reasoning)": 4.047619047619048,
+    "코딩(Coding)": 5.285714285714286
+   },
+   "turn1": 5.690476190476191,
+   "turn2": 5.333333333333333,
+   "same_family_as_judge": false,
+   "truncated": 0.07142857142857142
+  }
+ }
+}

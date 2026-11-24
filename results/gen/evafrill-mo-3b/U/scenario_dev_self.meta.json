@@ -1,0 +1,57 @@
+{
+ "task": "scenario_dev_self",
+ "task_def": {
+  "dataset": null,
+  "generator": "kobench.standard.scenario",
+  "scorer": "scenario",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 1024,
+  "metric": "turn_pass",
+  "dev": true
+ },
+ "dataset": {
+  "generator": "kobench.standard.scenario"
+ },
+ "limit": null,
+ "model": {
+  "id": "evafrill-mo-3b",
+  "family": "EVAFRILL-Mo",
+  "kind": "instruct",
+  "backend": "evafrill",
+  "path": "pathcosmos/EVAFRILL-Mo-3B",
+  "revision": "e95edece955af9df9a6215210db594a9984fddf5",
+  "params_b": 2.94,
+  "active_b": 2.94,
+  "owner": "self",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "U",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {},
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 100,
+ "generated_tokens_this_run": 45783,
+ "wall_seconds": 76.9,
+ "finished_at": "2026-11-22T20:12:53.987679+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}

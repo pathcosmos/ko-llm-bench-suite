@@ -1,0 +1,59 @@
+{
+ "task": "ko_arena_hard",
+ "task_def": {
+  "dataset": "ko_arena",
+  "scorer": "judge",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 2048,
+  "metric": "winrate"
+ },
+ "dataset": {
+  "repo": "qwopqwop/ko-arena-hard-auto-v0.1",
+  "revision": "b32e04e571e137cc00f5363f4e150dca35921087",
+  "license": "Apache-2.0"
+ },
+ "limit": null,
+ "model": {
+  "id": "nemotron-3-nano-30b-a3b",
+  "family": "Nemotron-H-MoE",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+  "revision": "bf77c3174f68ad409e1c2aa60daeb46e32d1c606",
+  "params_b": 30,
+  "active_b": 3,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": true,
+  "extra": {}
+ },
+ "variant": "U",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {
+  "enable_thinking": false
+ },
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 500,
+ "generated_tokens_this_run": 281463,
+ "wall_seconds": 43.7,
+ "finished_at": "2026-11-23T14:40:52.196131+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "b2ad20d13eaad2dc67bc407bfd6470375fa4c8dd"
+}

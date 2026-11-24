@@ -1,0 +1,28 @@
+{
+ "model": "ernie-4.5-21b-a3b",
+ "variant": "U",
+ "task": "komt",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 80,
+   "parse_fail": 0,
+   "score": 4.39375,
+   "by_category": {
+    "coding": 5.85,
+    "extraction": 5.15,
+    "humanities": 3.8,
+    "math": 7.25,
+    "reasoning": 2.85,
+    "roleplay": 3.55,
+    "stem": 4.1,
+    "writing": 2.6
+   },
+   "turn1": 4.925,
+   "turn2": 3.8625,
+   "same_family_as_judge": false,
+   "truncated": 0.0125
+  }
+ }
+}

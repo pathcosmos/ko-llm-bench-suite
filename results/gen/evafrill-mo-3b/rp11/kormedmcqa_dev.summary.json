@@ -1,0 +1,32 @@
+{
+ "model": "evafrill-mo-3b",
+ "variant": "rp11",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "acc": 0.059490084985835696,
+   "format_fail": 0.6912181303116147,
+   "n": 1059,
+   "acc_answered": 0.1926605504587156,
+   "loop": 0.0339943342776204,
+   "rep3": 0.10929186895029509,
+   "truncated": 0.06515580736543909
+  },
+  "unk_drop": {
+   "acc": 0.06610009442870633,
+   "format_fail": 0.6279508970727101,
+   "n": 1059,
+   "acc_answered": 0.17766497461928935,
+   "loop": 0.031161473087818695,
+   "rep3": 0.10699417118889447,
+   "truncated": 0.06515580736543909
+  }
+ }
+}

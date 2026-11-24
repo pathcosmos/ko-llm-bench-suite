@@ -1,0 +1,23 @@
+{
+ "model": "ernie-4.5-21b-a3b-base",
+ "variant": "U",
+ "task": "humaneval_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 163,
+ "n_generated": 164,
+ "excluded": [
+  "HumanEval/32"
+ ],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.6748466257668712,
+   "n": 163,
+   "timeout": 0.006134969325153374,
+   "loop": 0.006134969325153374,
+   "rep3": 0.07914926382510767,
+   "truncated": 0.08588957055214724
+  }
+ }
+}

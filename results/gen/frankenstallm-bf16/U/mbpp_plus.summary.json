@@ -1,0 +1,30 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "U",
+ "task": "mbpp_plus",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 378,
+ "n_generated": 378,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "pass_plus": 0.0,
+   "n": 378,
+   "timeout": 0.0,
+   "loop": 0.07407407407407407,
+   "rep3": 0.2559282507407787,
+   "truncated": 0.10317460317460317
+  },
+  "unk_drop": {
+   "pass_plus": 0.0,
+   "n": 378,
+   "timeout": 0.0,
+   "loop": 0.07407407407407407,
+   "rep3": 0.23267881677937371,
+   "truncated": 0.10317460317460317
+  }
+ }
+}

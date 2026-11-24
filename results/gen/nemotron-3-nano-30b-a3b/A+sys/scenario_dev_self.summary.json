@@ -1,0 +1,71 @@
+{
+ "model": "nemotron-3-nano-30b-a3b",
+ "variant": "A+sys",
+ "task": "scenario_dev_self",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 100,
+ "n_generated": 100,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "turn_pass": 0.7266666666666667,
+   "scenario_pass": 0.45,
+   "n": 100,
+   "by_category": {
+    "code_revise": {
+     "turn_pass": 1.0,
+     "scenario_pass": 1.0
+    },
+    "format_transform": {
+     "turn_pass": 0.95,
+     "scenario_pass": 0.8
+    },
+    "instruction_persist": {
+     "turn_pass": 0.7,
+     "scenario_pass": 0.2
+    },
+    "korean_style": {
+     "turn_pass": 0.575,
+     "scenario_pass": 0.0
+    },
+    "list_tracking": {
+     "turn_pass": 0.8800000000000001,
+     "scenario_pass": 0.7
+    },
+    "logic_order": {
+     "turn_pass": 0.375,
+     "scenario_pass": 0.0
+    },
+    "math_update": {
+     "turn_pass": 0.62,
+     "scenario_pass": 0.5
+    },
+    "memory": {
+     "turn_pass": 0.86,
+     "scenario_pass": 0.5
+    },
+    "story_continue": {
+     "turn_pass": 0.9400000000000001,
+     "scenario_pass": 0.8
+    },
+    "unknown_entity": {
+     "turn_pass": 0.36666666666666664,
+     "scenario_pass": 0.0
+    }
+   },
+   "by_turn": {
+    "1": 0.72,
+    "2": 0.83,
+    "3": 0.79,
+    "4": 0.6,
+    "5": 0.7
+   },
+   "loop": 0.009302325581395349,
+   "overlap_prev": 0.10035302325581395,
+   "copy_prev": 0.05116279069767442,
+   "rep3": 0.023423089190475525
+  }
+ }
+}

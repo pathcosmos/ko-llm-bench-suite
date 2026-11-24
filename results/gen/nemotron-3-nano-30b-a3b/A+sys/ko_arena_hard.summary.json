@@ -1,0 +1,17 @@
+{
+ "model": "nemotron-3-nano-30b-a3b",
+ "variant": "A+sys",
+ "task": "ko_arena_hard",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 500,
+   "parse_fail": 20,
+   "winrate": 0.9351106639839034,
+   "baseline": "llama-3.2-3b-instruct",
+   "same_family_as_judge": false,
+   "truncated": 0.048
+  }
+ }
+}

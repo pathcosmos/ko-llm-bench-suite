@@ -1,0 +1,26 @@
+{
+ "model": "phi-4-mini",
+ "variant": "fp03",
+ "task": "logickor",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 42,
+   "parse_fail": 1,
+   "score": 4.75,
+   "by_category": {
+    "글쓰기(Writing)": 4.857142857142857,
+    "문법(Grammar)": 4.0,
+    "수학(Math)": 4.428571428571429,
+    "이해(Understanding)": 6.5,
+    "추론(Reasoning)": 3.5,
+    "코딩(Coding)": 5.214285714285714
+   },
+   "turn1": 5.341463414634147,
+   "turn2": 4.261904761904762,
+   "same_family_as_judge": false,
+   "truncated": 0.0
+  }
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "model": "evafrill-mo-3b",
+ "variant": "card",
+ "task": "ifeval_ko",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 342,
+ "n_generated": 342,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "prompt_level_strict_acc": 0.09064327485380116,
+   "prompt_level_loose_acc": 0.09649122807017543,
+   "inst_level_strict_acc": 0.15384615384615385,
+   "inst_level_loose_acc": 0.17463617463617465,
+   "n": 342,
+   "loop": 0.08771929824561403,
+   "rep3": 0.014860496165021032,
+   "truncated": 0.10526315789473684
+  },
+  "unk_drop": {
+   "prompt_level_strict_acc": 0.0935672514619883,
+   "prompt_level_loose_acc": 0.0935672514619883,
+   "inst_level_strict_acc": 0.15384615384615385,
+   "inst_level_loose_acc": 0.15384615384615385,
+   "n": 342,
+   "loop": 0.0847953216374269,
+   "rep3": 0.014863038664446663,
+   "truncated": 0.10526315789473684
+  }
+ }
+}

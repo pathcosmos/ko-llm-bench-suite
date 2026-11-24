@@ -1,0 +1,58 @@
+{
+ "task": "scenario_dev_self",
+ "task_def": {
+  "dataset": null,
+  "generator": "kobench.standard.scenario",
+  "scorer": "scenario",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 1024,
+  "metric": "turn_pass",
+  "dev": true
+ },
+ "dataset": {
+  "generator": "kobench.standard.scenario"
+ },
+ "limit": null,
+ "model": {
+  "id": "phi-4-mini",
+  "family": "Phi4",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "microsoft/Phi-4-mini-instruct",
+  "revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+  "params_b": 3.8,
+  "active_b": 3.8,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": false,
+  "extra": {}
+ },
+ "variant": "fp03+sys",
+ "sampling": {
+  "temperature": 0.0,
+  "frequency_penalty": 0.3
+ },
+ "think_kwargs": {},
+ "max_model_len": 4096,
+ "system": "당신은 도움이 되는 한국어 어시스턴트입니다. 사용자의 질문에 한국어로 정확하고 간결하게 답하세요. 같은 문장이나 내용을 되풀이하지 말고, 답을 마치면 바로 끝내세요.",
+ "template": null,
+ "n_items": 100,
+ "generated_tokens_this_run": 21729,
+ "wall_seconds": 6.8,
+ "finished_at": "2026-11-21T03:16:30.746051+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}

@@ -1,0 +1,22 @@
+{
+ "model": "gemma-4-e4b-it",
+ "variant": "fp03",
+ "task": "gsm8k_ko_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.73,
+   "exact_match": 0.73,
+   "format_fail": 0.04,
+   "n": 300,
+   "loop": 0.006666666666666667,
+   "rep3": 0.08437330397897311,
+   "truncated": 0.03333333333333333
+  }
+ }
+}

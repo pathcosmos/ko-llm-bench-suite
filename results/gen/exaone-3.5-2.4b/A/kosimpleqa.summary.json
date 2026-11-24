@@ -1,0 +1,20 @@
+{
+ "model": "exaone-3.5-2.4b",
+ "variant": "A",
+ "task": "kosimpleqa",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 1000,
+   "parse_fail": 0,
+   "correct": 0.092,
+   "not_attempted": 0.096,
+   "incorrect": 0.812,
+   "correct_given_attempted": 0.10176991150442477,
+   "f_score": 0.09663865546218486,
+   "same_family_as_judge": false,
+   "truncated": 0.02
+  }
+ }
+}

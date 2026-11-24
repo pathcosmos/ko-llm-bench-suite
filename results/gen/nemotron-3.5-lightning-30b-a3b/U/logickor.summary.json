@@ -1,0 +1,26 @@
+{
+ "model": "nemotron-3.5-lightning-30b-a3b",
+ "variant": "U",
+ "task": "logickor",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 42,
+   "parse_fail": 0,
+   "score": 7.76984126984127,
+   "by_category": {
+    "글쓰기(Writing)": 8.0,
+    "문법(Grammar)": 6.214285714285714,
+    "수학(Math)": 8.0,
+    "이해(Understanding)": 7.857142857142857,
+    "추론(Reasoning)": 7.904761904761905,
+    "코딩(Coding)": 8.642857142857142
+   },
+   "turn1": 8.119047619047619,
+   "turn2": 7.428571428571429,
+   "same_family_as_judge": false,
+   "truncated": 0.0
+  }
+ }
+}

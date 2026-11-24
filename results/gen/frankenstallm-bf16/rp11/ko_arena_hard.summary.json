@@ -1,0 +1,17 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "rp11",
+ "task": "ko_arena_hard",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "unk_drop",
+ "metrics": {
+  "judge": {
+   "n": 500,
+   "parse_fail": 19,
+   "winrate": 0.18309859154929578,
+   "baseline": "llama-3.2-3b-instruct",
+   "same_family_as_judge": false,
+   "truncated": 0.194
+  }
+ }
+}

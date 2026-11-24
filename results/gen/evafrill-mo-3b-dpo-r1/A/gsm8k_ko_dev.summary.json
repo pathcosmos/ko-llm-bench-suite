@@ -1,0 +1,32 @@
+{
+ "model": "evafrill-mo-3b-dpo-r1",
+ "variant": "A",
+ "task": "gsm8k_ko_dev",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "exact_match_strict": 0.0,
+   "exact_match": 0.016666666666666666,
+   "format_fail": 0.9533333333333334,
+   "n": 300,
+   "loop": 0.48,
+   "rep3": 0.5867775516406017,
+   "truncated": 0.33
+  },
+  "unk_drop": {
+   "exact_match_strict": 0.0,
+   "exact_match": 0.016666666666666666,
+   "format_fail": 0.9533333333333334,
+   "n": 300,
+   "loop": 0.48333333333333334,
+   "rep3": 0.5736820883287901,
+   "truncated": 0.33
+  }
+ }
+}

@@ -52,6 +52,16 @@ models:
     active_b: 2.94
     max_length: 4096
 
+  # GGUF (llama.cpp, 로그우도·PPL 전용; kobench.standard.llamacpp_lm). 토큰화는 BF16과 같은 학습 토크나이저로 토큰 ID 입력
+  # JANSORI: 배포 GGUF(HF pathcosmos/JANSORI와 같은 NFS 배포본) + 기준점 f16(runs/gguf_v1/convert_jansori_f16.py로 BF16에서 변환)
+  jansori-gguf-f16:    {owner: self, family: JANSORI, kind: base, backend: llamacpp, path: "${LT_LOCAL:-/workspace/llm-test}/gguf/jansori-3b-47k-f16.gguf", revision: e68bfa3cb31e9589f4481a2e31d6d75c731fec9d, params_b: 3.2, active_b: 3.2, quant: F16}
+  jansori-gguf-q8_0:   {owner: self, family: JANSORI, kind: base, backend: llamacpp, path: /home/work/llm-dense/llm-traditional/runs/3b_47k_hub_release_v1/nfs-release-v1/gguf/dense-3b-47k-Q8_0.gguf, revision: e68bfa3cb31e9589f4481a2e31d6d75c731fec9d, params_b: 3.2, active_b: 3.2, quant: Q8_0}
+  jansori-gguf-q4_k_m: {owner: self, family: JANSORI, kind: base, backend: llamacpp, path: /home/work/llm-dense/llm-traditional/runs/3b_47k_hub_release_v1/nfs-release-v1/gguf/dense-3b-47k-Q4_K_M.gguf, revision: e68bfa3cb31e9589f4481a2e31d6d75c731fec9d, params_b: 3.2, active_b: 3.2, quant: Q4_K_M}
+  # frankenstallm: 배포 GGUF v2의 가중치 + 학습 토크나이저 메타데이터 (gguf_retokenize, 가중치 바이트 동일)
+  frankenstallm-gguf-f16:    {owner: self, family: FRANKENSTALLM, kind: instruct, backend: llamacpp, path: "${LT_LOCAL:-/workspace/llm-test}/gguf/frankenstallm-3b-v2-f16.train-tokenizer.gguf", revision: b9f7777f01479b18e5a3a55f9cad4582df122f7d, params_b: 3.0, active_b: 3.0, quant: F16}
+  frankenstallm-gguf-q8_0:   {owner: self, family: FRANKENSTALLM, kind: instruct, backend: llamacpp, path: "${LT_LOCAL:-/workspace/llm-test}/gguf/frankenstallm-3b-v2-Q8_0.train-tokenizer.gguf", revision: b9f7777f01479b18e5a3a55f9cad4582df122f7d, params_b: 3.0, active_b: 3.0, quant: Q8_0}
+  frankenstallm-gguf-q4_k_m: {owner: self, family: FRANKENSTALLM, kind: instruct, backend: llamacpp, path: "${LT_LOCAL:-/workspace/llm-test}/gguf/frankenstallm-3b-v2-Q4_K_M.train-tokenizer.gguf", revision: b9f7777f01479b18e5a3a55f9cad4582df122f7d, params_b: 3.0, active_b: 3.0, quant: Q4_K_M}
+
   # EVAFRILL 학습 단계별 체크포인트 (루트 model.safetensors = slerp와 같은 파일)
   evafrill-mo-3b-sft-v2:
     owner: self

@@ -1,0 +1,40 @@
+{
+ "model": "frankenstallm-bf16",
+ "variant": "rp11",
+ "task": "kobbq",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 2280,
+ "n_generated": 2280,
+ "excluded": [],
+ "metrics": {
+  "unk_nl": {
+   "acc": 0.2293859649122807,
+   "format_fail": 0.31491228070175437,
+   "n": 2280,
+   "acc_answered": 0.3348271446862996,
+   "acc_amb": 0.1850877192982456,
+   "acc_dis": 0.2736842105263158,
+   "diff_bias_amb": 0.007017543859649123,
+   "diff_bias_dis": 0.03508771929824561,
+   "loop": 0.0,
+   "rep3": 0.02057126163902749,
+   "truncated": 0.0
+  },
+  "unk_drop": {
+   "acc": 0.2293859649122807,
+   "format_fail": 0.31491228070175437,
+   "n": 2280,
+   "acc_answered": 0.3348271446862996,
+   "acc_amb": 0.1850877192982456,
+   "acc_dis": 0.2736842105263158,
+   "diff_bias_amb": 0.007017543859649123,
+   "diff_bias_dis": 0.03508771929824561,
+   "loop": 0.0,
+   "rep3": 0.019836182247605593,
+   "truncated": 0.0
+  }
+ }
+}

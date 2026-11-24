@@ -1,0 +1,22 @@
+{
+ "model": "nemotron-3.5-lightning-30b-a3b",
+ "variant": "rp12",
+ "task": "gsm8k_ko_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 300,
+ "n_generated": 300,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.54,
+   "exact_match": 0.54,
+   "format_fail": 0.006666666666666667,
+   "n": 300,
+   "loop": 0.0,
+   "rep3": 0.021079274446020205,
+   "truncated": 0.0
+  }
+ }
+}

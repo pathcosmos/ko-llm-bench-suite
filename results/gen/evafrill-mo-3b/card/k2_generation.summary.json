@@ -1,0 +1,16 @@
+{
+ "model": "evafrill-mo-3b",
+ "variant": "card",
+ "task": "k2_generation",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "unk_drop",
+ "metrics": {
+  "judge": {
+   "n": 90,
+   "parse_fail": 0,
+   "score": 2.0,
+   "same_family_as_judge": false,
+   "truncated": 0.022222222222222223
+  }
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "model": "nemotron-3-nano-30b-a3b",
+ "variant": "think",
+ "task": "ko_truthful_mc1",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 817,
+ "n_generated": 817,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.6572827417380661,
+   "format_fail": 0.02692778457772338,
+   "n": 817,
+   "acc_answered": 0.6754716981132075,
+   "loop": 0.0,
+   "rep3": 0.0008312135693040934,
+   "truncated": 0.0024479804161566705
+  }
+ }
+}

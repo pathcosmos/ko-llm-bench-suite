@@ -1,0 +1,29 @@
+{
+ "model": "jansori-bf16",
+ "variant": "U",
+ "task": "hrm8k",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 8011,
+ "n_generated": 8011,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "exact_match_strict": 0.011609037573336662,
+   "exact_match": 0.025589814005742104,
+   "format_fail": 0.6358756709524404,
+   "by_subset": {
+    "gsm8k": 0.024260803639120546,
+    "ksm": 0.0,
+    "math": 0.01490467937608319,
+    "mmmlu": 0.002127659574468085,
+    "omni_math": 0.00890518596123625
+   },
+   "n": 8011,
+   "loop": 0.3607539633004619,
+   "rep3": 0.4347612573063337,
+   "truncated": 0.4247909124953189
+  }
+ }
+}

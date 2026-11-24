@@ -1,0 +1,22 @@
+{
+ "model": "ernie-4.5-21b-a3b",
+ "variant": "A",
+ "task": "k2_knowledge",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 432,
+ "n_generated": 432,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.7175925925925926,
+   "format_fail": 0.016203703703703703,
+   "n": 432,
+   "acc_answered": 0.7294117647058823,
+   "loop": 0.0,
+   "rep3": 0.006303877253916055,
+   "truncated": 0.0
+  }
+ }
+}

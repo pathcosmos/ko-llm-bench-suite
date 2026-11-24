@@ -1,0 +1,22 @@
+{
+ "model": "ernie-4.5-21b-a3b",
+ "variant": "rp12",
+ "task": "kormedmcqa_dev",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 1059,
+ "n_generated": 1059,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.493862134088763,
+   "format_fail": 0.06987724268177525,
+   "n": 1059,
+   "acc_answered": 0.5309644670050762,
+   "loop": 0.0,
+   "rep3": 0.005721517961511225,
+   "truncated": 0.0056657223796034
+  }
+ }
+}

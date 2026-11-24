@@ -1,0 +1,32 @@
+{
+ "model": "evafrill-mo-3b-pretrain",
+ "variant": "A",
+ "task": "humaneval_plus",
+ "policies": [
+  "unk_nl",
+  "unk_drop"
+ ],
+ "n_items": 163,
+ "n_generated": 164,
+ "excluded": [
+  "HumanEval/32"
+ ],
+ "metrics": {
+  "unk_nl": {
+   "pass_plus": 0.0,
+   "n": 163,
+   "timeout": 0.0,
+   "loop": 0.6012269938650306,
+   "rep3": 0.8494734640706265,
+   "truncated": 1.0
+  },
+  "unk_drop": {
+   "pass_plus": 0.0,
+   "n": 163,
+   "timeout": 0.0,
+   "loop": 0.6012269938650306,
+   "rep3": 0.8493673891494702,
+   "truncated": 1.0
+  }
+ }
+}

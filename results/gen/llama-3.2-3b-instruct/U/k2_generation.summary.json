@@ -1,0 +1,16 @@
+{
+ "model": "llama-3.2-3b-instruct",
+ "variant": "U",
+ "task": "k2_generation",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "raw",
+ "metrics": {
+  "judge": {
+   "n": 90,
+   "parse_fail": 1,
+   "score": 1.9438202247191012,
+   "same_family_as_judge": false,
+   "truncated": 0.4444444444444444
+  }
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "model": "evafrill-mo-3b",
+ "variant": "A",
+ "task": "komt",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "unk_drop",
+ "metrics": {
+  "judge": {
+   "n": 80,
+   "parse_fail": 0,
+   "score": 1.08125,
+   "by_category": {
+    "coding": 1.0,
+    "extraction": 1.0,
+    "humanities": 1.05,
+    "math": 1.0,
+    "reasoning": 1.45,
+    "roleplay": 1.1,
+    "stem": 1.0,
+    "writing": 1.05
+   },
+   "turn1": 1.15,
+   "turn2": 1.0125,
+   "same_family_as_judge": false,
+   "truncated": 0.6625
+  }
+ }
+}

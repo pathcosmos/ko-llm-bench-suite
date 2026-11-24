@@ -1,0 +1,60 @@
+{
+ "task": "scenario_dev_self",
+ "task_def": {
+  "dataset": null,
+  "generator": "kobench.standard.scenario",
+  "scorer": "scenario",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 1024,
+  "metric": "turn_pass",
+  "dev": true
+ },
+ "dataset": {
+  "generator": "kobench.standard.scenario"
+ },
+ "limit": null,
+ "model": {
+  "id": "nemotron-3.5-lightning-30b-a3b",
+  "family": "Nemotron-H-MoE",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+  "revision": "a9904d24bcc1d289a1950fa9d2b978c47cf903b9",
+  "params_b": 30,
+  "active_b": 3,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": true,
+  "extra": {}
+ },
+ "variant": "fp03",
+ "sampling": {
+  "temperature": 0.0,
+  "frequency_penalty": 0.3
+ },
+ "think_kwargs": {
+  "enable_thinking": false
+ },
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 100,
+ "generated_tokens_this_run": 35031,
+ "wall_seconds": 20.0,
+ "finished_at": "2026-11-21T04:58:45.000366+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}

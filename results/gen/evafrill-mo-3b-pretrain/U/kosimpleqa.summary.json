@@ -1,0 +1,20 @@
+{
+ "model": "evafrill-mo-3b-pretrain",
+ "variant": "U",
+ "task": "kosimpleqa",
+ "judge": "qwen3.6-35b-a3b",
+ "unk_policy": "unk_nl",
+ "metrics": {
+  "judge": {
+   "n": 1000,
+   "parse_fail": 0,
+   "correct": 0.074,
+   "not_attempted": 0.048,
+   "incorrect": 0.878,
+   "correct_given_attempted": 0.07773109243697479,
+   "f_score": 0.07581967213114754,
+   "same_family_as_judge": false,
+   "truncated": 0.005
+  }
+ }
+}

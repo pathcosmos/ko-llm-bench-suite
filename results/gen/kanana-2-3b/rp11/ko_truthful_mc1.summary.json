@@ -1,0 +1,22 @@
+{
+ "model": "kanana-2-3b",
+ "variant": "rp11",
+ "task": "ko_truthful_mc1",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 817,
+ "n_generated": 817,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.4504283965728274,
+   "format_fail": 0.0024479804161566705,
+   "n": 817,
+   "acc_answered": 0.45153374233128835,
+   "loop": 0.0,
+   "rep3": 0.0013699702704670562,
+   "truncated": 0.0
+  }
+ }
+}

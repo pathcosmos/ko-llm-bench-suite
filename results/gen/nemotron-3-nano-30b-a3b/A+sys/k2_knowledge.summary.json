@@ -1,0 +1,22 @@
+{
+ "model": "nemotron-3-nano-30b-a3b",
+ "variant": "A+sys",
+ "task": "k2_knowledge",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 432,
+ "n_generated": 432,
+ "excluded": [],
+ "metrics": {
+  "raw": {
+   "acc": 0.8495370370370371,
+   "format_fail": 0.0,
+   "n": 432,
+   "acc_answered": 0.8495370370370371,
+   "loop": 0.0,
+   "rep3": 0.0,
+   "truncated": 0.0
+  }
+ }
+}

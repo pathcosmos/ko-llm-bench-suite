@@ -1,0 +1,23 @@
+{
+ "model": "gemma-4-e4b-it",
+ "variant": "U",
+ "task": "humaneval_plus",
+ "policies": [
+  "raw"
+ ],
+ "n_items": 163,
+ "n_generated": 164,
+ "excluded": [
+  "HumanEval/32"
+ ],
+ "metrics": {
+  "raw": {
+   "pass_plus": 0.03680981595092025,
+   "n": 163,
+   "timeout": 0.0,
+   "loop": 0.2331288343558282,
+   "rep3": 0.5504316813769528,
+   "truncated": 0.22699386503067484
+  }
+ }
+}

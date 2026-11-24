@@ -1,0 +1,57 @@
+{
+ "task": "kobbq",
+ "task_def": {
+  "dataset": "kobbq",
+  "scorer": "rule",
+  "kinds": [
+   "instruct"
+  ],
+  "max_new": 512,
+  "metric": "acc"
+ },
+ "dataset": {
+  "repo": "naver-ai/kobbq",
+  "revision": "ccb902a2209a9d79ef921a21d90b52711cbf4d2a",
+  "license": "MIT"
+ },
+ "limit": null,
+ "model": {
+  "id": "exaone-3.5-2.4b",
+  "family": "EXAONE3.5",
+  "kind": "instruct",
+  "backend": "vllm",
+  "path": "LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct",
+  "revision": "ccce25bd39c141fe053e0bc75818a8f5fe962802",
+  "params_b": 2.4,
+  "active_b": 2.4,
+  "owner": "public",
+  "subfolder": "",
+  "max_length": 4096,
+  "gated": false,
+  "trust_remote_code": true,
+  "extra": {}
+ },
+ "variant": "A",
+ "sampling": {
+  "temperature": 0.0
+ },
+ "think_kwargs": {},
+ "max_model_len": 4096,
+ "system": null,
+ "template": null,
+ "n_items": 2280,
+ "generated_tokens_this_run": 89899,
+ "wall_seconds": 5.8,
+ "finished_at": "2026-11-20T13:45:45.061535+00:00",
+ "seed": 1234,
+ "versions": {
+  "lm_eval": "0.4.13",
+  "vllm": "0.33.0",
+  "torch": "2.14.0",
+  "transformers": "5.20.2",
+  "gpu": "NVIDIA H200",
+  "cuda": "13.0",
+  "python": "3.12.3"
+ },
+ "suite_git": "4674cd4c593fbd4d970493eecda5e899b23dfe9b+dirty"
+}
