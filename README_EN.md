@@ -6,7 +6,7 @@ A Comprehensive Benchmark Tool for Korean LLM Evaluation
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org)
-[![Tests: 557 passed](https://img.shields.io/badge/tests-557%20passed-brightgreen.svg)](tests/)
+[![Tests: 637 passed](https://img.shields.io/badge/tests-637%20passed-brightgreen.svg)](tests/)
 
 ---
 
@@ -31,7 +31,8 @@ KoBench Suite addresses these gaps with dedicated tracks for Korean NLU, deep Ko
 
 - **7 Evaluation Tracks**: Korean Bench (KoBEST), Ko-Bench, Korean Deep Understanding, Code/Math, Consistency, Performance, Pairwise Elo
 - **Multiple Inference Backends**: Ollama (local/remote), vLLM and EVAFRILL PyTorch (standard benchmarks)
-- **Standard Benchmarks**: lm-eval based log-likelihood multiple choice (KoBEST, KMMLU, KMMLU-Redux/Pro, KoBALT, ...), bits-per-byte perplexity, generation (HRM8K, IFEval-Ko), dev-only setting selection (A/B tables), bootstrap CIs -- see [docs/standard-benchmarks.md](docs/standard-benchmarks.md) (Korean)
+- **Standard Benchmarks**: lm-eval based log-likelihood multiple choice (KoBEST, KMMLU, KMMLU-Redux/Pro, KoBALT, ...), bits-per-byte perplexity, 13 generation tasks (rule, code-execution and LLM-judge scoring), multi-turn scenarios, thinking on/off, a unified protocol that compares 34 models on one line, serving performance, GGUF quantization loss, dev-only setting selection (A/B tables), bootstrap CIs -- see [docs/standard-benchmarks.md](docs/standard-benchmarks.md) (Korean)
+- **Final Report**: HTML comparison of three custom models against 30 public models (dense 3B class and MoE A3B class) -- [reports/final/report.html](reports/final/report.html) (Korean)
 - **Dual Judge System**: Two LLM judges with weighted cross-validation for more reliable scoring
 - **YAML-Based Configuration**: Add models, select tracks, tune sampling parameters -- all without touching code
 - **Auto-Generated Reports**: HTML and Markdown reports with 26 visualization charts
@@ -144,9 +145,21 @@ Separate from the 7 tracks, this module runs public standard benchmarks under id
 python -m kobench.standard.run --models qwen3-4b-base --suite ko_mc_v1          # run (finished tasks are skipped)
 python -m kobench.standard.dev_search select                                   # pick settings on dev -> best_settings.yaml
 python -m kobench.standard.report --suite ko_mc_v1 --ref jansori-bf16 [--table B]  # tables + bootstrap CIs
+python -m kobench.standard.gen run --models qwen3-4b-2507 --suite gen_v1 --variant A  # generation (then gen score / kobench.standard.judge)
+python -m kobench.standard.perf --models qwen3-4b-2507                             # serving performance
+python -m kobench.standard.final_data --regen && python -m kobench.standard.final_report   # final report
 ```
 
-Suites: `ko_mc_v1`, `ko_mc_ext_v1` (KMMLU-Redux/Pro and KoBALT-700: gated / non-commercial), `ppl_v1`, `en_mc_v1`, `gen_v1`, `dev_mc_v1`. Tables are in `reports/standard/` and summary JSONs in `results/standard/`; per-item sample files are not committed because they contain dataset text. Details (Korean): [docs/standard-benchmarks.md](docs/standard-benchmarks.md)
+Suites: multiple choice / PPL `ko_mc_v1`, `ko_mc_ext_v1` (KMMLU-Redux/Pro and KoBALT-700: gated / non-commercial), `ppl_v1`, `en_mc_v1`, `uni_mc_v1`, `dev_mc_v1`; generation `gen_v1`, `scenario_v1` (multi-turn), `uni_v1` (unified protocol). Tables are in `reports/standard/` and `reports/gen/`, summary JSONs in `results/{standard,gen,perf}/`; per-item files and model outputs are not committed because they contain dataset text. Details (Korean): [docs/standard-benchmarks.md](docs/standard-benchmarks.md)
+
+### Final report: three custom models vs. 30 public models
+
+[`reports/final/report.html`](reports/final/report.html) (Korean; download and open in a browser, charts use d3). Measured on one H200 with BF16 vLLM.
+
+- Models: JANSORI (3B base), frankenstallm (3B instruct), EVAFRILL-Mo (3B Mamba-2 hybrid, pretrain and slerp), and 30 public dense 3B-class and MoE A3B-class models (base and instruct).
+- Unified protocol (same raw prompt with no chat template, nine areas weighted equally): first is qwen3.6-35b-a3b at 0.585; the best dense model is qwen3-4b-2507 at 0.492 (8th). The custom models rank 31st to 34th of 34: JANSORI 0.181, EVAFRILL slerp 0.155, frankenstallm 0.152, EVAFRILL pretrain 0.151.
+- Language modeling (Korean bits-per-byte) is the only area where a custom model ranks near the top (JANSORI 4th of 15 base models). Knowledge multiple choice is near chance, and math and code are near zero.
+- The report also records the dev evidence for every setting choice and the caveats (code format mismatch, possible judge self-preference, bug-fix history).
 
 ## Evaluation Tracks
 
@@ -268,7 +281,7 @@ ko-llm-bench-suite/
 │   ├── evafrill_server.py     # EVAFRILL HTTP inference server
 │   ├── scoring.py             # Scorecard + Bradley-Terry Elo
 │   ├── report.py              # HTML/Markdown report generation
-│   ├── standard/              # Standard benchmarks (lm-eval, vLLM, EVAFRILL; A/B tables, dev setting selection)
+│   ├── standard/              # Standard benchmarks (lm-eval, vLLM, EVAFRILL, llama.cpp; generation, judge, multi-turn, unified protocol, perf, final report)
 │   │   └── tasks/             #   Custom tasks (dev / custom / gen)
 │   ├── backends/              # Inference backend abstraction
 │   │   ├── base.py            #   InferenceBackend ABC
@@ -293,11 +306,11 @@ ko-llm-bench-suite/
 │   └── track7_prompts.json    #   T7 pairwise prompts
 ├── examples/
 │   └── frankenstallm/         # Frankenstallm evaluation archive
-├── tests/                     # pytest tests (557 + 5 GPU)
+├── tests/                     # pytest tests (637 + 6 GPU/data)
 │   ├── unit/
 │   └── integration/
-├── results/                   # Evaluation output
-├── reports/                   # Generated reports
+├── results/                   # Evaluation output (standard/, gen/, perf/: summary JSON only)
+├── reports/                   # Generated reports (standard/ and gen/ tables, final/ report)
 ├── pyproject.toml
 ├── requirements.txt
 └── requirements-dev.txt
@@ -332,7 +345,7 @@ pytest tests/unit/ -v
 pytest tests/integration/ -v
 ```
 
-557 tests pass without Ollama or a GPU; 5 more (standard-benchmark GPU engine, llama.cpp, live Ollama tokenization) run with `KOBENCH_GPU=1 KOBENCH_SLOW=1 pytest tests/`. The test suite covers:
+637 tests pass without Ollama or a GPU; 6 more (standard-benchmark GPU engine, llama.cpp, live Ollama tokenization, dataset snapshots) run with `KOBENCH_GPU=1 KOBENCH_SLOW=1 pytest tests/`. The test suite covers:
 - Track evaluation logic (all 7 tracks)
 - Dual judge scoring and aggregation
 - Configuration parsing and validation

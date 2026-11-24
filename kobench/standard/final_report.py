@@ -1,7 +1,7 @@
 """최종 보고서 HTML 생성: reports/final/data.json(final_data) + narrative.json(해설) → 한 장짜리 HTML.
 
-python -m kobench.standard.final_report [--data ../reports/final/data.json] [--narrative ../reports/final/narrative.json]
-                                          [--out ../reports/final/report.html]
+python -m kobench.standard.final_report [--data reports/final/data.json] [--narrative reports/final/narrative.json]
+                                          [--out reports/final/report.html]
 
 구성: Python이 data.json에서 차트·표 단위 '뷰'를 계산하고(값·CI·색 슬롯), 페이지 안의 d3 렌더러가 그린다.
 해설 문장은 narrative.json {섹션 id: HTML}에 따로 쓴다(결과가 바뀌면 뷰는 다시 계산되고, 해설은 사람이 고친다).
@@ -19,7 +19,7 @@ from pathlib import Path
 from statistics import median
 
 ROOT = Path(__file__).resolve().parents[2]
-FINAL = ROOT.parent / "reports" / "final"
+FINAL = ROOT / "reports" / "final"
 
 D3 = "https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"
 

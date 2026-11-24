@@ -1,6 +1,6 @@
 """최종 보고서용 데이터 수집: 표준 MC/PPL(A·B), 양자화, 생성(A·B·think), 성능, 설정 선택 근거를 하나의 JSON으로 모은다.
 
-python -m kobench.standard.final_data --out ../reports/final/data.json
+python -m kobench.standard.final_data [--regen] [--out reports/final/data.json]
 (먼저 report / gen_report table을 다시 만든다: --regen)
 """
 
@@ -175,7 +175,7 @@ def transcripts(models, per_cat: int = 1, task: str = "scenario_self") -> list[d
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default=str(ROOT.parent / "reports" / "final" / "data.json"))
+    ap.add_argument("--out", default=str(ROOT / "reports" / "final" / "data.json"))
     ap.add_argument("--regen", action="store_true")
     a = ap.parse_args(argv)
     if a.regen:
