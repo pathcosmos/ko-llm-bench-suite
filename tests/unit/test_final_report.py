@@ -53,6 +53,15 @@ def test_page_places_views_and_appendix():
     assert 'data-view="models"' in html and 'id="appendix"' in html and "<p>요약</p>" in html and "<title>" in html
 
 
+def test_standalone_wraps_fragment_as_full_document():
+    frag = fr.page({}, {}, "t")
+    doc = fr.standalone(frag)
+    assert doc.startswith("<!doctype html>") and '<meta charset="utf-8">' in doc and 'name="viewport"' in doc
+    head, body = doc.split("</head>")
+    assert "<title>" in head and "</style>" in head and "<script" not in head      # 스크립트는 본문 뒤
+    assert body.count("<body>") == 1 and doc.rstrip().endswith("</html>") and frag.split("</style>", 1)[1] in body
+
+
 def test_display_names_user_entries_without_touching_longer_ids():
     assert fr.display("evafrill-mo-3b") == "EVAFRILL-Mo slerp"
     assert fr.display("evafrill-mo-3b-pretrain") == "EVAFRILL-Mo pretrain"

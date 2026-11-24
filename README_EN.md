@@ -2,109 +2,113 @@
 
 [한국어](README.md)
 
-A Comprehensive Benchmark Tool for Korean LLM Evaluation
+A Korean LLM evaluation toolkit. It has two parts: a **standard-benchmark module** that runs public benchmarks under identical conditions, and **7 tracks** that use the suite's own items to look at generation quality, consistency and speed.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org)
-[![Tests: 637 passed](https://img.shields.io/badge/tests-637%20passed-brightgreen.svg)](tests/)
+[![Tests: 638 passed](https://img.shields.io/badge/tests-638%20passed-brightgreen.svg)](tests/)
+[![Report](https://img.shields.io/badge/report-GitHub%20Pages-2f4a7a.svg)](https://pathcosmos.github.io/ko-llm-bench-suite/)
+
+**Final report: <https://pathcosmos.github.io/ko-llm-bench-suite/>** (Korean). Three custom 3B models compared with 30 public models (dense 3B class and MoE A3B class) under identical conditions on one H200.
 
 ---
 
-## Introduction
+## Contents
 
-KoBench Suite is a comprehensive benchmark framework for evaluating Large Language Models (LLMs) across 7 tracks specifically designed for the Korean language. With a single YAML configuration file, you can add new models and run full evaluations without modifying any code.
+- [Components](#components)
+- [Final report and key results](#final-report-and-key-results)
+- [Quick start](#quick-start)
+- [Standard benchmarks](#standard-benchmarks-kobenchstandard)
+- [The 7 tracks](#the-7-tracks)
+- [System requirements](#system-requirements)
+- [Project structure](#project-structure)
+- [Testing](#testing)
+- [Example: Frankenstallm evaluation (v0.2)](#example-frankenstallm-evaluation-v02)
+- [Operations](#operations) (remote Ollama, EVAFRILL mode, checkpoints, multi-machine, wizard, dashboard)
 
-### Why Korean LLM Evaluation Needs Specialized Tools
+## Components
 
-Standard English-centric benchmarks (MMLU, HumanEval, HellaSwag, etc.) fail to capture the unique challenges of the Korean language:
+| Component | Entry point | What it does |
+|---|---|---|
+| **Standard benchmarks** (`kobench/standard`) | `python -m kobench.standard.*` | Runs public benchmarks under identical conditions with lm-evaluation-harness, vLLM (BF16) and llama.cpp. Multiple choice is scored by option log-likelihood and perplexity by bits-per-byte, so base models are compared fairly. Includes 13 generation tasks (rule, code-execution and LLM-judge scoring), multi-turn scenarios, thinking on/off, a unified protocol, serving performance, GGUF quantization loss, dev-only setting selection and bootstrap CIs. |
+| **7 tracks** (`kobench.py`) | `python kobench.py --config ...` | Uses the suite's own items for KoBEST, Korean generation (dual judge), deep Korean understanding, code and math, consistency, speed and pairwise Elo. Backends: Ollama, vLLM and llama.cpp (OpenAI-compatible), EVAFRILL. |
 
-- **Agglutinative morphology**: Korean words are built by chaining morphemes (e.g., a single verb can carry subject, tense, politeness, and mood), making tokenization quality critical to model performance.
-- **Honorific system (경어법)**: Korean has seven speech levels and a complex system of subject/object honorifics. A model that generates grammatically correct but socially inappropriate speech is unusable in real Korean applications.
-- **SOV word order**: Korean follows Subject-Object-Verb order (unlike English SVO), fundamentally changing how context and reasoning flow in long-form generation.
-- **Omission of subjects/objects**: In natural Korean, subjects and objects are routinely dropped when they can be inferred from context. Models must track these implicit references across multi-turn dialogue.
-- **Cultural knowledge**: Proverbs (속담), four-character idioms (사자성어), historical references, and social norms are deeply embedded in everyday Korean and require specific training data to handle correctly.
-- **Mixed-script challenges**: Korean text frequently mixes Hangul, English loanwords, Chinese characters (한자), and numerical expressions within a single sentence.
+The two parts are independent. Use the standard benchmarks for careful comparison with public models; use the 7 tracks to sweep many models quickly through Ollama.
 
-KoBench Suite addresses these gaps with dedicated tracks for Korean NLU, deep Korean understanding (honorifics, idioms, cultural knowledge), generation quality in Korean, and cross-track consistency analysis.
+## Final report and key results
 
-## Key Features
+Report: **<https://pathcosmos.github.io/ko-llm-bench-suite/>** (Korean; source [`reports/final/report.html`](reports/final/report.html), commentary [`narrative.json`](reports/final/narrative.json), chart data [`data.json`](reports/final/data.json)). Measured in 2026-11 on one H200 with vLLM 0.33 in BF16.
 
-- **7 Evaluation Tracks**: Korean Bench (KoBEST), Ko-Bench, Korean Deep Understanding, Code/Math, Consistency, Performance, Pairwise Elo
-- **Multiple Inference Backends**: Ollama (local/remote), vLLM and EVAFRILL PyTorch (standard benchmarks)
-- **Standard Benchmarks**: lm-eval based log-likelihood multiple choice (KoBEST, KMMLU, KMMLU-Redux/Pro, KoBALT, ...), bits-per-byte perplexity, 13 generation tasks (rule, code-execution and LLM-judge scoring), multi-turn scenarios, thinking on/off, a unified protocol that compares 34 models on one line, serving performance, GGUF quantization loss, dev-only setting selection (A/B tables), bootstrap CIs -- see [docs/standard-benchmarks.md](docs/standard-benchmarks.md) (Korean)
-- **Final Report**: HTML comparison of three custom models against 30 public models (dense 3B class and MoE A3B class) -- [reports/final/report.html](reports/final/report.html) (Korean)
-- **Dual Judge System**: Two LLM judges with weighted cross-validation for more reliable scoring
-- **YAML-Based Configuration**: Add models, select tracks, tune sampling parameters -- all without touching code
-- **Auto-Generated Reports**: HTML and Markdown reports with 26 visualization charts
-- **Checkpoint & Resume**: Long-running evaluations can be interrupted and resumed seamlessly
-- **EVAFRILL Support**: Direct PyTorch inference for Mamba-2 hybrid architecture models via built-in HTTP server
+- **Models**: JANSORI (3B base), frankenstallm (3B instruct), EVAFRILL-Mo (2.94B Mamba-2 hybrid, pretrain and slerp), and 30 public models: Qwen3.5/3.6, Qwen3, Qwen2.5, kanana-1.5/2, SmolLM3, Gemma 4, Llama 3.2, Phi-4-mini, EXAONE 3.5, Nemotron 3/3.5, ERNIE 4.5. Base models are compared with base models and instruct with instruct; MoE models list total and active parameters.
+- **Setting selection**: per-model settings (decoding, system instruction, checkpoint) were chosen on dev splits only, with rules registered before measurement. Test results were never used for selection.
 
-## Evaluation Results Preview
+### Unified protocol (34 models on one line)
 
-Below are selected visualizations from a 13-model evaluation (5 custom Frankenstallm variants + 8 baselines) run on an NVIDIA RTX 5060 Ti 16GB.
+Every model gets the same raw prompt with no chat template (log-likelihood cloze, few-shot, URIAL). Nine areas (knowledge, professional/medical, factuality/bias, math, code, instruction following, conversation/generation quality, multi-turn, language modeling) are averaged with equal weight (0 to 1).
 
-### Overall Heatmap (T1-T6 Scores)
+| Rank | Model | Type | Total / active params | Composite |
+|---:|---|---|---|---:|
+| 1 | qwen3.6-35b-a3b | instruct, MoE | 35B / 3B | 0.585 |
+| 2 | qwen3.5-35b-a3b | instruct, MoE | 35B / 3B | 0.581 |
+| 3 | qwen3.5-35b-a3b-base | base, MoE | 35B / 3B | 0.577 |
+| 4 | qwen3-30b-a3b-2507 | instruct, MoE | 30.5B / 3.3B | 0.571 |
+| 8 | qwen3-4b-2507 (best dense) | instruct, dense | 4.0B | 0.492 |
+| 10 | exaone-3.5-2.4b | instruct, dense | 2.4B | 0.467 |
+| 30 | llama-3.2-3b (lowest public model) | base, dense | 3.2B | 0.246 |
+| 31 | **JANSORI** | base, dense | 3.2B | 0.181 |
+| 32 | **EVAFRILL-Mo slerp** | instruct, hybrid | 2.94B | 0.155 |
+| 33 | **frankenstallm** | instruct, dense | 3.0B | 0.152 |
+| 34 | **EVAFRILL-Mo pretrain** | base, hybrid | 2.94B | 0.151 |
 
-![Heatmap Overview](examples/frankenstallm/reports/visualizations/01_heatmap_overview.png)
+### Other observations
 
-A normalized heatmap showing each model's score across Tracks 1 through 6. Darker cells indicate higher scores. Gemma3-4B leads overall, while Frankenstallm shows catastrophic forgetting in T4 (Code/Math) due to ORPO fine-tuning.
+- **Only language modeling ranks near the top**: on Korean bits-per-byte (wiki40b_ko) JANSORI scores 0.752, 4th of 15 base models. Knowledge multiple choice (KMMLU, HAE-RAE, Belebele, ...) is near chance for all three custom models, and math and code are near zero.
+- **Multiple choice (ko_mc_v1 mean)**: best base kanana-2-30b-a3b-base 74.7, best dense base qwen3-4b-base 64.1, JANSORI 29.6, EVAFRILL pretrain 28.4.
+- **Thinking sampling**: with greedy decoding, qwen3.5-4b keeps thinking until the context ends and gets truncated. Re-run with the README's recommended sampling, IFEval-Ko rises from 31.9% to 79.2%, KorMedMCQA from 62.1% to 80.1%, and multi-turn scenario pass from 0.31 to 0.82.
+- **Serving performance**: at 64 concurrent requests, MoE A3B output throughput (about 3.5k to 4.8k tok/s) is a quarter to half of dense 3B to 4B models (about 9k to 15k tok/s), consistent with the memory-bandwidth cost of reading 30B-class weights every step.
+- **GGUF quantization**: Q8_0 is within the 95% CI of f16 GGUF. Q4_K_M shows a significant loss on JANSORI KoBEST: -0.9 pp [-1.8, -0.2].
+- **Caveats**: the unified protocol's code tasks use base-model continuation format, so some instruct models that do not follow it score near zero on MBPP+. Judge scores for Qwen-family models may carry self-preference bias (the judge is Qwen3.6-35B-A3B). Public benchmarks may be in public models' training data. Bugs found and fixed during measurement, with their effect, are listed in the report appendix.
 
-### Radar Comparison (Multi-Track Profile)
-
-![Radar Comparison](examples/frankenstallm/reports/visualizations/07_radar_comparison.png)
-
-Radar charts comparing the multi-dimensional profiles of top models. This view highlights each model's strengths and weaknesses across all evaluation dimensions at a glance.
-
-### T7 Pairwise Elo Ranking
-
-![T7 Elo Ranking](examples/frankenstallm/reports/visualizations/05_t7_elo_ranking.png)
-
-Bradley-Terry Elo ratings derived from 3,420+ pairwise comparisons using a dual-judge system. The Elo rankings show strong correlation with composite scores (r=0.90), validating the benchmark's internal consistency.
-
-## Quick Start
-
-### Installation
+## Quick start
 
 ```bash
-# Clone the repository
 git clone https://github.com/pathcosmos/ko-llm-bench-suite.git
 cd ko-llm-bench-suite
-
-# Install Python dependencies
-pip install -r requirements.txt
-
-# Install dev/test dependencies (optional)
-pip install -r requirements-dev.txt
-
-# Automated setup (Ollama + Judge models included)
-bash setup.sh
-
-# Install Ollama (skip if already installed)
-curl -fsSL https://ollama.com/install.sh | sh
-
-# Download judge models
-ollama pull qwen2.5:7b-instruct
-ollama pull exaone3.5:7.8b
-
-# Download target models (examples)
-ollama pull qwen2.5:3b
-ollama pull gemma3:4b
+pip install -r requirements.txt          # 7 tracks
+pip install -r requirements-dev.txt      # tests (optional)
 ```
 
-### Running Evaluations
+### Standard benchmarks
+
+Requires a CUDA GPU. The verified versions are pinned in [`requirements-standard.txt`](requirements-standard.txt) (vLLM 0.33.0, lm-eval 0.4.13); a fresh venv is recommended.
 
 ```bash
-# Run with a configuration file
-python kobench.py --config configs/examples/frankenstallm.yaml
+pip install -r requirements-standard.txt
+python -c "import nltk; nltk.download('punkt_tab')"            # data for the IFEval scorer
 
-# Run specific tracks only
-python kobench.py --config configs/examples/frankenstallm.yaml --tracks 1 4 6
-
-# Generate report from existing results (no re-evaluation)
-python kobench.py --config configs/examples/frankenstallm.yaml --report-only
+python -m kobench.standard.run --list                                         # models, suites, pinned revisions
+python -m kobench.standard.run --download --models qwen3-4b-base              # download the pinned revision
+python -m kobench.standard.run --models qwen3-4b-base --suite ko_mc_v1        # multiple choice (finished tasks are skipped)
+python -m kobench.standard.gen run   --models qwen3-4b-2507 --suite gen_v1 --variant A   # generation
+python -m kobench.standard.gen score --models qwen3-4b-2507 --suite gen_v1 --variant A   # rule and code scoring
+python -m kobench.standard.judge run --models qwen3-4b-2507 && python -m kobench.standard.judge score
+python -m kobench.standard.perf --models qwen3-4b-2507                        # serving performance
+python -m kobench.standard.final_data --regen && python -m kobench.standard.final_report   # report
 ```
 
-### Configuration Example
+### 7 tracks
+
+```bash
+bash setup.sh                            # installs Ollama and judge models (or install manually below)
+ollama pull qwen2.5:7b-instruct && ollama pull exaone3.5:7.8b     # judges
+ollama pull qwen2.5:3b                   # a model to evaluate (example)
+
+python kobench.py --config configs/examples/frankenstallm.yaml               # full run
+python kobench.py --config configs/examples/frankenstallm.yaml --tracks 1 4 6
+python kobench.py --config configs/examples/frankenstallm.yaml --report-only # report from existing results
+```
+
+Configuration example:
 
 ```yaml
 project:
@@ -113,13 +117,11 @@ project:
   reports_dir: "./reports"
 
 backend:
-  type: ollama
+  type: ollama            # ollama | vllm | llamacpp (vLLM and llama.cpp take an OpenAI-compatible server url)
   url: "http://localhost:11434"
 
 models:
   - name: "qwen2.5:3b"
-    tags: [baseline]
-  - name: "gemma3:4b"
     tags: [baseline]
 
 tracks:
@@ -127,198 +129,139 @@ tracks:
 
 judge:
   dual_enabled: true
-  primary:
-    model: "qwen2.5:7b-instruct"
-    weight: 0.6
-  secondary:
-    model: "exaone3.5:7.8b"
-    weight: 0.4
+  primary:   {model: "qwen2.5:7b-instruct", weight: 0.6}
+  secondary: {model: "exaone3.5:7.8b", weight: 0.4}
+
+sampling:
+  temperature: 0.7
+  top_p: 0.9
+  max_tokens: 2048
+  seed: 42
 ```
 
-See [`configs/default.yaml`](configs/default.yaml) for the full list of configuration options.
+See [`configs/default.yaml`](configs/default.yaml) for all options.
 
-## Standard Benchmarks (`kobench/standard`)
+## Standard benchmarks (`kobench/standard`)
 
-Separate from the 7 tracks, this module runs public standard benchmarks under identical conditions with lm-evaluation-harness + vLLM (BF16). Multiple choice is scored by option log-likelihood and perplexity by tokenizer-independent bits-per-byte, so base models are compared fairly. Public models must have a pinned HF revision, and setting variants are chosen on dev splits only (test results are never used for selection).
+Details (Korean): [docs/standard-benchmarks.md](docs/standard-benchmarks.md)
 
-```bash
-python -m kobench.standard.run --models qwen3-4b-base --suite ko_mc_v1          # run (finished tasks are skipped)
-python -m kobench.standard.dev_search select                                   # pick settings on dev -> best_settings.yaml
-python -m kobench.standard.report --suite ko_mc_v1 --ref jansori-bf16 [--table B]  # tables + bootstrap CIs
-python -m kobench.standard.gen run --models qwen3-4b-2507 --suite gen_v1 --variant A  # generation (then gen score / kobench.standard.judge)
-python -m kobench.standard.perf --models qwen3-4b-2507                             # serving performance
-python -m kobench.standard.final_data --regen && python -m kobench.standard.final_report   # final report
-```
+| Area | Suites and tasks | Scoring |
+|---|---|---|
+| Korean multiple choice | `ko_mc_v1`: KoBEST, KMMLU, HAE-RAE, CLIcK, Belebele-ko, Global-MMLU-ko / `ko_mc_ext_v1`: KMMLU-Redux, KMMLU-Pro, KoBALT-700 (gated, non-commercial) | option log-likelihood, bootstrap 95% CI |
+| English multiple choice | `en_mc_v1`: MMLU, ARC-Challenge, HellaSwag, Winogrande | option log-likelihood |
+| Language modeling | `ppl_v1`: wiki40b_ko, wikitext-2 | bits-per-byte (tokenizer-independent) |
+| Generation | `gen_v1`: HRM8K (strict, `\boxed` required), IFEval-Ko, KorMedMCQA / KoBBQ / TruthfulQA-ko / K2 knowledge (generative MC), KoMT, LogicKor, K2 generation, ko-arena-hard, KoSimpleQA, HumanEval+, MBPP+ | answer rules, sandboxed code execution, LLM judge (Qwen3.6-35B-A3B) |
+| Multi-turn | `scenario_v1`: 300 procedurally generated scenarios in 10 categories (3-5 turns); history = the model's own answers or reference answers | rules |
+| Unified protocol | `uni_mc_v1` + `uni_v1`: the same raw prompt for every model, no chat template | normalized mean over 9 areas |
+| Performance | `perf`: throughput, TTFT and TPOT at 1-64 concurrent requests, shared-prefix caching on/off, VRAM | client-side measurement |
+| Quantization | GGUF f16, Q8_0, Q4_K_M (llama.cpp) vs BF16 (vLLM) | paired differences on the same items and tokens |
 
-Suites: multiple choice / PPL `ko_mc_v1`, `ko_mc_ext_v1` (KMMLU-Redux/Pro and KoBALT-700: gated / non-commercial), `ppl_v1`, `en_mc_v1`, `uni_mc_v1`, `dev_mc_v1`; generation `gen_v1`, `scenario_v1` (multi-turn), `uni_v1` (unified protocol). Tables are in `reports/standard/` and `reports/gen/`, summary JSONs in `results/{standard,gen,perf}/`; per-item files and model outputs are not committed because they contain dataset text. Details (Korean): [docs/standard-benchmarks.md](docs/standard-benchmarks.md)
+Principles:
 
-### Final report: three custom models vs. 30 public models
+- Public models only run with a pinned HF revision (commit SHA); dataset revisions are pinned in the configs too.
+- **Table A** uses one protocol for every model; **table B** uses each model's dev-selected settings. Selection rules were registered before measurement in `configs/standard/dev_selection.yaml`.
+- Generation tables report malfunction metrics alongside scores: repetition loops, duplicate 3-grams, language drift, template leakage, empty answers, truncation. Generation settings are the best-quality candidate on dev that meets the malfunction limits (loops ≤2%, language drift ≤2%, leakage ≤0.5%, truncation ≤5%).
+- Custom models are evaluated with their training tokenizer and format (`configs/standard/formats.yaml`). EVAFRILL-Mo generates with the suite's batch-invariant incremental decoding engine (`evafrill_engine.py`).
+- Tables: `reports/standard/`, `reports/gen/`. Only summary JSON is committed (`results/{standard,gen,perf}/`); per-item outputs and scores contain dataset text and are not committed.
 
-[`reports/final/report.html`](reports/final/report.html) (Korean; download and open in a browser, charts use d3). Measured on one H200 with BF16 vLLM.
+## The 7 tracks
 
-- Models: JANSORI (3B base), frankenstallm (3B instruct), EVAFRILL-Mo (3B Mamba-2 hybrid, pretrain and slerp), and 30 public dense 3B-class and MoE A3B-class models (base and instruct).
-- Unified protocol (same raw prompt with no chat template, nine areas weighted equally): first is qwen3.6-35b-a3b at 0.585; the best dense model is qwen3-4b-2507 at 0.492 (8th). The custom models rank 31st to 34th of 34: JANSORI 0.181, EVAFRILL slerp 0.155, frankenstallm 0.152, EVAFRILL pretrain 0.151.
-- Language modeling (Korean bits-per-byte) is the only area where a custom model ranks near the top (JANSORI 4th of 15 base models). Knowledge multiple choice is near chance, and math and code are near zero.
-- The report also records the dev evidence for every setting choice and the caveats (code format mismatch, possible judge self-preference, bug-fix history).
+| Track | Name | Description | LLM judge |
+|------|------|------|:---------:|
+| T1 | Korean Bench | 4 KoBEST tasks (BoolQ, COPA, SentiNeg, HellaSwag) | |
+| T2 | Ko-Bench | Korean generation quality in 8 categories | O |
+| T3 | Korean Deep | Deep Korean understanding (proverbs, honorifics, culture) | O |
+| T4 | Code & Math | Python coding and math problems | |
+| T5 | Consistency | Answer consistency over repeated questions | |
+| T6 | Performance | Tokens/sec, latency, concurrency | |
+| T7 | Pairwise Elo | Pairwise model comparison, Bradley-Terry Elo | O |
 
-## Evaluation Tracks
+- **T1 Korean Bench**: accuracy on KoBEST BoolQ (true/false), COPA (causal reasoning), SentiNeg (negated sentiment) and HellaSwag (situation completion). The fallback items used when lm-eval is unavailable are not the real KoBEST, so their score keys carry a `custom_` prefix and their options are rotated deterministically to spread the answer position evenly. Answer extraction accepts only standalone capital letters (so the a and d inside English words are not read as choices). For base models, use the standard benchmarks' log-likelihood scoring.
+- **T2 Ko-Bench**: single- and multi-turn generation in 8 categories (creative writing, summarization, translation, analysis, ...). Judges score fluency, accuracy, completeness and instruction following from 1 to 10, and multi-turn degradation is analyzed.
+- **T3 Korean Deep**: proverbs, honorific/casual conversion, Korean cultural knowledge, four-character idioms.
+- **T4 Code & Math**: code is scored by running test cases, math by the final answer.
+- **T5 Consistency**: the same question three times; semantic consistency by cosine similarity.
+- **T6 Performance**: tokens/sec, TTFT and concurrency. For engine-independent measurement, use the standard benchmarks' `perf`.
+- **T7 Pairwise Elo**: the judge compares responses for every model pair (order swapped to reduce position bias) and Bradley-Terry Elo is computed.
 
-### T1: Korean Bench
+Judge requirements: T2, T3 and T7 need `qwen2.5:7b-instruct` (about 4.7 GB) and `exaone3.5:7.8b` (about 4.8 GB) in Ollama. Without judges, run `--tracks 1 4 5 6`.
 
-Evaluates core Korean NLU ability using the KoBEST benchmark suite:
+## System requirements
 
-| Task | Description | Metric |
-|------|-------------|--------|
-| BoolQ | Boolean question answering | Accuracy |
-| COPA | Causal reasoning (cause/effect selection) | Accuracy |
-| SentiNeg | Sentiment analysis with negation | Accuracy |
-| HellaSwag | Sentence completion (common sense) | Accuracy |
+| Item | 7 tracks | Standard benchmarks |
+|------|------|------|
+| OS | Ubuntu 22.04+ | Linux |
+| Python | 3.10+ | 3.12 (verified) |
+| GPU | optional (CPU works, slowly); NVIDIA 16 GB+ recommended | CUDA GPU required. Dense 3B-class BF16 weights are about 6-8 GB; MoE 30-35B-class BF16 about 57-67 GiB (80 GB-class GPU or larger). Verified on an H200 (143 GB) |
+| RAM | 16 GB (32 GB recommended) | at least the model size |
+| Disk | 20-50 GB | about 6-8 GB per 3B-class model, about 60-70 GB per A3B-class model |
 
-Additionally includes a subset of KMMLU (Korean MMLU) for broad knowledge assessment. All tasks are evaluated via exact-match or multiple-choice accuracy -- no LLM judge required.
+A full 7-track run over 13 models takes about 4-6 hours on an RTX 5060 Ti and can take days on CPU.
 
-### T2: Ko-Bench
-
-Evaluates Korean generation quality across 8 categories, each scored by the dual LLM judge system:
-
-| Category | Example Task |
-|----------|-------------|
-| Writing | Essay composition, creative writing |
-| Roleplay | Character-consistent dialogue |
-| Reasoning | Logical deduction, argument analysis |
-| Math | Word problems, mathematical reasoning |
-| Coding | Code generation with Korean specifications |
-| Extraction | Information extraction from Korean text |
-| STEM | Science/technology explanation in Korean |
-| Humanities | History, philosophy, social commentary |
-
-Each response is scored 1-10 by two judges. Multi-turn evaluation (up to 3 turns) measures how well models sustain quality over a conversation.
-
-### T3: Korean Deep Understanding
-
-Tests deep Korean linguistic and cultural knowledge that generic benchmarks miss entirely:
-
-- **Honorific system (존댓말/반말)**: Correct speech level selection based on social context
-- **Proverbs and idioms (속담/사자성어)**: Understanding and appropriate use of traditional expressions
-- **Cultural knowledge**: Korean history, social norms, holidays, and customs
-- **Grammar**: Particle usage, verb conjugation, spacing rules (띄어쓰기)
-- **Nuance**: Connotation, implied meaning, indirect expression
-
-Scored by the dual judge system with category-specific rubrics.
-
-### T4: Code & Math
-
-A language-agnostic reasoning track with 70 problems:
-
-| Type | Count | Evaluation |
-|------|-------|------------|
-| Python coding | 20 | Execution-based (pass/fail) |
-| SQL queries | 10 | Output comparison |
-| Debug tasks | 10 | Execution-based (pass/fail) |
-| Math problems | 30 | Exact answer match |
-
-No LLM judge -- all problems are evaluated programmatically against expected outputs.
-
-### T5: Consistency
-
-Measures response stability across 6 dimensions by asking equivalent questions in different forms:
-
-| Dimension | What It Measures |
-|-----------|-----------------|
-| Repetition | Same question asked multiple times |
-| Paraphrase | Semantically identical but rephrased questions |
-| Length sensitivity | Response quality vs. prompt length variation |
-| Language mixing | Handling of Korean/English code-switching |
-| Instruction following | Adherence to format/constraint instructions |
-| Hallucination | Factual consistency across repeated queries |
-
-Scores are computed as similarity/stability coefficients (0-100).
-
-### T6: Performance
-
-Measures raw inference performance metrics:
-
-| Metric | Description |
-|--------|-------------|
-| Prefill speed | Tokens per second during prompt processing |
-| Decode speed | Tokens per second during generation |
-| TTFT | Time to first token (latency) |
-| VRAM usage | GPU memory consumption |
-| Concurrency | Throughput under parallel requests |
-| Max context | Longest context the model can handle |
-
-Results are hardware-dependent. The reference evaluation was performed on an NVIDIA RTX 5060 Ti 16GB.
-
-### T7: Pairwise Elo
-
-Every pair of models is compared head-to-head on a shared set of Korean prompts. Two LLM judges independently decide which response is better, and a Bradley-Terry model converts win/loss records into Elo ratings.
-
-- **3,420+ total comparisons** for 13 models
-- **Dual judge** with weighted aggregation reduces single-judge bias
-- **Bootstrap confidence intervals** for statistical reliability
-- **T1-T7 correlation**: r=0.90 -- Elo rankings strongly agree with objective track scores
-
-## System Requirements
-
-| Component | Minimum | Recommended |
-|-----------|---------|-------------|
-| OS | Ubuntu 22.04+ | Ubuntu 24.04 |
-| Python | 3.10+ | 3.12 |
-| RAM | 16GB | 32GB |
-| GPU | None (CPU possible) | NVIDIA 16GB+ VRAM |
-| Disk | 20GB free | 50GB free |
-
-## Project Structure
+## Project structure
 
 ```
 ko-llm-bench-suite/
-├── kobench.py                 # Main entry point
-├── kobench/                   # Core evaluation framework package
-│   ├── __init__.py
-│   ├── config.py              # Configuration management
-│   ├── runner.py              # Ollama API execution engine
-│   ├── judge.py               # Dual LLM-as-Judge system
-│   ├── evafrill_runner.py     # EVAFRILL PyTorch direct inference
-│   ├── evafrill_server.py     # EVAFRILL HTTP inference server
-│   ├── scoring.py             # Scorecard + Bradley-Terry Elo
-│   ├── report.py              # HTML/Markdown report generation
-│   ├── standard/              # Standard benchmarks (lm-eval, vLLM, EVAFRILL, llama.cpp; generation, judge, multi-turn, unified protocol, perf, final report)
-│   │   └── tasks/             #   Custom tasks (dev / custom / gen)
-│   ├── backends/              # Inference backend abstraction
-│   │   ├── base.py            #   InferenceBackend ABC
-│   │   └── ollama.py          #   OllamaBackend implementation
-│   └── tracks/                # 7 evaluation tracks
-│       ├── korean_bench.py    #   T1: KoBEST
-│       ├── ko_bench.py        #   T2: Ko-Bench
-│       ├── korean_deep.py     #   T3: Deep Understanding
-│       ├── code_math.py       #   T4: Code/Math
-│       ├── consistency.py     #   T5: Consistency
-│       ├── performance.py     #   T6: Performance
-│       └── pairwise.py        #   T7: Pairwise Elo
-├── configs/                   # YAML configuration files
-│   ├── default.yaml           #   Default config (template)
-│   └── examples/
-│       └── frankenstallm.yaml #   13-model evaluation example
-├── benchmarks/                # Benchmark datasets
-│   ├── ko_bench/              #   T2 question data
-│   ├── korean_deep/           #   T3 question data
-│   ├── code_problems/         #   T4 coding problems
-│   ├── math_problems/         #   T4 math problems
-│   └── track7_prompts.json    #   T7 pairwise prompts
-├── examples/
-│   └── frankenstallm/         # Frankenstallm evaluation archive
-├── tests/                     # pytest tests (637 + 6 GPU/data)
-│   ├── unit/
-│   └── integration/
-├── results/                   # Evaluation output (standard/, gen/, perf/: summary JSON only)
-├── reports/                   # Generated reports (standard/ and gen/ tables, final/ report)
-├── pyproject.toml
-├── requirements.txt
-└── requirements-dev.txt
+├── kobench.py                 # 7-track entry point
+├── kobench/
+│   ├── config.py, runner.py   # configuration, generation (requests go to the configured backend)
+│   ├── judge.py               # dual LLM-as-judge
+│   ├── scoring.py, report.py  # scorecard + Bradley-Terry Elo, HTML/Markdown reports
+│   ├── evafrill_runner.py, evafrill_server.py   # EVAFRILL direct PyTorch inference / HTTP server
+│   ├── backends/              # base.py (ABC), ollama.py, openai_compat.py (vLLM, llama.cpp)
+│   ├── tracks/                # T1-T7
+│   └── standard/              # standard benchmarks
+│       ├── run.py, registry.py, dev_search.py, report.py      # MC/PPL runner, configs, dev selection, tables
+│       ├── gen.py, gen_data.py, gen_score.py, gen_report.py   # generation runner, items, scoring, tables
+│       ├── judge.py, code_exec.py, scenario.py, unified.py    # judge, sandboxed code, multi-turn, unified protocol
+│       ├── perf.py, llamacpp_lm.py, native/                   # serving performance, GGUF log-likelihood
+│       ├── formats.py, evafrill_lm.py, evafrill_engine.py     # training formats, EVAFRILL backend and engine
+│       ├── final_data.py, final_report.py                     # final report
+│       └── tasks/             # custom lm-eval tasks (dev / custom / gen / uni)
+├── configs/
+│   ├── default.yaml, examples/                # 7-track configs
+│   └── standard/              # models, suites, gen, unified, formats, dev_selection, best_settings
+├── benchmarks/                # 7-track items (T2, T3, T4, T7)
+├── results/                   # standard/, gen/, perf/: summary JSON only
+├── reports/                   # standard/ and gen/ tables, final/ report
+├── examples/frankenstallm/    # v0.2 7-track results archive (26 charts)
+├── docs/standard-benchmarks.md
+├── tests/                     # unit/, integration/
+├── .github/workflows/pages.yml   # reports/final -> GitHub Pages
+├── requirements.txt, requirements-dev.txt, requirements-standard.txt
+└── pyproject.toml
 ```
 
-## Remote Ollama Server
+## Testing
 
-To use Ollama running on a remote GPU server, specify the URL and set `remote: true` in your configuration:
+```bash
+pytest tests/ -v                                         # 638 tests, no Ollama or GPU needed (mock-based)
+pytest tests/unit/test_gen.py -q                         # one file
+KOBENCH_GPU=1 KOBENCH_SLOW=1 pytest tests/               # + 6 tests: GPU engine, llama.cpp, live Ollama tokenization, dataset snapshots
+pytest tests/ --cov=kobench --cov-report=html            # coverage
+```
+
+## Example: Frankenstallm evaluation (v0.2)
+
+`examples/frankenstallm/` holds a v0.2 7-track evaluation of 13 models (5 custom + 8 baselines) on an RTX 5060 Ti 16GB with Ollama. It was measured before the later fixes to T1's fallback answer-position bias and option regex, so its T1 numbers may be affected. For the current comparison, see the [final report](#final-report-and-key-results).
+
+| Rank | Model | T1 NLU | T2 Gen | T3 Deep | T7 Elo | Composite |
+|:----:|-------|:------:|:------:|:------:|:------:|:----:|
+| 1 | EXAONE3.5:7.8b | 74.0 | 7.2 | 72.0 | 1180 | **78.2** |
+| 2 | Qwen2.5:7b-instruct | 72.5 | 7.0 | 68.0 | 1150 | **75.8** |
+| 3 | Gemma3:4b | 65.0 | 6.8 | 64.0 | 1080 | **68.5** |
+| 4 | Qwen2.5:3b | 60.5 | 6.5 | 58.0 | 1020 | **63.2** |
+| 5 | Llama3.2:3b | 58.0 | 6.2 | 52.0 | 980 | **59.8** |
+
+| Overall heatmap | Radar comparison | Elo ranking |
+|---|---|---|
+| ![Heatmap](examples/frankenstallm/reports/visualizations/01_heatmap_overview.png) | ![Radar](examples/frankenstallm/reports/visualizations/07_radar_comparison.png) | ![Elo](examples/frankenstallm/reports/visualizations/05_t7_elo_ranking.png) |
+
+Observations at the time: T1 and T7 rankings correlated strongly (r=0.90), every model at 3B or below scored 0% on T4, and some custom v2 models scored below v1. All 26 charts are in `examples/frankenstallm/reports/visualizations/`.
+
+## Operations
+
+### Remote Ollama server
 
 ```yaml
 backend:
@@ -327,166 +270,52 @@ backend:
   remote: true
 ```
 
-When `remote: true` is set, the framework:
-- Sends HTTP `DELETE` requests to unload models after evaluation (freeing VRAM on the remote server)
-- Adjusts timeout values for network latency
-- Handles connection retry logic for unstable network conditions
+In remote mode, models are loaded and unloaded through the HTTP API and unloaded after the run to free VRAM. Network latency makes T6 results differ from local runs. SSH tunnel: `ssh -NL 11434:localhost:11434 user@gpu-server &`, then `OLLAMA_BASE_URL="http://localhost:11434" OLLAMA_REMOTE=1 python kobench.py --config my_config.yaml`.
 
-## Testing
+### EVAFRILL mode
+
+Models whose name contains `evafrill` (for example `evafrill-mo-3b-slerp`) run with direct PyTorch inference instead of Ollama (`kobench/evafrill_runner.py`; the source and checkpoint paths are constants at the top of that file). The YAML key `gpu.evafrill_strategy` sets how the GPU is shared with Ollama.
+
+To run on another server, start the HTTP server there and point the client at it:
 
 ```bash
-# Run all tests (no Ollama or GPU required -- fully mocked)
-pytest tests/ -v
-
-# Unit tests only
-pytest tests/unit/ -v
-
-# Integration tests only
-pytest tests/integration/ -v
+python -m uvicorn kobench.evafrill_server:app --host 0.0.0.0 --port 8000     # GPU server
+EVAFRILL_HTTP_URL="http://gpu-server:8000" python kobench.py --config my.yaml # client
 ```
 
-637 tests pass without Ollama or a GPU; 6 more (standard-benchmark GPU engine, llama.cpp, live Ollama tokenization, dataset snapshots) run with `KOBENCH_GPU=1 KOBENCH_SLOW=1 pytest tests/`. The test suite covers:
-- Track evaluation logic (all 7 tracks)
-- Dual judge scoring and aggregation
-- Configuration parsing and validation
-- Report generation (HTML + Markdown)
-- Checkpoint save/restore
-- EVAFRILL HTTP server mode
-- Remote Ollama backend
+The standard benchmarks do not use this path; they use the `evafrill` lm-eval backend (`kobench/standard/evafrill_lm.py`) with the incremental decoding engine.
 
-## Example: Frankenstallm Evaluation
+### Checkpoints and multiple machines
 
-The `examples/frankenstallm/` directory contains complete evaluation results for 13 models (5 custom Frankenstallm variants + 8 baselines) across all 7 tracks, run on an NVIDIA RTX 5060 Ti 16GB. HTML/Markdown reports and raw JSON data are all included.
-
-### Top 5 Models (Composite Score)
-
-| Rank | Model | Params | Composite Score | Elo Rating |
-|------|-------|--------|:-:|:-:|
-| 1 | Gemma3-4B | 4B | 69.8 | 1st |
-| 2 | Llama3.1-8B | 8B | 63.4 | 2nd |
-| 3 | EXAONE3.5-2.4B | 2.4B | 61.3 | 3rd |
-| 4 | Qwen2.5-3B | 3B | 61.1 | 4th |
-| 5 | EXAONE4-1.2B | 1.2B | 45.9 | 5th |
-
-### Key Findings
-
-1. **Gemma3-4B dominates**: Highest composite score (69.8) and Elo rank across all 13 models, excelling in both Korean understanding and generation quality.
-
-2. **EXAONE4-1.2B efficiency leader**: Despite being the smallest model at 1.2B parameters, it achieves 1,621 Elo/GB -- the highest efficiency ratio by a wide margin. LG AI Research's Korean-specialized training pays off at small scale.
-
-3. **T1 and T7 strongly correlated (r=0.90)**: The objective KoBEST accuracy scores (T1) align closely with subjective pairwise Elo rankings (T7), validating that both measurement approaches capture genuine model quality.
-
-4. **ORPO causes catastrophic forgetting in T4**: All Frankenstallm variants fine-tuned with ORPO score 0% on Code/Math (T4), despite their base model (EXAONE3.5-2.4B) scoring well. This demonstrates that preference-alignment fine-tuning can completely destroy code/math reasoning capabilities.
-
-5. **v1 > v2 paradox**: Frankenstallm v1 (an earlier, simpler fine-tune) consistently outperforms v2 (which used more data and training steps) across most tracks. More training is not always better -- especially with small models and ORPO, where overfitting and catastrophic forgetting compound.
-
-6. **Korean-specialized models punch above their weight**: EXAONE models (from LG AI Research) consistently outperform larger general-purpose models on Korean-specific tracks (T2, T3), suggesting that targeted Korean training data is more valuable than raw parameter count.
-
-## Checkpoint & Resume
-
-Long-running evaluations can be interrupted and resumed automatically.
-
-- After each model completes, progress is saved to `results/{track}_checkpoint.json`
-- Re-running the same command skips completed models and continues from where it left off
-- Prevent checkpoint conflicts during parallel execution:
+Each finished model is saved to `results/{track}_checkpoint.json`; re-running the same command skips finished models. When splitting a run across servers, give each a different checkpoint suffix.
 
 ```bash
-# Machine A
-EVAL_CHECKPOINT_SUFFIX="_a" python kobench.py --tracks 1 2 3
-
-# Machine B
-EVAL_CHECKPOINT_SUFFIX="_b" python kobench.py --tracks 4 5 6 7
-```
-
-## Multi-Machine Parallel Execution
-
-Distribute evaluations across multiple GPU servers.
-
-```bash
-# Server A (local Ollama)
-EVAL_CHECKPOINT_SUFFIX="_server_a" python kobench.py --tracks 1 2 3 --models "qwen2.5:3b" "gemma3:4b"
-
-# Server B (remote Ollama)
+EVAL_CHECKPOINT_SUFFIX="_a" python kobench.py --tracks 1 2 3                    # server A
 OLLAMA_BASE_URL="http://gpu-server:11434" OLLAMA_REMOTE=1 \
-EVAL_CHECKPOINT_SUFFIX="_server_b" python kobench.py --tracks 4 5 6 --models "qwen2.5:3b" "gemma3:4b"
-
-# Merge results (regenerate report only)
-python kobench.py --report-only
+EVAL_CHECKPOINT_SUFFIX="_b" python kobench.py --tracks 4 5 6 7                  # server B
+python kobench.py --report-only                                                  # merge results
 ```
 
-### SSH Tunnel for Remote Access
+### Interactive wizard and dashboard
 
 ```bash
-# Set up SSH tunnel to remote Ollama server
-ssh -NL 11434:localhost:11434 user@gpu-server &
-
-# Use remote Ollama through the tunnel
-OLLAMA_BASE_URL="http://localhost:11434" OLLAMA_REMOTE=1 \
-python kobench.py --config my_config.yaml
+python kobench.py setup    # verify install, install Ollama and judges
+python kobench.py eval     # pick models and tracks -> run -> results (starts the dashboard)
+python kobench.py config   # generate a YAML config
+python kobench.py status   # GPU, Ollama and model status
+python kobench.py --config my.yaml --dashboard [--dashboard-port 9999]
 ```
 
-## Judge Model Requirements
-
-> **Required:** Judge models must be installed in Ollama to run Tracks 2, 3, and 7.
-> - Primary: `qwen2.5:7b-instruct` (~4.7GB)
-> - Secondary: `exaone3.5:7.8b` (~4.8GB)
-> - To run without judge models, use only T1, T4, T5, T6: `--tracks 1 4 5 6`
-
-## Interactive Wizard
-
-Step-by-step guided commands for setup and evaluation.
-
-```bash
-# Installation verification + Ollama/Judge auto-setup
-python kobench.py setup
-
-# Interactive evaluation (model/track selection → execution → results)
-python kobench.py eval
-
-# Generate YAML configuration file
-python kobench.py config
-
-# System diagnostics (GPU, Ollama, model status)
-python kobench.py status
-```
-
-> **Note:** Existing batch mode (`--config`, `--tracks`, `--models`) is fully supported.
-
-### Real-Time Dashboard
-
-Monitor evaluation progress in real time from your browser during a run.
-
-```bash
-# Automatically starts with the eval wizard
-python kobench.py eval
-
-# Enable dashboard in batch mode
-python kobench.py --config my.yaml --dashboard
-python kobench.py --config my.yaml --dashboard --dashboard-port 9999
-```
-
-Open `http://localhost:8888` in your browser to see:
-- Per-track progress (completed / running / pending)
-- Current model + item progress
-- GPU status (VRAM usage)
-- Error log
-- Estimated time remaining
+The dashboard (`http://localhost:8888`) shows per-track progress, the current model and item, VRAM, error logs and estimated time remaining.
 
 ## Contributing
 
-Contributions are welcome. To get started:
+1. **Evaluate new models**: add them to `configs/standard/models.yaml` (standard benchmarks) or `configs/examples/` (7 tracks)
+2. **New tracks or tasks**: `kobench/tracks/` (TrackEvaluator) or `kobench/standard/tasks/` (lm-eval tasks)
+3. **More benchmark data**: `benchmarks/`
+4. **Bug reports**: GitHub Issues
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/my-feature`)
-3. Install dev dependencies (`pip install -r requirements-dev.txt`)
-4. Run the test suite (`pytest tests/ -v`) and ensure all tests pass
-5. Submit a pull request
-
-Areas where contributions are especially appreciated:
-- Additional benchmark datasets for Korean evaluation
-- New inference backend integrations (vLLM, TGI, etc.)
-- Visualization improvements
-- Documentation and translation
+Before a PR, run `pytest tests/` and `ruff check kobench/`.
 
 ## License
 

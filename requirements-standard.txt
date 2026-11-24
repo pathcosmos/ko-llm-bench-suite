@@ -1,0 +1,21 @@
+# 표준 벤치(kobench/standard) 실행 의존성 — 검증한 버전으로 고정 (Python 3.12, CUDA GPU, H200에서 검증)
+# vLLM 0.33.0이 torch 2.14(cu130)·transformers 5.20.2를 함께 설치한다.
+vllm==0.33.0
+lm-eval[api,hf,ifeval]==0.4.13
+sentencepiece
+tiktoken
+protobuf
+hf_transfer
+aiohttp
+pyyaml
+requests
+numpy
+scipy
+matplotlib
+pytest
+# 설치 후: python -c "import nltk; nltk.download('punkt_tab')"   (IFEval 채점기의 문장 분절 데이터)
+# 선택:
+#  - EVAFRILL-Mo(Mamba-2 하이브리드): mamba-ssm 2.3.2.post1, causal-conv1d 1.7.0을 소스 빌드(sm_90, C++20)하고
+#    원본 소스(github.com/pathcosmos/EVAFRILL-Mo) 경로를 EVAFRILL_SRC로 지정
+#  - GGUF 로그우도·PPL: llama.cpp b12084의 libllama에 kobench/standard/native/llama_loglik.cpp를 링크해 빌드하고
+#    실행 파일 경로를 LLAMA_LOGLIK로 지정

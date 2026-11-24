@@ -1,7 +1,10 @@
 """최종 보고서 HTML 생성: reports/final/data.json(final_data) + narrative.json(해설) → 한 장짜리 HTML.
 
 python -m kobench.standard.final_report [--data reports/final/data.json] [--narrative reports/final/narrative.json]
-                                          [--out reports/final/report.html]
+                                          [--out reports/final/report.html] [--fragment]
+
+기본 출력은 브라우저에서 바로 여는 단독 문서(doctype·charset·viewport 포함, GitHub Pages가 그대로 배포)다.
+--fragment는 문서 골격 없이 내용만 쓴다(골격을 덧씌우는 호스팅에 올릴 때).
 
 구성: Python이 data.json에서 차트·표 단위 '뷰'를 계산하고(값·CI·색 슬롯), 페이지 안의 d3 렌더러가 그린다.
 해설 문장은 narrative.json {섹션 id: HTML}에 따로 쓴다(결과가 바뀌면 뷰는 다시 계산되고, 해설은 사람이 고친다).
@@ -1147,16 +1150,28 @@ else document.querySelectorAll('.viz').forEach(el=>el.textContent='차트 라이
 """
 
 
+def standalone(fragment: str) -> str:
+    """page() 조각(<title>·<link>·<style> 머리 + 본문·스크립트)을 단독 HTML 문서로 감싼다."""
+    cut = fragment.index("</style>") + len("</style>")
+    head, body = fragment[:cut], fragment[cut:]
+    return ('<!doctype html>\n<html lang="ko">\n<head>\n<meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
+            "<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>\n"
+            f"{head}\n</head>\n<body>{body}</body>\n</html>\n")
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default=str(FINAL / "data.json"))
     ap.add_argument("--narrative", default=str(FINAL / "narrative.json"))
     ap.add_argument("--out", default=str(FINAL / "report.html"))
+    ap.add_argument("--fragment", action="store_true", help="문서 골격 없이 내용만 쓴다")
     a = ap.parse_args(argv)
     d = json.loads(Path(a.data).read_text(encoding="utf-8"))
     nar = json.loads(Path(a.narrative).read_text(encoding="utf-8")) if Path(a.narrative).exists() else {}
     views = build_views(d)
-    Path(a.out).write_text(page(views, nar, d.get("generated_at", "")), encoding="utf-8")
+    out = page(views, nar, d.get("generated_at", ""))
+    Path(a.out).write_text(out if a.fragment else standalone(out), encoding="utf-8")
     print(f"{a.out}: 뷰 {len(views)}개, {Path(a.out).stat().st_size / 1024:.0f} KiB")
     return 0
 
